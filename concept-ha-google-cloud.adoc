@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: concept-ha-google-cloud.html 
+keywords: high-availability, HA, mediator, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, synchronous, resync, recovery point objective, recovery time objective, failover, mount, remount, failure, data access, access, ip address, performance, gcp, gcp ha, google cloud ha, ha in google cloud 
+summary: Eine Cloud Volumes ONTAP Hochverfügbarkeitskonfiguration bietet unterbrechungsfreien Betrieb und Fehlertoleranz.  In Google Cloud werden Daten synchron zwischen den beiden Knoten gespiegelt. 
+---
+= Erfahren Sie mehr über Cloud Volumes ONTAP HA-Paare in Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Eine Cloud Volumes ONTAP Hochverfügbarkeitskonfiguration (HA) bietet unterbrechungsfreien Betrieb und Fehlertoleranz.  In Google Cloud werden Daten synchron zwischen den beiden Knoten gespiegelt.
+
+
+
+== HA-Komponenten
+
+Cloud Volumes ONTAP HA-Konfigurationen in Google Cloud umfassen die folgenden Komponenten:
+
+* Zwei Cloud Volumes ONTAP Knoten, deren Daten synchron untereinander gespiegelt werden.
+* Eine Mediatorinstanz, die einen Kommunikationskanal zwischen den Knoten bereitstellt, um bei der Übernahme und Rückgabe von Speicher zu helfen.
+* Eine Zone oder drei Zonen (empfohlen).
++
+Wenn Sie drei Zonen auswählen, befinden sich die beiden Knoten und der Mediator in separaten Google Cloud-Zonen.
+
+* Vier virtuelle private Clouds (VPCs).
++
+Die Konfiguration verwendet vier VPCs, da GCP erfordert, dass sich jede Netzwerkschnittstelle in einem separaten VPC-Netzwerk befindet.
+
+* Vier interne Load Balancer (TCP/UDP) von Google Cloud, die den eingehenden Datenverkehr zum Cloud Volumes ONTAP HA-Paar verwalten.
+
+
+link:reference-networking-gcp.html["Informieren Sie sich über die Netzwerkanforderungen"], einschließlich weiterer Details zu Load Balancern, VPCs, internen IP-Adressen, Subnetzen und mehr.
+
+Das folgende Konzeptbild zeigt ein Cloud Volumes ONTAP HA-Paar und seine Komponenten:
+
+image:diagram_gcp_ha.png["Ein konzeptionelles Bild eines Cloud Volumes ONTAP HA-Paares und seiner Komponenten."]
+
+
+
+=== Vermittler
+
+Hier sind einige wichtige Details zur Mediator-Instanz in Google Cloud:
+
+Instanztyp:: e2-micro (zuvor wurde eine f1-micro-Instanz verwendet)
+Festplatten:: Zwei persistente Standarddatenträger mit jeweils 10 GiB
+Betriebssystem:: Debian 11
++
+--
+
+NOTE: Für Cloud Volumes ONTAP 9.10.0 und früher wurde Debian 10 auf dem Mediator installiert.
+
+--
+Verbesserungen:: Wenn Sie Cloud Volumes ONTAP aktualisieren, aktualisiert die NetApp Konsole bei Bedarf auch die Mediatorinstanz.
+Zugriff auf die Instanz:: Für Debian ist der Standard-Cloud-Benutzer `admin` .  Google Cloud erstellt und fügt ein Zertifikat für die `admin` Benutzer, wenn SSH-Zugriff über die Google Cloud-Konsole oder die gcloud-Befehlszeile angefordert wird.  Sie können angeben `sudo` um Root-Rechte zu erlangen.
+Drittanbieter-Agenten:: Agenten oder VM-Erweiterungen von Drittanbietern werden auf der Mediatorinstanz nicht unterstützt.
+
+
+
+
+== Speicherübernahme und -rückgabe
+
+Wenn ein Knoten ausfällt, kann der andere Knoten Daten für seinen Partner bereitstellen, um einen kontinuierlichen Datendienst bereitzustellen.  Clients können auf dieselben Daten des Partnerknotens zugreifen, da die Daten synchron zum Partner gespiegelt wurden.
+
+Nach dem Neustart des Knotens muss der Partner die Daten erneut synchronisieren, bevor er den Speicher zurückgeben kann.  Die zum erneuten Synchronisieren der Daten benötigte Zeit hängt davon ab, wie viele Daten geändert wurden, während der Knoten ausgefallen war.
+
+Die Speicherübernahme, Neusynchronisierung und Rückgabe erfolgen standardmäßig automatisch. Es ist keine Benutzeraktion erforderlich.
+
+
+
+== RPO und RTO
+
+Eine HA-Konfiguration gewährleistet die Hochverfügbarkeit Ihrer Daten wie folgt:
+
+* Das Recovery Point Objective (RPO) beträgt 0 Sekunden.
++
+Ihre Daten sind transaktionskonsistent und es kommt zu keinem Datenverlust.
+
+* Die Wiederherstellungszeit (RTO) beträgt 120 Sekunden.
++
+Im Falle eines Ausfalls sollten die Daten in 120 Sekunden oder weniger verfügbar sein.
+
+
+
+
+
+== HA-Bereitstellungsmodelle
+
+Sie können die Hochverfügbarkeit Ihrer Daten sicherstellen, indem Sie eine HA-Konfiguration in mehreren Zonen oder in einer einzelnen Zone bereitstellen.
+
+Mehrere Zonen (empfohlen):: Durch die Bereitstellung einer HA-Konfiguration über drei Zonen hinweg wird eine kontinuierliche Datenverfügbarkeit gewährleistet, wenn innerhalb einer Zone ein Fehler auftritt.  Beachten Sie, dass die Schreibleistung im Vergleich zur Verwendung einer einzelnen Zone etwas geringer ist, aber minimal.
+Einzelzone:: Bei der Bereitstellung in einer einzelnen Zone verwendet eine Cloud Volumes ONTAP HA-Konfiguration eine Richtlinie für verteilte Platzierung.  Diese Richtlinie stellt sicher, dass eine HA-Konfiguration vor einem einzelnen Fehlerpunkt innerhalb der Zone geschützt ist, ohne dass separate Zonen zur Fehlerisolierung verwendet werden müssen.
++
+--
+Dieses Bereitstellungsmodell senkt Ihre Kosten, da zwischen den Zonen keine Gebühren für den Datenausgang anfallen.
+
+--
+
+
+
+
+== Funktionsweise der Speicherung in einem HA-Paar
+
+Anders als bei einem ONTAP Cluster wird der Speicher in einem Cloud Volumes ONTAP HA-Paar in GCP nicht zwischen Knoten geteilt.  Stattdessen werden die Daten synchron zwischen den Knoten gespiegelt, sodass die Daten im Fehlerfall verfügbar sind.
+
+
+
+=== Speicherzuweisung
+
+Wenn Sie ein neues Volume erstellen und zusätzliche Datenträger benötigt werden, weist die Konsole beiden Knoten die gleiche Anzahl an Datenträgern zu, erstellt ein gespiegeltes Aggregat und erstellt dann das neue Volume.  Wenn beispielsweise zwei Festplatten für das Volume erforderlich sind, weist die Konsole zwei Festplatten pro Knoten zu, sodass insgesamt vier Festplatten vorhanden sind.
+
+
+
+=== Speicherkonfigurationen
+
+Sie können ein HA-Paar als Aktiv-Aktiv-Konfiguration verwenden, bei der beide Knoten Daten an Clients bereitstellen, oder als Aktiv-Passiv-Konfiguration, bei der der passive Knoten nur dann auf Datenanforderungen antwortet, wenn er den Speicher für den aktiven Knoten übernommen hat.
+
+
+
+=== Leistungserwartungen für eine HA-Konfiguration
+
+Eine Cloud Volumes ONTAP HA-Konfiguration repliziert Daten synchron zwischen Knoten, was Netzwerkbandbreite verbraucht.  Im Vergleich zu einer Cloud Volumes ONTAP -Konfiguration mit einem einzelnen Knoten können Sie daher die folgende Leistung erwarten:
+
+* Bei HA-Konfigurationen, die Daten von nur einem Knoten bereitstellen, ist die Leseleistung mit der Leseleistung einer Einzelknotenkonfiguration vergleichbar, während die Schreibleistung geringer ist.
+* Bei HA-Konfigurationen, die Daten von beiden Knoten bereitstellen, ist die Leseleistung höher als die Leseleistung einer Einzelknotenkonfiguration und die Schreibleistung ist gleich oder höher.
+
+
+Weitere Informationen zur Leistung von Cloud Volumes ONTAP finden Sie unterlink:concept-performance.html["Performance"] .
+
+
+
+=== Clientzugriff auf Speicher
+
+Clients sollten auf NFS- und CIFS-Volumes zugreifen, indem sie die Daten-IP-Adresse des Knotens verwenden, auf dem sich das Volume befindet.  Wenn NAS-Clients über die IP-Adresse des Partnerknotens auf ein Volume zugreifen, wird der Datenverkehr zwischen beiden Knoten geleitet, was die Leistung verringert.
+
+
+TIP: Wenn Sie ein Volume zwischen Knoten in einem HA-Paar verschieben, sollten Sie das Volume unter Verwendung der IP-Adresse des anderen Knotens erneut mounten.  Andernfalls kann es zu Leistungseinbußen kommen.  Wenn Clients NFSv4-Verweise oder Ordnerumleitungen für CIFS unterstützen, können Sie diese Funktionen auf den Cloud Volumes ONTAP Systemen aktivieren, um eine erneute Bereitstellung des Volumes zu vermeiden.  Weitere Einzelheiten finden Sie in der ONTAP Dokumentation.
+
+Sie können die richtige IP-Adresse in der Konsole ermitteln, indem Sie das Volume auswählen und auf *Mount Command* klicken.
+
+image::screenshot_mount_option.png[400]
+
+
+
+=== Weiterführende Links
+
+* link:reference-networking-gcp.html["Informieren Sie sich über die Netzwerkanforderungen"]
+* link:task-getting-started-gcp.html["Erfahren Sie, wie Sie mit GCP beginnen"]
+

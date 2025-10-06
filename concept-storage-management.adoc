@@ -1,0 +1,138 @@
+---
+sidebar: sidebar 
+permalink: concept-storage-management.html 
+keywords: provisioning, capacity management, storage provisioning, manual, automatic, advanced allocation, aggregates, thin provisioning, free space, mode, BlueXP, NetApp Consolecloud manager 
+summary: Die Konsole bietet eine vereinfachte und erweiterte Verwaltung des Cloud Volumes ONTAP Speichers. 
+---
+= Cloud Volumes ONTAP -Speicherverwaltung
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die NetApp Konsole bietet eine vereinfachte und erweiterte Verwaltung des Cloud Volumes ONTAP Speichers.
+
+
+CAUTION: Sie müssen alle Datenträger und Aggregate direkt von der Konsole aus erstellen und löschen. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
+
+
+
+== Speicherbereitstellung
+
+Die Konsole vereinfacht die Speicherbereitstellung für Cloud Volumes ONTAP, indem sie Festplatten kauft und Aggregate für Sie verwaltet.  Sie müssen nur Volumes erstellen.  Sie können eine erweiterte Zuordnungsoption verwenden, um Aggregate selbst bereitzustellen, wenn Sie möchten.
+
+
+
+=== Vereinfachte Bereitstellung
+
+Aggregate stellen Cloud-Speicher für Volumes bereit.  Die Konsole erstellt Aggregate für Sie, wenn Sie eine Instanz starten und zusätzliche Volumes bereitstellen.
+
+Wenn Sie ein Volume erstellen, führt die Konsole eine von drei Aktionen aus:
+
+* Dabei wird das Volume auf einem vorhandenen Aggregat platziert, das über ausreichend freien Speicherplatz verfügt.
+* Es platziert das Volume auf einem vorhandenen Aggregat, indem es weitere Festplatten für dieses Aggregat kauft.
+
+
+ifdef::aws[]
+
++ Im Fall eines Aggregats in AWS, das Elastic Volumes unterstützt, erhöht es auch die Größe der Festplatten in einer RAID-Gruppe. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"] .
+
+endif::aws[]
+
+* Es kauft Festplatten für ein neues Aggregat und platziert das Volume auf diesem Aggregat.
+
+
+Die Konsole ermittelt anhand mehrerer Faktoren, wo ein neues Volume platziert werden soll: der maximalen Größe eines Aggregats, der Aktivierung von Thin Provisioning und den Schwellenwerten für den freien Speicherplatz von Aggregaten.
+
+ifdef::aws[]
+
+
+
+==== Auswahl der Datenträgergröße für Aggregate in AWS
+
+Wenn die Konsole neue Aggregate für Cloud Volumes ONTAP in AWS erstellt, erhöht sie die Festplattengrößen schrittweise mit zunehmender Anzahl der Aggregate, um die Systemkapazität zu maximieren, bevor die AWS-Datenfestplattenlimits erreicht werden.
+
+Beispielsweise kann die Konsole die folgenden Datenträgergrößen auswählen:
+
+[cols="3*"]
+|===
+| Gesamtzahl | Festplattengröße | Maximale Gesamtkapazität 
+
+
+| 1 | 500 GiB | 3 TiB 
+
+
+| 4 | 1 TiB | 6 TiB 
+
+
+| 6 | 2 TiB | 12 TiB 
+|===
+
+NOTE: Dieses Verhalten gilt nicht für Aggregate, die die Funktion „Amazon EBS Elastic Volumes“ unterstützen.  Aggregate mit aktivierten Elastic Volumes bestehen aus einer oder zwei RAID-Gruppen.  Jede RAID-Gruppe verfügt über vier identische Festplatten mit der gleichen Kapazität. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"] .
+
+Sie können die Festplattengröße mithilfe der erweiterten Zuordnungsoption selbst auswählen.
+
+endif::aws[]
+
+
+
+=== Erweiterte Zuordnung
+
+Sie können auch Aggregate verwalten. link:task-create-aggregates.html["Von der Seite *Erweiterte Zuordnung*"] können Sie neue Aggregate erstellen, die eine bestimmte Anzahl von Datenträgern enthalten, Datenträger zu einem vorhandenen Aggregat hinzufügen und Volumes in bestimmten Aggregaten erstellen.
+
+
+
+== Kapazitätsmanagement
+
+Der Organisations- oder Kontoadministrator kann die Konsole so konfigurieren, dass Sie über Entscheidungen zur Speicherkapazität benachrichtigt werden oder ob die Kapazitätsanforderungen automatisch für Sie verwaltet werden sollen.
+
+Dieses Verhalten wird durch den _Kapazitätsverwaltungsmodus_ auf einem Konsolenagenten bestimmt.  Der Kapazitätsverwaltungsmodus wirkt sich auf alle Cloud Volumes ONTAP Systeme aus, die von diesem Konsolenagenten verwaltet werden.  Wenn Sie einen anderen Konsolenagenten haben, kann dieser anders konfiguriert werden.
+
+
+
+=== Automatisches Kapazitätsmanagement
+
+Der Kapazitätsverwaltungsmodus ist standardmäßig auf „Automatisch“ eingestellt.  In diesem Modus überprüft die Konsole alle 15 Minuten das Verhältnis des freien Speicherplatzes, um festzustellen, ob das Verhältnis des freien Speicherplatzes unter den angegebenen Schwellenwert fällt.  Wenn mehr Kapazität benötigt wird, leitet es den Kauf neuer Festplatten ein, löscht nicht verwendete Festplattensammlungen (Aggregate), verschiebt Volumes nach Bedarf zwischen Aggregaten und versucht, Festplattenausfälle zu verhindern.
+
+Die folgenden Beispiele veranschaulichen die Funktionsweise dieses Modus:
+
+* Wenn ein Aggregat die Kapazitätsschwelle erreicht und Platz für weitere Festplatten hat, kauft die Konsole automatisch neue Festplatten für dieses Aggregat, damit die Volumes weiter wachsen können.
++
+ifdef::aws[]
+
+
+
+Im Fall eines Aggregats in AWS, das Elastic Volumes unterstützt, erhöht es auch die Größe der Festplatten in einer RAID-Gruppe. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"] .
+
+endif::aws[]
+
++ * Wenn ein Aggregat die Kapazitätsschwelle erreicht und keine zusätzlichen Festplatten unterstützen kann, verschiebt die Konsole automatisch ein Volume von diesem Aggregat zu einem Aggregat mit verfügbarer Kapazität oder zu einem neuen Aggregat.
+
++ Wenn die Konsole ein neues Aggregat für das Volume erstellt, wählt sie eine Datenträgergröße, die der Größe dieses Volumes entspricht.
+
++ Beachten Sie, dass jetzt auf dem ursprünglichen Aggregat freier Speicherplatz verfügbar ist.  Dieser Speicherplatz kann von vorhandenen oder neuen Volumes genutzt werden.  In diesem Szenario kann der Speicherplatz nicht an den Cloud-Anbieter zurückgegeben werden.
+
+* Wenn ein Aggregat länger als 12 Stunden keine Volumes enthält, wird es von der Konsole gelöscht.
+
+
+
+
+==== Verwaltung von LUNs mit automatischer Kapazitätsverwaltung
+
+Die automatische Kapazitätsverwaltung der Konsole gilt nicht für LUNs.  Beim Erstellen einer LUN wird die Autogrow-Funktion deaktiviert.
+
+
+
+=== Manuelles Kapazitätsmanagement
+
+Wenn der Organisations- oder Kontoadministrator den Kapazitätsverwaltungsmodus auf „manuell“ setzt, werden Sie von der Konsole aufgefordert, entsprechende Maßnahmen für Kapazitätsentscheidungen zu ergreifen.  Für den manuellen Modus gelten die gleichen Beispiele wie für den automatischen Modus, aber es liegt an Ihnen, die Aktionen zu akzeptieren.
+
+
+
+=== Mehr erfahren
+
+link:task-manage-capacity-settings.html["Erfahren Sie, wie Sie den Kapazitätsverwaltungsmodus ändern"] .

@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: task-deploy-aws-shared-vpc.html 
+keywords: shared vpc, aws shared vpc, vpc sharing, shared subnet, deploy shared vpc, assume role 
+summary: Ab der Version 9.11.1 werden Cloud Volumes ONTAP HA-Paare in AWS mit VPC-Sharing unterstützt.  Durch die VPC-Freigabe kann Ihre Organisation Subnetze mit anderen AWS-Konten teilen.  Um diese Konfiguration zu verwenden, müssen Sie Ihre AWS-Umgebung einrichten und dann das HA-Paar mithilfe der API bereitstellen. 
+---
+= Stellen Sie Cloud Volumes ONTAP HA-Paare in einem gemeinsam genutzten AWS-Subnetz bereit
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ab der Version 9.11.1 werden Cloud Volumes ONTAP HA-Paare in AWS mit VPC-Sharing unterstützt.  Durch die VPC-Freigabe kann Ihre Organisation Subnetze mit anderen AWS-Konten teilen.  Um diese Konfiguration zu verwenden, müssen Sie Ihre AWS-Umgebung einrichten und dann das HA-Paar mithilfe der API bereitstellen.
+
+Mit https://aws.amazon.com/blogs/networking-and-content-delivery/vpc-sharing-a-new-approach-to-multiple-accounts-and-vpc-management/["VPC-Freigabe"^] , eine Cloud Volumes ONTAP HA-Konfiguration ist auf zwei Konten verteilt:
+
+* Das VPC-Eigentümerkonto, dem das Netzwerk gehört (VPC, Subnetze, Routentabellen und Cloud Volumes ONTAP Sicherheitsgruppe)
+* Das Teilnehmerkonto, in dem die EC2-Instanzen in gemeinsam genutzten Subnetzen bereitgestellt werden (dazu gehören die beiden HA-Knoten und der Mediator)
+
+
+Im Fall einer Cloud Volumes ONTAP HA-Konfiguration, die über mehrere Availability Zones hinweg bereitgestellt wird, benötigt der HA-Mediator bestimmte Berechtigungen zum Schreiben in die Routentabellen im VPC-Eigentümerkonto.  Sie müssen diese Berechtigungen bereitstellen, indem Sie eine IAM-Rolle einrichten, die der Mediator übernehmen kann.
+
+Das folgende Bild zeigt die an dieser Bereitstellung beteiligten Komponenten:
+
+image:diagram-aws-vpc-sharing.png["Ein konzeptionelles Bild einer Cloud Volumes ONTAP HA-Bereitstellung in einer gemeinsam genutzten VPC.  Es zeigt eine gemeinsam genutzte VPC, die dem VPC-Eigentümerkonto und dem Teilnehmerkonto zur Verfügung steht.  Die gemeinsam genutzte VPC umfasst die IAM-Rolle, die Routentabelle, die Sicherheitsgruppe und drei gemeinsam genutzte Subnetze.  Das Teilnehmerkonto umfasst die Cloud Volumes ONTAP HA-Konfiguration und eine dem Mediator zugeordnete IAM-Rolle."]
+
+Wie in den folgenden Schritten beschrieben, müssen Sie die Subnetze mit dem Teilnehmerkonto teilen und dann die IAM-Rolle und Sicherheitsgruppe im VPC-Eigentümerkonto erstellen.
+
+Wenn Sie das Cloud Volumes ONTAP -System erstellen, erstellt die NetApp Konsole automatisch eine IAM-Rolle und fügt sie dem Mediator hinzu.  Diese Rolle übernimmt die IAM-Rolle, die Sie im VPC-Eigentümerkonto erstellt haben, um Änderungen an den mit dem HA-Paar verknüpften Routentabellen vorzunehmen.
+
+.Schritte
+. Geben Sie die Subnetze im VPC-Eigentümerkonto für das Teilnehmerkonto frei.
++
+Dieser Schritt ist erforderlich, um das HA-Paar in gemeinsam genutzten Subnetzen bereitzustellen.
+
++
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html#vpc-sharing-share-subnet["AWS-Dokumentation: Freigeben eines Subnetzes"^]
+
+. Erstellen Sie im VPC-Eigentümerkonto eine Sicherheitsgruppe für Cloud Volumes ONTAP.
++
+link:reference-security-groups.html["Beachten Sie die Sicherheitsgruppenregeln für Cloud Volumes ONTAP"] . Beachten Sie, dass Sie für den HA-Mediator keine Sicherheitsgruppe erstellen müssen.  Die Konsole erledigt das für Sie.
+
+. Erstellen Sie im VPC-Eigentümerkonto eine IAM-Rolle, die die folgenden Berechtigungen umfasst:
++
+[source, json]
+----
+Action": [
+                "ec2:AssignPrivateIpAddresses",
+                "ec2:CreateRoute",
+                "ec2:DeleteRoute",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeVpcs",
+                "ec2:ReplaceRoute",
+                "ec2:UnassignPrivateIpAddresses"
+----
+. Verwenden Sie die API, um ein neues Cloud Volumes ONTAP System zu erstellen.
++
+Beachten Sie, dass Sie die folgenden Felder angeben müssen:
+
++
+** "Sicherheitsgruppen-ID"
++
+Das Feld „securityGroupId“ sollte die Sicherheitsgruppe angeben, die Sie im VPC-Eigentümerkonto erstellt haben (siehe Schritt 2 oben).
+
+** "assumeRoleArn" im "haParams"-Objekt
++
+Das Feld „assumeRoleArn“ sollte die ARN der IAM-Rolle enthalten, die Sie im VPC-Eigentümerkonto erstellt haben (siehe Schritt 3 oben).
+
++
+Beispiel:
+
++
+[source, json]
+----
+"haParams": {
+     "assumeRoleArn": "arn:aws:iam::642991768967:role/mediator_role_assume_fromdev"
+}
+----
++
+https://docs.netapp.com/us-en/bluexp-automation/cm/overview.html["Erfahren Sie mehr über die Cloud Volumes ONTAP API"^]
+
+
+
+

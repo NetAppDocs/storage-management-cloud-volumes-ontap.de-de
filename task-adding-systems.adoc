@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: task-adding-systems.html 
+keywords: discover, discovering, add, adding, existing 
+summary: Sie können vorhandene Cloud Volumes ONTAP -Systeme erkennen und zur Konsole hinzufügen.  Dies können Sie tun, wenn Sie ein neues System bereitgestellt haben. 
+---
+= Fügen Sie der NetApp Konsole ein vorhandenes Cloud Volumes ONTAP -System hinzu
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können vorhandene Cloud Volumes ONTAP -Systeme erkennen und zur NetApp Konsole hinzufügen.  Dies können Sie tun, wenn Sie ein neues System bereitgestellt haben.
+
+.Bevor Sie beginnen
+Sie müssen das Kennwort für das Cloud Volumes ONTAP Administratorbenutzerkonto kennen.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
+. Klicken Sie auf der Seite *System* auf *System hinzufügen*.
+. Wählen Sie den Cloud-Anbieter aus, bei dem sich das System befindet.
+. Wählen Sie den Typ des hinzuzufügenden Cloud Volumes ONTAP Systems aus.
+. Klicken Sie auf den Link, um ein vorhandenes System zu entdecken.
+
+
+ifdef::aws[]
+
++image:screenshot_discover_redesign.png["Ein Screenshot, der einen Link zum Erkennen eines vorhandenen Cloud Volumes ONTAP -Systems zeigt."]
+
+endif::aws[]
+
+. Wählen Sie auf der Seite „Region“ eine Region aus.  Sie können die Systeme sehen, die in der ausgewählten Region ausgeführt werden.
++
+
+NOTE: Cloud Volumes ONTAP -Systeme werden auf dieser Seite als Instanzen dargestellt.  Aus der Liste können Sie nur die Instanzen auswählen, die mit dem aktuellen Konto registriert sind.
+
+. Geben Sie auf der Seite „Anmeldeinformationen“ das Kennwort für den Cloud Volumes ONTAP Administratorbenutzer ein und wählen Sie dann *Los*.
+
+
+.Ergebnis
+Die Konsole fügt die Cloud Volumes ONTAP -Systeme zur Seite *Systeme* hinzu.

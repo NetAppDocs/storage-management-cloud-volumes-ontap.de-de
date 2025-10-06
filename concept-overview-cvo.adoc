@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: concept-overview-cvo.html 
+keywords: what is cloud volumes ontap, cloud volumes ontap features, features, cloud volumes ontap overview, overview of cloud volumes ontap, cloud backup, cloud data sense 
+summary: Mit Cloud Volumes ONTAP können Sie Ihre Cloud-Speicherkosten und -Leistung optimieren und gleichzeitig Datenschutz, Sicherheit und Compliance verbessern. 
+---
+= Erfahren Sie mehr über Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit Cloud Volumes ONTAP können Sie Ihre Cloud-Speicherkosten und -Leistung optimieren und gleichzeitig Datenschutz, Sicherheit und Compliance verbessern.
+
+Cloud Volumes ONTAP ist ein reines Software-Speichergerät, das die ONTAP Datenverwaltungssoftware in der Cloud ausführt.  Es bietet Speicher der Enterprise-Klasse mit den folgenden Hauptfunktionen:
+
+* Speichereffizienz
++
+Nutzen Sie die integrierte Datendeduplizierung, Datenkomprimierung, Thin Provisioning und Klonen, um die Speicherkosten zu minimieren.
+
+* Hochverfügbarkeit
++
+Sorgen Sie für die Zuverlässigkeit Ihres Unternehmens und einen kontinuierlichen Betrieb bei Ausfällen in Ihrer Cloud-Umgebung.
+
+* Datenschutz
++
+Cloud Volumes ONTAP nutzt SnapMirror, die branchenführende Replikationstechnologie von NetApp, um lokale Daten in die Cloud zu replizieren, sodass sekundäre Kopien für mehrere Anwendungsfälle problemlos verfügbar sind.
+
++
+Cloud Volumes ONTAP lässt sich außerdem in NetApp Backup and Recovery integrieren, um Sicherungs- und Wiederherstellungsfunktionen zum Schutz und zur Langzeitarchivierung Ihrer Cloud-Daten bereitzustellen.
+
++
+link:https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über Backup und Wiederherstellung"^]
+
+* Daten-Tiering
++
+Wechseln Sie bei Bedarf zwischen Speicherpools mit hoher und niedriger Leistung, ohne Anwendungen offline zu nehmen.
+
+* Anwendungskonsistenz
++
+Stellen Sie die Konsistenz von NetApp Snapshot-Kopien mithilfe von NetApp SnapCenter sicher.
+
++
+https://docs.netapp.com/us-en/snapcenter/get-started/concept_snapcenter_overview.html["Erfahren Sie mehr über SnapCenter"^]
+
+* Datensicherheit
++
+Cloud Volumes ONTAP unterstützt die Datenverschlüsselung und bietet Schutz vor Viren und Ransomware.
+
+* Kontrollen zur Einhaltung des Datenschutzes
++
+Durch die Integration mit NetApp Data Classification können Sie den Datenkontext verstehen und vertrauliche Daten identifizieren.
+
++
+https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die Datenklassifizierung"^]
+
+
+
+
+NOTE: Lizenzen für ONTAP -Funktionen sind in Cloud Volumes ONTAP enthalten.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Unterstützte Cloud Volumes ONTAP -Konfigurationen anzeigen"^]
+
+https://bluexp.netapp.com/ontap-cloud["Erfahren Sie mehr über Cloud Volumes ONTAP"^]

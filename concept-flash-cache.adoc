@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: concept-flash-cache.html 
+keywords: cloud volumes ontap, flash cache, read-intensive, read, random, databases, email, file services, compression, performance, nvme 
+summary: Einige Cloud Volumes ONTAP -Konfigurationen umfassen lokalen NVMe-Speicher, den Cloud Volumes ONTAP als Flash-Cache für eine bessere Leistung verwendet. 
+---
+= Flash-Cache
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Einige Cloud Volumes ONTAP -Konfigurationen umfassen lokalen NVMe-Speicher, den Cloud Volumes ONTAP für eine bessere Leistung als _Flash Cache_ verwendet.
+
+
+
+== Was ist Flash Cache?
+
+Flash Cache beschleunigt den Datenzugriff durch intelligentes Echtzeit-Caching kürzlich gelesener Benutzerdaten und NetApp Metadaten. Es eignet sich für Workloads mit vielen zufälligen Lesevorgängen, darunter Datenbanken, E-Mail und Dateidienste.
+
+
+
+== Unterstützte Konfigurationen
+
+Flash Cache wird mit bestimmten Cloud Volumes ONTAP -Konfigurationen unterstützt.  Unterstützte Konfigurationen anzeigen in der https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Versionshinweise zu Cloud Volumes ONTAP"^]
+
+
+
+== Einschränkungen
+
+ifdef::aws[]
+
+* Beim Konfigurieren von Flash Cache für Cloud Volumes ONTAP 9.12.0 oder früher in AWS muss die Komprimierung auf allen Volumes deaktiviert werden, um die Leistungsverbesserungen von Flash Cache nutzen zu können.  Wenn Sie Cloud Volumes ONTAP 9.12.1 oder höher bereitstellen oder ein Upgrade darauf durchführen, müssen Sie die Komprimierung nicht deaktivieren.
++
+Überspringen Sie die Auswahl der Speichereffizienzeinstellungen, wenn Sie ein Volume über die NetApp Konsole erstellen, oder erstellen Sie ein Volume und http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["Deaktivieren Sie die Datenkomprimierung mithilfe der CLI"^] .
+
+
+
+endif::aws[]
+
+* Das erneute Aufwärmen des Caches nach einem Neustart wird von Cloud Volumes ONTAP nicht unterstützt.
+

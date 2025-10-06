@@ -1,0 +1,298 @@
+---
+sidebar: sidebar 
+permalink: task-set-up-azure-encryption.html 
+keywords: customer-managed key, customer key, azure storage service encryption, azure encryption, encryption key, azure encryption key 
+summary: Daten werden auf Cloud Volumes ONTAP in Azure mithilfe der Azure Storage Service Encryption mit einem von Microsoft verwalteten Schlüssel automatisch verschlüsselt.  Sie können stattdessen jedoch Ihren eigenen Verschlüsselungsschlüssel verwenden, indem Sie die Schritte auf dieser Seite befolgen. 
+---
+= Richten Sie Cloud Volumes ONTAP für die Verwendung eines vom Kunden verwalteten Schlüssels in Azure ein
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Daten werden auf Cloud Volumes ONTAP in Azure mithilfe der Azure Storage Service Encryption mit einem von Microsoft verwalteten Schlüssel automatisch verschlüsselt.  Sie können stattdessen jedoch Ihren eigenen Verschlüsselungsschlüssel verwenden, indem Sie die Schritte auf dieser Seite befolgen.
+
+
+
+== Übersicht über die Datenverschlüsselung
+
+Cloud Volumes ONTAP -Daten werden in Azure automatisch verschlüsselt mit https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview["Azure Storage Service-Verschlüsselung"^] .  Die Standardimplementierung verwendet einen von Microsoft verwalteten Schlüssel.  Es ist keine Einrichtung erforderlich.
+
+Wenn Sie einen vom Kunden verwalteten Schlüssel mit Cloud Volumes ONTAP verwenden möchten, müssen Sie die folgenden Schritte ausführen:
+
+. Erstellen Sie in Azure einen Schlüsseltresor und generieren Sie dann einen Schlüssel in diesem Tresor.
+. Verwenden Sie die API in der NetApp -Konsole, um ein Cloud Volumes ONTAP -System zu erstellen, das den Schlüssel verwendet.
+
+
+
+
+=== So werden Daten verschlüsselt
+
+Die Konsole verwendet einen Datenträgerverschlüsselungssatz, der die Verwaltung von Verschlüsselungsschlüsseln mit verwalteten Datenträgern und nicht mit Seitenblobs ermöglicht.  Alle neuen Datenträger verwenden ebenfalls denselben Datenträgerverschlüsselungssatz.  Niedrigere Versionen verwenden den von Microsoft verwalteten Schlüssel anstelle des vom Kunden verwalteten Schlüssels.
+
+Nachdem Sie ein Cloud Volumes ONTAP -System erstellt haben, das für die Verwendung eines vom Kunden verwalteten Schlüssels konfiguriert ist, werden Cloud Volumes ONTAP Daten wie folgt verschlüsselt.
+
+[cols="2a,2a,2a"]
+|===
+| Cloud Volumes ONTAP Konfiguration | Für die Schlüsselverschlüsselung verwendete Systemfestplatten | Für die Schlüsselverschlüsselung verwendete Datenträger 
+
+
+ a| 
+Einzelner Knoten
+ a| 
+* Stiefel
+* Kern
+* NVRAM
+
+ a| 
+* Wurzel
+* Daten
+
+
+
+
+ a| 
+Azure HA – einzelne Verfügbarkeitszone mit Seitenblobs
+ a| 
+* Stiefel
+* Kern
+* NVRAM
+
+ a| 
+Keine
+
+
+
+ a| 
+Azure HA – einzelne Verfügbarkeitszone mit gemeinsam genutzten verwalteten Datenträgern
+ a| 
+* Stiefel
+* Kern
+* NVRAM
+
+ a| 
+* Wurzel
+* Daten
+
+
+
+
+ a| 
+Azure HA mehrere Verfügbarkeitszonen mit gemeinsam genutzten verwalteten Datenträgern
+ a| 
+* Stiefel
+* Kern
+* NVRAM
+
+ a| 
+* Wurzel
+* Daten
+
+
+|===
+Alle Azure-Speicherkonten für Cloud Volumes ONTAP werden mit einem vom Kunden verwalteten Schlüssel verschlüsselt.  Wenn Sie Ihre Speicherkonten während der Erstellung verschlüsseln möchten, müssen Sie die ID der Ressource in der Cloud Volumes ONTAP Erstellungsanforderung erstellen und angeben.  Dies gilt für alle Arten von Bereitstellungen.  Wenn Sie ihn nicht angeben, werden die Speicherkonten trotzdem verschlüsselt, aber die Konsole erstellt zuerst die Speicherkonten mit einer von Microsoft verwalteten Schlüsselverschlüsselung und aktualisiert dann die Speicherkonten, um den vom Kunden verwalteten Schlüssel zu verwenden.
+
+
+
+== Schlüsselrotation in Cloud Volumes ONTAP
+
+Wenn Sie Ihre Verschlüsselungsschlüssel konfigurieren, müssen Sie das Azure-Portal verwenden, um die automatische Schlüsselrotation einzurichten und zu aktivieren.  Durch das Erstellen und Aktivieren einer neuen Version von Verschlüsselungsschlüsseln wird sichergestellt, dass Cloud Volumes ONTAP die neueste Schlüsselversion automatisch erkennen und für die Verschlüsselung verwenden kann. So wird sichergestellt, dass Ihre Daten ohne manuelles Eingreifen sicher bleiben.
+
+Informationen zum Konfigurieren Ihrer Schlüssel und zum Einrichten der Schlüsselrotation finden Sie in den folgenden Microsoft Azure-Dokumentationsthemen:
+
+* https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation["Konfigurieren der automatischen Rotation kryptografischer Schlüssel in Azure Key Vault"^]
+* https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-customer-managed-keys-powershell#set-up-an-azure-key-vault-and-diskencryptionset-with-automatic-key-rotation-preview["Azure PowerShell – Aktivieren von kundenseitig verwalteten Schlüsseln"^]
+
+
+
+NOTE: Stellen Sie nach der Konfiguration der Schlüssel sicher, dass Sie https://learn.microsoft.com/en-us/azure/key-vault/keys/how-to-configure-key-rotation#key-rotation-policy["_Automatische Drehung aktivieren_"^] , damit Cloud Volumes ONTAP die neuen Schlüssel verwenden kann, wenn die vorherigen Schlüssel ablaufen.  Wenn Sie diese Option im Azure-Portal nicht aktivieren, kann Cloud Volumes ONTAP die neuen Schlüssel nicht automatisch erkennen, was zu Problemen bei der Speicherbereitstellung führen kann.
+
+
+
+== Erstellen einer benutzerseitig zugewiesenen verwalteten Identität
+
+Sie haben die Möglichkeit, eine Ressource namens „benutzerseitig zugewiesene verwaltete Identität“ zu erstellen.  Auf diese Weise können Sie Ihre Speicherkonten verschlüsseln, wenn Sie ein Cloud Volumes ONTAP -System erstellen.  Wir empfehlen, diese Ressource zu erstellen, bevor Sie einen Schlüsseltresor erstellen und einen Schlüssel generieren.
+
+Die Ressource hat die folgende ID: `userassignedidentity` .
+
+.Schritte
+. Gehen Sie in Azure zu Azure-Diensten und wählen Sie *Verwaltete Identitäten* aus.
+. Klicken Sie auf *Erstellen*.
+. Geben Sie die folgenden Details an:
++
+** *Abonnement*: Wählen Sie ein Abonnement.  Wir empfehlen, dasselbe Abonnement wie das Abonnement des Konsolenagenten zu wählen.
+** *Ressourcengruppe*: Verwenden Sie eine vorhandene Ressourcengruppe oder erstellen Sie eine neue.
+** *Region*: Wählen Sie optional dieselbe Region wie der Konsolenagent aus.
+** *Name*: Geben Sie einen Namen für die Ressource ein.
+
+
+. Fügen Sie optional Tags hinzu.
+. Klicken Sie auf *Erstellen*.
+
+
+
+
+== Erstellen eines Schlüsseltresors und Generieren eines Schlüssels
+
+Der Schlüsseltresor muss sich im selben Azure-Abonnement und in derselben Region befinden, in der Sie das Cloud Volumes ONTAP -System erstellen möchten.
+
+Wenn du<<Erstellen einer benutzerseitig zugewiesenen verwalteten Identität,eine benutzerseitig zugewiesene verwaltete Identität erstellt>> , während Sie den Schlüsseltresor erstellen, sollten Sie auch eine Zugriffsrichtlinie für den Schlüsseltresor erstellen.
+
+.Schritte
+. https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal["Erstellen eines Schlüsseltresors in Ihrem Azure-Abonnement"^] .
++
+Beachten Sie die folgenden Anforderungen für den Schlüsseltresor:
+
++
+** Der Schlüsseltresor muss sich in derselben Region wie das Cloud Volumes ONTAP -System befinden.
+** Die folgenden Optionen sollten aktiviert sein:
++
+*** *Soft-Delete* (diese Option ist standardmäßig aktiviert, darf aber _nicht_ deaktiviert werden)
+*** *Spülschutz*
+*** *Azure Disk Encryption für Volume-Verschlüsselung* (für Einzelknotensysteme, HA-Paare in mehreren Zonen und HA-Einzel-AZ-Bereitstellungen)
++
+
+NOTE: Die Verwendung von vom Azure-Kunden verwalteten Verschlüsselungsschlüsseln hängt davon ab, ob die Azure-Datenträgerverschlüsselung für den Schlüsseltresor aktiviert ist.
+
+
+
+** Die folgende Option sollte aktiviert sein, wenn Sie eine benutzerseitig zugewiesene verwaltete Identität erstellt haben:
++
+*** *Richtlinie zum Tresorzugriff*
+
+
+
+
+. Wenn Sie „Tresorzugriffsrichtlinie“ ausgewählt haben, klicken Sie auf „Erstellen“, um eine Zugriffsrichtlinie für den Schlüsseltresor zu erstellen.  Wenn nicht, fahren Sie mit Schritt 3 fort.
++
+.. Wählen Sie die folgenden Berechtigungen aus:
++
+*** erhalten
+*** Liste
+*** entschlüsseln
+*** verschlüsseln
+*** Schlüssel auspacken
+*** Wrap-Schlüssel
+*** verifizieren
+*** Zeichen
+
+
+.. Wählen Sie die vom Benutzer zugewiesene verwaltete Identität (Ressource) als Prinzipal aus.
+.. Überprüfen und erstellen Sie die Zugriffsrichtlinie.
+
+
+. https://docs.microsoft.com/en-us/azure/key-vault/keys/quick-create-portal#add-a-key-to-key-vault["Generieren eines Schlüssels im Schlüsseltresor"^] .
++
+Beachten Sie folgende Anforderungen an den Schlüssel:
+
++
+** Der Schlüsseltyp muss *RSA* sein.
+** Die empfohlene RSA-Schlüsselgröße ist *2048*, es werden jedoch auch andere Größen unterstützt.
+
+
+
+
+
+
+== Erstellen Sie ein System, das den Verschlüsselungsschlüssel verwendet
+
+Nachdem Sie den Schlüsseltresor erstellt und einen Verschlüsselungsschlüssel generiert haben, können Sie ein neues Cloud Volumes ONTAP System erstellen, das für die Verwendung des Schlüssels konfiguriert ist.  Diese Schritte werden durch die Verwendung der API unterstützt.
+
+.Erforderliche Berechtigungen
+Wenn Sie einen vom Kunden verwalteten Schlüssel mit einem Cloud Volumes ONTAP System mit einem einzelnen Knoten verwenden möchten, stellen Sie sicher, dass der Konsolenagent über die folgenden Berechtigungen verfügt:
+
+[source, json]
+----
+"Microsoft.Compute/diskEncryptionSets/read",
+"Microsoft.Compute/diskEncryptionSets/write",
+"Microsoft.Compute/diskEncryptionSets/delete"
+"Microsoft.KeyVault/vaults/deploy/action",
+"Microsoft.KeyVault/vaults/read",
+"Microsoft.KeyVault/vaults/accessPolicies/write",
+"Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
+----
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Aktuelle Liste der Berechtigungen anzeigen"^]
+
+.Schritte
+. Rufen Sie die Liste der Schlüsseltresore in Ihrem Azure-Abonnement mithilfe des folgenden API-Aufrufs ab.
++
+Für ein HA-Paar: `GET /azure/ha/metadata/vaults`
+
++
+Für einen einzelnen Knoten: `GET /azure/vsa/metadata/vaults`
+
++
+Notieren Sie sich den *Namen* und die *Ressourcengruppe*.  Sie müssen diese Werte im nächsten Schritt angeben.
+
++
+https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-hametadata["Erfahren Sie mehr über diesen API-Aufruf"^] .
+
+. Rufen Sie die Liste der Schlüssel im Tresor mithilfe des folgenden API-Aufrufs ab.
++
+Für ein HA-Paar: `GET /azure/ha/metadata/keys-vault`
+
++
+Für einen einzelnen Knoten: `GET /azure/vsa/metadata/keys-vault`
+
++
+Notieren Sie sich den *Schlüsselnamen*.  Sie müssen diesen Wert (zusammen mit dem Tresornamen) im nächsten Schritt angeben.
+
++
+https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-hametadata["Erfahren Sie mehr über diesen API-Aufruf"^] .
+
+. Erstellen Sie mithilfe des folgenden API-Aufrufs ein Cloud Volumes ONTAP -System.
++
+.. Für ein HA-Paar:
++
+`POST /azure/ha/working-environments`
+
++
+Der Anforderungstext muss die folgenden Felder enthalten:
+
++
+[source, json]
+----
+"azureEncryptionParameters": {
+              "key": "keyName",
+              "vaultName": "vaultName"
+}
+----
++
+
+NOTE: Fügen Sie die `"userAssignedIdentity": " userAssignedIdentityId"` Feld, wenn Sie diese Ressource zur Verwendung für die Speicherkontoverschlüsselung erstellt haben.
+
++
+https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments["Erfahren Sie mehr über diesen API-Aufruf"^] .
+
+.. Für ein Einzelknotensystem:
++
+`POST /azure/vsa/working-environments`
+
++
+Der Anforderungstext muss die folgenden Felder enthalten:
+
++
+[source, json]
+----
+"azureEncryptionParameters": {
+              "key": "keyName",
+              "vaultName": "vaultName"
+}
+----
++
+
+NOTE: Fügen Sie die `"userAssignedIdentity": " userAssignedIdentityId"` Feld, wenn Sie diese Ressource zur Verwendung für die Speicherkontoverschlüsselung erstellt haben.
+
++
+https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-vsaworking-environments["Erfahren Sie mehr über diesen API-Aufruf"^] .
+
+
+
+
+
+.Ergebnis
+Sie verfügen über ein neues Cloud Volumes ONTAP -System, das für die Verwendung Ihres vom Kunden verwalteten Schlüssels zur Datenverschlüsselung konfiguriert ist.

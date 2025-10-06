@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: concept-ha-azure.html 
+keywords: high-availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, failure, azure, shared storage, active, passive, load balancer, storage accounts, page blobs 
+summary: 'Ein Cloud Volumes ONTAP -Hochverfügbarkeitspaar (HA) bietet Unternehmenszuverlässigkeit und kontinuierlichen Betrieb im Falle von Ausfällen in Ihrer Cloud-Umgebung. In Azure wird der Speicher zwischen den beiden Knoten geteilt.' 
+---
+= Erfahren Sie mehr über Cloud Volumes ONTAP HA-Paare in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ein Cloud Volumes ONTAP -Hochverfügbarkeitspaar (HA) bietet Unternehmenszuverlässigkeit und kontinuierlichen Betrieb im Falle von Ausfällen in Ihrer Cloud-Umgebung. In Azure wird der Speicher zwischen den beiden Knoten geteilt.
+
+
+
+== HA-Komponenten
+
+
+
+=== HA-Konfiguration einer einzelnen Verfügbarkeitszone mit Seitenblobs
+
+Eine Cloud Volumes ONTAP HA-Seitenblobkonfiguration in Azure umfasst die folgenden Komponenten:
+
+image:diagram_ha_azure.png["Ein konzeptionelles Bild, das einen Load Balancer zeigt, der den eingehenden Datenverkehr von der NetApp Konsole und den Clients verwaltet, zwei Cloud Volumes ONTAP Knoten in einem VMSS Flex, SSD-Festplatten für Startdaten und Page Blobs für Kundendaten."]
+
+Beachten Sie Folgendes zu den Azure-Komponenten, die die NetApp Konsole für Sie bereitstellt:
+
+Azure Standard Load Balancer:: Der Load Balancer verwaltet den eingehenden Datenverkehr zum Cloud Volumes ONTAP HA-Paar.
+VMs in einzelnen Verfügbarkeitszonen:: Ab Cloud Volumes ONTAP 9.15.1 können Sie heterogene virtuelle Maschinen (VMs) in einer einzigen Verfügbarkeitszone (AZ) erstellen und verwalten.  Sie können Hochverfügbarkeitsknoten (HA) in separaten Fehlerdomänen innerhalb derselben AZ bereitstellen und so optimale Verfügbarkeit gewährleisten.  Weitere Informationen zum flexiblen Orchestrierungsmodus, der diese Funktion ermöglicht, finden Sie im https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Microsoft Azure-Dokumentation: Virtual Machine Scale Sets"^] .
+Festplatten:: Kundendaten befinden sich auf Premium Storage-Seitenblobs.  Jeder Knoten hat Zugriff auf den Speicher des anderen Knotens.  Zusätzlicher Speicher wird auch benötigt fürlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["Boot-, Root- und Core-Daten"^] .
+Speicherkonten::
++
+--
+* Für verwaltete Datenträger ist ein Speicherkonto erforderlich.
+* Für die Premium Storage-Seitenblobs sind ein oder mehrere Speicherkonten erforderlich, da die Datenträgerkapazitätsgrenze pro Speicherkonto erreicht ist.
++
+https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets["Microsoft Azure-Dokumentation: Azure Storage-Skalierbarkeits- und Leistungsziele für Speicherkonten"^] .
+
+* Für die Datentierierung in Azure Blob Storage ist ein Speicherkonto erforderlich.
+* Ab Cloud Volumes ONTAP 9.7 sind die Speicherkonten, die die Konsole für HA-Paare erstellt, allgemeine v2-Speicherkonten.
+* Sie können eine HTTPS-Verbindung von einem Cloud Volumes ONTAP 9.7 HA-Paar zu Azure-Speicherkonten aktivieren, wenn Sie ein Cloud Volumes ONTAP -System hinzufügen.  Beachten Sie, dass das Aktivieren dieser Option die Schreibleistung beeinträchtigen kann.  Sie können die Einstellung nicht mehr ändern, nachdem Sie das System erstellt haben.
+
+
+--
+
+
+
+NOTE: Ab Cloud Volumes ONTAP 9.15.0P1 werden Azure-Seitenblobs für neue Bereitstellungen mit Hochverfügbarkeitspaaren nicht mehr unterstützt.  Wenn Sie derzeit Azure-Seitenblobs in vorhandenen Bereitstellungen mit Hochverfügbarkeitspaaren verwenden, können Sie in den VMs der Edsv4- und Edsv5-Serie zu neueren VM-Instanztypen migrieren. link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Erfahren Sie mehr über unterstützte Konfigurationen in Azure"^] .
+
+
+
+=== HA-Konfiguration einer einzelnen Verfügbarkeitszone mit gemeinsam genutzten verwalteten Datenträgern
+
+Eine Cloud Volumes ONTAP HA-Konfiguration mit einer einzelnen Verfügbarkeitszone, die auf einer gemeinsam genutzten verwalteten Festplatte ausgeführt wird, umfasst die folgenden Komponenten:
+
+image:diagram_ha_azure_saz_lrs.png["Ein konzeptionelles Bild, das einen Load Balancer zeigt, der den eingehenden Datenverkehr von der Konsole und den Clients verwaltet, zwei Cloud Volumes ONTAP Knoten in VMSS Flex, SSD-Festplatten für Startdaten und LRS-verwaltete Festplatten für Kundendaten."]
+
+Beachten Sie Folgendes zu den Azure-Komponenten, die die Konsole für Sie bereitstellt:
+
+Azure Standard Load Balancer:: Der Load Balancer verwaltet den eingehenden Datenverkehr zum Cloud Volumes ONTAP HA-Paar.
+VMs in einzelnen Verfügbarkeitszonen:: Ab Cloud Volumes ONTAP 9.15.1 können Sie heterogene virtuelle Maschinen (VMs) in einer einzigen Verfügbarkeitszone (AZ) erstellen und verwalten.  Sie können Hochverfügbarkeitsknoten (HA) in separaten Fehlerdomänen innerhalb derselben AZ bereitstellen und so optimale Verfügbarkeit gewährleisten.  Weitere Informationen zum flexiblen Orchestrierungsmodus, der diese Funktion ermöglicht, finden Sie im https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Microsoft Azure-Dokumentation: Virtual Machine Scale Sets"^] .
++
+--
+Die zonale Bereitstellung verwendet Premium SSD v2 Managed Disks, wenn die folgenden Bedingungen erfüllt sind:
+
+* Die Version von Cloud Volumes ONTAP ist 9.15.1 oder höher.
+* Die ausgewählte Region und Zone unterstützen Premium SSD v2 Managed Disks.  Informationen zu den unterstützten Regionen finden Sie unter https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Microsoft Azure-Website: Verfügbare Produkte nach Region"^] .
+* Das Abonnement ist für Microsoft registriertlink:task-saz-feature.html["Microsoft.Compute/VMOrchestratorZonalMultiFD-Funktion"] .
+
+
+--
+Festplatten:: Kundendaten befinden sich auf verwalteten Festplatten mit lokal redundantem Speicher (LRS).  Jeder Knoten hat Zugriff auf den Speicher des anderen Knotens.  Zusätzlicher Speicher wird auch benötigt fürlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["Boot-, Root-, Partner-Root-, Core- und NVRAM -Daten"^] .
+Speicherkonten:: Speicherkonten werden für Bereitstellungen auf Basis verwalteter Datenträger verwendet, um Diagnoseprotokolle und die Einstufung in Blob-Speicher zu verarbeiten.
+
+
+
+
+=== HA-Konfiguration für mehrere Verfügbarkeitszonen
+
+Eine Cloud Volumes ONTAP HA-Konfiguration mit mehreren Verfügbarkeitszonen in Azure umfasst die folgenden Komponenten:
+
+image:diagram_ha_azure_maz.png["Ein konzeptionelles Bild, das einen Load Balancer zeigt, der den eingehenden Datenverkehr von der Konsole und den Clients verwaltet, zwei Cloud Volumes ONTAP Knoten in zwei Verfügbarkeitszonen, SSD-Festplatten für Startdaten und verwaltete Festplatten für Kundendaten."]
+
+Beachten Sie Folgendes zu den Azure-Komponenten, die die Konsole für Sie bereitstellt:
+
+Azure Standard Load Balancer:: Der Load Balancer verwaltet den eingehenden Datenverkehr zum Cloud Volumes ONTAP HA-Paar.
+Verfügbarkeitszonen:: Die HA-Konfiguration mit mehreren Verfügbarkeitszonen verwendet ein Bereitstellungsmodell, bei dem zwei Cloud Volumes ONTAP Knoten in unterschiedlichen Verfügbarkeitszonen bereitgestellt werden. Dadurch wird sichergestellt, dass sich die Knoten in unterschiedlichen Fehlerdomänen befinden, um Redundanz und Verfügbarkeit zu gewährleisten.  Informationen dazu, wie Virtual Machine Scale Sets im flexiblen Orchestrierungsmodus Verfügbarkeitszonen in Azure nutzen können, finden Sie im https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2["Microsoft Azure-Dokumentation: Erstellen eines Virtual Machine Scale Set, das Verfügbarkeitszonen verwendet"^] .
+Festplatten:: Kundendaten befinden sich auf verwalteten Datenträgern mit zonenredundantem Speicher (ZRS).  Jeder Knoten hat Zugriff auf den Speicher des anderen Knotens.  Zusätzlicher Speicher wird auch benötigt fürlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["Boot-, Root-, Partner-Root- und Core-Daten"^] .
+Speicherkonten:: Speicherkonten werden für Bereitstellungen auf Basis verwalteter Datenträger verwendet, um Diagnoseprotokolle und die Einstufung in Blob-Speicher zu verarbeiten.
+
+
+
+
+== RPO und RTO
+
+Eine HA-Konfiguration gewährleistet die Hochverfügbarkeit Ihrer Daten wie folgt:
+
+* Das Recovery Point Objective (RPO) beträgt 0 Sekunden.  Ihre Daten sind transaktionskonsistent und es kommt zu keinem Datenverlust.
+* Die Wiederherstellungszeit (RTO) beträgt 120 Sekunden.  Im Falle eines Ausfalls sollten die Daten in 120 Sekunden oder weniger verfügbar sein.
+
+
+
+
+== Speicherübernahme und -rückgabe
+
+Ähnlich wie bei einem physischen ONTAP Cluster wird der Speicher in einem Azure HA-Paar zwischen Knoten geteilt.  Durch Verbindungen zum Speicher des Partners kann jeder Knoten im Falle einer _Übernahme_ auf den Speicher des anderen zugreifen.  Failover-Mechanismen für Netzwerkpfade stellen sicher, dass Clients und Hosts weiterhin mit dem verbleibenden Knoten kommunizieren.  Der Partner gibt den Speicher zurück, wenn der Knoten wieder online ist.
+
+Bei NAS-Konfigurationen werden Daten-IP-Adressen bei Fehlern automatisch zwischen HA-Knoten migriert.
+
+Für iSCSI verwendet Cloud Volumes ONTAP Multipath I/O (MPIO) und Asymmetric Logical Unit Access (ALUA), um das Pfad-Failover zwischen den aktiv optimierten und nicht optimierten Pfaden zu verwalten.
+
+
+NOTE: Informationen darüber, welche spezifischen Hostkonfigurationen ALUA unterstützen, finden Sie im http://mysupport.netapp.com/matrix["NetApp Interoperabilitätsmatrix-Tool"^] und die https://docs.netapp.com/us-en/ontap-sanhost/["Leitfaden für SAN-Hosts und Cloud-Clients"] für Ihr Host-Betriebssystem.
+
+Die Speicherübernahme, Neusynchronisierung und Rückgabe erfolgen standardmäßig automatisch. Es ist keine Benutzeraktion erforderlich.
+
+
+
+== Speicherkonfigurationen
+
+Sie können ein HA-Paar als Aktiv-Aktiv-Konfiguration verwenden, bei der beide Knoten Daten an Clients bereitstellen, oder als Aktiv-Passiv-Konfiguration, bei der der passive Knoten nur dann auf Datenanforderungen antwortet, wenn er den Speicher für den aktiven Knoten übernommen hat.

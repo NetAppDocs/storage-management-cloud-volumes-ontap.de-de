@@ -1,0 +1,516 @@
+---
+sidebar: sidebar 
+permalink: task-deploying-otc-azure.html 
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, azure, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, HA pair, associate subscription, azure marketplace, marketplace subscription, cloud data sense, cloud backup 
+summary: Sie können ein einzelnes Cloud Volumes ONTAP -System in Azure starten, indem Sie in der NetApp Konsole ein Cloud Volumes ONTAP -System erstellen. 
+---
+= Starten Sie Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können ein Einzelknotensystem oder ein HA-Paar in Azure starten, indem Sie in der NetApp Konsole ein Cloud Volumes ONTAP -System erstellen.
+
+.Bevor Sie beginnen
+Bevor Sie beginnen, benötigen Sie Folgendes.
+
+[[licensing]]
+* Ein Konsolenagent, der aktiv ist und läuft.
++
+** Sie sollten über eine https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Konsolenagent, der mit Ihrem System verknüpft ist"^] .
+** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Sie sollten darauf vorbereitet sein, den Konsolenagenten immer laufen zu lassen"^] .
+
+
+* Ein Verständnis der Konfiguration, die Sie verwenden möchten.
++
+Sie sollten eine Konfiguration geplant haben und die erforderlichen Azure-Netzwerkdetails von Ihrem Administrator erhalten haben. Weitere Informationen finden Sie unter link:task-planning-your-config-azure.html["Planen Ihrer Cloud Volumes ONTAP Konfiguration"^] .
+
+* Ein Verständnis dafür, was zum Einrichten der Lizenzierung für Cloud Volumes ONTAP erforderlich ist.
++
+link:task-set-up-licensing-azure.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
+
+
+
+.Informationen zu diesem Vorgang
+Wenn die Konsole ein Cloud Volumes ONTAP -System in Azure erstellt, erstellt sie mehrere Azure-Objekte, z. B. eine Ressourcengruppe, Netzwerkschnittstellen und Speicherkonten.  Am Ende des Assistenten können Sie eine Zusammenfassung der Ressourcen überprüfen.
+
+[WARNING]
+.Möglicher Datenverlust
+====
+Die bewährte Methode besteht darin, für jedes Cloud Volumes ONTAP -System eine neue, dedizierte Ressourcengruppe zu verwenden.
+
+Aufgrund des Risikos eines Datenverlusts wird die Bereitstellung von Cloud Volumes ONTAP in einer vorhandenen, gemeinsam genutzten Ressourcengruppe nicht empfohlen.  Während die Konsole Cloud Volumes ONTAP -Ressourcen im Falle eines Bereitstellungsfehlers oder einer Löschung aus einer freigegebenen Ressourcengruppe entfernen kann, kann es vorkommen, dass ein Azure-Benutzer versehentlich Cloud Volumes ONTAP -Ressourcen aus einer freigegebenen Ressourcengruppe löscht.
+
+====
+
+
+== Starten Sie ein Cloud Volumes ONTAP -System mit einem Knoten in Azure
+
+Wenn Sie ein Cloud Volumes ONTAP -System mit einem Knoten in Azure starten möchten, müssen Sie in der Konsole ein System mit einem Knoten erstellen.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
+. [[Abonnieren]]Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Anweisungen.
+. *Wählen Sie einen Standort*: Wählen Sie *Microsoft Azure* und * Cloud Volumes ONTAP Single Node*.
+. Wenn Sie dazu aufgefordert werden, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Erstellen Sie einen Konsolenagenten"^] .
+. *Details und Anmeldeinformationen*: Ändern Sie optional die Azure-Anmeldeinformationen und das Abonnement, geben Sie einen Clusternamen an, fügen Sie bei Bedarf Tags hinzu und geben Sie dann die Anmeldeinformationen an.
++
+In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
+
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| Systemname | Die Konsole verwendet den Systemnamen, um sowohl das Cloud Volumes ONTAP -System als auch die virtuelle Azure-Maschine zu benennen.  Wenn Sie diese Option auswählen, wird der Name auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet. 
+
+
+| Ressourcengruppen-Tags | Tags sind Metadaten für Ihre Azure-Ressourcen.  Wenn Sie in dieses Feld Tags eingeben, fügt die Konsole sie der mit dem Cloud Volumes ONTAP -System verknüpften Ressourcengruppe hinzu.  Sie können beim Erstellen eines Systems bis zu vier Tags über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Tags beschränkt.  Informationen zu Tags finden Sie im https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure-Dokumentation: Verwenden von Tags zum Organisieren Ihrer Azure-Ressourcen"^] . 
+
+
+| Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
+
+
+| Anmeldeinformationen bearbeiten | Sie können für die Verwendung mit diesem Cloud Volumes ONTAP -System andere Azure-Anmeldeinformationen und ein anderes Azure-Abonnement auswählen.  Sie müssen dem ausgewählten Azure-Abonnement ein Azure Marketplace-Abonnement zuordnen, um ein Cloud Volumes ONTAP System mit nutzungsbasierter Bezahlung bereitzustellen. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["Erfahren Sie, wie Sie Anmeldeinformationen hinzufügen"^] . 
+|===
+. *Dienste*: Aktivieren oder deaktivieren Sie die einzelnen Dienste, die Sie mit Cloud Volumes ONTAP verwenden möchten oder nicht.
++
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Datenklassifizierung"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup und Recovery"^]
++
+
+TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
+
+
+
+. *Standort*: Wählen Sie eine Region, eine Verfügbarkeitszone, ein VNet und ein Subnetz aus und aktivieren Sie dann das Kontrollkästchen, um die Netzwerkkonnektivität zwischen dem Konsolenagenten und dem Zielstandort zu bestätigen.
++
+
+NOTE: Für Regionen in China werden Einzelknotenbereitstellungen nur in Cloud Volumes ONTAP 9.12.1 GA und 9.13.0 GA unterstützt.  Sie können diese Versionen auf neuere Patches und Releases von Cloud Volumes ONTAP aktualisieren.  Wenn Sie neuere Versionen von Cloud Volumes ONTAP in chinesischen Regionen bereitstellen möchten, wenden Sie sich an den NetApp Support.  In den Regionen Chinas werden nur direkt von NetApp erworbene Lizenzen unterstützt, Marktplatz-Abonnements sind nicht verfügbar.
+
+. *Konnektivität*: Wählen Sie eine neue oder vorhandene Ressourcengruppe und entscheiden Sie dann, ob Sie die vordefinierte Sicherheitsgruppe oder Ihre eigene verwenden möchten.
++
+In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
+
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| Ressourcengruppe  a| 
+Erstellen Sie eine neue Ressourcengruppe für Cloud Volumes ONTAP oder verwenden Sie eine vorhandene Ressourcengruppe.  Die bewährte Methode besteht darin, eine neue, dedizierte Ressourcengruppe für Cloud Volumes ONTAP zu verwenden.  Obwohl es möglich ist , Cloud Volumes ONTAP in einer vorhandenen, gemeinsam genutzten Ressourcengruppe bereitzustellen, wird dies aufgrund des Risikos eines Datenverlusts nicht empfohlen.  Weitere Einzelheiten finden Sie in der obigen Warnung.
+
+
+TIP: Wenn das von Ihnen verwendete Azure-Konto über die https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["erforderliche Berechtigungen"^] , entfernt die Konsole Cloud Volumes ONTAP -Ressourcen aus einer Ressourcengruppe, falls die Bereitstellung fehlschlägt oder gelöscht wird.
+
+
+
+| Generierte Sicherheitsgruppe  a| 
+Wenn Sie die Sicherheitsgruppe von der Konsole erstellen lassen, müssen Sie auswählen, wie Sie den Datenverkehr zulassen:
+
+** Wenn Sie *Nur ausgewähltes VNet* auswählen, ist die Quelle für eingehenden Datenverkehr der Subnetzbereich des ausgewählten VNet und der Subnetzbereich des VNet, in dem sich der Konsolenagent befindet.  Dies ist die empfohlene Option.
+** Wenn Sie *Alle VNets* auswählen, ist die Quelle für eingehenden Datenverkehr der IP-Bereich 0.0.0.0/0.
+
+
+
+
+| Vorhandene verwenden | Wenn Sie eine vorhandene Sicherheitsgruppe auswählen, muss diese die Anforderungen von Cloud Volumes ONTAP erfüllen. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules["Anzeigen der Standardsicherheitsgruppe"^] . 
+|===
+. *Abrechnungsmethoden und NSS-Konto*: Geben Sie an, welche Abrechnungsoption Sie mit diesem System verwenden möchten, und geben Sie dann ein NetApp Support Site-Konto an.
++
+** link:concept-licensing.html["Erfahren Sie mehr über die Lizenzierungsoptionen für Cloud Volumes ONTAP"^] .
+** link:task-set-up-licensing-azure.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
+
+
+. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder klicken Sie auf *Meine eigene Konfiguration erstellen*.
++
+Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volumen angeben und anschließend die Konfiguration prüfen und freigeben.
+
+. *Lizenzierung*: Ändern Sie bei Bedarf die Cloud Volumes ONTAP -Version und wählen Sie einen virtuellen Maschinentyp aus.
++
+
+NOTE: Wenn für die ausgewählte Version ein neuerer Release Candidate, eine allgemeine Verfügbarkeit oder ein Patch-Release verfügbar ist, aktualisiert die Konsole das System beim Erstellen auf diese Version.  Das Update erfolgt beispielsweise, wenn Sie Cloud Volumes ONTAP 9.13.1 auswählen und 9.13.1 P4 verfügbar ist.  Das Update erfolgt nicht von einer Version zur nächsten, beispielsweise von 9.13 auf 9.14.
+
+. *Abonnieren Sie über den Azure Marketplace*: Diese Seite wird Ihnen angezeigt, wenn die Konsole keine programmgesteuerten Bereitstellungen von Cloud Volumes ONTAP aktivieren konnte.  Befolgen Sie die auf dem Bildschirm aufgeführten Schritte. Siehe https://learn.microsoft.com/en-us/marketplace/programmatic-deploy-of-marketplace-products["Programmatische Bereitstellung von Marketplace-Produkten"^] für weitere Informationen.
+. *Zugrunde liegende Speicherressourcen*: Wählen Sie Einstellungen für das anfängliche Aggregat: einen Datenträgertyp, eine Größe für jeden Datenträger und ob die Datenaufteilung auf Blob-Speicher aktiviert werden soll.
++
+Beachten Sie Folgendes:
+
++
+** Wenn der öffentliche Zugriff auf Ihr Speicherkonto innerhalb des VNet deaktiviert ist, können Sie das Daten-Tiering in Ihrem Cloud Volumes ONTAP System nicht aktivieren.  Weitere Informationen finden Sie unterlink:reference-networking-azure.html#security-group-rules["Sicherheitsgruppenregeln"] .
+** Der Datenträgertyp ist für das ursprüngliche Volume.  Sie können für nachfolgende Volumes einen anderen Datenträgertyp auswählen.
+** Die Datenträgergröße gilt für alle Datenträger im anfänglichen Aggregat und für alle zusätzlichen Aggregate, die die Konsole erstellt, wenn Sie die einfache Bereitstellungsoption verwenden.  Mithilfe der erweiterten Zuordnungsoption können Sie Aggregate erstellen, die eine andere Festplattengröße verwenden.
++
+Hilfe zur Auswahl von Datenträgertyp und -größe finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionierung Ihres Systems in Azure"^] .
+
+** Sie können beim Erstellen oder Bearbeiten eines Volumes eine bestimmte Volume-Tiering-Richtlinie auswählen.
+** Wenn Sie das Daten-Tiering deaktivieren, können Sie es für nachfolgende Aggregate aktivieren.
++
+link:concept-data-tiering.html["Weitere Informationen zum Daten-Tiering"^] .
+
+
+
+. *Schreibgeschwindigkeit & WORM*:
++
+.. Wählen Sie bei Bedarf die Schreibgeschwindigkeit *Normal* oder *Hoch*.
++
+link:concept-write-speed.html["Erfahren Sie mehr über die Schreibgeschwindigkeit"^] .
+
+.. Aktivieren Sie bei Bedarf den WORM-Speicher (Write Once, Read Many).
++
+Diese Option ist nur für bestimmte VM-Typen verfügbar.  Informationen zu den unterstützten VM-Typen finden Sie unterlink:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Unterstützte Konfigurationen nach Lizenz für HA-Paare"^] .
+
++
+WORM kann nicht aktiviert werden, wenn die Datenschichtung für Cloud Volumes ONTAP Version 9.7 und darunter aktiviert wurde.  Das Zurücksetzen oder Downgrade auf Cloud Volumes ONTAP 9.8 ist nach der Aktivierung von WORM und Tiering blockiert.
+
++
+link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher"^] .
+
+.. Wenn Sie den WORM-Speicher aktivieren, wählen Sie die Aufbewahrungsdauer aus.
+
+
+. *Volume erstellen*: Geben Sie Details für das neue Volume ein oder klicken Sie auf *Überspringen*.
++
+link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"^] .
+
++
+Einige der Felder auf dieser Seite sind selbsterklärend.  In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
+
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| Größe | Die maximale Größe, die Sie eingeben können, hängt weitgehend davon ab, ob Sie Thin Provisioning aktivieren. Dadurch können Sie ein Volume erstellen, das größer ist als der ihm aktuell zur Verfügung stehende physische Speicher. 
+
+
+| Zugriffskontrolle (nur für NFS) | Eine Exportrichtlinie definiert die Clients im Subnetz, die auf das Volume zugreifen können. Standardmäßig gibt die Konsole einen Wert ein, der Zugriff auf alle Instanzen im Subnetz gewährt. 
+
+
+| Berechtigungen und Benutzer/Gruppen (nur für CIFS) | Mit diesen Feldern können Sie die Zugriffsebene auf eine Freigabe für Benutzer und Gruppen steuern (auch als Zugriffskontrolllisten oder ACLs bezeichnet). Sie können lokale oder Domänen-Windows-Benutzer oder -Gruppen oder UNIX-Benutzer oder -Gruppen angeben. Wenn Sie einen Windows-Domänenbenutzernamen angeben, müssen Sie die Domäne des Benutzers im Format Domäne\Benutzername angeben. 
+
+
+| Snapshot-Richtlinie | Eine Snapshot-Kopierrichtlinie gibt die Häufigkeit und Anzahl der automatisch erstellten NetApp Snapshot-Kopien an. Eine NetApp Snapshot-Kopie ist ein zeitpunktbezogenes Dateisystem-Image, das keine Auswirkungen auf die Leistung hat und nur minimalen Speicherplatz benötigt. Sie können die Standardrichtlinie oder keine auswählen.  Für vorübergehende Daten können Sie „Keine“ auswählen, beispielsweise „tempdb“ für Microsoft SQL Server. 
+
+
+| Erweiterte Optionen (nur für NFS) | Wählen Sie eine NFS-Version für das Volume aus: entweder NFSv3 oder NFSv4. 
+
+
+| Initiatorgruppe und IQN (nur für iSCSI) | iSCSI-Speicherziele werden als LUNs (logische Einheiten) bezeichnet und Hosts als Standardblockgeräte präsentiert.  Initiatorgruppen sind Tabellen mit iSCSI-Hostknotennamen und steuern, welche Initiatoren Zugriff auf welche LUNs haben. iSCSI-Ziele stellen über Standard-Ethernet-Netzwerkadapter (NICs), TCP-Offload-Engine-Karten (TOE) mit Software-Initiatoren, konvergente Netzwerkadapter (CNAs) oder dedizierte Hostbusadapter (HBAs) eine Verbindung zum Netzwerk her und werden durch iSCSI-qualifizierte Namen (IQNs) identifiziert.  Wenn Sie ein iSCSI-Volume erstellen, erstellt die Konsole automatisch eine LUN für Sie.  Wir haben es einfach gemacht, indem wir nur eine LUN pro Volume erstellt haben, sodass keine Verwaltung erforderlich ist.  Nachdem Sie das Volume erstellt haben,link:task-connect-lun.html["Verwenden Sie den IQN, um von Ihren Hosts aus eine Verbindung zum LUN herzustellen"] . 
+|===
++
+Das folgende Bild zeigt die erste Seite des Assistenten zur Volumeerstellung:
+
++
+image:screenshot_cot_vol.gif["Screenshot: Zeigt die ausgefüllte Volume-Seite für eine Cloud Volumes ONTAP -Instanz."]
+
+. *CIFS-Setup*: Wenn Sie das CIFS-Protokoll gewählt haben, richten Sie einen CIFS-Server ein.
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| DNS Primäre und sekundäre IP-Adresse | Die IP-Adressen der DNS-Server, die die Namensauflösung für den CIFS-Server bereitstellen.  Die aufgelisteten DNS-Server müssen die Service Location Records (SRV) enthalten, die zum Auffinden der Active Directory-LDAP-Server und Domänencontroller für die Domäne erforderlich sind, der der CIFS-Server beitreten wird. 
+
+
+| Beitretende Active Directory-Domäne | Der FQDN der Active Directory (AD)-Domäne, der der CIFS-Server beitreten soll. 
+
+
+| Anmeldeinformationen, die zum Beitritt zur Domäne berechtigt sind | Der Name und das Kennwort eines Windows-Kontos mit ausreichenden Berechtigungen zum Hinzufügen von Computern zur angegebenen Organisationseinheit (OU) innerhalb der AD-Domäne. 
+
+
+| NetBIOS-Name des CIFS-Servers | Ein CIFS-Servername, der in der AD-Domäne eindeutig ist. 
+
+
+| Organisationseinheit | Die Organisationseinheit innerhalb der AD-Domäne, die mit dem CIFS-Server verknüpft werden soll.  Der Standardwert ist CN=Computers.  Um Azure AD Domain Services als AD-Server für Cloud Volumes ONTAP zu konfigurieren, sollten Sie in dieses Feld *OU=AADDC Computers* oder *OU=AADDC Users* eingeben.https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure-Dokumentation: Erstellen einer Organisationseinheit (OU) in einer von Azure AD Domain Services verwalteten Domäne"^] 
+
+
+| DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
+
+
+| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
+|===
+. *Nutzungsprofil, Datenträgertyp und Tiering-Richtlinie*: Wählen Sie aus, ob Sie Speichereffizienzfunktionen aktivieren möchten, und ändern Sie bei Bedarf die Volume-Tiering-Richtlinie.
++
+Weitere Informationen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile["Grundlegendes zu Volume-Nutzungsprofilen"^] Undlink:concept-data-tiering.html["Übersicht über Data Tiering"^] .
+
+. *Überprüfen und genehmigen*: Überprüfen und bestätigen Sie Ihre Auswahl.
++
+.. Überprüfen Sie die Details zur Konfiguration.
+.. Klicken Sie auf *Weitere Informationen*, um Details zum Support und den Azure-Ressourcen anzuzeigen, die die Konsole erwerben wird.
+.. Aktivieren Sie die Kontrollkästchen *Ich verstehe...*.
+.. Klicken Sie auf *Los*.
+
+
+
+
+.Ergebnis
+Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fortschritt auf der Audit-Seite verfolgen.
+
+Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
+
+Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
+
+.Nach Abschluss
+* Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.
+* Wenn Sie Kontingente auf Volumes anwenden möchten, verwenden Sie ONTAP System Manager oder die ONTAP CLI.
++
+Mithilfe von Kontingenten können Sie den Speicherplatz und die Anzahl der von einem Benutzer, einer Gruppe oder einem Qtree verwendeten Dateien beschränken oder verfolgen.
+
+
+
+
+
+== Starten Sie ein Cloud Volumes ONTAP HA-Paar in Azure
+
+Wenn Sie ein Cloud Volumes ONTAP HA-Paar in Azure starten möchten, müssen Sie in der Konsole ein HA-System erstellen.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
+. [[Abonnieren]]Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Anweisungen.
+. Wenn Sie dazu aufgefordert werden, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Erstellen Sie einen Konsolenagenten"^] .
+. *Details und Anmeldeinformationen*: Ändern Sie optional die Azure-Anmeldeinformationen und das Abonnement, geben Sie einen Clusternamen an, fügen Sie bei Bedarf Tags hinzu und geben Sie dann die Anmeldeinformationen an.
++
+In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
+
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| Systemname | Die Konsole verwendet den Systemnamen, um sowohl das Cloud Volumes ONTAP -System als auch die virtuelle Azure-Maschine zu benennen.  Wenn Sie diese Option auswählen, wird der Name auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet. 
+
+
+| Ressourcengruppen-Tags | Tags sind Metadaten für Ihre Azure-Ressourcen.  Wenn Sie in dieses Feld Tags eingeben, fügt die Konsole sie der mit dem Cloud Volumes ONTAP -System verknüpften Ressourcengruppe hinzu.  Sie können beim Erstellen eines Systems bis zu vier Tags über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Tags beschränkt.  Informationen zu Tags finden Sie im https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure-Dokumentation: Verwenden von Tags zum Organisieren Ihrer Azure-Ressourcen"^] . 
+
+
+| Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
+
+
+| Anmeldeinformationen bearbeiten | Sie können für die Verwendung mit diesem Cloud Volumes ONTAP -System andere Azure-Anmeldeinformationen und ein anderes Azure-Abonnement auswählen.  Sie müssen dem ausgewählten Azure-Abonnement ein Azure Marketplace-Abonnement zuordnen, um ein Cloud Volumes ONTAP System mit nutzungsbasierter Bezahlung bereitzustellen. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["Erfahren Sie, wie Sie Anmeldeinformationen hinzufügen"^] . 
+|===
+. *Dienste*: Aktivieren oder deaktivieren Sie die einzelnen Dienste, je nachdem, ob Sie sie mit Cloud Volumes ONTAP verwenden möchten.
++
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Datenklassifizierung"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup und Recovery"^]
++
+
+TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
+
+
+
+. *HA-Bereitstellungsmodelle*:
++
+.. Wählen Sie *Einzelne Verfügbarkeitszone* oder *Mehrere Verfügbarkeitszonen*.
++
+*** Wählen Sie für einzelne Verfügbarkeitszonen eine Azure-Region, eine Verfügbarkeitszone, ein VNet und ein Subnetz aus.
++
+Ab Cloud Volumes ONTAP 9.15.1 können Sie VM-Instanzen (Virtual Machine) im HA-Modus in einzelnen Verfügbarkeitszonen (AZs) in Azure bereitstellen. Sie müssen eine Zone und eine Region auswählen, die diese Bereitstellung unterstützen.  Wenn die Zone oder Region die zonale Bereitstellung nicht unterstützt, wird der vorherige nicht zonale Bereitstellungsmodus für LRS verwendet.  Informationen zu den unterstützten Konfigurationen für gemeinsam genutzte verwaltete Datenträger finden Sie unterlink:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["HA-Konfiguration einer einzelnen Verfügbarkeitszone mit gemeinsam genutzten verwalteten Datenträgern"] .
+
+*** Wählen Sie für mehrere Verfügbarkeitszonen eine Region, ein VNet, ein Subnetz, eine Zone für Knoten 1 und eine Zone für Knoten 2 aus.
+
+
+.. Aktivieren Sie das Kontrollkästchen *Ich habe die Netzwerkkonnektivität überprüft...*.
+
+
+. *Konnektivität*: Wählen Sie eine neue oder vorhandene Ressourcengruppe und entscheiden Sie dann, ob Sie die vordefinierte Sicherheitsgruppe oder Ihre eigene verwenden möchten.
++
+In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
+
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| Ressourcengruppe  a| 
+Erstellen Sie eine neue Ressourcengruppe für Cloud Volumes ONTAP oder verwenden Sie eine vorhandene Ressourcengruppe.  Die bewährte Methode besteht darin, eine neue, dedizierte Ressourcengruppe für Cloud Volumes ONTAP zu verwenden.  Obwohl es möglich ist , Cloud Volumes ONTAP in einer vorhandenen, gemeinsam genutzten Ressourcengruppe bereitzustellen, wird dies aufgrund des Risikos eines Datenverlusts nicht empfohlen.  Weitere Einzelheiten finden Sie in der obigen Warnung.
+
+Sie müssen für jedes Cloud Volumes ONTAP HA-Paar, das Sie in Azure bereitstellen, eine dedizierte Ressourcengruppe verwenden.  In einer Ressourcengruppe wird nur ein HA-Paar unterstützt.  Bei der Konsole treten Verbindungsprobleme auf, wenn Sie versuchen, ein zweites Cloud Volumes ONTAP HA-Paar in einer Azure-Ressourcengruppe bereitzustellen.
+
+
+TIP: Wenn das von Ihnen verwendete Azure-Konto über die https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["erforderliche Berechtigungen"^] , entfernt die Konsole Cloud Volumes ONTAP -Ressourcen aus einer Ressourcengruppe, falls die Bereitstellung fehlschlägt oder gelöscht wird.
+
+
+
+| Generierte Sicherheitsgruppe  a| 
+Wenn Sie die Sicherheitsgruppe von der Konsole erstellen lassen, müssen Sie auswählen, wie Sie den Datenverkehr zulassen:
+
+** Wenn Sie *Nur ausgewähltes VNet* auswählen, ist die Quelle für eingehenden Datenverkehr der Subnetzbereich des ausgewählten VNet und der Subnetzbereich des VNet, in dem sich der Konsolenagent befindet.  Dies ist die empfohlene Option.
+** Wenn Sie *Alle VNets* auswählen, ist die Quelle für eingehenden Datenverkehr der IP-Bereich 0.0.0.0/0.
+
+
+
+
+| Vorhandene verwenden | Wenn Sie eine vorhandene Sicherheitsgruppe auswählen, muss diese die Anforderungen von Cloud Volumes ONTAP erfüllen. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules["Anzeigen der Standardsicherheitsgruppe"^] . 
+|===
+. *Abrechnungsmethoden und NSS-Konto*: Geben Sie an, welche Abrechnungsoption Sie mit diesem System verwenden möchten, und geben Sie dann ein NetApp Support Site-Konto an.
++
+** link:concept-licensing.html["Erfahren Sie mehr über die Lizenzierungsoptionen für Cloud Volumes ONTAP"^] .
+** link:task-set-up-licensing-azure.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
+
+
+. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder klicken Sie auf *Konfiguration ändern*.
++
+Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volumen angeben und anschließend die Konfiguration prüfen und freigeben.
+
+. *Lizenzierung*: Ändern Sie die Cloud Volumes ONTAP -Version nach Bedarf und wählen Sie einen virtuellen Maschinentyp aus.
++
+
+NOTE: Wenn für die ausgewählte Version ein neuerer Release Candidate, eine allgemeine Verfügbarkeit oder ein Patch-Release verfügbar ist, aktualisiert die Konsole das System beim Erstellen auf diese Version.  Das Update erfolgt beispielsweise, wenn Sie Cloud Volumes ONTAP 9.13.1 auswählen und 9.13.1 P4 verfügbar ist.  Das Update erfolgt nicht von einer Version zur nächsten, beispielsweise von 9.13 auf 9.14.
+
+. *Abonnieren Sie über den Azure Marketplace*: Befolgen Sie die Schritte, wenn die Konsole keine programmgesteuerten Bereitstellungen von Cloud Volumes ONTAP aktivieren konnte.
+. *Zugrunde liegende Speicherressourcen*: Wählen Sie Einstellungen für das anfängliche Aggregat: einen Datenträgertyp, eine Größe für jeden Datenträger und ob die Datenaufteilung auf Blob-Speicher aktiviert werden soll.
++
+Beachten Sie Folgendes:
+
++
+** Die Datenträgergröße gilt für alle Datenträger im anfänglichen Aggregat und für alle zusätzlichen Aggregate, die die Konsole erstellt, wenn Sie die einfache Bereitstellungsoption verwenden.  Mithilfe der erweiterten Zuordnungsoption können Sie Aggregate erstellen, die eine andere Festplattengröße verwenden.
++
+Hilfe zur Auswahl einer Festplattengröße finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionieren Sie Ihr System in Azure"^] .
+
+** Wenn der öffentliche Zugriff auf Ihr Speicherkonto innerhalb des VNet deaktiviert ist, können Sie das Daten-Tiering in Ihrem Cloud Volumes ONTAP System nicht aktivieren.  Weitere Informationen finden Sie unterlink:reference-networking-azure.html#security-group-rules["Sicherheitsgruppenregeln"] .
+** Sie können beim Erstellen oder Bearbeiten eines Volumes eine bestimmte Volume-Tiering-Richtlinie auswählen.
+** Wenn Sie das Daten-Tiering deaktivieren, können Sie es für nachfolgende Aggregate aktivieren.
++
+link:concept-data-tiering.html["Weitere Informationen zum Daten-Tiering"^] .
+
+** Ab Cloud Volumes ONTAP 9.15.0P1 werden Azure-Seitenblobs für neue Bereitstellungen mit Hochverfügbarkeitspaaren nicht mehr unterstützt.  Wenn Sie derzeit Azure-Seitenblobs in vorhandenen Bereitstellungen mit Hochverfügbarkeitspaaren verwenden, können Sie in den VMs der Edsv4- und Edsv5-Serie zu neueren VM-Instanztypen migrieren.
++
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Erfahren Sie mehr über unterstützte Konfigurationen in Azure"^] .
+
+
+
+. *Schreibgeschwindigkeit & WORM*:
++
+.. Wählen Sie bei Bedarf die Schreibgeschwindigkeit *Normal* oder *Hoch*.
++
+link:concept-write-speed.html["Erfahren Sie mehr über die Schreibgeschwindigkeit"^] .
+
+.. Aktivieren Sie bei Bedarf den WORM-Speicher (Write Once, Read Many).
++
+Diese Option ist nur für bestimmte VM-Typen verfügbar.  Informationen zu den unterstützten VM-Typen finden Sie unterlink:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Unterstützte Konfigurationen nach Lizenz für HA-Paare"^] .
+
++
+WORM kann nicht aktiviert werden, wenn die Datenschichtung für Cloud Volumes ONTAP Version 9.7 und darunter aktiviert wurde.  Das Zurücksetzen oder Downgrade auf Cloud Volumes ONTAP 9.8 ist nach der Aktivierung von WORM und Tiering blockiert.
+
++
+link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher"^] .
+
+.. Wenn Sie den WORM-Speicher aktivieren, wählen Sie die Aufbewahrungsdauer aus.
+
+
+. *Sichere Kommunikation mit Speicher und WORM*: Wählen Sie, ob eine HTTPS-Verbindung zu Azure-Speicherkonten aktiviert werden soll, und aktivieren Sie bei Bedarf den WORM-Speicher (Write Once, Read Many).
++
+Die HTTPS-Verbindung besteht von einem Cloud Volumes ONTAP 9.7 HA-Paar zu Azure Page Blob Storage-Konten.  Beachten Sie, dass das Aktivieren dieser Option die Schreibleistung beeinträchtigen kann.  Sie können die Einstellung nicht mehr ändern, nachdem Sie das System erstellt haben.
+
++
+link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher"^] .
+
++
+WORM kann nicht aktiviert werden, wenn die Datenschichtung aktiviert wurde.
+
++
+link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher"^] .
+
+. *Volume erstellen*: Geben Sie Details für das neue Volume ein oder klicken Sie auf *Überspringen*.
++
+link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"^] .
+
++
+Einige der Felder auf dieser Seite sind selbsterklärend.  In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
+
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| Größe | Die maximale Größe, die Sie eingeben können, hängt weitgehend davon ab, ob Sie Thin Provisioning aktivieren. Dadurch können Sie ein Volume erstellen, das größer ist als der ihm aktuell zur Verfügung stehende physische Speicher. 
+
+
+| Zugriffskontrolle (nur für NFS) | Eine Exportrichtlinie definiert die Clients im Subnetz, die auf das Volume zugreifen können. Standardmäßig gibt die Konsole einen Wert ein, der Zugriff auf alle Instanzen im Subnetz gewährt. 
+
+
+| Berechtigungen und Benutzer/Gruppen (nur für CIFS) | Mit diesen Feldern können Sie die Zugriffsebene auf eine Freigabe für Benutzer und Gruppen steuern (auch als Zugriffskontrolllisten oder ACLs bezeichnet). Sie können lokale oder Domänen-Windows-Benutzer oder -Gruppen oder UNIX-Benutzer oder -Gruppen angeben. Wenn Sie einen Windows-Domänenbenutzernamen angeben, müssen Sie die Domäne des Benutzers im Format Domäne\Benutzername angeben. 
+
+
+| Snapshot-Richtlinie | Eine Snapshot-Kopierrichtlinie gibt die Häufigkeit und Anzahl der automatisch erstellten NetApp Snapshot-Kopien an. Eine NetApp Snapshot-Kopie ist ein zeitpunktbezogenes Dateisystem-Image, das keine Auswirkungen auf die Leistung hat und nur minimalen Speicherplatz benötigt. Sie können die Standardrichtlinie oder keine auswählen.  Für vorübergehende Daten können Sie „Keine“ auswählen, beispielsweise „tempdb“ für Microsoft SQL Server. 
+
+
+| Erweiterte Optionen (nur für NFS) | Wählen Sie eine NFS-Version für das Volume aus: entweder NFSv3 oder NFSv4. 
+
+
+| Initiatorgruppe und IQN (nur für iSCSI) | iSCSI-Speicherziele werden als LUNs (logische Einheiten) bezeichnet und Hosts als Standardblockgeräte präsentiert.  Initiatorgruppen sind Tabellen mit iSCSI-Hostknotennamen und steuern, welche Initiatoren Zugriff auf welche LUNs haben. iSCSI-Ziele stellen über Standard-Ethernet-Netzwerkadapter (NICs), TCP-Offload-Engine-Karten (TOE) mit Software-Initiatoren, konvergente Netzwerkadapter (CNAs) oder dedizierte Hostbusadapter (HBAs) eine Verbindung zum Netzwerk her und werden durch iSCSI-qualifizierte Namen (IQNs) identifiziert.  Wenn Sie ein iSCSI-Volume erstellen, erstellt die Konsole automatisch eine LUN für Sie.  Wir haben es einfach gemacht, indem wir nur eine LUN pro Volume erstellt haben, sodass keine Verwaltung erforderlich ist.  Nachdem Sie das Volume erstellt haben,link:task-connect-lun.html["Verwenden Sie den IQN, um von Ihren Hosts aus eine Verbindung zum LUN herzustellen"] . 
+|===
++
+Das folgende Bild zeigt die erste Seite des Assistenten zur Volumeerstellung:
+
++
+image:screenshot_cot_vol.gif["Screenshot: Zeigt die ausgefüllte Volume-Seite für eine Cloud Volumes ONTAP -Instanz."]
+
+. *CIFS-Setup*: Wenn Sie das CIFS-Protokoll gewählt haben, richten Sie einen CIFS-Server ein.
++
+[cols="25,75"]
+|===
+| Feld | Beschreibung 
+
+
+| DNS Primäre und sekundäre IP-Adresse | Die IP-Adressen der DNS-Server, die die Namensauflösung für den CIFS-Server bereitstellen.  Die aufgelisteten DNS-Server müssen die Service Location Records (SRV) enthalten, die zum Auffinden der Active Directory-LDAP-Server und Domänencontroller für die Domäne erforderlich sind, der der CIFS-Server beitreten wird. 
+
+
+| Beitretende Active Directory-Domäne | Der FQDN der Active Directory (AD)-Domäne, der der CIFS-Server beitreten soll. 
+
+
+| Anmeldeinformationen, die zum Beitritt zur Domäne berechtigt sind | Der Name und das Kennwort eines Windows-Kontos mit ausreichenden Berechtigungen zum Hinzufügen von Computern zur angegebenen Organisationseinheit (OU) innerhalb der AD-Domäne. 
+
+
+| NetBIOS-Name des CIFS-Servers | Ein CIFS-Servername, der in der AD-Domäne eindeutig ist. 
+
+
+| Organisationseinheit | Die Organisationseinheit innerhalb der AD-Domäne, die mit dem CIFS-Server verknüpft werden soll.  Der Standardwert ist CN=Computers.  Um Azure AD Domain Services als AD-Server für Cloud Volumes ONTAP zu konfigurieren, sollten Sie in dieses Feld *OU=AADDC Computers* oder *OU=AADDC Users* eingeben.https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure-Dokumentation: Erstellen einer Organisationseinheit (OU) in einer von Azure AD Domain Services verwalteten Domäne"^] 
+
+
+| DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
+
+
+| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
+|===
+. *Nutzungsprofil, Datenträgertyp und Tiering-Richtlinie*: Wählen Sie aus, ob Sie Speichereffizienzfunktionen aktivieren möchten, und ändern Sie bei Bedarf die Volume-Tiering-Richtlinie.
++
+Weitere Informationen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile["Auswählen eines Volume-Nutzungsprofils"^] ,link:concept-data-tiering.html["Übersicht über Data Tiering"^] , Und https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Welche Inline-Speichereffizienzfunktionen werden mit CVO unterstützt?"^]
+
+. *Überprüfen und genehmigen*: Überprüfen und bestätigen Sie Ihre Auswahl.
++
+.. Überprüfen Sie die Details zur Konfiguration.
+.. Klicken Sie auf *Weitere Informationen*, um Details zum Support und den Azure-Ressourcen anzuzeigen, die die Konsole erwerben wird.
+.. Aktivieren Sie die Kontrollkästchen *Ich verstehe...*.
+.. Klicken Sie auf *Los*.
+
+
+
+
+.Ergebnis
+Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fortschritt auf der Audit-Seite verfolgen.
+
+Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
+
+Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
+
+.Nach Abschluss
+* Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.
+* Wenn Sie Kontingente auf Volumes anwenden möchten, verwenden Sie ONTAP System Manager oder die ONTAP CLI.
++
+Mithilfe von Kontingenten können Sie den Speicherplatz und die Anzahl der von einem Benutzer, einer Gruppe oder einem Qtree verwendeten Dateien beschränken oder verfolgen.
+
+

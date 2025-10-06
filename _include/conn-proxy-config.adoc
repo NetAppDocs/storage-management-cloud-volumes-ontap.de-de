@@ -1,0 +1,15 @@
+= Netzwerkproxykonfiguration des NetApp Console-Agenten
+:allow-uri-read: 
+
+
+
+
+=== Netzwerkproxykonfiguration des NetApp Console-Agenten
+
+Sie können die Proxyserverkonfiguration des NetApp Console-Agenten verwenden, um ausgehenden Internetzugriff von Cloud Volumes ONTAP zu aktivieren.  Die Konsole unterstützt zwei Arten von Proxys:
+
+* *Expliziter Proxy*: Der ausgehende Datenverkehr von Cloud Volumes ONTAP verwendet die HTTP-Adresse des Proxyservers, der während der Proxykonfiguration des Konsolenagenten angegeben wurde.  Der Administrator hat möglicherweise auch Benutzeranmeldeinformationen und Stammzertifizierungsstellenzertifikate für eine zusätzliche Authentifizierung konfiguriert.  Wenn ein Stamm-CA-Zertifikat für den expliziten Proxy verfügbar ist, stellen Sie sicher , dass Sie dasselbe Zertifikat erhalten und mithilfe des https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: Sicherheitszertifikat installieren"^] Befehl.
+* *Transparenter Proxy*: Das Netzwerk ist so konfiguriert, dass ausgehender Datenverkehr von Cloud Volumes ONTAP automatisch über den Proxy für den Konsolenagenten geleitet wird.  Beim Einrichten eines transparenten Proxys muss der Administrator für die Konnektivität von Cloud Volumes ONTAP nur ein Stamm-CA-Zertifikat bereitstellen, nicht die HTTP-Adresse des Proxyservers.  Stellen Sie sicher, dass Sie dasselbe Stamm-CA-Zertifikat erhalten und auf Ihr Cloud Volumes ONTAP System hochladen, indem Sie das https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: Sicherheitszertifikat installieren"^] Befehl.
+
+
+Informationen zum Konfigurieren von Proxy-Servern finden Sie im https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Konfigurieren des Konsolenagenten zur Verwendung eines Proxyservers"^] .

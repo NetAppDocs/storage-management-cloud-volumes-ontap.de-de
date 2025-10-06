@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: concept-worm.html 
+keywords: worm, write once, read many, snaplock, retain, retention, period, cloud worm, worm storage, tiering 
+summary: 'Sie können den WORM-Speicher (Write Once, Read Many) auf einem Cloud Volumes ONTAP System aktivieren, um Dateien für einen angegebenen Aufbewahrungszeitraum unverändert aufzubewahren.  Der Cloud-WORM-Speicher basiert auf der SnapLock -Technologie, was bedeutet, dass WORM-Dateien auf Dateiebene geschützt sind.' 
+---
+= Erfahren Sie mehr über WORM-Speicher auf Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können den WORM-Speicher (Write Once, Read Many) auf einem Cloud Volumes ONTAP System aktivieren, um Dateien für einen angegebenen Aufbewahrungszeitraum unverändert aufzubewahren.  Der Cloud-WORM-Speicher basiert auf der SnapLock -Technologie, was bedeutet, dass WORM-Dateien auf Dateiebene geschützt sind.
+
+Die WORM-Funktion steht für die Verwendung mit BYOL-Lizenzen (Bring Your Own License) und Marktplatzabonnements für Ihre Lizenzen ohne zusätzliche Kosten zur Verfügung.  Wenden Sie sich an Ihren NetApp -Vertriebsmitarbeiter, um WORM zu Ihrer aktuellen Lizenz hinzuzufügen.
+
+
+
+== So funktioniert WORM-Speicher
+
+Sobald eine Datei im WORM-Speicher abgelegt wurde, kann sie nicht mehr geändert werden, auch nicht nach Ablauf der Aufbewahrungsfrist.  Eine manipulationssichere Uhr stellt fest, wann die Aufbewahrungsfrist für eine WORM-Datei abgelaufen ist.
+
+Nach Ablauf der Aufbewahrungsfrist sind Sie für die Löschung nicht mehr benötigter Dateien verantwortlich.
+
+
+
+== WORM-Speicher aktivieren
+
+Wie Sie WORM-Speicher aktivieren, hängt von der von Ihnen verwendeten Cloud Volumes ONTAP Version ab.
+
+
+
+=== Version 9.10.1 und höher
+
+Ab Cloud Volumes ONTAP 9.10.1 haben Sie die Möglichkeit, WORM auf Volume-Ebene zu aktivieren oder zu deaktivieren.
+
+Wenn Sie ein Cloud Volumes ONTAP -System hinzufügen, werden Sie aufgefordert, den WORM-Speicher zu aktivieren oder zu deaktivieren:
+
+* Wenn Sie beim Hinzufügen eines Systems den WORM-Speicher aktivieren, ist WORM für jedes Volume aktiviert, das Sie über die NetApp -Konsole erstellen.  Sie können jedoch den ONTAP System Manager oder die ONTAP CLI verwenden, um Volumes zu erstellen, bei denen WORM deaktiviert ist.
+* Wenn Sie den WORM-Speicher beim Hinzufügen eines Systems deaktivieren, ist WORM für jedes Volume deaktiviert, das Sie über die Konsole, den ONTAP System Manager oder die ONTAP CLI erstellen.
+
+
+
+
+=== Version 9.10.0 und früher
+
+Sie können WORM-Speicher auf einem Cloud Volumes ONTAP -System aktivieren, wenn Sie ein neues System hinzufügen.  Für jedes Volume, das Sie über die Konsole erstellen, ist WORM aktiviert.  Sie können den WORM-Speicher auf einzelnen Volumes nicht deaktivieren.
+
+
+
+== Dateien an WORM übergeben
+
+Sie können eine Anwendung verwenden, um Dateien über NFS oder CIFS an WORM zu übergeben, oder die ONTAP CLI verwenden, um Dateien automatisch an WORM zu übergeben.  Sie können auch eine WORM-Anfügedatei verwenden, um inkrementell geschriebene Daten wie Protokollinformationen aufzubewahren.
+
+Nachdem Sie den WORM-Speicher auf einem Cloud Volumes ONTAP System aktiviert haben, müssen Sie die ONTAP CLI für die gesamte Verwaltung des WORM-Speichers verwenden.  Anweisungen hierzu finden Sie im http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html["ONTAP -Dokumentation zu SnapLock"^] .
+
+
+
+== Aktivieren von WORM auf einem Cloud Volumes ONTAP System
+
+Sie können den WORM-Speicher aktivieren, wenn Sie ein Cloud Volumes ONTAP -System auf der Konsole erstellen.  Sie können WORM auf einem System auch aktivieren, wenn WORM während der Erstellung nicht darauf aktiviert wurde.  Nachdem Sie es aktiviert haben, können Sie WORM nicht mehr deaktivieren.
+
+.Informationen zu diesem Vorgang
+* WORM wird auf ONTAP 9.10.1 und höher unterstützt.
+* WORM mit Backup wird auf ONTAP 9.11.1 und höher unterstützt.
+
+
+.Schritte
+. Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, auf dem Sie WORM aktivieren möchten.
+. Klicken Sie auf der Registerkarte „Übersicht“ auf den Bereich „Funktionen“ und dann auf das Stiftsymbol neben *WORM*.
++
+Wenn WORM auf dem System bereits aktiviert ist, ist das Bleistiftsymbol deaktiviert.
+
+. Legen Sie auf der Seite *WORM* die Aufbewahrungsdauer für die Cluster-Compliance-Clock fest.
++
+Weitere Informationen finden Sie im https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["ONTAP -Dokumentation: Initialisieren der Compliance Clock"^] .
+
+. Klicken Sie auf *Festlegen*.
+
+
+.Nach Abschluss
+Sie können den Status von *WORM* im Bereich „Funktionen“ überprüfen.  Nachdem WORM aktiviert wurde, wird die SnapLock -Lizenz automatisch auf dem Cluster installiert.  Sie können die SnapLock -Lizenz im ONTAP System Manager anzeigen.
+
+
+
+== Löschen von WORM-Dateien
+
+Sie können WORM-Dateien während der Aufbewahrungsfrist mithilfe der Funktion zum privilegierten Löschen löschen.
+
+Anweisungen hierzu finden Sie im https://docs.netapp.com/us-en/ontap/snaplock/delete-worm-files-concept.html["ONTAP-Dokumentation"^] .
+
+
+
+== WORM und Daten-Tiering
+
+Wenn Sie ein neues Cloud Volumes ONTAP 9.8-System oder höher erstellen, können Sie sowohl Data Tiering als auch WORM-Speicher zusammen aktivieren.  Durch die Aktivierung der Datenschichtung mit WORM-Speicher können Sie die Daten in einem Objektspeicher in der Cloud schichten.
+
+Sie sollten Folgendes über die Aktivierung von Daten-Tiering und WORM-Speicher wissen:
+
+* Daten, die auf Objektspeicher verteilt sind, umfassen nicht die ONTAP WORM-Funktionalität.  Um die End-to-End-WORM-Fähigkeit sicherzustellen, müssen Sie die Bucket-Berechtigungen richtig einrichten.
+* Die im Objektspeicher abgelegten Daten verfügen nicht über die WORM-Funktionalität. Das bedeutet, dass technisch gesehen jeder mit vollem Zugriff auf Buckets und Container die von ONTAP abgelegten Objekte löschen kann.
+* Das Zurücksetzen oder Downgrade auf Cloud Volumes ONTAP 9.8 ist nach der Aktivierung von WORM und Tiering blockiert.
+
+
+
+
+== Einschränkungen
+
+* WORM-Speicher in Cloud Volumes ONTAP wird nach dem Modell eines „vertrauenswürdigen Speicheradministrators“ betrieben.  Obwohl WORM-Dateien vor Änderungen oder Modifikationen geschützt sind, können Volumes von einem Cluster-Administrator gelöscht werden, auch wenn diese Volumes noch nicht abgelaufene WORM-Daten enthalten.
+* Zusätzlich zum Modell des vertrauenswürdigen Speicheradministrators wird WORM-Speicher in Cloud Volumes ONTAP implizit auch nach dem Modell eines „vertrauenswürdigen Cloud-Administrators“ betrieben.  Ein Cloud-Administrator könnte WORM-Daten vor ihrem Ablaufdatum löschen, indem er den Cloud-Speicher direkt beim Cloud-Anbieter entfernt oder bearbeitet.
+
+
+.Weiterführender Link
+* link:reference-worm-snaplock.html["Erstellen Sie manipulationssichere Snapshot-Kopien für den WORM-Speicher"]
+

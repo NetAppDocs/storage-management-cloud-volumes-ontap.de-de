@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: task-overriding-cifs-locks.html 
+keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover, storage giveback, giveback 
+summary: Der Organisations- oder Kontoadministrator kann in der NetApp Konsole eine Einstellung aktivieren, die Probleme mit der Rückgabe von Cloud Volumes ONTAP -Speicher während Azure-Wartungsereignissen verhindert.  Wenn Sie diese Einstellung aktivieren, blockiert Cloud Volumes ONTAP CIFS-Sperren und setzt aktive CIFS-Sitzungen zurück. 
+---
+= Außerkraftsetzen von CIFS-Sperren für Cloud Volumes ONTAP HA-Paare in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der Organisations- oder Kontoadministrator kann in der NetApp Konsole eine Einstellung aktivieren, die Probleme mit der Rückgabe von Cloud Volumes ONTAP -Speicher während Azure-Wartungsereignissen verhindert.  Wenn Sie diese Einstellung aktivieren, blockiert Cloud Volumes ONTAP CIFS-Sperren und setzt aktive CIFS-Sitzungen zurück.
+
+.Informationen zu diesem Vorgang
+Microsoft Azure plant regelmäßige Wartungsereignisse auf seinen virtuellen Maschinen.  Wenn bei einem Cloud Volumes ONTAP HA-Paar ein Wartungsereignis auftritt, leitet das HA-Paar die Speicherübernahme ein.  Wenn während dieses Wartungsereignisses aktive CIFS-Sitzungen vorhanden sind, können die Sperren der CIFS-Dateien die Speicherrückgabe verhindern.
+
+Wenn Sie diese Einstellung aktivieren, wird Cloud Volumes ONTAP die Sperren blockieren und die aktiven CIFS-Sitzungen zurücksetzen.  Dadurch kann das HA-Paar während dieser Wartungsereignisse die Speicherrückgabe abschließen.
+
+
+CAUTION: Dieser Vorgang kann für CIFS-Clients störend sein.  Daten, die nicht von CIFS-Clients festgeschrieben werden, können verloren gehen.
+
+.Bevor Sie beginnen
+Sie müssen einen Konsolenagenten erstellen, bevor Sie die Konsoleneinstellungen ändern können. https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector["Erfahren Sie mehr"^] .
+
+.Schritte
+. Gehen Sie im linken Navigationsbereich zu *Administration > Agenten*.
+. Klicken Sie auf dasimage:icon-action.png[""] Symbol für den Konsolenagenten, der Ihr Cloud Volumes ONTAP -System verwaltet.
+. Wählen Sie * Cloud Volumes ONTAP -Einstellungen*.
++
+image::screenshot-settings-cloud-volumes-ontap.png[Ein Screenshot der Cloud Volumes ONTAP -Einstellungsoption unter dem Einstellungssymbol.]
+
+. Klicken Sie unter *Azure* auf *Azure CIFS-Sperren für Azure HA-Systeme*.
+. Klicken Sie auf das Kontrollkästchen, um die Funktion zu aktivieren, und klicken Sie dann auf *Speichern*.
+

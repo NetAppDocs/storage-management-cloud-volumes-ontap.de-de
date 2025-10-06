@@ -1,0 +1,11 @@
+= Erkennung von Bereitstellungen, die über den Azure-Marktplatz in BlueXP vorgenommen wurden
+:allow-uri-read: 
+
+
+
+
+=== Erkennung von Bereitstellungen, die über den Azure-Marktplatz in BlueXP vorgenommen wurden
+
+BlueXP verfügt jetzt über die Möglichkeit, die direkt über den Azure-Marktplatz bereitgestellten Cloud Volumes ONTAP -Systeme zu erkennen.  Dies bedeutet, dass Sie diese Systeme jetzt wie jedes andere Cloud Volumes ONTAP System als Arbeitsumgebungen in BlueXP hinzufügen und verwalten können.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploy-cvo-azure-mktplc.html["Stellen Sie Cloud Volumes ONTAP vom Azure Marketplace bereit"^]

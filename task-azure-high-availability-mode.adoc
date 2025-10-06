@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task-azure-high-availability-mode.html 
+keywords: high availability mode, EnableHighAvailabilityMode, action required, nfsv4 
+summary: Der Hochverfügbarkeitsmodus von Microsoft Azure sollte aktiviert werden, um ungeplante Failover-Zeiten zu reduzieren und die NFSv4-Unterstützung für Cloud Volumes ONTAP zu aktivieren. 
+---
+= Aktivieren Sie den Hochverfügbarkeitsmodus für Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der Hochverfügbarkeitsmodus (HA) von Microsoft Azure sollte aktiviert werden, um ungeplante Failover-Zeiten zu reduzieren und die NFSv4-Unterstützung für Cloud Volumes ONTAP zu aktivieren.  In diesem Modus können Ihre Cloud Volumes ONTAP HA-Knoten bei ungeplanten Failovers auf CIFS- und NFSv4-Clients eine niedrige Recovery Time Objective (RTO) von 60 Sekunden erreichen.
+
+Ab Cloud Volumes ONTAP 9.10.1 haben wir die ungeplante Failover-Zeit für Cloud Volumes ONTAP HA-Paare, die in Microsoft Azure ausgeführt werden, reduziert und Unterstützung für NFSv4 hinzugefügt.  Um diese Verbesserungen für Cloud Volumes ONTAP verfügbar zu machen, müssen Sie die Hochverfügbarkeitsfunktion in Ihrem Azure-Abonnement aktivieren.
+
+Die NetApp Konsole fordert Sie zur Eingabe dieser Details auf, wenn die Funktion für ein Azure-Abonnement aktiviert werden muss.
+
+Beachten Sie Folgendes:
+
+* Es gibt keine Probleme mit der Hochverfügbarkeit Ihres Cloud Volumes ONTAP HA-Paares.  Diese Azure-Funktion arbeitet mit ONTAP zusammen, um die vom Client beobachtete Anwendungsausfallzeit für NFS-Protokolle zu reduzieren, die sich aus ungeplanten Failover-Ereignissen ergibt.
+* Das Aktivieren dieser Funktion hat keine Unterbrechungen für Cloud Volumes ONTAP HA-Paare.
+* Das Aktivieren dieser Funktion für Ihr Azure-Abonnement verursacht keine Probleme mit anderen VMs.
+* Cloud Volumes ONTAP verwendet einen internen Azure Load Balancer während Failovers von Cluster- und SVM-Management-LIFs auf CIFS- und NFS-Clients.
+* Wenn der HA-Modus aktiviert ist, scannt die Konsole das System alle 12 Stunden, um die internen Azure Load Balancer-Regeln zu aktualisieren.
+
+
+Ein Azure-Benutzer mit „Besitzer“-Berechtigungen kann die Funktion über die Azure CLI aktivieren.
+
+.Schritte
+. https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart["Greifen Sie über das Azure-Portal auf die Azure Cloud Shell zu"^]
+. Registrieren Sie die Funktion für den Hochverfügbarkeitsmodus:
++
+[source, azurecli]
+----
+az account set -s AZURE_SUBSCRIPTION_NAME_OR_ID
+az feature register --name EnableHighAvailabilityMode --namespace Microsoft.Network
+az provider register -n Microsoft.Network
+----
+. Überprüfen Sie optional, ob die Funktion jetzt registriert ist:
++
+[source, azurecli]
+----
+az feature show --name EnableHighAvailabilityMode --namespace Microsoft.Network
+----
++
+Die Azure CLI sollte ein Ergebnis ähnlich dem folgenden zurückgeben:
+
++
+[listing]
+----
+{
+  "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Features/providers/Microsoft.Network/features/EnableHighAvailabilityMode",
+  "name": "Microsoft.Network/EnableHighAvailabilityMode",
+  "properties": {
+    "state": "Registered"
+  },
+  "type": "Microsoft.Features/providers/features"
+}
+----
+

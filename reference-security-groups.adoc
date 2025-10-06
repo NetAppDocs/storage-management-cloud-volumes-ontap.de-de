@@ -1,0 +1,364 @@
+---
+sidebar: sidebar 
+permalink: reference-security-groups.html 
+keywords: security group, security groups, rules, ports, aws, inbound, outbound, rules 
+summary: Die NetApp Konsole erstellt AWS-Sicherheitsgruppen, die die eingehenden und ausgehenden Regeln enthalten, die Cloud Volumes ONTAP für einen erfolgreichen Betrieb benötigt.  Möglicherweise möchten Sie zu Testzwecken auf die Ports verweisen oder wenn Sie lieber Ihre eigenen Sicherheitsgruppen verwenden möchten. 
+---
+= AWS-Sicherheitsgruppen-Ein- und Ausgangsregeln für Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die NetApp -Konsole erstellt AWS-Sicherheitsgruppen, die die eingehenden und ausgehenden Regeln enthalten, die Cloud Volumes ONTAP für einen erfolgreichen Betrieb benötigt.  Möglicherweise möchten Sie zu Testzwecken auf die Ports verweisen oder wenn Sie lieber Ihre eigenen Sicherheitsgruppen verwenden möchten.
+
+
+
+== Regeln für Cloud Volumes ONTAP
+
+Die Sicherheitsgruppe für Cloud Volumes ONTAP erfordert sowohl eingehende als auch ausgehende Regeln.
+
+
+
+=== Eingehende Regeln
+
+Wenn Sie ein Cloud Volumes ONTAP -System hinzufügen und eine vordefinierte Sicherheitsgruppe auswählen, können Sie den Datenverkehr innerhalb einer der folgenden Gruppen zulassen:
+
+* *Nur ausgewählte VPC*: Die Quelle für eingehenden Datenverkehr ist der Subnetzbereich der VPC für das Cloud Volumes ONTAP -System und der Subnetzbereich der VPC, in der sich der Konsolenagent befindet.  Dies ist die empfohlene Option.
+* *Alle VPCs*: Die Quelle für eingehenden Datenverkehr ist der IP-Bereich 0.0.0.0/0.
+
+
+[cols="10,10,80"]
+|===
+| Protokoll | Hafen | Zweck 
+
+
+| Alle ICMP | Alle | Pingen der Instanz 
+
+
+| HTTP | 80 | HTTP-Zugriff auf die ONTAP System Manager-Webkonsole über die IP-Adresse des Cluster-Management-LIF 
+
+
+| HTTPS | 443 | Konnektivität mit dem Konsolenagenten und HTTPS-Zugriff auf die ONTAP System Manager-Webkonsole unter Verwendung der IP-Adresse des Cluster-Management-LIF 
+
+
+| SSH | 22 | SSH-Zugriff auf die IP-Adresse des Cluster-Management-LIF oder eines Node-Management-LIF 
+
+
+| TCP | 111 | Remote Procedure Call für NFS 
+
+
+| TCP | 139 | NetBIOS-Dienstsitzung für CIFS 
+
+
+| TCP | 161-162 | Einfaches Netzwerkverwaltungsprotokoll 
+
+
+| TCP | 445 | Microsoft SMB/CIFS über TCP mit NetBIOS-Framing 
+
+
+| TCP | 635 | NFS-Mount 
+
+
+| TCP | 749 | Kerberos 
+
+
+| TCP | 2049 | NFS-Server-Daemon 
+
+
+| TCP | 3260 | iSCSI-Zugriff über das iSCSI-Daten-LIF 
+
+
+| TCP | 4045 | NFS-Sperrdaemon 
+
+
+| TCP | 4046 | Netzwerkstatusmonitor für NFS 
+
+
+| TCP | 10000 | Sicherung mit NDMP 
+
+
+| TCP | 11104 | Verwaltung von Intercluster-Kommunikationssitzungen für SnapMirror 
+
+
+| TCP | 11105 | SnapMirror Datenübertragung mithilfe von Intercluster-LIFs 
+
+
+| UDP | 111 | Remote Procedure Call für NFS 
+
+
+| UDP | 161-162 | Einfaches Netzwerkverwaltungsprotokoll 
+
+
+| UDP | 635 | NFS-Mount 
+
+
+| UDP | 2049 | NFS-Server-Daemon 
+
+
+| UDP | 4045 | NFS-Sperrdaemon 
+
+
+| UDP | 4046 | Netzwerkstatusmonitor für NFS 
+
+
+| UDP | 4049 | NFS-Rquotad-Protokoll 
+|===
+
+
+=== Ausgangsregeln
+
+Die vordefinierte Sicherheitsgruppe für Cloud Volumes ONTAP öffnet den gesamten ausgehenden Datenverkehr. Wenn das akzeptabel ist, befolgen Sie die grundlegenden Regeln für ausgehende Nachrichten. Wenn Sie strengere Regeln benötigen, verwenden Sie die erweiterten Ausgangsregeln.
+
+
+
+==== Grundlegende Ausgangsregeln
+
+Die vordefinierte Sicherheitsgruppe für Cloud Volumes ONTAP umfasst die folgenden ausgehenden Regeln.
+
+[cols="20,20,60"]
+|===
+| Protokoll | Hafen | Zweck 
+
+
+| Alle ICMP | Alle | Der gesamte ausgehende Verkehr 
+
+
+| Alle TCP | Alle | Der gesamte ausgehende Verkehr 
+
+
+| Alle UDP | Alle | Der gesamte ausgehende Verkehr 
+|===
+
+
+==== Erweiterte Ausgangsregeln
+
+Wenn Sie strenge Regeln für ausgehenden Datenverkehr benötigen, können Sie die folgenden Informationen verwenden, um nur die Ports zu öffnen, die für die ausgehende Kommunikation von Cloud Volumes ONTAP erforderlich sind.
+
+
+NOTE: Die Quelle ist die Schnittstelle (IP-Adresse) auf dem Cloud Volumes ONTAP -System.
+
+[cols="10,10,6,20,20,34"]
+|===
+| Service | Protokoll | Hafen | Quelle | Ziel | Zweck 
+
+
+.18+| Active Directory | TCP | 88 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | Kerberos V-Authentifizierung 
+
+
+| UDP | 137 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | NetBIOS-Namensdienst 
+
+
+| UDP | 138 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | NetBIOS-Datagrammdienst 
+
+
+| TCP | 139 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | NetBIOS-Dienstsitzung 
+
+
+| TCP und UDP | 389 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | LDAP 
+
+
+| TCP | 445 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | Microsoft SMB/CIFS über TCP mit NetBIOS-Framing 
+
+
+| TCP | 464 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | Kerberos V Passwort ändern & festlegen (SET_CHANGE) 
+
+
+| UDP | 464 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | Kerberos-Schlüsselverwaltung 
+
+
+| TCP | 749 | Knotenverwaltung LIF | Active Directory-Gesamtstruktur | Kerberos V Passwort ändern und festlegen (RPCSEC_GSS) 
+
+
+| TCP | 88 | Daten-LIF (NFS, CIFS, iSCSI) | Active Directory-Gesamtstruktur | Kerberos V-Authentifizierung 
+
+
+| UDP | 137 | Daten-LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | NetBIOS-Namensdienst 
+
+
+| UDP | 138 | Daten-LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | NetBIOS-Datagrammdienst 
+
+
+| TCP | 139 | Daten-LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | NetBIOS-Dienstsitzung 
+
+
+| TCP und UDP | 389 | Daten-LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | LDAP 
+
+
+| TCP | 445 | Daten-LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Microsoft SMB/CIFS über TCP mit NetBIOS-Framing 
+
+
+| TCP | 464 | Daten-LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Kerberos V Passwort ändern & festlegen (SET_CHANGE) 
+
+
+| UDP | 464 | Daten-LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Kerberos-Schlüsselverwaltung 
+
+
+| TCP | 749 | Daten-LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Kerberos V Passwort ändern & festlegen (RPCSEC_GSS) 
+
+
+.3+| AutoSupport | HTTPS | 443 | Knotenverwaltung LIF | mysupport.netapp.com | AutoSupport (HTTPS ist die Standardeinstellung) 
+
+
+| HTTP | 80 | Knotenverwaltung LIF | mysupport.netapp.com | AutoSupport (nur wenn das Transportprotokoll von HTTPS auf HTTP geändert wird) 
+
+
+| TCP | 3128 | Knotenverwaltung LIF | Konsolenagent | Senden von AutoSupport -Nachrichten über einen Proxyserver auf dem Konsolenagenten, wenn keine ausgehende Internetverbindung verfügbar ist 
+
+
+| Sicherung auf S3 | TCP | 5010 | Intercluster LIF | Sicherungsendpunkt oder Wiederherstellungsendpunkt | Sicherungs- und Wiederherstellungsvorgänge für die Funktion „Backup to S3“ 
+
+
+.3+| Cluster | Der gesamte Verkehr | Der gesamte Verkehr | Alle LIFs auf einem Knoten | Alle LIFs auf dem anderen Knoten | Intercluster-Kommunikation (nur Cloud Volumes ONTAP HA) 
+
+
+| TCP | 3000 | Knotenverwaltung LIF | HA-Mediator | ZAPI-Aufrufe (nur Cloud Volumes ONTAP HA) 
+
+
+| ICMP | 1 | Knotenverwaltung LIF | HA-Mediator | Keep-Alive (nur Cloud Volumes ONTAP HA) 
+
+
+| Konfigurationssicherungen | HTTP | 80 | Knotenverwaltung LIF | \http://<IP-Adresse des Konsolenagenten>/occm/offboxconfig | Senden Sie Konfigurationssicherungen an den Konsolenagenten.link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html["ONTAP-Dokumentation"^] 
+
+
+| DHCP | UDP | 68 | Knotenverwaltung LIF | DHCP | DHCP-Client für die Ersteinrichtung 
+
+
+| DHCPS | UDP | 67 | Knotenverwaltung LIF | DHCP | DHCP-Server 
+
+
+| DNS | UDP | 53 | Knotenverwaltungs-LIF und Daten-LIF (NFS, CIFS) | DNS | DNS 
+
+
+| NDMP | TCP | 18600–18699 | Knotenverwaltung LIF | Zielserver | NDMP-Kopie 
+
+
+| SMTP | TCP | 25 | Knotenverwaltung LIF | Mailserver | SMTP-Benachrichtigungen, können für AutoSupport verwendet werden 
+
+
+.4+| SNMP | TCP | 161 | Knotenverwaltung LIF | Monitorserver | Überwachung durch SNMP-Traps 
+
+
+| UDP | 161 | Knotenverwaltung LIF | Monitorserver | Überwachung durch SNMP-Traps 
+
+
+| TCP | 162 | Knotenverwaltung LIF | Monitorserver | Überwachung durch SNMP-Traps 
+
+
+| UDP | 162 | Knotenverwaltung LIF | Monitorserver | Überwachung durch SNMP-Traps 
+
+
+.2+| SnapMirror | TCP | 11104 | Intercluster LIF | ONTAP Intercluster-LIFs | Verwaltung von Intercluster-Kommunikationssitzungen für SnapMirror 
+
+
+| TCP | 11105 | Intercluster LIF | ONTAP Intercluster-LIFs | SnapMirror -Datenübertragung 
+
+
+| Syslog | UDP | 514 | Knotenverwaltung LIF | Syslog-Server | Syslog-Weiterleitungsnachrichten 
+|===
+
+
+== Regeln für die externe Sicherheitsgruppe des HA-Mediators
+
+Die vordefinierte externe Sicherheitsgruppe für den Cloud Volumes ONTAP HA-Mediator umfasst die folgenden eingehenden und ausgehenden Regeln.
+
+
+
+=== Eingehende Regeln
+
+Die vordefinierte Sicherheitsgruppe für den HA-Mediator enthält die folgende eingehende Regel.
+
+[cols="20,20,20,40"]
+|===
+| Protokoll | Hafen | Quelle | Zweck 
+
+
+| TCP | 3000 | CIDR des Konsolenagenten | RESTful-API-Zugriff vom Konsolenagenten 
+|===
+
+
+=== Ausgangsregeln
+
+Die vordefinierte Sicherheitsgruppe für den HA-Mediator öffnet den gesamten ausgehenden Datenverkehr. Wenn das akzeptabel ist, befolgen Sie die grundlegenden Regeln für ausgehende Nachrichten. Wenn Sie strengere Regeln benötigen, verwenden Sie die erweiterten Ausgangsregeln.
+
+
+
+==== Grundlegende Ausgangsregeln
+
+Die vordefinierte Sicherheitsgruppe für den HA-Mediator umfasst die folgenden ausgehenden Regeln.
+
+[cols="20,20,60"]
+|===
+| Protokoll | Hafen | Zweck 
+
+
+| Alle TCP | Alle | Der gesamte ausgehende Verkehr 
+
+
+| Alle UDP | Alle | Der gesamte ausgehende Verkehr 
+|===
+
+
+==== Erweiterte Ausgangsregeln
+
+Wenn Sie strenge Regeln für den ausgehenden Datenverkehr benötigen, können Sie die folgenden Informationen verwenden, um nur die Ports zu öffnen, die für die ausgehende Kommunikation durch den HA-Mediator erforderlich sind.
+
+[cols="10,10,30,40"]
+|===
+| Protokoll | Hafen | Ziel | Zweck 
+
+
+| HTTP | 80 | IP-Adresse des Konsolenagenten auf der AWS EC2-Instanz | Upgrades für den Mediator herunterladen 
+
+
+| HTTPS | 443 | ec2.amazonaws.com | Unterstützung beim Speicherfailover 
+
+
+| UDP | 53 | ec2.amazonaws.com | Unterstützung beim Speicherfailover 
+|===
+
+NOTE: Anstatt die Ports 443 und 53 zu öffnen, können Sie einen Schnittstellen-VPC-Endpunkt vom Zielsubnetz zum AWS EC2-Dienst erstellen.
+
+
+
+== Regeln für die interne Sicherheitsgruppe der HA-Konfiguration
+
+Die vordefinierte interne Sicherheitsgruppe für eine Cloud Volumes ONTAP HA-Konfiguration umfasst die folgenden Regeln.  Diese Sicherheitsgruppe ermöglicht die Kommunikation zwischen den HA-Knoten und zwischen dem Mediator und den Knoten.
+
+Die Konsole erstellt immer diese Sicherheitsgruppe.  Sie haben nicht die Möglichkeit, Ihre eigenen zu verwenden.
+
+
+
+=== Eingehende Regeln
+
+Die vordefinierte Sicherheitsgruppe umfasst die folgenden eingehenden Regeln.
+
+[cols="20,20,60"]
+|===
+| Protokoll | Hafen | Zweck 
+
+
+| Der gesamte Verkehr | Alle | Kommunikation zwischen dem HA-Mediator und den HA-Knoten 
+|===
+
+
+=== Ausgangsregeln
+
+Die vordefinierte Sicherheitsgruppe umfasst die folgenden ausgehenden Regeln.
+
+[cols="20,20,60"]
+|===
+| Protokoll | Hafen | Zweck 
+
+
+| Der gesamte Verkehr | Alle | Kommunikation zwischen dem HA-Mediator und den HA-Knoten 
+|===
+
+
+== Regeln für den Konsolenagenten
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["Sicherheitsgruppenregeln für den Konsolenagenten anzeigen"^]

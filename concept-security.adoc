@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: concept-security.html 
+keywords: security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, netapp volume encryption, nve, volume encryption, key management server, ransomware, fpolicy, snapshots 
+summary: Cloud Volumes ONTAP unterstützt die Datenverschlüsselung und bietet Schutz vor Viren und Ransomware. 
+---
+= Erfahren Sie mehr über die Datenverschlüsselung und den Ransomware-Schutz von Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP unterstützt die Datenverschlüsselung und bietet Schutz vor Viren und Ransomware.
+
+
+
+== Verschlüsselung ruhender Daten
+
+Cloud Volumes ONTAP unterstützt die folgenden Verschlüsselungstechnologien:
+
+* NetApp -Verschlüsselungslösungen (NVE und NAE)
+
+
+ifdef::aws[]
+
+* AWS-Schlüsselverwaltungsdienst
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure Storage Service-Verschlüsselung
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Standardverschlüsselung der Google Cloud Platform
+
+
+endif::gcp[]
+
+Sie können NetApp Verschlüsselungslösungen mit nativer Verschlüsselung Ihres Cloud-Anbieters verwenden, die Daten auf Hypervisor-Ebene verschlüsselt.  Dadurch würde eine doppelte Verschlüsselung erreicht, die bei sehr sensiblen Daten wünschenswert sein könnte.  Beim Zugriff auf die verschlüsselten Daten werden diese zweimal entschlüsselt: einmal auf Hypervisor-Ebene (mit Schlüsseln des Cloud-Anbieters) und dann erneut mithilfe von NetApp Verschlüsselungslösungen (mit Schlüsseln eines externen Schlüsselmanagers).
+
+
+
+=== NetApp -Verschlüsselungslösungen (NVE und NAE)
+
+Cloud Volumes ONTAP unterstützt https://www.netapp.com/pdf.html?item=/media/17070-ds-3899.pdf["NetApp Volume Encryption (NVE) und NetApp Aggregate Encryption (NAE)"^] .  NVE und NAE sind softwarebasierte Lösungen, die eine (FIPS) 140-2-konforme Data-at-Rest-Verschlüsselung von Volumes ermöglichen.  Sowohl NVE als auch NAE verwenden die AES-256-Bit-Verschlüsselung.
+
+* NVE verschlüsselt ruhende Daten jeweils auf einem Volume.  Jedes Datenvolumen verfügt über einen eigenen, eindeutigen Verschlüsselungsschlüssel.
+* NAE ist eine Erweiterung von NVE – es verschlüsselt Daten für jedes Volume und die Volumes teilen sich einen Schlüssel über das Aggregat hinweg.  NAE ermöglicht außerdem die Deduplizierung gemeinsamer Blöcke über alle Volumes im Aggregat hinweg.
+
+
+Cloud Volumes ONTAP unterstützt sowohl NVE als auch NAE mit externen Schlüsselverwaltungsdiensten (EKMs) von AWS, Azure und Google Cloud, einschließlich Lösungen von Drittanbietern wie Fortanix.  Anders als bei ONTAP werden bei Cloud Volumes ONTAP die Verschlüsselungsschlüssel auf der Seite des Cloud-Anbieters und nicht in ONTAP generiert.
+
+Cloud Volumes ONTAP verwendet die standardmäßigen KMIP-Dienste (Key Management Interoperability Protocol), die ONTAP verwendet.  Weitere Informationen zu den unterstützten Diensten finden Sie im https://imt.netapp.com/imt/#welcome["Interoperabilitätsmatrix-Tool"^] .
+
+Wenn Sie NVE verwenden, haben Sie die Möglichkeit, den Schlüsseltresor Ihres Cloud-Anbieters zum Schutz der ONTAP Verschlüsselungsschlüssel zu verwenden:
+
+ifdef::aws[]
+
+* AWS-Schlüsselverwaltungsdienst (KMS)
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure-Schlüsseltresor (AKV)
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud-Schlüsselverwaltungsdienst
+
+
+endif::gcp[]
+
+Bei neuen Aggregaten ist die NetApp Aggregate Encryption (NAE) standardmäßig aktiviert, nachdem Sie einen externen Schlüsselmanager eingerichtet haben.  Bei neuen Volumes, die nicht Teil eines NAE-Aggregats sind, ist NVE standardmäßig aktiviert (z. B. wenn Sie über vorhandene Aggregate verfügen, die vor der Einrichtung eines externen Schlüsselmanagers erstellt wurden).
+
+Das Einrichten eines unterstützten Schlüsselmanagers ist der einzige erforderliche Schritt.  Anweisungen zur Einrichtung finden Sie unterlink:task-encrypting-volumes.html["Verschlüsseln Sie Volumes mit NetApp -Verschlüsselungslösungen"] .
+
+ifdef::aws[]
+
+
+
+=== AWS-Schlüsselverwaltungsdienst
+
+Wenn Sie ein Cloud Volumes ONTAP -System in AWS starten, können Sie die Datenverschlüsselung mithilfe des http://docs.aws.amazon.com/kms/latest/developerguide/overview.html["AWS-Schlüsselverwaltungsdienst (KMS)"^] .  Die NetApp Konsole fordert Datenschlüssel mithilfe eines Customer Master Key (CMK) an.
+
+
+TIP: Sie können die AWS-Datenverschlüsselungsmethode nicht mehr ändern, nachdem Sie ein Cloud Volumes ONTAP System erstellt haben.
+
+Wenn Sie diese Verschlüsselungsoption verwenden möchten, müssen Sie sicherstellen, dass das AWS KMS entsprechend eingerichtet ist.  Weitere Informationen finden Sie unterlink:task-setting-up-kms.html["Einrichten des AWS KMS"] .
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+=== Azure Storage Service-Verschlüsselung
+
+Die Daten werden auf Cloud Volumes ONTAP in Azure automatisch verschlüsselt mit https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview["Azure Storage Service-Verschlüsselung"^] mit einem von Microsoft verwalteten Schlüssel.
+
+Wenn Sie möchten, können Sie auch Ihre eigenen Verschlüsselungsschlüssel verwenden. link:task-set-up-azure-encryption.html["Erfahren Sie, wie Sie Cloud Volumes ONTAP für die Verwendung eines vom Kunden verwalteten Schlüssels in Azure einrichten."] .
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+=== Standardverschlüsselung der Google Cloud Platform
+
+https://cloud.google.com/security/encryption-at-rest/["Verschlüsselung ruhender Daten auf der Google Cloud Platform"^]ist standardmäßig für Cloud Volumes ONTAP aktiviert.  Es ist keine Einrichtung erforderlich.
+
+Während Google Cloud Storage Ihre Daten immer verschlüsselt, bevor sie auf die Festplatte geschrieben werden, können Sie mithilfe der Konsolen-APIs ein Cloud Volumes ONTAP -System erstellen, das _vom Kunden verwaltete Verschlüsselungsschlüssel_ verwendet.  Dies sind Schlüssel, die Sie mithilfe des Cloud Key Management Service in GCP generieren und verwalten. link:task-setting-up-gcp-encryption.html["Mehr erfahren"] .
+
+endif::gcp[]
+
+
+
+== ONTAP -Virenscan
+
+Sie können die integrierte Antivirenfunktion auf ONTAP -Systemen verwenden, um Daten vor der Gefährdung durch Viren oder anderen Schadcode zu schützen.
+
+Der ONTAP Virenscan, genannt _Vscan_, kombiniert erstklassige Antivirensoftware von Drittanbietern mit ONTAP Funktionen, die Ihnen die nötige Flexibilität geben, um zu steuern, welche Dateien wann gescannt werden.
+
+Informationen zu den Anbietern, der Software und den von Vscan unterstützten Versionen finden Sie im http://mysupport.netapp.com/matrix["NetApp Interoperabilitätsmatrix"^] .
+
+Informationen zum Konfigurieren und Verwalten der Antivirenfunktion auf ONTAP -Systemen finden Sie im http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-acg/home.html["ONTAP 9 Antivirus-Konfigurationshandbuch"^] .
+
+
+
+== Ransomware-Schutz
+
+Ransomware-Angriffe können ein Unternehmen Zeit, Ressourcen und Ansehen kosten.  Mit der Konsole können Sie die NetApp -Lösung für Ransomware implementieren, die effektive Tools für Transparenz, Erkennung und Behebung bietet.
+
+* Die Konsole identifiziert Volumes, die nicht durch eine Snapshot-Richtlinie geschützt sind, und ermöglicht Ihnen, die Standard-Snapshot-Richtlinie auf diesen Volumes zu aktivieren.
++
+Snapshot-Kopien sind schreibgeschützt, wodurch eine Beschädigung durch Ransomware verhindert wird.  Sie können auch die Granularität bereitstellen, um Bilder einer einzelnen Dateikopie oder einer vollständigen Disaster-Recovery-Lösung zu erstellen.
+
+* Mit der Konsole können Sie außerdem gängige Ransomware-Dateierweiterungen blockieren, indem Sie die FPolicy-Lösung von ONTAP aktivieren.
+
+
+image:screenshot_ransomware_protection.gif["Ein Screenshot, der die Seite „Ransomware-Schutz“ zeigt, die innerhalb eines Systems verfügbar ist.  Der Bildschirm zeigt die Anzahl der Volumes ohne Snapshot-Richtlinie und die Möglichkeit, Ransomware-Dateierweiterungen zu blockieren."]
+
+link:task-protecting-ransomware.html["Erfahren Sie, wie Sie die NetApp -Lösung für Ransomware implementieren"] .

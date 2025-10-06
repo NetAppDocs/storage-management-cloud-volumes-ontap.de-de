@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: task-deleting-system.html 
+keywords: terminate, delete, system, remove, terminate system, terminate instance, delete cloud volumes ontap, delete instance, delete system, delete backups, cloud backup, cloud data sense 
+summary: Sie sollten Cloud Volumes ONTAP -Systeme immer löschen und nicht über die Konsole Ihres Cloud-Anbieters.  Wenn Sie beispielsweise eine lizenzierte Cloud Volumes ONTAP Instanz bei Ihrem Cloud-Anbieter kündigen, können Sie den Lizenzschlüssel nicht für eine andere Instanz verwenden.  Um die Lizenz freizugeben, müssen Sie das System löschen. 
+---
+= Löschen eines Cloud Volumes ONTAP -Systems aus der NetApp -Konsole
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie sollten Cloud Volumes ONTAP -Systeme immer aus der NetApp Konsole und nicht aus der Anwendung Ihres Cloud-Anbieters löschen.  Wenn Sie beispielsweise eine lizenzierte Cloud Volumes ONTAP Instanz bei Ihrem Cloud-Anbieter kündigen, können Sie den Lizenzschlüssel nicht für eine andere Instanz verwenden.  Sie müssen das Cloud Volumes ONTAP -System aus der Konsole löschen, um die Lizenz freizugeben.
+
+Wenn Sie ein System löschen, beendet die Konsole Cloud Volumes ONTAP Instanzen und löscht Festplatten und Snapshots.
+
+
+NOTE: Andere Ressourcen, wie beispielsweise von NetApp Backup and Recovery verwaltete Backups und Instanzen für NetApp Data Classification, werden beim Löschen eines Systems nicht gelöscht. Sie müssen sie manuell löschen. Wenn Sie dies nicht tun, fallen für diese Ressourcen weiterhin Kosten an.
+
+Wenn die Konsole Cloud Volumes ONTAP bei Ihrem Cloud-Anbieter bereitstellt, aktiviert sie den Kündigungsschutz auf den Instanzen.  Diese Option hilft, eine versehentliche Beendigung zu verhindern.
+
+.Schritte
+. Wenn Sie Backup und Recovery auf dem System aktiviert haben, prüfen Sie, ob die gesicherten Daten noch benötigt werden und https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backups-ontap.html#deleting-backups["Löschen Sie ggf. die Backups"^] .
++
+Backup und Recovery sind konzeptionell unabhängig von Cloud Volumes ONTAP .  Backup and Recovery löscht Backups nicht automatisch, wenn Sie ein Cloud Volumes ONTAP -System löschen, und in der Benutzeroberfläche gibt es derzeit keine Unterstützung zum Löschen der Backups, nachdem das System gelöscht wurde.
+
+. Wenn Sie die Datenklassifizierung auf diesem System aktiviert haben und kein anderes System diesen Dienst verwendet, müssen Sie die Instanz für den Dienst löschen.
++
+https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance["Weitere Informationen zur Datenklassifizierungsinstanz"^] .
+
+. Löschen Sie das Cloud Volumes ONTAP -System.
++
+.. Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Cloud Volumes ONTAP Systems, das Sie löschen möchten.
+.. Klicken Sie oben rechts in der Konsole auf dasimage:icon-action.png[""] Symbol und wählen Sie *Löschen*.
+.. Geben Sie den Namen des Systems ein, das Sie löschen möchten, und klicken Sie dann auf *Löschen*.  Das Löschen eines Systems kann bis zu fünf Minuten dauern.
+
+
+
+
+
+NOTE: Backup und Recovery sind nur für Cloud Volumes ONTAP Professional-Lizenzen kostenlos. Dieser kostenlose Vorteil gilt nicht für gelöschte Umgebungen.  Wenn gesicherte Kopien der Cloud Volumes ONTAP -Umgebung in einer Backup- und Recovery-Instanz aufbewahrt werden, werden Ihnen die gesicherten Kopien in Rechnung gestellt, bis sie gelöscht werden.

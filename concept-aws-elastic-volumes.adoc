@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: concept-aws-elastic-volumes.html 
+keywords: elastic volumes, ev, ebs elastic volumes, ebs, amazon ebs, disk growth 
+summary: Die Unterstützung der Amazon EBS Elastic Volumes-Funktion mit einem Cloud Volumes ONTAP -Aggregat bietet eine bessere Leistung und zusätzliche Kapazität und ermöglicht Ihnen gleichzeitig, die zugrunde liegende Festplattenkapazität nach Bedarf automatisch zu erhöhen. 
+---
+= Erfahren Sie mehr über die Unterstützung für AWS Elastic Volumes mit Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die Unterstützung der Amazon EBS Elastic Volumes-Funktion mit einem Cloud Volumes ONTAP -Aggregat bietet eine bessere Leistung und zusätzliche Kapazität und ermöglicht es der NetApp Konsole, die zugrunde liegende Festplattenkapazität bei Bedarf automatisch zu erhöhen.
+
+
+
+== Vorteile
+
+* Dynamisches Festplattenwachstum
++
+Die Konsole kann die Größe von Festplatten dynamisch erhöhen, während Cloud Volumes ONTAP ausgeführt wird und Festplatten noch angeschlossen sind.
+
+* Bessere Leistung
++
+Mit Elastic Volumes aktivierte Aggregate können bis zu acht Festplatten haben, die gleichmäßig über zwei RAID-Gruppen verteilt genutzt werden.  Diese Konfiguration bietet mehr Durchsatz und konstante Leistung.
+
+* Größere Aggregate
++
+Die Unterstützung von acht Festplatten bietet eine maximale Gesamtkapazität von 128 TiB.  Diese Grenzwerte sind höher als die Grenzwerte von sechs Datenträgern und 96 TiB für Aggregate, die nicht mit der Funktion „Elastic Volumes“ aktiviert sind.
+
++
+Beachten Sie, dass die Gesamtkapazitätsgrenzen des Systems gleich bleiben.
+
+
+
+https://aws.amazon.com/ebs/features/["AWS-Dokumentation: Erfahren Sie mehr über Elastic Volumes von AWS"^]
+
+
+
+== Unterstützte Konfigurationen
+
+Die Funktion „Amazon EBS Elastic Volumes“ wird mit bestimmten Cloud Volumes ONTAP Versionen und bestimmten EBS-Festplattentypen unterstützt.
+
+
+
+=== Cloud Volumes ONTAP Version
+
+Die Elastic Volumes-Funktion wird mit _neuen_ Cloud Volumes ONTAP Systemen unterstützt, die ab Version 9.11.0 erstellt wurden.  Die Funktion wird von vorhandenen Cloud Volumes ONTAP Systemen, die vor 9.11.0 bereitgestellt wurden, _nicht_ unterstützt.
+
+Beispielsweise wird die Funktion „Elastic Volumes“ nicht unterstützt, wenn Sie ein Cloud Volumes ONTAP 9.9.0-System erstellt und dieses System später auf Version 9.11.0 aktualisiert haben.  Es muss sich um ein neues System handeln, das mit Version 9.11.0 oder höher bereitgestellt wird.
+
+
+
+=== EBS-Festplattentypen
+
+Die Funktion „Elastic Volumes“ wird automatisch auf aggregierter Ebene aktiviert, wenn General Purpose SSDs (gp3) oder Provisioned IOPS SSDs (io1) verwendet werden.  Die Funktion „Elastic Volumes“ wird bei Aggregaten, die einen anderen Datenträgertyp verwenden, nicht unterstützt.
+
+
+
+== Erforderliche AWS-Berechtigungen
+
+Ab der Version 3.9.19 benötigt der Konsolenagent die folgenden Berechtigungen, um die Elastic Volumes-Funktion auf einem Cloud Volumes ONTAP Aggregat zu aktivieren und zu verwalten:
+
+* ec2:DescribeVolumesModifications
+* ec2:ModifyVolume
+
+
+Diese Berechtigungen sind enthalten in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["die von NetApp bereitgestellten Richtlinien"^]
+
+
+
+== So funktioniert die Unterstützung für Elastic Volumes
+
+Ein Aggregat mit aktivierter Elastic Volumes-Funktion besteht aus einer oder zwei RAID-Gruppen.  Jede RAID-Gruppe verfügt über vier identische Festplatten mit der gleichen Kapazität.  Hier ist ein Beispiel für ein 10-TiB-Aggregat mit vier Festplatten mit jeweils 2,5 TiB:
+
+image:diagram-aws-elastic-volumes-one-raid-group.png["Ein Konzeptbild, das ein Aggregat und eine RAID-Gruppe zeigt, die aus vier gleich großen Festplatten besteht."]
+
+Wenn die Konsole ein Aggregat erstellt, beginnt sie mit einer RAID-Gruppe.  Wenn zusätzliche Kapazität benötigt wird, wird die Gesamtkapazität vergrößert, indem die Kapazität aller Festplatten in der RAID-Gruppe um den gleichen Betrag erhöht wird.  Die Kapazitätserhöhung beträgt entweder mindestens 256 GiB oder 10 % der Aggregatgröße.
+
+Wenn Sie beispielsweise ein 1-TiB-Aggregat haben, ist jede Festplatte 250 GiB groß.  10 % der Kapazität des Aggregats betragen 100 GiB.  Das ist weniger als 256 GiB, daher wird die Größe des Aggregats um das Minimum von 256 GiB (oder 64 GiB für jede Festplatte) erhöht.
+
+Die Konsole erhöht die Größe der Festplatten, während das Cloud Volumes ONTAP -System ausgeführt wird und die Festplatten noch angeschlossen sind.  Die Änderung erfolgt ohne Unterbrechung.
+
+Wenn ein Aggregat 64 TiB (oder 16 TiB auf jeder Festplatte) erreicht, erstellt die Konsole eine zweite RAID-Gruppe für zusätzliche Kapazität.  Diese zweite RAID-Gruppe funktioniert genauso wie die erste: Sie verfügt über vier Festplatten mit genau der gleichen Kapazität und kann auf bis zu 64 TiB erweitert werden.  Das bedeutet, dass ein Aggregat eine maximale Kapazität von 128 TiB haben kann.
+
+Hier ist ein Beispiel für ein Aggregat mit zwei RAID-Gruppen.  Die Kapazitätsgrenze der ersten RAID-Gruppe wurde erreicht, während die Festplatten der zweiten RAID-Gruppe über reichlich freien Speicherplatz verfügen.
+
+image:diagram-aws-elastic-volumes-two-raid-groups.png["Ein Konzeptbild, das ein Aggregat und zwei RAID-Gruppen zeigt, die beide aus vier gleich großen Festplatten bestehen."]
+
+
+
+=== Was passiert, wenn Sie ein Volume erstellen?
+
+Wenn Sie ein Volume erstellen, das gp3- oder io1-Datenträger verwendet, erstellt die Konsole das Volume auf einem Aggregat wie folgt:
+
+* Wenn ein vorhandenes gp3- oder io1-Aggregat vorhanden ist, bei dem Elastic Volumes aktiviert sind, erstellt die Konsole das Volume auf diesem Aggregat.
+* Wenn es mehrere gp3- oder io1-Aggregate gibt, bei denen Elastic Volumes aktiviert sind, erstellt die Konsole das Volume auf dem Aggregat, das die geringste Menge an Ressourcen benötigt.
+* Wenn das System nur über gp3- oder io1-Aggregate verfügt, die nicht für Elastic Volumes aktiviert sind, wird das Volume auf diesem Aggregat erstellt.
++
+[NOTE]
+====
+Obwohl dieses Szenario unwahrscheinlich ist, ist es in zwei Fällen möglich:
+
+** Sie haben die Funktion „Elastic Volumes“ beim Erstellen eines Aggregats aus der API explizit deaktiviert.
+** Sie haben über die Benutzeroberfläche ein neues Cloud Volumes ONTAP -System erstellt. In diesem Fall ist die Funktion „Elastic Volumes“ im ersten Aggregat deaktiviert.  Rezension<<Einschränkungen>> unten, um mehr zu erfahren.
+
+
+====
+* Wenn keines der vorhandenen Aggregate über genügend Kapazität verfügt, erstellt die Konsole das Aggregat mit aktivierten Elastic Volumes und erstellt dann das Volume auf diesem neuen Aggregat.
++
+Die Größe des Aggregats richtet sich nach der gewünschten Volumengröße zuzüglich 10 % Kapazität.
+
+
+
+
+
+=== Kapazitätsverwaltungsmodus
+
+Der Kapazitätsverwaltungsmodus für einen Konsolenagenten funktioniert mit Elastic Volumes ähnlich wie mit anderen Aggregattypen:
+
+* Wenn der automatische Modus aktiviert ist (dies ist die Standardeinstellung), erhöht die Konsole automatisch die Größe der Aggregate, wenn zusätzliche Kapazität benötigt wird.
+* Wenn Sie den Kapazitätsverwaltungsmodus auf „Manuell“ ändern, fordert die Konsole Ihre Zustimmung zum Kauf zusätzlicher Kapazität an.
+
+
+link:concept-storage-management.html#capacity-management["Erfahren Sie mehr über den Kapazitätsverwaltungsmodus"] .
+
+
+
+== Einschränkungen
+
+Das Erhöhen der Größe eines Aggregats kann bis zu 6 Stunden dauern.  Während dieser Zeit kann die Konsole keine zusätzliche Kapazität für dieses Aggregat anfordern.
+
+
+
+== So arbeiten Sie mit Elastic Volumes
+
+Mit Elastic Volumes können Sie folgende Aufgaben ausführen:
+
+* Erstellen Sie ein neues System, bei dem Elastic Volumes auf dem ersten Aggregat aktiviert sind, wenn Sie gp3- oder io1-Festplatten verwenden.
++
+link:task-deploying-otc-aws.html["Erfahren Sie, wie Sie ein Cloud Volumes ONTAP -System erstellen"]
+
+* Erstellen Sie ein neues Volume auf einem Aggregat, für das Elastic Volumes aktiviert ist.
++
+Wenn Sie ein Volume erstellen, das gp3- oder io1-Datenträger verwendet, erstellt die Konsole das Volume automatisch auf einem Aggregat, für das Elastic Volumes aktiviert sind. Weitere Einzelheiten finden Sie unter<<Was passiert, wenn Sie ein Volume erstellen?>> .
+
++
+link:task-create-volumes.html["Erfahren Sie, wie Sie Volumes erstellen"] .
+
+* Erstellen Sie ein neues Aggregat mit aktivierten Elastic Volumes
++
+Elastic Volumes wird automatisch auf neuen Aggregaten aktiviert, die gp3- oder io1-Festplatten verwenden, sofern das Cloud Volumes ONTAP System ab Version 9.11.0 erstellt wurde.
+
++
+Wenn Sie das Aggregat erstellen, werden Sie von der Konsole aufgefordert, die Kapazitätsgröße des Aggregats anzugeben.  Dies unterscheidet sich von anderen Konfigurationen, bei denen Sie eine Festplattengröße und -anzahl auswählen.
+
++
+Der folgende Screenshot zeigt ein Beispiel eines neuen Aggregats, das aus GP3-Festplatten besteht.
+
++
+image:screenshot-aggregate-size-ev.png["Ein Screenshot des Bildschirms „Aggregate Disks“ für eine GP3-Festplatte, in dem Sie die Aggregatgröße in TiB eingeben."]
+
++
+link:task-create-aggregates.html["Erfahren Sie, wie Sie Aggregate erstellen"] .
+
+* Identifizieren Sie Aggregate, bei denen Elastic Volumes aktiviert sind
++
+Wenn Sie zur Seite „Erweiterte Zuordnung“ gehen, können Sie feststellen, ob die Funktion „Elastic Volumes“ auf einem Aggregat aktiviert ist.  Im folgenden Beispiel sind für aggr1 Elastic Volumes aktiviert.
+
++
+image:screenshot_elastic_volume_enabled.png["Screenshot, der zwei Aggregate zeigt, von denen eines ein Feld mit dem Text „Elastic Volumes Enabled“ enthält."]
+
+* Kapazität zu einem Aggregat hinzufügen
++
+Während die Konsole bei Bedarf automatisch Kapazität zu Aggregaten hinzufügt, können Sie die Kapazität auch manuell selbst erhöhen.
+
++
+link:task-manage-aggregates.html["Erfahren Sie, wie Sie die Gesamtkapazität erhöhen"] .
+
+* Replizieren Sie Daten in ein Aggregat, für das Elastic Volumes aktiviert ist
++
+Wenn das Cloud Volumes ONTAP -Zielsystem Elastic Volumes unterstützt, wird ein Zielvolume auf einem Aggregat platziert, auf dem Elastic Volumes aktiviert sind (sofern Sie eine gp3- oder io1-Festplatte auswählen).
+
++
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Erfahren Sie, wie Sie die Datenreplikation einrichten"^]
+
+

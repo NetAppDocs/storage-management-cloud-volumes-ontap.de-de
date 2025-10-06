@@ -1,0 +1,15 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+permalink: index.html 
+summary: Mit Cloud Volumes ONTAP können Sie Ihre Cloud-Speicherkosten und -Leistung optimieren und gleichzeitig Datenschutz, Sicherheit und Compliance verbessern. 
+---
+= Cloud Volumes ONTAP Dokumentation
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

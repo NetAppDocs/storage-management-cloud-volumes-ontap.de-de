@@ -1,0 +1,11 @@
+= Unterstützung für die Region „Neuseeland Nord“ in Azure
+:allow-uri-read: 
+
+
+
+
+=== Unterstützung für die Region „Neuseeland Nord“ in Azure
+
+Die Region „Neuseeland Nord“ wird jetzt in Azure für Einzelknoten- und Hochverfügbarkeitskonfigurationen (HA) von Cloud Volumes ONTAP 9.12.1 GA und höher unterstützt.  Beachten Sie, dass der Instanztyp Lsv3 in dieser Region nicht unterstützt wird.
+
+Eine Liste aller unterstützten Regionen finden Sie im https://bluexp.netapp.com/cloud-volumes-global-regions["Globale Regionenkarte unter Azure"^] .

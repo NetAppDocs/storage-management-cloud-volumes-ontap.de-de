@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task-manage-capacity-settings.html 
+keywords: aggregates, delete aggregates, add disks, view aggregates 
+summary: Verwalten Sie Aggregate selbst, indem Sie Datenträger hinzufügen, Informationen zu den Aggregaten anzeigen und sie löschen. 
+---
+= Verwalten Sie die Gesamtkapazität von Cloud Volumes ONTAP auf einem Konsolenagenten
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Jeder Konsolenagent verfügt über Einstellungen, die bestimmen, wie er die Gesamtkapazität für Cloud Volumes ONTAP verwaltet.
+
+Diese Einstellungen wirken sich auf alle Cloud Volumes ONTAP Systeme aus, die von einem Konsolenagenten verwaltet werden.  Wenn Sie einen anderen Konsolenagenten haben, kann dieser anders konfiguriert werden.
+
+.Erforderliche Berechtigungen
+Sie benötigen die Organisations- oder Kontoadministratorrechte der NetApp Konsole, um die Cloud Volumes ONTAP -Einstellungen zu ändern.
+
+.Schritte
+. Gehen Sie im linken Navigationsbereich zu *Administration > Agenten*.
+. Klicken Sie auf dasimage:icon-action.png[""] Symbol für den Konsolenagenten, der Ihr Cloud Volumes ONTAP -System verwaltet.
+. Wählen Sie * Cloud Volumes ONTAP -Einstellungen*.
++
+image::screenshot-settings-cloud-volumes-ontap.png[Ein Screenshot der Cloud Volumes ONTAP -Einstellungsoption unter dem Einstellungssymbol.]
+
+. Ändern Sie unter *Kapazität* die folgenden Einstellungen:
++
+image:screenshot-cvo-settings-page.png["Eine Übersicht über die Kapazitätseinstellungen von Cloud Volumes ONTAP."]
+
++
+Kapazitätsverwaltungsmodus:: Wählen Sie, ob die Konsole Sie über Entscheidungen zur Speicherkapazität benachrichtigen oder ob sie die Kapazitätsanforderungen automatisch für Sie verwalten soll.
++
+--
+link:concept-storage-management.html#capacity-management["Erfahren Sie, wie der Kapazitätsverwaltungsmodus funktioniert"] .
+
+--
+Verhältnis zwischen aggregierter Kapazitätsschwelle und freiem Speicherplatz:: Dieses Verhältnis ist ein Schlüsselparameter bei Entscheidungen zum Kapazitätsmanagement und es ist wichtig, seine Auswirkungen zu verstehen, unabhängig davon, ob Sie sich im automatischen oder manuellen Modus des Kapazitätsmanagements befinden.  Es wird empfohlen, diesen Schwellenwert unter Berücksichtigung Ihres spezifischen Speicherbedarfs und des erwarteten Wachstums festzulegen, um ein Gleichgewicht zwischen Ressourcennutzung und Kosten zu wahren.
++
+--
+Wenn im manuellen Modus das Verhältnis des freien Speicherplatzes auf einem Aggregat unter den angegebenen Schwellenwert fällt, wird eine Benachrichtigung ausgelöst, die Sie darauf hinweist, dass Sie Maßnahmen ergreifen sollten, um das niedrige Verhältnis des freien Speicherplatzes zu beheben.  Es ist wichtig, diese Benachrichtigungen zu überwachen und die Gesamtkapazität manuell zu verwalten, um Dienstunterbrechungen zu vermeiden und eine optimale Leistung sicherzustellen.
+
+Das Verhältnis des freien Speicherplatzes wird wie folgt berechnet: (aggregierte Kapazität – insgesamt genutzte Kapazität auf dem Aggregat) / aggregierte Kapazität
+
+Siehelink:concept-storage-management.html#automatic-capacity-management["Automatisches Kapazitätsmanagement"] Erfahren Sie jetzt, wie die Kapazität in Cloud Volumes ONTAP automatisch verwaltet wird.
+
+--
+Schwellenwerte für aggregierte Kapazität – Verhältnis des freien Speicherplatzes für Data Tiering:: Definiert, wie viel freier Speicherplatz auf der Leistungsebene (Festplatten) erforderlich ist, wenn Daten auf eine Kapazitätsebene (Objektspeicher) verschoben werden.
++
+--
+Das Verhältnis ist für Notfallwiederherstellungsszenarien wichtig.  Wenn Daten aus der Kapazitätsebene gelesen werden, verschiebt Cloud Volumes ONTAP die Daten in die Leistungsebene, um eine bessere Leistung zu erzielen.  Wenn nicht genügend Speicherplatz vorhanden ist, kann Cloud Volumes ONTAP die Daten nicht verschieben.
+
+--
+
+
+. Klicken Sie auf *Speichern*.
+

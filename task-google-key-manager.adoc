@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: task-google-key-manager.html 
+keywords: google cloud, encryption, NVE, NetApp volume encryption, KMIP, GCP, GCP KMS, key manager service, encryption 
+summary: Nutzen Sie den Schlüsselverwaltungsdienst von Google als Schlüsselverwaltungsdienst eines Drittanbieters. 
+---
+= Verwalten Sie Cloud Volumes ONTAP Verschlüsselungsschlüssel mit Google Cloud KMS
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie könnenlink:https://cloud.google.com/kms/docs["Schlüsselverwaltungsdienst (Cloud KMS) der Google Cloud Platform"^] zum Schutz Ihrer Cloud Volumes ONTAP Verschlüsselungsschlüssel in einer auf der Google Cloud Platform bereitgestellten Anwendung.
+
+Die Schlüsselverwaltung mit Cloud KMS kann mit der ONTAP CLI oder der ONTAP REST API aktiviert werden.
+
+Beachten Sie bei der Verwendung von Cloud KMS, dass standardmäßig das LIF eines Daten-SVM zur Kommunikation mit dem Cloud-Schlüsselverwaltungsendpunkt verwendet wird.  Zur Kommunikation mit den Authentifizierungsdiensten des Cloud-Anbieters (oauth2.googleapis.com) wird ein Knotenverwaltungsnetzwerk verwendet.  Wenn das Clusternetzwerk nicht richtig konfiguriert ist, kann der Cluster den Schlüsselverwaltungsdienst nicht richtig nutzen.
+
+.Bevor Sie beginnen
+* Auf Ihrem System sollte Cloud Volumes ONTAP 9.10.1 oder höher ausgeführt werden.
+* Sie müssen eine Daten-SVM verwenden.  Cloud KMS kann nur auf einer Daten-SVM konfiguriert werden.
+* Sie müssen ein Cluster- oder SVM-Administrator sein
+* Die Volume Encryption (VE)-Lizenz sollte auf der SVM installiert werden
+* Ab Cloud Volumes ONTAP 9.12.1 GA sollte auch die Multi-Tenant Encryption Key Management (MTEKM)-Lizenz installiert werden
+* Ein aktives Google Cloud Platform-Abonnement ist erforderlich
+
+
+
+
+== Konfiguration
+
+.Google Cloud
+. In Ihrer Google Cloud-Umgebunglink:https://cloud.google.com/kms/docs/creating-keys["Erstellen Sie einen symmetrischen GCP-Schlüsselring und Schlüssel"^] .
+. Weisen Sie dem Cloud KMS-Schlüssel und dem Cloud Volumes ONTAP Dienstkonto eine benutzerdefinierte Rolle zu.
++
+.. Erstellen Sie die benutzerdefinierte Rolle:
++
+[listing]
+----
+gcloud iam roles create kmsCustomRole
+    --project=<project_id>
+    --title=<kms_custom_role_name>
+    --description=<custom_role_description>
+    --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get
+    --stage=GA
+----
+.. Weisen Sie die von Ihnen erstellte benutzerdefinierte Rolle zu:
+`gcloud kms keys add-iam-policy-binding _key_name_ --keyring _key_ring_name_ --location _key_location_ --member serviceAccount:_service_account_Name_ --role projects/_customer_project_id_/roles/kmsCustomRole`
++
+
+NOTE: Wenn Sie Cloud Volumes ONTAP 9.13.0 oder höher verwenden, müssen Sie keine benutzerdefinierte Rolle erstellen.  Sie können die vordefinierten[`cloudkms.cryptoKeyEncrypterDecrypter` ^] Rolle.
+
+
+
+. Laden Sie den JSON-Schlüssel des Dienstkontos herunter:
+`gcloud iam service-accounts keys create key-file --iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com`
+
+
+.Cloud Volumes ONTAP
+. Stellen Sie mit Ihrem bevorzugten SSH-Client eine Verbindung zum Cluster-Management-LIF her.
+. Wechseln Sie zur erweiterten Berechtigungsstufe:
+`set -privilege advanced`
+. Erstellen Sie ein DNS für die Daten-SVM.
+`dns create -domains c._<project>_.internal -name-servers _server_address_ -vserver _SVM_name_`
+. CMEK-Eintrag erstellen:
+`security key-manager external gcp enable -vserver _SVM_name_ -project-id _project_ -key-ring-name _key_ring_name_ -key-ring-location _key_ring_location_ -key-name _key_name_`
+. Geben Sie bei der entsprechenden Aufforderung den JSON-Schlüssel des Dienstkontos aus Ihrem GCP-Konto ein.
+. Bestätigen Sie, dass der Aktivierungsprozess erfolgreich war:
+`security key-manager external gcp check -vserver _svm_name_`
+. OPTIONAL: Erstellen Sie ein Volume zum Testen der Verschlüsselung `vol create _volume_name_ -aggregate _aggregate_ -vserver _vserver_name_ -size 10G`
+
+
+
+
+== Fehlerbehebung
+
+Wenn Sie Fehler beheben müssen, können Sie die Rohprotokolle der REST-API in den letzten beiden Schritten oben verfolgen:
+
+. `set d`
+. `systemshell -node _node_ -command tail -f /mroot/etc/log/mlog/kmip2_client.log`
+

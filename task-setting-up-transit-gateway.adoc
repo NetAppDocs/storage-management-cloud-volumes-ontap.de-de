@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: task-setting-up-transit-gateway.html 
+keywords: transit gateway, aws, amazon web services, transit gateway, floating ip, client access, nas, outside, vpc, virtual private cloud, route table 
+summary: Richten Sie ein AWS-Transit-Gateway ein, um NAS-Clients den Zugriff auf Floating-IP-Adressen von außerhalb der VPC zu ermöglichen, in der sich Cloud Volumes ONTAP befindet.  Dies ist von Vorteil, da Floating-IPs bei Fehlern automatisch zwischen Knoten migrieren. 
+---
+= Einrichten eines AWS Transit Gateways für Cloud Volumes ONTAP HA-Paare
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Richten Sie ein AWS Transit Gateway ein, um den Zugriff auf die HA-Paare zu ermöglichen.link:reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["Floating-IP-Adressen"] von außerhalb der VPC, in der sich das HA-Paar befindet.
+
+Wenn eine Cloud Volumes ONTAP HA-Konfiguration über mehrere AWS Availability Zones verteilt ist, sind Floating-IP-Adressen für den NAS-Datenzugriff innerhalb der VPC erforderlich.  Diese Floating-IP-Adressen können bei Fehlern zwischen Knoten migrieren, sind jedoch von außerhalb der VPC nicht nativ zugänglich.  Separate private IP-Adressen ermöglichen den Datenzugriff von außerhalb der VPC, bieten jedoch kein automatisches Failover.
+
+Floating-IP-Adressen werden auch für die Cluster-Management-Schnittstelle und das optionale SVM-Management-LIF benötigt.
+
+Wenn Sie ein AWS-Transit-Gateway einrichten, ermöglichen Sie den Zugriff auf die Floating-IP-Adressen von außerhalb der VPC, in der sich das HA-Paar befindet.  Das bedeutet, dass NAS-Clients und NetApp -Verwaltungstools außerhalb des VPC auf die Floating-IPs zugreifen können.
+
+Hier ist ein Beispiel, das zwei VPCs zeigt, die durch ein Transit-Gateway verbunden sind.  In einer VPC befindet sich ein HA-System, in der anderen ein Client.  Sie könnten dann mithilfe der Floating-IP-Adresse ein NAS-Volume auf dem Client mounten.
+
+image:diagram_transit_gateway.png["Ein Diagramm, das eine HA-Konfiguration in einer VPC mit an ENIs weitergeleiteten Floating-IPs, einen Client in einer anderen VPC mit an das Transit-Gateway weitergeleiteten Floating-IPs und ein Transit-Gateway mit an die VPC1-Routingtabelle weitergeleiteten Floating-IPs zeigt."]
+
+Die folgenden Schritte veranschaulichen, wie eine ähnliche Konfiguration eingerichtet wird.
+
+.Schritte
+. https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html["Erstellen Sie ein Transit-Gateway und hängen Sie die VPCs an das Gateway an"^] .
+. Ordnen Sie die VPCs der Transit-Gateway-Routentabelle zu.
++
+.. Klicken Sie im *VPC*-Dienst auf *Transit Gateway Route Tables*.
+.. Wählen Sie die Routentabelle aus.
+.. Klicken Sie auf *Verknüpfungen* und wählen Sie dann *Verknüpfung erstellen*.
+.. Wählen Sie die zu verknüpfenden Anhänge (die VPCs) aus und klicken Sie dann auf *Verknüpfung erstellen*.
+
+
+. Erstellen Sie Routen in der Routentabelle des Transit-Gateways, indem Sie die Floating-IP-Adressen des HA-Paares angeben.
++
+Sie finden die Floating-IP-Adressen auf der Systeminformationsseite in der NetApp Konsole. Hier ist ein Beispiel:
+
++
+image:screenshot_floating_ips.gif["Ein Screenshot, der die Floating-IP-Adressen für die Cluster-Verwaltungsschnittstelle, zwei NFS- und CIFS-Datenschnittstellen und die SVM-Verwaltungsschnittstelle zeigt."]
+
++
+Das folgende Beispielbild zeigt die Routentabelle für das Transit Gateway.  Es umfasst Routen zu den CIDR-Blöcken der beiden VPCs und vier Floating-IP-Adressen, die von Cloud Volumes ONTAP verwendet werden.
+
++
+image:screenshot_transit_gateway1.png["Ein Screenshot der AWS-Konsole, der die Routentabelle für das Transit-Gateway zeigt.  Es umfasst Routen zu den CIDR-Blöcken der beiden VPCs und vier Floating-IP-Adressen, die von Cloud Volumes ONTAP verwendet werden."]
+
+. Ändern Sie die Routentabelle der VPCs, die auf die Floating-IP-Adressen zugreifen müssen.
++
+.. Fügen Sie den Floating-IP-Adressen Routeneinträge hinzu.
+.. Fügen Sie dem CIDR-Block der VPC, in der sich das HA-Paar befindet, einen Routeneintrag hinzu.
++
+Das folgende Beispielbild zeigt die Routentabelle für VPC 2, die Routen zu VPC 1 und die Floating-IP-Adressen enthält.
+
++
+image:screenshot_transit_gateway2.png["Ein Screenshot der AWS-Konsole, der die Routentabelle für VPC 2 zeigt, die Routen zu VPC 1 und die Floating-IP-Adressen enthält."]
+
+
+
+. Ändern Sie die Routentabelle für die VPC des HA-Paares, indem Sie eine Route zur VPC hinzufügen, die Zugriff auf die Floating-IP-Adressen benötigt.
++
+Dieser Schritt ist wichtig, da er das Routing zwischen den VPCs abschließt.
+
++
+Das folgende Beispielbild zeigt die Routentabelle für VPC 1.  Es enthält eine Route zu den Floating-IP-Adressen und zu VPC 2, wo sich ein Client befindet.  Die Konsole hat die Floating-IPs automatisch zur Routentabelle hinzugefügt, als sie das HA-Paar bereitgestellt hat.
+
++
+image:screenshot_transit_gateway3.png["Ein Screenshot der AWS-Konsole, der die Routentabelle für VPC 1 zeigt.  Es enthält eine Route zu den Floating-IP-Adressen und zu VPC 2, wo sich ein Client befindet."]
+
+. Aktualisieren Sie die Einstellungen der Sicherheitsgruppen auf „Gesamter Datenverkehr für die VPC“.
++
+.. Klicken Sie unter „Virtual Private Cloud“ auf *Subnetze*.
+.. Klicken Sie auf die Registerkarte *Routentabelle* und wählen Sie die gewünschte Umgebung für eine der Floating-IP-Adressen für ein HA-Paar aus.
+.. Klicken Sie auf *Sicherheitsgruppen*.
+.. Wählen Sie *Eingehende Regeln bearbeiten*.
+.. Klicken Sie auf *Regel hinzufügen*.
+.. Wählen Sie unter „Typ“ die Option „Gesamter Datenverkehr“ und dann die VPC-IP-Adresse aus.
+.. Klicken Sie auf *Regeln speichern*, um die Änderungen anzuwenden.
+
+
+. Hängen Sie Volumes mithilfe der Floating-IP-Adresse an Clients an.
++
+Sie finden die richtige IP-Adresse in der Konsole über die Option *Mount Command* im Bereich „Volumes verwalten“ in der Konsole.
+
++
+image::screenshot_mount_option.png[400]
+
+. Wenn Sie ein NFS-Volume mounten, konfigurieren Sie die Exportrichtlinie so, dass sie mit dem Subnetz der Client-VPC übereinstimmt.
++
+link:task-manage-volumes.html["Erfahren Sie, wie Sie ein Volume bearbeiten"] .
+
+
+
+*Weiterführende Links*
+
+* link:concept-ha.html["Hochverfügbarkeitspaare in AWS"]
+* link:reference-networking-aws.html["Netzwerkanforderungen für Cloud Volumes ONTAP in AWS"]
+

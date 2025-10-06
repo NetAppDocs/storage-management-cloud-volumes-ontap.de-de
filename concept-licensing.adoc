@@ -1,0 +1,286 @@
+---
+sidebar: sidebar 
+permalink: concept-licensing.html 
+keywords: 'freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, license end of support (EOS) node-based, end of availability (EOA) of node-based' 
+summary: Für Cloud Volumes ONTAP sind mehrere Lizenzierungsoptionen verfügbar. Mit jeder Option können Sie eine Konfiguration auswählen, die Ihren Anforderungen entspricht. 
+---
+= Lizenzierung für Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Für Cloud Volumes ONTAP sind mehrere Lizenzierungsoptionen verfügbar. Jede Option ermöglicht Ihnen die Auswahl eines Verbrauchsmodells, das Ihren Anforderungen entspricht.
+
+
+
+== Lizenzübersicht
+
+Für Neukunden stehen folgende Lizenzierungsoptionen zur Verfügung.
+
+Kapazitätsbasierte Lizenzierung:: Bezahlen Sie für mehrere Cloud Volumes ONTAP -Systeme in Ihrem NetApp -Konto nach bereitgestellter Kapazität.  Beinhaltet die Möglichkeit, zusätzliche Cloud-Datendienste zu erwerben.  Weitere Informationen zu Verbrauchsmodellen in kapazitätsbasierten Lizenzen finden Sie unterlink:concept-licensing-charging.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen"] .
+Keystone Abonnement:: Ein Abonnementdienst mit nutzungsabhängiger Bezahlung, der ein nahtloses Hybrid-Cloud-Erlebnis für Hochverfügbarkeitspaare (HA) bietet.
+
+
+In den folgenden Abschnitten finden Sie weitere Einzelheiten zu jeder dieser Optionen.
+
+
+NOTE: Für die Nutzung lizenzierter Funktionen ohne Lizenz wird kein Support angeboten.
+
+
+
+== Kapazitätsbasierte Lizenzierung
+
+Mit kapazitätsbasierten Lizenzpaketen können Sie für Cloud Volumes ONTAP pro TiB Kapazität bezahlen. Die Lizenz ist mit Ihrem NetApp -Konto verknüpft und ermöglicht Ihnen, mehrere Systeme über die Lizenz abzurechnen, sofern über die Lizenz genügend Kapazität verfügbar ist.
+
+Sie könnten beispielsweise eine einzelne 20-TiB-Lizenz erwerben, vier Cloud Volumes ONTAP Systeme bereitstellen und dann jedem System ein 5-TiB-Volume zuweisen, sodass insgesamt 20 TiB zur Verfügung stehen.  Die Kapazität steht den Volumes auf jedem in diesem Konto bereitgestellten Cloud Volumes ONTAP System zur Verfügung.
+
+Die kapazitätsbasierte Lizenzierung ist in Form eines _Pakets_ verfügbar. Wenn Sie ein Cloud Volumes ONTAP -System bereitstellen, können Sie je nach Ihren Geschäftsanforderungen aus mehreren Lizenzpaketen wählen.
+
+
+NOTE: Während die tatsächliche Nutzung und Messung der in der NetApp Console verwalteten Produkte und Services immer in GiB und TiB berechnet wird, werden die Begriffe GB/GiB und TB/TiB synonym verwendet.  Dies spiegelt sich in den Einträgen im Cloud-Marktplatz, Preisangeboten, Eintragsbeschreibungen und in anderen unterstützenden Dokumenten wider.
+
+
+
+=== Pakete
+
+Für Cloud Volumes ONTAP sind die folgenden kapazitätsbasierten Pakete verfügbar.  Weitere Informationen zu kapazitätsbasierten Lizenzpaketen finden Sie unterlink:concept-licensing-charging.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen"] .
+
+Eine Liste der unterstützten VM-Typen mit den folgenden kapazitätsbasierten Paketen finden Sie unter:
+
+ifdef::azure[]
+
+* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Unterstützte Konfigurationen in Azure"^]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Unterstützte Konfigurationen in Google Cloud"^]
+
+
+endif::gcp[]
+
+
+
+==== Freemium
+
+Bietet alle Cloud Volumes ONTAP -Funktionen kostenlos von NetApp (Gebühren des Cloud-Anbieters fallen weiterhin an).  Ein Freemium-Paket hat folgende Eigenschaften:
+
+* Es ist keine Lizenz oder kein Vertrag erforderlich.
+* Support von NetApp ist nicht enthalten.
+* Sie sind auf 500 GiB bereitgestellte Kapazität pro Cloud Volumes ONTAP System beschränkt.
+* Mit dem Freemium-Angebot können Sie pro NetApp -Konto bis zu 10 Cloud Volumes ONTAP Systeme für jeden Cloud-Anbieter nutzen.
+* Wenn die bereitgestellte Kapazität für ein Cloud Volumes ONTAP -System 500 GiB überschreitet, konvertiert die Konsole das System in ein Essentials-Paket.
++
+Sobald ein System auf das Essentials-Paket umgestellt wird,link:concept-licensing-charging.html#minimum-charge["Mindestladezeit"] gilt dafür.
+
++
+Ein Cloud Volumes ONTAP -System, das in ein Essentials-Paket konvertiert wurde, kann nicht wieder auf Freemium umgestellt werden, selbst wenn die bereitgestellte Kapazität auf weniger als 500 GiB reduziert wird.  Andere Systeme mit weniger als 500 GiB bereitgestellter Kapazität bleiben bei Freemium (sofern sie mit dem Freemium-Angebot bereitgestellt wurden).
+
+
+
+
+
+==== Grundausstattung
+
+Sie können nach Kapazität in verschiedenen Konfigurationen bezahlen:
+
+* Wählen Sie Ihre Cloud Volumes ONTAP -Konfiguration:
++
+** Ein einzelner Knoten oder ein HA-System
+** Datei- und Blockspeicher oder Sekundärdaten für die Notfallwiederherstellung (DR)
+
+
+* Fügen Sie gegen Aufpreis beliebige Cloud-Datendienste von NetApp hinzu
+
+
+
+
+==== Professional
+
+Bezahlen Sie nach Kapazität für jede Art von Cloud Volumes ONTAP Konfiguration mit unbegrenzten Backups.
+
+* Bietet Lizenzierung für jede Cloud Volumes ONTAP -Konfiguration
++
+Einzelknoten oder HA mit Kapazitätsabrechnung für primäre und sekundäre Volumes zum gleichen Tarif
+
+* Beinhaltet unbegrenzte Volume-Backups mit NetApp Backup and Recovery, jedoch nur für Cloud Volumes ONTAP Systeme, die das Professional-Paket verwenden.
++
+
+NOTE: Für Backup und Recovery ist ein Pay-as-you-go-Abonnement (PAYGO) erforderlich. Für die Nutzung dieses Dienstes fallen jedoch keine Gebühren an.  Weitere Informationen zum Einrichten der Lizenzierung für Backup und Recovery finden Sie unter https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html["Einrichten der Lizenzierung für Backup und Recovery"^] .
+
+* Fügen Sie gegen Aufpreis beliebige Cloud-Datendienste von NetApp hinzu
+
+
+
+
+=== Verfügbarkeit kapazitätsbasierter Lizenzen
+
+Die Verfügbarkeit der PAYGO- und BYOL-Lizenzen für Cloud Volumes ONTAP Systeme erfordert, dass der Konsolenagent betriebsbereit ist.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#impact-on-cloud-volumes-ontap["Erfahren Sie mehr über Konsolenagenten"^] .
+
+
+NOTE: NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAPP"^] .
+
+
+
+=== Erste Schritte
+
+Erfahren Sie, wie Sie mit der kapazitätsbasierten Lizenzierung beginnen:
+
+ifdef::aws[]
+
+* link:task-set-up-licensing-aws.html["Einrichten der Lizenzierung für Cloud Volumes ONTAP in AWS"]
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* link:task-set-up-licensing-azure.html["Einrichten der Lizenzierung für Cloud Volumes ONTAP in Azure"]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* link:task-set-up-licensing-google.html["Einrichten der Lizenzierung für Cloud Volumes ONTAP in Google Cloud"]
+
+
+endif::gcp[]
+
+
+
+== Keystone Abonnement
+
+Ein Abonnementdienst mit nutzungsabhängiger Bezahlung, der ein nahtloses Hybrid-Cloud-Erlebnis für diejenigen bietet, die OpEx-Verbrauchsmodelle gegenüber vorab zu zahlenden Investitionskosten oder Leasing bevorzugen.
+
+Die Abrechnung basiert auf der Größe Ihrer zugesagten Kapazität für ein oder mehrere Cloud Volumes ONTAP HA-Paare in Ihrem Keystone Abonnement.
+
+Die bereitgestellte Kapazität für jedes Volume wird aggregiert und regelmäßig mit der zugesagten Kapazität Ihres Keystone Abonnements verglichen. Überschreitungen werden als Burst für Ihr Keystone Abonnement berechnet.
+
+link:https://docs.netapp.com/us-en/keystone-staas/index.html["Erfahren Sie mehr über NetApp Keystone"^] .
+
+
+
+=== Unterstützte Konfigurationen
+
+Keystone -Abonnements werden mit HA-Paaren unterstützt.  Diese Lizenzierungsoption wird derzeit für Einzelknotensysteme nicht unterstützt.
+
+
+
+=== Kapazitätsgrenze
+
+Im kapazitätsbasierten Lizenzmodell unterstützt jedes Cloud Volumes ONTAP System die Einstufung in Objektspeicher und die gesamte abgestufte Kapazität kann bis zum Bucket-Limit des Cloud-Anbieters skaliert werden. Obwohl die Lizenz keine Kapazitätsbeschränkungen vorsieht, befolgen Sie die https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Best Practices für FabricPool"^] um optimale Leistung, Zuverlässigkeit und Kosteneffizienz bei der Konfiguration und Verwaltung der Tiering-Ebene sicherzustellen.
+
+Informationen zu den Kapazitätsgrenzen der einzelnen Cloud-Anbieter finden Sie in deren Dokumentation:
+
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html["AWS-Dokumentation"^]
+* https://learn.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account["Azure-Dokumentation für verwaltete Datenträger"^]Und https://learn.microsoft.com/en-us/azure/storage/blobs/scalability-targets["Azure-Dokumentation für Blob Storage"^]
+* https://cloud.google.com/storage/docs/buckets["Google Cloud-Dokumentation"^]
+
+
+
+
+=== Erste Schritte
+
+Erfahren Sie, wie Sie mit einem Keystone -Abonnement beginnen:
+
+ifdef::aws[]
+
+* link:task-set-up-licensing-aws.html["Einrichten der Lizenzierung für Cloud Volumes ONTAP in AWS"]
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* link:task-set-up-licensing-azure.html["Einrichten der Lizenzierung für Cloud Volumes ONTAP in Azure"]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* link:task-set-up-licensing-google.html["Einrichten der Lizenzierung für Cloud Volumes ONTAP in Google Cloud"]
+
+
+endif::gcp[]
+
+
+
+== Knotenbasierte Lizenzierung
+
+Die knotenbasierte Lizenzierung ist das Lizenzierungsmodell der vorherigen Generation, mit dem Sie Cloud Volumes ONTAP pro Knoten lizenzieren konnten.  Dieses Lizenzmodell ist für Neukunden nicht verfügbar.  Das Laden nach Knoten wurde durch die oben beschriebenen Lademethoden nach Kapazität ersetzt.
+
+NetApp hat das Ende der Verfügbarkeit (EOA) und des Supports (EOS) der knotenbasierten Lizenzierung geplant.  Nach EOA und EOS müssen knotenbasierte Lizenzen in kapazitätsbasierte Lizenzen umgewandelt werden.
+
+Weitere Informationen finden Sie unter https://mysupport.netapp.com/info/communications/CPC-00589.html["Kundenmitteilung: CPC-00589"^] .
+
+
+
+=== Ende der Verfügbarkeit von knotenbasierten Lizenzen
+
+Ab dem 11. November 2024 wurde die begrenzte Verfügbarkeit von knotenbasierten Lizenzen beendet. Der Support für die knotenbasierte Lizenzierung endet am 31. Dezember 2024.
+
+Wenn Sie über einen gültigen knotenbasierten Vertrag verfügen, der über das EOA-Datum hinausgeht, können Sie die Lizenz bis zum Ablauf des Vertrags weiter verwenden.  Nach Ablauf des Vertrages ist eine Umstellung auf das kapazitätsbasierte Lizenzmodell erforderlich.  Wenn Sie keinen langfristigen Vertrag für einen Cloud Volumes ONTAP Knoten haben, ist es wichtig, Ihre Konvertierung vor dem EOS-Datum zu planen.
+
+In dieser Tabelle erfahren Sie mehr über die einzelnen Lizenztypen und die Auswirkungen der EOA darauf:
+
+[cols="2*"]
+|===
+| Lizenztyp | Auswirkungen nach EOA 
+
+
+ a| 
+Gültige knotenbasierte Lizenz, erworben über Bring Your Own License (BYOL)
+ a| 
+Die Lizenz bleibt bis zum Ablauf gültig.  Vorhandene, ungenutzte knotenbasierte Lizenzen können für die Bereitstellung neuer Cloud Volumes ONTAP -Systeme verwendet werden.
+
+
+
+ a| 
+Abgelaufene knotenbasierte Lizenz, die über BYOL erworben wurde
+ a| 
+Sie sind nicht berechtigt, mit dieser Lizenz neue Cloud Volumes ONTAP -Systeme bereitzustellen.  Die vorhandenen Systeme funktionieren möglicherweise weiterhin, Sie erhalten jedoch nach dem EOS-Datum keinen Support oder keine Updates für Ihre Systeme.
+
+
+
+ a| 
+Gültige knotenbasierte Lizenz mit PAYGO-Abonnement
+ a| 
+Sie erhalten nach dem EOS-Datum NetApp Support mehr, bis Sie zu einer kapazitätsbasierten Lizenz wechseln.
+
+|===
+.Ausschlüsse
+NetApp ist sich bewusst, dass bestimmte Situationen besondere Berücksichtigung erfordern. EOA und EOS der knotenbasierten Lizenzierung gelten in den folgenden Fällen nicht:
+
+* Kunden aus dem öffentlichen Sektor der USA
+* Bereitstellungen im privaten Modus
+* Bereitstellungen von Cloud Volumes ONTAP in AWS in der Region China
+
+
+Für diese speziellen Szenarien bietet NetApp Unterstützung bei der Erfüllung der einzigartigen Lizenzanforderungen im Einklang mit vertraglichen Verpflichtungen und betrieblichen Anforderungen.
+
+
+NOTE: Auch in diesen Szenarien sind neue knotenbasierte Lizenzen und Lizenzverlängerungen ab dem Genehmigungsdatum maximal ein Jahr gültig.
+
+
+
+== Lizenzkonvertierung
+
+Die Konsole ermöglicht eine nahtlose Konvertierung von knotenbasierten Lizenzen in kapazitätsbasierte Lizenzen über das Lizenzkonvertierungstool.  Informationen zum EOA der knotenbasierten Lizenzierung finden Sie unterlink:concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"] .
+
+Vor der Umstellung ist es gut, sich mit den Unterschieden zwischen den beiden Lizenzmodellen vertraut zu machen.  Die knotenbasierte Lizenzierung umfasst eine feste Kapazität für jede ONTAP Instanz, was die Flexibilität einschränken kann.  Die kapazitätsbasierte Lizenzierung hingegen ermöglicht einen gemeinsamen Speicherpool über mehrere Instanzen hinweg, bietet dadurch mehr Flexibilität, optimiert die Ressourcennutzung und reduziert das Risiko finanzieller Nachteile bei der Neuverteilung von Workloads.  Die kapazitätsbasierte Abrechnung passt sich nahtlos an veränderte Speicheranforderungen an.
+
+Informationen zur Durchführung dieser Konvertierung finden Sie unterlink:task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Cloud Volumes ONTAP Lizenz in eine kapazitätsbasierte Lizenz"] .
+
+
+NOTE: Die Umstellung eines Systems von kapazitätsbasierter auf knotenbasierte Lizenzierung wird nicht unterstützt.

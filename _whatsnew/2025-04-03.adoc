@@ -1,0 +1,11 @@
+= Unterstützung für China-Regionen für Cloud Volumes ONTAP 9.13.1 in AWS
+:allow-uri-read: 
+
+
+
+
+=== Unterstützung für China-Regionen für Cloud Volumes ONTAP 9.13.1 in AWS
+
+Sie können Cloud Volumes ONTAP 9.13.1 jetzt in AWS-Regionen in China bereitstellen. Dies umfasst die Unterstützung sowohl für Einzelknoten- als auch für Hochverfügbarkeitsbereitstellungen (HA). Es werden nur direkt von NetApp erworbene Lizenzen unterstützt.
+
+Informationen zur regionalen Verfügbarkeit finden Sie im https://bluexp.netapp.com/cloud-volumes-global-regions["Globale Regionenkarten für Cloud Volumes ONTAP"^] .

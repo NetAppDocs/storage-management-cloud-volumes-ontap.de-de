@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: task-connecting-to-otc.html 
+keywords: connecting, cli, command, command line, connect, shell, interface 
+summary: Mit der Cloud Volumes ONTAP CLI können Sie alle Verwaltungsbefehle ausführen und sie ist eine gute Wahl für erweiterte Aufgaben oder wenn Sie mit der Verwendung der CLI vertrauter sind.  Sie können per SSH eine Verbindung zur CLI herstellen. 
+---
+= Verwalten von Cloud Volumes ONTAP über die CLI
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit der Cloud Volumes ONTAP CLI können Sie alle Verwaltungsbefehle ausführen und sie ist eine gute Wahl für erweiterte Aufgaben oder wenn Sie mit der Verwendung der CLI vertrauter sind.  Sie können über Secure Shell (SSH) eine Verbindung zur CLI herstellen.
+
+.Bevor Sie beginnen
+Der Host, von dem aus Sie per SSH eine Verbindung zu Cloud Volumes ONTAP herstellen, muss über eine Netzwerkverbindung zu Cloud Volumes ONTAP verfügen.  Beispielsweise müssen Sie möglicherweise eine SSH-Verbindung von einem Jump-Host herstellen, der sich im Netzwerk Ihres Cloud-Anbieters befindet.
+
+ifdef::aws[]
+
+
+NOTE: Bei der Bereitstellung in mehreren AZs verwenden Cloud Volumes ONTAP HA-Konfigurationen eine Floating-IP-Adresse für die Clusterverwaltungsschnittstelle, was bedeutet, dass kein externes Routing verfügbar ist.  Sie müssen die Verbindung von einem Host aus herstellen, der Teil derselben Routingdomäne ist.
+
+endif::aws[]
+
+.Schritte
+. Identifizieren Sie in der NetApp Konsole die IP-Adresse der Cluster-Verwaltungsschnittstelle:
++
+.. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
+.. Wählen Sie auf der Seite *Systeme* das Cloud Volumes ONTAP -System aus.
+.. Kopieren Sie die Clusterverwaltungs-IP-Adresse, die im rechten Bereich angezeigt wird.
+
+
+. Verwenden Sie SSH, um mit dem Administratorkonto eine Verbindung zur IP-Adresse der Clusterverwaltungsschnittstelle herzustellen.
++
+*Beispiel*
+
++
+Das folgende Bild zeigt ein Beispiel mit PuTTY:
+
++
+image:screenshot_cli2.gif["Screenshot: Zeigt das Ziel admin@192.168.11.5 auf Port 22."]
+
+. Geben Sie bei der Anmeldeaufforderung das Kennwort für das Administratorkonto ein.
++
+*Beispiel*
+
++
+....
+Password: ********
+COT2::>
+....
+

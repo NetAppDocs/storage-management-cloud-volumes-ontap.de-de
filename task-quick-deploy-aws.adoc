@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: task-quick-deploy-aws.html 
+keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ, MAZ, single node, HA pair 
+summary: Sie können Cloud Volumes ONTAP Instanzen schnell in einer Einzelsystemkonfiguration oder als HA-Paar in AWS bereitstellen. 
+---
+= Stellen Sie Cloud Volumes ONTAP in AWS mithilfe der Schnellbereitstellung bereit
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können Cloud Volumes ONTAP in AWS mithilfe einer schnellen Bereitstellungsmethode sowohl für Einzelknoten- als auch für Hochverfügbarkeitskonfigurationen (HA) bereitstellen.  Dieser vereinfachte Prozess reduziert die Bereitstellungsschritte im Vergleich zur erweiterten Methode.  Darüber hinaus bietet es mehr Übersichtlichkeit im Arbeitsablauf, indem es automatisch Standardwerte auf einer einzigen Seite festlegt und die Navigation minimiert.
+
+.Bevor Sie beginnen
+Sie benötigen Folgendes, um ein Cloud Volumes ONTAP -System in AWS von der NetApp Konsole aus hinzuzufügen.
+
+[[licensing]]
+* Ein Konsolenagent, der aktiv ist und läuft.
++
+** Sie sollten eine https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Konsolenagent, der mit Ihrem Projekt oder Arbeitsbereich verknüpft ist"^] .
+** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Sie sollten darauf vorbereitet sein, den Konsolenagenten immer laufen zu lassen"^] .
+
+
+* Ein Verständnis der Konfiguration, die Sie verwenden möchten.
++
+Sie sollten sich vorbereitet haben, indem Sie eine Konfiguration ausgewählt und AWS-Netzwerkinformationen von Ihrem Administrator eingeholt haben. Weitere Einzelheiten finden Sie unterlink:task-planning-your-config.html["Planen Ihrer Cloud Volumes ONTAP Konfiguration"^] .
+
+* Ein Verständnis dafür, was zum Einrichten der Lizenzierung für Cloud Volumes ONTAP erforderlich ist.
++
+link:task-set-up-licensing-aws.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
+
+* DNS und Active Directory für CIFS-Konfigurationen.
++
+Weitere Einzelheiten finden Sie unterlink:reference-networking-aws.html["Netzwerkanforderungen für Cloud Volumes ONTAP in AWS"^] .
+
+
+
+.Informationen zu diesem Vorgang
+Unmittelbar nachdem Sie das Cloud Volumes ONTAP -System erstellt haben, startet die NetApp Konsole eine Testinstanz im angegebenen VPC, um die Konnektivität zu überprüfen.  Bei Erfolg beendet die Konsole die Instanz sofort und beginnt dann mit der Bereitstellung des Systems.  Wenn die Konsole die Konnektivität nicht überprüfen kann, schlägt die Erstellung des Systems fehl.  Die Testinstanz ist entweder eine `t2.nano` (für Standard-VPC-Miete) oder eine `m3.medium` (für dedizierte VPC-Miete).
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
+. [[Abonnieren]]Klicken Sie auf der Canvas-Seite auf *System hinzufügen* und folgen Sie den Anweisungen.
+. Wählen Sie *Amazon Web Services* > * Cloud Volumes ONTAP* > *Neu hinzufügen*.  Die Option *Schnell erstellen* ist standardmäßig ausgewählt.
+
+
+image:screenshot-aws-quick-create.png["Breite=800,alt=\"AWS Quick Create\""]
+
+.Systemdetails
+. *Cloud-Anbieterkonto*: Die Kontodetails werden automatisch basierend auf Ihrem ausgewählten Konsolenagenten ausgefüllt.  Wenn Sie mehrere Konten haben, wählen Sie das Konto aus, das Sie verwenden möchten.  Wenn ein Konsolenagent nicht verfügbar ist, werden Sie aufgefordert, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Erstellen Sie einen Konsolenagenten"^] .
+. *Name*: Der Systemname.  Die Konsole verwendet den Systemnamen (Clusternamen), um das Cloud Volumes ONTAP -System und die Amazon EC2-Instanz zu benennen.  Wenn Sie diese Option auswählen, wird der Name auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet.
+. * ONTAP -Anmeldeinformationen* Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Cluster-Administratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Sie können den Standardbenutzernamen _admin_ beibehalten oder in einen benutzerdefinierten Benutzernamen ändern.
+. *Tags* AWS-Tags sind Metadaten für Ihre AWS-Ressourcen.  Die Konsole fügt die Tags der Cloud Volumes ONTAP -Instanz und jeder mit der Instanz verknüpften AWS-Ressource hinzu.  Sie können beim Erstellen eines Cloud Volumes ONTAP -Systems bis zu 15 Tags über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Tags beschränkt.  Informationen zu Tags finden Sie unter https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html["AWS-Dokumentation: Markieren Ihrer Amazon EC2-Ressourcen"^] .
+
+
+.Bereitstellung und Konfiguration
+. *Bereitstellungstyp*: Wählen Sie den Bereitstellungstyp aus, den Sie verwenden möchten: Einzelknoten, Hochverfügbarkeit (HA) in einer einzelnen Verfügbarkeitszone (AZ) oder HA in mehreren AZs.
+. *Netzwerkkonfiguration*: Geben Sie die Netzwerkinformationen ein, die Sie im https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information["AWS-Arbeitsblatt"^] .
++
+.. *AWS-Region*: Standardmäßig ist die Region des zugehörigen Cloud-Kontos ausgewählt, das über VPC mit Subnetzressourcen verfügt.
+.. *VPC*: Geben Sie eine VPC für die AWS-Region mit einem Subnetz ein.  Wenn keine Subnetze vorhanden sind, wird der Standardwert für die VPC ausgewählt.
+.. *Subnetz*: Sie können ein Subnetz für die VPC nur für eine Einzelknotenbereitstellung oder eine HA-Bereitstellung in einer einzelnen AZ auswählen.
+
+
+
+
+.Hohe Verfügbarkeit
+Wenn Sie die HA-Konfiguration ausgewählt haben, geben Sie die folgenden Informationen ein:
+
+[role="tabbed-block"]
+====
+.HA in einzelner AZ
+--
+. *Mediatorzugriff*: Geben Sie die Mediatorzugriffsinformationen an.  Der Mediator ist eine separate Instanz, die den Zustand des HA-Paares überwacht und im Fehlerfall ein Quorum bereitstellt.  Geben Sie den Namen des Schlüsselpaars an, damit die Mediatorinstanz eine Verbindung mit dem AWS EC2-Dienst herstellen kann, und wählen Sie die Verbindungsmethode aus.
+
+
+--
+.HA in mehreren AZ
+--
+. *Verfügbarkeitszonen und Mediator*: Wählen Sie die Verfügbarkeitszonen (AZs) für jeden Knoten und den Mediator sowie die entsprechenden Subnetze aus, in denen Sie das Cloud Volumes ONTAP HA-Paar bereitstellen möchten.
+. *Floating IPs*: Wenn Sie mehrere AZs auswählen, geben Sie die Floating-IP-Adressen für die NFS- und CIFS-Dienste sowie die Cluster- und SVM-Verwaltung an.  Die IP-Adressen müssen für alle VPCs in der Region außerhalb des CIDR-Blocks liegen.  Weitere Einzelheiten finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["AWS-Netzwerkanforderungen für Cloud Volumes ONTAP HA in mehreren AZs"^] .
+. *Mediatorzugriff*: Geben Sie die Mediatorzugriffsinformationen an.  Der Mediator ist eine separate Instanz, die den Zustand des HA-Paares überwacht und im Fehlerfall ein Quorum bereitstellt.  Geben Sie den Namen des Schlüsselpaars an, damit die Mediatorinstanz eine Verbindung mit dem AWS EC2-Dienst herstellen kann, und wählen Sie die Verbindungsmethode aus.
+. *Routentabellen*: Wenn Sie mehrere AZs ausgewählt haben, wählen Sie die Routentabellen aus, die Routen zu den Floating-IP-Adressen enthalten.  Wenn Sie mehr als eine Routentabelle haben, ist es wichtig, die richtigen Routentabellen auszuwählen.  Andernfalls haben einige Clients möglicherweise keinen Zugriff auf das Cloud Volumes ONTAP HA-Paar.  Weitere Informationen zu Routentabellen finden Sie im http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html["AWS-Dokumentation: Routentabellen"^] .
+
+
+--
+====
+.Laden und Dienste
+. *Marketplace-Abonnement*: Wählen Sie das AWS-Marketplace-Abonnement aus, das Sie mit diesem Cloud Volumes ONTAP -System verwenden möchten.
+. *Lizenz*: Wählen Sie den Lizenztyp aus, den Sie mit diesem Cloud Volumes ONTAP -System verwenden möchten.  Sie können zwischen Professional-, Essential- und Premium-Lizenzen wählen.  Informationen zu verschiedenen Lizenzen finden Sie unterlink:concept-licensing.html["Erfahren Sie mehr über Cloud Volumes ONTAP -Lizenzen"^] .
+. *Datendienste und -funktionen*: Lassen Sie die Dienste aktiviert oder deaktivieren Sie die Dienste, die Sie nicht mit Cloud Volumes ONTAP verwenden möchten.
++
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Klassifizierung"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup und Recovery"^]
+** link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher auf Cloud Volumes ONTAP"]
++
+
+TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
+
+** * NetApp Support Site-Konto*: Wenn Sie mehrere Konten haben, wählen Sie das Konto aus, das Sie verwenden möchten.
+
+
+
+
+.Zusammenfassung
+Überprüfen oder bearbeiten Sie die eingegebenen Details und klicken Sie dann auf *Erstellen*.
+
+.Weiterführende Links
+* link:task-planning-your-config.html["Planen Ihrer Cloud Volumes ONTAP Konfiguration"]
+* link:task-deploying-otc-aws.html["Stellen Sie Cloud Volumes ONTAP in AWS mithilfe der erweiterten Bereitstellung bereit"]
+

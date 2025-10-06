@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: task-change-route-tables.html 
+keywords: route tables, update route tables, modify route tables, change route table 
+summary: Sie können die AWS-Routentabellen ändern, die Routen zu den Floating-IP-Adressen für ein HA-Paar enthalten, das in mehreren AWS-Verfügbarkeitszonen bereitgestellt wird.  Sie können dies tun, wenn neue NFS- oder CIFS-Clients auf ein HA-Paar in AWS zugreifen müssen. 
+---
+= Routentabellen für Cloud Volumes ONTAP HA-Paare in mehreren AWS AZs ändern
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die AWS-Routentabellen ändern, die Routen zu den Floating-IP-Adressen für ein HA-Paar enthalten, das in mehreren AWS Availability Zones (AZs) bereitgestellt wird.  Sie können dies tun, wenn neue NFS- oder CIFS-Clients auf ein HA-Paar in AWS zugreifen müssen.
+
+.Schritte
+. Wählen Sie auf der Seite *Systeme* das System aus.
+. Klicken Sie auf der Registerkarte „Übersicht“ auf den Bereich „Funktionen“ und dann auf das Stiftsymbol neben „Routentabellen“.
+. Ändern Sie die Liste der ausgewählten Routentabellen und klicken Sie dann auf *Speichern*.
+
+
+.Ergebnis
+Die NetApp Konsole sendet eine AWS-Anfrage zum Ändern der Routentabellen.

@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: concept-azure-mktplace-direct.html 
+keywords: azure marketplace direct, cvo in azure marketplace 
+summary:  
+---
+= Informieren Sie sich über die Bereitstellungsoptionen von Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp bietet zwei Optionen für die Bereitstellung von Cloud Volumes ONTAP auf Azure.  Cloud Volumes ONTAP verlässt sich traditionell auf die NetApp Konsole für Bereitstellung und Orchestrierung.  Ab Cloud Volumes ONTAP 9.16.1 können Sie die Vorteile der direkten Bereitstellung im Azure Marketplace nutzen, einem optimierten Prozess, der Zugriff auf eine begrenzte, aber dennoch leistungsstarke Reihe von Funktionen und Optionen von Cloud Volumes ONTAP bietet.
+
+Wenn Sie Cloud Volumes ONTAP direkt vom Azure Marketplace bereitstellen, müssen Sie weder den Konsolen-Agenten einrichten noch andere Sicherheits- und Onboarding-Kriterien erfüllen, die für die Bereitstellung von Cloud Volumes ONTAP über die Konsole erforderlich sind.  Über den Azure Marketplace können Sie Cloud Volumes ONTAP mit wenigen Klicks schnell bereitstellen und die wichtigsten Funktionen und Möglichkeiten in Ihrer Umgebung erkunden.
+
+Nach Abschluss der Bereitstellung im Azure Marketplace können Sie diese Systeme in der Konsole entdecken.  Nach der Erkennung können Sie sie als Cloud Volumes ONTAP -Systeme verwalten und alle Konsolenfunktionen nutzen. Weitere Informationen finden Sie unter link:task-deploy-cvo-azure-mktplc.html["Entdecken Sie die bereitgestellten Systeme in der Konsole"] .
+
+Hier ist der Funktionsvergleich zwischen den beiden Optionen.  Beachten Sie, dass sich die Funktionen einer über den Azure Marketplace bereitgestellten eigenständigen Instanz ändern, wenn sie in der Konsole erkannt wird.
+
+[cols="3*"]
+|===
+|  | Azure-Marktplatz | NetApp Konsole 
+
+
+| *Einarbeitung* | Kürzere und einfachere, minimale Vorbereitung für den direkten Einsatz erforderlich | Längerer Onboarding-Prozess, einschließlich der Installation des Konsolen-Agenten 
+
+
+| *Unterstützte Typen virtueller Maschinen (VM)*  a| 
+Eds_v5- und Ls_v3-Instance-Typen
+| Vollständige Palette an VM-Typen.https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Unterstützte Konfigurationen in Azure"^] 
+
+
+| *Lizenz* | Kostenlose Lizenz | Jede kapazitätsbasierte Lizenz.link:concept-licensing.html["Cloud Volumes ONTAP -Lizenzierung"] 
+
+
+| * NetApp Unterstützung* | Nicht enthalten | Verfügbar, je nach Lizenztyp 
+
+
+| *Kapazität* | Bis zu 500 GiB | Erweiterbar durch Konfiguration 
+
+
+| *Bereitstellungsmodell* | Bereitstellung im Hochverfügbarkeitsmodus (HA) in einer einzelnen Verfügbarkeitszone (AZ) | Alle unterstützten Konfigurationen, einschließlich Einzelknoten- und HA-Modi, Einzel- und Mehrfach-AZ-Bereitstellungen 
+
+
+| *Unterstützter Datenträgertyp* | Verwaltete Premium-SSD-v2-Datenträger | Breitere Unterstützung.link:concept-storage.html#azure-storage["Standardkonfiguration für Cloud Volumes ONTAP"] 
+
+
+| *Schreibgeschwindigkeit (schneller Schreibmodus)* | Nicht unterstützt | Wird basierend auf Ihrer Konfiguration unterstützt. link:concept-write-speed.html["Erfahren Sie mehr über die Schreibgeschwindigkeiten in Cloud Volumes ONTAP"] . 
+
+
+| *Orchestrierungsfunktionen* | Nicht verfügbar | Verfügbar über die NetApp Konsole, basierend auf dem Lizenztyp 
+
+
+| *Anzahl der unterstützten Speicher-VMs* | Eine pro Bereitstellung | Mehrere Speicher-VMs, basierend auf Ihrer Konfiguration.link:task-managing-svms-azure.html#supported-number-of-storage-vms["Unterstützte Anzahl von Speicher-VMs"] 
+
+
+| *Ändern des Instanztyps* | Nicht unterstützt | Unterstützt 
+
+
+| * FabricPool Stufeneinteilung* | Nicht unterstützt | Unterstützt 
+|===
+.Weiterführende Links
+* Direkte Bereitstellung im Azure Marketplace:link:task-deploy-cvo-azure-mktplc.html["Stellen Sie Cloud Volumes ONTAP vom Azure Marketplace bereit"]
+* Bereitstellung über die Konsole:link:task-getting-started-azure.html["Schnellstart für Cloud Volumes ONTAP in Azure"]
+* https://docs.netapp.com/us-en/bluexp-family/index.html["Dokumentation zur NetApp -Konsole"^]
+

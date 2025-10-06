@@ -1,0 +1,190 @@
+---
+sidebar: sidebar 
+permalink: task-manage-capacity-licenses.html 
+keywords: license, licensing, capacity license, capacity based license, add license, install license, digital wallet 
+summary: Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Konsole, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt. 
+---
+= Verwalten Sie die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Konsole, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt.
+
+_Kapazitätsbasierte Lizenzen_ ermöglichen Ihnen die Zahlung für Cloud Volumes ONTAP pro TiB Kapazität.
+
+Sie können kapazitätsbasierte Cloud Volumes ONTAP Lizenzen über die NetApp Konsole verwalten.
+
+
+NOTE: Während die tatsächliche Nutzung und Messung der in der Konsole verwalteten Produkte und Dienste immer in GiB und TiB berechnet wird, werden die Begriffe GB/GiB und TB/TiB synonym verwendet.  Dies spiegelt sich in den Cloud Marketplace-Angeboten, Preisangeboten, Angebotsbeschreibungen und anderen unterstützenden Dokumenten wider
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Erfahren Sie mehr über Cloud Volumes ONTAP -Lizenzen"] .
+
+
+
+== So werden Lizenzen zur NetApp Konsole hinzugefügt
+
+Nachdem Sie eine Lizenz von Ihrem NetApp Vertriebsmitarbeiter erworben haben, sendet Ihnen NetApp eine E-Mail mit der Seriennummer und weiteren Lizenzdetails.
+
+In der Zwischenzeit fragt die Konsole automatisch den Lizenzierungsdienst von NetApp ab, um Details zu den Lizenzen zu erhalten, die mit Ihrem NetApp Support Site-Konto verknüpft sind.  Wenn keine Fehler vorliegen, werden die Lizenzen hinzugefügt.
+
+Wenn die Konsole die Lizenz nicht hinzufügen kann, müssen Sie sie manuell hinzufügen.  Wenn der Konsolenagent beispielsweise an einem Ort ohne Internetzugang installiert ist, müssen Sie die Lizenzen selbst hinzufügen. https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html#add-a-license["Erfahren Sie, wie Sie Ihrem Konto erworbene Lizenzen hinzufügen"^] .
+
+
+
+== Zeigen Sie die verbrauchte Kapazität in Ihrem Konto an
+
+Die Konsole zeigt Ihnen die insgesamt verbrauchte Kapazität in Ihrem Konto und die verbrauchte Kapazität nach Lizenzpaket an. Auf diese Weise können Sie besser nachvollziehen, welche Kosten Ihnen in Rechnung gestellt werden und ob Sie zusätzliche Kapazität erwerben müssen.
+
+.Schritte
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Auf der Registerkarte *Übersicht* wird auf der Kachel „Cloud Volumes ONTAP“ die aktuell für Ihr Konto bereitgestellte Kapazität angezeigt.
++
+image:screenshot_cvo_licensing_card.png["width=300 Ein Screenshot, der die Kapazitätsübersicht für Ihre Cloud Volumes ONTAP Lizenzen und -Abonnements anzeigt."]
+
++
+** _Direktlizenz_ ist die gesamte bereitgestellte Kapazität aller Cloud Volumes ONTAP Systeme in Ihrem NetApp Konto.  Die Abrechnung erfolgt auf Grundlage der bereitgestellten Größe jedes Volumes, unabhängig vom lokalen, genutzten, gespeicherten oder effektiven Speicherplatz innerhalb des Volumes.
+** _Jahresvertrag_ ist die gesamte lizenzierte Kapazität (Bring Your Own License (BYOL) oder Marketplace-Vertrag), die Sie von NetApp erworben haben.
+** _PAYGO_ ist die gesamte bereitgestellte Kapazität mithilfe von Cloud-Marktplatz-Abonnements.  Die Abrechnung über PAYGO erfolgt nur, wenn die verbrauchte Kapazität höher ist als die lizenzierte Kapazität oder wenn in der Konsole keine BYOL-Lizenz verfügbar ist.
+
+
+. Wählen Sie *Anzeigen*, um die verbrauchte Kapazität für jedes Ihrer Lizenzpakete anzuzeigen.
+. Wählen Sie die Registerkarte *Lizenzen* aus, um Details zu jeder von Ihnen erworbenen Paketlizenz anzuzeigen.
++
+Um die angezeigten Kapazitäten für das Essentials-Paket besser zu verstehen, sollten Sie mit der Funktionsweise des Ladevorgangs vertraut sein. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#notes-about-charging["Informieren Sie sich über die Gebühren für das Essentials-Paket"] .
+
+. Wählen Sie die Registerkarte *Abonnements* aus, um die verbrauchte Kapazität nach Lizenzverbrauchsmodell anzuzeigen.  Diese Registerkarte umfasst sowohl PAYGO- als auch Jahresvertragslizenzen.
++
+Sie sehen nur die Abonnements, die mit der Organisation verknüpft sind, die Sie gerade anzeigen.
+
+. Während Sie die Informationen zu Ihren Abonnements anzeigen, können Sie mit den Details in der Tabelle interagieren. Erweitern Sie eine Zeile, um weitere Details anzuzeigen.
++
+** Wählenimage:icon-column-selector.png["das Plus-Symbol am Ende der Tabellenüberschrift"] um auszuwählen, welche Spalten in der Tabelle angezeigt werden. Beachten Sie, dass die Spalten „Laufzeit“ und „Automatische Verlängerung“ nicht standardmäßig angezeigt werden. In der Spalte „Automatische Verlängerung“ werden nur Verlängerungsinformationen für Azure-Verträge angezeigt.
+
+
+
+
+
+
+== Paketdetails anzeigen
+
+Sie können Details zur pro Paket genutzten Kapazität anzeigen, indem Sie auf der Cloud Volumes ONTAP -Seite in den Legacy-Modus wechseln.
+
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Auf der Registerkarte *Übersicht* wird auf der Kachel „Cloud Volumes ONTAP“ die aktuell für Ihr Konto bereitgestellte Kapazität angezeigt.
+. Wählen Sie *Anzeigen*, um die bereitgestellte Kapazität für jedes Ihrer Lizenzpakete anzuzeigen.
+. Wählen Sie *Zur erweiterten Ansicht wechseln*.
++
+image:screenshot_licensing.png["Ein Screenshot der Schaltfläche „Zur erweiterten Ansicht wechseln“"]
+
+. Zeigen Sie die Details des Pakets an, das Sie sehen möchten.
++
+image:screenshot_licesning_standard_view.png["Ein Screenshot der Schaltfläche zum Wechseln zur Standardansicht"]
+
+
+
+
+
+== Lademethoden ändern
+
+Die kapazitätsbasierte Lizenzierung ist in Form eines _Pakets_ verfügbar. Wenn Sie ein Cloud Volumes ONTAP -System erstellen, können Sie je nach Ihren Geschäftsanforderungen aus mehreren Lizenzpaketen wählen.  Sollten sich Ihre Anforderungen nach der Erstellung des Systems ändern, können Sie das Paket jederzeit ändern.  Beispielsweise könnten Sie vom Essentials-Paket zum Professional-Paket wechseln.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzpakete"^] .
+
+.Informationen zu diesem Vorgang
+* Das Ändern der Abrechnungsmethode hat keinen Einfluss darauf, ob Ihnen die Kosten über eine von NetApp erworbene Lizenz (BYOL) oder über das Pay-as-you-go-Abonnement (PAYGO) Ihres Cloud-Anbieters berechnet werden.
++
+Die Konsole versucht immer zuerst, eine Lizenz abzurechnen.  Wenn keine Lizenz verfügbar ist, wird dies über ein Marktplatz-Abonnement abgerechnet.  Sie müssen ein BYOL-Abonnement nicht in ein Marktplatz-Abonnement umwandeln oder umgekehrt.
+
+* Wenn Sie über ein privates Angebot oder einen Vertrag vom Marktplatz Ihres Cloud-Anbieters verfügen, führt der Wechsel zu einer Abrechnungsmethode, die nicht in Ihrem Vertrag enthalten ist, dazu, dass Ihnen BYOL (wenn Sie eine Lizenz von NetApp erworben haben) oder PAYGO in Rechnung gestellt wird.
+
+
+.Schritte
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie die Registerkarte *Übersicht*.
+. Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
+. Wählen Sie *Zur erweiterten Ansicht wechseln*.
++
+image:screenshot_licensing.png["Ein Screenshot der Schaltfläche „Zur Legacy-Ansicht wechseln“"]
+
+. Scrollen Sie nach unten zur Tabelle *Kapazitätsbasierte Lizenz* und wählen Sie *Abrechnungsmethode ändern*.
++
+image:screenshot-digital-wallet-charging-method-button.png["Ein Screenshot der Cloud Volumes ONTAP -Seite in der Konsole, auf der sich die Schaltfläche „Abrechnungsmethode ändern“ direkt über der Tabelle befindet."]
+
+. Wählen Sie im Popup-Fenster *Abrechnungsmethode ändern* ein Cloud Volumes ONTAP System aus, wählen Sie die neue Abrechnungsmethode und bestätigen Sie dann, dass Sie verstanden haben, dass sich die Änderung des Pakettyps auf die Servicegebühren auswirkt.
+. Wählen Sie *Lademethode ändern*.
+
+
+
+
+== Nutzungsberichte herunterladen
+
+Sie können vier Nutzungsberichte von der Konsole herunterladen.  Diese Nutzungsberichte liefern Kapazitätsdetails zu Ihren Abonnements und informieren Sie darüber, wie Ihnen die Ressourcen in Ihren Cloud Volumes ONTAP Abonnements in Rechnung gestellt werden.  Die herunterladbaren Berichte erfassen Daten zu einem bestimmten Zeitpunkt und können problemlos mit anderen geteilt werden.
+
+image:screenshot-download-usage-report.png["Der Screenshot zeigt die kapazitätsbasierte Lizenzseite von Cloud Volumes ONTAP und hebt die Schaltfläche „Nutzungsbericht“ hervor."]
+
+Die folgenden Berichte stehen zum Download bereit.  Die angezeigten Kapazitätswerte sind in TiB angegeben.
+
+* *Nutzung auf hoher Ebene*: Dieser Bericht enthält die folgenden Informationen:
++
+** Gesamte verbrauchte Kapazität
+** Gesamte vorab festgelegte Kapazität
+** Gesamte BYOL-Kapazität
+** Gesamtkapazität der Marketplace-Verträge
+** Gesamte PAYGO-Kapazität
+
+
+* * Cloud Volumes ONTAP -Paketnutzung*: Dieser Bericht enthält die folgenden Informationen für jedes Paket:
++
+** Gesamte verbrauchte Kapazität
+** Gesamte vorab festgelegte Kapazität
+** Gesamte BYOL-Kapazität
+** Gesamtkapazität der Marketplace-Verträge
+** Gesamte PAYGO-Kapazität
+
+
+* *Nutzung von Storage-VMs*: Dieser Bericht zeigt, wie die berechnete Kapazität auf Cloud Volumes ONTAP Systeme und Storage Virtual Machines (SVMs) aufgeteilt ist.  Diese Informationen sind nur im Bericht verfügbar.  Es enthält die folgenden Informationen:
++
+** System-ID und Name (wird als UUID angezeigt)
+** Wolke
+** NetApp Konto-ID
+** Systemkonfiguration
+** SVM-Name
+** Bereitgestellte Kapazität
+** Übersicht der geladenen Kapazität
+** Abrechnungszeitraum für den Marktplatz
+** Cloud Volumes ONTAP Paket oder -Funktion
+** Name des SaaS Marketplace-Abonnements wird aufgeladen
+** Abrechnung der SaaS Marketplace-Abonnement-ID
+** Arbeitslasttyp
+
+
+* *Volume-Nutzung*: Dieser Bericht zeigt, wie die berechnete Kapazität nach Volumes in einem Cloud Volumes ONTAP System aufgeschlüsselt ist.  Diese Informationen sind auf keinem Bildschirm der Konsole verfügbar.  Es enthält die folgenden Informationen:
++
+** System-ID und Name (wird als UUID angezeigt)
+** SVN-Name
+** Datenträger-ID
+** Datenträgertyp
+** Vom Volumen bereitgestellte Kapazität
++
+
+NOTE: FlexClone -Volumes sind in diesem Bericht nicht enthalten, da für diese Volume-Typen keine Gebühren anfallen.
+
+
+
+
+
+.Schritte
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie auf der Registerkarte *Übersicht* in der Kachel „Cloud Volumes ONTAP“ die Option *Anzeigen* aus.
+. Wählen Sie *Nutzungsbericht*.
++
+Der Nutzungsbericht wird heruntergeladen.
+
+. Öffnen Sie die heruntergeladene Datei, um auf die Berichte zuzugreifen.
+

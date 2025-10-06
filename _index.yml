@@ -1,0 +1,80 @@
+---
+indexpage:
+  lead: Mit Cloud Volumes ONTAP können Sie Ihre Cloud-Speicherkosten und -Leistung
+    optimieren und gleichzeitig Datenschutz, Sicherheit und Compliance verbessern.
+  tiles:
+  - title: Erste Schritte
+    links:
+    - title: Erfahren Sie mehr über Cloud Volumes ONTAP
+      url: concept-overview-cvo.html
+    - title: Schnellstart für AWS
+      url: task-getting-started-aws.html
+    - title: Schnellstart für AWS Top Secret/Secret Cloud-Regionen
+      url: task-getting-started-aws-c2s.html
+      flavor: aws
+    - title: Schnellstart für Azure
+      url: task-getting-started-azure.html
+      flavor: azure
+    - title: Schnellstart für Google Cloud
+      url: task-getting-started-gcp.html
+      flavor: gcp
+  - title: Lizenzierung
+    links:
+    - title: Lizenzübersicht
+      url: concept-licensing.html
+    - title: Kapazitätsbasierte Lizenzen verwalten
+      url: task-manage-capacity-licenses.html
+    - title: Austausch nicht zugewiesener knotenbasierter Lizenzen
+      url: task-manage-node-licenses.html#exchange-unassigned-node-based-licenses
+    - title: Keystone -Abonnements verwalten
+      url: task-manage-keystone.html
+  - title: Speicherverwaltung
+    links:
+    - title: Erstellen von Volumes
+      url: task-create-volumes.html
+    - title: Inaktive Daten werden in den Objektspeicher verschoben.
+      url: task-tiering.html
+    - title: Beschleunigen Sie den Datenzugriff mit FlexCache
+      url: task-accelerate-data-access.html
+    - title: ONTAP SAN-Hostkonfiguration
+      url: https://docs.netapp.com/us-en/ontap-sanhost
+  - title: Systemadministration
+    links:
+    - title: Upgrade von Cloud Volumes ONTAP
+      url: task-updating-ontap-cloud.html
+    - title: Stoppen und Starten von Cloud Volumes ONTAP
+      url: task-managing-state.html
+  - title: Sicherheit
+    links:
+    - title: Verschlüsseln Sie Volumes mit NetApp -Verschlüsselung
+      url: task-encrypting-volumes.html
+    - title: Verbessern Sie den Ransomware-Schutz
+      url: task-protecting-ransomware.html
+  - title: API
+    links:
+    - title: Übersicht über die Cloud Volumes ONTAP API
+      url: https://docs.netapp.com/us-en/bluexp-automation/cm/overview.html
+    - title: Vorbereiten der Verwendung der API
+      url: https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html
+    - title: API-Referenz
+      url: https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html
+  - title: Fehlerbehebung
+    links:
+    - title: NetApp Wissensdatenbank
+      url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
+  - title: Referenz
+    links:
+    - title: Unterstützte Konfigurationen
+      url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html
+    - title: Unterstützte Cloud-Regionen
+      url: https://www.netapp.com/console/cloud-volumes-global-regions
+    - title: Rechner
+      url: https://www.netapp.com/console/calculator-hub
+  - title: Blogs und Community
+    links:
+    - title: NetApp Konsole
+      url: https://www.netapp.com/console
+    - title: NetApp Datenservices
+      url: https://www.netapp.com/data-services/
+    - title: NetApp Community
+      url: https://community.netapp.com/

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: task-managing-svms.html 
+keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported 
+summary: Eine Storage-VM ist eine virtuelle Maschine, die innerhalb von ONTAP ausgeführt wird und Ihren Clients Speicher- und Datendienste bereitstellt.  Sie kennen dies möglicherweise als SVM oder VServer.  Cloud Volumes ONTAP ist standardmäßig mit einer Speicher-VM konfiguriert, einige Konfigurationen unterstützen jedoch zusätzliche Speicher-VMs. 
+---
+= Verwalten Sie Speicher-VMs für Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Eine Storage-VM ist eine virtuelle Maschine, die innerhalb von ONTAP ausgeführt wird und Ihren Clients Speicher- und Datendienste bereitstellt.  Sie kennen dies möglicherweise als _SVM_ oder _vServer_.  Cloud Volumes ONTAP ist standardmäßig mit einer Speicher-VM konfiguriert, einige Konfigurationen unterstützen jedoch zusätzliche Speicher-VMs.
+
+
+
+== Unterstützte Anzahl von Speicher-VMs
+
+Bei bestimmten Konfigurationen werden mehrere Speicher-VMs unterstützt.  Gehen Sie zum https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Versionshinweise zu Cloud Volumes ONTAP"^] um die unterstützte Anzahl von Speicher-VMs für Ihre Version von Cloud Volumes ONTAP zu überprüfen.
+
+
+
+== Arbeiten mit mehreren Speicher-VMs
+
+Die NetApp -Konsole unterstützt alle zusätzlichen Speicher-VMs, die Sie vom ONTAP System Manager oder der ONTAP CLI erstellen.
+
+Das folgende Bild zeigt beispielsweise, wie Sie beim Erstellen eines Volumes eine Speicher-VM auswählen können.
+
+image:screenshot_create_volume_svm.gif["Ein Screenshot, der die Möglichkeit zeigt, die Speicher-VM auszuwählen, in der Sie ein Volume erstellen möchten."]
+
+Und das folgende Bild zeigt, wie Sie eine Speicher-VM auswählen können, wenn Sie ein Volume auf ein anderes System replizieren.
+
+image:screenshot_replicate_volume_svm.gif["Ein Screenshot, der die Möglichkeit zeigt, die Speicher-VM auszuwählen, in der Sie ein Volume replizieren möchten."]
+
+
+
+== Ändern Sie den Namen der Standard-Speicher-VM
+
+Die Konsole benennt automatisch die einzelne Speicher-VM, die sie für Cloud Volumes ONTAP erstellt.  Über den ONTAP System Manager, die ONTAP CLI oder die API können Sie den Namen der Speicher-VM ändern, wenn Sie strenge Benennungsstandards haben.  Beispielsweise möchten Sie möglicherweise, dass der Name mit der Benennung der Speicher-VMs für Ihre ONTAP Cluster übereinstimmt.

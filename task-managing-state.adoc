@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: task-managing-state.html 
+keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend 
+summary: Sie können Cloud Volumes ONTAP über die NetApp Konsole stoppen und starten, um Ihre Cloud-Computing-Kosten zu verwalten. 
+---
+= Starten und Stoppen eines Cloud Volumes ONTAP -Systems
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können Cloud Volumes ONTAP über die NetApp Konsole stoppen und starten, um Ihre Cloud-Computing-Kosten zu verwalten.
+
+
+
+== Planen automatischer Shutdowns von Cloud Volumes ONTAP
+
+Möglicherweise möchten Sie Cloud Volumes ONTAP während bestimmter Zeitintervalle herunterfahren, um Ihre Rechenkosten zu senken.  Anstatt dies manuell zu tun, können Sie die Konsole so konfigurieren, dass Systeme zu bestimmten Zeiten automatisch heruntergefahren und neu gestartet werden.
+
+.Informationen zu diesem Vorgang
+* Wenn Sie ein automatisches Herunterfahren Ihres Cloud Volumes ONTAP Systems planen, verschiebt die Konsole das Herunterfahren, wenn eine aktive Datenübertragung läuft.
++
+Es fährt das System herunter, nachdem die Übertragung abgeschlossen ist.
+
+* Diese Aufgabe plant das automatische Herunterfahren beider Knoten in einem HA-Paar.
+* Beim Ausschalten von Cloud Volumes ONTAP durch geplante Herunterfahren werden keine Snapshots von Boot- und Root-Festplatten erstellt.
++
+Snapshots werden nur dann automatisch erstellt, wenn ein manuelles Herunterfahren durchgeführt wird, wie im nächsten Abschnitt beschrieben.
+
+
+
+.Schritte
+. Doppelklicken Sie auf der Seite *Systeme* auf das Cloud Volumes ONTAP -System.
+. Klicken Sie auf der Registerkarte „Übersicht“ auf das Bedienfeld „Funktionen“ und dann auf das Stiftsymbol neben „Geplante Ausfallzeit“*.
++
+image::screenshot_schedule_downtime.png[400]
+
+. Geben Sie den Zeitplan für das Herunterfahren an:
++
+.. Wählen Sie, ob Sie das System jeden Tag, jeden Wochentag, jedes Wochenende oder eine beliebige Kombination der drei Optionen herunterfahren möchten.
+.. Geben Sie an, wann und für wie lange Sie das System ausschalten möchten.
++
+*Beispiel*
+
++
+Das folgende Bild zeigt einen Zeitplan, der die Konsole anweist, das System jeden Samstag um 20:00 Uhr (20:00 Uhr) für 12 Stunden herunterzufahren.  Die Konsole startet das System jeden Montag um 0:00 Uhr neu
+
++
+image:screenshot_schedule_downtime_window.png["Screenshot: Zeigt den Bildschirm „Ausfallzeit planen“."]
+
+
+
+. Klicken Sie auf *Speichern*.
+
+
+.Ergebnis
+Der Zeitplan wird gespeichert.  Der entsprechende Eintrag „Geplante Ausfallzeit“ im Bereich „Funktionen“ zeigt „Ein“ an.
+
+
+
+== Stoppen von Cloud Volumes ONTAP
+
+Durch das Stoppen von Cloud Volumes ONTAP sparen Sie sich anfallende Rechenkosten und erstellen Snapshots der Root- und Boot-Festplatten, die bei der Fehlerbehebung hilfreich sein können.
+
+
+NOTE: Um Kosten zu sparen, löscht die Konsole regelmäßig ältere Snapshots von Root- und Boot-Festplatten.  Sowohl für die Root- als auch für die Boot-Festplatte werden nur die beiden aktuellsten Snapshots beibehalten.
+
+.Informationen zu diesem Vorgang
+Wenn Sie ein HA-Paar stoppen, fährt die Konsole beide Knoten herunter.
+
+.Schritte
+. Klicken Sie im System auf das Symbol *Ausschalten*.
++
+image:screenshot_turn_off_redesign.png["Screenshot: Zeigt das Symbol zum Ausschalten eines Cloud Volumes ONTAP Systems."]
+
+. Lassen Sie die Option zum Erstellen von Snapshots aktiviert, da die Snapshots eine Systemwiederherstellung ermöglichen können.
+. Klicken Sie auf *Ausschalten*.
++
+Das Anhalten des Systems kann einige Minuten dauern.  Sie können Systeme zu einem späteren Zeitpunkt von der Seite *Systeme* aus neu starten.
+
++
+
+NOTE: Beim Neustart werden automatisch Snapshots erstellt.
+
+

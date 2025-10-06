@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: task-modify-write-speed.html 
+keywords: write speed, high write speed, normal write speed, change write speed 
+summary: Möglicherweise müssen Sie die Konfiguration der Cloud Volumes ONTAP Systeme ändern, wenn sich Ihr Speicherbedarf ändert.  Sie können beispielsweise zwischen Pay-as-you-go-Konfigurationen wechseln, den Instanz- oder VM-Typ ändern und vieles mehr. 
+---
+= Ändern Sie die Schreibgeschwindigkeit des Systems
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können in der NetApp Konsole eine normale oder hohe Schreibgeschwindigkeit für Cloud Volumes ONTAP auswählen.  Die Standardschreibgeschwindigkeit ist normal.  Sie können auf eine hohe Schreibgeschwindigkeit umstellen, wenn für Ihre Arbeitslast eine schnelle Schreibleistung erforderlich ist.
+
+Hohe Schreibgeschwindigkeiten werden bei allen Arten von Einzelknotensystemen und einigen HA-Paarkonfigurationen unterstützt.  Unterstützte Konfigurationen anzeigen in der https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Versionshinweise zu Cloud Volumes ONTAP"^]
+
+Bevor Sie die Schreibgeschwindigkeit ändern, sollten Sielink:concept-write-speed.html["die Unterschiede zwischen den normalen und hohen Einstellungen verstehen"] .
+
+.Informationen zu diesem Vorgang
+* Stellen Sie sicher, dass Vorgänge wie die Erstellung von Volumes oder Aggregaten nicht ausgeführt werden.
+* Beachten Sie, dass diese Änderung das Cloud Volumes ONTAP -System neu startet.  Dies ist ein störender Prozess, der Ausfallzeiten für das gesamte System erfordert.
+
+
+.Schritte
+. Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, für das Sie die Schreibgeschwindigkeit konfigurieren.
+. Klicken Sie auf der Registerkarte „Übersicht“ auf das Bedienfeld „Funktionen“ und dann auf das Stiftsymbol neben „Schreibgeschwindigkeit“.
+. Wählen Sie *Normal* oder *Hoch*.
++
+Wenn Sie „Hoch“ wählen, müssen Sie die Aussage „Ich verstehe …“ lesen und durch Ankreuzen des Kästchens bestätigen.
+
++
+
+NOTE: Die Schreibgeschwindigkeitsoption *Hohe* wird mit Cloud Volumes ONTAP HA-Paaren in Google Cloud ab Version 9.13.0 unterstützt.
+
+. Klicken Sie auf *Speichern*, überprüfen Sie die Bestätigungsnachricht und klicken Sie dann auf *Genehmigen*.
+

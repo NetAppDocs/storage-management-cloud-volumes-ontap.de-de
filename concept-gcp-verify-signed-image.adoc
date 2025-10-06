@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: concept-gcp-verify-signed-image.html 
+keywords: Google Cloud, image, disk.raw, file signature verification, encryption,ONTAP, Cloud Volumes, OpenSSL, sha256, 
+summary: Überprüfen Sie die Signatur einer exportierten Google Cloud-Image-Datei mit dem Image Digest File-Tool von Cloud Volumes ONTAP . 
+---
+= Google Cloud-Image-Signaturprüfung für Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Um das exportierte, von Google Cloud signierte Image zu überprüfen, müssen Sie die Image-Digest-Datei vom NSS herunterladen, um die Datei disk.raw und den Inhalt der Digest-Datei zu validieren.
+
+
+
+== Zusammenfassung des Workflows zur signierten Bildüberprüfung
+
+Nachfolgend finden Sie eine Übersicht über den Workflow-Prozess zur Überprüfung signierter Bilder in Google Cloud.
+
+* Aus dem https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab["NSS"^] , laden Sie das Google Cloud-Archiv mit den folgenden Dateien herunter:
++
+** Signierter Digest (.sig)
+** Zertifikat mit dem öffentlichen Schlüssel (.pem)
+** Zertifikatskette (.pem)
++
+image::screenshot_cloud_volumes_ontap_tar.gz.png[Screenshot Cloud-Volumes ontap tar.gz]
+
+
+
+* Laden Sie die konvertierte disk.raw-Datei herunter
+* Validieren Sie das Zertifikat mithilfe der Zertifikatskette
+* Validieren Sie den signierten Digest mithilfe des Zertifikats, das den öffentlichen Schlüssel enthält
++
+** Entschlüsseln Sie den signierten Digest mit dem öffentlichen Schlüssel, um den Digest der Bilddatei zu extrahieren
+** Erstellen Sie einen Digest der heruntergeladenen disk.raw-Datei
+** Vergleichen Sie die beiden Digest-Dateien zur Validierung
++
+image::graphic_azure_check_signature.png[grafische azurblaue Check-Signatur]
+
+
+
+

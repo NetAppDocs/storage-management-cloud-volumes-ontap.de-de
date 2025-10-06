@@ -1,0 +1,11 @@
+= Bereitstellungen im privaten Modus für Cloud Volumes ONTAP 9.14.1 aktiviert
+:allow-uri-read: 
+
+
+
+
+=== Bereitstellungen im privaten Modus für Cloud Volumes ONTAP 9.14.1 aktiviert
+
+Sie können Cloud Volumes ONTAP 9.14.1 jetzt im privaten Modus in AWS, Azure und Google Cloud bereitstellen.  Der private Modus ist sowohl für Einzelknoten- als auch für Hochverfügbarkeitsbereitstellungen (HA) von Cloud Volumes ONTAP 9.14.1 aktiviert.
+
+Weitere Informationen zu Bereitstellungen im privaten Modus finden Sie unterhttps://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#restricted-mode["Erfahren Sie mehr über die Bereitstellungsmodi von BlueXP"^] .

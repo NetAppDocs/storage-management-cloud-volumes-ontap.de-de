@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: concept-storage.html 
+keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity 
+summary: Wenn Sie verstehen, wie Cloud Volumes ONTAP Cloud-Speicher verwendet, können Sie Ihre Speicherkosten besser einschätzen. 
+---
+= Für Cloud Volumes ONTAP -Cluster verwendete Festplatten und Aggregate
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn Sie verstehen, wie Cloud Volumes ONTAP Cloud-Speicher verwendet, können Sie Ihre Speicherkosten besser einschätzen.
+
+
+CAUTION: Sie müssen alle Festplatten und Aggregate in der NetApp Konsole erstellen und löschen. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
+
+
+
+== Überblick
+
+Cloud Volumes ONTAP verwendet den Speicher des Cloud-Anbieters als Datenträger und gruppiert sie in ein oder mehrere Aggregate.  Aggregate stellen Speicher für ein oder mehrere Volumes bereit.
+
+image:diagram_storage.png["Diese Abbildung zeigt ein Aggregat, das aus Festplatten und den Datenvolumes besteht, die Cloud Volumes ONTAP den Hosts zur Verfügung stellt."]
+
+Es werden mehrere Arten von Cloud-Festplatten unterstützt.  Sie wählen den Datenträgertyp beim Erstellen eines Volumes und die Standarddatenträgergröße beim Bereitstellen von Cloud Volumes ONTAP.
+
+
+TIP: Die Gesamtmenge des von einem Cloud-Anbieter erworbenen Speichers ist die _Rohkapazität_.  Die _nutzbare Kapazität_ ist geringer, da etwa 12 bis 14 Prozent Overhead sind, der für die Nutzung von Cloud Volumes ONTAP reserviert ist.  Wenn die Konsole beispielsweise ein 500-GiB-Aggregat erstellt, beträgt die nutzbare Kapazität 442,94 GiB.
+
+ifdef::aws[]
+
+
+
+== AWS-Speicher
+
+In AWS verwendet Cloud Volumes ONTAP EBS-Speicher für Benutzerdaten und lokalen NVMe-Speicher als Flash-Cache auf einigen EC2-Instanztypen.
+
+EBS-Speicher:: In AWS kann ein Aggregat bis zu 6 Festplatten enthalten, die alle dieselbe Größe haben. Wenn Sie jedoch über eine Konfiguration verfügen, die die Funktion „Amazon EBS Elastic Volumes“ unterstützt, kann ein Aggregat bis zu 8 Festplatten enthalten. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"] .
++
+--
+Die maximale Festplattengröße beträgt 16 TiB.
+
+Der zugrunde liegende EBS-Festplattentyp kann entweder General Purpose SSDs (gp3 oder gp2), Provisioned IOPS SSD (io1) oder Throughput Optimized HDD (st1) sein.  Sie können eine EBS-Festplatte mit Amazon S3 koppeln, umlink:concept-data-tiering.html["kostengünstiger Objektspeicher"] .
+
+
+NOTE: Bei Verwendung von durchsatzoptimierten HDDs (st1) wird das Tiering von Daten in Objektspeicher nicht empfohlen.
+
+--
+Lokaler NVMe-Speicher:: Einige EC2-Instanztypen umfassen lokalen NVMe-Speicher, den Cloud Volumes ONTAP alslink:concept-flash-cache.html["Flash-Cache"] .
+
+
+*Weiterführende Links*
+
+* http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html["AWS-Dokumentation: EBS-Volume-Typen"^]
+* link:task-planning-your-config.html["Erfahren Sie, wie Sie Datenträgertypen und Datenträgergrößen für Ihre Systeme in AWS auswählen"]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html["Überprüfen Sie die Speicherlimits für Cloud Volumes ONTAP in AWS"^]
+* http://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["Überprüfen Sie die unterstützten Konfigurationen für Cloud Volumes ONTAP in AWS"^]
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+== Azure-Speicher
+
+In Azure kann ein Aggregat bis zu 12 Datenträger enthalten, die alle dieselbe Größe haben.  Der Datenträgertyp und die maximale Datenträgergröße hängen davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar verwenden:
+
+Einzelknotensysteme:: Einzelknotensysteme können diese Typen von Azure Managed Disks verwenden:
++
+--
+* _Premium SSD Managed Disks_ bieten hohe Leistung für I/O-intensive Workloads zu höheren Kosten.
+* _Premium SSD v2 Managed Disks_ bieten im Vergleich zu Premium SSD Managed Disks eine höhere Leistung mit geringerer Latenz zu geringeren Kosten sowohl für einzelne Knoten als auch für HA-Paare.
+* _Standard-SSD-Managed Disks_ bieten konsistente Leistung für Workloads, die niedrige IOPS erfordern.
+* _Standard HDD Managed Disks_ sind eine gute Wahl, wenn Sie keine hohen IOPS benötigen und Ihre Kosten senken möchten.
++
+Jeder verwaltete Datenträgertyp hat eine maximale Datenträgergröße von 32 TiB.
+
++
+Sie können einen verwalteten Datenträger mit Azure Blob Storage koppeln, umlink:concept-data-tiering.html["kostengünstiger Objektspeicher"] .
+
+
+
+--
+HA-Paare:: HA-Paare verwenden zwei Arten von Festplatten, die bei höheren Kosten eine hohe Leistung für E/A-intensive Workloads bieten:
++
+--
+* _Premium-Seitenblobs_ mit einer maximalen Festplattengröße von 8 TiB
+* _Managed Disks_ mit einer maximalen Diskgröße von 32 TiB
+
+
+--
+
+
+*Weiterführende Links*
+
+* link:task-planning-your-config-azure.html["Erfahren Sie, wie Sie Datenträgertypen und Datenträgergrößen für Ihre Systeme in Azure auswählen"]
+* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure["Starten Sie ein Cloud Volumes ONTAP HA-Paar in Azure"]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types["Microsoft Azure-Dokumentation: Azure-verwaltete Datenträgertypen"^]
+* https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-pageblob-overview["Microsoft Azure-Dokumentation: Übersicht über Azure-Seitenblobs"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["Überprüfen Sie die Speicherlimits für Cloud Volumes ONTAP in Azure"^]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+== Google Cloud-Speicher
+
+In Google Cloud kann ein Aggregat bis zu 6 Festplatten enthalten, die alle dieselbe Größe haben.  Die maximale Festplattengröße beträgt 64 TiB.
+
+Der Datenträgertyp kann entweder _Zonal SSD Persistent Disks_, _Zonal Balanced Persistent Disks_ oder _Zonal Standard Persistent Disks_ sein.  Sie können persistente Festplatten mit einem Google Storage-Bucket koppeln, umlink:concept-data-tiering.html["kostengünstiger Objektspeicher"] .
+
+*Weiterführende Links*
+
+* https://cloud.google.com/compute/docs/disks/["Google Cloud-Dokumentation: Speicheroptionen"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["Überprüfen Sie die Speicherlimits für Cloud Volumes ONTAP in Google Cloud"^]
+
+
+endif::gcp[]
+
+
+
+== RAID-Typ
+
+Der RAID-Typ für jedes Cloud Volumes ONTAP -Aggregat ist RAID0 (Striping).  Cloud Volumes ONTAP verlässt sich hinsichtlich der Festplattenverfügbarkeit und -haltbarkeit auf den Cloud-Anbieter.  Es werden keine anderen RAID-Typen unterstützt.
+
+
+
+=== Hotspares
+
+RAID0 unterstützt nicht die Verwendung von Hotspares zur Redundanz.
+
+Das Erstellen ungenutzter Festplatten (Hot Spares), die an eine Cloud Volumes ONTAP Instanz angeschlossen sind, ist ein unnötiger Aufwand und kann die Bereitstellung zusätzlichen Speicherplatzes bei Bedarf verhindern.  Daher wird es nicht empfohlen.

@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task-setting-up-gcp-encryption.html 
+keywords: encryption, gcp, encryption key, permissions, customer-managed, gcpencryption 
+summary: Während Google Cloud Storage Ihre Daten immer verschlüsselt, bevor sie auf die Festplatte geschrieben werden, können Sie mithilfe der Konsolen-APIs ein Cloud Volumes ONTAP -System erstellen, das vom Kunden verwaltete Verschlüsselungsschlüssel verwendet.  Dies sind Schlüssel, die Sie mithilfe des Cloud Key Management Service in GCP generieren und verwalten. 
+---
+= Verwenden von kundenverwalteten Verschlüsselungsschlüsseln mit Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Während Google Cloud Storage Ihre Daten immer verschlüsselt, bevor sie auf die Festplatte geschrieben werden, können Sie mithilfe der APIs ein Cloud Volumes ONTAP -System erstellen, das _vom Kunden verwaltete Verschlüsselungsschlüssel_ verwendet.  Dies sind Schlüssel, die Sie mithilfe des Cloud Key Management Service in GCP generieren und verwalten.
+
+.Schritte
+. Stellen Sie sicher, dass das Dienstkonto des Konsolen-Agenten über die richtigen Berechtigungen auf Projektebene verfügt, und zwar in dem Projekt, in dem der Schlüssel gespeichert ist.
++
+Die Berechtigungen finden Sie in der https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["die Dienstkontoberechtigungen standardmäßig"^] , wird aber möglicherweise nicht angewendet, wenn Sie ein alternatives Projekt für den Cloud Key Management Service verwenden.
+
++
+Die Berechtigungen lauten wie folgt:
+
++
+[source, yaml]
+----
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+----
+. Stellen Sie sicher, dass das Dienstkonto für die https://cloud.google.com/iam/docs/service-agents["Google Compute Engine-Dienstagent"^] verfügt über Cloud KMS-Verschlüsselungs-/Entschlüsselungsberechtigungen für den Schlüssel.
++
+Der Name des Dienstkontos verwendet das folgende Format: „service-[service_project_number]@compute-system.iam.gserviceaccount.com“.
+
++
+https://cloud.google.com/kms/docs/iam#granting_roles_on_a_resource["Google Cloud-Dokumentation: Verwenden von IAM mit Cloud KMS – Zuweisen von Rollen für eine Ressource"]
+
+. Rufen Sie die ID des Schlüssels ab, indem Sie den Befehl „get“ für den `/gcp/vsa/metadata/gcp-encryption-keys` API-Aufruf oder durch Auswahl von „Ressourcennamen kopieren“ auf dem Schlüssel in der GCP-Konsole.
+. Wenn Sie vom Kunden verwaltete Verschlüsselungsschlüssel verwenden und Daten in den Objektspeicher verschieben, versucht die NetApp Konsole, dieselben Schlüssel zu verwenden, die zum Verschlüsseln der persistenten Datenträger verwendet werden.  Sie müssen jedoch zunächst Google Cloud Storage-Buckets aktivieren, um die Schlüssel verwenden zu können:
++
+.. Suchen Sie den Google Cloud Storage-Dienstagenten, indem Sie den https://cloud.google.com/storage/docs/getting-service-agent["Google Cloud-Dokumentation: Abrufen des Cloud Storage-Dienstagenten"^] .
+.. Navigieren Sie zum Verschlüsselungsschlüssel und weisen Sie dem Google Cloud Storage-Dienstagenten die Berechtigungen zum Verschlüsseln/Entschlüsseln von Cloud KMS zu.
+
+
++
+Weitere Informationen finden Sie unter https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys["Google Cloud-Dokumentation: Verwenden von vom Kunden verwalteten Verschlüsselungsschlüsseln"^]
+
+. Verwenden Sie beim Erstellen eines Systems den Parameter „GcpEncryption“ mit Ihrer API-Anfrage.
++
+*Beispiel*
+
++
+[source, json]
+----
+"gcpEncryptionParameters": {
+    "key": "projects/project-1/locations/us-east4/keyRings/keyring-1/cryptoKeys/generatedkey1"
+  }
+----
+
+
+Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] Weitere Informationen zur Verwendung des Parameters „GcpEncryption“.

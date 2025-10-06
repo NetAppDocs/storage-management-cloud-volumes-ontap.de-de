@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: concept-performance.html 
+keywords: performance, technical report, TR, workload, cpu 
+summary: Sie können die Leistungsergebnisse überprüfen, um zu entscheiden, welche Workloads für Cloud Volumes ONTAP geeignet sind. 
+---
+= Erfahren Sie mehr über die Leistungsüberwachung für Cloud Volumes ONTAP -Workloads
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die Leistungsergebnisse überprüfen, um zu entscheiden, welche Workloads für Cloud Volumes ONTAP geeignet sind.
+
+
+
+== Leistungstechnische Berichte
+
+ifdef::aws[]
+
+* Cloud Volumes ONTAP für AWS
++
+link:https://www.netapp.com/pdf.html?item=/media/9088-tr4383pdf.pdf["NetApp Technical Report 4383: Leistungscharakterisierung von Cloud Volumes ONTAP in Amazon Web Services mit Anwendungs-Workloads"^]
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Cloud Volumes ONTAP für Microsoft Azure
++
+link:https://www.netapp.com/pdf.html?item=/media/9089-tr-4671pdf.pdf["NetApp Technical Report 4671: Leistungscharakterisierung von Cloud Volumes ONTAP in Azure mit Anwendungs-Workloads"^]
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Cloud Volumes ONTAP für Google Cloud
++
+link:https://www.netapp.com/pdf.html?item=/media/9090-tr4816pdf.pdf["NetApp Technical Report 4816: Leistungscharakterisierung von Cloud Volumes ONTAP für Google Cloud"^]
+
+
+
+endif::gcp[]
+
+
+
+== CPU-Leistung
+
+Cloud Volumes ONTAP -Knoten werden in den Überwachungstools Ihres Cloud-Anbieters als stark ausgelastet (über 90 %) angezeigt.  Dies liegt daran, dass ONTAP alle der virtuellen Maschine bereitgestellten vCPUs reserviert, sodass sie bei Bedarf verfügbar sind.
+
+Weitere Informationen finden Sie im https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Monitoring_CPU_utilization_before_an_ONTAP_upgrade["NetApp Knowledgebase-Artikel zur Überwachung der ONTAP CPU-Auslastung mithilfe der CLI"^]

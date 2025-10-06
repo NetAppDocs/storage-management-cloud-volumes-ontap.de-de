@@ -1,0 +1,147 @@
+---
+sidebar: sidebar 
+permalink: task-enabling-private-link.html 
+keywords: azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link 
+summary: Cloud Volumes ONTAP verwendet einen Azure Private Link für Verbindungen zu den zugehörigen Speicherkonten.  Bei Bedarf können Sie Azure Private Links deaktivieren und stattdessen Dienstendpunkte verwenden. 
+---
+= Verwenden Sie einen Azure Private Link oder Service-Endpunkte für Cloud Volumes ONTAP Systeme
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP verwendet einen Azure Private Link für Verbindungen zu den zugehörigen Speicherkonten.  Bei Bedarf können Sie Azure Private Links deaktivieren und stattdessen Dienstendpunkte verwenden.
+
+
+
+== Überblick
+
+Standardmäßig aktiviert die NetApp -Konsole einen Azure Private Link für Verbindungen zwischen Cloud Volumes ONTAP und den zugehörigen Speicherkonten.  Ein Azure Private Link sichert Verbindungen zwischen Endpunkten in Azure und bietet Leistungsvorteile.
+
+Bei Bedarf können Sie Cloud Volumes ONTAP so konfigurieren, dass anstelle eines Azure Private Link Dienstendpunkte verwendet werden.
+
+Bei beiden Konfigurationen beschränkt die Konsole immer den Netzwerkzugriff für Verbindungen zwischen Cloud Volumes ONTAP und Speicherkonten.  Der Netzwerkzugriff ist auf das VNet beschränkt, in dem Cloud Volumes ONTAP bereitgestellt wird, und das VNet, in dem der Konsolenagent bereitgestellt wird.
+
+
+
+== Deaktivieren Sie Azure Private Links und verwenden Sie stattdessen Dienstendpunkte
+
+Falls Ihr Unternehmen dies erfordert, können Sie eine Einstellung in der Konsole ändern, sodass Cloud Volumes ONTAP so konfiguriert wird, dass Service-Endpunkte anstelle eines Azure Private Link verwendet werden.  Das Ändern dieser Einstellung gilt für neue Cloud Volumes ONTAP -Systeme, die Sie erstellen.  Service-Endpunkte werden nur unterstützt inlink:https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Azure-Regionspaare"^] zwischen dem Konsolenagenten und Cloud Volumes ONTAP VNets.
+
+Der Konsolenagent sollte in derselben Azure-Region wie die von ihm verwalteten Cloud Volumes ONTAP -Systeme oder in der https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Azure-Regionenpaar"^] für die Cloud Volumes ONTAP -Systeme.
+
+.Schritte
+. Gehen Sie im linken Navigationsbereich zu *Administration > Agenten*.
+. Klicken Sie auf dasimage:icon-action.png[""] Symbol für den Konsolenagenten, der Ihr Cloud Volumes ONTAP -System verwaltet.
+. Wählen Sie * Cloud Volumes ONTAP -Einstellungen*.
++
+image::screenshot-settings-cloud-volumes-ontap.png[Ein Screenshot der Cloud Volumes ONTAP -Einstellungsoption unter dem Einstellungssymbol.]
+
+. Klicken Sie unter *Azure* auf *Azure Private Link verwenden*.
+. Deaktivieren Sie *Private Link-Verbindung zwischen Cloud Volumes ONTAP und Speicherkonten*.
+. Klicken Sie auf *Speichern*.
+
+
+.Nach Abschluss
+Wenn Sie Azure Private Links deaktiviert haben und der Konsolen-Agent einen Proxyserver verwendet, müssen Sie den direkten API-Verkehr aktivieren.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector["Erfahren Sie, wie Sie den direkten API-Verkehr auf dem Konsolenagenten aktivieren"^]
+
+
+
+== Arbeiten mit Azure Private Links
+
+In den meisten Fällen müssen Sie nichts tun, um Azure Private Links mit Cloud Volumes ONTAP einzurichten.  Die Konsole verwaltet Azure Private Links für Sie.  Wenn Sie jedoch eine vorhandene Azure Private DNS-Zone verwenden, müssen Sie eine Konfigurationsdatei bearbeiten.
+
+
+
+=== Voraussetzung für benutzerdefiniertes DNS
+
+Wenn Sie mit benutzerdefiniertem DNS arbeiten, müssen Sie optional von Ihren benutzerdefinierten DNS-Servern eine bedingte Weiterleitung zur privaten Azure-DNS-Zone erstellen. Weitere Informationen finden Sie unterlink:https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder["Azure-Dokumentation zur Verwendung einer DNS-Weiterleitung"^] .
+
+
+
+=== Funktionsweise von Private Link-Verbindungen
+
+Wenn die Konsole Cloud Volumes ONTAP in Azure bereitstellt, erstellt sie einen privaten Endpunkt in der Ressourcengruppe.  Der private Endpunkt ist mit Speicherkonten für Cloud Volumes ONTAP verknüpft.  Daher erfolgt der Zugriff auf den Cloud Volumes ONTAP -Speicher über das Microsoft-Backbone-Netzwerk.
+
+Der Clientzugriff erfolgt über die private Verbindung, wenn sich Clients im selben VNet wie Cloud Volumes ONTAP, in Peering-VNets oder in Ihrem lokalen Netzwerk befinden, wenn eine private VPN- oder ExpressRoute-Verbindung zum VNet verwendet wird.
+
+Hier ist ein Beispiel, das den Clientzugriff über eine private Verbindung innerhalb desselben VNet und von einem lokalen Netzwerk aus zeigt, das entweder über eine private VPN- oder ExpressRoute-Verbindung verfügt.
+
+image:diagram_azure_private_link.png["Ein konzeptionelles Bild, das den Datenzugriff auf Cloud Volumes ONTAP und über einen privaten Endpunkt und eine private Verbindung zum Speicherkonto zeigt."]
+
+
+NOTE: Wenn der Konsolenagent und die Cloud Volumes ONTAP -Systeme in unterschiedlichen VNets bereitgestellt werden, müssen Sie VNet-Peering zwischen dem VNet einrichten, in dem der Konsolenagent bereitgestellt wird, und dem VNet, in dem die Cloud Volumes ONTAP -Systeme bereitgestellt werden.
+
+
+
+=== Geben Sie Details zu Ihrem Azure Private DNS an
+
+Wenn Sie https://docs.microsoft.com/en-us/azure/dns/private-dns-overview["Privates Azure-DNS"^] , dann müssen Sie auf jedem Konsolenagenten eine Konfigurationsdatei ändern.  Andernfalls kann die Konsole die Azure Private Link-Verbindung zwischen Cloud Volumes ONTAP und den zugehörigen Speicherkonten nicht herstellen.
+
+Beachten Sie, dass der DNS-Name den Azure DNS-Benennungsanforderungen entsprechen muss. https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints#dns-changes-for-private-endpoints["wie in der Azure-Dokumentation gezeigt"^] .
+
+.Schritte
+. Stellen Sie per SSH eine Verbindung zum Konsolenagent-Host her und melden Sie sich an.
+. Navigieren Sie zum  `/opt/application/netapp/cloudmanager/docker_occm/data` Verzeichnis.
+. Bearbeiten  `app.conf` durch Hinzufügen der  `user-private-dns-zone-settings` Parameter mit den folgenden Schlüsselwort-Wert-Paaren:
++
+[source, cli]
+----
+ "user-private-dns-zone-settings" : {
+    "resource-group" : "<resource group name of the DNS zone>",
+    "subscription" : "<subscription ID>",
+    "use-existing" : true,
+    "create-private-dns-zone-link" : true
+ }
+----
++
+Der `subscription` Das Schlüsselwort ist nur erforderlich, wenn sich die private DNS-Zone in einem anderen Abonnement befindet als das des Konsolenagenten.
+
+. Speichern Sie die Datei und melden Sie sich vom Konsolenagenten ab.
++
+Ein Neustart ist nicht erforderlich.
+
+
+
+
+
+=== Rollback bei Fehlern aktivieren
+
+Wenn die Konsole im Rahmen bestimmter Aktionen keinen Azure Private Link erstellen kann, führt sie die Aktion ohne die Azure Private Link-Verbindung aus.  Dies kann beim Erstellen eines neuen Systems (einzelner Knoten oder HA-Paar) passieren oder wenn die folgenden Aktionen auf einem HA-Paar stattfinden: Erstellen eines neuen Aggregats, Hinzufügen von Datenträgern zu einem vorhandenen Aggregat oder Erstellen eines neuen Speicherkontos beim Überschreiten von 32 TiB.
+
+Sie können dieses Standardverhalten ändern, indem Sie das Rollback aktivieren, wenn die Konsole den Azure Private Link nicht erstellen kann.  Auf diese Weise können Sie sicherstellen, dass Sie die Sicherheitsvorschriften Ihres Unternehmens vollständig einhalten.
+
+Wenn Sie das Rollback aktivieren, stoppt die Konsole die Aktion und führt ein Rollback aller Ressourcen durch, die im Rahmen der Aktion erstellt wurden.
+
+Sie können das Rollback über die API oder durch Aktualisieren der Datei app.conf aktivieren.
+
+*Rollback über die API aktivieren*
+
+.Schritt
+. Verwenden Sie die `PUT /occm/config` API-Aufruf mit folgendem Anforderungstext:
++
+[source, json]
+----
+{ "rollbackOnAzurePrivateLinkFailure": true }
+----
+
+
+*Rollback durch Aktualisieren von app.conf aktivieren*
+
+.Schritte
+. Stellen Sie per SSH eine Verbindung zum Host des Konsolenagenten her und melden Sie sich an.
+. Navigieren Sie zum folgenden Verzeichnis: /opt/application/netapp/cloudmanager/docker_occm/data
+. Bearbeiten Sie app.conf, indem Sie den folgenden Parameter und Wert hinzufügen:
++
+ "rollback-on-private-link-failure": true
+. Speichern Sie die Datei und melden Sie sich vom Konsolenagenten ab.
++
+Ein Neustart ist nicht erforderlich.
+
+

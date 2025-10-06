@@ -1,0 +1,15 @@
+= Neue Regionen werden für die Bereitstellung mehrerer Verfügbarkeitszonen in Azure unterstützt.
+:allow-uri-read: 
+
+
+
+
+=== Neue Regionen werden für die Bereitstellung mehrerer Verfügbarkeitszonen in Azure unterstützt.
+
+Die folgenden Regionen unterstützen jetzt HA-Bereitstellungen in mehreren Verfügbarkeitszonen in Azure für Cloud Volumes ONTAP 9.12.1 GA und höher:
+
+* Zentrale USA
+* US Gov Virginia (US-Regierungsregion – Virginia)
+
+
+Eine Liste aller Regionen finden Sie im https://bluexp.netapp.com/cloud-volumes-global-regions["Globale Regionenkarte unter Azure"^] .

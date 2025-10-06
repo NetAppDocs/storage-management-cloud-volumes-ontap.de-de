@@ -1,0 +1,204 @@
+---
+sidebar: sidebar 
+permalink: concept-licensing-charging.html 
+keywords: capacity-based license charging, consumption for licenses, pricing for licenses, CVO licensing, CVO charging 
+summary: Machen Sie sich mit der Abrechnung, dem Verbrauchsmodell, den Preisen und den Konfigurationen kapazitätsbasierter Lizenzen vertraut. 
+---
+= Erfahren Sie mehr über kapazitätsbasierte Lizenzen für Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie sollten mit der Abrechnung und Kapazitätsnutzung für kapazitätsbasierte Lizenzen vertraut sein
+
+
+
+== Verbrauchsmodelle
+
+Kapazitätsbasierte Lizenzpakete sind mit den folgenden Verbrauchsmodellen verfügbar:
+
+* *BYOL*: Bringen Sie Ihre eigene Lizenz mit (BYOL).  Eine von NetApp erworbene Lizenz, mit der Cloud Volumes ONTAP bei jedem Cloud-Anbieter bereitgestellt werden kann.
++
+
+NOTE: NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^] .
+
+
+
+ifdef::azure[]
+
+endif::azure[]
+
+* *PAYGO*: Ein Pay-as-you-go-Abonnement (PAYGO) ist ein stündliches Abonnement vom Marktplatz Ihres Cloud-Anbieters.
+* *Jährlich*: Ein Jahresvertrag vom Marktplatz Ihres Cloud-Anbieters.
+
+
+Beachten Sie Folgendes:
+
+* Wenn Sie eine Lizenz von NetApp (BYOL) erwerben, müssen Sie zusätzlich das PAYGO-Angebot vom Marktplatz Ihres Cloud-Anbieters abonnieren. NetApp hat die BYOL-Lizenzierung eingeschränkt. Wenn Ihre BYOL-Lizenzen ablaufen, müssen Sie sie durch Abonnements vom Cloud-Marktplatz ersetzen.
++
+Ihre Lizenz wird immer zuerst in Rechnung gestellt. In den folgenden Fällen wird Ihnen jedoch der Stundensatz auf dem Marktplatz in Rechnung gestellt:
+
++
+** Wenn Sie Ihre lizenzierte Kapazität überschreiten
+** Wenn die Laufzeit Ihrer Lizenz abläuft
+
+
+* Wenn Sie einen Jahresvertrag von einem Marktplatz haben, werden _alle_ von Ihnen bereitgestellten Cloud Volumes ONTAP Systeme über diesen Vertrag abgerechnet.  Sie können einen jährlichen Marktplatzvertrag nicht mit BYOL kombinieren.
+* In den Regionen Chinas werden nur Einzelknotensysteme mit BYOL unterstützt. Bereitstellungen in der Region China sind von den BYOL-Lizenzbeschränkungen ausgenommen.
+
+
+
+
+== Pakete ändern
+
+Nach der Bereitstellung können Sie das Paket für ein Cloud Volumes ONTAP -System ändern, das eine kapazitätsbasierte Lizenzierung verwendet. Wenn Sie beispielsweise ein Cloud Volumes ONTAP -System mit dem Essentials-Paket bereitgestellt haben, können Sie es auf das Professional-Paket umstellen, wenn sich Ihre Geschäftsanforderungen ändern.
+
+link:task-manage-capacity-licenses.html["Erfahren Sie, wie Sie die Lademethode ändern"] .
+
+Informationen zum Konvertieren von knotenbasierten Lizenzen in kapazitätsbasierte Lizenzen finden Sie unter
+
+
+
+== Preise und unterstützte Konfigurationen
+
+Einzelheiten zu den Preisen finden Sie auf der https://bluexp.netapp.com/pricing/["NetApp Console-Website"^] .
+
+Kapazitätsbasierte Lizenzpakete sind mit Cloud Volumes ONTAP 9.7 und höher verfügbar.
+
+
+
+=== Speicher-VMs
+
+* Für zusätzliche datenbereitstellende Storage-VMs (SVMs) fallen keine zusätzlichen Lizenzkosten an, es wird jedoch eine Mindestkapazitätsgebühr von 4 TiB pro datenbereitstellender SVM erhoben.
+* Die Kosten für Disaster Recovery-SVMs richten sich nach der bereitgestellten Kapazität.
+
+
+
+
+=== HA-Paare
+
+Bei HA-Paaren wird Ihnen nur die bereitgestellte Kapazität auf einem Knoten in Rechnung gestellt.  Für Daten, die synchron auf den Partnerknoten gespiegelt werden, fallen keine Kosten an.
+
+
+
+=== FlexClone und FlexCache -Volumes
+
+* Für die von FlexClone -Volumes genutzte Kapazität werden Ihnen keine Kosten berechnet.
+* Quell- und Ziel- FlexCache -Volumes werden als Primärdaten betrachtet und entsprechend dem bereitgestellten Speicherplatz berechnet.
+
+
+
+
+== Kapazitätsgrenze
+
+Im kapazitätsbasierten Lizenzmodell unterstützt jedes Cloud Volumes ONTAP System die Einstufung in Objektspeicher und die gesamte abgestufte Kapazität kann bis zum Bucket-Limit des Cloud-Anbieters skaliert werden. Obwohl die Lizenz keine Kapazitätsbeschränkungen vorsieht, befolgen Sie die https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Best Practices für FabricPool"^] um optimale Leistung, Zuverlässigkeit und Kosteneffizienz bei der Konfiguration und Verwaltung der Tiering-Ebene sicherzustellen.
+
+Informationen zu den Kapazitätsgrenzen der einzelnen Cloud-Anbieter finden Sie in deren Dokumentation:
+
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html["AWS-Dokumentation"^]
+* https://learn.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account["Azure-Dokumentation für verwaltete Datenträger"^]Und https://learn.microsoft.com/en-us/azure/storage/blobs/scalability-targets["Azure-Dokumentation für Blob Storage"^]
+* https://cloud.google.com/storage/docs/buckets["Google Cloud-Dokumentation"^]
+
+
+
+
+== Maximale Anzahl an Systemen
+
+Bei der kapazitätsbasierten Lizenzierung ist die maximale Anzahl von Cloud Volumes ONTAP -Systemen auf 24 pro NetApp Console-Konto begrenzt.  Ein _System_ ist ein Cloud Volumes ONTAP HA-Paar, ein Cloud Volumes ONTAP Einzelknotensystem oder alle zusätzlichen Speicher-VMs, die Sie erstellen.  Die Standard-Speicher-VM wird nicht auf das Limit angerechnet.  Diese Begrenzung gilt für alle Lizenzmodelle.
+
+Nehmen wir beispielsweise an, Sie haben drei Systeme:
+
+* Ein Cloud Volumes ONTAP -System mit einem Knoten und einer Speicher-VM (dies ist die Standard-Speicher-VM, die beim Bereitstellen von Cloud Volumes ONTAP erstellt wird)
++
+Dieses System zählt als ein System.
+
+* Ein Cloud Volumes ONTAP -System mit einem Knoten und zwei Speicher-VMs (die Standard-Speicher-VM plus eine zusätzliche Speicher-VM, die Sie erstellt haben)
++
+Dieses System zählt als zwei Systeme: eines für das Einzelknotensystem und eines für die zusätzliche Speicher-VM.
+
+* Ein Cloud Volumes ONTAP HA-Paar mit drei Storage-VMs (die Standard-Storage-VM plus zwei zusätzliche Storage-VMs, die Sie erstellt haben)
++
+Dieses System zählt als drei Systeme: eines für das HA-Paar und zwei für die zusätzlichen Speicher-VMs.
+
+
+
+Das sind insgesamt sechs Systeme.  Sie hätten dann Platz für weitere 14 Systeme in Ihrem Konto.
+
+Wenn Sie eine große Bereitstellung haben, die mehr als 24 Systeme erfordert, wenden Sie sich an Ihren Kundenbetreuer oder Ihr Vertriebsteam.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["Erfahren Sie mehr über Konsolenkonten"^] .
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Informieren Sie sich über Speicherlimits für AWS, Azure und Google Cloud"^] .
+
+
+
+== Hinweise zum Laden
+
+Die folgenden Details können Ihnen dabei helfen zu verstehen, wie die Abrechnung bei kapazitätsbasierter Lizenzierung funktioniert.
+
+
+
+=== Mindestgebühr
+
+Für jede datenbereitstellende Speicher-VM mit mindestens einem primären (Lese-/Schreib-)Volume wird eine Mindestgebühr von 4 TiB erhoben.  Wenn die Summe der primären Volumes weniger als 4 TiB beträgt, berechnet die Konsole dieser Speicher-VM die Mindestgebühr von 4 TiB.
+
+Wenn Sie noch keine Volumes bereitgestellt haben, fällt die Mindestgebühr nicht an.
+
+Beim Essentials-Paket fällt die Gebühr für die Mindestkapazität von 4 TiB nicht für Speicher-VMs an, die nur sekundäre (Datenschutz-)Volumes enthalten. Wenn Sie beispielsweise über eine Speicher-VM mit 1 TiB sekundärer Daten verfügen, werden Ihnen nur die Kosten für dieses 1 TiB Daten in Rechnung gestellt. Beim Pakettyp „Professional“ gilt unabhängig vom Volume-Typ die Mindestkapazitätsberechnung von 4 TiB.
+
+
+
+=== Überschreitungen
+
+Wenn Sie Ihre BYOL-Kapazität überschreiten, werden Ihnen die Überschreitungen zu Stundensätzen basierend auf Ihrem Marktplatzabonnement in Rechnung gestellt. Überschreitungen werden zu Marktplatzpreisen abgerechnet, wobei die Nutzung der verfügbaren Kapazität aus anderen Lizenzen bevorzugt wird. Wenn Ihre BYOL-Lizenz abläuft, müssen Sie über Cloud-Marktplätze auf ein kapazitätsbasiertes Lizenzmodell umsteigen.
+
+
+
+=== Essentials-Paket
+
+Beim Essentials-Paket erfolgt die Abrechnung nach Bereitstellungstyp (HA oder Einzelknoten) und Volumetyp (primär oder sekundär).  Die Preisgestaltung erfolgt in der folgenden Reihenfolge (absteigend): _Essentials Primary HA_, _Essentials Primary Single Node_, _Essentials Secondary HA_ und _Essentials Secondary Single Node_.  Wenn Sie alternativ einen Marktplatzvertrag erwerben oder ein privates Angebot annehmen, sind die Kapazitätsgebühren für alle Bereitstellungs- und Volumentypen gleich.
+
+Die Lizenzierung basiert vollständig auf dem Volume-Typ, der in Cloud Volumes ONTAP Systemen erstellt wird:
+
+* Essentials Single Node: Lese-/Schreib-Volumes, die auf einem Cloud Volumes ONTAP System unter Verwendung nur eines ONTAP Knotens erstellt wurden.
+* Essentials HA: Lese-/Schreib-Volumes mit zwei ONTAP -Knoten, die für einen unterbrechungsfreien Datenzugriff auf einander umschalten können.
+* Essentials Secondary Single Node: Volumes vom Typ Data Protection (DP) (normalerweise schreibgeschützte SnapMirror oder SnapVault -Zielvolumes), die auf einem Cloud Volumes ONTAP System unter Verwendung nur eines ONTAP Knotens erstellt wurden.
++
+
+NOTE: Wenn ein schreibgeschütztes/DP-Volume zu einem primären Volume wird, betrachtet die Konsole es als primäre Daten und die Gebühren werden basierend auf der Zeit berechnet, die das Volume im Lese-/Schreibmodus war.  Wenn das Volume wieder schreibgeschützt/DP ist, wird es wieder als sekundäres Datenvolumen betrachtet und entsprechend mit der am besten passenden Lizenz in der Konsole berechnet.
+
+* Essentials Secondary HA: Volumes vom Typ Data Protection (DP) (normalerweise schreibgeschützte SnapMirror oder SnapVault -Zielvolumes), die auf einem Cloud Volumes ONTAP -System unter Verwendung von zwei ONTAP Knoten erstellt werden, die für einen unterbrechungsfreien Datenzugriff auf einander umschalten können.
+
+
+.BYOL
+Wenn Sie eine Essentials-Lizenz von NetApp (BYOL) erworben haben und die lizenzierte Kapazität für diesen Bereitstellungs- und Volume-Typ überschreiten, berechnet die Konsole die Überschreitungen mit einer teureren Essentials-Lizenz (sofern Sie eine haben und Kapazität verfügbar ist).  Dies geschieht, weil wir zunächst die verfügbare Kapazität nutzen, die Sie bereits als Prepaid-Kapazität erworben haben, bevor wir die Kosten auf dem Marktplatz abrechnen.  Wenn mit Ihrer BYOL-Lizenz keine Kapazität verfügbar ist, wird die überschrittene Kapazität zu den On-Demand-Stundensätzen des Marktplatzes (PAYGO) berechnet und verursacht zusätzliche Kosten auf Ihrer monatlichen Rechnung.
+
+Hier ist ein Beispiel. Angenommen, Sie verfügen über die folgenden Lizenzen für das Essentials-Paket:
+
+* Eine 500 TiB _Essentials Secondary HA_-Lizenz mit 500 TiB zugesicherter Kapazität
+* Eine 500 TiB _Essentials Single Node_-Lizenz mit nur 100 TiB zugesicherter Kapazität
+
+
+Weitere 50 TiB werden auf einem HA-Paar mit sekundären Volumes bereitgestellt.  Anstatt diese 50 TiB PAYGO in Rechnung zu stellen, verrechnet die Konsole die 50 TiB Überschreitung mit der _Essentials Single Node_-Lizenz.  Diese Lizenz ist teurer als _Essentials Secondary HA_, nutzt jedoch eine Lizenz, die Sie bereits erworben haben, und verursacht keine zusätzlichen Kosten auf Ihrer monatlichen Rechnung.
+
+Unter *Verwaltung > Lizenzen und Abonnements* können Sie sehen, dass 50 TiB von der _Essentials Single Node_-Lizenz abgezogen werden.
+
+Hier ist ein weiteres Beispiel.  Angenommen, Sie verfügen über die folgenden Lizenzen für das Essentials-Paket:
+
+* Eine 500 TiB _Essentials Secondary HA_-Lizenz mit 500 TiB zugesicherter Kapazität
+* Eine 500 TiB _Essentials Single Node_-Lizenz mit nur 100 TiB zugesicherter Kapazität
+
+
+Weitere 100 TiB werden auf einem HA-Paar mit primären Volumes bereitgestellt.  Die von Ihnen erworbene Lizenz verfügt nicht über die zugesagte Kapazität von _Essentials Primary HA_.  Die Lizenz „Essentials Primary HA“ ist teurer als die Lizenzen „Essentials Primary Single Node“ und „Essentials Secondary HA“.
+
+In diesem Beispiel berechnet die Konsole für die zusätzlichen 100 TiB Überschreitungen zum Marktpreis.  Die Überschreitungsgebühren werden auf Ihrer monatlichen Rechnung erscheinen.
+
+.Marktplatzverträge oder private Angebote
+Wenn Sie eine Essentials-Lizenz im Rahmen eines Marktplatzvertrags oder eines privaten Angebots erworben haben, gilt die BYOL-Logik nicht und Sie müssen über den genauen Lizenztyp für die Nutzung verfügen.  Der Lizenztyp umfasst den Volume-Typ (primär oder sekundär) und den Bereitstellungstyp (HA oder Einzelknoten).
+
+Nehmen wir beispielsweise an, Sie stellen eine Cloud Volumes ONTAP Instanz mit der Essentials-Lizenz bereit.  Anschließend stellen Sie Lese-/Schreib-Volumes (primärer Einzelknoten) und schreibgeschützte Volumes (sekundärer Einzelknoten) bereit.  Ihr Marktplatzvertrag oder privates Angebot muss Kapazität für _Essentials Single Node_ und _Essentials Secondary Single Node_ enthalten, um die bereitgestellte Kapazität abzudecken.  Für jede bereitgestellte Kapazität, die nicht Teil Ihres Marktplatzvertrags oder privaten Angebots ist, werden die On-Demand-Stundensätze (PAYGO) berechnet und zusätzliche Kosten entstehen Ihrer monatlichen Rechnung.

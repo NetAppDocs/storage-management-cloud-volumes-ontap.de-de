@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task-create-aggregates.html 
+keywords: storage, provisioning, aggregates, provision, create, advanced allocation, creating aggregates, adding an aggregate, add an aggregate, create an aggregate 
+summary: Sie können Aggregate selbst erstellen oder dies bei der Volume-Erstellung von der NetApp -Konsole für Sie erledigen lassen.  Der Vorteil der eigenen Erstellung von Aggregaten besteht darin, dass Sie die zugrunde liegende Festplattengröße auswählen können. Dadurch können Sie Ihr Aggregat an die Kapazität oder Leistung anpassen, die Sie benötigen. 
+---
+= Erstellen Sie ein Aggregat für Cloud Volumes ONTAP Systeme
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können Aggregate selbst erstellen oder dies bei der Volume-Erstellung von der NetApp -Konsole für Sie erledigen lassen.  Der Vorteil der eigenen Erstellung von Aggregaten besteht darin, dass Sie die zugrunde liegende Festplattengröße auswählen können. Dadurch können Sie Ihr Aggregat an die Kapazität oder Leistung anpassen, die Sie benötigen.
+
+
+CAUTION: Alle Datenträger und Aggregate müssen direkt von der Konsole aus erstellt und gelöscht werden. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
+. Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Cloud Volumes ONTAP -Systems, auf dem Sie Aggregate verwalten möchten.
+. Klicken Sie auf der Registerkarte „Aggregate“ auf *Aggregat hinzufügen* und geben Sie dann Details für das Aggregat an.
++
+[role="tabbed-block"]
+====
+ifdef::aws[]
+
+.AWS
+--
+** Wenn Sie aufgefordert werden, einen Datenträgertyp und eine Datenträgergröße auszuwählen, lesen Sielink:task-planning-your-config.html["Planen Sie Ihre Cloud Volumes ONTAP Konfiguration in AWS"] .
+** Wenn Sie aufgefordert werden, die Kapazitätsgröße des Aggregats einzugeben, erstellen Sie ein Aggregat auf einer Konfiguration, die die Funktion „Amazon EBS Elastic Volumes“ unterstützt.  Der folgende Screenshot zeigt ein Beispiel eines neuen Aggregats, das aus GP3-Festplatten besteht.
++
+image:screenshot-aggregate-size-ev.png["Ein Screenshot des Bildschirms „Aggregate Disks“ für eine GP3-Festplatte, in dem Sie die Aggregatgröße in TiB eingeben."]
+
++
+link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"] .
+
+
+
+--
+endif::aws[]
+
+ifdef::azure[]
+
+.Azurblau
+--
+Hilfe zu Datenträgertyp und Datenträgergröße finden Sie unterlink:task-planning-your-config-azure.html["Planen Sie Ihre Cloud Volumes ONTAP -Konfiguration in Azure"] .
+
+--
+endif::azure[]
+
+ifdef::gcp[]
+
+.Google Cloud
+--
+Hilfe zu Datenträgertyp und Datenträgergröße finden Sie unterlink:task-planning-your-config-gcp.html["Planen Sie Ihre Cloud Volumes ONTAP Konfiguration in Google Cloud"] .
+
+--
+endif::gcp[]
+
+====
+. Klicken Sie auf *Hinzufügen* und dann auf *Genehmigen und kaufen*.
+

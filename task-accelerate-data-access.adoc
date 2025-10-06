@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: task-accelerate-data-access.html 
+keywords: flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume 
+summary: Ein FlexCache -Volume ist ein Speichervolume, das NFS-Lesedaten von einem Ursprungs- oder Quellvolume zwischenspeichert.  Nachfolgende Lesevorgänge der zwischengespeicherten Daten führen zu einem schnelleren Zugriff auf diese Daten. 
+---
+= Beschleunigen Sie den Datenzugriff mit FlexCache -Volumes auf einem Cloud Volumes ONTAP System
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ein FlexCache -Volume ist ein Speichervolume, das SMB- und NFS-Lesedaten von einem Ursprungs- (oder Quell-)Volume zwischenspeichert.  Nachfolgende Lesevorgänge der zwischengespeicherten Daten führen zu einem schnelleren Zugriff auf diese Daten.
+
+Sie können FlexCache -Volumes verwenden, um den Datenzugriff zu beschleunigen oder den Datenverkehr von stark beanspruchten Volumes zu entlasten.  FlexCache -Volumes tragen zur Leistungsverbesserung bei, insbesondere wenn Clients wiederholt auf dieselben Daten zugreifen müssen, da die Daten direkt bereitgestellt werden können, ohne dass auf das Ursprungsvolume zugegriffen werden muss.  FlexCache -Volumes eignen sich gut für leseintensive System-Workloads.
+
+NetApp Console ermöglicht die Verwaltung von FlexCache -Volumes mit derlink:https://docs.netapp.com/us-en/bluexp-volume-caching/index.html["NetApp Volume-Caching"^] .
+
+Sie können auch die ONTAP CLI oder den ONTAP System Manager verwenden, um FlexCache -Volumes zu erstellen und zu verwalten:
+
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html["FlexCache -Volumes für schnelleren Datenzugriff – Power Guide"^]
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-07F4C213-076D-4FE8-A8E3-410F49498D49.html["Erstellen von FlexCache -Volumes im System Manager"^]
+
+
+video::PBNPVRUeT1o[youtube,width=848,height=480]
+
+
+== Arbeiten Sie mit FlexCache , wenn der Ursprung verschlüsselt ist
+
+Beim Konfigurieren von FlexCache auf einem Cloud Volumes ONTAP System, bei dem das Ursprungsvolume verschlüsselt ist, sind zusätzliche Schritte erforderlich, um sicherzustellen, dass das FlexCache Volume ordnungsgemäß auf die verschlüsselten Daten zugreifen und diese zwischenspeichern kann.
+
+.Bevor Sie beginnen
+. *Verschlüsselungseinrichtung*: Stellen Sie sicher, dass das Quellvolume vollständig verschlüsselt und betriebsbereit ist.  Bei Cloud Volumes ONTAP -Systemen umfasst dies die Integration mit Cloud-spezifischen Schlüsselverwaltungsdiensten.
+
+
+ifdef::aws[]
+
+Bei AWS bedeutet dies normalerweise die Verwendung des AWS Key Management Service (KMS).  Weitere Informationen finden Sie unterlink:task-aws-key-management.html["Schlüssel mit AWS Key Management Service verwalten"] .
+
+endif::aws[]
+
+ifdef::azure[]
+
+Für Azure müssen Sie Azure Key Vault für NetApp Volume Encryption (NVE) einrichten.  Weitere Informationen finden Sie unterlink:task-azure-key-vault.html["Verwalten von Schlüsseln mit Azure Key Vault"] .
+
+endif::azure[]
+
+ifdef::gcp[]
+
+Bei Google Cloud ist es der Google Cloud Key Management Service.  Weitere Informationen finden Sie unterlink:task-google-key-manager.html["Schlüssel mit dem Cloud Key Management Service von Google verwalten"] .
+
+endif::gcp[]
+
+. *Schlüsselverwaltungsdienste*: Überprüfen Sie vor dem Erstellen eines FlexCache -Volumes, ob die Schlüsselverwaltungsdienste auf dem Cloud Volumes ONTAP System richtig konfiguriert sind.  Diese Konfiguration ist für das FlexCache -Volume unerlässlich, um die Daten vom Ursprungsvolume zu entschlüsseln.
+. *Lizenzierung*: Bestätigen Sie, dass eine gültige FlexCache -Lizenz verfügbar und auf dem Cloud Volumes ONTAP System aktiviert ist.
+. * ONTAP Version*: Stellen Sie sicher, dass die ONTAP Version Ihres Cloud Volumes ONTAP Systems FlexCache mit verschlüsselten Volumes unterstützt.  Siehe die neuesten https://docs.netapp.com/us-en/ontap/release-notes/index.html["ONTAP -Versionshinweise"^] oder Kompatibilitätsmatrix für weitere Informationen.
+. *Netzwerkkonfiguration*: Stellen Sie sicher, dass die Netzwerkkonfiguration eine nahtlose Kommunikation zwischen dem Ursprungsvolume und dem FlexCache -Volume ermöglicht.  Dazu gehören das richtige Routing und die DNS-Auflösung in einer Cloud-Umgebung.
+
+
+.Schritte
+Erstellen Sie ein FlexCache -Volume auf Ihrem Cloud Volumes ONTAP System mit einem verschlüsselten Quellvolume.  Ausführliche Schritte und weitere Hinweise finden Sie in den folgenden Abschnitten:
+
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html["FlexCache -Volumes für schnelleren Datenzugriff – Power Guide"^]
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-07F4C213-076D-4FE8-A8E3-410F49498D49.html["Erstellen von FlexCache -Volumes im System Manager"^]
+

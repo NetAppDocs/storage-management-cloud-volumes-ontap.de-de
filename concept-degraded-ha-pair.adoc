@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: concept-degraded-ha-pair.html 
+keywords: storage takeover, storage giveback, degraded, degraded status, degraded state, ha pair, ha takeover, takeover, giveback 
+summary: Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, stellt der andere Knoten Daten für seinen Partner bereit, um einen kontinuierlichen Datendienst bereitzustellen.  Dies wird als Speicherübernahme bezeichnet.  Einige Aktionen sind erst nach Abschluss der Speicherrückgabe verfügbar. 
+---
+= Vorgänge sind nicht verfügbar, wenn ein Knoten im Cloud Volumes ONTAP HA-Paar offline ist
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, stellt der andere Knoten Daten für seinen Partner bereit, um einen kontinuierlichen Datendienst bereitzustellen.  Dies wird als _Speicherübernahme_ bezeichnet.  Einige Aktionen sind erst nach Abschluss der Speicherrückgabe verfügbar.
+
+
+TIP: Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, lautet der Status des Systems in der NetApp Konsole „Herabgestuft“.
+
+Die folgenden Aktionen sind bei der Speicherübernahme nicht verfügbar:
+
+* Support-Registrierung
+* Lizenzänderungen
+* Änderungen des Instanz- oder VM-Typs
+* Änderungen der Schreibgeschwindigkeit
+* CIFS-Einrichtung
+* Ändern des Speicherorts von Konfigurationssicherungen
+* Festlegen des Clusterkennworts
+* Verwalten von Datenträgern und Aggregaten (erweiterte Zuweisung)
+
+
+Diese Aktionen sind wieder verfügbar, nachdem die Speicherrückgabe abgeschlossen ist und der Zustand des Systems wieder in den Normalzustand zurückkehrt.

@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: task-manage-aggregates.html 
+keywords: aggregates, delete aggregates, add disks, view aggregates 
+summary: Verwalten Sie Aggregate selbst, indem Sie Datenträger hinzufügen, Informationen zu den Aggregaten anzeigen und sie löschen. 
+---
+= Verwalten von Aggregaten für Cloud Volumes ONTAP -Cluster
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Verwalten Sie Aggregate selbst, indem Sie Datenträger hinzufügen, Informationen zu den Aggregaten anzeigen und sie löschen.
+
+
+CAUTION: Alle Festplatten und Aggregate müssen direkt von der NetApp Konsole aus erstellt und gelöscht werden. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
+
+.Bevor Sie beginnen
+Wenn Sie ein Aggregat löschen möchten, müssen Sie zuerst die Volumes im Aggregat gelöscht haben.
+
+.Informationen zu diesem Vorgang
+Wenn in einem Aggregat der Speicherplatz ausgeht, können Sie Volumes mithilfe des ONTAP System Manager auf ein anderes Aggregat verschieben.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
+. Doppelklicken Sie auf der Seite *Systeme* auf das Cloud Volumes ONTAP -System, auf dem Sie Aggregate verwalten möchten.
+. Klicken Sie in den Systemdetails auf die Registerkarte *Aggregate*.
+. Klicken Sie für das gewünschte Aggregat auf dasimage:icon-action.png[""] Symbol für die Verwaltungsaktionen.
++
+image:screenshot_aggr_menu_options.png["Ein Screenshot der Menüoptionen „Aggregate“."]
+
+. Verwalten Sie Ihre Aggregate über die verfügbaren Optionen imimage:icon-action.png[""] Speisekarte.
+
+
+
+NOTE: Um einem Aggregat Festplatten hinzuzufügen, müssen alle Festplatten im Aggregat dieselbe Größe haben.
+
+ifdef::aws[]
+
+Für AWS können Sie die Kapazität eines Aggregats erhöhen, das Amazon EBS Elastic Volumes unterstützt.
+
+. Unter demimage:icon-action.png[""] Klicken Sie im Menü auf *Kapazität erhöhen*.
+. Geben Sie die zusätzliche Kapazität ein, die Sie hinzufügen möchten, und klicken Sie dann auf *Erhöhen*.
+
+
+Beachten Sie, dass Sie die Kapazität des Aggregats um mindestens 256 GiB oder 10 % der Aggregatgröße erhöhen müssen.  Wenn Sie beispielsweise ein Aggregat von 1,77 TiB haben, sind 10 % 181 GiB.  Das ist weniger als 256 GiB, daher muss die Größe des Aggregats um das Minimum von 256 GiB erhöht werden.
+
+endif::aws[]

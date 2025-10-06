@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: reference-worm-snaplock.html 
+keywords: WORM, SnapLock, Snapshot copies, 
+summary: 'Sie können manipulationssichere Snapshot-Kopien von WORM-Dateien (Write Once, Read Many) auf einem Cloud Volumes ONTAP System erstellen und die Snapshots für einen bestimmten Aufbewahrungszeitraum unverändert aufbewahren.' 
+---
+= Erstellen Sie manipulationssichere Snapshot-Kopien von WORM-Dateien auf Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können manipulationssichere Snapshot-Kopien von WORM-Dateien (Write Once, Read Many) auf einem Cloud Volumes ONTAP System erstellen und die Snapshots für einen bestimmten Aufbewahrungszeitraum unverändert aufbewahren.  Diese Funktionalität wird durch die SnapLock -Technologie unterstützt und bietet eine zusätzliche Ebene für Datenschutz und Compliance.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass das Volume, das Sie zum Erstellen von Snapshot-Kopien verwenden, ein SnapLock -Volume ist.  Informationen zum Aktivieren des SnapLock Schutzes auf Volumes finden Sie im https://docs.netapp.com/us-en/ontap/snaplock/snaplock-config-overview-concept.html["ONTAP Dokumentation: SnapLock konfigurieren"^] .
+
+.Schritte
+. Erstellen Sie Snapshot-Kopien vom SnapLock -Volume.  Informationen zum Erstellen von Snapshot-Kopien mithilfe der CLI oder des System Managers finden Sie im https://docs.netapp.com/us-en/ontap/data-protection/manage-local-snapshot-copies-concept.html["ONTAP -Dokumentation: Übersicht zum Verwalten lokaler Snapshot-Kopien"^] .
++
+Die Snapshot-Kopien übernehmen die WORM-Eigenschaften des Volumes und sind somit manipulationssicher.  Die zugrunde liegende SnapLock -Technologie stellt sicher, dass ein Snapshot bis zum Ablauf der angegebenen Aufbewahrungsfrist vor Bearbeitung und Löschung geschützt bleibt.
+
+. Sie können den Aufbewahrungszeitraum ändern, wenn diese Snapshots bearbeitet werden müssen.  Weitere Informationen finden Sie im https://docs.netapp.com/us-en/ontap/snaplock/set-retention-period-task.html#set-the-default-retention-period["ONTAP -Dokumentation: Festlegen der Aufbewahrungszeit"^] .
+
+
+
+NOTE: Obwohl eine Snapshot-Kopie für einen bestimmten Aufbewahrungszeitraum geschützt ist, kann das Quellvolume von einem Clusteradministrator gelöscht werden, da der WORM-Speicher in Cloud Volumes ONTAP nach dem Modell eines „vertrauenswürdigen Speicheradministrators“ betrieben wird.  Darüber hinaus kann ein vertrauenswürdiger Cloud-Administrator die WORM-Daten löschen, indem er die Cloud-Speicherressourcen bearbeitet.

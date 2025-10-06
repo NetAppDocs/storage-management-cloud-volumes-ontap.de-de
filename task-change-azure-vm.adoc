@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task-change-azure-vm.html 
+keywords: machine type, virtual machine type, vm instance, change vm type, azure vm type 
+summary: Sie können aus mehreren VM-Typen wählen, wenn Sie Cloud Volumes ONTAP in Microsoft Azure starten.  Sie können den VM-Typ jederzeit ändern, wenn Sie feststellen, dass er für Ihre Anforderungen zu klein oder zu groß ist. 
+---
+= Ändern des Azure-VM-Typs für Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können aus mehreren VM-Typen wählen, wenn Sie Cloud Volumes ONTAP in Microsoft Azure starten.  Sie können den VM-Typ jederzeit ändern, wenn Sie feststellen, dass er für Ihre Anforderungen zu klein oder zu groß ist.
+
+.Informationen zu diesem Vorgang
+* Die automatische Rückgabe muss für ein Cloud Volumes ONTAP HA-Paar aktiviert sein (dies ist die Standardeinstellung).  Wenn dies nicht der Fall ist, schlägt der Vorgang fehl.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html["ONTAP 9-Dokumentation: Befehle zum Konfigurieren der automatischen Rückgabe"^]
+
+* Das Ändern des VM-Typs kann sich auf die Servicegebühren von Microsoft Azure auswirken.
+* Der Vorgang startet Cloud Volumes ONTAP.
++
+Bei Einzelknotensystemen wird die E/A unterbrochen.
+
++
+Bei HA-Paaren erfolgt die Änderung ohne Unterbrechung.  HA-Paare stellen weiterhin Daten bereit.
+
++
+
+TIP: Die NetApp Konsole ändert jeweils einen Knoten, indem sie die Übernahme einleitet und auf die Rückgabe wartet.  Das Qualitätssicherungsteam von NetApp hat während dieses Vorgangs sowohl das Schreiben als auch das Lesen von Dateien getestet und konnte auf der Clientseite keine Probleme feststellen.  Beim Ändern der Verbindungen wurden auf der E/A-Ebene einige Wiederholungsversuche beobachtet, die Anwendungsschicht konnte die Neuverdrahtung der NFS/CIFS-Verbindungen jedoch bewältigen.
+
+
+
+.Schritte
+. Wählen Sie auf der Seite *Systeme* das System aus.
+. Klicken Sie auf der Registerkarte „Übersicht“ auf den Bereich „Funktionen“ und dann auf das Stiftsymbol neben „VM-Typ“.
++
+Wenn Sie eine knotenbasierte Pay-as-you-go-Lizenz (PAYGO) verwenden, können Sie optional eine andere Lizenz und einen anderen VM-Typ auswählen, indem Sie auf das Stiftsymbol neben *Lizenztyp* klicken.
+
+. Wählen Sie einen VM-Typ aus, aktivieren Sie das Kontrollkästchen, um zu bestätigen, dass Sie die Auswirkungen der Änderung verstehen, und klicken Sie dann auf *Ändern*.
+
+
+.Ergebnis
+Cloud Volumes ONTAP wird mit der neuen Konfiguration neu gestartet.

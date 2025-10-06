@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: task-managing-svms-azure.html 
+keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported 
+summary: Eine Storage-VM ist eine virtuelle Maschine, die innerhalb von ONTAP ausgeführt wird und Ihren Clients Speicher- und Datendienste bereitstellt.  Sie kennen dies möglicherweise als SVM oder VServer.  Cloud Volumes ONTAP ist standardmäßig mit einer Speicher-VM konfiguriert, einige Konfigurationen unterstützen jedoch zusätzliche Speicher-VMs. 
+---
+= Verwalten von datenbereitstellenden Speicher-VMs für Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Eine Storage-VM ist eine virtuelle Maschine, die innerhalb von ONTAP ausgeführt wird und Ihren Clients Speicher- und Datendienste bereitstellt.  Sie kennen dies möglicherweise als _SVM_ oder _vServer_.  Cloud Volumes ONTAP ist standardmäßig mit einer Speicher-VM konfiguriert, Sie können jedoch zusätzliche Speicher-VMs erstellen, wenn Sie Cloud Volumes ONTAP in Azure ausführen.
+
+Zum Erstellen und Verwalten zusätzlicher datenbereitstellender Speicher-VMs in Azure sollten Sie die APIs verwenden.  Dies liegt daran, dass die APIs den Prozess der Erstellung der Speicher-VMs und der Konfiguration der erforderlichen Netzwerkschnittstellen automatisieren.  Beim Erstellen der Speicher-VMs konfiguriert die NetApp Konsole die erforderlichen LIF-Dienste sowie ein iSCSI-LIF, das für die ausgehende SMB/CIFS-Kommunikation von der Speicher-VM erforderlich ist.
+
+Informationen zum Ausführen von Cloud Volumes ONTAP API-Aufrufen finden Sie unter https://docs.netapp.com/us-en/bluexp-automation/cm/your_api_call.html#step-1-select-the-identifie["Ihr erster API-Aufruf"^] .
+
+
+
+== Unterstützte Anzahl von Speicher-VMs
+
+Ab Cloud Volumes ONTAP 9.9.0 werden, basierend auf Ihrer Lizenz, mehrere Speicher-VMs mit bestimmten Konfigurationen unterstützt.  Weitere Informationen finden Sie im https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["Versionshinweise zu Cloud Volumes ONTAP"^] um die unterstützte Anzahl von Speicher-VMs für Ihre Version von Cloud Volumes ONTAP zu überprüfen.
+
+Alle Versionen von Cloud Volumes ONTAP vor 9.9.0 unterstützen eine Daten-Storage-VM und eine Ziel-Storage-VM, die für die Notfallwiederherstellung verwendet wird.  Sie können die Zielspeicher-VM für den Datenzugriff aktivieren, wenn es auf der Quellspeicher-VM zu einem Ausfall kommt.
+
+
+
+== Erstellen einer Speicher-VM
+
+Basierend auf Ihrer Konfiguration und Ihrem Lizenztyp können Sie mithilfe der APIs für die NetApp Konsole mehrere Speicher-VMs auf einem Einzelknotensystem oder in einer Hochverfügbarkeitskonfiguration (HA) erstellen.
+
+.Informationen zu diesem Vorgang
+Wenn Sie Speicher-VMs mithilfe der APIs erstellen, ändert die Konsole neben der Konfiguration der erforderlichen Netzwerkschnittstellen auch die `default-data-files` Richtlinien auf den Datenspeicher-VMs, indem Sie die folgenden Dienste aus dem NAS-Daten-LIF entfernen und sie dem iSCSI-Daten-LIF hinzufügen, das für ausgehende Verwaltungsverbindungen verwendet wird:
+
+* `data-fpolicy-client`
+* `management-ad-client`
+* `management-dns-client`
+* `management-ldap-client`
+* `management-nis-client`
+
+
+.Bevor Sie beginnen
+Der Konsolenagent benötigt bestimmte Berechtigungen zum Erstellen von Speicher-VMs für Cloud Volumes ONTAP.  Die erforderlichen Berechtigungen sind enthalten in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["die von NetApp bereitgestellten Richtlinien"^] .
+
+
+
+=== Einzelknotensystem
+
+Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem Einzelknotensystem zu erstellen.
+
+`POST /azure/vsa/working-environments/{workingEnvironmentId}/svm`
+
+Fügen Sie die folgenden Parameter in den Anforderungstext ein:
+
+[source, json]
+----
+{ "svmName": "myNewSvm1"
+   "svmPassword": "optional, the API takes the cluster password if not provided"
+   "mgmtLif": "optional, to create an additional management LIF, if you want to use the storage VM for management purposes"}
+----
+
+
+=== HA-Paar
+
+Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem HA-Paar zu erstellen:
+
+`POST /azure/ha/working-environments/{workingEnvironmentId}/svm`
+
+Fügen Sie die folgenden Parameter in den Anforderungstext ein:
+
+[source, json]
+----
+{ "svmName": "NewSvmName"
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+   "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
+----
+
+
+== Verwalten Sie Speicher-VMs auf Einzelknotensystemen und HA-Paaren
+
+Mithilfe der APIs können Sie Speicher-VMs sowohl in Einzelknoten- als auch in HA-Konfigurationen umbenennen und löschen.
+
+.Bevor Sie beginnen
+Der Konsolenagent benötigt bestimmte Berechtigungen zum Verwalten von Speicher-VMs für Cloud Volumes ONTAP.  Die erforderlichen Berechtigungen sind enthalten in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["die von NetApp bereitgestellten Richtlinien"^] .
+
+
+
+=== Umbenennen einer Speicher-VM
+
+Um eine Speicher-VM umzubenennen, sollten Sie die Namen der vorhandenen Speicher-VM und der neuen Speicher-VM als Parameter angeben.
+
+.Schritte
+* Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem Einzelknotensystem umzubenennen:
++
+`PUT /azure/vsa/working-environments/{workingEnvironmentId}/svm`
+
++
+Fügen Sie die folgenden Parameter in den Anforderungstext ein:
+
++
+[source, json]
+----
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+----
+* Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem HA-Paar umzubenennen:
++
+`PUT /azure/ha/working-environments/{workingEnvironmentId}/svm`
+
++
+Fügen Sie die folgenden Parameter in den Anforderungstext ein:
+
++
+[source, json]
+----
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+----
+
+
+
+
+=== Löschen einer Speicher-VM
+
+In einer Einzelknoten- oder HA-Konfiguration können Sie eine Speicher-VM entfernen, wenn sie keine aktiven Volumes hat.
+
+.Schritte
+* Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem Einzelknotensystem zu löschen:
++
+`DELETE /azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
+
+* Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem HA-Paar zu löschen:
++
+`DELETE /azure/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
+
+
+
+.Ähnliche Informationen
+* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html["Vorbereiten der Verwendung der API"^]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Cloud Volumes ONTAP -Workflows"^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier["Abrufen der erforderlichen Kennungen"^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html["Verwenden Sie die REST-APIs für die NetApp -Konsole"^]
+
