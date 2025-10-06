@@ -17,7 +17,7 @@ summary: Wenn Sie verstehen, wie Cloud Volumes ONTAP Cloud-Speicher verwendet, k
 Wenn Sie verstehen, wie Cloud Volumes ONTAP Cloud-Speicher verwendet, können Sie Ihre Speicherkosten besser einschätzen.
 
 
-CAUTION: Sie müssen alle Festplatten und Aggregate in der NetApp Konsole erstellen und löschen. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
+CAUTION: Sie müssen alle Festplatten und Aggregate in der NetApp Console erstellen und löschen. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
 
 
 

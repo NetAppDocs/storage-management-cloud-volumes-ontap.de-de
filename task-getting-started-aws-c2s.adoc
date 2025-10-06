@@ -14,7 +14,7 @@ summary: Ähnlich wie in einer Standard-AWS-Region können Sie Cloud Volumes ONT
 
 
 [role="lead"]
-Ähnlich wie bei einer Standard-AWS-Region können Sie die NetApp Konsole inlink:https://aws.amazon.com/federal/secret-cloud/["AWS Secret Cloud"^] und inlink:https://aws.amazon.com/federal/top-secret-cloud/["AWS Top Secret Cloud"^] zur Bereitstellung von Cloud Volumes ONTAP, das Funktionen der Enterprise-Klasse für Ihren Cloud-Speicher bietet.  AWS Secret Cloud und Top Secret Cloud sind geschlossene Regionen, die speziell für die US-Geheimdienste bestimmt sind. Die Anweisungen auf dieser Seite gelten nur für Benutzer der AWS Secret Cloud- und Top Secret Cloud-Regionen.
+Ähnlich wie bei einer Standard-AWS-Region können Sie die NetApp Console inlink:https://aws.amazon.com/federal/secret-cloud/["AWS Secret Cloud"^] und inlink:https://aws.amazon.com/federal/top-secret-cloud/["AWS Top Secret Cloud"^] zur Bereitstellung von Cloud Volumes ONTAP, das Funktionen der Enterprise-Klasse für Ihren Cloud-Speicher bietet.  AWS Secret Cloud und Top Secret Cloud sind geschlossene Regionen, die speziell für die US-Geheimdienste bestimmt sind. Die Anweisungen auf dieser Seite gelten nur für Benutzer der AWS Secret Cloud- und Top Secret Cloud-Regionen.
 
 .Bevor Sie beginnen
 Bevor Sie beginnen, überprüfen Sie die unterstützten Versionen in AWS Secret Cloud und Top Secret Cloud und informieren Sie sich über den privaten Modus in der Konsole.
@@ -583,7 +583,7 @@ docker restart <docker-id>
 Wenn Sie eine Lizenz von NetApp erworben haben, müssen Sie sie der Konsole hinzufügen, damit Sie die Lizenz auswählen können, wenn Sie ein neues Cloud Volumes ONTAP -System erstellen.  Diese Lizenzen bleiben nicht zugewiesen, bis Sie sie einem neuen Cloud Volumes ONTAP -System zuordnen.
 
 .Schritte
-. Wählen Sie im linken Navigationsmenü *Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsmenü * Licenses and subscriptions* aus.
 . Wählen Sie im Bereich * Cloud Volumes ONTAP* die Option *Anzeigen* aus.
 . Wählen Sie auf der Registerkarte * Cloud Volumes ONTAP* die Option *Lizenzen > Knotenbasierte Lizenzen* aus.
 . Klicken Sie auf *Nicht zugewiesen*.
@@ -600,7 +600,7 @@ Wenn Sie eine Lizenz von NetApp erworben haben, müssen Sie sie der Konsole hinz
 
 
 .Ergebnis
-Die Konsole fügt die Lizenz als nicht zugewiesen hinzu, bis Sie sie einem neuen Cloud Volumes ONTAP -System zuordnen.  Sie können die Lizenz im linken Navigationsmenü unter *Lizenzen und Abonnements > Cloud Volumes ONTAP > Anzeigen > Lizenzen* sehen.
+Die Konsole fügt die Lizenz als nicht zugewiesen hinzu, bis Sie sie einem neuen Cloud Volumes ONTAP -System zuordnen.  Sie können die Lizenz im linken Navigationsmenü unter * Licenses and subscriptions > Cloud Volumes ONTAP > Anzeigen > Lizenzen* sehen.
 
 
 
@@ -620,7 +620,7 @@ Für HA: Wählen Sie unter *Erstellen* Cloud Volumes ONTAP oder Cloud Volumes ON
 . Führen Sie die Schritte im Assistenten aus, um das Cloud Volumes ONTAP -System zu starten.
 +
 
-CAUTION: Wählen Sie beim Auswählen im Assistenten unter *Dienste* nicht *Data Sense & Compliance* und *Backup in die Cloud* aus.  Wählen Sie unter *Vorkonfigurierte Pakete* nur *Konfiguration ändern* aus und stellen Sie sicher, dass Sie keine andere Option ausgewählt haben.  Vorkonfigurierte Pakete werden in den Regionen AWS Secret Cloud und Top Secret Cloud nicht unterstützt. Wenn Sie diese auswählen, schlägt Ihre Bereitstellung fehl.
+CAUTION: Wählen Sie beim Auswählen im Assistenten unter *Dienste* nicht *Data Sense & Compliance* und *Backup in die Cloud* aus.  Wählen Sie unter *Vorkonfigurierte Pakete* nur *Konfiguration ändern* aus und stellen Sie sicher, dass Sie keine andere Option ausgewählt haben.  Vorkonfigurierte Pakete werden in den AWS Secret Cloud- und Top Secret Cloud-Regionen nicht unterstützt. Wenn Sie diese auswählen, schlägt Ihre Bereitstellung fehl.
 
 
 
@@ -687,7 +687,7 @@ NOTE: Stellen Sie sicher, dass die Bucket-Namen mit dem Präfix `fabric-pool-.` 
 ----
 security certificate install -type server-ca -cert-name <certificate-name>
 ----
-. Geben Sie bei der entsprechenden Aufforderung den gesamten kopierten Text ein, einschließlich und von `----- BEGIN CERTIFICATE -----` Zu `----- END CERTIFICATE -----` .
+. Wenn Sie dazu aufgefordert werden, geben Sie den gesamten kopierten Text ein, einschließlich und von `----- BEGIN CERTIFICATE -----` Zu `----- END CERTIFICATE -----` .
 . Bewahren Sie eine Kopie des von der Zertifizierungsstelle signierten digitalen Zertifikats zur späteren Verwendung auf.
 . Bewahren Sie den CA-Namen und die Seriennummer des Zertifikats auf.
 . Konfigurieren Sie den Objektspeicher für die AWS Secret Cloud- und Top Secret Cloud-Regionen: `set -privilege advanced -confirmations off`

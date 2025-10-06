@@ -14,9 +14,9 @@ summary: 'Nach dem Ende der Verfügbarkeit (EOA) Ihrer knotenbasierten Lizenzen 
 
 
 [role="lead"]
-Nach dem Ende der Verfügbarkeit (EOA) Ihrer knotenbasierten Lizenzen sollten Sie mithilfe des Lizenzkonvertierungstools in der NetApp Konsole auf eine kapazitätsbasierte Lizenzierung umsteigen.
+Nach dem Ende der Verfügbarkeit (EOA) Ihrer knotenbasierten Lizenzen sollten Sie mithilfe des Lizenzkonvertierungstools in der NetApp Console auf eine kapazitätsbasierte Lizenzierung umsteigen.
 
-Bei jährlichen oder längerfristigen Verpflichtungen empfiehlt NetApp , dass Sie sich vor dem EOA-Datum (11. November 2024) oder dem Ablaufdatum der Lizenz an Ihren NetApp -Vertreter wenden, um sicherzustellen, dass die Voraussetzungen für den Übergang erfüllt sind.  Wenn Sie keinen langfristigen Vertrag für einen Cloud Volumes ONTAP Knoten haben und Ihr System mit einem On-Demand-Pay-as-you-go-Abonnement (PAYGO) betreiben, ist es wichtig, Ihre Konvertierung vor dem Ende des Supports (EOS) am 31. Dezember 2024 zu planen.  In beiden Fällen sollten Sie sicherstellen, dass Ihr System die Anforderungen erfüllt, bevor Sie das Lizenzkonvertierungstool in der NetApp Konsole für einen nahtlosen Übergang verwenden.
+Bei jährlichen oder längerfristigen Verpflichtungen empfiehlt NetApp , dass Sie sich vor dem EOA-Datum (11. November 2024) oder dem Ablaufdatum der Lizenz an Ihren NetApp -Vertreter wenden, um sicherzustellen, dass die Voraussetzungen für den Übergang erfüllt sind.  Wenn Sie keinen langfristigen Vertrag für einen Cloud Volumes ONTAP Knoten haben und Ihr System mit einem On-Demand-Pay-as-you-go-Abonnement (PAYGO) betreiben, ist es wichtig, Ihre Konvertierung vor dem Ende des Supports (EOS) am 31. Dezember 2024 zu planen.  In beiden Fällen sollten Sie sicherstellen, dass Ihr System die Anforderungen erfüllt, bevor Sie das Lizenzkonvertierungstool in der NetApp Console für einen nahtlosen Übergang verwenden.
 
 Informationen zu EOA und EOS finden Sie unterlink:concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"] .
 
@@ -36,8 +36,8 @@ Informationen zu EOA und EOS finden Sie unterlink:concept-licensing.html#end-of-
 * Sie sollten über ein NSS-Konto mit Kundenzugriff oder Administratorzugriff verfügen.
 * Ihr NSS-Konto sollte mit den Benutzeranmeldeinformationen registriert sein, die Sie für den Zugriff auf die Konsole verwendet haben.
 * Das Cloud Volumes ONTAP -System sollte mit dem NSS-Konto mit Kundenzugriff oder Administratorzugriff verknüpft werden.
-* Sie sollten über eine gültige kapazitätsbasierte Lizenz verfügen, entweder eine BYOL-Lizenz oder ein Marktplatz-Abonnement.
-* Eine kapazitätsbasierte Lizenz sollte in Ihrem Konto verfügbar sein.  Bei dieser Lizenz kann es sich um ein Marktplatzabonnement oder ein BYOL-/Privatangebotspaket handeln, das in der Konsole unter *Lizenzen und Abonnements* verfügbar ist.
+* Sie sollten über eine gültige kapazitätsbasierte Lizenz verfügen, entweder eine BYOL-Lizenz oder ein Marktplatzabonnement.
+* Eine kapazitätsbasierte Lizenz sollte in Ihrem Konto verfügbar sein.  Bei dieser Lizenz kann es sich um ein Marktplatzabonnement oder ein BYOL-/Privatangebotspaket handeln, das in der Konsole unter * Licenses and subscriptions* verfügbar ist.
 * Machen Sie sich mit den folgenden Kriterien vertraut, bevor Sie ein Zielpaket auswählen:
 +
 ** Wenn das Konto über eine kapazitätsbasierte BYOL-Lizenz verfügt, sollte das ausgewählte Zielpaket mit den kapazitätsbasierten BYOL-Lizenzen des Kontos übereinstimmen:
@@ -78,13 +78,13 @@ TIP: Das Symbol ist deaktiviert, wenn Ihr Cloud Volumes ONTAP System bereits nac
 
 
 .Nach Abschluss
-Zeigen Sie die neue Lizenzseriennummer an und überprüfen Sie die Änderungen im Menü *Lizenzen und Abonnements* der Konsole.
+Zeigen Sie die neue Lizenzseriennummer an und überprüfen Sie die Änderungen im Menü * Licenses and subscriptions* der Konsole.
 
 
 
 == Preisgestaltung in verschiedenen Hyperskalaren
 
-Einzelheiten zu den Preisen finden Sie auf der https://bluexp.netapp.com/pricing/["NetApp Console-Website"^] .
+Einzelheiten zu den Preisen finden Sie auf der https://bluexp.netapp.com/pricing/["NetApp Console Website"^] .
 
 Informationen zu privaten Angeboten in bestimmten Hyperskalaren erhalten Sie unter:
 

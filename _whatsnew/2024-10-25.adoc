@@ -19,4 +19,4 @@ BlueXP unterstützt jetzt AWS Local Zones für Cloud Volumes ONTAP Bereitstellun
 
 NOTE: AWS Local Zones werden nicht unterstützt, wenn BlueXP im eingeschränkten Modus verwendet wird.
 
-Weitere Informationen zu AWS Local Zones mit HA-Bereitstellungen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["AWS-Lokalzonen"^] .
+Weitere Informationen zu AWS Local Zones mit HA-Bereitstellungen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["Lokale AWS-Zonen"^] .

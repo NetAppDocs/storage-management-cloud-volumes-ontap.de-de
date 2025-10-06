@@ -20,7 +20,7 @@ Cloud Volumes ONTAP verwendet einen Azure Private Link für Verbindungen zu den 
 
 == Überblick
 
-Standardmäßig aktiviert die NetApp -Konsole einen Azure Private Link für Verbindungen zwischen Cloud Volumes ONTAP und den zugehörigen Speicherkonten.  Ein Azure Private Link sichert Verbindungen zwischen Endpunkten in Azure und bietet Leistungsvorteile.
+Standardmäßig aktiviert die NetApp Console einen Azure Private Link für Verbindungen zwischen Cloud Volumes ONTAP und den zugehörigen Speicherkonten.  Ein Azure Private Link sichert Verbindungen zwischen Endpunkten in Azure und bietet Leistungsvorteile.
 
 Bei Bedarf können Sie Cloud Volumes ONTAP so konfigurieren, dass anstelle eines Azure Private Link Dienstendpunkte verwendet werden.
 

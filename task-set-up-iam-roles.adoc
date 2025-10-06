@@ -14,7 +14,7 @@ summary: Jedem Cloud Volumes ONTAP -Knoten müssen IAM-Rollen mit den erforderli
 
 
 [role="lead"]
-Jedem Cloud Volumes ONTAP -Knoten müssen AWS Identity and Access Management (IAM)-Rollen mit den erforderlichen Berechtigungen zugeordnet werden. Dasselbe gilt für den HA-Mediator.  Am einfachsten ist es, die IAM-Rollen von der NetApp -Konsole erstellen zu lassen, Sie können jedoch auch Ihre eigenen Rollen verwenden.
+Jedem Cloud Volumes ONTAP -Knoten müssen AWS Identity and Access Management (IAM)-Rollen mit den erforderlichen Berechtigungen zugeordnet werden. Dasselbe gilt für den HA-Mediator.  Am einfachsten ist es, die IAM-Rollen von der NetApp Console erstellen zu lassen, Sie können jedoch auch Ihre eigenen Rollen verwenden.
 
 Diese Aufgabe ist optional.  Wenn Sie ein Cloud Volumes ONTAP -System erstellen, besteht die Standardoption darin, die IAM-Rollen von der Konsole erstellen zu lassen.  Wenn die Sicherheitsrichtlinien Ihres Unternehmens erfordern, dass Sie die IAM-Rollen selbst erstellen, führen Sie die folgenden Schritte aus.
 
@@ -328,7 +328,7 @@ Wenn Sie NetApp Backup and Recovery mit Ihren Cloud Volumes ONTAP -Systemen verw
 --
 
 
-. Erstellen Sie eine IAM-Rolle und fügen Sie die von Ihnen erstellten Richtlinien der Rolle hinzu.
+. Erstellen Sie eine IAM-Rolle und fügen Sie der Rolle die von Ihnen erstellten Richtlinien hinzu.
 
 
 .Ergebnis

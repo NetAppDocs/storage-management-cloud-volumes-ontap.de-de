@@ -54,7 +54,7 @@ NOTE: Wenn Sie Cloud Volumes ONTAP 9.13.0 oder höher verwenden, müssen Sie kei
 
 
 
-. Laden Sie den JSON-Schlüssel des Dienstkontos herunter:
+. JSON-Schlüssel des Dienstkontos herunterladen:
 `gcloud iam service-accounts keys create key-file --iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com`
 
 

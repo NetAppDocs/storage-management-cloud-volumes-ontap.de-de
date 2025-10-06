@@ -95,7 +95,7 @@ ifdef::aws[]
 
 === AWS-Schlüsselverwaltungsdienst
 
-Wenn Sie ein Cloud Volumes ONTAP -System in AWS starten, können Sie die Datenverschlüsselung mithilfe des http://docs.aws.amazon.com/kms/latest/developerguide/overview.html["AWS-Schlüsselverwaltungsdienst (KMS)"^] .  Die NetApp Konsole fordert Datenschlüssel mithilfe eines Customer Master Key (CMK) an.
+Wenn Sie ein Cloud Volumes ONTAP -System in AWS starten, können Sie die Datenverschlüsselung mithilfe des http://docs.aws.amazon.com/kms/latest/developerguide/overview.html["AWS-Schlüsselverwaltungsdienst (KMS)"^] .  Die NetApp Console fordert Datenschlüssel mithilfe eines Customer Master Key (CMK) an.
 
 
 TIP: Sie können die AWS-Datenverschlüsselungsmethode nicht mehr ändern, nachdem Sie ein Cloud Volumes ONTAP System erstellt haben.
@@ -110,9 +110,9 @@ ifdef::azure[]
 
 === Azure Storage Service-Verschlüsselung
 
-Die Daten werden auf Cloud Volumes ONTAP in Azure automatisch verschlüsselt mit https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview["Azure Storage Service-Verschlüsselung"^] mit einem von Microsoft verwalteten Schlüssel.
+Die Daten werden automatisch auf Cloud Volumes ONTAP in Azure verschlüsselt mit https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview["Azure Storage Service-Verschlüsselung"^] mit einem von Microsoft verwalteten Schlüssel.
 
-Wenn Sie möchten, können Sie auch Ihre eigenen Verschlüsselungsschlüssel verwenden. link:task-set-up-azure-encryption.html["Erfahren Sie, wie Sie Cloud Volumes ONTAP für die Verwendung eines vom Kunden verwalteten Schlüssels in Azure einrichten."] .
+Sie können, wenn Sie möchten, Ihre eigenen Verschlüsselungsschlüssel verwenden. link:task-set-up-azure-encryption.html["Erfahren Sie, wie Sie Cloud Volumes ONTAP für die Verwendung eines vom Kunden verwalteten Schlüssels in Azure einrichten."] .
 
 endif::azure[]
 
@@ -134,7 +134,7 @@ endif::gcp[]
 
 Sie können die integrierte Antivirenfunktion auf ONTAP -Systemen verwenden, um Daten vor der Gefährdung durch Viren oder anderen Schadcode zu schützen.
 
-Der ONTAP Virenscan, genannt _Vscan_, kombiniert erstklassige Antivirensoftware von Drittanbietern mit ONTAP Funktionen, die Ihnen die nötige Flexibilität geben, um zu steuern, welche Dateien wann gescannt werden.
+Der ONTAP Virenscan, genannt _Vscan_, kombiniert erstklassige Antivirensoftware von Drittanbietern mit ONTAP Funktionen, die Ihnen die nötige Flexibilität bieten, um zu steuern, welche Dateien wann gescannt werden.
 
 Informationen zu den Anbietern, der Software und den von Vscan unterstützten Versionen finden Sie im http://mysupport.netapp.com/matrix["NetApp Interoperabilitätsmatrix"^] .
 

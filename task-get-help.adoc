@@ -89,7 +89,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/scre
 
 
 .Nach Abschluss
-Ein Popup mit Ihrer Support-Fallnummer wird angezeigt. Ein NetApp -Support-Spezialist wird Ihren Fall prüfen und sich in Kürze bei Ihnen melden.
+Es erscheint ein Popup mit Ihrer Support-Fallnummer. Ein NetApp -Support-Spezialist wird Ihren Fall prüfen und sich in Kürze bei Ihnen melden.
 
 Um einen Verlauf Ihrer Supportfälle anzuzeigen, können Sie *Einstellungen > Zeitleiste* auswählen und nach Aktionen mit der Bezeichnung „Supportfall erstellen“ suchen. Über eine Schaltfläche ganz rechts können Sie die Aktion erweitern, um Details anzuzeigen.
 
@@ -140,7 +140,7 @@ Auf der Seite *Fallverwaltung* werden offene Fälle angezeigt, die sich auf das 
 ** Wählen Sie unter *Fälle der Organisation* die Option *Anzeigen* aus, um alle mit Ihrem Unternehmen verknüpften Fälle anzuzeigen.
 ** Ändern Sie den Datumsbereich, indem Sie einen genauen Datumsbereich oder einen anderen Zeitrahmen auswählen.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-case-management-date-range.png["Ein Screenshot der Option über der Tabelle auf der Seite „Fallmanagement“, mit der Sie einen genauen Datumsbereich oder die letzten 7 Tage, 30 Tage oder 3 Monate auswählen können."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-case-management-date-range.png["Ein Screenshot der Option über der Tabelle auf der Fallverwaltungsseite, mit der Sie einen genauen Datumsbereich oder die letzten 7 Tage, 30 Tage oder 3 Monate auswählen können."]
 
 ** Filtern Sie den Inhalt der Spalten.
 +

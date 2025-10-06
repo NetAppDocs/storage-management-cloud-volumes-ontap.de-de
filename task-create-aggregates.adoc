@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-create-aggregates.html 
 keywords: storage, provisioning, aggregates, provision, create, advanced allocation, creating aggregates, adding an aggregate, add an aggregate, create an aggregate 
-summary: Sie können Aggregate selbst erstellen oder dies bei der Volume-Erstellung von der NetApp -Konsole für Sie erledigen lassen.  Der Vorteil der eigenen Erstellung von Aggregaten besteht darin, dass Sie die zugrunde liegende Festplattengröße auswählen können. Dadurch können Sie Ihr Aggregat an die Kapazität oder Leistung anpassen, die Sie benötigen. 
+summary: Sie können Aggregate selbst erstellen oder dies bei der Volume-Erstellung von der NetApp Console für Sie erledigen lassen.  Der Vorteil der eigenen Erstellung von Aggregaten besteht darin, dass Sie die zugrunde liegende Festplattengröße auswählen können. Dadurch können Sie Ihr Aggregat an die Kapazität oder Leistung anpassen, die Sie benötigen. 
 ---
 = Erstellen Sie ein Aggregat für Cloud Volumes ONTAP Systeme
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Sie können Aggregate selbst erstellen oder dies bei der Volume-Erstell
 
 
 [role="lead"]
-Sie können Aggregate selbst erstellen oder dies bei der Volume-Erstellung von der NetApp -Konsole für Sie erledigen lassen.  Der Vorteil der eigenen Erstellung von Aggregaten besteht darin, dass Sie die zugrunde liegende Festplattengröße auswählen können. Dadurch können Sie Ihr Aggregat an die Kapazität oder Leistung anpassen, die Sie benötigen.
+Sie können Aggregate selbst erstellen oder dies bei der Volume-Erstellung von der NetApp Console für Sie erledigen lassen.  Der Vorteil der eigenen Erstellung von Aggregaten besteht darin, dass Sie die zugrunde liegende Festplattengröße auswählen können. Dadurch können Sie Ihr Aggregat an die Kapazität oder Leistung anpassen, die Sie benötigen.
 
 
 CAUTION: Alle Datenträger und Aggregate müssen direkt von der Konsole aus erstellt und gelöscht werden. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.

@@ -19,7 +19,7 @@ Wenn Sie die Amazon-Verschlüsselung mit Cloud Volumes ONTAP verwenden möchten,
 .Schritte
 . Stellen Sie sicher, dass ein aktiver Customer Master Key (CMK) vorhanden ist.
 +
-Der CMK kann ein von AWS verwalteter CMK oder ein vom Kunden verwalteter CMK sein.  Es kann sich im selben AWS-Konto wie die NetApp Konsole und Cloud Volumes ONTAP oder in einem anderen AWS-Konto befinden.
+Der CMK kann ein von AWS verwalteter CMK oder ein vom Kunden verwalteter CMK sein.  Es kann sich im selben AWS-Konto wie die NetApp Console und Cloud Volumes ONTAP oder in einem anderen AWS-Konto befinden.
 
 +
 https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys["AWS-Dokumentation: Kundenmasterschlüssel (CMKs)"^]

@@ -14,7 +14,7 @@ Bei Bereitstellungen mit hoher Verfügbarkeit (HA) von Cloud Volumes ONTAP in ei
 Wenn Sie den Rollback-Prozess umgehen, wird der Bereitstellungsprozess von Cloud Volumes ONTAP erfolgreich abgeschlossen und Sie werden benachrichtigt, dass die Erstellung der Platzierungsgruppe unvollständig ist.
 
 .Schritte
-. Verwenden Sie SSH, um eine Verbindung zum NetApp Console-Agent-Host herzustellen und sich anzumelden.
+. Verwenden Sie SSH, um eine Verbindung zum NetApp Console Agent-Host herzustellen und sich anzumelden.
 . Navigieren Sie zu `/opt/application/netapp/cloudmanager/docker_occm/data` .
 . Bearbeiten `app.conf` durch Ändern des Wertes der `rollback-on-placement-group-failure` Parameter auf `false` .  Der Standardwert dieses Parameters ist `true` .
 +

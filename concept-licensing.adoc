@@ -232,7 +232,7 @@ Ab dem 11. November 2024 wurde die begrenzte Verfügbarkeit von knotenbasierten 
 
 Wenn Sie über einen gültigen knotenbasierten Vertrag verfügen, der über das EOA-Datum hinausgeht, können Sie die Lizenz bis zum Ablauf des Vertrags weiter verwenden.  Nach Ablauf des Vertrages ist eine Umstellung auf das kapazitätsbasierte Lizenzmodell erforderlich.  Wenn Sie keinen langfristigen Vertrag für einen Cloud Volumes ONTAP Knoten haben, ist es wichtig, Ihre Konvertierung vor dem EOS-Datum zu planen.
 
-In dieser Tabelle erfahren Sie mehr über die einzelnen Lizenztypen und die Auswirkungen der EOA darauf:
+In dieser Tabelle erfahren Sie mehr über die einzelnen Lizenztypen und die Auswirkungen von EOA darauf:
 
 [cols="2*"]
 |===

@@ -14,7 +14,7 @@ summary: Erfahren Sie, was es Neues beim Cloud Volumes ONTAP Management in BlueX
 
 
 [role="lead"]
-Informieren Sie sich über die Neuerungen beim Cloud Volumes ONTAP -Management in der NetApp Konsole.
+Informieren Sie sich über die Neuerungen beim Cloud Volumes ONTAP -Management in der NetApp Console.
 
 Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf die Verwaltung von Cloud Volumes ONTAP über die Konsole.  Um zu erfahren, was es Neues bei der Cloud Volumes ONTAP -Software gibt, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Gehen Sie zu den Versionshinweisen zu Cloud Volumes ONTAP"^] .
 
@@ -26,9 +26,9 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf die
 
 === BlueXP heißt jetzt NetApp Console
 
-Die NetApp Console basiert auf der verbesserten und neu strukturierten BlueXP -Grundlage und ermöglicht die zentrale Verwaltung von NetApp Storage und NetApp Data Services in On-Premises- und Cloud-Umgebungen auf Unternehmensniveau. Sie liefert Einblicke in Echtzeit, schnellere Workflows und eine vereinfachte Administration mit hoher Sicherheit und Konformität.
+Die NetApp Console basiert auf der verbesserten und neu strukturierten BlueXP -Grundlage und ermöglicht die zentrale Verwaltung von NetApp -Speicher und NetApp Data Services in On-Premises- und Cloud-Umgebungen auf Unternehmensniveau. Sie liefert Einblicke in Echtzeit, schnellere Arbeitsabläufe und eine vereinfachte Verwaltung mit hoher Sicherheit und Konformität.
 
-Einzelheiten zu den Änderungen finden Sie im https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Versionshinweise zur NetApp Konsole"^] .
+Einzelheiten zu den Änderungen finden Sie im https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Versionshinweise zur NetApp Console"^] .
 
 
 
@@ -273,7 +273,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-ad
 
 Jetzt können Sie die Verwaltung von Cloud Volumes ONTAP Lizenzen mithilfe verbesserter Navigationspunkte in der BlueXP digital wallet vereinfachen:
 
-* Greifen Sie einfach über die Registerkarten *Verwaltung > Lizenzen und Abonnements > Übersicht/Direktlizenzen* auf Ihre Cloud Volumes ONTAP -Lizenzinformationen zu.
+* Greifen Sie einfach über die Registerkarten *Verwaltung > Licenses and subscriptions > Übersicht/Direktlizenzen* auf Ihre Cloud Volumes ONTAP -Lizenzinformationen zu.
 * Klicken Sie im Cloud Volume ONTAP Bereich auf der Registerkarte *Übersicht* auf *Anzeigen*, um einen umfassenden Überblick über Ihre kapazitätsbasierten Lizenzen zu erhalten.  Diese erweiterte Ansicht bietet detaillierte Einblicke in Ihre Lizenzen und Abonnements.
 * Wenn Sie die vorherige Benutzeroberfläche bevorzugen, können Sie auf die Schaltfläche *Zur alten Ansicht wechseln* klicken, um die Lizenzdetails nach Typ anzuzeigen und die Abrechnungsmethoden für Ihre Lizenzen zu ändern.
 
@@ -310,7 +310,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 === Entfernung knotenbasierter Bereitstellungen aus BlueXP
 
-Die Option, Cloud Volumes ONTAP Systeme mithilfe knotenbasierter Lizenzen bereitzustellen, ist auf BlueXP veraltet.  Mit Ausnahme einiger Sonderfälle können Sie für Cloud Volumes ONTAP Bereitstellungen bei keinem Cloud-Anbieter knotenbasierte Lizenzen verwenden.
+Die Option, Cloud Volumes ONTAP Systeme mithilfe knotenbasierter Lizenzen bereitzustellen, ist bei BlueXP veraltet.  Mit Ausnahme einiger Sonderfälle können Sie für Cloud Volumes ONTAP Bereitstellungen bei keinem Cloud-Anbieter knotenbasierte Lizenzen verwenden.
 
 NetApp erkennt die folgenden besonderen Lizenzierungsanforderungen in Übereinstimmung mit vertraglichen Verpflichtungen und betrieblichen Anforderungen an und wird in diesen Situationen weiterhin knotenbasierte Lizenzen unterstützen:
 
@@ -367,7 +367,7 @@ BlueXP unterstützt jetzt AWS Local Zones für Cloud Volumes ONTAP Bereitstellun
 
 NOTE: AWS Local Zones werden nicht unterstützt, wenn BlueXP im eingeschränkten Modus verwendet wird.
 
-Weitere Informationen zu AWS Local Zones mit HA-Bereitstellungen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["AWS-Lokalzonen"^] .
+Weitere Informationen zu AWS Local Zones mit HA-Bereitstellungen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["Lokale AWS-Zonen"^] .
 
 
 
@@ -442,7 +442,7 @@ Für zukünftige Bereitstellungen von Cloud Volumes ONTAP werden keine kapazitä
 
 === Mindestversionsunterstützung für Flash Cache in Azure
 
-Die für die Konfiguration von Flash Cache in Azure erforderliche Mindestversion von Cloud Volumes ONTAP ist 9.13.1 GA.  Sie können zum Bereitstellen von Flash Cache auf Cloud Volumes ONTAP -Systemen in Azure nur ONTAP 9.13.1 GA und spätere Versionen verwenden.
+Die für die Konfiguration von Flash Cache in Azure erforderliche Mindestversion von Cloud Volumes ONTAP ist 9.13.1 GA.  Sie können für die Bereitstellung von Flash Cache auf Cloud Volumes ONTAP -Systemen in Azure nur ONTAP 9.13.1 GA und spätere Versionen verwenden.
 
 Informationen zu unterstützten Konfigurationen finden Sie unter https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems["Unterstützte Konfigurationen in Azure"^] .
 
@@ -477,7 +477,7 @@ Für Cloud Volumes ONTAP HA-Bereitstellungen ist jetzt Unterstützung für AWS L
 
 NOTE: AWS Local Zones werden unterstützt, wenn BlueXP im Standardmodus verwendet wird.  Derzeit werden AWS Local Zones nicht unterstützt, wenn BlueXP im eingeschränkten oder privaten Modus verwendet wird.
 
-Weitere Informationen zu AWS Local Zones mit HA-Bereitstellungen finden Sie unter https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["AWS-Lokalzonen"^] .
+Weitere Informationen zu AWS Local Zones mit HA-Bereitstellungen finden Sie unter https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["Lokale AWS-Zonen"^] .
 
 
 
@@ -523,7 +523,7 @@ Sie können kein Volume mehr aus einer Vorlage erstellen oder die Tags eines Vol
 
 In AWS unterstützen Cloud Volumes ONTAP, der Mediator und der Connector jetzt Amazon Instant Metadata Service v2 (IMDSv2) für alle Funktionen.  IMDSv2 bietet verbesserten Schutz vor Schwachstellen.  Bisher wurde nur IMDSv1 unterstützt.
 
-Falls Ihre Sicherheitsrichtlinien dies erfordern, können Sie Ihre EC2-Instances für die Verwendung von IMDSv2 konfigurieren.  Anweisungen hierzu finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/task-require-imdsv2.html["BlueXP -Setup- und Administrationsdokumentation zur Verwaltung vorhandener Connectors"^] .
+Falls Ihre Sicherheitsrichtlinien dies erfordern, können Sie Ihre EC2-Instanzen für die Verwendung von IMDSv2 konfigurieren.  Anweisungen hierzu finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/task-require-imdsv2.html["BlueXP -Setup- und Administrationsdokumentation zur Verwaltung vorhandener Connectors"^] .
 
 
 
@@ -729,7 +729,7 @@ Die folgende Änderung wurde mit der Version 3.9.33 des Connectors eingeführt.
 
 === Unterstützung für VMs der Lsv3-Serie in Azure
 
-Die Instanztypen L48s_v3 und L64s_v3 werden ab der Version 9.13.1 jetzt mit Cloud Volumes ONTAP in Azure für Einzelknoten- und Hochverfügbarkeitspaarbereitstellungen mit gemeinsam genutzten verwalteten Datenträgern in einzelnen und mehreren Verfügbarkeitszonen unterstützt. Diese Instanztypen unterstützen Flash Cache.
+Die Instanztypen L48s_v3 und L64s_v3 werden ab der Version 9.13.1 jetzt mit Cloud Volumes ONTAP in Azure für Einzelknoten- und Hochverfügbarkeitspaarbereitstellungen mit gemeinsam genutzten verwalteten Datenträgern in einzelnen und mehreren Verfügbarkeitszonen unterstützt.  Diese Instanztypen unterstützen Flash Cache.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Azure anzeigen"^] https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["Speicherlimits für Cloud Volumes ONTAP in Azure anzeigen"^]
 
@@ -743,7 +743,7 @@ Die folgenden Änderungen wurden mit der Version 3.9.32 des Connectors eingefüh
 
 === Flash-Cache und Unterstützung für hohe Schreibgeschwindigkeit in Google Cloud
 
-Flash-Cache und hohe Schreibgeschwindigkeit können in Google Cloud für Cloud Volumes ONTAP 9.13.1 und höher separat aktiviert werden. Eine hohe Schreibgeschwindigkeit ist auf allen unterstützten Instanztypen verfügbar. Flash Cache wird auf den folgenden Instanztypen unterstützt:
+Flash-Cache und hohe Schreibgeschwindigkeit können in Google Cloud für Cloud Volumes ONTAP 9.13.1 und höher separat aktiviert werden.  Eine hohe Schreibgeschwindigkeit ist auf allen unterstützten Instanztypen verfügbar.  Flash Cache wird auf den folgenden Instanztypen unterstützt:
 
 * n2-Standard-16
 * n2-Standard-32
@@ -751,7 +751,7 @@ Flash-Cache und hohe Schreibgeschwindigkeit können in Google Cloud für Cloud V
 * n2-Standard-64
 
 
-Sie können diese Funktionen einzeln oder zusammen sowohl bei Einzelknoten- als auch bei Hochverfügbarkeitspaarbereitstellungen verwenden.
+Sie können diese Funktionen separat oder zusammen sowohl bei Einzelknoten- als auch bei Hochverfügbarkeitspaarbereitstellungen verwenden.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["Starten Sie Cloud Volumes ONTAP in Google Cloud"^]
 
@@ -759,7 +759,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html
 
 === Verbesserungen bei Nutzungsberichten
 
-Es stehen nun verschiedene Verbesserungen der angezeigten Informationen in den Nutzungsberichten zur Verfügung. Im Folgenden sind die Verbesserungen der Nutzungsberichte aufgeführt:
+Es stehen nun verschiedene Verbesserungen der angezeigten Informationen in den Nutzungsberichten zur Verfügung.  Im Folgenden sind die Verbesserungen der Nutzungsberichte aufgeführt:
 
 * Die Einheit TiB ist jetzt im Namen der Spalten enthalten.
 * Ein neues Feld „Knoten“ für Seriennummern ist jetzt enthalten.
@@ -857,13 +857,13 @@ Die Region „Schweden, Mitte“ wird jetzt in Azure für Cloud Volumes ONTAP un
 
 === Unterstützung für HA-Bereitstellungen in mehreren Verfügbarkeitszonen in Azure Australien Ost
 
-Die Region „Australien Ost“ in Azure unterstützt jetzt HA-Bereitstellungen in mehreren Verfügbarkeitszonen für Cloud Volumes ONTAP 9.12.1 GA und höher.
+Die Region Australien-Ost in Azure unterstützt jetzt HA-Bereitstellungen in mehreren Verfügbarkeitszonen für Cloud Volumes ONTAP 9.12.1 GA und höher.
 
 
 
 === Aufschlüsselung der Ladenutzung
 
-Jetzt können Sie herausfinden, was Ihnen in Rechnung gestellt wird, wenn Sie kapazitätsbasierte Lizenzen abonniert haben. Die folgenden Arten von Nutzungsberichten stehen zum Download aus der digitalen Geldbörse in BlueXP zur Verfügung. Die Nutzungsberichte liefern Kapazitätsdetails zu Ihren Abonnements und informieren Sie darüber, wie Ihnen die Ressourcen in Ihren Cloud Volumes ONTAP Abonnements in Rechnung gestellt werden. Die herunterladbaren Berichte können problemlos mit anderen geteilt werden.
+Jetzt können Sie herausfinden, was Ihnen in Rechnung gestellt wird, wenn Sie kapazitätsbasierte Lizenzen abonniert haben.  Die folgenden Arten von Nutzungsberichten stehen zum Download aus der digitalen Geldbörse in BlueXP zur Verfügung.  Die Nutzungsberichte liefern Kapazitätsdetails zu Ihren Abonnements und informieren Sie darüber, wie Ihnen die Ressourcen in Ihren Cloud Volumes ONTAP Abonnements in Rechnung gestellt werden.  Die herunterladbaren Berichte können problemlos mit anderen geteilt werden.
 
 * Cloud Volumes ONTAP Paketnutzung
 * Nutzung auf hohem Niveau
@@ -877,7 +877,7 @@ Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/bluexp-clo
 
 === Beim Zugriff auf BlueXP ohne Marktplatz-Abonnement wird jetzt eine Benachrichtigung angezeigt
 
-Wenn Sie ohne Marktplatzabonnement auf Cloud Volumes ONTAP in BlueXP zugreifen, wird jetzt eine Benachrichtigung angezeigt.  In der Benachrichtigung heißt es: „Für diese Arbeitsumgebung ist ein Marktplatzabonnement erforderlich, um den Geschäftsbedingungen von Cloud Volumes ONTAP zu entsprechen.“
+Wenn Sie jetzt ohne Marktplatzabonnement auf Cloud Volumes ONTAP in BlueXP zugreifen, wird eine Benachrichtigung angezeigt.  In der Benachrichtigung heißt es: „Für diese Arbeitsumgebung ist ein Marktplatzabonnement erforderlich, um den Geschäftsbedingungen von Cloud Volumes ONTAP zu entsprechen.“
 
 
 
@@ -919,7 +919,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-li
 
 === Unterstützung für Kommentare während der Volume-Erstellung
 
-Mit dieser Version können Sie beim Erstellen eines Cloud Volumes ONTAP FlexGroup Volumes oder FlexVol volume unter Verwendung der API Kommentare abgeben.
+Mit dieser Version können Sie beim Erstellen eines Cloud Volumes ONTAP FlexGroup Volumes oder FlexVol volume mithilfe der API Kommentare abgeben.
 
 
 
@@ -1171,7 +1171,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-li
 
 
 
-=== Kosten und Leistung optimieren
+=== Optimieren Sie Kosten und Leistung
 
 Sie können jetzt die Kosten und Leistung eines Cloud Volumes ONTAP Systems direkt vom Canvas aus optimieren.
 
@@ -1215,7 +1215,7 @@ Die einzige Voraussetzung besteht darin, sicherzustellen, dass die Sicherheitsgr
 
 === Lademethode ändern
 
-Sie können jetzt die Abrechnungsmethode für ein Cloud Volumes ONTAP -System ändern, das eine kapazitätsbasierte Lizenzierung verwendet. Wenn Sie beispielsweise ein Cloud Volumes ONTAP -System mit dem Essentials-Paket bereitgestellt haben, können Sie es auf das Professional-Paket umstellen, wenn sich Ihre Geschäftsanforderungen ändern. Diese Funktion ist im Digital Wallet verfügbar.
+Sie können jetzt die Abrechnungsmethode für ein Cloud Volumes ONTAP -System ändern, das eine kapazitätsbasierte Lizenzierung verwendet.  Wenn Sie beispielsweise ein Cloud Volumes ONTAP -System mit dem Essentials-Paket bereitgestellt haben, können Sie es auf das Professional-Paket umstellen, wenn sich Ihre Geschäftsanforderungen ändern.  Diese Funktion ist im Digital Wallet verfügbar.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html["Erfahren Sie, wie Sie die Lademethode ändern"] .
 
@@ -1253,9 +1253,9 @@ Die folgenden Änderungen wurden mit der Version 3.9.20 des Connectors eingefüh
 
 === Digitale Geldbörse
 
-Die digitale Geldbörse zeigt Ihnen jetzt die gesamte verbrauchte Kapazität in Ihrem Konto und die verbrauchte Kapazität pro Lizenzpaket an. Auf diese Weise können Sie besser nachvollziehen, welche Kosten Ihnen in Rechnung gestellt werden und ob Sie zusätzliche Kapazität erwerben müssen.
+Die digitale Geldbörse zeigt Ihnen jetzt die gesamte verbrauchte Kapazität in Ihrem Konto und die verbrauchte Kapazität pro Lizenzpaket an.  Auf diese Weise können Sie besser nachvollziehen, welche Kosten Ihnen in Rechnung gestellt werden und ob Sie zusätzliche Kapazität erwerben müssen.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-digital-wallet-summary.png["Ein Screenshot, der die Digital Wallet-Seite für kapazitätsbasierte Lizenzen zeigt. Die Seite bietet einen Überblick über die verbrauchte Kapazität in Ihrem Konto und schlüsselt die verbrauchte Kapazität anschließend nach Lizenzpaket auf."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-digital-wallet-summary.png["Ein Screenshot, der die Digital Wallet-Seite für kapazitätsbasierte Lizenzen zeigt.  Die Seite bietet einen Überblick über die verbrauchte Kapazität in Ihrem Konto und schlüsselt die verbrauchte Kapazität anschließend nach Lizenzpaket auf."]
 
 
 
@@ -1363,7 +1363,7 @@ Für die Unterstützung beim Erstellen von Speicher-VMs sind neue Google Cloud-B
 ----
 Beachten Sie, dass Sie die ONTAP CLI oder den System Manager verwenden müssen, um eine Speicher-VM auf einem Einzelknotensystem zu erstellen.
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#storage-vm-limits["Weitere Informationen zu Speicher-VM-Limits in Google Cloud"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#storage-vm-limits["Erfahren Sie mehr über Speicher-VM-Limits in Google Cloud"^]
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html["Erfahren Sie, wie Sie datenbereitstellende Speicher-VMs für Cloud Volumes ONTAP in Google Cloud erstellen."]
 
 
@@ -1519,7 +1519,7 @@ Wenn Sie über ein bestehendes Abonnement in einem Cloud-Marktplatz verfügen, s
 +
 Wenn Sie ein neuer Kunde sind, werden Sie von BlueXP beim Erstellen einer neuen Arbeitsumgebung zum Abonnieren aufgefordert.
 
-* Die knotenweise Lizenzierung auf allen Marktplätzen der Cloud-Anbieter ist veraltet und für neue Abonnenten nicht mehr verfügbar.  Dazu gehören Jahresverträge und Stundenabonnements (Explore, Standard und Premium).
+* Die Lizenzierung pro Knoten auf allen Marktplätzen der Cloud-Anbieter ist veraltet und für neue Abonnenten nicht mehr verfügbar.  Dazu gehören Jahresverträge und Stundenabonnements (Explore, Standard und Premium).
 +
 Für Bestandskunden mit aktivem Abonnement steht diese Abrechnungsmethode weiterhin zur Verfügung.
 
@@ -1597,7 +1597,7 @@ image:screenshot-cvo-charging-method.png["Ein Screenshot, der die Abrechnungsmet
 
 === Wählen Sie Ihren Benutzernamen
 
-Wenn Sie eine Cloud Volumes ONTAP Arbeitsumgebung erstellen, haben Sie jetzt die Möglichkeit, anstelle des standardmäßigen Administratorbenutzernamens Ihren bevorzugten Benutzernamen einzugeben.
+Wenn Sie eine Cloud Volumes ONTAP Arbeitsumgebung erstellen, haben Sie jetzt die Möglichkeit, Ihren bevorzugten Benutzernamen anstelle des standardmäßigen Administratorbenutzernamens einzugeben.
 
 image:screenshot-cvo-user-name.png["Ein Screenshot der Seite „Details und Anmeldeinformationen“ im Arbeitsumgebungsassistenten, auf der Sie einen Benutzernamen angeben können."]
 
@@ -1685,7 +1685,7 @@ Die folgenden Änderungen wurden mit der Version 3.9.10 des Connectors eingefüh
 
 === Vom Kunden verwalteter Verschlüsselungsschlüssel in Azure
 
-Die Daten werden auf Cloud Volumes ONTAP in Azure automatisch verschlüsselt mit https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview["Azure Storage Service-Verschlüsselung"^] mit einem von Microsoft verwalteten Schlüssel.  Sie können jetzt stattdessen Ihren eigenen, vom Kunden verwalteten Verschlüsselungsschlüssel verwenden, indem Sie die folgenden Schritte ausführen:
+Die Daten werden automatisch auf Cloud Volumes ONTAP in Azure verschlüsselt mit https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview["Azure Storage Service-Verschlüsselung"^] mit einem von Microsoft verwalteten Schlüssel.  Sie können jetzt stattdessen Ihren eigenen, vom Kunden verwalteten Verschlüsselungsschlüssel verwenden, indem Sie die folgenden Schritte ausführen:
 
 . Erstellen Sie in Azure einen Schlüsseltresor und generieren Sie dann einen Schlüssel in diesem Tresor.
 . Verwenden Sie von BlueXP aus die API, um eine Cloud Volumes ONTAP Arbeitsumgebung zu erstellen, die den Schlüssel verwendet.
@@ -1740,7 +1740,7 @@ Beim Erstellen eines Cloud Volumes ONTAP -Systems in Azure haben Sie jetzt die M
 
 image:screenshot_azure_resource_group.png["Ein Screenshot des Assistenten „Arbeitsumgebung erstellen“, in dem Sie eine vorhandene Ressourcengruppe auswählen können."]
 
-Die folgenden Berechtigungen ermöglichen BlueXP , Cloud Volumes ONTAP -Ressourcen aus einer Ressourcengruppe zu entfernen, falls die Bereitstellung fehlschlägt oder gelöscht wird:
+Die folgenden Berechtigungen ermöglichen BlueXP , Cloud Volumes ONTAP -Ressourcen aus einer Ressourcengruppe zu entfernen, falls die Bereitstellung fehlschlägt oder eine Löschung erfolgt:
 
 [source, json]
 ----

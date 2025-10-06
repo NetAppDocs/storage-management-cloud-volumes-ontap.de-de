@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-node-licenses.html 
 keywords: license, licensing, install, updating license, system license, add system license, adding a system license,  update byol license, nlf, license generator, extra, by-node, NetApp Console, cloud backup, cloud data sense, cloud tiering 
-summary: Verwalten Sie Ihre knotenbasierten Lizenzen in der NetApp Konsole, um sicherzustellen, dass jedes Cloud Volumes ONTAP -System über eine gültige Lizenz mit der erforderlichen Kapazität verfügt. 
+summary: Verwalten Sie Ihre knotenbasierten Lizenzen in der NetApp Console, um sicherzustellen, dass jedes Cloud Volumes ONTAP -System über eine gültige Lizenz mit der erforderlichen Kapazität verfügt. 
 ---
 = Verwalten Sie die knotenbasierte Lizenzierung für Cloud Volumes ONTAP
 :hardbreaks:
@@ -15,7 +15,7 @@ summary: Verwalten Sie Ihre knotenbasierten Lizenzen in der NetApp Konsole, um s
 
 
 [role="lead"]
-Verwalten Sie knotenbasierte Lizenzen in der NetApp Konsole, um sicherzustellen, dass jedes Cloud Volumes ONTAP -System über eine gültige Lizenz mit der erforderlichen Kapazität verfügt.
+Verwalten Sie knotenbasierte Lizenzen in der NetApp Console, um sicherzustellen, dass jedes Cloud Volumes ONTAP -System über eine gültige Lizenz mit der erforderlichen Kapazität verfügt.
 
 _Knotenbasierte Lizenzen_ sind das Lizenzmodell der vorherigen Generation (und für Neukunden nicht verfügbar):
 
@@ -23,7 +23,7 @@ _Knotenbasierte Lizenzen_ sind das Lizenzmodell der vorherigen Generation (und f
 * Stündliche Pay-as-you-go-Abonnements (PAYGO) vom Marktplatz Ihres Cloud-Anbieters
 
 
-Sie können knotenbasierte Cloud Volumes ONTAP -Lizenzen über die NetApp Konsole verwalten.
+Sie können knotenbasierte Cloud Volumes ONTAP -Lizenzen über die NetApp Console verwalten.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Erfahren Sie mehr über Cloud Volumes ONTAP -Lizenzen"] .
 
@@ -31,17 +31,17 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 
 == Verwalten von PAYGO-Lizenzen
 
-Über das Menü „Lizenzen und Abonnements“ können Sie Details zu jedem Ihrer PAYGO Cloud Volumes ONTAP Systeme anzeigen, einschließlich der Seriennummer und des PAYGO-Lizenztyps.
+Über das Menü „Licenses and subscriptions“ können Sie Details zu jedem Ihrer PAYGO Cloud Volumes ONTAP Systeme anzeigen, einschließlich der Seriennummer und des PAYGO-Lizenztyps.
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie die Registerkarte *Übersicht*.
 . Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
 . Wählen Sie *Knotenbasierte Lizenzen* aus der Dropdown-Liste aus.
 . Klicken Sie auf *PAYGO*.
 . Sehen Sie sich in der Tabelle Details zu jeder Ihrer PAYGO-Lizenzen an.
 +
-image:screenshot_paygo_licenses.png["Ein Screenshot, der eine Tabelle auf der Seite „Lizenzen und Abonnements“ mit drei Paygo-Lizenzen zeigt.  Jede Zeile zeigt den Namen, den Systemtyp, die Seriennummer, das Paket und einen Link zur Verwaltung der Lizenz."]
+image:screenshot_paygo_licenses.png["Ein Screenshot, der eine Tabelle auf der Seite „Licenses and subscriptions“ mit drei Paygo-Lizenzen zeigt.  Jede Zeile zeigt den Namen, den Systemtyp, die Seriennummer, das Paket und einen Link zur Verwaltung der Lizenz."]
 
 . Klicken Sie bei Bedarf auf *PAYGO-Lizenz verwalten*, um die PAYGO-Lizenz zu ändern oder den Instanztyp zu ändern.
 
@@ -62,7 +62,7 @@ NOTE: NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizen
 Fügen Sie der Konsole eine knotenbasierte Lizenz hinzu, damit Sie die Lizenz auswählen können, wenn Sie ein neues Cloud Volumes ONTAP -System erstellen.  Die Konsole identifiziert diese Lizenzen als _nicht zugewiesen_.
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie die Registerkarte *Übersicht*.
 . Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
 . Wählen Sie *Knotenbasierte Lizenzen* aus der Dropdown-Liste aus.
@@ -76,13 +76,13 @@ Wenn Sie die Lizenzdatei noch nicht haben, lesen Sie den folgenden Abschnitt.
 
 
 .Ergebnis
-Die Konsole fügt die Lizenz hinzu.  Die Lizenz wird als nicht zugewiesen gekennzeichnet, bis Sie sie einem neuen Cloud Volumes ONTAP -System zuordnen.  Danach wird die Lizenz auf die Registerkarte *BYOL* unter *Lizenzen und Abonnements* verschoben.
+Die Konsole fügt die Lizenz hinzu.  Die Lizenz wird als nicht zugewiesen gekennzeichnet, bis Sie sie einem neuen Cloud Volumes ONTAP -System zuordnen.  Danach wird die Lizenz auf die Registerkarte *BYOL* unter * Licenses and subscriptions* verschoben.
 
 
 
 === Austausch nicht zugewiesener knotenbasierter Lizenzen
 
-Wenn Sie über eine nicht zugewiesene knotenbasierte Lizenz für Cloud Volumes ONTAP verfügen, die Sie nicht verwendet haben, können Sie die Lizenz austauschen, indem Sie sie in eine NetApp Backup and Recovery-Lizenz, eine NetApp Data Classification-Lizenz oder eine NetApp Cloud Tiering-Lizenz umwandeln.
+Wenn Sie über eine nicht zugewiesene knotenbasierte Lizenz für Cloud Volumes ONTAP verfügen, die Sie nicht verwendet haben, können Sie die Lizenz austauschen, indem Sie sie in eine NetApp Backup and Recovery -Lizenz, eine NetApp Data Classification -Lizenz oder eine NetApp Cloud Tiering -Lizenz umwandeln.
 
 Durch den Austausch der Lizenz wird die Cloud Volumes ONTAP -Lizenz widerrufen und eine Lizenz im Gegenwert von einem Dollar für den Dienst erstellt:
 
@@ -95,7 +95,7 @@ Die konvertierte Lizenz hat dasselbe Ablaufdatum wie die Cloud Volumes ONTAP -Li
 link:https://mydemo.netapp.com/player/?demoId=c96ef113-c338-4e44-9bda-81a8d252de63&showGuide=true&showGuidesToolbar=true&showHotspots=true&source=app["Sehen Sie sich die Anleitung zum Austausch knotenbasierter Lizenzen an."^]
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie die Registerkarte *Übersicht*.
 . Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
 . Wählen Sie *Knotenbasierte Lizenzen* aus der Dropdown-Liste aus.
@@ -137,7 +137,7 @@ image:screenshot-license-generator.png["Screenshot: Zeigt ein Beispiel der NetAp
 Wenn Sie ein BYOL-Abonnement verlängern, indem Sie sich an einen NetApp -Vertreter wenden, erhält die Konsole automatisch die neue Lizenz von NetApp und installiert sie auf dem Cloud Volumes ONTAP System.  Wenn die Konsole über die sichere Internetverbindung nicht auf die Lizenzdatei zugreifen kann, können Sie die Datei selbst abrufen und dann manuell hochladen.
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie die Registerkarte *Übersicht*.
 . Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
 . Wählen Sie *Knotenbasierte Lizenzen* aus der Dropdown-Liste aus.
@@ -165,7 +165,7 @@ Die Anzahl der Lizenzen, die Sie für ein Einzelknotensystem oder ein HA-Paar er
 Erwerben Sie eine Lizenz für zusätzliche Kapazität, indem Sie uns über das Chat-Symbol unten rechts in der Konsole kontaktieren.  Nachdem Sie die Lizenz erworben haben, können Sie sie auf ein Cloud Volumes ONTAP System anwenden.
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie die Registerkarte *Übersicht*.
 . Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
 . Wählen Sie *Knotenbasierte Lizenzen* aus der Dropdown-Liste aus.
@@ -182,7 +182,7 @@ Erwerben Sie eine Lizenz für zusätzliche Kapazität, indem Sie uns über das C
 Wenn Sie die Laufzeit einer Lizenz für zusätzliche Kapazität verlängert haben, müssen Sie die Lizenz in der Konsole aktualisieren.
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie die Registerkarte *Übersicht*.
 . Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
 . Wählen Sie *Knotenbasierte Lizenzen* aus der Dropdown-Liste aus.
@@ -199,7 +199,7 @@ Wenn Sie die Laufzeit einer Lizenz für zusätzliche Kapazität verlängert habe
 Wenn eine Lizenz für zusätzliche Kapazität abgelaufen ist und nicht mehr verwendet wird, können Sie sie jederzeit entfernen.
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie die Registerkarte *Übersicht*.
 . Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
 . Wählen Sie *Knotenbasierte Lizenzen* aus der Dropdown-Liste aus.

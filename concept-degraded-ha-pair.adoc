@@ -17,7 +17,7 @@ summary: Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, stellt der ander
 Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, stellt der andere Knoten Daten für seinen Partner bereit, um einen kontinuierlichen Datendienst bereitzustellen.  Dies wird als _Speicherübernahme_ bezeichnet.  Einige Aktionen sind erst nach Abschluss der Speicherrückgabe verfügbar.
 
 
-TIP: Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, lautet der Status des Systems in der NetApp Konsole „Herabgestuft“.
+TIP: Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, lautet der Status des Systems in der NetApp Console „Herabgestuft“.
 
 Die folgenden Aktionen sind bei der Speicherübernahme nicht verfügbar:
 

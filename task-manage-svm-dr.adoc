@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-svm-dr.html 
 keywords: storage virtual machine, vserver, svm, storage vm, svm dr, disaster recovery, svm disaster recovery, storage vm dr 
-summary: Die NetApp Konsole bietet keine Einrichtungs- oder Orchestrierungsunterstützung für die Notfallwiederherstellung von Speicher-VMs.  Sie müssen System Manager oder die CLI verwenden. 
+summary: Die NetApp Console bietet keine Einrichtungs- oder Orchestrierungsunterstützung für die Notfallwiederherstellung von Speicher-VMs.  Sie müssen System Manager oder die CLI verwenden. 
 ---
 = Einrichten der Speicher-VM-Notfallwiederherstellung für Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Die NetApp Konsole bietet keine Einrichtungs- oder Orchestrierungsunter
 
 
 [role="lead"]
-Die NetApp Konsole bietet keine Einrichtungs- oder Orchestrierungsunterstützung für die Notfallwiederherstellung von Storage-VMs (SVM).  Verwenden Sie zum Ausführen dieser Aufgaben den ONTAP System Manager oder die ONTAP CLI.
+Die NetApp Console bietet keine Einrichtungs- oder Orchestrierungsunterstützung für die Notfallwiederherstellung von Storage-VMs (SVM).  Verwenden Sie zum Ausführen dieser Aufgaben den ONTAP System Manager oder die ONTAP CLI.
 
 Wenn Sie die SnapMirror SVM-Replikation zwischen zwei Cloud Volumes ONTAP Systemen einrichten, muss die Replikation zwischen zwei HA-Paarsystemen oder zwei Einzelknotensystemen erfolgen.  Sie können die SnapMirror SVM-Replikation nicht zwischen einem HA-Paar und einem Einzelknotensystem einrichten.
 

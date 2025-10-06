@@ -4,7 +4,7 @@ permalink: task-manage-keystone.html
 keywords: license, licensing, install, keystone, request capacity, link subscription, add keystone subscription, keystone subscription, digital wallet, keystone flex 
 summary: Verwalten Sie Ihre Keystone -Abonnements, indem Sie Abonnements für die Verwendung mit Cloud Volumes ONTAP aktivieren und Änderungen an der zugesagten Kapazität für die Service-Levels Ihres Abonnements anfordern.  Durch die Anforderung zusätzlicher Kapazität für ein Servicelevel wird mehr Speicher für lokale ONTAP Cluster oder für Cloud Volumes ONTAP Systeme bereitgestellt. 
 ---
-= Verwalten Sie Keystone -Abonnements für Cloud Volumes ONTAP über die NetApp Konsole
+= Verwalten Sie Keystone -Abonnements für Cloud Volumes ONTAP über die NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -43,7 +43,7 @@ image:screenshot-keystone-overview.png["Ein Screenshot, der eine Liste der Keyst
 
 == Verknüpfen eines Abonnements
 
-Nachdem NetApp Ihr ​​Konto autorisiert hat, können Sie Keystone Abonnements zur Verwendung mit Cloud Volumes ONTAP verknüpfen. Mit dieser Aktion können Benutzer das Abonnement als Abrechnungsmethode für neue Cloud Volumes ONTAP Systeme auswählen.
+Nachdem NetApp Ihr ​​Konto autorisiert hat, können Sie Keystone Abonnements zur Verwendung mit Cloud Volumes ONTAP verknüpfen.  Mit dieser Aktion können Benutzer das Abonnement als Abrechnungsmethode für neue Cloud Volumes ONTAP Systeme auswählen.
 
 .Schritte
 . Wählen Sie im BlueXP -Navigationsmenü *Governance > Digitale Geldbörse*.
@@ -89,7 +89,7 @@ https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.h
 
 == Aufheben der Verknüpfung eines Abonnements
 
-Wenn Sie ein Keystone -Abonnement nicht mehr mit BlueXP verwenden möchten, können Sie die Verknüpfung des Abonnements aufheben. Beachten Sie, dass Sie die Verknüpfung eines Abonnements nur aufheben können, wenn es nicht mit einem vorhandenen Cloud Volumes ONTAP Abonnement verknüpft ist.
+Wenn Sie ein Keystone -Abonnement nicht mehr mit BlueXP verwenden möchten, können Sie die Verknüpfung des Abonnements aufheben.  Beachten Sie, dass Sie die Verknüpfung eines Abonnements nur aufheben können, wenn es nicht mit einem vorhandenen Cloud Volumes ONTAP Abonnement verknüpft ist.
 
 .Schritte
 . Wählen Sie im BlueXP -Navigationsmenü *Governance > Digitale Geldbörse*.

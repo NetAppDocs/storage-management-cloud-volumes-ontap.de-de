@@ -40,7 +40,7 @@ Die folgenden Schritte veranschaulichen, wie eine ähnliche Konfiguration einger
 
 . Erstellen Sie Routen in der Routentabelle des Transit-Gateways, indem Sie die Floating-IP-Adressen des HA-Paares angeben.
 +
-Sie finden die Floating-IP-Adressen auf der Systeminformationsseite in der NetApp Konsole. Hier ist ein Beispiel:
+Sie finden die Floating-IP-Adressen auf der Systeminformationsseite in der NetApp Console. Hier ist ein Beispiel:
 
 +
 image:screenshot_floating_ips.gif["Ein Screenshot, der die Floating-IP-Adressen für die Cluster-Verwaltungsschnittstelle, zwei NFS- und CIFS-Datenschnittstellen und die SVM-Verwaltungsschnittstelle zeigt."]

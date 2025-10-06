@@ -79,7 +79,7 @@ sidebar:
       - title: Informieren Sie sich über die Bereitstellungsoptionen von Cloud Volumes
           ONTAP in Azure
         url: "/concept-azure-mktplace-direct.html"
-      - title: Erste Schritte in der NetApp Konsole
+      - title: Erste Schritte in der NetApp Console
         entries:
         - title: Schnellstart
           url: "/task-getting-started-azure.html"

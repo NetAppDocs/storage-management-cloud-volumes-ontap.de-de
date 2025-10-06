@@ -47,7 +47,7 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 Hinweisdateien enthalten Informationen zu Urheberrechten und Lizenzen Dritter, die in der NetApp -Software verwendet werden.
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/media/notice.pdf["Hinweis zur NetApp Konsole"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/media/notice.pdf["Hinweis zur NetApp Console"^]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/legal-notices.html#open-source["Hinweis für Cloud Volumes ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/reference_legal_notices.html#open-source["Hinweis für ONTAP"^]
 

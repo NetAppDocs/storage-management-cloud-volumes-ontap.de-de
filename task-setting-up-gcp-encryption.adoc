@@ -40,7 +40,7 @@ Der Name des Dienstkontos verwendet das folgende Format: „service-[service_pro
 https://cloud.google.com/kms/docs/iam#granting_roles_on_a_resource["Google Cloud-Dokumentation: Verwenden von IAM mit Cloud KMS – Zuweisen von Rollen für eine Ressource"]
 
 . Rufen Sie die ID des Schlüssels ab, indem Sie den Befehl „get“ für den `/gcp/vsa/metadata/gcp-encryption-keys` API-Aufruf oder durch Auswahl von „Ressourcennamen kopieren“ auf dem Schlüssel in der GCP-Konsole.
-. Wenn Sie vom Kunden verwaltete Verschlüsselungsschlüssel verwenden und Daten in den Objektspeicher verschieben, versucht die NetApp Konsole, dieselben Schlüssel zu verwenden, die zum Verschlüsseln der persistenten Datenträger verwendet werden.  Sie müssen jedoch zunächst Google Cloud Storage-Buckets aktivieren, um die Schlüssel verwenden zu können:
+. Wenn Sie vom Kunden verwaltete Verschlüsselungsschlüssel verwenden und Daten in den Objektspeicher verschieben, versucht die NetApp Console, dieselben Schlüssel zu verwenden, die zum Verschlüsseln der persistenten Datenträger verwendet werden.  Sie müssen jedoch zunächst Google Cloud Storage-Buckets aktivieren, um die Schlüssel verwenden zu können:
 +
 .. Suchen Sie den Google Cloud Storage-Dienstagenten, indem Sie den https://cloud.google.com/storage/docs/getting-service-agent["Google Cloud-Dokumentation: Abrufen des Cloud Storage-Dienstagenten"^] .
 .. Navigieren Sie zum Verschlüsselungsschlüssel und weisen Sie dem Google Cloud Storage-Dienstagenten die Berechtigungen zum Verschlüsseln/Entschlüsseln von Cloud KMS zu.
@@ -62,4 +62,4 @@ Weitere Informationen finden Sie unter https://cloud.google.com/storage/docs/enc
 ----
 
 
-Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] Weitere Informationen zur Verwendung des Parameters „GcpEncryption“.
+Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] Weitere Informationen zur Verwendung des Parameters „GcpEncryption“.

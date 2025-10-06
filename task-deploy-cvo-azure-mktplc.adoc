@@ -16,10 +16,10 @@ summary:
 [role="lead"]
 Sie können die direkte Bereitstellung über den Azure Marketplace verwenden, um Cloud Volumes ONTAP schnell und einfach bereitzustellen.  Über den Azure Marketplace können Sie Cloud Volumes ONTAP mit wenigen Klicks schnell bereitstellen und die wichtigsten Funktionen und Möglichkeiten in Ihrer Umgebung erkunden.
 
-Weitere Informationen zu diesem Angebot finden Sie unterlink:concept-azure-mktplace-direct.html["Informieren Sie sich über die Angebote von Cloud Volumes ONTAP in der NetApp Konsole und im Marketplace."] .
+Weitere Informationen zu diesem Angebot finden Sie unterlink:concept-azure-mktplace-direct.html["Informieren Sie sich über die Angebote von Cloud Volumes ONTAP in der NetApp Console und im Marketplace."] .
 
 .Informationen zu diesem Vorgang
-Das Cloud Volumes ONTAP -System, das mithilfe der direkten Bereitstellung im Azure Marketplace bereitgestellt wird, verfügt über diese Eigenschaften.  Beachten Sie, dass sich die Funktionen einer über den Azure Marketplace bereitgestellten eigenständigen Instanz ändern, wenn sie in der NetApp Konsole erkannt wird.
+Das Cloud Volumes ONTAP -System, das mithilfe der direkten Bereitstellung im Azure Marketplace bereitgestellt wird, verfügt über diese Eigenschaften.  Beachten Sie, dass sich die Funktionen einer über den Azure Marketplace bereitgestellten eigenständigen Instanz ändern, wenn sie in der NetApp Console erkannt wird.
 
 * Die neueste Cloud Volumes ONTAP -Version (9.16.1 oder höher).
 * Eine kostenlose Lizenz für Cloud Volumes ONTAP , die auf 500 GiB bereitgestellte Kapazität begrenzt ist.  Diese Lizenz beinhaltet keinen NetApp Support und hat kein Ablaufdatum.

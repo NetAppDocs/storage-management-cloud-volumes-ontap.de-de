@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-volumes.html 
 keywords: volumes, managing, cloning, editing, CIFS server, edit, flexclone, snapshot copy, restore, mount, delete, cifs setup, DNS, active directory, AD, domain, NetBIOS, identify, move, capacity, action required, clone, snapshot copies, restoring, vol move, volume move, move a volume, volume move slow, volume move performance 
-summary: Mit der NetApp Konsole können Sie Volumes und CIFS-Server verwalten.  Außerdem werden Sie aufgefordert, Volumes zu verschieben, um Kapazitätsprobleme zu vermeiden. 
+summary: Mit der NetApp Console können Sie Volumes und CIFS-Server verwalten.  Außerdem werden Sie aufgefordert, Volumes zu verschieben, um Kapazitätsprobleme zu vermeiden. 
 ---
 = Verwalten Sie Volumes auf Cloud Volumes ONTAP -Systemen
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Mit der NetApp Konsole können Sie Volumes und CIFS-Server verwalten.  
 
 
 [role="lead"]
-Sie können Volumes und CIFS-Server in der NetApp Konsole verwalten.  Sie können Volumes auch verschieben, um Kapazitätsprobleme zu vermeiden.
+Sie können Volumes und CIFS-Server in der NetApp Console verwalten.  Sie können Volumes auch verschieben, um Kapazitätsprobleme zu vermeiden.
 
-Sie können Volumes in der Standardansicht der NetApp Konsole oder über den ONTAP System Manager verwalten, der in der Konsole für erweitertes Volume-Management enthalten ist.  Die Standardansicht bietet eine begrenzte Anzahl an Optionen zum Ändern Ihrer Volumes.  System Manager bietet erweiterte Verwaltungsfunktionen wie Klonen, Größenänderung, Ändern der Einstellungen für Anti-Ransomware, Analyse, Schutz und Aktivitätsverfolgung sowie Verschieben von Volumes zwischen Ebenen.  Weitere Informationen finden Sie unterlink:task-administer-advanced-view.html["Verwalten Sie Cloud Volumes ONTAP mit System Manager"] .
+Sie können Volumes in der Standardansicht der NetApp Console oder über den ONTAP System Manager verwalten, der in der Konsole für erweitertes Volume-Management enthalten ist.  Die Standardansicht bietet eine begrenzte Anzahl an Optionen zum Ändern Ihrer Volumes.  System Manager bietet erweiterte Verwaltungsfunktionen wie Klonen, Größenänderung, Ändern der Einstellungen für Anti-Ransomware, Analyse, Schutz und Aktivitätsverfolgung sowie Verschieben von Volumes zwischen Ebenen.  Weitere Informationen finden Sie unterlink:task-administer-advanced-view.html["Verwalten Sie Cloud Volumes ONTAP mit System Manager"] .
 
 
 
@@ -49,7 +49,7 @@ image:screenshot_manage_vol_button.png["Ein Screenshot der Schaltfläche „Volu
 
 
 | Klonen eines Volumes  a| 
-.. Klicken Sie unter „Volume-Aktionen“ im Bereich „Volumes verwalten“ auf „Volume klonen“.
+.. Klicken Sie im Bereich „Volumes verwalten“ unter „Volume-Aktionen“ auf „Volume klonen“.
 .. Ändern Sie den Klonnamen nach Bedarf und klicken Sie dann auf *Klonen*.
 
 

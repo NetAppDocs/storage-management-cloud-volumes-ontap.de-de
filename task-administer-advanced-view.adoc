@@ -14,7 +14,7 @@ summary: Wenn Sie eine erweiterte Verwaltung von Cloud Volumes ONTAP durchführe
 
 
 [role="lead"]
-Erweiterte Speicherverwaltungsfunktionen in Cloud Volumes ONTAP stehen über den ONTAP System Manager zur Verfügung, eine Verwaltungsoberfläche, die mit ONTAP -Systemen bereitgestellt wird. Sie können direkt von der NetApp Konsole auf den System Manager zugreifen.
+Erweiterte Speicherverwaltungsfunktionen in Cloud Volumes ONTAP stehen über den ONTAP System Manager zur Verfügung, eine Verwaltungsoberfläche, die mit ONTAP -Systemen bereitgestellt wird. Sie können direkt von der NetApp Console auf den System Manager zugreifen.
 
 
 

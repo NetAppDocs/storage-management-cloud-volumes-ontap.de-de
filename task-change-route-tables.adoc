@@ -23,4 +23,4 @@ Sie können die AWS-Routentabellen ändern, die Routen zu den Floating-IP-Adress
 
 
 .Ergebnis
-Die NetApp Konsole sendet eine AWS-Anfrage zum Ändern der Routentabellen.
+Die NetApp Console sendet eine AWS-Anfrage zum Ändern der Routentabellen.

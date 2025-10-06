@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-networking-aws.html 
 keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, vpn, internet, nat, s3, dns, ad, active directory, az, availability zone, floating IP, floating, SVM, management LIF, route, route tables, proxy, HTTP, private, tier, s3 endpoint, proxy server, nat device, vpn, snapmanager, snapcenter, iscsi, nfs, cifs, nas, san, outbound, inbound, connections, autosupport, ha, ha pair, high availability 
-summary: Die NetApp Konsole übernimmt die Einrichtung von Netzwerkkomponenten für Cloud Volumes ONTAP, wie z. B. IP-Adressen, Netzmasken und Routen.  Sie müssen sicherstellen, dass ausgehender Internetzugang verfügbar ist, dass genügend private IP-Adressen verfügbar sind, dass die richtigen Verbindungen vorhanden sind und mehr. 
+summary: Die NetApp Console übernimmt die Einrichtung von Netzwerkkomponenten für Cloud Volumes ONTAP, wie z. B. IP-Adressen, Netzmasken und Routen.  Sie müssen sicherstellen, dass ausgehender Internetzugang verfügbar ist, dass genügend private IP-Adressen verfügbar sind, dass die richtigen Verbindungen vorhanden sind und mehr. 
 ---
 = AWS-Netzwerk für Cloud Volumes ONTAP einrichten
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Die NetApp Konsole übernimmt die Einrichtung von Netzwerkkomponenten f
 
 
 [role="lead"]
-Die NetApp Konsole übernimmt die Einrichtung von Netzwerkkomponenten für Cloud Volumes ONTAP, wie z. B. IP-Adressen, Netzmasken und Routen.  Sie müssen sicherstellen, dass ausgehender Internetzugang verfügbar ist, dass genügend private IP-Adressen verfügbar sind, dass die richtigen Verbindungen vorhanden sind und mehr.
+Die NetApp Console übernimmt die Einrichtung von Netzwerkkomponenten für Cloud Volumes ONTAP, wie z. B. IP-Adressen, Netzmasken und Routen.  Sie müssen sicherstellen, dass ausgehender Internetzugang verfügbar ist, dass genügend private IP-Adressen verfügbar sind, dass die richtigen Verbindungen vorhanden sind und mehr.
 
 
 
@@ -28,7 +28,7 @@ Stellen Sie sicher, dass Sie die folgenden Anforderungen in AWS erfüllt haben.
 
 Cloud Volumes ONTAP -Systeme erfordern ausgehenden Internetzugang für den Zugriff auf externe Endpunkte für verschiedene Funktionen.  Cloud Volumes ONTAP kann nicht ordnungsgemäß funktionieren, wenn diese Endpunkte in Umgebungen mit strengen Sicherheitsanforderungen blockiert sind.
 
-Der Konsolenagent kontaktiert für alltägliche Vorgänge mehrere Endpunkte.  Informationen zu den verwendeten Endpunkten finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Vom Konsolenagenten kontaktierte Endpunkte anzeigen"^] Und https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html["Vorbereiten des Netzwerks für die Verwendung der Konsole"^] .
+Der Konsolenagent kontaktiert für den täglichen Betrieb mehrere Endpunkte.  Informationen zu den verwendeten Endpunkten finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Vom Konsolenagenten kontaktierte Endpunkte anzeigen"^] Und https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html["Vorbereiten des Netzwerks für die Verwendung der Konsole"^] .
 
 
 
@@ -59,7 +59,7 @@ Die Benutzerauthentifizierung schlägt fehl und die folgenden Dienste sind weite
 | \https://mysupport.netapp.com/aods/asupmessage \https://mysupport.netapp.com/asupprod/post/1.0/postAsup | AutoSupport | Wird verwendet, um AutoSupport Telemetriedaten an den NetApp Support zu senden. | Standard- und eingeschränkte Modi. | AutoSupport -Informationen bleiben unversehrt. 
 
 
-| Der genaue kommerzielle Endpunkt für den AWS-Dienst (mit dem Zusatz `amazonaws.com` ) hängt von der von Ihnen verwendeten AWS-Region ab. Weitere Informationen finden Sie im https://docs.aws.amazon.com/general/latest/gr/rande.html["AWS-Dokumentation für Details"^] .  a| 
+| Der genaue kommerzielle Endpunkt für den AWS-Dienst (mit dem Zusatz `amazonaws.com` ) hängt von der von Ihnen verwendeten AWS-Region ab.  Weitere Informationen finden Sie im https://docs.aws.amazon.com/general/latest/gr/rande.html["AWS-Dokumentation für Details"^] .  a| 
 * CloudFormation
 * Elastische Compute Cloud (EC2)
 * Identitäts- und Zugriffsverwaltung (IAM)
@@ -90,9 +90,9 @@ Die manuelle Option kann ein NAT-Gateway oder ein Schnittstellen-VPC-Endpunkt vo
 
 
 
-=== Netzwerkproxykonfiguration des NetApp Console-Agenten
+=== Netzwerkproxykonfiguration des NetApp Console Agenten
 
-Sie können die Proxyserverkonfiguration des NetApp Console-Agenten verwenden, um ausgehenden Internetzugriff von Cloud Volumes ONTAP zu aktivieren.  Die Konsole unterstützt zwei Arten von Proxys:
+Sie können die Proxyserverkonfiguration des NetApp Console Agenten verwenden, um ausgehenden Internetzugriff von Cloud Volumes ONTAP zu aktivieren.  Die Konsole unterstützt zwei Arten von Proxys:
 
 * *Expliziter Proxy*: Der ausgehende Datenverkehr von Cloud Volumes ONTAP verwendet die HTTP-Adresse des Proxyservers, der während der Proxykonfiguration des Konsolenagenten angegeben wurde.  Der Administrator hat möglicherweise auch Benutzeranmeldeinformationen und Stammzertifizierungsstellenzertifikate für eine zusätzliche Authentifizierung konfiguriert.  Wenn ein Stamm-CA-Zertifikat für den expliziten Proxy verfügbar ist, stellen Sie sicher , dass Sie dasselbe Zertifikat erhalten und mithilfe des https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: Sicherheitszertifikat installieren"^] Befehl.
 * *Transparenter Proxy*: Das Netzwerk ist so konfiguriert, dass ausgehender Datenverkehr von Cloud Volumes ONTAP automatisch über den Proxy für den Konsolenagenten geleitet wird.  Beim Einrichten eines transparenten Proxys muss der Administrator für die Konnektivität von Cloud Volumes ONTAP nur ein Stamm-CA-Zertifikat bereitstellen, nicht die HTTP-Adresse des Proxyservers.  Stellen Sie sicher, dass Sie dasselbe Stamm-CA-Zertifikat erhalten und auf Ihr Cloud Volumes ONTAP System hochladen, indem Sie das https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: Sicherheitszertifikat installieren"^] Befehl.

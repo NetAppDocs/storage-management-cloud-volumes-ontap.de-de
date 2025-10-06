@@ -27,7 +27,7 @@ NOTE: Bei der Bereitstellung in mehreren AZs verwenden Cloud Volumes ONTAP HA-Ko
 endif::aws[]
 
 .Schritte
-. Identifizieren Sie in der NetApp Konsole die IP-Adresse der Cluster-Verwaltungsschnittstelle:
+. Identifizieren Sie in der NetApp Console die IP-Adresse der Cluster-Verwaltungsschnittstelle:
 +
 .. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 .. Wählen Sie auf der Seite *Systeme* das Cloud Volumes ONTAP -System aus.

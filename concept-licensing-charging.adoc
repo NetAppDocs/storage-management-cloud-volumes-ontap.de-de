@@ -56,7 +56,7 @@ Ihre Lizenz wird immer zuerst in Rechnung gestellt. In den folgenden Fällen wir
 
 == Pakete ändern
 
-Nach der Bereitstellung können Sie das Paket für ein Cloud Volumes ONTAP -System ändern, das eine kapazitätsbasierte Lizenzierung verwendet. Wenn Sie beispielsweise ein Cloud Volumes ONTAP -System mit dem Essentials-Paket bereitgestellt haben, können Sie es auf das Professional-Paket umstellen, wenn sich Ihre Geschäftsanforderungen ändern.
+Nach der Bereitstellung können Sie das Paket für ein Cloud Volumes ONTAP -System ändern, das eine kapazitätsbasierte Lizenzierung verwendet.  Wenn Sie beispielsweise ein Cloud Volumes ONTAP -System mit dem Essentials-Paket bereitgestellt haben, können Sie es auf das Professional-Paket umstellen, wenn sich Ihre Geschäftsanforderungen ändern.
 
 link:task-manage-capacity-licenses.html["Erfahren Sie, wie Sie die Lademethode ändern"] .
 
@@ -66,7 +66,7 @@ Informationen zum Konvertieren von knotenbasierten Lizenzen in kapazitätsbasier
 
 == Preise und unterstützte Konfigurationen
 
-Einzelheiten zu den Preisen finden Sie auf der https://bluexp.netapp.com/pricing/["NetApp Console-Website"^] .
+Einzelheiten zu den Preisen finden Sie auf der https://bluexp.netapp.com/pricing/["NetApp Console Website"^] .
 
 Kapazitätsbasierte Lizenzpakete sind mit Cloud Volumes ONTAP 9.7 und höher verfügbar.
 
@@ -109,7 +109,7 @@ Informationen zu den Kapazitätsgrenzen der einzelnen Cloud-Anbieter finden Sie 
 
 == Maximale Anzahl an Systemen
 
-Bei der kapazitätsbasierten Lizenzierung ist die maximale Anzahl von Cloud Volumes ONTAP -Systemen auf 24 pro NetApp Console-Konto begrenzt.  Ein _System_ ist ein Cloud Volumes ONTAP HA-Paar, ein Cloud Volumes ONTAP Einzelknotensystem oder alle zusätzlichen Speicher-VMs, die Sie erstellen.  Die Standard-Speicher-VM wird nicht auf das Limit angerechnet.  Diese Begrenzung gilt für alle Lizenzmodelle.
+Bei der kapazitätsbasierten Lizenzierung ist die maximale Anzahl von Cloud Volumes ONTAP -Systemen auf 24 pro NetApp Console Konto begrenzt.  Ein _System_ ist ein Cloud Volumes ONTAP HA-Paar, ein Cloud Volumes ONTAP Einzelknotensystem oder alle zusätzlichen Speicher-VMs, die Sie erstellen.  Die Standard-Speicher-VM wird nicht auf das Limit angerechnet.  Diese Begrenzung gilt für alle Lizenzmodelle.
 
 Nehmen wir beispielsweise an, Sie haben drei Systeme:
 
@@ -165,12 +165,12 @@ Beim Essentials-Paket erfolgt die Abrechnung nach Bereitstellungstyp (HA oder Ei
 
 Die Lizenzierung basiert vollständig auf dem Volume-Typ, der in Cloud Volumes ONTAP Systemen erstellt wird:
 
-* Essentials Single Node: Lese-/Schreib-Volumes, die auf einem Cloud Volumes ONTAP System unter Verwendung nur eines ONTAP Knotens erstellt wurden.
+* Essentials Single Node: Lese-/Schreib-Volumes, die auf einem Cloud Volumes ONTAP System mit nur einem ONTAP Knoten erstellt wurden.
 * Essentials HA: Lese-/Schreib-Volumes mit zwei ONTAP -Knoten, die für einen unterbrechungsfreien Datenzugriff auf einander umschalten können.
 * Essentials Secondary Single Node: Volumes vom Typ Data Protection (DP) (normalerweise schreibgeschützte SnapMirror oder SnapVault -Zielvolumes), die auf einem Cloud Volumes ONTAP System unter Verwendung nur eines ONTAP Knotens erstellt wurden.
 +
 
-NOTE: Wenn ein schreibgeschütztes/DP-Volume zu einem primären Volume wird, betrachtet die Konsole es als primäre Daten und die Gebühren werden basierend auf der Zeit berechnet, die das Volume im Lese-/Schreibmodus war.  Wenn das Volume wieder schreibgeschützt/DP ist, wird es wieder als sekundäres Datenvolumen betrachtet und entsprechend mit der am besten passenden Lizenz in der Konsole berechnet.
+NOTE: Wenn ein schreibgeschütztes/DP-Volume zu einem primären Volume wird, betrachtet die Konsole es als primäre Daten und die Gebühren werden basierend auf der Zeit berechnet, die das Volume im Lese-/Schreibmodus war.  Wenn das Volume wieder schreibgeschützt/DP ist, wird es wieder als sekundäres Datenvolumen betrachtet und entsprechend mit der am besten passenden Lizenz in der Konsole abgerechnet.
 
 * Essentials Secondary HA: Volumes vom Typ Data Protection (DP) (normalerweise schreibgeschützte SnapMirror oder SnapVault -Zielvolumes), die auf einem Cloud Volumes ONTAP -System unter Verwendung von zwei ONTAP Knoten erstellt werden, die für einen unterbrechungsfreien Datenzugriff auf einander umschalten können.
 
@@ -186,7 +186,7 @@ Hier ist ein Beispiel. Angenommen, Sie verfügen über die folgenden Lizenzen f�
 
 Weitere 50 TiB werden auf einem HA-Paar mit sekundären Volumes bereitgestellt.  Anstatt diese 50 TiB PAYGO in Rechnung zu stellen, verrechnet die Konsole die 50 TiB Überschreitung mit der _Essentials Single Node_-Lizenz.  Diese Lizenz ist teurer als _Essentials Secondary HA_, nutzt jedoch eine Lizenz, die Sie bereits erworben haben, und verursacht keine zusätzlichen Kosten auf Ihrer monatlichen Rechnung.
 
-Unter *Verwaltung > Lizenzen und Abonnements* können Sie sehen, dass 50 TiB von der _Essentials Single Node_-Lizenz abgezogen werden.
+Unter *Verwaltung > Licenses and subscriptions* können Sie sehen, dass 50 TiB von der _Essentials Single Node_-Lizenz abgezogen werden.
 
 Hier ist ein weiteres Beispiel.  Angenommen, Sie verfügen über die folgenden Lizenzen für das Essentials-Paket:
 
@@ -201,4 +201,4 @@ In diesem Beispiel berechnet die Konsole für die zusätzlichen 100 TiB Übersch
 .Marktplatzverträge oder private Angebote
 Wenn Sie eine Essentials-Lizenz im Rahmen eines Marktplatzvertrags oder eines privaten Angebots erworben haben, gilt die BYOL-Logik nicht und Sie müssen über den genauen Lizenztyp für die Nutzung verfügen.  Der Lizenztyp umfasst den Volume-Typ (primär oder sekundär) und den Bereitstellungstyp (HA oder Einzelknoten).
 
-Nehmen wir beispielsweise an, Sie stellen eine Cloud Volumes ONTAP Instanz mit der Essentials-Lizenz bereit.  Anschließend stellen Sie Lese-/Schreib-Volumes (primärer Einzelknoten) und schreibgeschützte Volumes (sekundärer Einzelknoten) bereit.  Ihr Marktplatzvertrag oder privates Angebot muss Kapazität für _Essentials Single Node_ und _Essentials Secondary Single Node_ enthalten, um die bereitgestellte Kapazität abzudecken.  Für jede bereitgestellte Kapazität, die nicht Teil Ihres Marktplatzvertrags oder privaten Angebots ist, werden die On-Demand-Stundensätze (PAYGO) berechnet und zusätzliche Kosten entstehen Ihrer monatlichen Rechnung.
+Nehmen wir beispielsweise an, Sie stellen eine Cloud Volumes ONTAP Instanz mit der Essentials-Lizenz bereit.  Anschließend stellen Sie Lese-/Schreib-Volumes (primärer Einzelknoten) und schreibgeschützte Volumes (sekundärer Einzelknoten) bereit.  Ihr Marktplatzvertrag oder privates Angebot muss Kapazität für _Essentials Single Node_ und _Essentials Secondary Single Node_ enthalten, um die bereitgestellte Kapazität abzudecken.  Für jede bereitgestellte Kapazität, die nicht Teil Ihres Marktplatzvertrags oder privaten Angebots ist, werden die On-Demand-Stundensätze (PAYGO) berechnet und verursachen zusätzliche Kosten auf Ihrer monatlichen Rechnung.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-connect-lun.html 
 keywords: lun, connect lun, iscsi lun, target iqn, iqn 
-summary: Wenn Sie ein iSCSI-Volume erstellen, erstellt die NetApp Konsole automatisch eine LUN für Sie.  Wir haben es einfach gemacht, indem wir nur eine LUN pro Volume erstellt haben, sodass keine Verwaltung erforderlich ist.  Nachdem Sie das Volume erstellt haben, verwenden Sie den IQN, um von Ihren Hosts aus eine Verbindung mit der LUN herzustellen. 
+summary: Wenn Sie ein iSCSI-Volume erstellen, erstellt die NetApp Console automatisch eine LUN für Sie.  Wir haben es einfach gemacht, indem wir nur eine LUN pro Volume erstellt haben, sodass keine Verwaltung erforderlich ist.  Nachdem Sie das Volume erstellt haben, verwenden Sie den IQN, um von Ihren Hosts aus eine Verbindung mit der LUN herzustellen. 
 ---
 = Stellen Sie von Ihrem Hostsystem aus eine Verbindung zu einem LUN auf Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Wenn Sie ein iSCSI-Volume erstellen, erstellt die NetApp Konsole automa
 
 
 [role="lead"]
-Wenn Sie ein iSCSI-Volume erstellen, erstellt die NetApp Konsole automatisch eine LUN für Sie.  Wir haben es einfach gemacht, indem wir nur eine LUN pro Volume erstellt haben, sodass keine Verwaltung erforderlich ist.  Nachdem Sie das Volume erstellt haben, verwenden Sie den IQN, um von Ihren Hosts aus eine Verbindung mit der LUN herzustellen.
+Wenn Sie ein iSCSI-Volume erstellen, erstellt die NetApp Console automatisch eine LUN für Sie.  Wir haben es einfach gemacht, indem wir nur eine LUN pro Volume erstellt haben, sodass keine Verwaltung erforderlich ist.  Nachdem Sie das Volume erstellt haben, verwenden Sie den IQN, um von Ihren Hosts aus eine Verbindung mit der LUN herzustellen.
 
 Beachten Sie Folgendes:
 

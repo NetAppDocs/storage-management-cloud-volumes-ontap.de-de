@@ -80,7 +80,7 @@ Azure-Datenträgertyp mit HA-Paaren:: HA-Systeme verwenden Premium SSD Shared Ma
 Azure-Datenträgergröße::
 +
 --
-Wenn Sie Cloud Volumes ONTAP -Instanzen starten, müssen Sie die Standarddatenträgergröße für Aggregate auswählen.  Die NetApp Konsole verwendet diese Datenträgergröße für das anfängliche Aggregat und für alle zusätzlichen Aggregate, die sie erstellt, wenn Sie die einfache Bereitstellungsoption verwenden.  Sie können Aggregate erstellen, die eine andere Festplattengröße als die Standardgröße verwenden, indem Sielink:task-create-aggregates.html["Verwenden der erweiterten Zuordnungsoption"] .
+Wenn Sie Cloud Volumes ONTAP -Instanzen starten, müssen Sie die Standarddatenträgergröße für Aggregate auswählen.  Die NetApp Console verwendet diese Datenträgergröße für das anfängliche Aggregat und für alle zusätzlichen Aggregate, die sie erstellt, wenn Sie die einfache Bereitstellungsoption verwenden.  Sie können Aggregate erstellen, die eine andere Festplattengröße als die Standardgröße verwenden, indem Sielink:task-create-aggregates.html["Verwenden der erweiterten Zuordnungsoption"] .
 
 
 TIP: Alle Festplatten in einem Aggregat müssen die gleiche Größe haben.

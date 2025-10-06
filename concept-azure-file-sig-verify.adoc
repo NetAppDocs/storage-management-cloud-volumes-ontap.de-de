@@ -28,7 +28,7 @@ image::graphic_azure_check_signature.png[grafische azurblaue Check-Signatur]
 * Überprüfung der Vertrauenskette.
 * Extrahieren des öffentlichen Schlüssels (.pub) aus dem öffentlichen Schlüsselzertifikat (.pem).
 * Entschlüsseln der Digest-Datei mithilfe des extrahierten öffentlichen Schlüssels.
-* Vergleichen Sie das Ergebnis mit einem neu generierten Digest einer temporären Datei, die aus der Bilddatei erstellt wurde, nachdem 1 MB am Anfang und 512 Byte am Ende entfernt wurden.  Dieser Schritt wird mithilfe des OpenSSL-Befehlszeilentools ausgeführt.  Das OpenSSL-CLI-Tool zeigt eine entsprechende Meldung an, wenn die Dateizuordnung erfolgreich war oder fehlgeschlagen ist.
+* Vergleichen Sie das Ergebnis mit einem neu generierten Digest einer temporären Datei, die aus der Bilddatei erstellt wurde, nachdem 1 MB am Anfang und 512 Byte am Ende entfernt wurden.  Dieser Schritt wird mithilfe des OpenSSL-Befehlszeilentools ausgeführt.  Das OpenSSL-CLI-Tool zeigt eine entsprechende Meldung an, wenn die Zuordnung der Dateien erfolgreich war oder fehlgeschlagen ist.
 +
 [source, cli]
 ----

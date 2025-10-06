@@ -4,7 +4,7 @@ permalink: task-deleting-system.html
 keywords: terminate, delete, system, remove, terminate system, terminate instance, delete cloud volumes ontap, delete instance, delete system, delete backups, cloud backup, cloud data sense 
 summary: Sie sollten Cloud Volumes ONTAP -Systeme immer löschen und nicht über die Konsole Ihres Cloud-Anbieters.  Wenn Sie beispielsweise eine lizenzierte Cloud Volumes ONTAP Instanz bei Ihrem Cloud-Anbieter kündigen, können Sie den Lizenzschlüssel nicht für eine andere Instanz verwenden.  Um die Lizenz freizugeben, müssen Sie das System löschen. 
 ---
-= Löschen eines Cloud Volumes ONTAP -Systems aus der NetApp -Konsole
+= Löschen eines Cloud Volumes ONTAP -Systems aus der NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Sie sollten Cloud Volumes ONTAP -Systeme immer löschen und nicht über
 
 
 [role="lead"]
-Sie sollten Cloud Volumes ONTAP -Systeme immer aus der NetApp Konsole und nicht aus der Anwendung Ihres Cloud-Anbieters löschen.  Wenn Sie beispielsweise eine lizenzierte Cloud Volumes ONTAP Instanz bei Ihrem Cloud-Anbieter kündigen, können Sie den Lizenzschlüssel nicht für eine andere Instanz verwenden.  Sie müssen das Cloud Volumes ONTAP -System aus der Konsole löschen, um die Lizenz freizugeben.
+Sie sollten Cloud Volumes ONTAP -Systeme immer aus der NetApp Console und nicht aus der Anwendung Ihres Cloud-Anbieters löschen.  Wenn Sie beispielsweise eine lizenzierte Cloud Volumes ONTAP Instanz bei Ihrem Cloud-Anbieter kündigen, können Sie den Lizenzschlüssel nicht für eine andere Instanz verwenden.  Sie müssen das Cloud Volumes ONTAP -System aus der Konsole löschen, um die Lizenz freizugeben.
 
 Wenn Sie ein System löschen, beendet die Konsole Cloud Volumes ONTAP Instanzen und löscht Festplatten und Snapshots.
 

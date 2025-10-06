@@ -14,7 +14,7 @@ summary: Die Konsole bietet eine vereinfachte und erweiterte Verwaltung des Clou
 
 
 [role="lead"]
-Die NetApp Konsole bietet eine vereinfachte und erweiterte Verwaltung des Cloud Volumes ONTAP Speichers.
+Die NetApp Console bietet eine vereinfachte und erweiterte Verwaltung des Cloud Volumes ONTAP Speichers.
 
 
 CAUTION: Sie müssen alle Datenträger und Aggregate direkt von der Konsole aus erstellen und löschen. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
@@ -33,7 +33,7 @@ Aggregate stellen Cloud-Speicher für Volumes bereit.  Die Konsole erstellt Aggr
 
 Wenn Sie ein Volume erstellen, führt die Konsole eine von drei Aktionen aus:
 
-* Dabei wird das Volume auf einem vorhandenen Aggregat platziert, das über ausreichend freien Speicherplatz verfügt.
+* Es platziert das Volume auf einem vorhandenen Aggregat, das über ausreichend freien Speicherplatz verfügt.
 * Es platziert das Volume auf einem vorhandenen Aggregat, indem es weitere Festplatten für dieses Aggregat kauft.
 
 

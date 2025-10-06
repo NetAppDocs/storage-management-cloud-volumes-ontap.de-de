@@ -76,7 +76,7 @@ Weitere Einzelheiten finden Sie im https://cloud.google.com/compute/docs/disks/#
 
 
 --
-GCP-Festplattengröße:: Sie müssen eine anfängliche Festplattengröße auswählen, wenn Sie ein Cloud Volumes ONTAP -System bereitstellen.  Anschließend können Sie die Kapazität eines Systems von der NetApp Konsole verwalten lassen. Wenn Sie jedoch selbst Aggregate erstellen möchten, beachten Sie Folgendes:
+GCP-Festplattengröße:: Sie müssen eine anfängliche Festplattengröße auswählen, wenn Sie ein Cloud Volumes ONTAP -System bereitstellen.  Anschließend können Sie die Kapazität eines Systems von der NetApp Console verwalten lassen. Wenn Sie jedoch selbst Aggregate erstellen möchten, beachten Sie Folgendes:
 +
 --
 * Alle Festplatten in einem Aggregat müssen die gleiche Größe haben.

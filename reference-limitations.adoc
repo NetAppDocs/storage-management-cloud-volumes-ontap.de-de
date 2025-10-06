@@ -16,7 +16,7 @@ summary: Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funkti
 [role="lead"]
 Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
 
-Diese Einschränkungen gelten speziell für die Verwaltung von Cloud Volumes ONTAP in der NetApp Konsole.  Um Einschränkungen der Cloud Volumes ONTAP -Software selbst anzuzeigen, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html["Gehen Sie zu den Versionshinweisen zu Cloud Volumes ONTAP"^] .
+Diese Einschränkungen gelten speziell für die Verwaltung von Cloud Volumes ONTAP in der NetApp Console.  Um Einschränkungen der Cloud Volumes ONTAP -Software selbst anzuzeigen, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html["Gehen Sie zu den Versionshinweisen zu Cloud Volumes ONTAP"^] .
 
 
 
@@ -39,6 +39,6 @@ link:concept-client-protocols.html["Erfahren Sie mehr über die Unterstützung v
 
 == Die Konsole unterstützt keine Notfallwiederherstellung für Speicher-VMs
 
-Die Konsole bietet keine Einrichtungs- oder Orchestrierungsunterstützung für die Notfallwiederherstellung von Storage VM (SVM).  Sie müssen ONTAP System Manager oder die ONTAP CLI verwenden.
+Die Konsole bietet keine Einrichtungs- oder Orchestrierungsunterstützung für die Notfallwiederherstellung von Storage VMs (SVM).  Sie müssen ONTAP System Manager oder die ONTAP CLI verwenden.
 
 link:task-manage-svm-dr.html["Erfahren Sie mehr über die Notfallwiederherstellung von SVM"] .

@@ -40,7 +40,7 @@ Ab Cloud Volumes ONTAP 9.10.1 haben Sie die Möglichkeit, WORM auf Volume-Ebene 
 
 Wenn Sie ein Cloud Volumes ONTAP -System hinzufügen, werden Sie aufgefordert, den WORM-Speicher zu aktivieren oder zu deaktivieren:
 
-* Wenn Sie beim Hinzufügen eines Systems den WORM-Speicher aktivieren, ist WORM für jedes Volume aktiviert, das Sie über die NetApp -Konsole erstellen.  Sie können jedoch den ONTAP System Manager oder die ONTAP CLI verwenden, um Volumes zu erstellen, bei denen WORM deaktiviert ist.
+* Wenn Sie beim Hinzufügen eines Systems den WORM-Speicher aktivieren, ist WORM für jedes Volume aktiviert, das Sie über die NetApp Console erstellen.  Sie können jedoch den ONTAP System Manager oder die ONTAP CLI verwenden, um Volumes zu erstellen, bei denen WORM deaktiviert ist.
 * Wenn Sie den WORM-Speicher beim Hinzufügen eines Systems deaktivieren, ist WORM für jedes Volume deaktiviert, das Sie über die Konsole, den ONTAP System Manager oder die ONTAP CLI erstellen.
 
 
@@ -75,7 +75,7 @@ Sie können den WORM-Speicher aktivieren, wenn Sie ein Cloud Volumes ONTAP -Syst
 +
 Wenn WORM auf dem System bereits aktiviert ist, ist das Bleistiftsymbol deaktiviert.
 
-. Legen Sie auf der Seite *WORM* die Aufbewahrungsdauer für die Cluster-Compliance-Clock fest.
+. Legen Sie auf der Seite *WORM* den Aufbewahrungszeitraum für die Cluster-Compliance-Clock fest.
 +
 Weitere Informationen finden Sie im https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["ONTAP -Dokumentation: Initialisieren der Compliance Clock"^] .
 
@@ -101,7 +101,7 @@ Wenn Sie ein neues Cloud Volumes ONTAP 9.8-System oder höher erstellen, können
 
 Sie sollten Folgendes über die Aktivierung von Daten-Tiering und WORM-Speicher wissen:
 
-* Daten, die auf Objektspeicher verteilt sind, umfassen nicht die ONTAP WORM-Funktionalität.  Um die End-to-End-WORM-Fähigkeit sicherzustellen, müssen Sie die Bucket-Berechtigungen richtig einrichten.
+* Daten, die in den Objektspeicher eingelagert sind, umfassen nicht die ONTAP WORM-Funktionalität.  Um die End-to-End-WORM-Fähigkeit sicherzustellen, müssen Sie die Bucket-Berechtigungen richtig einrichten.
 * Die im Objektspeicher abgelegten Daten verfügen nicht über die WORM-Funktionalität. Das bedeutet, dass technisch gesehen jeder mit vollem Zugriff auf Buckets und Container die von ONTAP abgelegten Objekte löschen kann.
 * Das Zurücksetzen oder Downgrade auf Cloud Volumes ONTAP 9.8 ist nach der Aktivierung von WORM und Tiering blockiert.
 
@@ -110,7 +110,7 @@ Sie sollten Folgendes über die Aktivierung von Daten-Tiering und WORM-Speicher 
 
 == Einschränkungen
 
-* WORM-Speicher in Cloud Volumes ONTAP wird nach dem Modell eines „vertrauenswürdigen Speicheradministrators“ betrieben.  Obwohl WORM-Dateien vor Änderungen oder Modifikationen geschützt sind, können Volumes von einem Cluster-Administrator gelöscht werden, auch wenn diese Volumes noch nicht abgelaufene WORM-Daten enthalten.
+* WORM-Speicher in Cloud Volumes ONTAP wird nach dem Modell eines „vertrauenswürdigen Speicheradministrators“ betrieben.  Obwohl WORM-Dateien vor Änderungen oder Modifikationen geschützt sind, können Volumes von einem Cluster-Administrator gelöscht werden, selbst wenn diese Volumes noch nicht abgelaufene WORM-Daten enthalten.
 * Zusätzlich zum Modell des vertrauenswürdigen Speicheradministrators wird WORM-Speicher in Cloud Volumes ONTAP implizit auch nach dem Modell eines „vertrauenswürdigen Cloud-Administrators“ betrieben.  Ein Cloud-Administrator könnte WORM-Daten vor ihrem Ablaufdatum löschen, indem er den Cloud-Speicher direkt beim Cloud-Anbieter entfernt oder bearbeitet.
 
 

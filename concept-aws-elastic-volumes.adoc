@@ -14,7 +14,7 @@ summary: Die Unterstützung der Amazon EBS Elastic Volumes-Funktion mit einem Cl
 
 
 [role="lead"]
-Die Unterstützung der Amazon EBS Elastic Volumes-Funktion mit einem Cloud Volumes ONTAP -Aggregat bietet eine bessere Leistung und zusätzliche Kapazität und ermöglicht es der NetApp Konsole, die zugrunde liegende Festplattenkapazität bei Bedarf automatisch zu erhöhen.
+Die Unterstützung der Amazon EBS Elastic Volumes-Funktion mit einem Cloud Volumes ONTAP -Aggregat bietet eine bessere Leistung und zusätzliche Kapazität und ermöglicht es der NetApp Console, die zugrunde liegende Festplattenkapazität bei Bedarf automatisch zu erhöhen.
 
 
 

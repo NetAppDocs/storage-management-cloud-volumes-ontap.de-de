@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-capacity-licenses.html 
 keywords: license, licensing, capacity license, capacity based license, add license, install license, digital wallet 
-summary: Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Konsole, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt. 
+summary: Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Console, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt. 
 ---
 = Verwalten Sie die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Konso
 
 
 [role="lead"]
-Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Konsole, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt.
+Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Console, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt.
 
 _Kapazitätsbasierte Lizenzen_ ermöglichen Ihnen die Zahlung für Cloud Volumes ONTAP pro TiB Kapazität.
 
-Sie können kapazitätsbasierte Cloud Volumes ONTAP Lizenzen über die NetApp Konsole verwalten.
+Sie können kapazitätsbasierte Cloud Volumes ONTAP Lizenzen über die NetApp Console verwalten.
 
 
 NOTE: Während die tatsächliche Nutzung und Messung der in der Konsole verwalteten Produkte und Dienste immer in GiB und TiB berechnet wird, werden die Begriffe GB/GiB und TB/TiB synonym verwendet.  Dies spiegelt sich in den Cloud Marketplace-Angeboten, Preisangeboten, Angebotsbeschreibungen und anderen unterstützenden Dokumenten wider
@@ -27,7 +27,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 
 
 
-== So werden Lizenzen zur NetApp Konsole hinzugefügt
+== So werden Lizenzen zur NetApp Console hinzugefügt
 
 Nachdem Sie eine Lizenz von Ihrem NetApp Vertriebsmitarbeiter erworben haben, sendet Ihnen NetApp eine E-Mail mit der Seriennummer und weiteren Lizenzdetails.
 
@@ -39,10 +39,10 @@ Wenn die Konsole die Lizenz nicht hinzufügen kann, müssen Sie sie manuell hinz
 
 == Zeigen Sie die verbrauchte Kapazität in Ihrem Konto an
 
-Die Konsole zeigt Ihnen die insgesamt verbrauchte Kapazität in Ihrem Konto und die verbrauchte Kapazität nach Lizenzpaket an. Auf diese Weise können Sie besser nachvollziehen, welche Kosten Ihnen in Rechnung gestellt werden und ob Sie zusätzliche Kapazität erwerben müssen.
+Die Konsole zeigt Ihnen die insgesamt verbrauchte Kapazität in Ihrem Konto und die verbrauchte Kapazität nach Lizenzpaket an.  Auf diese Weise können Sie besser nachvollziehen, welche Kosten Ihnen in Rechnung gestellt werden und ob Sie zusätzliche Kapazität erwerben müssen.
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Auf der Registerkarte *Übersicht* wird auf der Kachel „Cloud Volumes ONTAP“ die aktuell für Ihr Konto bereitgestellte Kapazität angezeigt.
 +
 image:screenshot_cvo_licensing_card.png["width=300 Ein Screenshot, der die Kapazitätsübersicht für Ihre Cloud Volumes ONTAP Lizenzen und -Abonnements anzeigt."]
@@ -62,9 +62,9 @@ Um die angezeigten Kapazitäten für das Essentials-Paket besser zu verstehen, s
 +
 Sie sehen nur die Abonnements, die mit der Organisation verknüpft sind, die Sie gerade anzeigen.
 
-. Während Sie die Informationen zu Ihren Abonnements anzeigen, können Sie mit den Details in der Tabelle interagieren. Erweitern Sie eine Zeile, um weitere Details anzuzeigen.
+. Während Sie die Informationen zu Ihren Abonnements anzeigen, können Sie mit den Details in der Tabelle interagieren.  Erweitern Sie eine Zeile, um weitere Details anzuzeigen.
 +
-** Wählenimage:icon-column-selector.png["das Plus-Symbol am Ende der Tabellenüberschrift"] um auszuwählen, welche Spalten in der Tabelle angezeigt werden. Beachten Sie, dass die Spalten „Laufzeit“ und „Automatische Verlängerung“ nicht standardmäßig angezeigt werden. In der Spalte „Automatische Verlängerung“ werden nur Verlängerungsinformationen für Azure-Verträge angezeigt.
+** Wählenimage:icon-column-selector.png["das Plus-Symbol am Ende der Tabellenüberschrift"] um auszuwählen, welche Spalten in der Tabelle angezeigt werden.  Beachten Sie, dass die Spalten „Laufzeit“ und „Automatische Verlängerung“ nicht standardmäßig angezeigt werden.  In der Spalte „Automatische Verlängerung“ werden nur Verlängerungsinformationen für Azure-Verträge angezeigt.
 
 
 
@@ -75,7 +75,7 @@ Sie sehen nur die Abonnements, die mit der Organisation verknüpft sind, die Sie
 
 Sie können Details zur pro Paket genutzten Kapazität anzeigen, indem Sie auf der Cloud Volumes ONTAP -Seite in den Legacy-Modus wechseln.
 
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Auf der Registerkarte *Übersicht* wird auf der Kachel „Cloud Volumes ONTAP“ die aktuell für Ihr Konto bereitgestellte Kapazität angezeigt.
 . Wählen Sie *Anzeigen*, um die bereitgestellte Kapazität für jedes Ihrer Lizenzpakete anzuzeigen.
 . Wählen Sie *Zur erweiterten Ansicht wechseln*.
@@ -105,7 +105,7 @@ Die Konsole versucht immer zuerst, eine Lizenz abzurechnen.  Wenn keine Lizenz v
 
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie die Registerkarte *Übersicht*.
 . Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.
 . Wählen Sie *Zur erweiterten Ansicht wechseln*.
@@ -180,7 +180,7 @@ NOTE: FlexClone -Volumes sind in diesem Bericht nicht enthalten, da für diese V
 
 
 .Schritte
-. Wählen Sie im linken Navigationsbereich *Verwaltung > Lizenzen und Abonnements* aus.
+. Wählen Sie im linken Navigationsbereich *Verwaltung > Licenses and subscriptions* aus.
 . Wählen Sie auf der Registerkarte *Übersicht* in der Kachel „Cloud Volumes ONTAP“ die Option *Anzeigen* aus.
 . Wählen Sie *Nutzungsbericht*.
 +

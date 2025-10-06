@@ -23,7 +23,7 @@ Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie mit Cloud Volumes 
 Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bereitgestellter Kapazität kostenlos zu nutzen. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages["Erfahren Sie mehr über das Freemium-Angebot"^] .
 
 .Schritte
-. Wählen Sie im linken Navigationsmenü der NetApp Konsole *Speicher > Verwaltung* aus.
+. Wählen Sie im linken Navigationsmenü der NetApp Console*Speicher > Verwaltung* aus.
 . Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
 +
 .. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
@@ -138,7 +138,7 @@ Bezahlen Sie Cloud Volumes ONTAP jährlich, indem Sie einen Jahresvertrag abschl
 Der Vertrag ist als _privates_ Angebot im Azure Marketplace verfügbar.
 
 +
-Nachdem NetApp Ihnen das private Angebot mitgeteilt hat, können Sie bei der Systemerstellung den Jahresplan auswählen, wenn Sie ihn im Azure Marketplace abonnieren.
+Nachdem NetApp Ihnen das private Angebot mitgeteilt hat, können Sie bei der Systemerstellung den Jahresplan auswählen, wenn Sie sich im Azure Marketplace anmelden.
 
 . Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
 +

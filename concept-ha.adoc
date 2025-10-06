@@ -41,7 +41,7 @@ Betriebssystem:: Debian 11
 NOTE: Für Cloud Volumes ONTAP 9.10.0 und früher wurde Debian 10 auf dem Mediator installiert.
 
 --
-Verbesserungen:: Wenn Sie Cloud Volumes ONTAP aktualisieren, aktualisiert die NetApp Konsole bei Bedarf auch die Mediatorinstanz.
+Verbesserungen:: Wenn Sie Cloud Volumes ONTAP aktualisieren, aktualisiert die NetApp Console bei Bedarf auch die Mediatorinstanz.
 Zugriff auf die Instanz:: Wenn Sie ein Cloud Volumes ONTAP HA-Paar über die Konsole erstellen, werden Sie aufgefordert, ein Schlüsselpaar für die Mediatorinstanz anzugeben.  Sie können dieses Schlüsselpaar für den SSH-Zugriff verwenden, indem Sie `admin` Benutzer.
 Drittanbieter-Agenten:: Agenten oder VM-Erweiterungen von Drittanbietern werden auf der Mediatorinstanz nicht unterstützt.
 
@@ -151,7 +151,7 @@ Bei NAS-Konfigurationen können die Daten-IP-Adressen bei Fehlern zwischen HA-Kn
 
 
 
-=== AWS-Lokalzonen
+=== Lokale AWS-Zonen
 
 Bei AWS Local Zones handelt es sich um eine Infrastrukturbereitstellung, bei der Speicher, Rechenleistung, Datenbanken und andere ausgewählte AWS-Dienste in der Nähe von Großstädten und Industriegebieten angesiedelt sind.  Mit AWS Local Zones können Sie AWS-Dienste näher zu sich holen, was die Latenz für Ihre Workloads verbessert und Datenbanken lokal verwaltet.  Auf Cloud Volumes ONTAP,
 

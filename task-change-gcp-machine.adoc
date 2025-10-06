@@ -31,7 +31,7 @@ Bei HA-Paaren erfolgt die Änderung ohne Unterbrechung.  HA-Paare stellen weiter
 
 +
 
-TIP: Die NetApp Konsole ändert jeweils einen Knoten, indem sie die Übernahme einleitet und auf die Rückgabe wartet.  Das Qualitätssicherungsteam von NetApp hat während dieses Vorgangs sowohl das Schreiben als auch das Lesen von Dateien getestet und konnte auf der Clientseite keine Probleme feststellen.  Beim Ändern der Verbindungen wurden auf der E/A-Ebene einige Wiederholungsversuche beobachtet, die Anwendungsschicht konnte die Neuverdrahtung der NFS/CIFS-Verbindungen jedoch bewältigen.
+TIP: Die NetApp Console ändert jeweils einen Knoten, indem sie die Übernahme einleitet und auf die Rückgabe wartet.  Das Qualitätssicherungsteam von NetApp hat während dieses Vorgangs sowohl das Schreiben als auch das Lesen von Dateien getestet und konnte auf der Clientseite keine Probleme feststellen.  Beim Ändern der Verbindungen wurden auf der E/A-Ebene einige Wiederholungsversuche beobachtet, die Anwendungsschicht konnte die Neuverdrahtung der NFS/CIFS-Verbindungen jedoch bewältigen.
 
 
 

@@ -17,12 +17,12 @@ summary: Sie können Cloud Volumes ONTAP Instanzen schnell in einer Einzelsystem
 Sie können Cloud Volumes ONTAP in AWS mithilfe einer schnellen Bereitstellungsmethode sowohl für Einzelknoten- als auch für Hochverfügbarkeitskonfigurationen (HA) bereitstellen.  Dieser vereinfachte Prozess reduziert die Bereitstellungsschritte im Vergleich zur erweiterten Methode.  Darüber hinaus bietet es mehr Übersichtlichkeit im Arbeitsablauf, indem es automatisch Standardwerte auf einer einzigen Seite festlegt und die Navigation minimiert.
 
 .Bevor Sie beginnen
-Sie benötigen Folgendes, um ein Cloud Volumes ONTAP -System in AWS von der NetApp Konsole aus hinzuzufügen.
+Sie benötigen Folgendes, um ein Cloud Volumes ONTAP -System in AWS von der NetApp Console aus hinzuzufügen.
 
 [[licensing]]
 * Ein Konsolenagent, der aktiv ist und läuft.
 +
-** Sie sollten eine https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Konsolenagent, der mit Ihrem Projekt oder Arbeitsbereich verknüpft ist"^] .
+** Sie sollten über eine https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Konsolenagent, der mit Ihrem Projekt oder Arbeitsbereich verknüpft ist"^] .
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Sie sollten darauf vorbereitet sein, den Konsolenagenten immer laufen zu lassen"^] .
 
 
@@ -41,7 +41,7 @@ Weitere Einzelheiten finden Sie unterlink:reference-networking-aws.html["Netzwer
 
 
 .Informationen zu diesem Vorgang
-Unmittelbar nachdem Sie das Cloud Volumes ONTAP -System erstellt haben, startet die NetApp Konsole eine Testinstanz im angegebenen VPC, um die Konnektivität zu überprüfen.  Bei Erfolg beendet die Konsole die Instanz sofort und beginnt dann mit der Bereitstellung des Systems.  Wenn die Konsole die Konnektivität nicht überprüfen kann, schlägt die Erstellung des Systems fehl.  Die Testinstanz ist entweder eine `t2.nano` (für Standard-VPC-Miete) oder eine `m3.medium` (für dedizierte VPC-Miete).
+Unmittelbar nachdem Sie das Cloud Volumes ONTAP -System erstellt haben, startet die NetApp Console eine Testinstanz im angegebenen VPC, um die Konnektivität zu überprüfen.  Bei Erfolg beendet die Konsole die Instanz sofort und beginnt dann mit der Bereitstellung des Systems.  Wenn die Konsole die Konnektivität nicht überprüfen kann, schlägt die Erstellung des Systems fehl.  Die Testinstanz ist entweder eine `t2.nano` (für Standard-VPC-Miete) oder eine `m3.medium` (für dedizierte VPC-Miete).
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
@@ -59,7 +59,7 @@ image:screenshot-aws-quick-create.png["Breite=800,alt=\"AWS Quick Create\""]
 
 
 .Bereitstellung und Konfiguration
-. *Bereitstellungstyp*: Wählen Sie den Bereitstellungstyp aus, den Sie verwenden möchten: Einzelknoten, Hochverfügbarkeit (HA) in einer einzelnen Verfügbarkeitszone (AZ) oder HA in mehreren AZs.
+. *Bereitstellungstyp*: Wählen Sie den Bereitstellungstyp aus, den Sie verwenden möchten: Einzelknoten, Hochverfügbarkeit (HA) in einer einzelnen Verfügbarkeitszone (AZ) oder HA in einer Mehrfach-AZ.
 . *Netzwerkkonfiguration*: Geben Sie die Netzwerkinformationen ein, die Sie im https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information["AWS-Arbeitsblatt"^] .
 +
 .. *AWS-Region*: Standardmäßig ist die Region des zugehörigen Cloud-Kontos ausgewählt, das über VPC mit Subnetzressourcen verfügt.
@@ -96,7 +96,7 @@ Wenn Sie die HA-Konfiguration ausgewählt haben, geben Sie die folgenden Informa
 . *Datendienste und -funktionen*: Lassen Sie die Dienste aktiviert oder deaktivieren Sie die Dienste, die Sie nicht mit Cloud Volumes ONTAP verwenden möchten.
 +
 ** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Klassifizierung"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup und Recovery"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup and Recovery"^]
 ** link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher auf Cloud Volumes ONTAP"]
 +
 

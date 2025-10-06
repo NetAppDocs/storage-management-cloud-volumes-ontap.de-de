@@ -21,7 +21,7 @@ Beginnen Sie in wenigen Schritten mit Cloud Volumes ONTAP in AWS.
 Wenn Sie kein https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Konsolenagent"^] Sie müssen jedoch eines erstellen. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Erfahren Sie, wie Sie einen Konsolenagenten in AWS erstellen"^] .
 
 [role="quick-margin-para"]
-Beachten Sie: Wenn Sie Cloud Volumes ONTAP in einem Subnetz bereitstellen möchten, in dem kein Internetzugang verfügbar ist, müssen Sie den Konsolenagenten manuell installieren und auf die NetApp Konsolenbenutzeroberfläche zugreifen, die auf diesem Konsolenagenten ausgeführt wird. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Erfahren Sie, wie Sie den Konsolenagenten manuell an einem Ort ohne Internetzugang installieren."^] .
+Beachten Sie: Wenn Sie Cloud Volumes ONTAP in einem Subnetz bereitstellen möchten, in dem kein Internetzugang verfügbar ist, müssen Sie den Konsolenagenten manuell installieren und auf die NetApp Console zugreifen, die auf diesem Konsolenagenten ausgeführt wird. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Erfahren Sie, wie Sie den Konsolenagenten manuell an einem Ort ohne Internetzugang installieren."^] .
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]Planen Sie Ihre Konfiguration
 [role="quick-margin-para"]

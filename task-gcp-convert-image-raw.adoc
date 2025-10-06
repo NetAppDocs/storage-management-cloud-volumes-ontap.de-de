@@ -28,7 +28,7 @@ Das Benutzer-/Dienstkonto benötigt Berechtigungen, um Folgendes auszuführen:
 * In den Google Storage-Bucket schreiben
 * Cloud-Build-Jobs erstellen (wird während des Exportvorgangs verwendet)
 * Zugriff auf das gewünschte Bild
-* Erstellen von Image-Exportaufgaben
+* Erstellen von Aufgaben zum Exportieren von Bildern
 
 
 Um das Image zu überprüfen, muss es in ein disk.raw-Format konvertiert und dann heruntergeladen werden.

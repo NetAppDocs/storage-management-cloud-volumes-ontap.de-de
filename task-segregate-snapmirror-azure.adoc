@@ -20,7 +20,7 @@ Mit Cloud Volumes ONTAP in Azure können Sie den SnapMirror Replikationsdatenver
 
 == Informationen zur SnapMirror -Verkehrstrennung in Azure
 
-Standardmäßig konfiguriert die NetApp Konsole alle NICs und LIFs in einer Cloud Volumes ONTAP Bereitstellung im selben Subnetz.  In solchen Konfigurationen verwenden der SnapMirror Replikationsverkehr sowie der Daten- und Verwaltungsverkehr dasselbe Subnetz.  Durch die Trennung des SnapMirror -Verkehrs wird ein zusätzliches Subnetz genutzt, das nicht an das vorhandene Subnetz weitergeleitet werden kann, das für den Daten- und Verwaltungsverkehr verwendet wird.
+Standardmäßig konfiguriert die NetApp Console alle NICs und LIFs in einer Cloud Volumes ONTAP Bereitstellung im selben Subnetz.  In solchen Konfigurationen verwenden der SnapMirror Replikationsverkehr sowie der Daten- und Verwaltungsverkehr dasselbe Subnetz.  Durch die Trennung des SnapMirror -Verkehrs wird ein zusätzliches Subnetz genutzt, das nicht an das vorhandene Subnetz weitergeleitet werden kann, das für den Daten- und Verwaltungsverkehr verwendet wird.
 
 .Abbildung 1
 Die folgenden Diagramme zeigen die Trennung des SnapMirror -Replikationsdatenverkehrs mit einer zusätzlichen Netzwerkkarte, einem zugehörigen Intercluster-LIF und einem nicht routingfähigen Subnetz in einer Einzelknotenbereitstellung.  Eine HA-Paarbereitstellung unterscheidet sich geringfügig.
@@ -62,7 +62,7 @@ az vm get-instance-view --resource-group <dest-rg> --name <dest-vm> --query inst
 ----
 az vm stop --resource-group <dest_node-rg> --name <dest_node-vm>
 ----
-.. Geben Sie die Zuordnung des Knotens frei.
+.. Heben Sie die Zuordnung des Knotens auf.
 +
 [source, cli]
 ----
@@ -201,7 +201,7 @@ dest::> cluster peer create -peer-addrs <10.161.189.6> -ipspace <new_ipspace>
 src::> cluster peer create -peer-addrs <10.161.189.18>
 ----
 . Geben Sie die Passphrase ein und bestätigen Sie sie.
-. Überprüfen Sie, ob der Cluster eine Peering-Verbindung hergestellt hat.
+. Überprüfen Sie, ob der Cluster gepeert wurde.
 +
 [source, cli]
 ----

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-create-volumes.html 
 keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, cloud backup 
-summary: Wenn Sie nach dem Start Ihres ersten Cloud Volumes ONTAP -Systems mehr Speicher benötigen, können Sie über die NetApp Konsole neue FlexVol Volumes für NFS, CIFS oder iSCSI erstellen. 
+summary: Wenn Sie nach dem Start Ihres ersten Cloud Volumes ONTAP -Systems mehr Speicher benötigen, können Sie über die NetApp Console neue FlexVol Volumes für NFS, CIFS oder iSCSI erstellen. 
 ---
 = Erstellen Sie ein FlexVol volume auf einem Cloud Volumes ONTAP -System
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Wenn Sie nach dem Start Ihres ersten Cloud Volumes ONTAP -Systems mehr 
 
 
 [role="lead"]
-Wenn Sie nach dem Start Ihres ersten Cloud Volumes ONTAP -Systems mehr Speicher benötigen, können Sie über die NetApp Konsole neue FlexVol Volumes für NFS, CIFS oder iSCSI erstellen.
+Wenn Sie nach dem Start Ihres ersten Cloud Volumes ONTAP -Systems mehr Speicher benötigen, können Sie über die NetApp Console neue FlexVol Volumes für NFS, CIFS oder iSCSI erstellen.
 
 Sie haben mehrere Möglichkeiten, ein neues Volume zu erstellen:
 
@@ -36,7 +36,7 @@ Einige Hinweise zur Volume-Bereitstellung:
 ifdef::aws[]
 
 * Wenn Sie CIFS in AWS verwenden möchten, müssen Sie DNS und Active Directory eingerichtet haben. Weitere Einzelheiten finden Sie unterlink:reference-networking-aws.html["Netzwerkanforderungen für Cloud Volumes ONTAP für AWS"] .
-* Wenn Ihre Cloud Volumes ONTAP Konfiguration die Amazon EBS Elastic Volumes-Funktion unterstützt, möchten Sie möglicherweiselink:concept-aws-elastic-volumes.html["Erfahren Sie mehr darüber, was passiert, wenn Sie ein Volume erstellen"] .
+* Wenn Ihre Cloud Volumes ONTAP Konfiguration die Funktion Amazon EBS Elastic Volumes unterstützt, möchten Sie möglicherweiselink:concept-aws-elastic-volumes.html["Erfahren Sie mehr darüber, was passiert, wenn Sie ein Volume erstellen"] .
 
 
 endif::aws[]
@@ -51,7 +51,7 @@ Die gängigste Methode zum Erstellen eines Volumes besteht darin, den benötigte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Cloud Volumes ONTAP -Systems, auf dem Sie ein FlexVol volume bereitstellen möchten.
 +
-Sie können ein Volume erstellen, indem Sie die Konsole die Datenträgerzuweisung für Sie übernehmen lassen, oder ein bestimmtes Aggregat für das Volume auswählen.  Die Auswahl eines bestimmten Aggregats wird nur empfohlen, wenn Sie die Datenaggregate auf Ihrem Cloud Volumes ONTAP System gut kennen.
+Sie können ein Volume erstellen, indem Sie die Datenträgerzuweisung von der Konsole übernehmen lassen, oder Sie können ein bestimmtes Aggregat für das Volume auswählen.  Die Auswahl eines bestimmten Aggregats wird nur empfohlen, wenn Sie die Datenaggregate auf Ihrem Cloud Volumes ONTAP System gut kennen.
 
 +
 [role="tabbed-block"]
@@ -155,7 +155,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 DNS-Domäne:: Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne.
-NTP-Server:: Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden.  Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] .
+NTP-Server:: Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden.  Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] .
 +
 --
 Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben.

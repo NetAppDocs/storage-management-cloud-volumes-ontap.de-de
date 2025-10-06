@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-versions.html 
 keywords: versions, supported versions, new versions, cloud volumes ontap version 
-summary: Mit der NetApp Konsole können Sie beim Erstellen eines neuen Cloud Volumes ONTAP Systems aus mehreren verschiedenen ONTAP Versionen auswählen. 
+summary: Mit der NetApp Console können Sie beim Erstellen eines neuen Cloud Volumes ONTAP Systems aus mehreren verschiedenen ONTAP Versionen auswählen. 
 ---
 = Unterstützte ONTAP -Versionen für Cloud Volumes ONTAP Bereitstellungen
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Mit der NetApp Konsole können Sie beim Erstellen eines neuen Cloud Vol
 
 
 [role="lead"]
-Die NetApp Konsole ermöglicht Ihnen die Auswahl aus mehreren verschiedenen ONTAP Versionen, wenn Sie ein Cloud Volumes ONTAP -System hinzufügen.
+Die NetApp Console ermöglicht Ihnen die Auswahl aus mehreren verschiedenen ONTAP Versionen, wenn Sie ein Cloud Volumes ONTAP -System hinzufügen.
 
 Andere als die hier aufgeführten Versionen von Cloud Volumes ONTAP sind für neue Bereitstellungen nicht verfügbar.  Informationen zum Upgrade finden Sie unterlink:task-updating-ontap-cloud.html#supported-upgrade-paths["Unterstützte Upgradepfade"] .
 

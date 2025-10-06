@@ -17,7 +17,7 @@ summary: Verwalten Sie Aggregate selbst, indem Sie Datenträger hinzufügen, Inf
 Verwalten Sie Aggregate selbst, indem Sie Datenträger hinzufügen, Informationen zu den Aggregaten anzeigen und sie löschen.
 
 
-CAUTION: Alle Festplatten und Aggregate müssen direkt von der NetApp Konsole aus erstellt und gelöscht werden. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
+CAUTION: Alle Festplatten und Aggregate müssen direkt von der NetApp Console aus erstellt und gelöscht werden. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
 
 .Bevor Sie beginnen
 Wenn Sie ein Aggregat löschen möchten, müssen Sie zuerst die Volumes im Aggregat gelöscht haben.

@@ -34,7 +34,7 @@ Digital Advisor zeigt die Systemleistung über einen längeren Zeitraum an, als 
 
 * Inventar und Konfiguration anzeigen.
 +
-Digital Advisor zeigt vollständige Inventar- und Software- und Hardwarekonfigurationsinformationen an.  Informieren Sie sich, wann Serviceverträge ablaufen, und verlängern Sie sie, um sicherzustellen, dass Sie weiterhin unterstützt werden.
+Digital Advisor zeigt vollständige Inventar- und Software- und Hardwarekonfigurationsinformationen an.  Informieren Sie sich über das Ablaufdatum von Serviceverträgen und verlängern Sie diese, um sicherzustellen, dass Sie weiterhin unterstützt werden.
 
 
 

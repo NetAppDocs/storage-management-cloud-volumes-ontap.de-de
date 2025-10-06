@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-NetApp bietet zwei Optionen für die Bereitstellung von Cloud Volumes ONTAP auf Azure.  Cloud Volumes ONTAP verlässt sich traditionell auf die NetApp Konsole für Bereitstellung und Orchestrierung.  Ab Cloud Volumes ONTAP 9.16.1 können Sie die Vorteile der direkten Bereitstellung im Azure Marketplace nutzen, einem optimierten Prozess, der Zugriff auf eine begrenzte, aber dennoch leistungsstarke Reihe von Funktionen und Optionen von Cloud Volumes ONTAP bietet.
+NetApp bietet zwei Optionen für die Bereitstellung von Cloud Volumes ONTAP auf Azure.  Cloud Volumes ONTAP verlässt sich traditionell auf die NetApp Console für Bereitstellung und Orchestrierung.  Ab Cloud Volumes ONTAP 9.16.1 können Sie die Vorteile der direkten Bereitstellung im Azure Marketplace nutzen, einem optimierten Prozess, der Zugriff auf eine begrenzte, aber dennoch leistungsstarke Reihe von Funktionen und Optionen von Cloud Volumes ONTAP bietet.
 
 Wenn Sie Cloud Volumes ONTAP direkt vom Azure Marketplace bereitstellen, müssen Sie weder den Konsolen-Agenten einrichten noch andere Sicherheits- und Onboarding-Kriterien erfüllen, die für die Bereitstellung von Cloud Volumes ONTAP über die Konsole erforderlich sind.  Über den Azure Marketplace können Sie Cloud Volumes ONTAP mit wenigen Klicks schnell bereitstellen und die wichtigsten Funktionen und Möglichkeiten in Ihrer Umgebung erkunden.
 
@@ -24,7 +24,7 @@ Hier ist der Funktionsvergleich zwischen den beiden Optionen.  Beachten Sie, das
 
 [cols="3*"]
 |===
-|  | Azure-Marktplatz | NetApp Konsole 
+|  | Azure-Marktplatz | NetApp Console 
 
 
 | *Einarbeitung* | Kürzere und einfachere, minimale Vorbereitung für den direkten Einsatz erforderlich | Längerer Onboarding-Prozess, einschließlich der Installation des Konsolen-Agenten 
@@ -53,7 +53,7 @@ Eds_v5- und Ls_v3-Instance-Typen
 | *Schreibgeschwindigkeit (schneller Schreibmodus)* | Nicht unterstützt | Wird basierend auf Ihrer Konfiguration unterstützt. link:concept-write-speed.html["Erfahren Sie mehr über die Schreibgeschwindigkeiten in Cloud Volumes ONTAP"] . 
 
 
-| *Orchestrierungsfunktionen* | Nicht verfügbar | Verfügbar über die NetApp Konsole, basierend auf dem Lizenztyp 
+| *Orchestrierungsfunktionen* | Nicht verfügbar | Verfügbar über die NetApp Console, basierend auf dem Lizenztyp 
 
 
 | *Anzahl der unterstützten Speicher-VMs* | Eine pro Bereitstellung | Mehrere Speicher-VMs, basierend auf Ihrer Konfiguration.link:task-managing-svms-azure.html#supported-number-of-storage-vms["Unterstützte Anzahl von Speicher-VMs"] 
@@ -67,5 +67,5 @@ Eds_v5- und Ls_v3-Instance-Typen
 .Weiterführende Links
 * Direkte Bereitstellung im Azure Marketplace:link:task-deploy-cvo-azure-mktplc.html["Stellen Sie Cloud Volumes ONTAP vom Azure Marketplace bereit"]
 * Bereitstellung über die Konsole:link:task-getting-started-azure.html["Schnellstart für Cloud Volumes ONTAP in Azure"]
-* https://docs.netapp.com/us-en/bluexp-family/index.html["Dokumentation zur NetApp -Konsole"^]
+* https://docs.netapp.com/us-en/bluexp-family/index.html["Dokumentation zur NetApp Console"^]
 

@@ -26,7 +26,7 @@ Bei bestimmten Konfigurationen werden mehrere Speicher-VMs unterstützt.  Gehen 
 
 == Arbeiten mit mehreren Speicher-VMs
 
-Die NetApp -Konsole unterstützt alle zusätzlichen Speicher-VMs, die Sie vom ONTAP System Manager oder der ONTAP CLI erstellen.
+Die NetApp Console unterstützt alle zusätzlichen Speicher-VMs, die Sie vom ONTAP System Manager oder der ONTAP CLI erstellen.
 
 Das folgende Bild zeigt beispielsweise, wie Sie beim Erstellen eines Volumes eine Speicher-VM auswählen können.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-overriding-cifs-locks.html 
 keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover, storage giveback, giveback 
-summary: Der Organisations- oder Kontoadministrator kann in der NetApp Konsole eine Einstellung aktivieren, die Probleme mit der Rückgabe von Cloud Volumes ONTAP -Speicher während Azure-Wartungsereignissen verhindert.  Wenn Sie diese Einstellung aktivieren, blockiert Cloud Volumes ONTAP CIFS-Sperren und setzt aktive CIFS-Sitzungen zurück. 
+summary: Der Organisations- oder Kontoadministrator kann in der NetApp Console eine Einstellung aktivieren, die Probleme mit der Rückgabe von Cloud Volumes ONTAP -Speicher während Azure-Wartungsereignissen verhindert.  Wenn Sie diese Einstellung aktivieren, blockiert Cloud Volumes ONTAP CIFS-Sperren und setzt aktive CIFS-Sitzungen zurück. 
 ---
 = Außerkraftsetzen von CIFS-Sperren für Cloud Volumes ONTAP HA-Paare in Azure
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Der Organisations- oder Kontoadministrator kann in der NetApp Konsole e
 
 
 [role="lead"]
-Der Organisations- oder Kontoadministrator kann in der NetApp Konsole eine Einstellung aktivieren, die Probleme mit der Rückgabe von Cloud Volumes ONTAP -Speicher während Azure-Wartungsereignissen verhindert.  Wenn Sie diese Einstellung aktivieren, blockiert Cloud Volumes ONTAP CIFS-Sperren und setzt aktive CIFS-Sitzungen zurück.
+Der Organisations- oder Kontoadministrator kann in der NetApp Console eine Einstellung aktivieren, die Probleme mit der Rückgabe von Cloud Volumes ONTAP -Speicher während Azure-Wartungsereignissen verhindert.  Wenn Sie diese Einstellung aktivieren, blockiert Cloud Volumes ONTAP CIFS-Sperren und setzt aktive CIFS-Sitzungen zurück.
 
 .Informationen zu diesem Vorgang
 Microsoft Azure plant regelmäßige Wartungsereignisse auf seinen virtuellen Maschinen.  Wenn bei einem Cloud Volumes ONTAP HA-Paar ein Wartungsereignis auftritt, leitet das HA-Paar die Speicherübernahme ein.  Wenn während dieses Wartungsereignisses aktive CIFS-Sitzungen vorhanden sind, können die Sperren der CIFS-Dateien die Speicherrückgabe verhindern.

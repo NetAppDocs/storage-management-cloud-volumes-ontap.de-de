@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-managing-state.html 
 keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend 
-summary: Sie können Cloud Volumes ONTAP über die NetApp Konsole stoppen und starten, um Ihre Cloud-Computing-Kosten zu verwalten. 
+summary: Sie können Cloud Volumes ONTAP über die NetApp Console stoppen und starten, um Ihre Cloud-Computing-Kosten zu verwalten. 
 ---
 = Starten und Stoppen eines Cloud Volumes ONTAP -Systems
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Sie können Cloud Volumes ONTAP über die NetApp Konsole stoppen und st
 
 
 [role="lead"]
-Sie können Cloud Volumes ONTAP über die NetApp Konsole stoppen und starten, um Ihre Cloud-Computing-Kosten zu verwalten.
+Sie können Cloud Volumes ONTAP über die NetApp Console stoppen und starten, um Ihre Cloud-Computing-Kosten zu verwalten.
 
 
 

@@ -14,7 +14,7 @@ summary: Richten Sie Ihr Google Cloud-Netzwerk so ein, dass Cloud Volumes ONTAP 
 
 
 [role="lead"]
-Die NetApp Konsole übernimmt die Einrichtung von Netzwerkkomponenten für Cloud Volumes ONTAP, wie z. B. IP-Adressen, Netzmasken und Routen.  Sie müssen sicherstellen, dass ausgehender Internetzugang verfügbar ist, dass genügend private IP-Adressen verfügbar sind, dass die richtigen Verbindungen vorhanden sind und mehr.
+Die NetApp Console übernimmt die Einrichtung von Netzwerkkomponenten für Cloud Volumes ONTAP, wie z. B. IP-Adressen, Netzmasken und Routen.  Sie müssen sicherstellen, dass ausgehender Internetzugang verfügbar ist, dass genügend private IP-Adressen verfügbar sind, dass die richtigen Verbindungen vorhanden sind und mehr.
 
 Wenn Sie ein HA-Paar einsetzen möchten, sollten Sielink:concept-ha-google-cloud.html["Erfahren Sie, wie HA-Paare in Google Cloud funktionieren."] .
 
@@ -189,7 +189,7 @@ Bei einem Einzelknotensystem kann es sich bei der VPC entweder um eine gemeinsam
 
 Für ein HA-Paar werden vier VPCs benötigt.  Jede dieser VPCs kann entweder gemeinsam genutzt oder eigenständig sein.  Beispielsweise könnte VPC-0 eine gemeinsam genutzte VPC sein, während VPC-1, VPC-2 und VPC-3 eigenständige VPCs sein könnten.
 
-Mit einer gemeinsam genutzten VPC können Sie virtuelle Netzwerke über mehrere Projekte hinweg konfigurieren und zentral verwalten.  Sie können gemeinsam genutzte VPC-Netzwerke im _Hostprojekt_ einrichten und den Konsolenagenten und die virtuellen Cloud Volumes ONTAP -Maschineninstanzen in einem _Serviceprojekt_ bereitstellen.
+Mit einer gemeinsam genutzten VPC können Sie virtuelle Netzwerke über mehrere Projekte hinweg konfigurieren und zentral verwalten.  Sie können gemeinsam genutzte VPC-Netzwerke im _Hostprojekt_ einrichten und den Konsolenagenten und die virtuellen Maschineninstanzen von Cloud Volumes ONTAP in einem _Serviceprojekt_ bereitstellen.
 
 https://cloud.google.com/vpc/docs/shared-vpc["Google Cloud-Dokumentation: Übersicht über Shared VPC"^] .
 

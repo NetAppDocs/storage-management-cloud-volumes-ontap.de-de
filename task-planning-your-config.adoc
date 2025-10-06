@@ -88,7 +88,7 @@ EBS-Festplattentyp:: Im Großen und Ganzen sind die Unterschiede zwischen den EB
 --
 * _General Purpose SSD (gp3)_-Festplatten sind die kostengünstigsten SSDs, die Kosten und Leistung für eine breite Palette von Arbeitslasten ausbalancieren.  Die Leistung wird in Bezug auf IOPS und Durchsatz definiert. GP3-Festplatten werden mit Cloud Volumes ONTAP 9.7 und höher unterstützt.
 +
-Wenn Sie eine GP3-Festplatte auswählen, trägt die NetApp Konsole Standard-IOPS- und Durchsatzwerte ein, die basierend auf der ausgewählten Festplattengröße eine Leistung bieten, die einer GP2-Festplatte entspricht. Sie können die Werte erhöhen, um zu einem höheren Preis eine bessere Leistung zu erzielen. Niedrigere Werte werden von uns jedoch nicht unterstützt, da dies zu einer schlechteren Leistung führen kann. Kurz gesagt: Bleiben Sie bei den Standardwerten oder erhöhen Sie sie. Senken Sie sie nicht. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type["AWS-Dokumentation: Erfahren Sie mehr über GP3-Festplatten und ihre Leistung"^] .
+Wenn Sie eine GP3-Festplatte auswählen, trägt die NetApp Console Standard-IOPS- und Durchsatzwerte ein, die basierend auf der ausgewählten Festplattengröße eine Leistung bieten, die einer GP2-Festplatte entspricht. Sie können die Werte erhöhen, um zu einem höheren Preis eine bessere Leistung zu erzielen. Niedrigere Werte werden von uns jedoch nicht unterstützt, da dies zu einer schlechteren Leistung führen kann. Kurz gesagt: Bleiben Sie bei den Standardwerten oder erhöhen Sie sie. Senken Sie sie nicht. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type["AWS-Dokumentation: Erfahren Sie mehr über GP3-Festplatten und ihre Leistung"^] .
 
 +
 Beachten Sie, dass Cloud Volumes ONTAP die Amazon EBS Elastic Volumes-Funktion mit GP3-Festplatten unterstützt. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung von Elastic Volumes"] .
@@ -139,7 +139,7 @@ TIP: Der Konsolenagent benötigt außerdem eine Systemfestplatte. https://docs.n
 
 == Bereiten Sie die Bereitstellung von Cloud Volumes ONTAP in einem AWS Outpost vor
 
-Wenn Sie über einen AWS Outpost verfügen, können Sie Cloud Volumes ONTAP in diesem Outpost bereitstellen, indem Sie während des Bereitstellungsprozesses die Outpost VPC auswählen. Die Erfahrung ist die gleiche wie bei jedem anderen VPC, das sich in AWS befindet. Beachten Sie, dass Sie zuerst einen Konsolenagenten in Ihrem AWS Outpost bereitstellen müssen.
+Wenn Sie über einen AWS Outpost verfügen, können Sie Cloud Volumes ONTAP in diesem Outpost bereitstellen, indem Sie während des Bereitstellungsprozesses die Outpost VPC auswählen. Die Erfahrung ist die gleiche wie bei jedem anderen VPC, das sich in AWS befindet.  Beachten Sie, dass Sie zuerst einen Konsolenagenten in Ihrem AWS Outpost bereitstellen müssen.
 
 Es gibt einige Einschränkungen, auf die hingewiesen werden muss:
 

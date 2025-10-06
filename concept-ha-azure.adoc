@@ -26,9 +26,9 @@ Ein Cloud Volumes ONTAP -Hochverfügbarkeitspaar (HA) bietet Unternehmenszuverl�
 
 Eine Cloud Volumes ONTAP HA-Seitenblobkonfiguration in Azure umfasst die folgenden Komponenten:
 
-image:diagram_ha_azure.png["Ein konzeptionelles Bild, das einen Load Balancer zeigt, der den eingehenden Datenverkehr von der NetApp Konsole und den Clients verwaltet, zwei Cloud Volumes ONTAP Knoten in einem VMSS Flex, SSD-Festplatten für Startdaten und Page Blobs für Kundendaten."]
+image:diagram_ha_azure.png["Ein konzeptionelles Bild, das einen Load Balancer zeigt, der den eingehenden Datenverkehr von der NetApp Console und den Clients verwaltet, zwei Cloud Volumes ONTAP Knoten in einem VMSS Flex, SSD-Festplatten für Startdaten und Page Blobs für Kundendaten."]
 
-Beachten Sie Folgendes zu den Azure-Komponenten, die die NetApp Konsole für Sie bereitstellt:
+Beachten Sie Folgendes zu den Azure-Komponenten, die die NetApp Console für Sie bereitstellt:
 
 Azure Standard Load Balancer:: Der Load Balancer verwaltet den eingehenden Datenverkehr zum Cloud Volumes ONTAP HA-Paar.
 VMs in einzelnen Verfügbarkeitszonen:: Ab Cloud Volumes ONTAP 9.15.1 können Sie heterogene virtuelle Maschinen (VMs) in einer einzigen Verfügbarkeitszone (AZ) erstellen und verwalten.  Sie können Hochverfügbarkeitsknoten (HA) in separaten Fehlerdomänen innerhalb derselben AZ bereitstellen und so optimale Verfügbarkeit gewährleisten.  Weitere Informationen zum flexiblen Orchestrierungsmodus, der diese Funktion ermöglicht, finden Sie im https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Microsoft Azure-Dokumentation: Virtual Machine Scale Sets"^] .

@@ -18,11 +18,11 @@ Der Hochverfügbarkeitsmodus (HA) von Microsoft Azure sollte aktiviert werden, u
 
 Ab Cloud Volumes ONTAP 9.10.1 haben wir die ungeplante Failover-Zeit für Cloud Volumes ONTAP HA-Paare, die in Microsoft Azure ausgeführt werden, reduziert und Unterstützung für NFSv4 hinzugefügt.  Um diese Verbesserungen für Cloud Volumes ONTAP verfügbar zu machen, müssen Sie die Hochverfügbarkeitsfunktion in Ihrem Azure-Abonnement aktivieren.
 
-Die NetApp Konsole fordert Sie zur Eingabe dieser Details auf, wenn die Funktion für ein Azure-Abonnement aktiviert werden muss.
+Die NetApp Console fordert Sie zur Eingabe dieser Details auf, wenn die Funktion für ein Azure-Abonnement aktiviert werden muss.
 
 Beachten Sie Folgendes:
 
-* Es gibt keine Probleme mit der Hochverfügbarkeit Ihres Cloud Volumes ONTAP HA-Paares.  Diese Azure-Funktion arbeitet mit ONTAP zusammen, um die vom Client beobachtete Anwendungsausfallzeit für NFS-Protokolle zu reduzieren, die sich aus ungeplanten Failover-Ereignissen ergibt.
+* Es gibt keine Probleme mit der Hochverfügbarkeit Ihres Cloud Volumes ONTAP HA-Paares.  Diese Azure-Funktion arbeitet mit ONTAP zusammen, um die vom Client beobachtete Anwendungsausfallzeit für NFS-Protokolle zu reduzieren, die aus ungeplanten Failover-Ereignissen resultiert.
 * Das Aktivieren dieser Funktion hat keine Unterbrechungen für Cloud Volumes ONTAP HA-Paare.
 * Das Aktivieren dieser Funktion für Ihr Azure-Abonnement verursacht keine Probleme mit anderen VMs.
 * Cloud Volumes ONTAP verwendet einen internen Azure Load Balancer während Failovers von Cluster- und SVM-Management-LIFs auf CIFS- und NFS-Clients.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-cvo-aiq-digital-advisor.html 
 keywords: concepts, digital advisor, cloud volumes ontap, cloud manager, BlueXP, NetApp Console 
-summary: Digital Advisor ist in die NetApp Konsole integriert, sodass Sie den Betrieb, die Sicherheit und die Leistung Ihrer ONTAP Cluster über eine einzige Oberfläche optimieren können. 
+summary: Digital Advisor ist in die NetApp Console integriert, sodass Sie den Betrieb, die Sicherheit und die Leistung Ihrer ONTAP Cluster über eine einzige Oberfläche optimieren können. 
 ---
 = Optimieren Sie Ihre Cloud Volumes ONTAP -Systeme mit Digital Advisor
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Digital Advisor ist in die NetApp Konsole integriert, sodass Sie den Be
 
 
 [role="lead"]
-https://www.netapp.com/services/support/active-iq/["Active IQ Digital Advisor"](auch als Digital Advisor bekannt) ist in die NetApp Konsole integriert, sodass Sie den Betrieb, die Sicherheit und die Leistung Ihrer Cloud Volumes ONTAP -Systeme über eine einzige Oberfläche optimieren können.
+https://www.netapp.com/services/support/active-iq/["Active IQ Digital Advisor"](auch als Digital Advisor bekannt) ist in die NetApp Console integriert, sodass Sie den Betrieb, die Sicherheit und die Leistung Ihrer Cloud Volumes ONTAP -Systeme über eine einzige Oberfläche optimieren können.
 
 
 
@@ -42,7 +42,7 @@ Die Nutzung dieses Dienstes über die Konsole ist kostenlos.
 
 
 
-== So funktioniert Digital Advisor mit der NetApp Konsole
+== So funktioniert Digital Advisor mit der NetApp Console
 
 Die Benutzeroberfläche von Digital Advisor ist vollständig in die Konsole integriert.
 

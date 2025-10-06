@@ -30,7 +30,7 @@ Routing- und Firewall-Richtlinien müssen HTTPS-Verkehr zu den folgenden Endpunk
 * \https://mysupport.netapp.com/asupprod/post/1.0/postAsup
 
 
-Wenn zum Senden von AutoSupport -Nachrichten keine ausgehende Internetverbindung verfügbar ist, konfiguriert die NetApp Konsole Ihre Cloud Volumes ONTAP Systeme automatisch so, dass der Konsolenagent als Proxyserver verwendet wird.  Die einzige Voraussetzung besteht darin, sicherzustellen, dass die Sicherheitsgruppe des Konsolenagenten _eingehende_ Verbindungen über Port 3128 zulässt. Sie müssen diesen Port öffnen, nachdem Sie den Konsolenagenten bereitgestellt haben.
+Wenn zum Senden von AutoSupport -Nachrichten keine ausgehende Internetverbindung verfügbar ist, konfiguriert die NetApp Console Ihre Cloud Volumes ONTAP Systeme automatisch so, dass der Konsolenagent als Proxyserver verwendet wird.  Die einzige Voraussetzung besteht darin, sicherzustellen, dass die Sicherheitsgruppe des Konsolenagenten _eingehende_ Verbindungen über Port 3128 zulässt. Sie müssen diesen Port öffnen, nachdem Sie den Konsolenagenten bereitgestellt haben.
 
 Wenn Sie strenge ausgehende Regeln für Cloud Volumes ONTAP definiert haben, müssen Sie auch sicherstellen, dass die Sicherheitsgruppe Cloud Volumes ONTAP ausgehende Verbindungen über Port 3128 zulässt.
 
@@ -112,7 +112,7 @@ Wenn der Status der http-https-Kategorie „ok“ ist, bedeutet dies, dass AutoS
 . Wenn der Status weiterhin „Fehlgeschlagen“ lautet, überprüfen Sie, ob über Port 3128 eine Verbindung zwischen Cloud Volumes ONTAP und dem Konsolenagenten besteht.
 . Wenn die Status-ID nach der Überprüfung der Konnektivität immer noch fehlgeschlagen ist, stellen Sie eine SSH-Verbindung zum Konsolenagenten her.
 +
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["Erfahren Sie mehr über die Verbindung mit der Linux-VM für den Konsolen-Agent"^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["Erfahren Sie mehr über die Verbindung zur Linux-VM für den Konsolen-Agenten"^]
 
 . Gehe zu `/opt/application/netapp/cloudmanager/docker_occm/data/`
 . Öffnen Sie die Proxy-Konfigurationsdatei `squid.conf`

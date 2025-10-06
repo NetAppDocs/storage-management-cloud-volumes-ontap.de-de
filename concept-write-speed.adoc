@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-write-speed.html 
 keywords: write speed, high write speed, normal write speed, nvfail, writing speed, ldm, low durability mode 
-summary: Mit der NetApp -Konsole können Sie zwischen normaler und hoher Schreibgeschwindigkeit für Cloud Volumes ONTAP wählen.  Bevor Sie eine Schreibgeschwindigkeit auswählen, sollten Sie die Unterschiede zwischen den normalen und hohen Einstellungen sowie die Risiken und Empfehlungen bei der Verwendung einer hohen Schreibgeschwindigkeit verstehen. 
+summary: Mit der NetApp Console können Sie zwischen normaler und hoher Schreibgeschwindigkeit für Cloud Volumes ONTAP wählen.  Bevor Sie eine Schreibgeschwindigkeit auswählen, sollten Sie die Unterschiede zwischen den normalen und hohen Einstellungen sowie die Risiken und Empfehlungen bei der Verwendung einer hohen Schreibgeschwindigkeit verstehen. 
 ---
 = Schreibgeschwindigkeit
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Mit der NetApp -Konsole können Sie zwischen normaler und hoher Schreib
 
 
 [role="lead"]
-Mit der NetApp Konsole können Sie für die meisten Cloud Volumes ONTAP Konfigurationen zwischen normaler oder hoher Schreibgeschwindigkeit wählen.  Bevor Sie eine Schreibgeschwindigkeit auswählen, sollten Sie die Unterschiede zwischen den normalen und hohen Einstellungen sowie die Risiken und Empfehlungen bei der Verwendung einer hohen Schreibgeschwindigkeit verstehen.
+Mit der NetApp Console können Sie für die meisten Cloud Volumes ONTAP Konfigurationen zwischen normaler oder hoher Schreibgeschwindigkeit wählen.  Bevor Sie eine Schreibgeschwindigkeit auswählen, sollten Sie die Unterschiede zwischen den normalen und hohen Einstellungen sowie die Risiken und Empfehlungen bei der Verwendung einer hohen Schreibgeschwindigkeit verstehen.
 
 
 

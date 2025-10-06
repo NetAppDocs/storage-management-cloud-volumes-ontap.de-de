@@ -47,7 +47,7 @@ Weitere Einzelheiten finden Sie unterlink:reference-networking-aws.html["Netzwer
 
 == Starten Sie ein Cloud Volumes ONTAP -System mit einem Knoten in AWS
 
-Wenn Sie Cloud Volumes ONTAP in AWS starten möchten, müssen Sie in der NetApp Konsole ein neues System erstellen.
+Wenn Sie Cloud Volumes ONTAP in AWS starten möchten, müssen Sie in der NetApp Console ein neues System erstellen.
 
 .Informationen zu diesem Vorgang
 Unmittelbar nach der Erstellung des Systems startet die Konsole eine Testinstanz in der angegebenen VPC, um die Konnektivität zu überprüfen.  Bei Erfolg beendet die Konsole die Instanz sofort und beginnt dann mit der Bereitstellung des Cloud Volumes ONTAP Systems.  Wenn die Konnektivität nicht überprüft werden kann, schlägt die Systemerstellung fehl.  Die Testinstanz ist entweder eine `t2.nano` (für Standard-VPC-Miete) oder `m3.medium` (für dedizierte VPC-Miete).
@@ -77,7 +77,7 @@ Einige der Felder auf dieser Seite sind selbsterklärend.  In der folgenden Tabe
 | Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
 
 
-| Anmeldeinformationen bearbeiten | Wählen Sie die AWS-Anmeldeinformationen aus, die mit dem Konto verknüpft sind, in dem Sie dieses System bereitstellen möchten.  Sie können das AWS-Marktplatz-Abonnement auch mit diesem Cloud Volumes ONTAP System verknüpfen. Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem neuen AWS Marketplace-Abonnement zuzuordnen. Das Abonnement kann ein Jahresvertrag sein oder die Nutzung von Cloud Volumes ONTAP nach Stundensatz. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Erfahren Sie, wie Sie der NetApp Konsole zusätzliche AWS-Anmeldeinformationen hinzufügen"^] . 
+| Anmeldeinformationen bearbeiten | Wählen Sie die AWS-Anmeldeinformationen aus, die mit dem Konto verknüpft sind, in dem Sie dieses System bereitstellen möchten.  Sie können das AWS-Marktplatz-Abonnement auch mit diesem Cloud Volumes ONTAP System verknüpfen. Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem neuen AWS Marketplace-Abonnement zuzuordnen. Das Abonnement kann ein Jahresvertrag sein oder die Nutzung von Cloud Volumes ONTAP nach Stundensatz. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Erfahren Sie, wie Sie der NetApp Console zusätzliche AWS-Anmeldeinformationen hinzufügen"^] . 
 |===
 +
 
@@ -85,8 +85,8 @@ TIP: Wenn mehrere IAM-Benutzer im selben AWS-Konto arbeiten, muss jeder Benutzer
 
 . *Dienste*: Lassen Sie die Dienste aktiviert oder deaktivieren Sie die einzelnen Dienste, die Sie nicht mit Cloud Volumes ONTAP verwenden möchten.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Datenklassifizierung"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup und Recovery"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Data Classification"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup and Recovery"^]
 +
 
 TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
@@ -160,7 +160,7 @@ Beachten Sie Folgendes:
 
 +
 ** Der Datenträgertyp ist für das Anfangsvolume (und Aggregat).  Sie können für nachfolgende Volumes (und Aggregate) einen anderen Datenträgertyp auswählen.
-** Wenn Sie eine gp3- oder io1-Festplatte auswählen, verwendet die Konsole die Elastic Volumes-Funktion in AWS, um die zugrunde liegende Speicherfestplattenkapazität nach Bedarf automatisch zu erhöhen.  Sie können die anfängliche Kapazität basierend auf Ihrem Speicherbedarf auswählen und sie nach der Bereitstellung von Cloud Volumes ONTAP überarbeiten. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes in AWS"^] .
+** Wenn Sie eine gp3- oder io1-Festplatte auswählen, verwendet die Konsole die Elastic Volumes-Funktion in AWS, um die zugrunde liegende Speicherfestplattenkapazität bei Bedarf automatisch zu erhöhen.  Sie können die anfängliche Kapazität basierend auf Ihrem Speicherbedarf auswählen und sie nach der Bereitstellung von Cloud Volumes ONTAP überarbeiten. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes in AWS"^] .
 ** Wenn Sie eine GP2- oder ST1-Festplatte auswählen, können Sie eine Festplattengröße für alle Festplatten im anfänglichen Aggregat und für alle zusätzlichen Aggregate auswählen, die die Konsole erstellt, wenn Sie die einfache Bereitstellungsoption verwenden.  Mithilfe der erweiterten Zuordnungsoption können Sie Aggregate erstellen, die eine andere Festplattengröße verwenden.
 ** Sie können beim Erstellen oder Bearbeiten eines Volumes eine bestimmte Volume-Tiering-Richtlinie auswählen.
 ** Wenn Sie das Daten-Tiering deaktivieren, können Sie es für nachfolgende Aggregate aktivieren.
@@ -246,7 +246,7 @@ image:screenshot_cot_vol.gif["Screenshot: Zeigt die ausgefüllte Volume-Seite f�
 | DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
 
 
-| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
+| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
 |===
 . *Nutzungsprofil, Datenträgertyp und Tiering-Richtlinie*: Wählen Sie aus, ob Sie Speichereffizienzfunktionen aktivieren möchten, und bearbeiten Sie bei Bedarf die Volume-Tiering-Richtlinie.
 +
@@ -329,7 +329,7 @@ TIP: Wenn mehrere IAM-Benutzer im selben AWS-Konto arbeiten, muss jeder Benutzer
 
 . *Dienste*: Lassen Sie die Dienste aktiviert oder deaktivieren Sie die einzelnen Dienste, die Sie mit diesem Cloud Volumes ONTAP System nicht verwenden möchten.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Datenklassifizierung"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Data Classification"^]
 ** https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Erfahren Sie mehr über Backup und Wiederherstellung"^]
 +
 
@@ -414,7 +414,7 @@ Beachten Sie Folgendes:
 
 +
 ** Der Datenträgertyp ist für das Anfangsvolume (und Aggregat).  Sie können für nachfolgende Volumes (und Aggregate) einen anderen Datenträgertyp auswählen.
-** Wenn Sie eine gp3- oder io1-Festplatte auswählen, verwendet die Konsole die Elastic Volumes-Funktion in AWS, um die zugrunde liegende Speicherfestplattenkapazität nach Bedarf automatisch zu erhöhen.  Sie können die anfängliche Kapazität basierend auf Ihrem Speicherbedarf auswählen und sie nach der Bereitstellung von Cloud Volumes ONTAP überarbeiten. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes in AWS"^] .
+** Wenn Sie eine gp3- oder io1-Festplatte auswählen, verwendet die Konsole die Elastic Volumes-Funktion in AWS, um die zugrunde liegende Speicherfestplattenkapazität bei Bedarf automatisch zu erhöhen.  Sie können die anfängliche Kapazität basierend auf Ihrem Speicherbedarf auswählen und sie nach der Bereitstellung von Cloud Volumes ONTAP überarbeiten. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes in AWS"^] .
 ** Wenn Sie eine GP2- oder ST1-Festplatte auswählen, können Sie eine Festplattengröße für alle Festplatten im anfänglichen Aggregat und für alle zusätzlichen Aggregate auswählen, die die Konsole erstellt, wenn Sie die einfache Bereitstellungsoption verwenden.  Mithilfe der erweiterten Zuordnungsoption können Sie Aggregate erstellen, die eine andere Festplattengröße verwenden.
 ** Sie können beim Erstellen oder Bearbeiten eines Volumes eine bestimmte Volume-Tiering-Richtlinie auswählen.
 ** Wenn Sie das Daten-Tiering deaktivieren, können Sie es für nachfolgende Aggregate aktivieren.
@@ -500,7 +500,7 @@ image:screenshot_cot_vol.gif["Screenshot: Zeigt die ausgefüllte Volume-Seite f�
 | DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
 
 
-| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
+| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
 |===
 . *Nutzungsprofil, Datenträgertyp und Tiering-Richtlinie*: Wählen Sie aus, ob Sie Speichereffizienzfunktionen aktivieren möchten, und bearbeiten Sie bei Bedarf die Volume-Tiering-Richtlinie.
 +

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-security-groups.html 
 keywords: security group, security groups, rules, ports, aws, inbound, outbound, rules 
-summary: Die NetApp Konsole erstellt AWS-Sicherheitsgruppen, die die eingehenden und ausgehenden Regeln enthalten, die Cloud Volumes ONTAP für einen erfolgreichen Betrieb benötigt.  Möglicherweise möchten Sie zu Testzwecken auf die Ports verweisen oder wenn Sie lieber Ihre eigenen Sicherheitsgruppen verwenden möchten. 
+summary: Die NetApp Console erstellt AWS-Sicherheitsgruppen, die die eingehenden und ausgehenden Regeln enthalten, die Cloud Volumes ONTAP für einen erfolgreichen Betrieb benötigt.  Möglicherweise möchten Sie zu Testzwecken auf die Ports verweisen oder wenn Sie lieber Ihre eigenen Sicherheitsgruppen verwenden möchten. 
 ---
 = AWS-Sicherheitsgruppen-Ein- und Ausgangsregeln für Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Die NetApp Konsole erstellt AWS-Sicherheitsgruppen, die die eingehenden
 
 
 [role="lead"]
-Die NetApp -Konsole erstellt AWS-Sicherheitsgruppen, die die eingehenden und ausgehenden Regeln enthalten, die Cloud Volumes ONTAP für einen erfolgreichen Betrieb benötigt.  Möglicherweise möchten Sie zu Testzwecken auf die Ports verweisen oder wenn Sie lieber Ihre eigenen Sicherheitsgruppen verwenden möchten.
+Die NetApp Console erstellt AWS-Sicherheitsgruppen, die die eingehenden und ausgehenden Regeln enthalten, die Cloud Volumes ONTAP für einen erfolgreichen Betrieb benötigt.  Möglicherweise möchten Sie zu Testzwecken auf die Ports verweisen oder wenn Sie lieber Ihre eigenen Sicherheitsgruppen verwenden möchten.
 
 
 

@@ -16,7 +16,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 === Entfernung knotenbasierter Bereitstellungen aus BlueXP
 
-Die Option, Cloud Volumes ONTAP Systeme mithilfe knotenbasierter Lizenzen bereitzustellen, ist auf BlueXP veraltet.  Mit Ausnahme einiger Sonderfälle können Sie für Cloud Volumes ONTAP Bereitstellungen bei keinem Cloud-Anbieter knotenbasierte Lizenzen verwenden.
+Die Option, Cloud Volumes ONTAP Systeme mithilfe knotenbasierter Lizenzen bereitzustellen, ist bei BlueXP veraltet.  Mit Ausnahme einiger Sonderfälle können Sie für Cloud Volumes ONTAP Bereitstellungen bei keinem Cloud-Anbieter knotenbasierte Lizenzen verwenden.
 
 NetApp erkennt die folgenden besonderen Lizenzierungsanforderungen in Übereinstimmung mit vertraglichen Verpflichtungen und betrieblichen Anforderungen an und wird in diesen Situationen weiterhin knotenbasierte Lizenzen unterstützen:
 

@@ -14,7 +14,7 @@ summary: 'Cloud Volumes ONTAP unterstützt sowohl NetApp Volume Encryption (NVE)
 
 
 [role="lead"]
-Cloud Volumes ONTAP unterstützt NetApp Volume Encryption (NVE) und NetApp Aggregate Encryption (NAE).  NVE und NAE sind softwarebasierte Lösungen, die eine FIPS 140-2-konforme Verschlüsselung ruhender Daten von Volumes ermöglichen. link:concept-security.html["Erfahren Sie mehr über diese Verschlüsselungslösungen"] .
+Cloud Volumes ONTAP unterstützt NetApp Volume Encryption (NVE) und NetApp Aggregate Encryption (NAE).  NVE und NAE sind softwarebasierte Lösungen, die eine FIPS 140-2-konforme Data-at-Rest-Verschlüsselung von Volumes ermöglichen. link:concept-security.html["Erfahren Sie mehr über diese Verschlüsselungslösungen"] .
 
 Sowohl NVE als auch NAE werden mit einem externen Schlüsselmanager unterstützt.
 

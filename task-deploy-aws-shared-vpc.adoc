@@ -30,7 +30,7 @@ image:diagram-aws-vpc-sharing.png["Ein konzeptionelles Bild einer Cloud Volumes 
 
 Wie in den folgenden Schritten beschrieben, müssen Sie die Subnetze mit dem Teilnehmerkonto teilen und dann die IAM-Rolle und Sicherheitsgruppe im VPC-Eigentümerkonto erstellen.
 
-Wenn Sie das Cloud Volumes ONTAP -System erstellen, erstellt die NetApp Konsole automatisch eine IAM-Rolle und fügt sie dem Mediator hinzu.  Diese Rolle übernimmt die IAM-Rolle, die Sie im VPC-Eigentümerkonto erstellt haben, um Änderungen an den mit dem HA-Paar verknüpften Routentabellen vorzunehmen.
+Wenn Sie das Cloud Volumes ONTAP -System erstellen, erstellt die NetApp Console automatisch eine IAM-Rolle und fügt sie dem Mediator hinzu.  Diese Rolle übernimmt die IAM-Rolle, die Sie im VPC-Eigentümerkonto erstellt haben, um Änderungen an den mit dem HA-Paar verknüpften Routentabellen vorzunehmen.
 
 .Schritte
 . Geben Sie die Subnetze im VPC-Eigentümerkonto für das Teilnehmerkonto frei.

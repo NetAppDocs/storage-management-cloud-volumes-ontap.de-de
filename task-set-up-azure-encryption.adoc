@@ -25,7 +25,7 @@ Cloud Volumes ONTAP -Daten werden in Azure automatisch verschlüsselt mit https:
 Wenn Sie einen vom Kunden verwalteten Schlüssel mit Cloud Volumes ONTAP verwenden möchten, müssen Sie die folgenden Schritte ausführen:
 
 . Erstellen Sie in Azure einen Schlüsseltresor und generieren Sie dann einen Schlüssel in diesem Tresor.
-. Verwenden Sie die API in der NetApp -Konsole, um ein Cloud Volumes ONTAP -System zu erstellen, das den Schlüssel verwendet.
+. Verwenden Sie in der NetApp Console die API, um ein Cloud Volumes ONTAP -System zu erstellen, das den Schlüssel verwendet.
 
 
 

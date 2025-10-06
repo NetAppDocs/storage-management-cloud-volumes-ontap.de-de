@@ -23,7 +23,7 @@ Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie mit Cloud Volumes 
 Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bereitgestellter Kapazität kostenlos zu nutzen. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#free-trials["Erfahren Sie mehr über das Freemium-Angebot"^] .
 
 .Schritte
-. Wählen Sie im linken Navigationsmenü der NetApp Konsole *Speicher > Verwaltung* aus.
+. Wählen Sie im linken Navigationsmenü der NetApp Console*Speicher > Verwaltung* aus.
 . Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
 +
 .. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.

@@ -19,7 +19,7 @@ Jeder Konsolenagent verfügt über Einstellungen, die bestimmen, wie er die Gesa
 Diese Einstellungen wirken sich auf alle Cloud Volumes ONTAP Systeme aus, die von einem Konsolenagenten verwaltet werden.  Wenn Sie einen anderen Konsolenagenten haben, kann dieser anders konfiguriert werden.
 
 .Erforderliche Berechtigungen
-Sie benötigen die Organisations- oder Kontoadministratorrechte der NetApp Konsole, um die Cloud Volumes ONTAP -Einstellungen zu ändern.
+Sie benötigen die Organisations- oder Kontoadministratorrechte der NetApp Console, um die Cloud Volumes ONTAP -Einstellungen zu ändern.
 
 .Schritte
 . Gehen Sie im linken Navigationsbereich zu *Administration > Agenten*.

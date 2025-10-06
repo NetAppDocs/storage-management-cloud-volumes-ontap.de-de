@@ -16,4 +16,4 @@ summary: Durch die Angabe eines NTP-Servers wird die Zeit zwischen den Systemen 
 [role="lead"]
 Durch die Angabe eines NTP-Servers wird die Zeit zwischen den Systemen in Ihrem Netzwerk synchronisiert, wodurch Probleme aufgrund von Zeitunterschieden vermieden werden können.
 
-Geben Sie einen NTP-Server an, indem Sie https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html["NetApp Konsolen-API"^] oder über die Benutzeroberfläche, wenn Sielink:task-create-volumes.html#create-a-volume["Erstellen Sie einen CIFS-Server"] .
+Geben Sie einen NTP-Server an, indem Sie https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html["NetApp Console -API"^] oder über die Benutzeroberfläche, wenn Sielink:task-create-volumes.html#create-a-volume["Erstellen Sie einen CIFS-Server"] .

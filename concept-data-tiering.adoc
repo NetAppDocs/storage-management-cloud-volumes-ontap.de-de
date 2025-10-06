@@ -37,11 +37,11 @@ Bei Verwendung von durchsatzoptimierten HDDs (st1) wird das Tiering von Daten in
 Kapazitätsstufe:: Ein Cloud Volumes ONTAP -System ordnet inaktive Daten einem einzelnen S3-Bucket zu.
 +
 --
-Die NetApp Konsole erstellt für jedes System einen einzelnen S3-Bucket und nennt ihn Fabric-Pool-_Cluster Unique Identifier_.  Es wird nicht für jedes Volume ein anderer S3-Bucket erstellt.
+Die NetApp Console erstellt für jedes System einen einzelnen S3-Bucket und nennt ihn Fabric-Pool-_Cluster Unique Identifier_.  Es wird nicht für jedes Volume ein anderer S3-Bucket erstellt.
 
 Wenn die Konsole den S3-Bucket erstellt, verwendet sie die folgenden Standardeinstellungen:
 
-* Lagerklasse: Standard
+* Speicherklasse: Standard
 * Standardverschlüsselung: Deaktiviert
 * Öffentlichen Zugriff blockieren: Den gesamten öffentlichen Zugriff blockieren
 * Objektbesitz: ACLs aktiviert
@@ -129,7 +129,7 @@ Die Konsole erstellt für jedes System einen Bucket und nennt ihn fabric-pool-_c
 Wenn die Konsole den Bucket erstellt, verwendet sie die folgenden Standardeinstellungen:
 
 * Standorttyp: Region
-* Lagerklasse: Standard
+* Speicherklasse: Standard
 * Öffentlicher Zugriff: Vorbehaltlich der Objekt-ACLs
 * Zugriffskontrolle: Feinkörnig
 * Schutz: Keiner
@@ -179,10 +179,10 @@ Nur Schnappschuss:: Nachdem ein Aggregat 50 % seiner Kapazität erreicht hat, ve
 Beim Lesen werden kalte Datenblöcke auf der Kapazitätsebene zu heißen Datenblöcken und werden auf die Leistungsebene verschoben.
 
 --
-Alle:: Alle Daten (ohne Metadaten) werden sofort als „kalt“ markiert und so schnell wie möglich in den Objektspeicher verschoben. Es ist nicht erforderlich, 48 Stunden zu warten, bis neue Blöcke in einem Volume kalt werden. Beachten Sie, dass Blöcke, die sich vor dem Festlegen der Richtlinie „Alle“ im Volume befanden, 48 Stunden benötigen, um kalt zu werden.
+Alle:: Alle Daten (ohne Metadaten) werden sofort als „kalt“ markiert und so schnell wie möglich in den Objektspeicher verschoben.  Es ist nicht erforderlich, 48 Stunden zu warten, bis neue Blöcke in einem Volume kalt werden.  Beachten Sie, dass Blöcke, die sich vor dem Festlegen der Richtlinie „Alle“ im Volume befanden, 48 Stunden benötigen, um kalt zu werden.
 +
 --
-Beim Lesen bleiben kalte Datenblöcke auf der Cloud-Ebene kalt und werden nicht auf die Leistungsebene zurückgeschrieben. Diese Richtlinie ist ab ONTAP 9.6 verfügbar.
+Beim Lesen bleiben kalte Datenblöcke auf der Cloud-Ebene kalt und werden nicht auf die Leistungsebene zurückgeschrieben.  Diese Richtlinie ist ab ONTAP 9.6 verfügbar.
 
 --
 Automatisch:: Nachdem ein Aggregat 50 % seiner Kapazität erreicht hat, ordnet Cloud Volumes ONTAP kalte Datenblöcke in einem Volume einer Kapazitätsebene zu.  Zu den kalten Daten gehören nicht nur Snapshot-Kopien, sondern auch kalte Benutzerdaten aus dem aktiven Dateisystem.  Die Kühlperiode beträgt ca. 31 Tage.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-deploying-otc-azure.html 
 keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, azure, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, HA pair, associate subscription, azure marketplace, marketplace subscription, cloud data sense, cloud backup 
-summary: Sie können ein einzelnes Cloud Volumes ONTAP -System in Azure starten, indem Sie in der NetApp Konsole ein Cloud Volumes ONTAP -System erstellen. 
+summary: Sie können ein einzelnes Cloud Volumes ONTAP -System in Azure starten, indem Sie in der NetApp Console ein Cloud Volumes ONTAP -System erstellen. 
 ---
 = Starten Sie Cloud Volumes ONTAP in Azure
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Sie können ein einzelnes Cloud Volumes ONTAP -System in Azure starten,
 
 
 [role="lead"]
-Sie können ein Einzelknotensystem oder ein HA-Paar in Azure starten, indem Sie in der NetApp Konsole ein Cloud Volumes ONTAP -System erstellen.
+Sie können ein Einzelknotensystem oder ein HA-Paar in Azure starten, indem Sie in der NetApp Console ein Cloud Volumes ONTAP -System erstellen.
 
 .Bevor Sie beginnen
 Bevor Sie beginnen, benötigen Sie Folgendes.
@@ -71,7 +71,7 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 | Systemname | Die Konsole verwendet den Systemnamen, um sowohl das Cloud Volumes ONTAP -System als auch die virtuelle Azure-Maschine zu benennen.  Wenn Sie diese Option auswählen, wird der Name auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet. 
 
 
-| Ressourcengruppen-Tags | Tags sind Metadaten für Ihre Azure-Ressourcen.  Wenn Sie in dieses Feld Tags eingeben, fügt die Konsole sie der mit dem Cloud Volumes ONTAP -System verknüpften Ressourcengruppe hinzu.  Sie können beim Erstellen eines Systems bis zu vier Tags über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Tags beschränkt.  Informationen zu Tags finden Sie im https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure-Dokumentation: Verwenden von Tags zum Organisieren Ihrer Azure-Ressourcen"^] . 
+| Ressourcengruppen-Tags | Tags sind Metadaten für Ihre Azure-Ressourcen.  Wenn Sie in dieses Feld Tags eingeben, fügt die Konsole sie der Ressourcengruppe hinzu, die mit dem Cloud Volumes ONTAP -System verknüpft ist.  Sie können beim Erstellen eines Systems bis zu vier Tags über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Tags beschränkt.  Informationen zu Tags finden Sie im https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure-Dokumentation: Verwenden von Tags zum Organisieren Ihrer Azure-Ressourcen"^] . 
 
 
 | Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
@@ -81,8 +81,8 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 |===
 . *Dienste*: Aktivieren oder deaktivieren Sie die einzelnen Dienste, die Sie mit Cloud Volumes ONTAP verwenden möchten oder nicht.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Datenklassifizierung"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup und Recovery"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Data Classification"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup and Recovery"^]
 +
 
 TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
@@ -237,7 +237,7 @@ image:screenshot_cot_vol.gif["Screenshot: Zeigt die ausgefüllte Volume-Seite f�
 | DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
 
 
-| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
+| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
 |===
 . *Nutzungsprofil, Datenträgertyp und Tiering-Richtlinie*: Wählen Sie aus, ob Sie Speichereffizienzfunktionen aktivieren möchten, und ändern Sie bei Bedarf die Volume-Tiering-Richtlinie.
 +
@@ -291,7 +291,7 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 | Systemname | Die Konsole verwendet den Systemnamen, um sowohl das Cloud Volumes ONTAP -System als auch die virtuelle Azure-Maschine zu benennen.  Wenn Sie diese Option auswählen, wird der Name auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet. 
 
 
-| Ressourcengruppen-Tags | Tags sind Metadaten für Ihre Azure-Ressourcen.  Wenn Sie in dieses Feld Tags eingeben, fügt die Konsole sie der mit dem Cloud Volumes ONTAP -System verknüpften Ressourcengruppe hinzu.  Sie können beim Erstellen eines Systems bis zu vier Tags über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Tags beschränkt.  Informationen zu Tags finden Sie im https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure-Dokumentation: Verwenden von Tags zum Organisieren Ihrer Azure-Ressourcen"^] . 
+| Ressourcengruppen-Tags | Tags sind Metadaten für Ihre Azure-Ressourcen.  Wenn Sie in dieses Feld Tags eingeben, fügt die Konsole sie der Ressourcengruppe hinzu, die mit dem Cloud Volumes ONTAP -System verknüpft ist.  Sie können beim Erstellen eines Systems bis zu vier Tags über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Tags beschränkt.  Informationen zu Tags finden Sie im https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure-Dokumentation: Verwenden von Tags zum Organisieren Ihrer Azure-Ressourcen"^] . 
 
 
 | Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
@@ -301,8 +301,8 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 |===
 . *Dienste*: Aktivieren oder deaktivieren Sie die einzelnen Dienste, je nachdem, ob Sie sie mit Cloud Volumes ONTAP verwenden möchten.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Datenklassifizierung"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup und Recovery"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Erfahren Sie mehr über die NetApp Data Classification"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie mehr über NetApp Backup and Recovery"^]
 +
 
 TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
@@ -484,7 +484,7 @@ image:screenshot_cot_vol.gif["Screenshot: Zeigt die ausgefüllte Volume-Seite f�
 | DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
 
 
-| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp -Konsolenautomatisierung"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
+| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
 |===
 . *Nutzungsprofil, Datenträgertyp und Tiering-Richtlinie*: Wählen Sie aus, ob Sie Speichereffizienzfunktionen aktivieren möchten, und ändern Sie bei Bedarf die Volume-Tiering-Richtlinie.
 +

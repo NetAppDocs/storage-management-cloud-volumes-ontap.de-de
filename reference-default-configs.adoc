@@ -20,7 +20,7 @@ Wenn Sie wissen, wie Cloud Volumes ONTAP standardmäßig konfiguriert ist, könn
 
 == Standard-Setup
 
-* Die NetApp Konsole erstellt bei der Bereitstellung von Cloud Volumes ONTAP eine datenbereitstellende Speicher-VM.  Einige Konfigurationen unterstützen zusätzliche Speicher-VMs. link:task-managing-svms.html["Erfahren Sie mehr über die Verwaltung von Speicher-VMs"] .
+* Die NetApp Console erstellt bei der Bereitstellung von Cloud Volumes ONTAP eine datenbereitstellende Speicher-VM.  Einige Konfigurationen unterstützen zusätzliche Speicher-VMs. link:task-managing-svms.html["Erfahren Sie mehr über die Verwaltung von Speicher-VMs"] .
 +
 Ab der Version 3.9.5 ist die logische Speicherplatzberichterstattung auf der ersten Speicher-VM aktiviert.  Wenn der Speicherplatz logisch gemeldet wird, meldet ONTAP den Volume-Speicherplatz so, dass der gesamte durch die Speichereffizienzfunktionen eingesparte physische Speicherplatz auch als verwendet gemeldet wird.  Informationen zu den Effizienzfunktionen für Inline-Speicher finden Sie im Knowledge Base-Artikel https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Welche Inline-Speichereffizienzfunktionen werden mit CVO unterstützt?"^]
 
@@ -262,7 +262,7 @@ NOTE: Beim Neustart werden automatisch Snapshots erstellt.
 
 === Google Cloud (HA-Paar)
 
-* Zwei persistente SSD-Festplatten mit 10 GiB für Startdaten
+* Zwei persistente 10-GiB-SSD-Festplatten für Startdaten
 * Vier persistente 64-GiB-SSD-Festplatten für Root-Daten
 * Zwei persistente SSD-Festplatten mit 500 GiB für NVRAM
 * Zwei persistente Standard-Festplatten mit 315 GiB zum Speichern von Kernen
@@ -289,6 +289,6 @@ Speicherlayout:
 Diese Festplatte, die das Boot-Image enthält, ist für Cloud Volumes ONTAP nicht verfügbar.
 
 * Root-Daten, die die Systemkonfiguration und Protokolle enthalten, befinden sich in aggr0.
-* Das Root-Volume der Storage Virtual Machine (SVM) befindet sich in aggr1.
+* Das Stammvolume der Storage Virtual Machine (SVM) befindet sich in aggr1.
 * Datenvolumes befinden sich auch in aggr1.
 

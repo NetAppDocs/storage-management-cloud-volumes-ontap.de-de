@@ -14,7 +14,7 @@ summary: Ransomware-Angriffe können ein Unternehmen Zeit, Ressourcen und den Ru
 
 
 [role="lead"]
-Ransomware-Angriffe können ein Unternehmen Zeit, Ressourcen und Ansehen kosten.  Mit der NetApp Konsole können Sie zwei NetApp -Lösungen für Ransomware implementieren: Schutz vor gängigen Ransomware-Dateierweiterungen und Autonomous Ransomware Protection (ARP).  Diese Lösungen bieten effektive Tools für Sichtbarkeit, Erkennung und Behebung.
+Ransomware-Angriffe können ein Unternehmen Zeit, Ressourcen und Ansehen kosten.  Mit der NetApp Console können Sie zwei NetApp -Lösungen für Ransomware implementieren: Schutz vor gängigen Ransomware-Dateierweiterungen und Autonomous Ransomware Protection (ARP).  Diese Lösungen bieten effektive Tools für Sichtbarkeit, Erkennung und Behebung.
 
 
 

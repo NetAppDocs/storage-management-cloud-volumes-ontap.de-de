@@ -69,7 +69,7 @@ Beispielsweise sollten alle Einzelknotenbereitstellungen mit Cloud Volumes ONTAP
 | 9.17.1 und höher | Der Azure Marketplace | ontap_cloud_direct_gen2 
 
 
-| 9.17.1 und höher | Die NetApp Konsole | ontap_cloud_gen2 
+| 9.17.1 und höher | Die NetApp Console | ontap_cloud_gen2 
 
 
 | 9.16.1 | Der Azure Marketplace | ontap_cloud_direct 

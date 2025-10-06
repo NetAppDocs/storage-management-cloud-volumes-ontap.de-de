@@ -24,7 +24,7 @@ Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bere
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten in der NetApp Konsole.
+. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten in der NetApp Console.
 +
 .. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im Google Cloud Marketplace zu abonnieren.
 +
@@ -68,7 +68,7 @@ NOTE: NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizen
 
 .Schritte
 . https://bluexp.netapp.com/contact-cds["Kontaktieren Sie den NetApp -Vertrieb, um eine Lizenz zu erhalten"^]
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["Fügen Sie Ihr NetApp Support Site-Konto zur NetApp -Konsole hinzu"^]
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["Fügen Sie Ihr NetApp Support Site-Konto zur NetApp Console hinzu"^]
 +
 Die Konsole fragt automatisch den Lizenzierungsdienst von NetApp ab, um Details zu den Lizenzen abzurufen, die mit Ihrem NetApp Support Site-Konto verknüpft sind.  Wenn keine Fehler auftreten, fügt die Konsole die Lizenzen hinzu.
 

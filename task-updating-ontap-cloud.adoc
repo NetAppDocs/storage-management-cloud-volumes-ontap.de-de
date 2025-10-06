@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-updating-ontap-cloud.html 
 keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading, cloud backup 
-summary: Aktualisieren Sie Cloud Volumes ONTAP über die NetApp Konsole, um Zugriff auf die neuesten Funktionen und Verbesserungen zu erhalten.  Sie sollten Cloud Volumes ONTAP -Systeme vorbereiten, bevor Sie die Software aktualisieren. 
+summary: Aktualisieren Sie Cloud Volumes ONTAP über die NetApp Console, um Zugriff auf die neuesten Funktionen und Verbesserungen zu erhalten.  Sie sollten Cloud Volumes ONTAP -Systeme vorbereiten, bevor Sie die Software aktualisieren. 
 ---
 = Aktualisieren Sie die Cloud Volumes ONTAP -Software
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Aktualisieren Sie Cloud Volumes ONTAP über die NetApp Konsole, um Zugr
 
 
 [role="lead"]
-Aktualisieren Sie Cloud Volumes ONTAP über die NetApp Konsole, um Zugriff auf die neuesten Funktionen und Verbesserungen zu erhalten.  Sie sollten Cloud Volumes ONTAP -Systeme vorbereiten, bevor Sie die Software aktualisieren.
+Aktualisieren Sie Cloud Volumes ONTAP über die NetApp Console, um Zugriff auf die neuesten Funktionen und Verbesserungen zu erhalten.  Sie sollten Cloud Volumes ONTAP -Systeme vorbereiten, bevor Sie die Software aktualisieren.
 
 
 
@@ -230,7 +230,7 @@ Bevor Sie ein Upgrade durchführen, müssen Sie überprüfen, ob Ihre Systeme be
 
 === Planen Sie Ausfallzeiten ein
 
-Wenn Sie ein Einzelknotensystem aktualisieren, wird das System durch den Aktualisierungsvorgang für bis zu 25 Minuten offline geschaltet, währenddessen die E/A unterbrochen wird.
+Wenn Sie ein Einzelknotensystem aktualisieren, wird das System durch den Aktualisierungsvorgang für bis zu 25 Minuten offline geschaltet, wobei die E/A unterbrochen wird.
 
 In vielen Fällen verläuft die Aktualisierung eines HA-Paares unterbrechungsfrei und die E/A erfolgt ohne Unterbrechung.  Während dieses unterbrechungsfreien Upgrade-Prozesses wird jeder Knoten gleichzeitig aktualisiert, um den Clients weiterhin E/A-Vorgänge bereitzustellen.
 
@@ -384,7 +384,7 @@ Wenn Sie über eine VPN-Verbindung zum virtuellen Netzwerk verfügen, können Si
 NOTE: Die vordefinierte Cloud Volumes ONTAP Sicherheitsgruppe lässt standardmäßig ausgehende HTTP-Verbindungen zu.
 
 . Besorgen Sie sich das Software-Image von https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab["die NetApp Support Site"^] .
-. Kopieren Sie das Software-Image in ein Verzeichnis auf dem Konsolen-Agenten oder auf einem HTTP-Server, von dem die Datei bereitgestellt wird.
+. Kopieren Sie das Software-Image in ein Verzeichnis auf dem Konsolenagenten oder auf einem HTTP-Server, von dem die Datei bereitgestellt wird.
 +
 Es stehen zwei Wege zur Verfügung.  Der richtige Pfad hängt von der Version Ihres Konsolenagenten ab.
 
@@ -409,7 +409,7 @@ NOTE: In der URL muss *Bilddateiname* dem Format „cot.image.9.13.1P2.tgz“ en
 
 
 .Ergebnis
-Die Konsole startet das Software-Update.  Sobald die Softwareaktualisierung abgeschlossen ist, können Sie Aktionen am System durchführen.
+Die Konsole startet das Software-Update.  Sobald die Softwareaktualisierung abgeschlossen ist, können Sie Aktionen auf dem System ausführen.
 
 .Nach Abschluss
 Wenn Sie SnapMirror Übertragungen ausgesetzt haben, verwenden Sie System Manager, um die Übertragungen fortzusetzen.
