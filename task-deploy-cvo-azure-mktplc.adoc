@@ -138,6 +138,9 @@ Stellen Sie sicher, dass die Bereitstellung auf dem Azure-Marktplatz abgeschloss
 .Schritte
 In der Konsole folgen Sie dem Standardverfahren zum Erkennen vorhandener Systeme. Weitere Informationen finden Sie unter link:task-adding-systems.html["Fügen Sie der Konsole ein vorhandenes Cloud Volumes ONTAP -System hinzu"] .
 
+
+CAUTION: Während der Erkennung werden möglicherweise Fehlermeldungen angezeigt, die Sie jedoch ignorieren können, bis der Erkennungsprozess abgeschlossen ist. Ändern Sie während der Erkennung nicht die systemgenerierten Cloud Volumes ONTAP -Konfigurationen im Azure Marketplace-Portal, insbesondere nicht die System-Tags. Alle an diesen Konfigurationen vorgenommenen Änderungen können zu unerwartetem Systemverhalten führen.
+
 .Nach Abschluss
 Nachdem die Erkennung abgeschlossen ist, können Sie die auf der Seite *Systeme* in der Konsole aufgelisteten Systeme anzeigen.  Sie können verschiedene Verwaltungsaufgaben ausführen, wie zum Beispiellink:task-manage-aggregates.html["Erweiterung des Aggregats"] ,link:task-create-volumes.html["Hinzufügen von Volumes"] ,link:task-managing-svms-azure.html["Bereitstellung zusätzlicher Speicher-VMs"] , Undlink:task-change-azure-vm.html["Ändern der Instanztypen"] .
 

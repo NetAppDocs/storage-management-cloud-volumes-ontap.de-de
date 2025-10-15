@@ -269,6 +269,9 @@ Wenn beim Starten der Cloud Volumes ONTAP Instanz Probleme auftreten, überprüf
 
 Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
 
+
+CAUTION: Ändern Sie nach Abschluss des Bereitstellungsprozesses nicht die systemgenerierten Cloud Volumes ONTAP -Konfigurationen im AWS-Cloud-Portal, insbesondere nicht die System-Tags. Alle an diesen Konfigurationen vorgenommenen Änderungen können zu unerwartetem Verhalten oder Datenverlust führen.
+
 .Nach Abschluss
 * Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.
 * Wenn Sie Kontingente auf Volumes anwenden möchten, verwenden Sie ONTAP System Manager oder die ONTAP CLI.
@@ -528,6 +531,10 @@ Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/de
 * Wenn Sie Kontingente auf Volumes anwenden möchten, verwenden Sie ONTAP System Manager oder die ONTAP CLI.
 +
 Mithilfe von Kontingenten können Sie den Speicherplatz und die Anzahl der von einem Benutzer, einer Gruppe oder einem Qtree verwendeten Dateien beschränken oder verfolgen.
+
++
+
+CAUTION: Ändern Sie nach Abschluss des Bereitstellungsprozesses nicht die systemgenerierten Cloud Volumes ONTAP -Konfigurationen im AWS-Cloud-Portal, insbesondere nicht die System-Tags. Alle an diesen Konfigurationen vorgenommenen Änderungen können zu unerwartetem Verhalten oder Datenverlust führen.
 
 
 

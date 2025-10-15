@@ -110,6 +110,9 @@ TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Rec
 .Zusammenfassung
 Überprüfen oder bearbeiten Sie die eingegebenen Details und klicken Sie dann auf *Erstellen*.
 
+
+CAUTION: Ändern Sie nach Abschluss des Bereitstellungsprozesses nicht die systemgenerierten Cloud Volumes ONTAP -Konfigurationen im AWS-Cloud-Portal, insbesondere nicht die System-Tags. Alle an diesen Konfigurationen vorgenommenen Änderungen können zu unerwartetem Verhalten oder Datenverlust führen.
+
 .Weiterführende Links
 * link:task-planning-your-config.html["Planen Ihrer Cloud Volumes ONTAP Konfiguration"]
 * link:task-deploying-otc-aws.html["Stellen Sie Cloud Volumes ONTAP in AWS mithilfe der erweiterten Bereitstellung bereit"]
