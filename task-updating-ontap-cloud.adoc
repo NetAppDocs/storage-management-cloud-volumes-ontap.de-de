@@ -44,6 +44,137 @@ Die Konsole bietet zwei Möglichkeiten zum Upgrade von Cloud Volumes ONTAP:
 
 Auf welche Version von Cloud Volumes ONTAP Sie aktualisieren können, hängt von der Version von Cloud Volumes ONTAP ab, die Sie derzeit ausführen.
 
+ifdef::aws[]
+
+[cols="2*"]
+|===
+| Aktuelle Version | Versionen, auf die Sie direkt upgraden können 
+
+
+| 9.15.0 | 9.15.1 
+
+
+.2+| 9.14.1 | 9.15.1 
+
+
+| 9.15.0 
+
+
+| 9.14.0 | 9.14.1 
+
+
+.2+| 9.13.1 | 9.14.1 
+
+
+| 9.14.0 
+
+
+| 9.13.0 | 9.13.1 
+
+
+.2+| 9.12.1 | 9.13.1 
+
+
+| 9.13.0 
+
+
+| 9.12.0 | 9.12.1 
+
+
+.2+| 9.11.1 | 9.12.1 
+
+
+| 9.12.0 
+
+
+| 9.11.0 | 9.11.1 
+
+
+.2+| 9.10.1 | 9.11.1 
+
+
+| 9.11.0 
+
+
+| 9.10.0 | 9.10.1 
+
+
+.2+| 9.9.1 | 9.10.1 
+
+
+| 9.10.0 
+
+
+| 9.9.0 | 9.9.1 
+
+
+| 9,8 | 9.9.1 
+
+
+| 9,7 | 9,8 
+
+
+| 9,6 | 9,7 
+
+
+| 9,5 | 9,6 
+
+
+| 9,4 | 9,5 
+
+
+| 9,3 | 9,4 
+
+
+| 9,2 | 9,3 
+
+
+| 9,1 | 9,2 
+
+
+| 9,0 | 9,1 
+
+
+| 8,3 | 9,0 
+|===
+endif::aws[]
+
+ifdef::azure[]
+
+[cols="2*"]
+|===
+| Aktuelle Version | Versionen, auf die Sie direkt upgraden können 
+
+
+| 9.16.1 P3 | 9.17.1 RC1 
+
+
+| 9.15.1 P10 | 9.16.1 P3 
+
+
+| 9.14.1 P13 | 9.15.1 P10 
+
+
+| 9.13.1 P16 | 9.14.1 P13 
+
+
+| 9.12.1 P18 | 9.13.1 P16 
+
+
+| 9.11.1 P20 | 9.12.1 P18 
+|===
+Wenn Sie eine niedrigere Version von Cloud Volumes ONTAP in Azure haben, müssen Sie zuerst auf die nächste Version aktualisieren und den unterstützten Upgradepfaden folgen, um Ihre Zielversion zu erreichen.  Wenn Sie beispielsweise Cloud Volumes ONTAP 9.7 P7 haben, folgen Sie diesem Upgrade-Pfad:
+
+* 9,7 P7 -> 9,8 P18
+* 9.8 P18 -> 9.9.1 P15
+* 9.9.1 P15 -> 9.10.1 P12
+* 9.10.1 P12 -> 9.11.1 P20
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
 [cols="2*"]
 |===
 | Aktuelle Version | Versionen, auf die Sie direkt upgraden können 
@@ -141,6 +272,8 @@ Auf welche Version von Cloud Volumes ONTAP Sie aktualisieren können, hängt von
 
 | 8,3 | 9,0 
 |===
+endif::gcp[]
+
 Beachten Sie Folgendes:
 
 * Die unterstützten Upgradepfade für Cloud Volumes ONTAP unterscheiden sich von denen für einen lokalen ONTAP Cluster.
@@ -158,14 +291,16 @@ Wenn Sie beispielsweise Version 9.8 ausführen und auf 9.10.1 aktualisieren möc
 
 Ab Januar 2024 sind Patch-Upgrades nur verfügbar, wenn ein Patch-Release für die drei neuesten Versionen von Cloud Volumes ONTAP vorliegt.  Gelegentlich sind Patchversionen zur Bereitstellung verfügbar, wenn die RC- oder GA-Version nicht zur Bereitstellung verfügbar ist.
 
-Wir verwenden die neueste GA-Version, um die drei neuesten Versionen zu bestimmen, die in der Konsole angezeigt werden sollen.  Wenn die aktuelle GA-Version beispielsweise 9.13.1 ist, werden Patches für 9.11.1–9.13.1 in der Konsole angezeigt.  Wenn Sie auf eine Patch-Version für Version 9.11.1 oder niedriger aktualisieren möchten, müssen Sie das manuelle Upgrade-Verfahren verwenden, indem Sie<<Upgrade von einem unter einer URL verfügbaren Bild,Herunterladen des ONTAP Images>> .
+Wir verwenden die neueste GA-Version, um die drei neuesten Versionen zu bestimmen, die in der Konsole angezeigt werden sollen. Wenn die aktuelle GA-Version beispielsweise 9.13.1 ist, werden Patches für 9.11.1–9.13.1 in der Konsole angezeigt.
 
-Als allgemeine Regel für Patch-Releases (P) können Sie von einem Versions-Release auf jedes P-Release der aktuell ausgeführten Version oder der nächsten Version aktualisieren.
+Für Patch-Versionen 9.11.1 oder niedriger müssen Sie ein manuelles Upgrade-Verfahren verwenden, indem Sie<<Upgrade von einem unter einer URL verfügbaren Bild,Herunterladen des ONTAP Images>> .
+
+Als allgemeine Regel für Patch-Releases können Sie von einer niedrigeren Patch-Version auf jede höhere Patch-Version in derselben oder der nächsten Cloud Volumes ONTAP Version aktualisieren.
 
 Hier sind einige Beispiele:
 
-* 9.13.0 > 9.13.1P15
-* 9.12.1 > 9.13.1P2
+* 9.13.0 -> 9.13.1 P15
+* 9.12.1 -> 9.13.1 P2
 
 
 
