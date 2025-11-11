@@ -14,7 +14,10 @@ summary: Sie können vorhandene Cloud Volumes ONTAP -Systeme erkennen und zur Ko
 
 
 [role="lead"]
-Sie können vorhandene Cloud Volumes ONTAP -Systeme erkennen und zur NetApp Console hinzufügen.  Dies können Sie tun, wenn Sie ein neues System bereitgestellt haben.
+Sie können bestehende Cloud Volumes ONTAP Systeme in der NetApp Console entdecken und hinzufügen. Dies können Sie tun, wenn Sie ein neues System bereitgestellt haben.
+
+
+NOTE: Sie können nur Systeme hinzufügen, die mit dem Konto registriert sind, mit dem Sie sich in der Konsole angemeldet haben.  Wenn Sie mehrere Konten oder Organisationen haben, stellen Sie sicher, dass Sie im richtigen Konto angemeldet sind, bevor Sie Systeme hinzufügen.  Systeme, die bei einem anderen Konto oder einer anderen Organisation registriert sind, können weder gefunden, angezeigt noch verwaltet werden.
 
 .Bevor Sie beginnen
 Sie müssen das Kennwort für das Cloud Volumes ONTAP Administratorbenutzerkonto kennen.

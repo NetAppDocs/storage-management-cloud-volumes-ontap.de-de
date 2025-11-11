@@ -196,7 +196,8 @@ Beim Lesen durch zufällige Lesevorgänge werden die kalten Datenblöcke in der 
 Keine:: Behält die Daten eines Volumes in der Leistungsstufe und verhindert, dass sie in die Kapazitätsstufe verschoben werden.
 
 
-Wenn Sie ein Volume replizieren, können Sie wählen, ob die Daten in den Objektspeicher verschoben werden sollen.  Wenn Sie dies tun, wendet die Konsole die *Backup*-Richtlinie auf das Datensicherungsvolume an.  Ab Cloud Volumes ONTAP 9.6 ersetzt die Tiering-Richtlinie *All* die Sicherungsrichtlinie.
+.Replikation
+Wenn Sie ein Volume replizieren, können Sie wählen, ob die Daten in den Objektspeicher verschoben werden sollen. Wenn Sie dies tun, wendet die Konsole die *Backup*-Richtlinie auf das Datensicherungsvolume an. Ab Cloud Volumes ONTAP 9.6 ersetzt die Tiering-Richtlinie *All* die Sicherungsrichtlinie. Wenn eine Replikationsbeziehung gelöscht wird, behält das Zielvolume die Tiering-Richtlinie bei, die während der Replikation gültig war.
 
 
 

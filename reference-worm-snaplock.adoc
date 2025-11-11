@@ -29,3 +29,8 @@ Die Snapshot-Kopien übernehmen die WORM-Eigenschaften des Volumes und sind somi
 
 
 NOTE: Obwohl eine Snapshot-Kopie für einen bestimmten Aufbewahrungszeitraum geschützt ist, kann das Quellvolume von einem Clusteradministrator gelöscht werden, da der WORM-Speicher in Cloud Volumes ONTAP nach dem Modell eines „vertrauenswürdigen Speicheradministrators“ betrieben wird.  Darüber hinaus kann ein vertrauenswürdiger Cloud-Administrator die WORM-Daten löschen, indem er die Cloud-Speicherressourcen bearbeitet.
+
+.Weiterführende Links
+* Weitere Informationen zu WORM finden Sie unterlink:concept-worm.html["Erfahren Sie mehr über WORM-Speicher auf Cloud Volumes ONTAP"] Die
+* Informationen zur Abrechnung von SnapLock -Volumes finden Sie unterlink:concept-licensing-charging.html["Lizenzierung und Abrechnung in Cloud Volumes ONTAP"] Die
+

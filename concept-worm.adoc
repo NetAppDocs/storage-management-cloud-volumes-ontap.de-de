@@ -116,4 +116,5 @@ Sie sollten Folgendes über die Aktivierung von Daten-Tiering und WORM-Speicher 
 
 .Weiterführender Link
 * link:reference-worm-snaplock.html["Erstellen Sie manipulationssichere Snapshot-Kopien für den WORM-Speicher"]
+* link:concept-licensing-charging.html["Lizenzierung und Abrechnung in Cloud Volumes ONTAP"]
 
