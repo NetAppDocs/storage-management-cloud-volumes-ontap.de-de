@@ -54,7 +54,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.
 
 Durch die Dimensionierung Ihres Cloud Volumes ONTAP -Systems können Sie die Anforderungen an Leistung und Kapazität erfüllen.  Bei der Auswahl eines Maschinentyps, Datenträgertyps und einer Datenträgergröße sollten Sie einige wichtige Punkte beachten:
 
-Maschinentyp:: Sehen Sie sich die unterstützten Maschinentypen im http://docs.netapp.com/cloud-volumes-ontap/us-en/index.html["Versionshinweise zu Cloud Volumes ONTAP"^] und überprüfen Sie dann die Details von Google zu jedem unterstützten Maschinentyp.  Passen Sie Ihre Workload-Anforderungen an die Anzahl der vCPUs und den Arbeitsspeicher für den Maschinentyp an.  Beachten Sie, dass jeder CPU-Kern die Netzwerkleistung erhöht.
+Maschinentyp:: Schauen Sie sich die unterstützten Maschinentypen in der https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Versionshinweise zu Cloud Volumes ONTAP"^] Anschließend können Sie bei Google die Details zu jedem unterstützten Maschinentyp einsehen. Passen Sie Ihre Workload-Anforderungen an die Anzahl der vCPUs und den Arbeitsspeicher für den Maschinentyp an. Beachten Sie, dass jeder CPU-Kern die Netzwerkleistung erhöht.
 +
 --
 Weitere Einzelheiten finden Sie im Folgenden:
@@ -102,7 +102,7 @@ Weitere Einzelheiten finden Sie im Folgenden:
 Zusätzlich zum Speicher für Benutzerdaten erwirbt die Konsole auch Cloud-Speicher für Cloud Volumes ONTAP -Systemdaten (Boot-Daten, Root-Daten, Core-Daten und NVRAM).  Zu Planungszwecken kann es hilfreich sein, diese Details zu überprüfen, bevor Sie Cloud Volumes ONTAP bereitstellen.
 
 * link:reference-default-configs.html#google-cloud-single-node["Standardfestplatten für Cloud Volumes ONTAP -Systemdaten in Google Cloud anzeigen"] .
-* https://cloud.google.com/compute/quotas["Google Cloud-Dokumente: Ressourcenkontingente"^]
+* https://docs.cloud.google.com/docs/quotas/overview["Google Cloud-Dokumentation: Übersicht über Cloud-Kontingente"^]
 +
 Google Cloud Compute Engine erzwingt Kontingente für die Ressourcennutzung. Stellen Sie daher sicher, dass Sie Ihr Limit nicht erreicht haben, bevor Sie Cloud Volumes ONTAP bereitstellen.
 

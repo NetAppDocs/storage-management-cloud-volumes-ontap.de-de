@@ -24,7 +24,7 @@ NOTE: Andere Ressourcen, wie beispielsweise von NetApp Backup and Recovery verwa
 Wenn die Konsole Cloud Volumes ONTAP bei Ihrem Cloud-Anbieter bereitstellt, aktiviert sie den Kündigungsschutz auf den Instanzen.  Diese Option hilft, eine versehentliche Beendigung zu verhindern.
 
 .Schritte
-. Wenn Sie Backup und Recovery auf dem System aktiviert haben, prüfen Sie, ob die gesicherten Daten noch benötigt werden und https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backups-ontap.html#deleting-backups["Löschen Sie ggf. die Backups"^] .
+. Wenn Sie die Sicherung und Wiederherstellung auf dem System aktiviert haben, prüfen Sie, ob die gesicherten Daten noch benötigt werden, und dann https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html#delete-backups["Löschen Sie ggf. die Backups"^] Die
 +
 Backup und Recovery sind konzeptionell unabhängig von Cloud Volumes ONTAP .  Backup and Recovery löscht Backups nicht automatisch, wenn Sie ein Cloud Volumes ONTAP -System löschen, und in der Benutzeroberfläche gibt es derzeit keine Unterstützung zum Löschen der Backups, nachdem das System gelöscht wurde.
 

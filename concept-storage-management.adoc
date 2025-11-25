@@ -129,7 +129,7 @@ Die automatische Kapazitätsverwaltung der Konsole gilt nicht für LUNs.  Beim E
 
 === Manuelles Kapazitätsmanagement
 
-Wenn der Organisations- oder Kontoadministrator den Kapazitätsverwaltungsmodus auf „manuell“ setzt, werden Sie von der Konsole aufgefordert, entsprechende Maßnahmen für Kapazitätsentscheidungen zu ergreifen.  Für den manuellen Modus gelten die gleichen Beispiele wie für den automatischen Modus, aber es liegt an Ihnen, die Aktionen zu akzeptieren.
+Wenn der Organisations- oder Kontoadministrator den *Kapazitätsverwaltungsmodus* auf manuell einstellt, werden Sie von der Konsole aufgefordert, geeignete Maßnahmen für Kapazitätsentscheidungen zu ergreifen. Für den manuellen Modus gelten die gleichen Beispiele wie für den automatischen Modus, aber es liegt an Ihnen, die Aktionen zu akzeptieren.
 
 
 

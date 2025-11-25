@@ -19,7 +19,7 @@ Während Google Cloud Storage Ihre Daten immer verschlüsselt, bevor sie auf die
 .Schritte
 . Stellen Sie sicher, dass das Dienstkonto des Konsolen-Agenten über die richtigen Berechtigungen auf Projektebene verfügt, und zwar in dem Projekt, in dem der Schlüssel gespeichert ist.
 +
-Die Berechtigungen finden Sie in der https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["die Dienstkontoberechtigungen standardmäßig"^] , wird aber möglicherweise nicht angewendet, wenn Sie ein alternatives Projekt für den Cloud Key Management Service verwenden.
+Die Berechtigungen werden in der https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["die Dienstkontoberechtigungen standardmäßig"^] Dies gilt jedoch möglicherweise nicht, wenn Sie ein alternatives Projekt für den Cloud Key Management Service verwenden.
 
 +
 Die Berechtigungen lauten wie folgt:

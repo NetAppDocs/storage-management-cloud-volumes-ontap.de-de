@@ -45,7 +45,7 @@ Wenn Sie Storage-VMs mithilfe der APIs erstellen, ändert die Konsole neben der 
 
 
 .Bevor Sie beginnen
-Der Konsolenagent benötigt bestimmte Berechtigungen zum Erstellen von Speicher-VMs für Cloud Volumes ONTAP HA-Paare.  Die erforderlichen Berechtigungen sind enthalten in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["die von NetApp bereitgestellten Richtlinien"^] .
+Der Konsolenagent benötigt bestimmte Berechtigungen zum Erstellen von Speicher-VMs für Cloud Volumes ONTAP HA-Paare. Die erforderlichen Berechtigungen sind enthalten in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["die von NetApp bereitgestellten Richtlinien"^] Die
 
 
 
@@ -86,7 +86,7 @@ Fügen Sie die folgenden Parameter in den Anforderungstext ein:
 Mithilfe der APIs können Sie Speicher-VMs sowohl in Einzelknoten- als auch in HA-Konfigurationen umbenennen und löschen.
 
 .Bevor Sie beginnen
-Der Konsolenagent benötigt bestimmte Berechtigungen zum Verwalten von Speicher-VMs für Cloud Volumes ONTAP HA-Paare.  Die erforderlichen Berechtigungen sind enthalten in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["die von NetApp bereitgestellten Richtlinien"^] .
+Der Konsolenagent benötigt bestimmte Berechtigungen zum Verwalten von Speicher-VMs für Cloud Volumes ONTAP HA-Paare. Die erforderlichen Berechtigungen sind enthalten in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["die von NetApp bereitgestellten Richtlinien"^] Die
 
 
 
