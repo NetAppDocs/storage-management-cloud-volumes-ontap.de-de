@@ -49,7 +49,7 @@ link:task-deploying-otc-azure.html["Sehen Sie sich die Schritt-für-Schritt-Anle
 
 Mit der kapazitätsbasierten Lizenzierung können Sie für Cloud Volumes ONTAP pro TiB Kapazität bezahlen. Die kapazitätsbasierte Lizenzierung ist in Form eines _Pakets_ verfügbar: das Essentials-Paket oder das Professional-Paket.
 
-Die Pakete Essentials und Professional sind mit folgenden Verbrauchsmodellen erhältlich:
+Die Pakete Essentials und Professional sind mit folgenden Verbrauchsmodellen bzw. Kaufoptionen erhältlich:
 
 * Eine von NetApp erworbene Lizenz (Bring Your Own License (BYOL))
 * Ein stündliches Pay-as-you-go-Abonnement (PAYGO) aus dem Azure Marketplace
@@ -175,3 +175,14 @@ image:screenshot-keystone.png["Ein Screenshot der Keystone -Abonnementoption bei
 
 
 link:task-deploying-otc-azure.html["Sehen Sie sich die Schritt-für-Schritt-Anleitung zum Starten von Cloud Volumes ONTAP in Azure an"] .
+
+
+
+== Knotenbasierte Lizenz
+
+Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz kann von NetApp (BYOL) erworben werden und ist nur in bestimmten Fällen für Lizenzverlängerungen verfügbar. Weitere Informationen finden Sie unter:
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["Ende der Verfügbarkeit knotenbasierter Lizenzen"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Lizenz in eine kapazitätsbasierte Lizenz"^]
+

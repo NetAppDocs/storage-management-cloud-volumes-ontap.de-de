@@ -170,3 +170,9 @@ Hier ist ein Beispiel:
 `autosupport check show-details`
 
 
+
+.Weiterführende Links
+* link:reference-networking-aws.html["Netzwerkanforderungen für Cloud Volumes ONTAP in AWS"^]
+* link:reference-networking-azure.html["Netzwerkanforderungen für Cloud Volumes ONTAP in Azure"^]
+* link:reference-networking-gcp.html["Netzwerkanforderungen für Cloud Volumes ONTAP in Google Cloud"^]
+

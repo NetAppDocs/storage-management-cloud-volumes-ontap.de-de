@@ -74,6 +74,11 @@ Die zonale Bereitstellung verwendet Premium SSD v2 Managed Disks, wenn die folge
 
 
 --
+
+
+
+NOTE: Wenn Sie Premium SSD Managed Disks für eine Umgebung auswählen, die die oben genannten Kriterien erfüllt, stellt die Konsole automatisch Premium SSD v2 Managed Disks bereit. Ein Wechsel zu Premium SSD v1 Managed Disks ist nicht möglich.
+
 Festplatten:: Kundendaten befinden sich auf verwalteten Festplatten mit lokal redundantem Speicher (LRS).  Jeder Knoten hat Zugriff auf den Speicher des anderen Knotens.  Zusätzlicher Speicher wird auch benötigt fürlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["Boot-, Root-, Partner-Root-, Core- und NVRAM -Daten"^] .
 Speicherkonten:: Speicherkonten werden für Bereitstellungen auf Basis verwalteter Datenträger verwendet, um Diagnoseprotokolle und die Einstufung in Blob-Speicher zu verarbeiten.
 
