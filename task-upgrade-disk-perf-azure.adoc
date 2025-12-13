@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task-upgrade-disk-perf-azure.html 
+keywords: azure, premium ssd v2, Premium SSDv2, performance parameters, cloud volumes ontap 
+summary: Konfigurieren Sie die Leistungsparameter von Premium SSD v2-Datenträgern in Azure. 
+---
+= Ändern der Leistungsstufe von Premium-SSD-Festplatten in Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die Leistungsstufe von Premium SSD-verwalteten Datenträgern in Cloud Volumes ONTAP in Azure über das Azure-Portal erhöhen. Dies ist ein manueller Prozess, bei dem die Festplattenebene jeder Premium-SSD-Festplatte auf eine leistungsstärkere Ebene geändert wird. Durch die Änderung der Leistungsstufe Ihrer NVRAM Festplatte können Leistungsengpässe behoben und die Effizienz Ihres Cloud Volumes ONTAP Systems verbessert werden, indem höhere IOPS- und Durchsatzkapazitäten bereitgestellt werden.
+
+.Informationen zu diesem Vorgang
+* Standardmäßig verwendet Cloud Volumes ONTAP in Azure Premium-SSD-Festplatten für NVRAM in der P20-Tierstufe. Die P20-Leistungsstufe bietet eine ausgewogene Performance, die für die meisten Arbeitslasten geeignet ist. Wenn Ihre Arbeitslast jedoch eine höhere Leistung erfordert, können Sie die NVRAM Festplatte auf eine höhere Stufe wie z. B. P30 aufrüsten.
++
+
+TIP: Derzeit ist ein Upgrade einer NVRAM Festplatte von der P20- auf die P30-Stufe nur über das Azure-Portal möglich.
+
+* Sie ändern die Größe der Festplatte nicht. Die Größe beträgt weiterhin 512 GB. Dieses Verfahren ändert lediglich die Leistungsstufe der Festplatte.
+
+
+.Bevor Sie beginnen
+* Ihre Cloud Volumes ONTAP Version muss 9.11.1 oder höher sein. Bei älteren Versionen können Sie auf Version 9.11.1 oder höher aktualisieren oder einen Feature Policy Variation Request (FPVR) beim NetApp -Support einreichen.
+* Stellen Sie sicher, dass Sie mit dem NetApp -Support zusammenarbeiten, um festzustellen, ob der Engpass in Ihrer Umgebung auf die NVRAM Festplatte zurückzuführen ist und ob ein Upgrade der Speicherebene das Problem behebt.
++
+
+NOTE: Die Aufrüstung der NVRAM Festplatte auf eine höhere Leistungsstufe verursacht zusätzliche Kosten, daher ist es wichtig, den Bedarf für diese Änderung sorgfältig zu prüfen.
+
+
+
+.Schritte
+Dieses Szenario geht von zwei Knoten aus. `node01` Und `node02` in der Cloud Volumes ONTAP Hochverfügbarkeits- (HA) Bereitstellung. Verwenden Sie das Azure-Portal, um die Tarifstufe zu aktualisieren.
+
+. Führen Sie diesen Befehl aus, um Folgendes zu erstellen `node1` der aktive Knoten. Manuelles Failover `node02`Die
++
+`storage failover takeover -ofnode <Node02>`
+
+. Sign in .
+. Sobald die Übernahme abgeschlossen ist, wechseln Sie zur VM-Instanz für `node02`Klicken Sie auf die Schaltfläche *Stopp*, um es auszuschalten.
+. Navigieren Sie zur Ressourcengruppe für `node02` Wählen Sie in der Liste der Datenträger den NVRAM Datenträger aus, dessen Ebene Sie ändern möchten.
+. Wählen Sie *Größe + Leistung*.
+. Wählen Sie im Dropdown-Menü *Leistungsstufe* die Option aus `P30 - 5000 IOPS, 200MB/s`Die
+. Wählen Sie *Größe ändern*.
+. Schalten Sie den/die/das `node02` Beispiel.
+. Überprüfen Sie die Azure-Seriellkonsole, bis die Meldung angezeigt wird: `waiting for giveback`Die
+. Führen Sie diesen Befehl aus, um zurückzugeben `node02`:
++
+`storage failover giveback -ofnode <Node02>`
+
+. Wiederholen Sie diese Schritte am `node01` um zu machen `node02` übernehmen `node01`damit Sie die NVRAM Disk-Ebene für `node01`Die
+
+
+.Nach Abschluss
+Wenn Sie beide Knoten eingeschaltet haben, überprüfen Sie die geänderten Parameter, indem Sie die Datenträgerdetails im Azure-Portal für Ihr Cloud Volumes ONTAP System überprüfen.
+
+.Ähnliche Informationen
+* Azure-Dokumentation: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-performance-tiers?tabs=portal["Ändern Sie Ihre Leistungsstufe ohne Ausfallzeiten."^]
+* Wissensdatenbank für das Support-Team: https://kb.netapp.com/Cloud/Azure_NetApp_Files/How_to_upgrade_performance_tier_of_NVRAM_disk_in_Azure_CVO["So erhöhen Sie die Leistungsstufe eines NVRAM Datenträgers in Azure CVO"^]
+* link:task-updating-ontap-cloud.html["Aktualisieren Sie die Cloud Volumes ONTAP Softwareversionen"]
+

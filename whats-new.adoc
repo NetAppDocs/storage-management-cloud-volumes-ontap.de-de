@@ -951,6 +951,16 @@ Wenn Sie jetzt ohne Marktplatzabonnement auf Cloud Volumes ONTAP in BlueXP zugre
 
 
 
+=== Neue Berechtigungen wurden der AWS IAM-Richtlinie für HA-Mediatoren hinzugefügt.
+
+Diese neuen AWS-Berechtigungen wurden der IAM-Richtlinie für HA-Mediatoren in Cloud Volumes ONTAP Hochverfügbarkeitsumgebungen (HA) hinzugefügt:
+
+* sts:Rolle übernehmen
+* ec2:DescribeSubnets
+
+
+
+
 == 04. April 2023
 
 

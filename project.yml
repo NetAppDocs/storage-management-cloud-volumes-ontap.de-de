@@ -178,9 +178,13 @@ sidebar:
         url: "/task-manage-aggregates.html"
       - title: Verwalten der Kapazitätseinstellungen
         url: "/task-manage-capacity-settings.html"
-      - title: Premium SSD v2-Festplattenleistung in Azure verwalten
+      - title: Verwalten der Festplattenleistung in Azure
         flavor: azure
-        url: "/task-manage-perf-params-azure.html"
+        entries:
+        - title: Premium SSD v2-Festplattenleistung in Azure verwalten
+          url: "/task-manage-perf-params-azure.html"
+        - title: Upgrade der Festplattenleistungsstufe in Azure
+          url: "/task-upgrade-disk-perf-azure.html"
     - title: Storage-VM-Verwaltung
       entries:
       - title: Arbeiten mit Speicher-VMs
