@@ -16,6 +16,9 @@ summary: Konfigurieren Sie die Leistungsparameter von Premium SSD v2-Datenträge
 [role="lead"]
 Sie können die Leistungsstufe von Premium SSD-verwalteten Datenträgern in Cloud Volumes ONTAP in Azure über das Azure-Portal erhöhen. Dies ist ein manueller Prozess, bei dem die Festplattenebene jeder Premium-SSD-Festplatte auf eine leistungsstärkere Ebene geändert wird. Durch die Änderung der Leistungsstufe Ihrer NVRAM Festplatte können Leistungsengpässe behoben und die Effizienz Ihres Cloud Volumes ONTAP Systems verbessert werden, indem höhere IOPS- und Durchsatzkapazitäten bereitgestellt werden.
 
+
+NOTE: Stellen Sie sicher, dass Sie mit dem NetApp -Support zusammenarbeiten, um festzustellen, ob der Engpass in Ihrer Umgebung auf die NVRAM Festplatte zurückzuführen ist und ob ein Upgrade der Speicherebene das Problem behebt.
+
 .Informationen zu diesem Vorgang
 * Standardmäßig verwendet Cloud Volumes ONTAP in Azure Premium-SSD-Festplatten für NVRAM in der P20-Tierstufe. Die P20-Leistungsstufe bietet eine ausgewogene Performance, die für die meisten Arbeitslasten geeignet ist. Wenn Ihre Arbeitslast jedoch eine höhere Leistung erfordert, können Sie die NVRAM Festplatte auf eine höhere Stufe wie z. B. P30 aufrüsten.
 +
@@ -26,12 +29,8 @@ TIP: Derzeit ist ein Upgrade einer NVRAM Festplatte von der P20- auf die P30-Stu
 
 
 .Bevor Sie beginnen
+* Prüfen Sie sorgfältig, ob diese Änderung notwendig ist, da ein Upgrade der NVRAM Festplatte auf eine höhere Leistungsstufe zusätzliche Kosten verursacht.
 * Ihre Cloud Volumes ONTAP Version muss 9.11.1 oder höher sein. Bei älteren Versionen können Sie auf Version 9.11.1 oder höher aktualisieren oder einen Feature Policy Variation Request (FPVR) beim NetApp -Support einreichen.
-* Stellen Sie sicher, dass Sie mit dem NetApp -Support zusammenarbeiten, um festzustellen, ob der Engpass in Ihrer Umgebung auf die NVRAM Festplatte zurückzuführen ist und ob ein Upgrade der Speicherebene das Problem behebt.
-+
-
-NOTE: Die Aufrüstung der NVRAM Festplatte auf eine höhere Leistungsstufe verursacht zusätzliche Kosten, daher ist es wichtig, den Bedarf für diese Änderung sorgfältig zu prüfen.
-
 
 
 .Schritte

@@ -43,23 +43,19 @@ Nachdem Sie überprüft haben, dass ausgehender Internetzugang verfügbar ist, k
 
 == Fehlerbehebung bei Ihrer AutoSupport -Konfiguration
 
-Wenn keine ausgehende Verbindung verfügbar ist und die Konsole Ihr Cloud Volumes ONTAP -System nicht so konfigurieren kann, dass der Konsolenagent als Proxyserver verwendet wird, erhalten Sie von der Konsole eine Benachrichtigung mit dem Titel „<Systemname> kann keine AutoSupport Nachrichten senden.“
-
-Sie erhalten diese Nachricht höchstwahrscheinlich aufgrund von Netzwerkproblemen.
-
-Befolgen Sie diese Schritte, um dieses Problem zu beheben.
+Wenn keine ausgehende Verbindung verfügbar ist und die Konsole Ihr Cloud Volumes ONTAP -System nicht so konfigurieren kann, dass der Konsolenagent als Proxy-Server verwendet wird, erhalten Sie von der Konsole eine Benachrichtigung, dass Ihr System nicht in der Lage ist, AutoSupport Nachrichten zu senden. Befolgen Sie diese Schritte, um dieses Problem zu beheben.
 
 .Schritte
-. Stellen Sie per SSH eine Verbindung zum Cloud Volumes ONTAP -System her, damit Sie das System über die ONTAP -CLI verwalten können.
+. Stellen Sie eine sichere Verbindung (über SSH) zum Cloud Volumes ONTAP System her, um die ONTAP CLI zu verwenden.
 +
 link:task-connecting-to-otc.html["Erfahren Sie, wie Sie per SSH auf Cloud Volumes ONTAP zugreifen"] .
 
-. Zeigen Sie den detaillierten Status des AutoSupport Subsystems an:
+. Überprüfen Sie den detaillierten Status des AutoSupport Subsystems:
 +
 `autosupport check show-details`
 
 +
-Die Antwort sollte etwa wie folgt lauten:
+Die Antwort sieht folgendermaßen aus:
 
 +
 [listing]
@@ -95,9 +91,9 @@ Die Antwort sollte etwa wie folgt lauten:
     5 entries were displayed.
 ----
 +
-Wenn der Status der http-https-Kategorie „ok“ ist, bedeutet dies, dass AutoSupport ordnungsgemäß konfiguriert ist und Nachrichten gesendet werden können.
+Wenn der Status der Kategorie http-https ist `OK` Das bedeutet, dass AutoSupport ordnungsgemäß konfiguriert ist und Nachrichten gesendet werden können.
 
-. Wenn der Status nicht in Ordnung ist, überprüfen Sie die Proxy-URL für jeden Cloud Volumes ONTAP -Knoten:
+. Falls nicht, überprüfen Sie die Proxy-URL für jeden Cloud Volumes ONTAP -Knoten:
 +
 `autosupport show -fields proxy-url`
 
@@ -109,37 +105,27 @@ Wenn der Status der http-https-Kategorie „ok“ ist, bedeutet dies, dass AutoS
 +
 `autosupport check show-details`
 
-. Wenn der Status weiterhin „Fehlgeschlagen“ lautet, überprüfen Sie, ob über Port 3128 eine Verbindung zwischen Cloud Volumes ONTAP und dem Konsolenagenten besteht.
-. Wenn die Status-ID nach der Überprüfung der Konnektivität immer noch fehlgeschlagen ist, stellen Sie eine SSH-Verbindung zum Konsolenagenten her.
+. Wenn der Status weiterhin „Fehlgeschlagen“ lautet, überprüfen Sie, ob eine Verbindung zwischen Cloud Volumes ONTAP und dem Konsolenagenten über Port 10 besteht. `3128`Die
+. Wenn der Status nach der Überprüfung immer noch fehlgeschlagen ist, stellen Sie eine SSH-Verbindung zum Konsolenagenten her.
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["Erfahren Sie mehr über die Verbindung zur Linux-VM für den Konsolen-Agenten"^]
 
-. Gehe zu `/opt/application/netapp/cloudmanager/docker_occm/data/`
-. Öffnen Sie die Proxy-Konfigurationsdatei `squid.conf`
-+
-Die Grundstruktur der Datei ist wie folgt:
-
+. Gehe zu `/opt/application/netapp/cloudmanager/docker_occm/data/`Die
+. Öffnen Sie die Proxy-Konfigurationsdatei `squid.conf`Die Dies ist die Struktur der Datei:
 +
 [listing]
 ----
         http_port 3128
-        acl localnet src 172.31.0.0/16
-        acl azure_aws_metadata dst 169.254.169.254
-
-        http_access allow localnet
-        http_access deny azure_aws_metadata
-        http_access allow localhost
+        acl netapp_support dst support.netapp.com
+        http_access allow netapp_support
+        request_header_max_size 21 KB
+        reply_header_max_size 21 KB
         http_access deny all
+        httpd_suppress_version_string on
 ----
-+
-Der Localnet-Quellwert ist der CIDR des Cloud Volumes ONTAP Systems.
-
-. Wenn der CIDR-Block des Cloud Volumes ONTAP -Systems nicht im in der Datei angegebenen Bereich liegt, aktualisieren Sie entweder den Wert oder fügen Sie wie folgt einen neuen Eintrag hinzu:
+. Falls Ihre Datei keinen Eintrag für den CIDR-Block des Cloud Volumes ONTAP Systems enthält, fügen Sie einen neuen Eintrag hinzu und erlauben Sie den Zugriff:
 +
 `acl cvonet src <cidr>`
-
-+
-Wenn Sie diesen neuen Eintrag hinzufügen, vergessen Sie nicht, auch einen Zulassungseintrag hinzuzufügen:
 
 +
 `http_access allow cvonet`
@@ -151,21 +137,24 @@ Hier ist ein Beispiel:
 [listing]
 ----
         http_port 3128
-        acl localnet src 172.31.0.0/16
-        acl cvonet src 172.33.0.0/16
-        acl azure_aws_metadata dst 169.254.169.254
-
-        http_access allow localnet
+        acl netapp_support dst support.netapp.com
+        acl cvonet src <cidr>
+        http_access allow netapp_support
         http_access allow cvonet
-        http_access deny azure_aws_metadata
-        http_access allow localhost
+        request_header_max_size 21 KB
+        reply_header_max_size 21 KB
         http_access deny all
-----
-. Starten Sie den Proxy-Container nach dem Bearbeiten der Konfigurationsdatei als sudo neu:
-+
-`docker restart squid`
+        httpd_suppress_version_string on
 
-. Gehen Sie zurück zur Cloud Volumes ONTAP CLI und überprüfen Sie, ob Cloud Volumes ONTAP AutoSupport Nachrichten senden kann:
+----
+. Nach der Bearbeitung der Konfigurationsdatei muss der Proxy-Container neu gestartet werden. `sudo`Die Je nachdem, ob Sie Docker oder Podman verwenden, führen Sie folgende Befehle aus:
++
+Für Docker: Führen Sie Folgendes aus `docker restart squid`Die
+
++
+Wenn Sie Podman verwenden, führen Sie Folgendes aus: `podman restart squid`Die
+
+. Kehren Sie zur ONTAP CLI zurück und überprüfen Sie, ob Cloud Volumes ONTAP AutoSupport Nachrichten senden kann:
 +
 `autosupport check show-details`
 

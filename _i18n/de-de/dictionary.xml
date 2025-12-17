@@ -4883,8 +4883,6 @@
   <block id="60fa402d7162faa0faac952aacc0cc45" category="paragraph">Auf welche Version von Cloud Volumes ONTAP Sie aktualisieren können, hängt von der Version von Cloud Volumes ONTAP ab, die Sie derzeit ausführen.</block>
   <block id="011fedf4050817b8826f95a53d9555b2" category="cell">Aktuelle Version</block>
   <block id="03d03c99e963327d79f9c5e388192eec" category="cell">Versionen, auf die Sie direkt upgraden können</block>
-  <block id="401117ae72e5a93172e8ce8c23c7676d" category="cell">9.16.1 (nur für Azure und Google Cloud)</block>
-  <block id="36991a14fecff3acb300e7240e20124a" category="cell">9.17.1 (nur für Azure und Google Cloud)</block>
   <block id="d544ab02530940d46c43ea00a73d59d3" category="cell">9.14.1</block>
   <block id="f316f0dfd566f9d842d2d368b7e3ecbb" category="cell">9.14.0</block>
   <block id="57a3061930625af99195891e9e561fb2" category="cell">9.13.1</block>
@@ -5041,37 +5039,17 @@
   <block id="3fa85a72fa6129f493f73fd51c5d3577" category="inline-link">ONTAP -Dokumentation: AutoSupport einrichten</block>
   <block id="624816c9fe7ea9b487697f42ef1d812e" category="paragraph">Nachdem Sie überprüft haben, dass ausgehender Internetzugang verfügbar ist, können Sie AutoSupport testen, um sicherzustellen, dass es Nachrichten senden kann.  Anweisungen hierzu finden Sie im<block ref="0ec547f9fa42cb2a8601b4546d54623e" category="inline-link-rx"></block> .</block>
   <block id="295477dc121353b83198c98d83f89695" category="section-title">Fehlerbehebung bei Ihrer AutoSupport -Konfiguration</block>
-  <block id="a1946ab3756444f706cea53791b48a79" category="paragraph">Wenn keine ausgehende Verbindung verfügbar ist und die Konsole Ihr Cloud Volumes ONTAP -System nicht so konfigurieren kann, dass der Konsolenagent als Proxyserver verwendet wird, erhalten Sie von der Konsole eine Benachrichtigung mit dem Titel „&lt;Systemname&gt; kann keine AutoSupport Nachrichten senden.“</block>
-  <block id="db5287528bed608802655c082c0e89b3" category="paragraph">Sie erhalten diese Nachricht höchstwahrscheinlich aufgrund von Netzwerkproblemen.</block>
-  <block id="dde3c8b1dec7c8e74a01b666f1bf5eb8" category="paragraph">Befolgen Sie diese Schritte, um dieses Problem zu beheben.</block>
-  <block id="81dc37ad7d24f55bbc43818904c3ff08" category="list-text">Stellen Sie per SSH eine Verbindung zum Cloud Volumes ONTAP -System her, damit Sie das System über die ONTAP -CLI verwalten können.</block>
   <block id="aaacc29944816e45aadf00dcf2b06295" category="inline-link-macro">Erfahren Sie, wie Sie per SSH auf Cloud Volumes ONTAP zugreifen</block>
   <block id="16ed58a43f5928920b01b4d3f2ffe1e7" category="paragraph"><block ref="881a093612fe18cf624d7327d89e776b" category="inline-link-macro-rx"></block> .</block>
-  <block id="cbd751aef187f8ce08c4f421fa7a69b0" category="list-text">Zeigen Sie den detaillierten Status des AutoSupport Subsystems an:</block>
   <block id="c107ec2f22978848d28bc9ad31ef0dfb" category="paragraph"><block ref="81c21a9dd47f4497ecc9a94b1e8e1b68" prefix="" category="inline-code"></block></block>
-  <block id="c104f1b6e67db66325fd6e3b3c15d6df" category="paragraph">Die Antwort sollte etwa wie folgt lauten:</block>
-  <block id="ed81107a25dc0eeca0e3233e60698b7a" category="paragraph">Wenn der Status der http-https-Kategorie „ok“ ist, bedeutet dies, dass AutoSupport ordnungsgemäß konfiguriert ist und Nachrichten gesendet werden können.</block>
-  <block id="9f59ad83e7de9eb9a77d34e134c77c4e" category="list-text">Wenn der Status nicht in Ordnung ist, überprüfen Sie die Proxy-URL für jeden Cloud Volumes ONTAP -Knoten:</block>
   <block id="f19476ab2e2055c09d74472c7f8de866" category="paragraph"><block ref="12da01faa8d30c6943c1117f98b0a34e" prefix="" category="inline-code"></block></block>
   <block id="d189be7e0d55d37168f7a5b7576db1c5" category="list-text">Wenn der Proxy-URL-Parameter leer ist, konfigurieren Sie Cloud Volumes ONTAP so, dass der Konsolenagent als Proxy verwendet wird:</block>
   <block id="5edd12b5d04ceb05f6e5ed6adbc3a66a" category="paragraph"><block ref="21216b677a71216288c68360dba0adef" prefix="" category="inline-code"></block></block>
-  <block id="eb137357f3d5b1a66652db0bfbe38072" category="list-text">Überprüfen Sie den AutoSupport Status erneut:</block>
-  <block id="fa43ae0497f481c84938feada17cb1bf" category="list-text">Wenn der Status weiterhin „Fehlgeschlagen“ lautet, überprüfen Sie, ob über Port 3128 eine Verbindung zwischen Cloud Volumes ONTAP und dem Konsolenagenten besteht.</block>
-  <block id="b30985c63680dd18c933ffcbb85fde7b" category="list-text">Wenn die Status-ID nach der Überprüfung der Konnektivität immer noch fehlgeschlagen ist, stellen Sie eine SSH-Verbindung zum Konsolenagenten her.</block>
   <block id="edb7bad4815e112a09251c5a6fc89fa9" category="inline-link">Erfahren Sie mehr über die Verbindung zur Linux-VM für den Konsolen-Agenten</block>
   <block id="f77472ae668c39afdddc839efba6e05f" category="paragraph"><block ref="f77472ae668c39afdddc839efba6e05f" category="inline-link-rx"></block></block>
-  <block id="6663d276bb03698e23e1c8571b15a0ec" category="list-text">Gehe zu<block ref="0c515e6cdaab1ae82012a17e1bec1dee" prefix=" " category="inline-code"></block></block>
-  <block id="82d78a22685306ed68bbf81d14a33e4d" category="list-text">Öffnen Sie die Proxy-Konfigurationsdatei<block ref="623da9488a3da93e7eefb08dd3bccb0f" prefix=" " category="inline-code"></block></block>
-  <block id="a6b5e6b211bf426f61152c5d404a1ccd" category="paragraph">Die Grundstruktur der Datei ist wie folgt:</block>
-  <block id="7e886757743abb700fa9af0ded4353cc" category="paragraph">Der Localnet-Quellwert ist der CIDR des Cloud Volumes ONTAP Systems.</block>
-  <block id="ba11a8c68a86c1c549117e7fed736b67" category="list-text">Wenn der CIDR-Block des Cloud Volumes ONTAP -Systems nicht im in der Datei angegebenen Bereich liegt, aktualisieren Sie entweder den Wert oder fügen Sie wie folgt einen neuen Eintrag hinzu:</block>
   <block id="e53e86f49fbf31d6404a832e79d30758" category="paragraph"><block ref="40711ab114935e86a3ba41c4b5994cb2" prefix="" category="inline-code"></block></block>
-  <block id="56fb36ada37785127def214dd30a1607" category="paragraph">Wenn Sie diesen neuen Eintrag hinzufügen, vergessen Sie nicht, auch einen Zulassungseintrag hinzuzufügen:</block>
   <block id="3e454df771adc9ead6632eefa975b41b" category="paragraph"><block ref="06a7153e7f90941a4abd483a38e2283b" prefix="" category="inline-code"></block></block>
   <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">Hier ist ein Beispiel:</block>
-  <block id="bb1d35cbbb58724ffea0d2f36a9f993a" category="list-text">Starten Sie den Proxy-Container nach dem Bearbeiten der Konfigurationsdatei als sudo neu:</block>
-  <block id="5bec21ecbe2e3a86d7d4ed6908def9b1" category="paragraph"><block ref="b1831e4c01f17e88347609d404d308c0" prefix="" category="inline-code"></block></block>
-  <block id="ea92910b55077f3c4e27aa9df66efbf8" category="list-text">Gehen Sie zurück zur Cloud Volumes ONTAP CLI und überprüfen Sie, ob Cloud Volumes ONTAP AutoSupport Nachrichten senden kann:</block>
   <block id="44579e142f1f753a153dbb19dac8125c" category="summary">Überprüfen Sie die von Google Cloud heruntergeladene Datei disk.raw mithilfe von OpenSSL anhand des Inhalts der Digest-Datei.</block>
   <block id="bd915a4eab5328d0dbd80804cc09ee0a" category="doc">Überprüfen Sie die Google Cloud-Image-Datei disk.raw für Cloud Volumes ONTAP mit OpenSSL</block>
   <block id="9790936d7b09c3cf187b770347ee60d1" category="paragraph">Sie können die von Google Cloud heruntergeladene Datei disk.raw mit dem Inhalt der Digest-Datei vergleichen, der über die<block ref="4af4717946461f54169780875a3b5a98" category="inline-link-rx"></block> mit OpenSSL.</block>
@@ -6090,7 +6068,6 @@
   <block id="686adea694e622fed8c665723cc0407f" category="list-text">Sie ändern die Größe der Festplatte nicht. Die Größe beträgt weiterhin 512 GB. Dieses Verfahren ändert lediglich die Leistungsstufe der Festplatte.</block>
   <block id="60148540e7bc47a2a5cb3aa5c6669625" category="list-text">Ihre Cloud Volumes ONTAP Version muss 9.11.1 oder höher sein. Bei älteren Versionen können Sie auf Version 9.11.1 oder höher aktualisieren oder einen Feature Policy Variation Request (FPVR) beim NetApp -Support einreichen.</block>
   <block id="a779e934fd58bae998629bc70c905a6e" category="list-text">Stellen Sie sicher, dass Sie mit dem NetApp -Support zusammenarbeiten, um festzustellen, ob der Engpass in Ihrer Umgebung auf die NVRAM Festplatte zurückzuführen ist und ob ein Upgrade der Speicherebene das Problem behebt.</block>
-  <block id="d7cdcc7698a8a9000d22166d03400c69" category="admonition">Die Aufrüstung der NVRAM Festplatte auf eine höhere Leistungsstufe verursacht zusätzliche Kosten, daher ist es wichtig, den Bedarf für diese Änderung sorgfältig zu prüfen.</block>
   <block id="9d0625da71c4c34eb7b785d5b10361f5" category="paragraph">Dieses Szenario geht von zwei Knoten aus.<block ref="705cc8c4aab2c0dfb3a3f280da16760d" prefix=" " category="inline-code"></block> Und<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block> in der Cloud Volumes ONTAP Hochverfügbarkeits- (HA) Bereitstellung. Verwenden Sie das Azure-Portal, um die Tarifstufe zu aktualisieren.</block>
   <block id="1e723d832b26dbdada01d30484af1ea6" category="list-text">Führen Sie diesen Befehl aus, um Folgendes zu erstellen<block ref="164546f60261c7e4be0c5f5f9aaeec86" prefix=" " category="inline-code"></block> der aktive Knoten. Manuelles Failover<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block>Die</block>
   <block id="e4a4efef44785c5db0774c22b88b3301" category="paragraph"><block ref="be0eb3f3fba241dc79337017002bd31a" prefix="" category="inline-code"></block></block>
@@ -6117,4 +6094,22 @@
   <block id="fa70443be85a3feec8a5eb9d46413a96" category="list-text">ec2:DescribeSubnets</block>
   <block id="48f3ff89d323f3866cd390a624301cc2" category="sidebar">Verwalten der Festplattenleistung in Azure</block>
   <block id="3cf9ca795dbee25a8b72a8475b07c0fc" category="sidebar">Upgrade der Festplattenleistungsstufe in Azure</block>
+  <block id="81e76ca235a16e1d875f94529d326de0" category="cell">9.17.1</block>
+  <block id="66d3aa0db1db25a4a906a01992596e27" category="list-text">Prüfen Sie sorgfältig, ob diese Änderung notwendig ist, da ein Upgrade der NVRAM Festplatte auf eine höhere Leistungsstufe zusätzliche Kosten verursacht.</block>
+  <block id="648d6475bce5354b3cd3c893b2df49f3" category="paragraph">Wenn keine ausgehende Verbindung verfügbar ist und die Konsole Ihr Cloud Volumes ONTAP -System nicht so konfigurieren kann, dass der Konsolenagent als Proxy-Server verwendet wird, erhalten Sie von der Konsole eine Benachrichtigung, dass Ihr System nicht in der Lage ist, AutoSupport Nachrichten zu senden. Befolgen Sie diese Schritte, um dieses Problem zu beheben.</block>
+  <block id="80d895fadacc0310355c1c423023695b" category="list-text">Stellen Sie eine sichere Verbindung (über SSH) zum Cloud Volumes ONTAP System her, um die ONTAP CLI zu verwenden.</block>
+  <block id="aa97e0e01499260ff0be40e0c5ee6b4d" category="list-text">Überprüfen Sie den detaillierten Status des AutoSupport Subsystems:</block>
+  <block id="cb6394a3f752e613867a44c85f05b77d" category="paragraph">Die Antwort sieht folgendermaßen aus:</block>
+  <block id="afd20e04ccfacda1e34669053f15614a" category="paragraph">Wenn der Status der Kategorie http-https ist<block ref="e0aa021e21dddbd6d8cecec71e9cf564" prefix=" " category="inline-code"></block> Das bedeutet, dass AutoSupport ordnungsgemäß konfiguriert ist und Nachrichten gesendet werden können.</block>
+  <block id="d70d97bee2a0c0c4bc9b6d26a5db69af" category="list-text">Falls nicht, überprüfen Sie die Proxy-URL für jeden Cloud Volumes ONTAP -Knoten:</block>
+  <block id="3504ac7be9d6451718f66224c379031d" category="list-text">Überprüfen Sie den AutoSupport Status erneut:</block>
+  <block id="57035e3c80e6846d3837833d5c8f2544" category="list-text">Wenn der Status weiterhin „Fehlgeschlagen“ lautet, überprüfen Sie, ob eine Verbindung zwischen Cloud Volumes ONTAP und dem Konsolenagenten über Port 10 besteht.<block ref="dff8e9c2ac33381546d96deea9922999" prefix=" " category="inline-code"></block>Die</block>
+  <block id="084efc5dfc334f60fa8895df5bfc0151" category="list-text">Wenn der Status nach der Überprüfung immer noch fehlgeschlagen ist, stellen Sie eine SSH-Verbindung zum Konsolenagenten her.</block>
+  <block id="cc4964154dd0a9e876973c53ffd0fbf7" category="list-text">Gehe zu<block ref="0c515e6cdaab1ae82012a17e1bec1dee" prefix=" " category="inline-code"></block>Die</block>
+  <block id="c0b1a66c4164f93e913b95a49dc7cca5" category="list-text">Öffnen Sie die Proxy-Konfigurationsdatei<block ref="623da9488a3da93e7eefb08dd3bccb0f" prefix=" " category="inline-code"></block>Die Dies ist die Struktur der Datei:</block>
+  <block id="31e2a17e75e2111770329974bd621551" category="list-text">Falls Ihre Datei keinen Eintrag für den CIDR-Block des Cloud Volumes ONTAP Systems enthält, fügen Sie einen neuen Eintrag hinzu und erlauben Sie den Zugriff:</block>
+  <block id="e508adf8c3b9c47ed0e44cc8e99325b5" category="list-text">Nach der Bearbeitung der Konfigurationsdatei muss der Proxy-Container neu gestartet werden.<block ref="d338b3f0f405eb5e51c8cc1e5ca66f02" prefix=" " category="inline-code"></block>Die Je nachdem, ob Sie Docker oder Podman verwenden, führen Sie folgende Befehle aus:</block>
+  <block id="980dfdd6fab780885793f0ec42399ae0" category="paragraph">Für Docker: Führen Sie Folgendes aus<block ref="b1831e4c01f17e88347609d404d308c0" prefix=" " category="inline-code"></block>Die</block>
+  <block id="007b7067c04893459ac324df1874eb1e" category="paragraph">Wenn Sie Podman verwenden, führen Sie Folgendes aus:<block ref="db80c2b4c5690b79ed051a59a7bb3556" prefix=" " category="inline-code"></block>Die</block>
+  <block id="1432f9e7501db8840fbc871624751a97" category="list-text">Kehren Sie zur ONTAP CLI zurück und überprüfen Sie, ob Cloud Volumes ONTAP AutoSupport Nachrichten senden kann:</block>
 </blocks>
