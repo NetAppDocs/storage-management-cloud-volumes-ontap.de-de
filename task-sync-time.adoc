@@ -14,6 +14,21 @@ summary: Durch die Angabe eines NTP-Servers wird die Zeit zwischen den Systemen 
 
 
 [role="lead"]
-Durch die Angabe eines NTP-Servers wird die Zeit zwischen den Systemen in Ihrem Netzwerk synchronisiert, wodurch Probleme aufgrund von Zeitunterschieden vermieden werden können.
+Um eine genaue Zeitsynchronisierung zu gewährleisten, müssen Sie einen Network Time Protocol (NTP)-Server für Ihre Cloud Volumes ONTAP Systeme einrichten. Stellen Sie sicher, dass Sie bei allen Cloud-Anbietern einen NTP-Server für Ihre Cloud Volumes ONTAP Systeme konfigurieren, um eine konsistente Zeitsynchronisierung innerhalb Ihres Netzwerks zu gewährleisten.
 
-Geben Sie einen NTP-Server an, indem Sie https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html["NetApp Console -API"^] oder über die Benutzeroberfläche, wenn Sielink:task-create-volumes.html#create-a-volume["Erstellen Sie einen CIFS-Server"] .
+
+NOTE: Wenn Sie keinen NTP-Server konfigurieren, kann es zu Serviceunterbrechungen und ungenauer Zeitsynchronisierung kommen.
+
+Sie können einen NTP-Server wie folgt angeben:
+
+* https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html["Die NetApp Console API"^].
+* Der ONTAP CLI-Befehl https://docs.netapp.com/us-en/ontap-cli//cluster-time-service-ntp-server-create.html["Cluster-Zeitdienst-NTP-Server erstellen"^]Die
+
+
+.Weiterführende Links
+* Wissensdatenbankartikel (KB): https://kb.netapp.com/Cloud/ncds/nds/cvo/cvo_kbs/How_does_a_CVO_cluster_use_NTP["Wie nutzt ein CVO-Cluster NTP?"]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html["Vorbereiten der Verwendung der API"^]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Cloud Volumes ONTAP -Workflows"^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier["Abrufen der erforderlichen Kennungen"^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html["Verwenden Sie die REST-APIs für die NetApp Console"^]
+
