@@ -169,9 +169,15 @@ Beim Essentials-Paket fällt die Gebühr für die Mindestkapazität von 4 TiB ni
 
 
 
-== Wie Überschreitungen abgerechnet werden
+== Abrechnungseinstellungen und Überschreitungen
 
-Wenn Sie Ihre BYOL-Kapazität überschreiten, werden Ihnen die Überschreitungen zu Stundensätzen basierend auf Ihrem Marktplatzabonnement in Rechnung gestellt. Überschreitungen werden zu Marktplatzpreisen abgerechnet, wobei die Nutzung der verfügbaren Kapazität aus anderen Lizenzen bevorzugt wird. Wenn Ihre BYOL-Lizenz abläuft, müssen Sie über Cloud-Marktplätze auf ein kapazitätsbasiertes Lizenzmodell umsteigen. Weitere Informationen finden Sie unterlink:task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Cloud Volumes ONTAP -Lizenz in eine kapazitätsbasierte Lizenz"] Die
+Im Abschnitt * Licenses and subscriptions* in der Konsole können Sie auswählen, wie die Abrechnung erfolgen soll. Überschreitungen entstehen, wenn Ihre Nutzung die in Ihrem Lizenzpaket oder Jahresabonnement festgelegte Kapazität überschreitet.
+
+* * NetApp -Lizenzen zuerst*: Bei diesem Modell wird Ihre Nutzung zunächst auf die Kapazität Ihres Lizenzpakets (BYOL) angerechnet. Wenn Sie Ihre Lizenzkapazität überschreiten, werden die Mehrkosten auf Basis Ihres jährlichen Marktplatz-Abonnements oder Ihrer stündlichen Marktplatz-Abrechnungssätze (PAYGO) berechnet. Wenn Ihre BYOL-Lizenz abläuft, müssen Sie über die Cloud-Marktplätze auf ein kapazitätsbasiertes Lizenzierungsmodell umsteigen. Weitere Informationen finden Sie unter link:task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Cloud Volumes ONTAP -Lizenz in eine kapazitätsbasierte Lizenz"]Die
+* *Nur für Marketplace-Abonnements*: Bei diesem Modell wird Ihre Nutzung zunächst über Ihr jährliches Marketplace-Abonnement abgerechnet. Jegliche zusätzliche Nutzung wird zu den stundenweisen On-Demand-Tarifen des Marktplatzes abgerechnet (PAYGO). Nicht genutzte Lizenzkapazität wird bei der Abrechnung nicht berücksichtigt.
+
+
+Weitere Informationen zu den Abrechnungseinstellungen finden Sie unter https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html["Erfahren Sie mehr über die Abrechnungseinstellungen für Lizenzen und Abonnements."^]Die
 
 
 

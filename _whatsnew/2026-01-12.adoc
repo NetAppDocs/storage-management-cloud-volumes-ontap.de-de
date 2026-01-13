@@ -1,0 +1,11 @@
+= Bevorzugte Abrechnungsoption für Cloud Volumes ONTAP
+:allow-uri-read: 
+
+
+
+
+=== Bevorzugte Abrechnungsoption für Cloud Volumes ONTAP
+
+Sie können nun eine bevorzugte Abrechnungsoption für die Berechnung Ihrer Cloud Volumes ONTAP Nutzung und etwaiger Mehrkosten auswählen. Da das Lizenzmodell Bring Your Own Licenses (BYOL) ab dem 25. Juni 2025 nur noch eingeschränkt verfügbar ist, hat NetApp im Abschnitt *Lizenzierung und Abonnements* der NetApp Console bevorzugte Abrechnungsmethoden hinzugefügt. Sie können entweder Ihr jährliches Marktplatz-Abonnement für die Abrechnung und die Beitreibung von Mehrkosten oder das bestehende BYOL-Modell als bevorzugte Option nutzen. Dies gibt Ihnen die Flexibilität, die Abrechnungsmethode zu wählen, die am besten zur Finanzstrategie und den Nutzungsmustern Ihres Unternehmens passt.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#billing-preferences-and-overages["Abrechnungseinstellungen und Überschreitungen"^]Die
