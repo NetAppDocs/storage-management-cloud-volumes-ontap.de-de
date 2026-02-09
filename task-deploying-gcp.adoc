@@ -23,7 +23,7 @@ Sie können Cloud Volumes ONTAP in einer Einzelknotenkonfiguration oder als HA-P
 Bevor Sie beginnen, benötigen Sie Folgendes.
 
 [[licensing]]
-* Ein Konsolenagent, der aktiv ist und läuft.
+* Ein NetApp Console-Agent, der betriebsbereit ist.
 +
 ** Sie sollten über eine https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Konsolenagent, der mit Ihrem System verknüpft ist"^] .
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Sie sollten darauf vorbereitet sein, den Konsolenagenten immer laufen zu lassen"^] .
@@ -85,7 +85,7 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 | Projekt bearbeiten  a| 
 Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP gespeichert werden soll.  Das Standardprojekt ist das Projekt der Konsole.
 
-Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Gehen Sie zur Google Cloud-Konsole, öffnen Sie den IAM-Dienst und wählen Sie das Projekt aus.  Fügen Sie diesem Projekt das Dienstkonto mit der Rolle hinzu, die Sie für die Konsole verwenden. Sie müssen diesen Schritt für jedes Projekt wiederholen.
+Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Gehen Sie zur Google Cloud Console, öffnen Sie den IAM-Dienst und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die Console verwenden, zu diesem Projekt hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
 
 
 NOTE: Dies ist das Dienstkonto, das Sie für die Konsole eingerichtet haben.link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["wie auf dieser Seite beschrieben"^] .
@@ -100,7 +100,7 @@ Um ein Cloud Volumes ONTAP -System mit nutzungsbasierter Bezahlung zu erstellen,
 
 TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
 
-. *Standort und Konnektivität*: Wählen Sie einen Standort aus, wählen Sie eine Firewall-Richtlinie und bestätigen Sie die Netzwerkkonnektivität zum Google Cloud-Speicher für die Datenschichtung.
+. *Standort & Konnektivität*: Wählen Sie die Google Cloud-Region und -Zone für Ihr System, wählen Sie eine Firewall-Richtlinie und bestätigen Sie die Netzwerkverbindung zu Google Cloud storage für die Daten-Tiering.
 +
 In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
 
@@ -182,7 +182,7 @@ Beachten Sie Folgendes:
 ** Die Konsole richtet das Dienstkonto auf der Cloud Volumes ONTAP Instanz ein. Dieses Dienstkonto bietet Berechtigungen für die Datenschichtung in einem Google Cloud Storage-Bucket.  Stellen Sie sicher, dass Sie das Dienstkonto des Konsolenagenten als Benutzer des Tiering-Dienstkontos hinzufügen, da Sie es sonst nicht aus der Konsole auswählen können.
 ** Hilfe zum Hinzufügen eines Google Cloud-Kontos finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Einrichten und Hinzufügen von Google Cloud-Konten für Daten-Tiering mit 9.6"^] .
 ** Sie können beim Erstellen oder Bearbeiten eines Volumes eine bestimmte Volume-Tiering-Richtlinie auswählen.
-** Wenn Sie die Datenschichtung deaktivieren, können Sie sie für nachfolgende Aggregate aktivieren. Dazu müssen Sie jedoch das System ausschalten und ein Dienstkonto über die Google Cloud-Konsole hinzufügen.
+** Wenn Sie die Datenschichtung deaktivieren, können Sie sie bei nachfolgenden Aggregaten wieder aktivieren, aber Sie müssen das System ausschalten und ein Dienstkonto aus der Google Cloud Console hinzufügen.
 +
 link:concept-data-tiering.html["Weitere Informationen zum Daten-Tiering"^] .
 
@@ -272,9 +272,6 @@ Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, 
 
 Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
 
-
-CAUTION: Ändern Sie nach Abschluss des Bereitstellungsprozesses nicht die systemgenerierten Cloud Volumes ONTAP Konfigurationen im Google Cloud-Portal, insbesondere nicht die System-Tags. Alle an diesen Konfigurationen vorgenommenen Änderungen können zu unerwartetem Verhalten oder Datenverlust führen.
-
 .Nach Abschluss
 * Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.
 * Wenn Sie Kontingente auf Volumes anwenden möchten, verwenden Sie ONTAP System Manager oder die ONTAP CLI.
@@ -282,6 +279,9 @@ CAUTION: Ändern Sie nach Abschluss des Bereitstellungsprozesses nicht die syste
 Mithilfe von Kontingenten können Sie den Speicherplatz und die Anzahl der von einem Benutzer, einer Gruppe oder einem Qtree verwendeten Dateien beschränken oder verfolgen.
 
 
+
+
+CAUTION: Nach Abschluss des Bereitstellungsprozesses dürfen die systemgenerierten Cloud Volumes ONTAP Konfigurationen im Google Cloud-Portal, wie zum Beispiel die System-Tags und die in den Google Cloud-Ressourcen festgelegten Labels, nicht verändert werden. Jegliche Änderungen an diesen Konfigurationen können zu unerwartetem Verhalten oder Datenverlust führen.
 
 
 
@@ -318,7 +318,7 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 | Projekt bearbeiten  a| 
 Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP gespeichert werden soll.  Das Standardprojekt ist das Projekt der Konsole.
 
-Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Gehen Sie zur Google Cloud-Konsole, öffnen Sie den IAM-Dienst und wählen Sie das Projekt aus.  Fügen Sie diesem Projekt das Dienstkonto mit der Rolle hinzu, die Sie für die Konsole verwenden. Sie müssen diesen Schritt für jedes Projekt wiederholen.
+Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Gehen Sie zur Google Cloud Console, öffnen Sie den IAM-Dienst und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die Console verwenden, zu diesem Projekt hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
 
 
 NOTE: Dies ist das Dienstkonto, das Sie für die Konsole eingerichtet haben.link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["wie auf dieser Seite beschrieben"^] .
@@ -333,7 +333,7 @@ Um ein Cloud Volumes ONTAP -System mit nutzungsbasierter Bezahlung zu erstellen,
 
 TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
 
-. *HA-Bereitstellungsmodelle*: Wählen Sie mehrere Zonen (empfohlen) oder eine einzelne Zone für die HA-Konfiguration.  Wählen Sie dann eine Region und Zonen aus.
+. *HA-Bereitstellungsmodelle*: Wählen Sie mehrere Zonen (empfohlen) oder eine einzelne Zone für die HA-Konfiguration. Wählen Sie dann eine Region und eine Zone aus.
 +
 link:concept-ha-google-cloud.html["Erfahren Sie mehr über HA-Bereitstellungsmodelle"^] .
 
@@ -418,7 +418,7 @@ Beachten Sie Folgendes:
 +
 ** Die Konsole richtet das Dienstkonto auf der Cloud Volumes ONTAP Instanz ein. Dieses Dienstkonto bietet Berechtigungen für die Datenschichtung in einem Google Cloud Storage-Bucket.  Stellen Sie sicher, dass Sie das Dienstkonto des Konsolenagenten als Benutzer des Tiering-Dienstkontos hinzufügen, da Sie es sonst nicht aus der Konsole auswählen können.
 ** Sie können beim Erstellen oder Bearbeiten eines Volumes eine bestimmte Volume-Tiering-Richtlinie auswählen.
-** Wenn Sie die Datenschichtung deaktivieren, können Sie sie für nachfolgende Aggregate aktivieren. Dazu müssen Sie jedoch das System ausschalten und ein Dienstkonto über die Google Cloud-Konsole hinzufügen.
+** Wenn Sie die Datenschichtung deaktivieren, können Sie sie bei nachfolgenden Aggregaten wieder aktivieren, aber Sie müssen das System ausschalten und ein Dienstkonto aus der Google Cloud Console hinzufügen.
 +
 link:concept-data-tiering.html["Weitere Informationen zum Daten-Tiering"^] .
 
@@ -517,7 +517,7 @@ Mithilfe von Kontingenten können Sie den Speicherplatz und die Anzahl der von e
 
 
 
-CAUTION: Ändern Sie nach Abschluss des Bereitstellungsprozesses nicht die systemgenerierten Cloud Volumes ONTAP Konfigurationen im Google Cloud-Portal, insbesondere nicht die System-Tags. Alle an diesen Konfigurationen vorgenommenen Änderungen können zu unerwartetem Verhalten oder Datenverlust führen.
+CAUTION: Nach Abschluss des Bereitstellungsprozesses dürfen die systemgenerierten Cloud Volumes ONTAP Konfigurationen im Google Cloud-Portal, wie zum Beispiel die System-Tags und die in den Google Cloud-Ressourcen festgelegten Labels, nicht verändert werden. Jegliche Änderungen an diesen Konfigurationen können zu unerwartetem Verhalten oder Datenverlust führen.
 
 .Weiterführende Links
 * link:task-planning-your-config-gcp.html["Planen Ihrer Cloud Volumes ONTAP Konfiguration in Google Cloud"]

@@ -197,7 +197,7 @@ Der einzige unterstützte Datenträgertyp ist GP2.  Die folgenden EC2-Instance-T
 
 
 
-NOTE: Cloud Volumes ONTAP unterstützt nur diese Konfigurationen.  Die Auswahl nicht unterstützter Datenträgertypen oder nicht qualifizierter Instanzen in der AWS Local Zone-Konfiguration kann zu einem Bereitstellungsfehler führen.  Aufgrund mangelnder Konnektivität ist in AWS Local Zones keine Datenschichtung zu AWS S3 verfügbar.
+NOTE: Cloud Volumes ONTAP unterstützt ausschließlich diese Konfigurationen. Die Auswahl nicht unterstützter Datenträgertypen oder nicht qualifizierter Instanzen in der AWS Local Zone-Konfiguration kann zu einem Bereitstellungsfehler führen. Data Tiering zu Amazon Simple Storage Service (Amazon S3) wird nicht unterstützt, wenn sich Ihr Cloud Volumes ONTAP System in einer AWS Local Zone befindet, da der Zugriff auf die Amazon S3-Buckets außerhalb der Local Zone mit einer höheren Latenz verbunden ist und die Aktivitäten von Cloud Volumes ONTAP beeinträchtigt.
 
 link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2["AWS-Dokumentation: EC2-Instanztypen in lokalen Zonen"^] .
 

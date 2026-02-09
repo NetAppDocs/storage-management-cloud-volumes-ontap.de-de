@@ -30,7 +30,7 @@ Abhängig vom Bereitstellungsstil des Konsolenagenten müssen möglicherweise be
 
 == Bilder
 
-Sowohl Cloud Volumes ONTAP als auch die Konsole verwenden Images aus einem Projekt innerhalb von GCP, das von NetApp verwaltet wird.  Dies kann sich auf die Bereitstellung des Konsolenagenten und von Cloud Volumes ONTAP auswirken, wenn in Ihrer Organisation eine Richtlinie gilt, die die Verwendung von Images blockiert, die nicht innerhalb der Organisation gehostet werden.
+Sowohl Cloud Volumes ONTAP als auch die Console verwenden Images aus einem Projekt innerhalb von Google Cloud, das von NetApp verwaltet wird. Dies kann die Bereitstellung des Console-Agenten und von Cloud Volumes ONTAP beeinträchtigen, wenn Ihre Organisation eine Richtlinie hat, die die Verwendung von Images blockiert, die nicht innerhalb der Organisation gehostet werden.
 
 Sie können einen Konsolenagenten manuell mithilfe der manuellen Installationsmethode bereitstellen, Cloud Volumes ONTAP muss jedoch auch Bilder aus dem NetApp -Projekt abrufen.  Sie müssen eine Zulassungsliste angeben, um einen Konsolenagenten und Cloud Volumes ONTAP bereitzustellen.
 
@@ -54,7 +54,7 @@ Beispiele für die Regeln, die zum Abrufen dieser Bilder mit VPC Service Control
 
 == VPC Service Controls-Perimeterrichtlinien
 
-Richtlinien erlauben Ausnahmen von den Regelsätzen der VPC Service Controls.  Weitere Informationen zu Richtlinien finden Sie auf der https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules#policy-model["Dokumentation der GCP VPC Service Controls-Richtlinie"^] .
+Richtlinien ermöglichen Ausnahmen von den VPC-Dienststeuerungsregeln. Weitere Informationen zu Richtlinien finden Sie unter  https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules#policy-model["Google Cloud VPC Service Controls Policy Dokumentation"^].
 
 Um die von der Konsole benötigten Richtlinien festzulegen, navigieren Sie zu Ihrem VPC Service Controls Perimeter innerhalb Ihrer Organisation und fügen Sie die folgenden Richtlinien hinzu.  Die Felder sollten mit den Optionen auf der Richtlinienseite „VPC Service Controls“ übereinstimmen.  Beachten Sie auch, dass *alle* Regeln erforderlich sind und die *ODER*-Parameter im Regelsatz verwendet werden sollten.
 

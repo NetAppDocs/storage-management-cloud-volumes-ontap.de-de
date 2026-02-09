@@ -26,7 +26,7 @@ ifdef::aws[]
 
 == Daten-Tiering in AWS
 
-Wenn Sie die Datenschichtung in AWS aktivieren, verwendet Cloud Volumes ONTAP EBS als Leistungsschicht für Hot Data und AWS S3 als Kapazitätsschicht für inaktive Daten.
+Wenn Sie Data Tiering in AWS aktivieren, verwendet Cloud Volumes ONTAP EBS als Performance-Tier für häufig genutzte Daten und Amazon Simple Storage Service (Amazon S3) als Kapazitäts-Tier für inaktive Daten.
 
 Leistungsstufe:: Die Leistungsstufe kann aus General Purpose SSDs (gp3 oder gp2) oder Provisioned IOPS SSDs (io1) bestehen.
 +

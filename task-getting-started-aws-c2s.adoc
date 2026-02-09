@@ -46,7 +46,7 @@ Richten Sie Ihr AWS-Netzwerk so ein, dass Cloud Volumes ONTAP ordnungsgemäß fu
 .Schritte
 . Wählen Sie die VPC und Subnetze aus, in denen Sie die Instanz des Konsolenagenten und der Cloud Volumes ONTAP Instanzen starten möchten.
 . Stellen Sie sicher, dass Ihr VPC und Ihre Subnetze die Konnektivität zwischen dem Konsolenagenten und Cloud Volumes ONTAP unterstützen.
-. Richten Sie einen VPC-Endpunkt für den S3-Dienst ein.
+. Richten Sie einen VPC-Endpunkt für den Amazon Simple Storage Service (Amazon S3) Service ein.
 +
 Ein VPC-Endpunkt ist erforderlich, wenn Sie kalte Daten von Cloud Volumes ONTAP auf kostengünstigen Objektspeicher verschieben möchten.
 

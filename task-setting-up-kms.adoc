@@ -102,7 +102,7 @@ Weitere Einzelheiten zu diesem Vorgang finden Sie im https://docs.aws.amazon.com
 
 . Wenn Sie einen vom Kunden verwalteten CMK verwenden, ändern Sie die Schlüsselrichtlinie für den CMK, indem Sie die Cloud Volumes ONTAP IAM-Rolle als _Schlüsselbenutzer_ hinzufügen.
 +
-Dieser Schritt ist erforderlich, wenn Sie Data Tiering auf Cloud Volumes ONTAP aktiviert haben und die im S3-Bucket gespeicherten Daten verschlüsseln möchten.
+Dieser Schritt ist erforderlich, wenn Sie Data Tiering auf Cloud Volumes ONTAP aktiviert haben und die im Amazon Simple Storage Service (Amazon S3) Bucket gespeicherten Daten verschlüsseln möchten.
 
 
 

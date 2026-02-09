@@ -26,7 +26,7 @@ Die meisten Konfigurationen werden unterstützt.  Wenn Sie über ein Cloud Volum
 [role="quick-margin-list"]
 ifdef::aws[]
 
-* Für AWS benötigen Sie einen VPC-Endpunkt für S3. <<Anforderungen zum Tiering kalter Daten auf AWS S3,Mehr erfahren>> .
+* Für AWS benötigen Sie einen VPC-Endpunkt für Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Mehr erfahren>>.
 
 
 endif::aws[]
@@ -142,9 +142,9 @@ ifdef::aws[]
 
 
 
-=== Anforderungen zum Tiering kalter Daten auf AWS S3
+=== Anforderungen für das Tiering von Kaltdaten zu Amazon S3
 
-Stellen Sie sicher, dass Cloud Volumes ONTAP eine Verbindung zu S3 hat.  Die beste Möglichkeit, diese Verbindung bereitzustellen, besteht darin, einen VPC-Endpunkt für den S3-Dienst zu erstellen.  Anweisungen hierzu finden Sie im https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint["AWS-Dokumentation: Erstellen eines Gateway-Endpunkts"^] .
+Stellen Sie sicher, dass Cloud Volumes ONTAP eine Verbindung zu Amazon S3 hat. Der beste Weg, diese Verbindung bereitzustellen, ist das Erstellen eines VPC-Endpunkts für den S3-Dienst. Anweisungen finden Sie unter  https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint["AWS-Dokumentation: Erstellen eines Gateway-Endpunkts"^].
 
 Achten Sie beim Erstellen des VPC-Endpunkts darauf, die Region, VPC und Routentabelle auszuwählen, die der Cloud Volumes ONTAP -Instanz entspricht.  Sie müssen auch die Sicherheitsgruppe ändern, um eine ausgehende HTTPS-Regel hinzuzufügen, die den Datenverkehr zum S3-Endpunkt ermöglicht.  Andernfalls kann Cloud Volumes ONTAP keine Verbindung zum S3-Dienst herstellen.
 
@@ -184,7 +184,7 @@ link:task-creating-gcp-service-account.html["Erfahren Sie, wie Sie dieses Dienst
 Sie werden aufgefordert, dieses Dienstkonto auszuwählen, wenn Sie ein Cloud Volumes ONTAP -System erstellen.
 
 +
-Wenn Sie während der Bereitstellung kein Dienstkonto auswählen, müssen Sie Cloud Volumes ONTAP herunterfahren, zur Google Cloud-Konsole gehen und dann das Dienstkonto an die Cloud Volumes ONTAP Instanzen anhängen.  Anschließend können Sie das Daten-Tiering wie im nächsten Abschnitt beschrieben aktivieren.
+Wenn Sie während der Bereitstellung kein Dienstkonto auswählen, müssen Sie Cloud Volumes ONTAP herunterfahren, die Google Cloud Console aufrufen und dann das Dienstkonto mit den Cloud Volumes ONTAP-Instanzen verknüpfen. Anschließend können Sie die Datenschichtung wie im nächsten Abschnitt beschrieben aktivieren.
 
 * Um den Bucket mit vom Kunden verwalteten Verschlüsselungsschlüsseln zu verschlüsseln, aktivieren Sie die Verwendung des Schlüssels im Google Cloud Storage-Bucket.
 +

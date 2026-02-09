@@ -29,7 +29,7 @@ Sie können mit ONTAP System Manager in der Konsole verschiedene Speicherverwalt
 * Ereignisse und Jobs: Zeigen Sie Ereignisprotokolle, Systemwarnungen, Jobs und Prüfprotokolle an.
 * Erweiterter Datenschutz: Schützen Sie Speicher-VMs, LUNs und Konsistenzgruppen.
 * Hostverwaltung: Richten Sie SAN-Initiatorgruppen und NFS-Clients ein.
-* S3-Objektspeicherverwaltung: S3-Speicherverwaltungsfunktionen in Cloud Volumes ONTAP sind nur im System Manager und nicht in der Konsole verfügbar.
+* ONTAP S3 Objektspeicherverwaltung: ONTAP S3 Speicherverwaltungsfunktionen in Cloud Volumes ONTAP sind nur im System Manager und nicht in der Console verfügbar.
 
 
 

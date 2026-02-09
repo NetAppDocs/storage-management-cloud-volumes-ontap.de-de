@@ -101,7 +101,7 @@ Beachten Sie, dass Cloud Volumes ONTAP die Amazon EBS Elastic Volumes-Funktion m
 * _Durchsatzoptimierte HDD (st1)_-Festplatten sind für häufig aufgerufene Workloads gedacht, die einen schnellen und konsistenten Durchsatz zu einem niedrigeren Preis erfordern.
 +
 
-NOTE: Aufgrund mangelnder Konnektivität ist in AWS Local Zones keine Datenschichtung zu AWS S3 verfügbar.
+NOTE: Data Tiering zu Amazon Simple Storage Service (Amazon S3) wird nicht unterstützt, wenn sich Ihr Cloud Volumes ONTAP System in einer AWS Local Zone befindet, da der Zugriff auf die Amazon S3 Buckets außerhalb der Local Zone eine höhere Latenz verursacht und die Aktivitäten von Cloud Volumes ONTAP beeinträchtigt.
 
 
 

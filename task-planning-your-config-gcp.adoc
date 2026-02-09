@@ -38,7 +38,7 @@ Cloud Volumes ONTAP wird in den meisten Google Cloud-Regionen unterstützt. http
 
 Cloud Volumes ONTAP unterstützt je nach gewähltem Lizenztyp mehrere Maschinentypen.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in GCP"^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Google Cloud"^]
 
 
 
@@ -46,11 +46,11 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp
 
 Die Rohkapazitätsgrenze für ein Cloud Volumes ONTAP System ist an die Lizenz gebunden.  Zusätzliche Beschränkungen wirken sich auf die Größe von Aggregaten und Volumina aus.  Sie sollten sich dieser Beschränkungen bewusst sein, wenn Sie Ihre Konfiguration planen.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["Speicherlimits für Cloud Volumes ONTAP in GCP"^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["Speichergrenzen für Cloud Volumes ONTAP in Google Cloud"^]
 
 
 
-== Dimensionieren Sie Ihr System in GCP
+== Dimensionieren Sie Ihr System in Google Cloud
 
 Durch die Dimensionierung Ihres Cloud Volumes ONTAP -Systems können Sie die Anforderungen an Leistung und Kapazität erfüllen.  Bei der Auswahl eines Maschinentyps, Datenträgertyps und einer Datenträgergröße sollten Sie einige wichtige Punkte beachten:
 
@@ -64,7 +64,7 @@ Weitere Einzelheiten finden Sie im Folgenden:
 
 
 --
-GCP-Datenträgertyp:: Wenn Sie Volumes für Cloud Volumes ONTAP erstellen, müssen Sie den zugrunde liegenden Cloud-Speicher auswählen, den Cloud Volumes ONTAP für eine Festplatte verwendet.  Der Datenträgertyp kann einer der folgenden sein:
+Datenträgertypen:: Wenn Sie Volumes für Cloud Volumes ONTAP erstellen, müssen Sie den zugrunde liegenden Cloud-Speicher auswählen, den Cloud Volumes ONTAP für eine Festplatte verwendet.  Der Datenträgertyp kann einer der folgenden sein:
 +
 --
 * _Zonale persistente SSD-Festplatten_: Persistente SSD-Festplatten eignen sich am besten für Workloads, die hohe zufällige IOPS-Raten erfordern.
@@ -76,7 +76,7 @@ Weitere Einzelheiten finden Sie im https://cloud.google.com/compute/docs/disks/#
 
 
 --
-GCP-Festplattengröße:: Sie müssen eine anfängliche Festplattengröße auswählen, wenn Sie ein Cloud Volumes ONTAP -System bereitstellen.  Anschließend können Sie die Kapazität eines Systems von der NetApp Console verwalten lassen. Wenn Sie jedoch selbst Aggregate erstellen möchten, beachten Sie Folgendes:
+Festplattengröße:: Sie müssen eine anfängliche Festplattengröße auswählen, wenn Sie ein Cloud Volumes ONTAP -System bereitstellen.  Anschließend können Sie die Kapazität eines Systems von der NetApp Console verwalten lassen. Wenn Sie jedoch selbst Aggregate erstellen möchten, beachten Sie Folgendes:
 +
 --
 * Alle Festplatten in einem Aggregat müssen die gleiche Größe haben.
@@ -115,13 +115,13 @@ TIP: Der Konsolenagent benötigt außerdem eine Systemfestplatte. https://docs.n
 
 == Sammeln von Netzwerkinformationen
 
-Wenn Sie Cloud Volumes ONTAP in GCP bereitstellen, müssen Sie Details zu Ihrem virtuellen Netzwerk angeben.  Sie können ein Arbeitsblatt verwenden, um die Informationen von Ihrem Administrator zu sammeln.
+Wenn Sie Cloud Volumes ONTAP in Google Cloud bereitstellen, müssen Sie Details zu Ihrem virtuellen Netzwerk angeben. Sie können ein Arbeitsblatt verwenden, um die Informationen von Ihrem Administrator zu erfassen.
 
 *Netzwerkinformationen für ein Einzelknotensystem*
 
 [cols="30,70"]
 |===
-| GCP-Informationen | Ihr Wert 
+| Google Cloud-Informationen | Ihr Wert 
 
 
 | Region |  
@@ -142,7 +142,7 @@ Wenn Sie Cloud Volumes ONTAP in GCP bereitstellen, müssen Sie Details zu Ihrem 
 
 [cols="30,70"]
 |===
-| GCP-Informationen | Ihr Wert 
+| Google Cloud-Informationen | Ihr Wert 
 
 
 | Region |  
@@ -175,7 +175,7 @@ Wenn Sie Cloud Volumes ONTAP in GCP bereitstellen, müssen Sie Details zu Ihrem 
 
 [cols="30,70"]
 |===
-| GCP-Informationen | Ihr Wert 
+| Google Cloud-Informationen | Ihr Wert 
 
 
 | Region |  

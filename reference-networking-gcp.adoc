@@ -236,7 +236,7 @@ Die Benutzerauthentifizierung schlägt fehl und die folgenden Dienste sind weite
 | \https://mysupport.netapp.com/aods/asupmessage \https://mysupport.netapp.com/asupprod/post/1.0/postAsup | AutoSupport | Wird verwendet, um AutoSupport Telemetriedaten an den NetApp Support zu senden. | Standard- und eingeschränkte Modi. | AutoSupport -Informationen bleiben unversehrt. 
 
 
-| \https://www.googleapis.com/compute/v1/projects/ \https://cloudresourcemanager.googleapis.com/v1/projects \https://www.googleapis.com/compute/beta \https://storage.googleapis.com/storage/v1 \https://www.googleapis.com/storage/v1 \https://iam.googleapis.com/v1 \https://cloudkms.googleapis.com/v1 \https://www.googleapis.com/deploymentmanager/v2/projects \https://compute.googleapis.com/compute/v1 | Google Cloud (kommerzielle Nutzung). | Kommunikation mit Google Cloud-Diensten. | Standard-, eingeschränkter und privater Modus. | Cloud Volumes ONTAP kann nicht mit dem Google Cloud-Dienst kommunizieren, um bestimmte Vorgänge für die Konsole in Google Cloud auszuführen. 
+| https://cloudbuild.googleapis.com/v1 (nur für private Bereitstellungen) https://cloudkms.googleapis.com/v1 https://cloudresourcemanager.googleapis.com/v1/projects https://compute.googleapis.com/compute/v1 https://www.googleapis.com/compute/beta https://www.googleapis.com/compute/v1/projects/ https://www.googleapis.com/deploymentmanager/v2/projects https://www.googleapis.com/storage/v1 https://www.googleapis.com/upload/storage/v1 https://config.googleapis.com/v1 https://iam.googleapis.com/v1 https://storage.googleapis.com/storage/v1 | Google Cloud (kommerzielle Nutzung). | Kommunikation mit Google Cloud-Diensten. | Standard-, eingeschränkter und privater Modus. | Cloud Volumes ONTAP kann nicht mit dem Google Cloud-Dienst kommunizieren, um bestimmte Vorgänge für die Konsole in Google Cloud auszuführen. 
 |===
 
 
@@ -526,7 +526,7 @@ Informationen zum Konfigurieren von Proxy-Servern für den Konsolen-Agenten find
 .Konfigurieren Sie Netzwerk-Tags für Cloud Volumes ONTAP in Google Cloud
 Während der transparenten Proxy-Konfiguration des Konsolen-Agenten fügt der Administrator ein Netzwerk-Tag für Google Cloud hinzu.  Sie müssen dasselbe Netzwerk-Tag für Ihre Cloud Volumes ONTAP Konfiguration abrufen und manuell hinzufügen.  Dieses Tag ist für die ordnungsgemäße Funktion des Proxyservers erforderlich.
 
-. Suchen Sie in der Google Cloud-Konsole Ihr Cloud Volumes ONTAP -System.
+. Suchen Sie in der Google Cloud Console Ihr Cloud Volumes ONTAP System.
 . Gehen Sie zu *Details > Netzwerk > Netzwerk-Tags*.
 . Fügen Sie das für den Konsolenagenten verwendete Tag hinzu und speichern Sie die Konfiguration.
 

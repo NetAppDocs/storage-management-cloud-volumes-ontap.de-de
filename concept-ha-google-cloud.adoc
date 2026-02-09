@@ -57,7 +57,7 @@ NOTE: Für Cloud Volumes ONTAP 9.10.0 und früher wurde Debian 10 auf dem Mediat
 
 --
 Verbesserungen:: Wenn Sie Cloud Volumes ONTAP aktualisieren, aktualisiert die NetApp Console bei Bedarf auch die Mediatorinstanz.
-Zugriff auf die Instanz:: Für Debian ist der Standard-Cloud-Benutzer `admin` .  Google Cloud erstellt und fügt ein Zertifikat für die `admin` Benutzer, wenn SSH-Zugriff über die Google Cloud-Konsole oder die gcloud-Befehlszeile angefordert wird.  Sie können angeben `sudo` um Root-Rechte zu erlangen.
+Zugriff auf die Instanz:: Für Debian ist der Standard-Cloud-Benutzer  `admin`. Google Cloud erstellt und fügt ein Zertifikat für den  `admin` Benutzer hinzu, wenn der SSH-Zugriff über die Google Cloud Console oder die gcloud Befehlszeile angefordert wird. Sie können  `sudo` angeben, um Root-Rechte zu erhalten.
 Drittanbieter-Agenten:: Agenten oder VM-Erweiterungen von Drittanbietern werden auf der Mediatorinstanz nicht unterstützt.
 
 

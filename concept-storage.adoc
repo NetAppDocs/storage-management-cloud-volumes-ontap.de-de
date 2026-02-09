@@ -45,7 +45,7 @@ EBS-Speicher:: In AWS kann ein Aggregat bis zu 6 Festplatten enthalten, die alle
 --
 Die maximale Festplattengröße beträgt 16 TiB.
 
-Der zugrunde liegende EBS-Festplattentyp kann entweder General Purpose SSDs (gp3 oder gp2), Provisioned IOPS SSD (io1) oder Throughput Optimized HDD (st1) sein.  Sie können eine EBS-Festplatte mit Amazon S3 koppeln, umlink:concept-data-tiering.html["kostengünstiger Objektspeicher"] .
+Der zugrunde liegende EBS-Festplattentyp kann entweder eine Allzweck-SSD (gp3 oder gp2), eine SSD mit bereitgestellten IOPS (io1) oder eine durchsatzoptimierte Festplatte (st1) sein. Sie können eine EBS-Festplatte mit Amazon Simple Storage Service (Amazon S3) koppeln, um link:concept-data-tiering.html["kostengünstiger Objektspeicher"].
 
 
 NOTE: Bei Verwendung von durchsatzoptimierten HDDs (st1) wird das Tiering von Daten in Objektspeicher nicht empfohlen.

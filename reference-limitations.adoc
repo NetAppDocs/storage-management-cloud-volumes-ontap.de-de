@@ -31,9 +31,9 @@ NOTE: Die Möglichkeit, FlexGroup -Volumes in der Konsole zu erstellen, ist für
 
 == Die Konsole unterstützt S3 mit Cloud Volumes ONTAP nicht
 
-Obwohl Cloud Volumes ONTAP S3 als Option für Scale-Out-Speicher unterstützt, bietet die Konsole keine Verwaltungsfunktionen für diese Funktion.  Die Verwendung der CLI ist die beste Vorgehensweise zum Konfigurieren des S3-Clientzugriffs von Cloud Volumes ONTAP.  Einzelheiten finden Sie im http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["S3-Konfigurationshandbuch"^] .
+Während Cloud Volumes ONTAP S3 als Option für skalierbaren Speicher unterstützt, bietet die Console keine Verwaltungsfunktionen für diese Funktion. Die Verwendung der Befehlszeile ist die empfohlene Vorgehensweise, um den S3-Clientzugriff von Cloud Volumes ONTAP zu konfigurieren. Weitere Informationen finden Sie in der  http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["ONTAP S3 Konfigurationsleitfaden"^].
 
-link:concept-client-protocols.html["Erfahren Sie mehr über die Unterstützung von Cloud Volumes ONTAP für S3 und andere Client-Protokolle"] .
+link:concept-client-protocols.html["Erfahren Sie mehr über die Unterstützung von ONTAP S3 und anderen Client-Protokollen durch Cloud Volumes ONTAP"].
 
 
 

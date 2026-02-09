@@ -34,7 +34,7 @@ Die Konsole bietet vorkonfigurierte Pakete, die Ihren Workload-Anforderungen ent
 +
 Dieser Schritt ist nicht erforderlich, wenn Sie Cloud Volumes ONTAP an einem Standort bereitstellen, an dem kein Internetzugang verfügbar ist.
 
-. Richten Sie einen VPC-Endpunkt für den S3-Dienst ein.
+. Richten Sie einen VPC-Endpunkt für den Amazon Simple Storage Service (Amazon S3) Service ein.
 +
 Ein VPC-Endpunkt ist erforderlich, wenn Sie kalte Daten von Cloud Volumes ONTAP auf kostengünstigen Objektspeicher verschieben möchten.
 
