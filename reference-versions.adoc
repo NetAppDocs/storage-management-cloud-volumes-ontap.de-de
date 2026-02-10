@@ -16,7 +16,9 @@ summary: Mit der NetApp Console können Sie beim Erstellen eines neuen Cloud Vol
 [role="lead"]
 Die NetApp Console ermöglicht Ihnen die Auswahl aus mehreren verschiedenen ONTAP Versionen, wenn Sie ein Cloud Volumes ONTAP -System hinzufügen.
 
-Andere als die hier aufgeführten Versionen von Cloud Volumes ONTAP sind für neue Bereitstellungen nicht verfügbar.  Informationen zum Upgrade finden Sie unterlink:task-updating-ontap-cloud.html#supported-upgrade-paths["Unterstützte Upgradepfade"] .
+Cloud Volumes ONTAP-Versionen, die hier nicht aufgeführt sind, sind für neue Bereitstellungen nicht verfügbar. Die Patch- oder generische (General Availability) Version in einer hier aufgeführten Version stellt die Basisversion dar, die für die Bereitstellung verfügbar ist. Einzelheiten zu den verfügbaren Patches finden Sie in der  https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html["versionierte Versionshinweise"^] für jede Version.
+
+Informationen zum Upgrade finden Sie unter link:task-updating-ontap-cloud.html#supported-upgrade-paths["Unterstützte Upgradepfade"].
 
 ifdef::aws[]
 
@@ -27,16 +29,17 @@ ifdef::aws[]
 Einzelner Knoten::
 +
 --
+* 9.18.1
 * 9.17.1 P1
-* 9.16.1 GA
-* 9.15.1 GA
+* 9.16.1
+* 9.15.1
 * 9.15.0 P1
-* 9.14.1 GA
-* 9.14.1 RC1
-* 9.14.0 GA
-* 9.13.1 GA
-* 9.12.1 GA
-* 9.12.1 RC1
+* 9.14.1
+* 9.14.1
+* 9.14.0
+* 9.13.1
+* 9.12.1
+* 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
 * 9.10.1
@@ -50,16 +53,17 @@ Einzelner Knoten::
 HA-Paar::
 +
 --
+* 9.18.1
 * 9.17.1 P1
-* 9.16.1 GA
-* 9.15.1 GA
+* 9.16.1
+* 9.15.1
 * 9.15.0 P1
-* 9.14.1 GA
-* 9.14.1 RC1
-* 9.14.0 GA
-* 9.13.1 GA
-* 9.12.1 GA
-* 9.12.1 RC1
+* 9.14.1
+* 9.14.1
+* 9.14.0
+* 9.13.1
+* 9.12.1
+* 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
 * 9.10.1
@@ -83,7 +87,8 @@ ifdef::azure[]
 Einzelner Knoten::
 +
 --
-* 9.17.1 RC1
+* 9.18.1
+* 9.17.1 P1
 * 9.16.1 P3
 * 9.15.1 P10
 * 9.14.1 P13
@@ -95,7 +100,8 @@ Einzelner Knoten::
 HA-Paar::
 +
 --
-* 9.17.1 RC1
+* 9.18.1
+* 9.17.1 P1
 * 9.16.1 P3
 * 9.15.1 P10
 * 9.14.1 P13
@@ -117,16 +123,16 @@ ifdef::gcp[]
 Einzelner Knoten::
 +
 --
-* 9.17.1 RC1
-* 9.16.1 GA
-* 9.15.1 GA
+* 9.17.1 P1
+* 9.16.1
+* 9.15.1
 * 9.15.0 P1
-* 9.14.1 GA
-* 9.14.1 RC1
-* 9.14.0 GA
-* 9.13.1 GA
-* 9.12.1 GA
-* 9.12.1 RC1
+* 9.14.1
+* 9.14.1
+* 9.14.0
+* 9.13.1
+* 9.12.1
+* 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
 * 9.10.1
@@ -139,16 +145,16 @@ Einzelner Knoten::
 HA-Paar::
 +
 --
-* 9.17.1 RC1
-* 9.16.1 GA
-* 9.15.1 GA
+* 9.17.1 P1
+* 9.16.1
+* 9.15.1
 * 9.15.0 P1
-* 9.14.1 GA
-* 9.14.1 RC1
-* 9.14.0 GA
-* 9.13.1 GA
-* 9.12.1 GA
-* 9.12.1 RC1
+* 9.14.1
+* 9.14.1
+* 9.14.0
+* 9.13.1
+* 9.12.1
+* 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
 * 9.10.1

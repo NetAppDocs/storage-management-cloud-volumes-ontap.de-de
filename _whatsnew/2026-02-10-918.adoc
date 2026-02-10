@@ -1,0 +1,11 @@
+= Cloud Volumes ONTAP 9.18.1 GA
+:allow-uri-read: 
+
+
+
+
+=== Cloud Volumes ONTAP 9.18.1 GA
+
+Sie können jetzt die NetApp Console verwenden, um die General Availability-Version von Cloud Volumes ONTAP 9.18.1 in AWS und Azure bereitzustellen und zu verwalten. Diese Version ist für die Bereitstellung und das Upgrade in Google Cloud nicht verfügbar.
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Erfahren Sie mehr über diese Version von Cloud Volumes ONTAP"^] .

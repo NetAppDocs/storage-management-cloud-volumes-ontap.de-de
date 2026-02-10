@@ -28,13 +28,9 @@ Bevor Sie mit dem Upgrade-Prozess für Cloud Volumes ONTAP beginnen, sollten Sie
 
 Sie sollten Cloud Volumes ONTAP nicht mithilfe des ONTAP System Manager oder der ONTAP CLI aktualisieren, sondern nur mithilfe der Konsole.  Andernfalls könnte die Systemstabilität beeinträchtigt werden.
 
-
-
-=== So führen Sie ein Upgrade durch
-
 Die Konsole bietet zwei Möglichkeiten zum Upgrade von Cloud Volumes ONTAP:
 
-* Indem Sie den Upgrade-Benachrichtigungen folgen, die im System erscheinen
+* Indem Sie den Upgrade-Benachrichtigungen folgen, die im System angezeigt werden
 * Indem Sie das Upgrade-Image an einem HTTPS-Speicherort platzieren und der Konsole dann die URL mitteilen
 
 
@@ -42,7 +38,7 @@ Die Konsole bietet zwei Möglichkeiten zum Upgrade von Cloud Volumes ONTAP:
 
 === Unterstützte Upgradepfade
 
-Auf welche Version von Cloud Volumes ONTAP Sie aktualisieren können, hängt von der Version von Cloud Volumes ONTAP ab, die Sie derzeit ausführen.
+Die Cloud Volumes ONTAP-Version, auf die Sie aktualisieren können, hängt von der Version ab, die Sie derzeit verwenden. Jede generische Version oder Patch-Version in einer Veröffentlichung in den folgenden Tabellen stellt die Basisversion dar, die für ein Upgrade verfügbar ist. Einzelheiten zu den verfügbaren Patches finden Sie in der  https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html["versionierte Versionshinweise"^] für jede Version.
 
 ifdef::aws[]
 
@@ -53,6 +49,9 @@ ifdef::aws[]
 [cols="2*"]
 |===
 | Aktuelle Version | Versionen, auf die Sie direkt upgraden können 
+
+
+| 9.17.1 P1 | 9.18.1 
 
 
 | 9.16.1 | 9.17.1 P1 
@@ -160,7 +159,10 @@ ifdef::azure[]
 | Aktuelle Version | Versionen, auf die Sie direkt upgraden können 
 
 
-| 9.16.1 P3 | 9.17.1 RC1 
+| 9.17.1 P1 | 9.18.1 
+
+
+| 9.16.1 P3 | 9.17.1 P1 
 
 
 | 9.15.1 P10 | 9.16.1 P3 
@@ -198,7 +200,7 @@ ifdef::gcp[]
 | Aktuelle Version | Versionen, auf die Sie direkt upgraden können 
 
 
-| 9.16.1 | 9.17.1 
+| 9.16.1 | 9.17.1 P1 
 
 
 | 9.15.1 | 9.16.1 
