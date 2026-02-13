@@ -131,7 +131,7 @@ dest::> network ipspace create -ipspace <new_ipspace>
 ----
 dest::> network port show
 ----
-. Für Einzelknotensysteme ist der neu hinzugefügte Port _e0b_.  Für HA-Paar-Bereitstellungen mit verwalteten Datenträgern ist der neu hinzugefügte Port _e0d_.  Für HA-Paar-Bereitstellungen mit Seitenblobs ist der neu hinzugefügte Port _e0e_.  Verwenden Sie den Knotennamen, nicht den VM-Namen.  Suchen Sie den Knotennamen, indem Sie Folgendes ausführen: `node show` .
+. Bei Einzelknotensystemen ist der neu hinzugefügte Port _e0b_. Bei HA-Paar-Bereitstellungen mit verwalteten Datenträgern ist der neu hinzugefügte Port _e0d_. Bei HA-Paar-Bereitstellungen mit Seitenblobs ist der neu hinzugefügte Port _e0e_. Verwenden Sie den Node-Name, nicht den VM-Name. Finden Sie den Node-Name, indem Sie  `node show` ausführen.
 +
 [source, cli]
 ----

@@ -44,7 +44,7 @@ Jede EC2-Instance unterstützt eine maximale Anzahl privater IPv4-Adressen pro N
 
 Bevor Sie LIFs für die neue Speicher-VM erstellen, müssen dem Port e0a in AWS private IPv4-Adressen zugewiesen werden.
 
-Beachten Sie, dass ein optionales Verwaltungs-LIF für eine Speicher-VM eine private IP-Adresse auf einem Einzelknotensystem und auf einem HA-Paar in einer einzelnen AZ erfordert.  Dieses Verwaltungs-LIF bietet eine Verbindung zu Verwaltungstools wie SnapCenter.
+Beachten Sie, dass ein optionales Management-LIF für eine Storage-VM eine private IP-Adresse auf einem Einzelknotensystem und auf einem HA-Paar in einer einzelnen AZ benötigt. Dieses Management-LIF stellt eine Verbindung zu Management-Tools wie SnapCenter bereit.
 
 .Schritte
 . Melden Sie sich bei AWS an und öffnen Sie den EC2-Dienst.
@@ -90,9 +90,9 @@ Eine optionale sekundäre private IP ist erforderlich, wenn Sie ein Verwaltungs-
 
 
 
-== Erstellen Sie eine Speicher-VM auf einem Einzelknotensystem
+== Erstellen Sie eine Storage-VM auf einem Einzelknotensystem
 
-Mit diesen Schritten wird eine neue Speicher-VM auf einem Einzelknotensystem erstellt.  Zum Erstellen eines NAS-LIF ist eine private IP-Adresse erforderlich, und wenn Sie ein Verwaltungs-LIF erstellen möchten, ist eine weitere optionale private IP-Adresse erforderlich.
+Diese Schritte erstellen eine neue Storage-VM auf einem Einzelknotensystem. Eine private IP-Adresse ist erforderlich, um eine NAS-LIF zu erstellen, und eine weitere optionale private IP-Adresse wird benötigt, wenn Sie eine Management-LIF erstellen möchten.
 
 .Schritte
 . Erstellen Sie die Speicher-VM und eine Route zur Speicher-VM.

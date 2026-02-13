@@ -26,7 +26,7 @@ Die folgenden Anforderungen müssen in Google Cloud erfüllt sein.
 
 
 
-=== Spezifische Anforderungen für Einzelknotensysteme
+=== Anforderungen, die speziell für Einzelknotensysteme gelten
 
 Wenn Sie ein Einzelknotensystem bereitstellen möchten, stellen Sie sicher, dass Ihr Netzwerk die folgenden Anforderungen erfüllt.
 
@@ -40,7 +40,7 @@ Für ein Einzelknotensystem ist eine Virtual Private Cloud (VPC) erforderlich.
 
 ==== Private IP-Adressen
 
-Für ein Einzelknotensystem in Google Cloud weist die Konsole den folgenden Elementen private IP-Adressen zu:
+Für ein Einzelknotensystem in Google Cloud weist die Console den folgenden Komponenten private IP-Adressen zu:
 
 * Node
 * Cluster
@@ -111,9 +111,9 @@ Die Subnetze in diesen VPCs müssen unterschiedliche CIDR-Bereiche haben.  Sie d
 
 Die Konsole weist Cloud Volumes ONTAP in Google Cloud automatisch die erforderliche Anzahl privater IP-Adressen zu.  Sie müssen sicherstellen, dass in Ihrem Netzwerk genügend private Adressen verfügbar sind.
 
-Die Anzahl der für Cloud Volumes ONTAP zugewiesenen LIFs hängt davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar bereitstellen.  Ein LIF ist eine IP-Adresse, die einem physischen Port zugeordnet ist.  Für Verwaltungstools wie SnapCenter ist ein SVM-Verwaltungs-LIF erforderlich.
+Die Anzahl der für Cloud Volumes ONTAP zugewiesenen LIFs hängt davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar bereitstellen. Ein LIF ist eine IP-Adresse, die einem physischen Port zugeordnet ist. Ein SVM-Management-LIF ist für Management-Tools wie SnapCenter erforderlich.
 
-* *Einzelknoten* Die Konsole weist einem Einzelknotensystem 4 IP-Adressen zu:
+* *Einzelknoten* Die NetApp Console weist einem Einzelknotensystem 4 IP-Adressen zu:
 +
 ** Knotenverwaltung LIF
 ** Clustermanagement LIF
@@ -185,7 +185,7 @@ Obwohl der globale Zugriff standardmäßig deaktiviert ist, wird die Aktivierung
 
 Cloud Volumes ONTAP und der Konsolenagent werden in einem gemeinsam genutzten Google Cloud VPC und auch in eigenständigen VPCs unterstützt.
 
-Bei einem Einzelknotensystem kann es sich bei der VPC entweder um eine gemeinsam genutzte VPC oder eine eigenständige VPC handeln.
+Für ein Single-Node-System kann die VPC entweder eine Shared VPC oder eine Standalone VPC sein.
 
 Für ein HA-Paar werden vier VPCs benötigt.  Jede dieser VPCs kann entweder gemeinsam genutzt oder eigenständig sein.  Beispielsweise könnte VPC-0 eine gemeinsam genutzte VPC sein, während VPC-1, VPC-2 und VPC-3 eigenständige VPCs sein könnten.
 

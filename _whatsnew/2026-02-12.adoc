@@ -1,0 +1,17 @@
+= Unterstützung für Ebdsv5- und E104ids_v5-VMs in Azure
+:allow-uri-read: 
+
+
+
+
+== Unterstützung für Ebdsv5- und E104ids_v5-VMs in Azure
+
+Ab Cloud Volumes ONTAP 9.18.1 können Sie Ebdsv5 und E104ids_v5 VMs für Einzelknoten- und Hochverfügbarkeitsbereitstellungen (HA) und Upgrades bereitstellen.
+
+Ebdsv5 VMs innerhalb der Eb-Familie von Azure-VMs sind für eine höhere Remote-Speicherleistung optimiert. Sie können diese VMs für speicherintensive und E/A-lastige Unternehmens-Workloads wie relationale Datenbanken, In-Memory-Analysen und andere anspruchsvolle geschäftskritische Anwendungen verwenden.
+
+E104ids_v5 ist eine isolierte VM-Instanz, die Ihnen hilft, geplante Wartungsfenster besser zu verwalten. Im Vergleich zu E80ids_v4 bietet sie einen deutlich höheren Festplattendurchsatz und IOPS sowie eine insgesamt bessere Netzwerkleistung.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Azure"^]
+
+https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv5-series?tabs=sizebasic["Azure documentation: Edsv5-Größenserie"^]

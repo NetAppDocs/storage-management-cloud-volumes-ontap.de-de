@@ -68,7 +68,7 @@ ifdef::aws[]
 
 ==== AWS
 
-Wenn Sie ein Einzelknotensystem verwenden, unterstützt Cloud Volumes ONTAP eine hohe Schreibgeschwindigkeit bei allen Instanztypen.
+Wenn Sie ein Einzelknotensystem verwenden, unterstützt Cloud Volumes ONTAP hohe Schreibgeschwindigkeiten bei allen Instanztypen.
 
 Ab der Version 9.8 unterstützt Cloud Volumes ONTAP eine hohe Schreibgeschwindigkeit mit HA-Paaren bei Verwendung fast aller unterstützten EC2-Instanztypen, mit Ausnahme von m5.xlarge und r5.xlarge.
 
@@ -82,7 +82,7 @@ ifdef::azure[]
 
 ==== Azurblau
 
-Wenn Sie ein Einzelknotensystem verwenden, unterstützt Cloud Volumes ONTAP eine hohe Schreibgeschwindigkeit mit allen VM-Typen.
+Wenn Sie ein Einzelknotensystem verwenden, unterstützt Cloud Volumes ONTAP hohe Schreibgeschwindigkeiten mit allen VM-Typen.
 
 Wenn Sie ein HA-Paar verwenden, unterstützt Cloud Volumes ONTAP ab der Version 9.8 eine hohe Schreibgeschwindigkeit mit mehreren VM-Typen.  Gehen Sie zum https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Versionshinweise zu Cloud Volumes ONTAP"^] um die VM-Typen anzuzeigen, die eine hohe Schreibgeschwindigkeit unterstützen.
 
@@ -94,7 +94,7 @@ ifdef::gcp[]
 
 ==== Google Cloud
 
-Wenn Sie ein Einzelknotensystem verwenden, unterstützt Cloud Volumes ONTAP eine hohe Schreibgeschwindigkeit mit allen Maschinentypen.
+Wenn Sie ein Einzelknotensystem verwenden, unterstützt Cloud Volumes ONTAP hohe Schreibgeschwindigkeiten mit allen Maschinentypen.
 
 Wenn Sie ein HA-Paar verwenden, unterstützt Cloud Volumes ONTAP ab der Version 9.13.0 eine hohe Schreibgeschwindigkeit mit mehreren VM-Typen.  Gehen Sie zum https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#supported-configurations-by-license["Versionshinweise zu Cloud Volumes ONTAP"^] um die VM-Typen anzuzeigen, die eine hohe Schreibgeschwindigkeit unterstützen.
 

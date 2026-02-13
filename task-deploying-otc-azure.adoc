@@ -14,7 +14,7 @@ summary: Sie können ein einzelnes Cloud Volumes ONTAP -System in Azure starten,
 
 
 [role="lead"]
-Sie können ein Einzelknotensystem oder ein HA-Paar in Azure starten, indem Sie in der NetApp Console ein Cloud Volumes ONTAP -System erstellen.
+Sie können ein Einzelknotensystem oder ein HA-Paar in Azure starten, indem Sie ein Cloud Volumes ONTAP-System in der NetApp Console erstellen.
 
 .Bevor Sie beginnen
 Bevor Sie beginnen, benötigen Sie Folgendes.
@@ -51,7 +51,7 @@ Aufgrund des Risikos eines Datenverlusts wird die Bereitstellung von Cloud Volum
 
 == Starten Sie ein Cloud Volumes ONTAP -System mit einem Knoten in Azure
 
-Wenn Sie ein Cloud Volumes ONTAP -System mit einem Knoten in Azure starten möchten, müssen Sie in der Konsole ein System mit einem Knoten erstellen.
+Wenn Sie ein Single-Node-Cloud Volumes ONTAP-System in Azure starten möchten, müssen Sie in der Console ein Single-Node-System erstellen.
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.

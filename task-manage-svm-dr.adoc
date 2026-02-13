@@ -16,7 +16,7 @@ summary: Die NetApp Console bietet keine Einrichtungs- oder Orchestrierungsunter
 [role="lead"]
 Die NetApp Console bietet keine Einrichtungs- oder Orchestrierungsunterstützung für die Notfallwiederherstellung von Storage-VMs (SVM).  Verwenden Sie zum Ausführen dieser Aufgaben den ONTAP System Manager oder die ONTAP CLI.
 
-Wenn Sie die SnapMirror SVM-Replikation zwischen zwei Cloud Volumes ONTAP Systemen einrichten, muss die Replikation zwischen zwei HA-Paarsystemen oder zwei Einzelknotensystemen erfolgen.  Sie können die SnapMirror SVM-Replikation nicht zwischen einem HA-Paar und einem Einzelknotensystem einrichten.
+Wenn Sie die SnapMirror SVM-Replikation zwischen zwei Cloud Volumes ONTAP Systemen einrichten, muss die Replikation zwischen zwei HA-Paarsystemen oder zwei Einzelknotensystemen erfolgen. Sie können keine SnapMirror SVM-Replikation zwischen einem HA-Paar und einem Einzelknotensystem einrichten.
 
 Anweisungen zur ONTAP -CLI finden Sie in den folgenden Dokumenten.
 

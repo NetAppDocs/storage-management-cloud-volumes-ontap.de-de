@@ -153,7 +153,7 @@ Beachten Sie die folgenden Anforderungen für den Schlüsseltresor:
 +
 *** *Soft-Delete* (diese Option ist standardmäßig aktiviert, darf aber _nicht_ deaktiviert werden)
 *** *Spülschutz*
-*** *Azure Disk Encryption für Volume-Verschlüsselung* (für Einzelknotensysteme, HA-Paare in mehreren Zonen und HA-Einzel-AZ-Bereitstellungen)
+*** *Azure Disk Encryption für die Volume-Verschlüsselung* (für Einzelknotensysteme, HA-Paare in mehreren Zonen und HA-Einzel-AZ-Bereitstellungen)
 +
 
 NOTE: Die Verwendung von vom Azure-Kunden verwalteten Verschlüsselungsschlüsseln hängt davon ab, ob die Azure-Datenträgerverschlüsselung für den Schlüsseltresor aktiviert ist.
@@ -268,7 +268,7 @@ NOTE: Fügen Sie die `"userAssignedIdentity": " userAssignedIdentityId"` Feld, w
 +
 https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments["Erfahren Sie mehr über diesen API-Aufruf"^] .
 
-.. Für ein Einzelknotensystem:
+.. Für ein Single-Node-System:
 +
 `POST /azure/vsa/working-environments`
 

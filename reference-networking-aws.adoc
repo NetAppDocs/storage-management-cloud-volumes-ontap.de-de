@@ -106,7 +106,7 @@ Informationen zum Konfigurieren von Proxy-Servern finden Sie im https://docs.net
 
 Die Konsole weist Cloud Volumes ONTAP automatisch die erforderliche Anzahl privater IP-Adressen zu.  Sie müssen sicherstellen, dass in Ihrem Netzwerk genügend private IP-Adressen verfügbar sind.
 
-Die Anzahl der LIFs, die die Konsole für Cloud Volumes ONTAP zuweist, hängt davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar bereitstellen.  Ein LIF ist eine IP-Adresse, die einem physischen Port zugeordnet ist.
+Die Anzahl der LIFs, die die Console für Cloud Volumes ONTAP bereitstellt, hängt davon ab, ob Sie ein Single-Node-System oder ein HA-Paar bereitstellen. Ein LIF ist eine IP-Adresse, die einem physischen Port zugeordnet ist.
 
 
 
@@ -142,7 +142,7 @@ Die folgende Tabelle enthält Details zu den LIFs, die jeder privaten IP-Adresse
 
 ==== IP-Adressen für HA-Paare
 
-HA-Paare benötigen mehr IP-Adressen als ein Einzelknotensystem.  Diese IP-Adressen sind auf verschiedene Ethernet-Schnittstellen verteilt, wie im folgenden Bild gezeigt:
+HA-Paare benötigen mehr IP-Adressen als ein Einzelknotensystem. Diese IP-Adressen sind auf verschiedene Ethernet-Schnittstellen verteilt, wie in der folgenden Abbildung dargestellt:
 
 image:diagram_cvo_aws_networking_ha.png["Ein Diagramm, das eth0, eth1, eth2 in einer Cloud Volumes ONTAP HA-Konfiguration in AWS zeigt."]
 

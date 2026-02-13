@@ -24,7 +24,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D
 * Das Ändern des VM-Typs kann sich auf die Servicegebühren von Microsoft Azure auswirken.
 * Der Vorgang startet Cloud Volumes ONTAP.
 +
-Bei Einzelknotensystemen wird die E/A unterbrochen.
+Bei Single-Node-Systemen wird die I/O unterbrochen.
 
 +
 Bei HA-Paaren erfolgt die Änderung ohne Unterbrechung.  HA-Paare stellen weiterhin Daten bereit.

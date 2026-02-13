@@ -62,7 +62,7 @@ endif::gcp[]
 
 ifdef::aws[]
 
-* Ein SVM-Management-LIF auf Einzelknotensystemen in AWS
+* Ein SVM-Management-LIF auf Single-Node-Systemen in AWS
 
 
 endif::aws[]

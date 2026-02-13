@@ -49,7 +49,7 @@ Ihre Lizenz wird immer zuerst in Rechnung gestellt. In den folgenden Fällen wir
 
 
 * Wenn Sie einen Jahresvertrag von einem Marktplatz haben, werden _alle_ von Ihnen bereitgestellten Cloud Volumes ONTAP Systeme über diesen Vertrag abgerechnet.  Sie können einen jährlichen Marktplatzvertrag nicht mit BYOL kombinieren.
-* In den Regionen Chinas werden nur Einzelknotensysteme mit BYOL unterstützt. Bereitstellungen in der Region China sind von den BYOL-Lizenzbeschränkungen ausgenommen.
+* Nur Einzelknotensysteme mit BYOL werden in China-Regionen unterstützt. Bereitstellungen in China-Regionen sind von den BYOL-Lizenzbeschränkungen ausgenommen.
 
 
 
@@ -133,7 +133,7 @@ Informationen zu den Kapazitätsgrenzen der einzelnen Cloud-Anbieter finden Sie 
 
 == Maximale Anzahl an Systemen
 
-Bei kapazitätsbasierter Lizenzierung ist die maximale Anzahl von Cloud Volumes ONTAP -Systemen auf 24 pro NetApp Console -Organisation begrenzt. Ein _System_ ist ein Cloud Volumes ONTAP HA-Paar, ein Cloud Volumes ONTAP Einzelknotensystem oder alle zusätzlichen Speicher-VMs, die Sie erstellen. Die Standard-Speicher-VM wird nicht auf das Limit angerechnet. Diese Begrenzung gilt für alle Lizenzmodelle.
+Bei kapazitätsbasierter Lizenzierung ist die maximale Anzahl von Cloud Volumes ONTAP-Systemen auf 24 pro NetApp Console-Organisation beschränkt. Ein  ist ein Cloud Volumes ONTAP HA-Paar, ein Cloud Volumes ONTAP Einzelknotensystem oder eine beliebige zusätzliche Speicher-VM, die Sie erstellen. Die Standard-Speicher-VM wird nicht auf das Limit angerechnet. Dieses Limit gilt für alle Lizenzmodelle.
 
 Nehmen wir beispielsweise an, Sie haben drei Systeme:
 
@@ -143,7 +143,7 @@ Dieses System zählt als ein System.
 
 * Ein Cloud Volumes ONTAP -System mit einem Knoten und zwei Speicher-VMs (die Standard-Speicher-VM plus eine zusätzliche Speicher-VM, die Sie erstellt haben)
 +
-Dieses System zählt als zwei Systeme: eines für das Einzelknotensystem und eines für die zusätzliche Speicher-VM.
+Dieses System zählt als zwei Systeme: eines für das Einzelknotensystem und eines für die zusätzliche Storage-VM.
 
 * Ein Cloud Volumes ONTAP HA-Paar mit drei Storage-VMs (die Standard-Storage-VM plus zwei zusätzliche Storage-VMs, die Sie erstellt haben)
 +

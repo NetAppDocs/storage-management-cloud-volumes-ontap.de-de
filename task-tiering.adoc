@@ -101,7 +101,7 @@ ifdef::azure[]
 
 * Datentiering wird in Azure wie folgt unterstützt:
 +
-** Version 9.4 in mit Single-Node-Systemen
+** Version 9.4 in mit Einzelknotensystemen
 ** Version 9.6 mit HA-Paaren
 
 

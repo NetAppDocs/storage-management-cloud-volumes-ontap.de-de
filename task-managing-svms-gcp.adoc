@@ -32,7 +32,7 @@ Alle Versionen von Cloud Volumes ONTAP vor 9.11.1 unterstützen eine Daten-Stora
 
 == Erstellen einer Speicher-VM
 
-Basierend auf Ihrer Konfiguration und Ihrem Lizenztyp können Sie mithilfe der APIs mehrere Speicher-VMs auf einem Einzelknotensystem oder in einer Hochverfügbarkeitskonfiguration (HA) erstellen.
+Basierend auf Ihrer Konfiguration und dem Lizenztyp können Sie mithilfe der APIs mehrere Storage-VMs auf einem Einzelknotensystem oder in einer Hochverfügbarkeitskonfiguration (HA) erstellen.
 
 .Informationen zu diesem Vorgang
 Wenn Sie Storage-VMs mithilfe der APIs erstellen, ändert die Konsole neben der Konfiguration der erforderlichen Netzwerkschnittstellen auch die `default-data-files` Richtlinien auf den Datenspeicher-VMs, indem Sie die folgenden Dienste aus dem NAS-Daten-LIF entfernen und sie dem iSCSI-Daten-LIF hinzufügen, das für ausgehende Verwaltungsverbindungen verwendet wird:
@@ -51,7 +51,7 @@ Der Konsolenagent benötigt bestimmte Berechtigungen zum Erstellen von Speicher-
 
 === Einzelknotensystem
 
-Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem Einzelknotensystem zu erstellen.
+Verwenden Sie den folgenden API-Aufruf, um eine Storage-VM auf einem Single-Node-System zu erstellen.
 
 `POST /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 
@@ -95,7 +95,7 @@ Der Konsolenagent benötigt bestimmte Berechtigungen zum Verwalten von Speicher-
 Um eine Speicher-VM umzubenennen, sollten Sie die Namen der vorhandenen Speicher-VM und der neuen Speicher-VM als Parameter angeben.
 
 .Schritte
-* Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem Einzelknotensystem umzubenennen:
+* Verwenden Sie den folgenden API-Aufruf, um eine Storage-VM auf einem Einzelknotensystem umzubenennen:
 +
 `PUT /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 
@@ -134,7 +134,7 @@ Fügen Sie die folgenden Parameter in den Anforderungstext ein:
 In einer Einzelknoten- oder HA-Konfiguration können Sie eine Speicher-VM entfernen, wenn sie keine aktiven Volumes hat.
 
 .Schritte
-* Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem Einzelknotensystem zu löschen:
+* Verwenden Sie den folgenden API-Aufruf, um eine Storage-VM auf einem Einzelknotensystem zu löschen:
 +
 `DELETE /gcp/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
 

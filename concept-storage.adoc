@@ -70,9 +70,9 @@ ifdef::azure[]
 
 == Azure-Speicher
 
-In Azure kann ein Aggregat bis zu 12 Datenträger enthalten, die alle dieselbe Größe haben.  Der Datenträgertyp und die maximale Datenträgergröße hängen davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar verwenden:
+In Azure kann ein Aggregat bis zu 12 Datenträger gleicher Größe enthalten. Der Datenträgertyp und die maximale Datenträgergröße hängen davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar verwenden:
 
-Einzelknotensysteme:: Einzelknotensysteme können diese Typen von Azure Managed Disks verwenden:
+Einzelknotensysteme:: Einzelknotensysteme können diese Arten von Azure Managed Disks verwenden:
 +
 --
 * _Premium SSD Managed Disks_ bieten hohe Leistung für I/O-intensive Workloads zu höheren Kosten.

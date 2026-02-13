@@ -20,6 +20,24 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf die
 
 
 
+== 12. Februar 2026
+
+
+
+== Unterstützung für Ebdsv5- und E104ids_v5-VMs in Azure
+
+Ab Cloud Volumes ONTAP 9.18.1 können Sie Ebdsv5 und E104ids_v5 VMs für Einzelknoten- und Hochverfügbarkeitsbereitstellungen (HA) und Upgrades bereitstellen.
+
+Ebdsv5 VMs innerhalb der Eb-Familie von Azure-VMs sind für eine höhere Remote-Speicherleistung optimiert. Sie können diese VMs für speicherintensive und E/A-lastige Unternehmens-Workloads wie relationale Datenbanken, In-Memory-Analysen und andere anspruchsvolle geschäftskritische Anwendungen verwenden.
+
+E104ids_v5 ist eine isolierte VM-Instanz, die Ihnen hilft, geplante Wartungsfenster besser zu verwalten. Im Vergleich zu E80ids_v4 bietet sie einen deutlich höheren Festplattendurchsatz und IOPS sowie eine insgesamt bessere Netzwerkleistung.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Azure"^]
+
+https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv5-series?tabs=sizebasic["Azure documentation: Edsv5-Größenserie"^]
+
+
+
 == 10. Februar 2026
 
 
@@ -1477,7 +1495,7 @@ Für die Unterstützung beim Erstellen von Speicher-VMs sind neue Google Cloud-B
 - compute.instanceGroups.get
 - compute.addresses.get
 ----
-Beachten Sie, dass Sie die ONTAP CLI oder den System Manager verwenden müssen, um eine Speicher-VM auf einem Einzelknotensystem zu erstellen.
+Beachten Sie, dass Sie die ONTAP CLI oder den System Manager verwenden müssen, um eine Storage-VM auf einem Einzelknotensystem zu erstellen.
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#storage-vm-limits["Erfahren Sie mehr über Speicher-VM-Limits in Google Cloud"^]
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html["Erfahren Sie, wie Sie datenbereitstellende Speicher-VMs für Cloud Volumes ONTAP in Google Cloud erstellen."]
@@ -1572,7 +1590,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp
 +
 Zuvor zeigte BlueXP keine Richtlinien in VPC-1, VPC-2 oder VPC-3 an, die kein Ziel-Tag hatten.
 
-* Wenn Sie ein Cloud Volumes ONTAP Einzelknotensystem in Google Cloud erstellen, können Sie jetzt auswählen, ob die vordefinierte Firewall-Richtlinie den Datenverkehr nur innerhalb der ausgewählten VPC (empfohlen) oder aller VPCs zulassen soll.
+* Wenn Sie ein Cloud Volumes ONTAP Single-Node-System in Google Cloud erstellen, können Sie jetzt auswählen, ob die vordefinierte Firewall-Richtlinie den Datenverkehr nur innerhalb der ausgewählten VPC (empfohlen) oder in allen VPCs zulassen soll.
 
 
 
@@ -1767,7 +1785,7 @@ Cloud Volumes ONTAP wird jetzt in der AWS-Region Asien-Pazifik (Osaka) (ap-north
 
 === Portreduzierung
 
-Die Ports 8023 und 49000 sind auf Cloud Volumes ONTAP Systemen in Azure weder für Einzelknotensysteme noch für HA-Paare mehr geöffnet.
+Die Ports 8023 und 49000 sind auf Cloud Volumes ONTAP Systemen in Azure sowohl für Einzelknotensysteme als auch für HA-Paare nicht mehr geöffnet.
 
 Diese Änderung gilt für _neue_ Cloud Volumes ONTAP Systeme ab der Version 3.9.13 des Connectors.
 
@@ -2076,7 +2094,7 @@ Es gibt einige Einschränkungen, auf die hingewiesen werden muss:
 
 === Ultra SSD VNVRAM in unterstützten Azure-Regionen
 
-Cloud Volumes ONTAP kann jetzt eine Ultra SSD als VNVRAM verwenden, wenn Sie den VM-Typ E32s_v3 mit einem Einzelknotensystem verwenden https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd["in jeder unterstützten Azure-Region"^] .
+Cloud Volumes ONTAP kann jetzt eine Ultra SSD als VNVRAM verwenden, wenn Sie den VM-Typ E32s_v3 mit einem Einzelknotensystem verwenden https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd["in jeder unterstützten Azure-Region"^].
 
 VNVRAM bietet eine bessere Schreibleistung.
 

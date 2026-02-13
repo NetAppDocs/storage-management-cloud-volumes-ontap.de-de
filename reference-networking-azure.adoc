@@ -94,7 +94,7 @@ Informationen zum Konfigurieren von Proxy-Servern finden Sie im https://docs.net
 
 Die Konsole weist Cloud Volumes ONTAP in Azure automatisch die erforderliche Anzahl privater IP-Adressen zu.  Sie müssen sicherstellen, dass in Ihrem Netzwerk genügend private IP-Adressen verfügbar sind.
 
-Die Anzahl der für Cloud Volumes ONTAP zugewiesenen LIFs hängt davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar bereitstellen.  Ein LIF ist eine IP-Adresse, die einem physischen Port zugeordnet ist.  Für Verwaltungstools wie SnapCenter ist ein SVM-Verwaltungs-LIF erforderlich.
+Die Anzahl der für Cloud Volumes ONTAP zugewiesenen LIFs hängt davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar bereitstellen. Ein LIF ist eine IP-Adresse, die einem physischen Port zugeordnet ist. Ein SVM-Management-LIF ist für Management-Tools wie SnapCenter erforderlich.
 
 
 NOTE: Ein iSCSI-LIF bietet Clientzugriff über das iSCSI-Protokoll und wird vom System für andere wichtige Netzwerk-Workflows verwendet.  Diese LIFs sind erforderlich und sollten nicht gelöscht werden.
@@ -103,7 +103,7 @@ NOTE: Ein iSCSI-LIF bietet Clientzugriff über das iSCSI-Protokoll und wird vom 
 
 ==== IP-Adressen für ein Einzelknotensystem
 
-Die Konsole weist einem Einzelknotensystem 5 oder 6 IP-Adressen zu:
+Die Console weist einem Einzelknotensystem 5 oder 6 IP-Adressen zu:
 
 * Cluster-Verwaltungs-IP
 * Knotenverwaltungs-IP
@@ -123,7 +123,7 @@ NOTE: Die iSCSI-IP bietet Clientzugriff über das iSCSI-Protokoll.  Es wird vom 
 
 Die Konsole weist während der Bereitstellung 4 NICs (pro Knoten) IP-Adressen zu.
 
-Beachten Sie, dass die Konsole ein SVM-Verwaltungs-LIF auf HA-Paaren erstellt, jedoch nicht auf Einzelknotensystemen in Azure.
+Beachten Sie, dass die Console auf HA-Paaren eine SVM-Management-LIF erstellt, aber nicht auf Einzelknotensystemen in Azure.
 
 *NIC0*
 
@@ -212,7 +212,7 @@ Wir empfehlen nicht, die vordefinierten Sicherheitsgruppen zu ändern oder benut
 
 
 
-==== Eingehende Regeln für Einzelknotensysteme
+==== Eingangsregeln für Einzelknotensysteme
 
 Wenn Sie ein Cloud Volumes ONTAP -System hinzufügen und eine vordefinierte Sicherheitsgruppe auswählen, können Sie den Datenverkehr innerhalb einer der folgenden Gruppen zulassen:
 
@@ -308,7 +308,7 @@ Wenn Sie ein Cloud Volumes ONTAP -System hinzufügen und eine vordefinierte Sich
 
 
 
-NOTE: HA-Systeme unterliegen weniger Eingangsregeln als Einzelknotensysteme, da der eingehende Datenverkehr über den Azure Standard Load Balancer läuft.  Aus diesem Grund sollte der Datenverkehr vom Load Balancer geöffnet sein, wie in der Regel „AllowAzureLoadBalancerInBound“ gezeigt.
+NOTE: HA-Systeme haben weniger eingehende Regeln als Einzelknotensysteme, da der eingehende Datenverkehr über den Azure Standard Load Balancer geleitet wird. Aus diesem Grund sollte der Datenverkehr vom Load Balancer geöffnet sein, wie in der "AllowAzureLoadBalancerInBound"-Regel dargestellt.
 
 * *Deaktiviert*: Diese Option schränkt den öffentlichen Netzwerkzugriff auf Ihr Speicherkonto ein und deaktiviert die Datenschichtung für Cloud Volumes ONTAP -Systeme.  Dies ist eine empfohlene Option, wenn Ihre privaten IP-Adressen aufgrund von Sicherheitsbestimmungen und -richtlinien nicht einmal innerhalb desselben VNet offengelegt werden sollen.
 

@@ -172,7 +172,7 @@ link:https://docs.netapp.com/us-en/keystone-staas/index.html["Erfahren Sie mehr 
 
 === Unterstützte Konfigurationen
 
-Keystone -Abonnements werden mit HA-Paaren unterstützt.  Diese Lizenzierungsoption wird derzeit für Einzelknotensysteme nicht unterstützt.
+Keystone Subscriptions werden mit HA-Paaren unterstützt. Diese Lizenzierungsoption wird derzeit nicht mit Single-Node-Systemen unterstützt.
 
 
 

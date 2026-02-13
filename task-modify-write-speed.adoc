@@ -16,7 +16,7 @@ summary: Möglicherweise müssen Sie die Konfiguration der Cloud Volumes ONTAP S
 [role="lead"]
 Sie können in der NetApp Console eine normale oder hohe Schreibgeschwindigkeit für Cloud Volumes ONTAP auswählen.  Die Standardschreibgeschwindigkeit ist normal.  Sie können auf eine hohe Schreibgeschwindigkeit umstellen, wenn für Ihre Arbeitslast eine schnelle Schreibleistung erforderlich ist.
 
-Hohe Schreibgeschwindigkeiten werden bei allen Arten von Einzelknotensystemen und einigen HA-Paarkonfigurationen unterstützt.  Unterstützte Konfigurationen anzeigen in der https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Versionshinweise zu Cloud Volumes ONTAP"^]
+Hohe Schreibgeschwindigkeiten werden bei allen Arten von Einzelknotensystemen und einigen HA-Paarkonfigurationen unterstützt. Unterstützte Konfigurationen anzeigen in der https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Versionshinweise zu Cloud Volumes ONTAP"^]
 
 Bevor Sie die Schreibgeschwindigkeit ändern, sollten Sielink:concept-write-speed.html["die Unterschiede zwischen den normalen und hohen Einstellungen verstehen"] .
 

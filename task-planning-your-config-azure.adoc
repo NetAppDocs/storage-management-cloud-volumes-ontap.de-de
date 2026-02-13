@@ -65,7 +65,7 @@ Typ der virtuellen Maschine:: Sehen Sie sich die unterstützten virtuellen Masch
 Azure-Datenträgertyp mit Einzelknotensystemen:: Wenn Sie Volumes für Cloud Volumes ONTAP erstellen, müssen Sie den zugrunde liegenden Cloud-Speicher auswählen, den Cloud Volumes ONTAP als Festplatte verwendet.
 +
 --
-Einzelknotensysteme können diese Typen von Azure Managed Disks verwenden:
+Einzelknotensysteme können diese Arten von Azure Managed Disks verwenden:
 
 * _Premium SSD Managed Disks_ bieten hohe Leistung für I/O-intensive Workloads zu höheren Kosten.
 * _Premium SSD v2 Managed Disks_ bieten im Vergleich zu Premium SSD Managed Disks eine höhere Leistung mit geringerer Latenz zu geringeren Kosten.
