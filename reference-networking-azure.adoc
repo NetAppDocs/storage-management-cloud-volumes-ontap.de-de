@@ -178,6 +178,16 @@ link:task-enabling-private-link.html["Erfahren Sie mehr über die Verwendung von
 
 
 
+=== Netzwerk für Azure VNet-Verschlüsselung
+
+Cloud Volumes ONTAP unterstützt https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-encryption-overview["Azure Virtual Network (VNet)-Verschlüsselung"^] die Verschlüsselung des VM-zu-VM-Datenverkehrs innerhalb eines VNet oder zwischen verbundenen VNets. Diese Funktion wird auf der Azure VNet-Ebene konfiguriert und ist unabhängig von der Cloud Volumes ONTAP-Topologie (Single Node oder HA).
+
+Sie müssen lediglich sicherstellen, dass Accelerated Networking auf den Netzwerkkarten der VM aktiviert ist und die Anforderungen und Einschränkungen der Azure VNet-Verschlüsselung überprüfen, bevor Sie die Funktion aktivieren. Sie sollten NetApp verwaltete Load-Balancer-Objekte nicht ändern.
+
+https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-overview?tabs=NetworkManager["Azure documentation: VNet-Verschlüsselung und Accelerated Networking"^].
+
+
+
 === Verbindungen zu anderen ONTAP -Systemen
 
 Um Daten zwischen einem Cloud Volumes ONTAP -System in Azure und ONTAP -Systemen in anderen Netzwerken zu replizieren, benötigen Sie eine VPN-Verbindung zwischen dem Azure VNet und dem anderen Netzwerk, beispielsweise Ihrem Unternehmensnetzwerk.

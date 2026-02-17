@@ -20,6 +20,35 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf die
 
 
 
+== 17. Februar 2026
+
+
+
+=== Cloud Volumes ONTAP Unterstützung für Google Cloud VMs der nächsten Generation
+
+Mit 9.18.1 wechselt NetApp bei neuen Cloud Volumes ONTAP-Bereitstellungen von N2-VMs auf die nächste Generation der Google Cloud C3-Serien-VMs für ein schnelleres und skalierbareres Erlebnis. Sie können jetzt die Vorteile der C3-Serien-VMs nutzen, wenn Sie Cloud Volumes ONTAP 9.18.1 und höher in Google Cloud bereitstellen. Die C3-Serien-Maschinen bieten verbesserte Leistung und höhere Kapazitätsgrenzen durch die Verwendung von Google Virtual NIC (gVNIC) und Hyperdisk Balanced Disks, die dynamische Leistung für intensive Workloads gewährleisten.
+
+
+NOTE: Aktuell unterstützt Cloud Volumes ONTAP die C3-Serie nur in Einzelknoten-Bereitstellungen.
+
+Wenn Ihr Cloud Volumes ONTAP-System Version 9.18.1 oder höher ausführt, verwenden die vorkonfigurierten Pakete, die Sie für einfache Einzelknotenbereitstellungen nutzen, automatisch C3-VMs, während Sie die IOPS- und Durchsatzparameter basierend auf Ihren Workload-Anforderungen anpassen können. Ebenso können Sie beim Erstellen von Aggregaten Hyperdisk Balanced-Festplatten hinzufügen, um in Google Cloud eine bessere Leistung und Skalierbarkeit zu erzielen. Zusätzlich können Sie die LSSD-Varianten der C3-Serie für die standardmäßige Flash Cache-Unterstützung auswählen.
+
+Sie können den Datenträgertyp für C3-VMs beim Hinzufügen von Volumes zu Aggregaten nicht ändern, da C3 nur Hyperdisk Balanced-Datenträger unterstützt. Ebenso wird beim Replizieren eines Systems mit N2-VM-Typen auf eine C3-VM der Datenträgertyp standardmäßig auf Hyperdisk Balanced gesetzt.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Google Cloud"^]
+
+https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["Google documents: C3-Maschinenserie"^]
+
+
+
+=== VNet-Sicherheit für Cloud Volumes ONTAP in Azure
+
+Cloud Volumes ONTAP 9.18.1 und spätere Deployments in Azure Single- und Multi-Availability Zones unterstützen Azure Virtual Network (VNet)-Verschlüsselung als Teil ihrer mehrschichtigen Sicherheitsstrategie zum Schutz von Daten während der Übertragung. Cloud Volumes ONTAP nutzt Azures natives Datagram Transport Layer Security (DTLS)-Protokoll, um die Kommunikation zwischen ONTAP-Knoten, Managementschnittstellen und anderen Azure-Diensten zu sichern und so das Abfangen und den unbefugten Zugriff zu verhindern. Diese netzwerkbasierte Verschlüsselung ergänzt ONTAPs integrierte Speicher- und Data-at-Rest-Schutzmechanismen, um eine End-to-End-Sicherheit Ihrer Daten zu gewährleisten.
+
+https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_gcp-sn-c3-support/reference-networking-azure.html#networking-for-azure-vnet-encryption["Netzwerk für Azure VNet-Verschlüsselung"^]
+
+
+
 == 12. Februar 2026
 
 
@@ -44,7 +73,7 @@ https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/
 
 === Cloud Volumes ONTAP 9.18.1 GA
 
-Sie können jetzt die NetApp Console verwenden, um die General Availability-Version von Cloud Volumes ONTAP 9.18.1 in AWS und Azure bereitzustellen und zu verwalten. Diese Version ist für die Bereitstellung und das Upgrade in Google Cloud nicht verfügbar.
+Sie können jetzt die NetApp Console verwenden, um die General Availability (GA) Version von Cloud Volumes ONTAP 9.18.1 in AWS, Azure und Google Cloud bereitzustellen und zu verwalten.
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Erfahren Sie mehr über diese Version von Cloud Volumes ONTAP"^] .
 

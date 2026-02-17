@@ -44,3 +44,9 @@ endif::aws[]
 
 * Das erneute Aufwärmen des Caches nach einem Neustart wird von Cloud Volumes ONTAP nicht unterstützt.
 
+
+.Verwandte Themen
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in AWS"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Azure"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Google Cloud"^]
+

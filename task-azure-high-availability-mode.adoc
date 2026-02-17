@@ -14,13 +14,12 @@ summary: Der Hochverfügbarkeitsmodus von Microsoft Azure sollte aktiviert werde
 
 
 [role="lead"]
-Der Hochverfügbarkeitsmodus (HA) von Microsoft Azure sollte aktiviert werden, um ungeplante Failover-Zeiten zu reduzieren und die NFSv4-Unterstützung für Cloud Volumes ONTAP zu aktivieren.  In diesem Modus können Ihre Cloud Volumes ONTAP HA-Knoten bei ungeplanten Failovers auf CIFS- und NFSv4-Clients eine niedrige Recovery Time Objective (RTO) von 60 Sekunden erreichen.
+Sie sollten den Hochverfügbarkeitsmodus (HA) von Microsoft Azure aktivieren, um ungeplante Failover-Zeiten zu reduzieren und die NFSv4-Unterstützung für Cloud Volumes ONTAP zu ermöglichen. Wenn Sie diesen Modus aktivieren, können Ihre Cloud Volumes ONTAP HA-Knoten bei ungeplanten Failovern auf CIFS- und NFSv4-Clients ein niedriges Recovery Time Objective (RTO) von 60 Sekunden erreichen.
 
 Ab Cloud Volumes ONTAP 9.10.1 haben wir die ungeplante Failover-Zeit für Cloud Volumes ONTAP HA-Paare, die in Microsoft Azure ausgeführt werden, reduziert und Unterstützung für NFSv4 hinzugefügt.  Um diese Verbesserungen für Cloud Volumes ONTAP verfügbar zu machen, müssen Sie die Hochverfügbarkeitsfunktion in Ihrem Azure-Abonnement aktivieren.
 
-Die NetApp Console fordert Sie zur Eingabe dieser Details auf, wenn die Funktion für ein Azure-Abonnement aktiviert werden muss.
-
-Beachten Sie Folgendes:
+.Informationen zu diesem Vorgang
+NetApp Console fordert Sie mit diesen Details auf, wenn die Funktion in einem Azure-Abonnement aktiviert werden muss. Beachten Sie Folgendes:
 
 * Es gibt keine Probleme mit der Hochverfügbarkeit Ihres Cloud Volumes ONTAP HA-Paares.  Diese Azure-Funktion arbeitet mit ONTAP zusammen, um die vom Client beobachtete Anwendungsausfallzeit für NFS-Protokolle zu reduzieren, die aus ungeplanten Failover-Ereignissen resultiert.
 * Das Aktivieren dieser Funktion hat keine Unterbrechungen für Cloud Volumes ONTAP HA-Paare.
@@ -29,9 +28,9 @@ Beachten Sie Folgendes:
 * Wenn der HA-Modus aktiviert ist, scannt die Konsole das System alle 12 Stunden, um die internen Azure Load Balancer-Regeln zu aktualisieren.
 
 
-Ein Azure-Benutzer mit „Besitzer“-Berechtigungen kann die Funktion über die Azure CLI aktivieren.
-
 .Schritte
+Ein Azure-Benutzer mit _Owner_-Berechtigungen kann die Funktion über die Azure CLI aktivieren.
+
 . https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart["Greifen Sie über das Azure-Portal auf die Azure Cloud Shell zu"^]
 . Registrieren Sie die Funktion für den Hochverfügbarkeitsmodus:
 +
@@ -62,4 +61,9 @@ Die Azure CLI sollte ein Ergebnis ähnlich dem folgenden zurückgeben:
   "type": "Microsoft.Features/providers/features"
 }
 ----
+
+
+.Weiterführende Links
+. https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-ha-ports-overview["Microsoft Azure documentation: Übersicht über Hochverfügbarkeitsports"^]
+. https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest["Microsoft Azure documentation: Erste Schritte mit der Azure CLI"^]
 
