@@ -311,7 +311,7 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 
 
 | Projekt bearbeiten  a| 
-Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP gespeichert werden soll.  Das Standardprojekt ist das Projekt der Konsole.
+Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP residieren soll.
 
 Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Gehen Sie zur Google Cloud Console, öffnen Sie den IAM-Dienst und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die Console verwenden, zu diesem Projekt hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
 
