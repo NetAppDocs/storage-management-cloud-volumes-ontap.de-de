@@ -1,0 +1,105 @@
+= Aktivitäten, die Sie nicht ausführen können, nach Tab
+:allow-uri-read: 
+
+
+
+
+=== Aktivitäten, die Sie nicht ausführen können, nach Tab
+
+Die folgende Tabelle fasst die eingeschränkten Aktivitäten nach Tab zusammen.
+
+[cols="1,4"]
+|===
+| Tab | Aktivitäten, die Sie nicht ausführen können 
+
+
+| Überblick  a| 
+* Fügen Sie ein Volume hinzu
+* Fügen Sie ein Aggregat hinzu
+* System Manager öffnen
+* Verwenden Sie den Ein-/Ausschalter
+* Legen Sie ein Passwort fest
+* Aktualisieren Sie die ONTAP Version
+* Entfernen Sie das System aus dem Arbeitsbereich
+* Das System löschen
+* Verwenden Sie *Jetzt upgraden*
+* Bearbeiten Sie *System tags* über das All-Features-Stiftmenü
+* Bearbeiten Sie *Scheduled downtime* über das Stiftsymbol-Menü für alle Funktionen
+* Bearbeiten Sie *Speicherklassen* über das Stiftmenü für alle Funktionen
+* Bearbeiten Sie *Instance type* über das Bleistiftmenü für alle Funktionen
+* Bearbeiten Sie die *Lademethode* über das Bleistiftmenü für alle Funktionen
+* Bearbeiten Sie *License type* über das Stiftsymbol-Menü für alle Funktionen
+* Bearbeiten Sie *Schreibgeschwindigkeit* über das Bleistiftmenü für alle Funktionen
+* Bearbeiten Sie *Ransomware protection* über das Bleistiftmenü für alle Funktionen
+* Bearbeiten Sie *Support registration* über das Bleistiftmenü für alle Funktionen
+* Bearbeiten Sie *WORM* über das Stiftsymbol-Menü „Alle Funktionen“
+* Bearbeiten Sie *Data tiering* über das Stiftsymbol-Menü für alle Funktionen
+* Bearbeiten Sie *CIFS setup* über das Stift-Menü für alle Funktionen
+* Bearbeiten Sie *Routentabellen* über das Stiftmenü für alle Funktionen
+
+
+
+
+| Volumes  a| 
+In diesem Tab sind keine Volume-Aktualisierungen zulässig und Sie können keine Volumes hinzufügen.
+
+* Klonen eines Volumes
+* Volume-Einstellungen bearbeiten
+* Löschen eines Volumes
+* Erstellen Sie eine Snapshot-Kopie
+* Aus einer Snapshot-Kopie wiederherstellen
+* Ändern Sie den Festplattentyp (erweiterte Option)
+* Ändern Sie die Tiering-Richtlinie (erweiterte Option)
+
+
+
+
+| Aggregate  a| 
+* Fügen Sie ein Aggregat hinzu
+* Fügen Sie ein Volume hinzu
+* Kapazität erhöhen
+* Ein Aggregat löschen
+
+
+
+
+| Replikation  a| 
+* Replikation unterbrechen
+* Resync-Replikation
+* Reverse-Resync-Replikation
+* Bearbeiten Sie den Zeitplan
+* Bearbeiten Sie die maximale Transferrate
+* Replikation aktualisieren
+* Replikation löschen
+
+
+
+
+| Hauptleinwand  a| 
+* Fügen Sie ein System hinzu
+* Entdecken Sie ein System (für alle Betreiber)
+* Verwenden Sie Drag-and-Drop für *Kopieren und Synchronisieren*
+* Verwenden Sie Drag-and-Drop für *Volume caching*
+* Verwenden Sie Drag-and-Drop für *Replication*
+* Fügen Sie ein Volume hinzu
+* Zugriff auf *optimierte Kosten und Leistung*
+* System Manager öffnen
+* Verwenden Sie *Replikation* für Cloud Volumes ONTAP nur, wenn die erforderliche CVO-Berechtigung verfügbar ist (nicht anwendbar auf FSx für ONTAP oder On-Premises-Systeme)
+* Verwenden Sie *Volume caching* für Cloud Volumes ONTAP nur, wenn die erforderliche CVO-Berechtigung verfügbar ist (nicht anwendbar auf FSx für ONTAP oder On-Premises-Systeme)
+* Geben Sie ein System ein
+* Verwenden Sie die AVS management-Schaltfläche
+
+
+
+
+| Ohne Rollen  a| 
+Wenn keine Rolle zugewiesen ist, sind alle Aktionen deaktiviert.
+
+* Auf die Arbeitsumgebung zugreifen
+* Zugriffsreplikation
+* Verwenden Sie den Cloud Volumes ONTAP Erstellungsassistenten
+* Verwenden Sie den Replikationserstellungsassistenten
+* Entdecken Sie Cloud Volumes ONTAP
+
+
+|===

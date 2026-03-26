@@ -54,7 +54,7 @@ Sie können WORM-Speicher auf einem Cloud Volumes ONTAP -System aktivieren, wenn
 
 == Dateien an WORM übergeben
 
-Sie können eine Anwendung verwenden, um Dateien über NFS oder CIFS an WORM zu übergeben, oder die ONTAP CLI verwenden, um Dateien automatisch an WORM zu übergeben.  Sie können auch eine WORM-Anfügedatei verwenden, um inkrementell geschriebene Daten wie Protokollinformationen aufzubewahren.
+Sie können eine Anwendung verwenden, um Dateien über NFS oder CIFS an WORM zu übertragen, oder die ONTAP CLI verwenden, um Dateien automatisch an WORM zu übertragen. Sie können auch eine WORM-anhängbare Datei verwenden, um Daten zu speichern, die inkrementell geschrieben werden, wie Protokollinformationen. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/ontap/snaplock/commit-files-worm-state-manual-task.html#commit-files-to-worm-manually["Dateien mit ONTAP SnapLock auf WORM festschreiben"^].
 
 Nachdem Sie den WORM-Speicher auf einem Cloud Volumes ONTAP System aktiviert haben, müssen Sie die ONTAP CLI für die gesamte Verwaltung des WORM-Speichers verwenden.  Anweisungen hierzu finden Sie im http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html["ONTAP -Dokumentation zu SnapLock"^] .
 
