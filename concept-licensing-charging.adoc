@@ -48,7 +48,7 @@ Ihre Lizenz wird immer zuerst in Rechnung gestellt. In den folgenden Fällen wir
 ** Wenn die Laufzeit Ihrer Lizenz abläuft
 
 
-* Wenn Sie einen Jahresvertrag von einem Marktplatz haben, werden _alle_ von Ihnen bereitgestellten Cloud Volumes ONTAP Systeme über diesen Vertrag abgerechnet.  Sie können einen jährlichen Marktplatzvertrag nicht mit BYOL kombinieren.
+* Wenn Sie eine BYOL-Lizenz und einen Jahresvertrag von einem Marktplatz besitzen, werden Ihr Verbrauch und etwaige Mehrkosten gemäß der von Ihnen festgelegten Abrechnungspräferenz berechnet. Um zu verstehen, wie Sie abgerechnet werden, siehe link:concept-licensing-charging.html#concept-licensing-charging.html#billing-preferences-and-overages["Abrechnungseinstellungen und Überschreitungen"].
 * Nur Einzelknotensysteme mit BYOL werden in China-Regionen unterstützt. Bereitstellungen in China-Regionen sind von den BYOL-Lizenzbeschränkungen ausgenommen.
 
 

@@ -129,3 +129,9 @@ Die Speicherübernahme, Neusynchronisierung und Rückgabe erfolgen standardmäß
 == Speicherkonfigurationen
 
 Sie können ein HA-Paar als Aktiv-Aktiv-Konfiguration verwenden, bei der beide Knoten Daten an Clients bereitstellen, oder als Aktiv-Passiv-Konfiguration, bei der der passive Knoten nur dann auf Datenanforderungen antwortet, wenn er den Speicher für den aktiven Knoten übernommen hat.
+
+
+NOTE: Cloud Volumes ONTAP verwendet Load Balancer im Aktiv/Passiv-Modus für Probes. In Azure antwortet nur der aktive Knoten auf eine Probe. Der passive Knoten wird möglicherweise als inaktiv mit einem X angezeigt. Dies ist das erwartete Verhalten und kein Grund zur Sorge.
+
+.Weiterführender Link
+link:task-azure-high-availability-mode.html["Aktivieren Sie den Hochverfügbarkeitsmodus für Cloud Volumes ONTAP in Azure"^]
