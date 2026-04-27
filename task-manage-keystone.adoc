@@ -45,7 +45,7 @@ Nachdem NetApp Ihr ​​Konto autorisiert hat, können Sie Keystone Abonnements
 .Schritte
 . Wählen Sie im Menü der NetApp Console *Administration > Licenses and subscriptions*.
 . Wählen Sie * Keystone -Abonnements* aus.
-. Klicken Sie für das Abonnement, das Sie verknüpfen möchten, aufimage:icon-action.png["Ein Symbol, das aus drei nebeneinander liegenden Punkten besteht"] und wählen Sie *Link*.
+. Wählen Sie für das Abonnement, das Sie verknüpfen möchten, image:icon-action.png["Ein Symbol, das aus drei nebeneinander liegenden Punkten besteht"] und wählen Sie *Verknüpfen* aus.
 
 
 .Ergebnis
@@ -60,9 +60,9 @@ Wenn Sie die zugesagte Kapazität für die Service-Levels Ihres Abonnements änd
 .Schritte
 . Wählen Sie im Menü der NetApp Console *Administration > Licenses and subscriptions*.
 . Wählen Sie * Keystone -Abonnements* aus.
-. Klicken Sie für das Abonnement, dessen Kapazität Sie anpassen möchten, auf image:icon-action.png["Ein Symbol, das aus drei nebeneinander liegenden Punkten besteht"] und wählen Sie *Details anzeigen und bearbeiten*.
+. Wählen Sie für das Abonnement, dessen Kapazität Sie anpassen möchten, image:icon-action.png["Ein Symbol, das aus drei nebeneinander liegenden Punkten besteht"] und wählen Sie *Details anzeigen und bearbeiten*.
 . Geben Sie die angeforderte zugesagte Kapazität für ein oder mehrere Abonnements ein.
-. Scrollen Sie nach unten, geben Sie zusätzliche Details für die Anfrage ein und klicken Sie dann auf *Senden*.
+. Scrollen Sie nach unten, geben Sie gegebenenfalls weitere Details für die Anfrage ein und wählen Sie dann *Submit*.
 
 
 .Ergebnis
@@ -85,7 +85,7 @@ Wenn Sie ein Keystone -Abonnement nicht mehr mit der Konsole verwenden möchten,
 .Schritte
 . Wählen Sie im Menü der NetApp Console *Administration > Licenses and subscriptions*.
 . Wählen Sie * Keystone*.
-. Klicken Sie für das Abonnement, dessen Verknüpfung Sie aufheben möchten, aufimage:icon-action.png["Ein Symbol, das aus drei nebeneinander liegenden Punkten besteht"] und wählen Sie *Verknüpfung aufheben*.
+. Wählen Sie für das Abonnement, das Sie entkoppeln möchten, image:icon-action.png["Ein Symbol, das aus drei nebeneinander liegenden Punkten besteht"] und wählen Sie *Entkoppeln* aus.
 
 
 .Ergebnis
