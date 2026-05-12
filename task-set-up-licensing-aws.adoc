@@ -18,30 +18,29 @@ Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie mit Cloud Volumes 
 
 
 
-== Freemium
+== Festlegung der bevorzugten Abrechnung für einen eigenständigen AWS-Eintrag
 
-Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bereitgestellter Kapazität kostenlos zu nutzen. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#free-trials["Erfahren Sie mehr über das Freemium-Angebot"^] .
+Wenn Sie ein eigenständiges AWS-Abonnement mit Ihrem AWS-Konto verknüpft haben, können Sie Cloud Volumes ONTAP über dieses Abonnement bezahlen. Wenn Sie außerdem NetApp Intelligent Services (NIS) Abonnements haben, können Sie Ihre Datendienste über das mit dem NIS-Abonnement verknüpfte Paket bezahlen. Für bestehende Abonnements empfiehlt NetApp, auf das eigenständige Abonnementmodell umzusteigen, um die Kosten Ihrer Cloud Volumes ONTAP Nutzung besser zu verwalten.
+
+.Informationen zu diesem Vorgang
+Wenn Sie bereits Kunde sind und NIS-Abonnements mit Ihrem AWS-Konto verknüpft haben, empfiehlt NetApp den Wechsel zu einem eigenständigen Abonnement, um die Kosten Ihrer Cloud Volumes ONTAP Nutzung besser zu verwalten. Dies ist der vollständige Prozess:
+
+. Abonnieren Sie einen neuen eigenständigen Eintrag im AWS-Portal.
+. Verknüpfen Sie das eigenständige Abonnement mit Ihrem AWS-Konto.
+. Stellen Sie Ihre Abrechnungspräferenz auf das Einzelabonnement für die Nutzung von Cloud Volumes ONTAP mit dem Essentials-Paket ein.
+. (Falls zutreffend) Konvertieren Sie Ihr Professional-Paket in ein Essentials-Paket und legen Sie die Abrechnungseinstellung fest. Siehe https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods["Ändern Sie die Abrechnungsmethoden für Kapazitätslizenzen"^] für Informationen zur Konvertierung Ihres Professional-Pakets in ein Essentials-Paket.
+. Die Abrechnung von Datendiensten erfolgt weiterhin über Ihr NIS-Abonnement.
+
 
 .Schritte
-. Wählen Sie im linken Navigationsmenü der NetApp Console*Speicher > Verwaltung* aus.
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
-+
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
-+
-Ihnen werden keine Kosten über das Marktplatz-Abonnement berechnet, es sei denn, Sie überschreiten 500 GiB bereitgestellte Kapazität. Zu diesem Zeitpunkt wird das System automatisch auf daslink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages["Essentials-Paket"^] .
-
-+
-image:screenshot-aws-paygo-subscription.png["Ein Screenshot der PAYGO-Abonnementoption beim Erstellen eines Cloud Volumes ONTAP Systems."]
-
-.. Nachdem Sie zur Konsole zurückgekehrt sind, wählen Sie *Freemium* aus, wenn Sie die Seite mit den Abrechnungsmethoden erreichen.
-+
-image:screenshot-freemium.png["Ein Screenshot der Freemium-Option beim Erstellen eines Cloud Volumes ONTAP Systems."]
+. Wählen Sie im linken Bereich der NetApp Console *Administration > Licenses and subscriptions > Billing preferences > Cloud Volumes ONTAP*.
+. Wählen Sie auf der Registerkarte AWS das eigenständige Abonnement aus und klicken Sie auf das Optionssymbol image:screenshot_gallery_options.gif["Kebab-Symbol"].
+. Im Fenster „Konfiguration bearbeiten“ wählen Sie die Abonnementnummer des eigenständigen Eintrags im Feld *AWS account credentials* aus.
+. Klicken Sie auf *Konfigurieren*. Anschließend wird Ihnen das Abonnement als bevorzugte Option für Ihre Cloud Volumes ONTAP Abrechnung in AWS angezeigt.
+. Bei der Bereitstellung eines neuen Cloud Volumes ONTAP Systems wählen Sie das Essentials-Paket, um über das Einzelabonnement abzurechnen. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"^].
 
 
-
-
-
-link:task-deploying-otc-aws.html["Sehen Sie sich die Schritt-für-Schritt-Anleitung zum Starten von Cloud Volumes ONTAP in AWS an"] .
+Wiederholen Sie die gleichen Schritte für das NIS-Abonnement auf der Registerkarte *Datendienste*, um das NIS-Abonnement für Ihre Datendienste zu nutzen. Wählen Sie bei der Bereitstellung eines neuen Cloud Volumes ONTAP-Systems das Professional-Paket aus, um die Abrechnung über das NIS-Abonnement vorzunehmen.
 
 
 
@@ -143,6 +142,33 @@ image:screenshot-aws-annual-subscription.png["Ein Screenshot des Jahresvertragsa
 .. Nachdem Sie zur Konsole zurückgekehrt sind, wählen Sie auf der Seite mit den Abrechnungsmethoden ein kapazitätsbasiertes Paket aus.
 +
 image:screenshot-professional.png["Ein Screenshot der Professional-Option beim Erstellen eines Cloud Volumes ONTAP -Systems."]
+
+
+
+
+
+link:task-deploying-otc-aws.html["Sehen Sie sich die Schritt-für-Schritt-Anleitung zum Starten von Cloud Volumes ONTAP in AWS an"] .
+
+
+
+== Freemium
+
+Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bereitgestellter Kapazität kostenlos zu nutzen. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#free-trials["Erfahren Sie mehr über das Freemium-Angebot"^] .
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü der NetApp Console*Speicher > Verwaltung* aus.
+. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
++
+.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
++
+Ihnen werden keine Kosten über das Marktplatz-Abonnement berechnet, es sei denn, Sie überschreiten 500 GiB bereitgestellte Kapazität. Zu diesem Zeitpunkt wird das System automatisch auf daslink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages["Essentials-Paket"^] .
+
++
+image:screenshot-aws-paygo-subscription.png["Ein Screenshot der PAYGO-Abonnementoption beim Erstellen eines Cloud Volumes ONTAP Systems."]
+
+.. Nachdem Sie zur Konsole zurückgekehrt sind, wählen Sie *Freemium* aus, wenn Sie die Seite mit den Abrechnungsmethoden erreichen.
++
+image:screenshot-freemium.png["Ein Screenshot der Freemium-Option beim Erstellen eines Cloud Volumes ONTAP Systems."]
 
 
 

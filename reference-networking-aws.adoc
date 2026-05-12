@@ -88,6 +88,12 @@ Die HA-Mediatorinstanz muss über eine ausgehende Verbindung zum AWS EC2-Dienst 
 
 Die manuelle Option kann ein NAT-Gateway oder ein Schnittstellen-VPC-Endpunkt vom Zielsubnetz zum AWS EC2-Dienst sein.  Weitere Informationen zu VPC-Endpunkten finden Sie im http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html["AWS-Dokumentation: Schnittstelle für VPC-Endpunkte (AWS PrivateLink)"^] .
 
+Während der Bereitstellung von Cloud Volumes ONTAP akzeptiert das Feld für den AWS-Mediator-Proxy eine Serveradresse. Wenn Sie eine vollqualifizierte Domain (FQDN) anstelle einer IP-Adresse eingeben, kann der FQDN nicht aufgelöst werden, es sei denn, die AWS VPC ist mit einem benutzerdefinierten DNS-Server konfiguriert. Dies liegt daran, dass der standardmäßig von AWS bereitgestellte DNS-Server nur öffentliche DNS-Einträge und interne AWS-Hosts auflöst und keine externen FQDNs wie Proxyserver von Kunden auflösen kann. Wenn dies auf Sie zutrifft, haben Sie zwei Möglichkeiten:
+
+* Fügen Sie die IP-Adresse des Proxyservers direkt in das Feld „Mediator-Proxy“ ein, anstatt die vollqualifizierte Domain (FQDN) zu verwenden.
+* Konfigurieren Sie in Ihrer VPC einen DHCP-Optionssatz, der Ihre benutzerdefinierten DNS-Serveradressen enthält. Dadurch kann AWS die vollqualifizierte Domain (FQDN) auflösen, wenn Sie diese während der Bereitstellung im Feld Proxyserver eingeben. Weitere Informationen finden Sie in der  https://docs.aws.amazon.com/vpc/latest/userguide/DHCPOptionSet.html["AWS-Dokumentation"^].
+
+
 
 
 === Netzwerkproxykonfiguration des NetApp Console Agenten

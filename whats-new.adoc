@@ -20,6 +20,54 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf die
 
 
 
+== 12. Mai 2026
+
+
+
+=== Flexible Abrechnung für Cloud Volumes ONTAP und Datendienste in AWS
+
+NetApp bietet erweiterte Abrechnungsoptionen für Ihre Cloud Volumes ONTAP-Abonnements in AWS und gibt Ihnen so mehr Kontrolle darüber, wie Sie für Cloud Volumes ONTAP Kapazität und NetApp Datendienste wie BlueXP Backup und Recovery bezahlen. Bisher wurden alle Cloud Volumes ONTAP und Datendienste gemeinsam über den NetApp Intelligent Services (NIS) Eintrag im AWS Marketplace abgerechnet.
+
+Aufgrund von Änderungen im AWS Enterprise Discount Program (EDP) hat NetApp ein eigenständiges Cloud Volumes ONTAP-Abonnement im AWS Marketplace eingeführt, das es Ihnen ermöglicht, die Abrechnung der Cloud Volumes ONTAP-Kapazität von den Datendiensten zu trennen. Diese Trennung bietet Ihnen mehr Flexibilität bei der Verwaltung Ihrer EDP-Guthaben und -Kosten. NetApp empfiehlt die Nutzung des eigenständigen Abonnements für ein besseres Kostenmanagement Ihrer Cloud Volumes ONTAP Nutzung, während Sie das NIS-Abonnement weiterhin für die Abrechnung von Datendiensten nach dem 31. Juli 2026 verwenden sollten, wenn die EDP-Anforderungen in Kraft treten.
+
+Das eigenständige Cloud Volumes ONTAP-Abonnement in AWS unterstützt ausschließlich gültige kapazitätsbasierte Essentials- oder Freemium-Lizenzpakete. Das Professional-Paket wird nicht unterstützt. Sie können die für Ihre Bedürfnisse optimale Abrechnungsmethode auswählen:
+
+* *Eigenständiges Cloud Volumes ONTAP-Abonnement (Empfohlen)*: Bezahlen Sie Ihre Cloud Volumes ONTAP-Nutzung über das eigenständige Abonnement im AWS Marketplace, während die Datendienste weiterhin über das NIS-Abonnement abgerechnet werden. Dies ist die empfohlene Option für die meisten Kunden, die sowohl ein eigenständiges als auch ein NIS-Abonnement mit ihrem AWS-Konto in der NetApp Console verknüpft haben.
+* *Kombiniertes NIS-Abonnement*: Bezahlen Sie sowohl Cloud Volumes ONTAP als auch Datendienste gemeinsam über den bestehenden NIS-Eintrag. Der kombinierte Ansatz gilt für Bestandskunden, die ausschließlich NIS-Abonnements mit ihrem AWS-Konto in der NetApp Console verknüpft haben. Allerdings empfiehlt NetApp, dass Sie Ihre Abrechnungspräferenz für Ihre Cloud Volumes ONTAP Nutzung festlegen und für eine bessere Kostenkontrolle auf das eigenständige Abonnement umsteigen.
+
+
+Je nach Abonnementtyp ergeben sich folgende Szenarien:
+
+.Nur Einzelabonnement (für Neukunden)
+Wenn Sie in der NetApp Console nur ein eigenständiges AWS-Abonnement mit Ihrem AWS-Konto verknüpft haben und keine NIS-Abonnements besitzen, können Sie bei der Bereitstellung nur das Essentials-Lizenzpaket auswählen. Die Datenservices-Option *Backup und Recovery* steht Ihnen nicht zur Verfügung.
+
+.Sowohl Einzelabonnements als auch NIS-Abonnements (für Bestandskunden)
+Wenn Sie sowohl NIS- als auch eigenständige Abonnements mit Ihrem AWS-Konto verknüpft haben und keine Abrechnungspräferenz über die Registerkarte *Abrechnungseinstellungen* in der NetApp Console festgelegt haben, wird die Nutzung von Cloud Volumes ONTAP weiterhin standardmäßig über NIS abgerechnet. Dies ist auch die Standardeinstellung für jede Cloud Volumes ONTAP Instanz mit dem Professional-Paket, da das eigenständige Angebot Professional nicht unterstützt. Sie können eine Abrechnungspräferenz festlegen und auswählen, wie jeder Dienst abgerechnet wird:
+
+* Legen Sie das Einzelabonnement als bevorzugtes Abrechnungskonto für Cloud Volumes ONTAP (mit Essentials-Paket) fest. Wenn Sie nur das Professional-Paket besitzen, können Sie es in ein Essentials-Paket umwandeln und Ihre Cloud Volumes ONTAP-Nutzung über die entsprechende Abrechnungseinstellung abrechnen. Wir empfehlen diese Vorgehensweise, da Sie so Ihre Cloud Volumes ONTAP EDP-Guthaben effizienter verwalten können.
+* Nutzen Sie das NIS-Abonnement für die Abrechnung von Datendiensten oder die Nutzung von Cloud Volumes ONTAP über das Professional-Paket. Aktivieren Sie während der Bereitstellung den Datendienst *Backup und Recovery* und wählen Sie das Professional-Lizenzpaket aus, um Datendienste über das NIS-Abonnement abzurechnen.
+
+
+.Nur NIS-Abonnement (Bestandskunden)
+Dies gilt, wenn Sie bereits Kunde sind und NIS-Abonnements mit Ihrem AWS-Konto verknüpft haben. Sie können Cloud Volumes ONTAP und Datendienste weiterhin wie bisher gemeinsam abrechnen. Allerdings empfiehlt NetApp, für eine bessere Kostenkontrolle Ihrer Cloud Volumes ONTAP-Nutzung auf das eigenständige Abonnementmodell umzusteigen:
+
+* Abonnieren Sie einen neuen eigenständigen Eintrag im AWS-Portal.
+* Verknüpfen Sie das eigenständige Abonnement mit Ihrem AWS-Konto.
+* Stellen Sie Ihre Abrechnungspräferenz auf das Einzelabonnement für die Nutzung von Cloud Volumes ONTAP mit dem Essentials-Paket ein.
+* (Falls zutreffend) Wandeln Sie Ihr Professional-Paket in ein Essentials-Paket um und legen Sie die Abrechnungseinstellungen fest.
+* Die Abrechnung von Datendiensten erfolgt weiterhin über Ihr NIS-Abonnement.
+
+
+
+NOTE: Es kommt nicht zu doppelter Messung, wenn Sie mehrere Abonnementtypen verwenden oder zwischen Angeboten migrieren.
+
+.Weiterführender Link
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-set-up-licensing-aws.html["Einrichten der Lizenzierung für Cloud Volumes ONTAP in AWS"^]
+* https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods["Ändern Sie die Abrechnungsmethoden für Kapazitätslizenzen"^]
+
+
+
+
 == 13. April 2026
 
 
