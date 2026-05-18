@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: task-quick-deploy-aws.html 
+permalink: task-quick-deploy-azure.html 
 keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ, MAZ, single node, HA pair 
 summary: Sie können Cloud Volumes ONTAP Instanzen schnell in einer Einzelsystemkonfiguration oder als HA-Paar in AWS bereitstellen. 
 ---
@@ -185,6 +185,6 @@ Sollten bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftrete
 CAUTION: Nach Abschluss des Bereitstellungsprozesses dürfen die systemgenerierten Cloud Volumes ONTAP Konfigurationen im AWS- oder Azure-Cloudportal, insbesondere die System-Tags, nicht verändert werden. Jegliche Änderungen an diesen Konfigurationen können zu unerwartetem Verhalten oder Datenverlust führen.
 
 .Weiterführende Links
-* link:task-planning-your-config.html["Planen Ihrer Cloud Volumes ONTAP Konfiguration"] *
-* link:task-deploying-otc-aws.html["Stellen Sie Cloud Volumes ONTAP in AWS mithilfe der erweiterten Bereitstellung bereit"]
+* link:task-planning-your-config-azure.html["Planen Ihrer Cloud Volumes ONTAP Konfiguration"]
+* link:task-deploying-otc-azure.html["Cloud Volumes ONTAP in Azure mit fortschrittlicher Bereitstellung bereitstellen"]
 

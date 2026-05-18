@@ -41,8 +41,9 @@ Die folgende Tabelle fasst die eingeschränkten Aktivitäten nach Tab zusammen.
 
 
 | Volumes  a| 
-In diesem Tab sind keine Volume-Aktualisierungen zulässig und Sie können keine Volumes hinzufügen.
+Folgende Volumenoperationen können nicht durchgeführt werden:
 
+* Fügen Sie ein Volume hinzu
 * Klonen eines Volumes
 * Volume-Einstellungen bearbeiten
 * Löschen eines Volumes
@@ -93,7 +94,7 @@ In diesem Tab sind keine Volume-Aktualisierungen zulässig und Sie können keine
 
 
 | Ohne Rollen  a| 
-Wenn keine Rolle zugewiesen ist, sind alle Aktionen deaktiviert.
+Wenn keine Rolle zugewiesen ist, können Sie keine Aktionen ausführen, einschließlich:
 
 * Auf die Arbeitsumgebung zugreifen
 * Zugriffsreplikation

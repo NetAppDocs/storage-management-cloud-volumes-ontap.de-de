@@ -4,7 +4,7 @@ permalink: task-deploying-otc-azure.html
 keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, azure, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, HA pair, associate subscription, azure marketplace, marketplace subscription, cloud data sense, cloud backup 
 summary: Sie können ein einzelnes Cloud Volumes ONTAP -System in Azure starten, indem Sie in der NetApp Console ein Cloud Volumes ONTAP -System erstellen. 
 ---
-= Starten Sie Cloud Volumes ONTAP in Azure
+= Cloud Volumes ONTAP mit fortschrittlichen Methoden in Azure bereitstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -507,8 +507,6 @@ Weitere Informationen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-
 Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fortschritt auf der Audit-Seite verfolgen.
 
 Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
-
-Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
 
 .Nach Abschluss
 * Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.

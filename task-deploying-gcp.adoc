@@ -496,8 +496,6 @@ Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fort
 
 Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
 
-Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
-
 .Nach Abschluss
 * Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.
 * Wenn Sie Kontingente auf Volumes anwenden möchten, verwenden Sie ONTAP System Manager oder die ONTAP CLI.

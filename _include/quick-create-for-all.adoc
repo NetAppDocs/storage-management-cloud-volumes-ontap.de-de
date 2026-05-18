@@ -1,16 +1,5 @@
----
-sidebar: sidebar 
-permalink: task-quick-deploy-aws.html 
-keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ, MAZ, single node, HA pair 
-summary: Sie können Cloud Volumes ONTAP Instanzen schnell in einer Einzelsystemkonfiguration oder als HA-Paar in AWS bereitstellen. 
----
-= Cloud Volumes ONTAP mit Schnellerstellung bereitstellen
-:hardbreaks:
+= 
 :allow-uri-read: 
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
@@ -176,6 +165,18 @@ TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Rec
 . Überprüfen oder bearbeiten Sie die eingegebenen Details und klicken Sie dann auf *Erstellen*.
 
 
+ifdef::azure[]
+
+In Azure werden im Abschnitt *Übersicht* die Ressourcen angezeigt, die nach Abschluss des Bereitstellungsprozesses zugewiesen werden.
+
+endif::azure[]
+
+ifdef::aws[]
+
+In _AWS_ startet die NetApp Console unmittelbar nach der Erstellung des Cloud Volumes ONTAP Systems eine Testinstanz in der angegebenen VPC, um die Konnektivität zu überprüfen. Bei Erfolg beendet die Console die Instanz sofort und beginnt dann mit der Bereitstellung des Systems. Wenn die Console die Konnektivität nicht überprüfen kann, schlägt die Erstellung des Systems fehl. Die Testinstanz ist entweder eine `t2.nano` (für Standard-VPC-Tenancy) oder eine `m3.medium` (für dedizierte VPC-Tenancy).
+
+endif::aws[]
+
 .Nach Abschluss
 Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fortschritt auf der Audit-Seite verfolgen.
 
@@ -183,8 +184,3 @@ Sollten bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftrete
 
 
 CAUTION: Nach Abschluss des Bereitstellungsprozesses dürfen die systemgenerierten Cloud Volumes ONTAP Konfigurationen im AWS- oder Azure-Cloudportal, insbesondere die System-Tags, nicht verändert werden. Jegliche Änderungen an diesen Konfigurationen können zu unerwartetem Verhalten oder Datenverlust führen.
-
-.Weiterführende Links
-* link:task-planning-your-config.html["Planen Ihrer Cloud Volumes ONTAP Konfiguration"] *
-* link:task-deploying-otc-aws.html["Stellen Sie Cloud Volumes ONTAP in AWS mithilfe der erweiterten Bereitstellung bereit"]
-
