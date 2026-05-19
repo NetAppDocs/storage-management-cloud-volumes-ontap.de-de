@@ -254,7 +254,7 @@ network interface create -vserver svm_2 -service-policy default-data-iscsi -home
 ----
 +
 ** Dieses iSCSI-LIF ist erforderlich, um die LIF-Migration der Floating-IPs in der Speicher-VM zu unterstützen.  Es muss kein iSCSI-LIF sein, aber es kann nicht für die Migration zwischen Knoten konfiguriert werden.
-** `-service-policy default-data-block`gibt an, dass eine IP-Adresse nicht zwischen Knoten migriert.
+** `-service-policy default-data-iscsi` weist darauf hin, dass eine IP-Adresse nicht zwischen Knoten migriert wird.
 ** _private_ip_ ist eine ungenutzte sekundäre private IP-Adresse auf eth0 (e0a) von cvo_node1.
 
 
@@ -266,7 +266,7 @@ network interface create -vserver svm_2 -service-policy default-data-iscsi -home
 ----
 +
 ** Dieses iSCSI-LIF ist erforderlich, um die LIF-Migration der Floating-IPs in der Speicher-VM zu unterstützen.  Es muss kein iSCSI-LIF sein, aber es kann nicht für die Migration zwischen Knoten konfiguriert werden.
-** `-service-policy default-data-block`gibt an, dass eine IP-Adresse nicht zwischen Knoten migriert.
+** `-service-policy default-data-iscsi` weist darauf hin, dass eine IP-Adresse nicht zwischen Knoten migriert wird.
 ** _private_ip_ ist eine ungenutzte sekundäre private IP-Adresse auf eth0 (e0a) von cvo_node2.
 
 
