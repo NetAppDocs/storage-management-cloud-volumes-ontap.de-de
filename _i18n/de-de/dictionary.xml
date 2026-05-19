@@ -6524,4 +6524,6 @@
   <block id="690f86e0be68ddfe1eb22f837c53e53c" category="sidebar">Stellen Sie Cloud Volumes ONTAP mit fortschrittlichen Optionen in AWS bereit.</block>
   <block id="7fa0d9a7585aaeb29c655dac03f5e3d6" category="sidebar">Cloud Volumes ONTAP mit Standardwerten in Azure bereitstellen</block>
   <block id="75903a04d1a65d3e18c839c67b54316d" category="sidebar">Stellen Sie Cloud Volumes ONTAP mit fortschrittlichen Optionen in Azure bereit.</block>
+  <block id="8af1ad3469dad38ef46da37595e3b758" category="inline-link-macro">Erfahren Sie mehr über Licenses and subscriptions Rollen für die NetApp Console</block>
+  <block id="1ccb85040042290f711464fbb5e06609" category="paragraph">*Erforderliche Konsolenrolle* Um diese Aufgabe auszuführen, benötigen Sie die Licenses and subscriptions admin role.<block ref="f7bfd1d1e66654a9d76ee2fffeede42a" category="inline-link-macro-rx"></block>.</block>
 </blocks>

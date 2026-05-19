@@ -20,6 +20,8 @@ NetApp Keystone ist ein flexibler, abonnementbasierter Pay-as-you-grow-Service, 
 
 https://www.netapp.com/services/keystone/["Erfahren Sie mehr über Keystone"^]
 
+*Erforderliche Konsolenrolle* Um diese Aufgabe auszuführen, benötigen Sie die Licenses and subscriptions admin role.link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-licenses-subscriptions.html["Erfahren Sie mehr über Licenses and subscriptions Rollen für die NetApp Console"^].
+
 
 
 == Autorisieren Sie Ihr Konto
