@@ -136,7 +136,7 @@ Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volum
 . *Lizenzierung*: Ändern Sie bei Bedarf die Cloud Volumes ONTAP -Version und wählen Sie einen virtuellen Maschinentyp aus.
 +
 
-NOTE: Wenn für die ausgewählte Version ein neuerer Release Candidate, eine allgemeine Verfügbarkeit oder ein Patch-Release verfügbar ist, aktualisiert BlueXP das System beim Erstellen der Arbeitsumgebung auf diese Version.  Das Update erfolgt beispielsweise, wenn Sie Cloud Volumes ONTAP 9.16.1 P3 auswählen und 9.16.1 P4 verfügbar ist.  Das Update erfolgt nicht von einer Version zur nächsten, beispielsweise von 9.15 auf 9.16.
+NOTE: Wenn für die ausgewählte Version eine neuere Release Candidate-, General Availability- oder Patch-Version verfügbar ist, aktualisiert Console das System beim Erstellen der Arbeitsumgebung auf diese Version. Beispielsweise erfolgt die Aktualisierung, wenn Sie Cloud Volumes ONTAP 9.16.1 P3 auswählen und 9.16.1 P4 verfügbar ist. Das Update erfolgt nicht von einer Version zur nächsten – beispielsweise von 9.15 auf 9.16.
 
 . *Abonnieren Sie über den Azure Marketplace*: Diese Seite wird Ihnen angezeigt, wenn die Konsole keine programmgesteuerten Bereitstellungen von Cloud Volumes ONTAP aktivieren konnte.  Befolgen Sie die auf dem Bildschirm aufgeführten Schritte. Siehe https://learn.microsoft.com/en-us/marketplace/programmatic-deploy-of-marketplace-products["Programmatische Bereitstellung von Marketplace-Produkten"^] für weitere Informationen.
 . *Zugrunde liegende Speicherressourcen*: Wählen Sie Einstellungen für das anfängliche Aggregat: einen Datenträgertyp, eine Größe für jeden Datenträger und ob die Datenaufteilung auf Blob-Speicher aktiviert werden soll.

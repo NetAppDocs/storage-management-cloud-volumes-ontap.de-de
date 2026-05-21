@@ -44,7 +44,7 @@ NOTE: Wenn Sie Quick create zur Bereitstellung eines neuen Cloud Volumes ONTAP-S
 
 === Flexible Abrechnung für Cloud Volumes ONTAP und Datendienste in AWS
 
-NetApp bietet erweiterte Abrechnungsoptionen für Ihre Cloud Volumes ONTAP-Abonnements in AWS und gibt Ihnen so mehr Kontrolle darüber, wie Sie für Cloud Volumes ONTAP Kapazität und NetApp Datendienste wie BlueXP Backup und Recovery bezahlen. Bisher wurden alle Cloud Volumes ONTAP und Datendienste gemeinsam über den NetApp Intelligent Services (NIS) Eintrag im AWS Marketplace abgerechnet.
+NetApp bietet erweiterte Abrechnungsoptionen für Ihre Cloud Volumes ONTAP-Abonnements in AWS, sodass Sie mehr Kontrolle darüber haben, wie Sie für Cloud Volumes ONTAP-Kapazität und NetApp-Datendienste wie NetApp Backup and Recovery bezahlen. Bisher wurden alle Cloud Volumes ONTAP- und Datendienste-Nutzungen gemeinsam über die NetApp Intelligent Services (NIS)-Auflistung im AWS Marketplace abgerechnet.
 
 Aufgrund von Änderungen im AWS Enterprise Discount Program (EDP) hat NetApp ein eigenständiges Cloud Volumes ONTAP-Abonnement im AWS Marketplace eingeführt, das es Ihnen ermöglicht, die Abrechnung der Cloud Volumes ONTAP-Kapazität von den Datendiensten zu trennen. Diese Trennung bietet Ihnen mehr Flexibilität bei der Verwaltung Ihrer EDP-Guthaben und -Kosten. NetApp empfiehlt die Nutzung des eigenständigen Abonnements für ein besseres Kostenmanagement Ihrer Cloud Volumes ONTAP Nutzung, während Sie das NIS-Abonnement weiterhin für die Abrechnung von Datendiensten nach dem 31. Juli 2026 verwenden sollten, wenn die EDP-Anforderungen in Kraft treten.
 
