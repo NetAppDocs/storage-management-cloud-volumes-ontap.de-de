@@ -53,7 +53,7 @@ Die Benutzerauthentifizierung schlägt fehl und die folgenden Dienste sind weite
 
 
 
-| https://vault.azure.net[] | Schlüsseltresor | Wird verwendet, um geheime Clientschlüssel aus dem Azure Key Vault abzurufen, wenn kundenverwaltete Schlüssel (CMK) verwendet werden. | Standard-, eingeschränkter und privater Modus. | Cloud Volumes ONTAP Dienste sind nicht verfügbar. 
+| \https://vault.azure.net | Schlüsseltresor | Wird verwendet, um geheime Clientschlüssel aus dem Azure Key Vault abzurufen, wenn kundenverwaltete Schlüssel (CMK) verwendet werden. | Standard-, eingeschränkter und privater Modus. | Cloud Volumes ONTAP Dienste sind nicht verfügbar. 
 
 
 | \https://api.bluexp.netapp.com/tenancy | Mietverhältnis | Wird verwendet, um die Cloud Volumes ONTAP -Ressourcen von der Konsole abzurufen, um Ressourcen und Benutzer zu autorisieren. | Standard- und eingeschränkte Modi. | Cloud Volumes ONTAP Ressourcen und die Benutzer sind nicht autorisiert. 

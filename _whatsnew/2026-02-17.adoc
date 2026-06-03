@@ -25,4 +25,4 @@ https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["G
 
 Cloud Volumes ONTAP 9.18.1 und spätere Deployments in Azure Single- und Multi-Availability Zones unterstützen Azure Virtual Network (VNet)-Verschlüsselung als Teil ihrer mehrschichtigen Sicherheitsstrategie zum Schutz von Daten während der Übertragung. Cloud Volumes ONTAP nutzt Azures natives Datagram Transport Layer Security (DTLS)-Protokoll, um die Kommunikation zwischen ONTAP-Knoten, Managementschnittstellen und anderen Azure-Diensten zu sichern und so das Abfangen und den unbefugten Zugriff zu verhindern. Diese netzwerkbasierte Verschlüsselung ergänzt ONTAPs integrierte Speicher- und Data-at-Rest-Schutzmechanismen, um eine End-to-End-Sicherheit Ihrer Daten zu gewährleisten.
 
-https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_gcp-sn-c3-support/reference-networking-azure.html#networking-for-azure-vnet-encryption["Netzwerk für Azure VNet-Verschlüsselung"^]
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-azure.html#networking-for-azure-vnet-encryption["Netzwerk für Azure VNet-Verschlüsselung"]

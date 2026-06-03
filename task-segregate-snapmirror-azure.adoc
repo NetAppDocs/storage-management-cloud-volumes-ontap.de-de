@@ -85,7 +85,7 @@ az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> 
 ----
 az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --subnet <id_from_prev_command> --accelerated-networking true
 ----
-.. Speichern Sie die private IP-Adresse.  Diese IP-Adresse, <new_added_nic_primary_addr>, wird verwendet, um ein Intercluster-LIF in<<Step 2: Create a new IPspace,Broadcast-Domäne, Intercluster-LIF für die neue NIC>> .
+.. Speichern Sie die privateIPAddress. Diese IP-Adresse, <new_added_nic_primary_addr>, wird verwendet, um einen Intercluster-LIF in <<step-second,Broadcast-Domäne und Intercluster-LIF für die neue Netzwerkkarte>> zu erstellen.
 
 
 . Schließen Sie die neue Netzwerkkarte an die VM an.
@@ -112,7 +112,7 @@ Wiederholen Sie bei HA-Paar-Bereitstellungen die Schritte für den Partnerknoten
 
 
 
-== Schritt 2: Erstellen Sie einen neuen IPspace, eine neue Broadcast-Domäne und ein Intercluster-LIF für die neue Netzwerkkarte
+== [[step-second]]Schritt 2: Erstellen Sie einen neuen IPspace, eine Broadcast-Domäne und eine Intercluster-LIF für die neue NIC
 
 Ein separater IP-Bereich für LIFs zwischen Clustern bietet eine logische Trennung zwischen Netzwerkfunktionen für die Replikation zwischen Clustern.
 

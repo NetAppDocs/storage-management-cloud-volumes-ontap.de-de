@@ -524,7 +524,7 @@ Der Worker-Pool muss die folgende Konfiguration aufweisen:
 ** Festplattengröße: 100 GB
 ** Externe IP zuweisen: False
 ** Netzwerk: Standard oder privat.
-** Das Subnetz ist für den Zugriff konfiguriert http://googleapis.com/["Google APIs"]. Führen Sie die folgenden Schritte aus, um sicherzustellen, dass das Subnetz auf die Google APIs zugreifen kann:
+** Das Subnetz ist für den Zugriff konfiguriert https://cloud.google.com/apis["Google Cloud APIs"^]. Führen Sie die folgenden Schritte aus, um sicherzustellen, dass das Subnetz auf die Google APIs zugreifen kann:
 +
 ... Stellen Sie sicher, dass „Private Google Access“ für das Subnetz aktiviert ist.
 ... Gehen Sie zu *VPC Network level > Private Service Access Tab > Allocated IP ranges for services*.
