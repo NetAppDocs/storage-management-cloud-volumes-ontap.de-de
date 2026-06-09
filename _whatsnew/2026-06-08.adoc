@@ -1,0 +1,17 @@
+= Neue EC2-Instanzen werden für Cloud Volumes ONTAP in AWS unterstützt.
+:allow-uri-read: 
+
+
+
+
+=== Neue EC2-Instanzen werden für Cloud Volumes ONTAP in AWS unterstützt.
+
+Cloud Volumes ONTAP 9.16.1 und höher unterstützen die EC2-Instanzfamilien M6id und M6idn sowohl für neue als auch bestehende Einzelknoten- und Hochverfügbarkeits-Bereitstellungen (HA) in AWS. Diese Instanzen der 6. Generation bieten im Vergleich zu den Allzwecksystemen der 5. Generation eine höhere Rechenleistung, verbesserte Netzwerkfunktionen und eine insgesamt höhere Performance.
+
+* *M6id-Instanzen*: Sie bieten ein ausgewogenes Verhältnis von Rechenleistung und Arbeitsspeicher mit schnellem, mit niedriger Latenz lokalem NVMe-Speicher. Alle M6id-Instanzgrößen unterstützen Flash Cache. Diese Instanzen eignen sich hervorragend für Workloads wie Protokollierung und Medienverarbeitung.
+* *M6idn-Instanzen*: Bieten dieselben lokalen NVMe-Speicherfunktionen wie M6id-Instanzen. Alle M6idn-Instanzgrößen unterstützen Flash Cache.
+
+
+Wir empfehlen die kleineren Instanztypen m6id.xlarge, m6id.2xlarge, m6idn.xlarge und m6idn.2xlarge nicht für Hochleistungs- oder speicherintensive Workloads. Für diese Workloads verwenden Sie einen Instanztyp mit einer höheren Kernanzahl und mehr Arbeitsspeicher.
+
+Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in AWS"^].
