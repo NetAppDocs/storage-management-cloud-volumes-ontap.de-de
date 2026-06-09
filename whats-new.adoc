@@ -24,7 +24,7 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf die
 
 
 
-=== Neue EC2-Instanzen werden für Cloud Volumes ONTAP in AWS unterstützt.
+=== Unterstützung für neue EC2-Instanzen für Cloud Volumes ONTAP in AWS
 
 Cloud Volumes ONTAP 9.16.1 und höher unterstützen die EC2-Instanzfamilien M6id und M6idn sowohl für neue als auch bestehende Einzelknoten- und Hochverfügbarkeits-Bereitstellungen (HA) in AWS. Diese Instanzen der 6. Generation bieten im Vergleich zu den Allzwecksystemen der 5. Generation eine höhere Rechenleistung, verbesserte Netzwerkfunktionen und eine insgesamt höhere Performance.
 
