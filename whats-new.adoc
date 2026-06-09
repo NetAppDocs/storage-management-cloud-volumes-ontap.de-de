@@ -28,9 +28,6 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf die
 
 Mit Quick create können Sie Cloud Volumes ONTAP in Azure sowohl für Einzelknoten- als auch für Hochverfügbarkeitskonfigurationen (HA) bereitstellen. Dieser optimierte Prozess reduziert die Anzahl der Schritte im Vergleich zur fortschrittlichen Methoden, legt automatisch Standardwerte auf einer einzigen Seite fest und minimiert die Navigation, wodurch die Bereitstellung schneller und einfacher wird.
 
-
-NOTE: Wenn Sie Quick create zur Bereitstellung eines neuen Cloud Volumes ONTAP-Systems in Azure verwenden, wählt die NetApp Console standardmäßig die Azure-Anmeldeinformationen aus. Sie können alle Ihre Cloud Volumes ONTAP-Systeme mit den anfänglichen Azure-Anmeldeinformationen bereitstellen. Wenn Sie ein anderes Abonnement und/oder andere Anmeldeinformationen verwenden möchten, müssen Sie zur Bereitstellung im erweiterten Modus wechseln. Diese Einschränkung wird in einer zukünftigen Version behoben.
-
 .Weiterführende Links
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html["Cloud Volumes ONTAP in Azure mit Schnellerstellung bereitstellen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Cloud Volumes ONTAP mit fortschrittlichen Methoden in Azure bereitstellen"^]
