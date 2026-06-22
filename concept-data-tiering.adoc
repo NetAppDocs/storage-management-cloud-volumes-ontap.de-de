@@ -118,7 +118,7 @@ ifdef::gcp[]
 
 == Daten-Tiering in Google Cloud
 
-Wenn Sie das Daten-Tiering in Google Cloud aktivieren, verwendet Cloud Volumes ONTAP persistente Festplatten als Leistungsebene für Hot Data und einen Google Cloud Storage-Bucket als Kapazitätsebene für inaktive Daten.
+Wenn Sie Data Tiering in Google Cloud aktivieren, verwendet Cloud Volumes ONTAP persistente Festplatten als Performance-Tier für häufig genutzte Daten und einen Google Cloud Storage Bucket als Kapazitäts-Tier für inaktive Daten. Eine Speicherebene kann beim Erstellen eines Systems ausgewählt und jederzeit danach geändert werden. Informationen zum Ändern der Speicherklasse finden sich unter link:task-tiering.html["Verschieben Sie inaktive Daten in kostengünstige Objektspeicher"].
 
 Leistungsstufe:: Die Leistungsstufe kann entweder aus persistenten SSD-Festplatten, ausgeglichenen persistenten Festplatten oder persistenten Standardfestplatten bestehen.
 Kapazitätsstufe:: Ein Cloud Volumes ONTAP -System verteilt inaktive Daten auf einen einzelnen Google Cloud Storage-Bucket.
@@ -137,16 +137,9 @@ Wenn die Konsole den Bucket erstellt, verwendet sie die folgenden Standardeinste
 
 
 --
-Speicherklassen:: Die Standardspeicherklasse für mehrstufige Daten ist die Klasse _Standard Storage_.  Bei seltenem Datenzugriff können Sie Ihre Speicherkosten durch den Wechsel zu _Nearline Storage_ oder _Coldline Storage_ senken.  Wenn Sie die Speicherklasse ändern, werden nachfolgende inaktive Daten direkt in die von Ihnen ausgewählte Klasse verschoben.
+Speicherklassen:: Google Cloud verwendet  https://cloud.google.com/storage/docs/storage-classes["Speicherklassen"^] zur Verwaltung von Kosten und Datenverfügbarkeit. Es wird empfohlen, die Speicherklasse entsprechend der erwarteten Datenzugriffshäufigkeit auszuwählen, da der Datenzugriff mit höheren Kosten verbunden ist. Die Standard Storage-Klasse für gestaffelte Daten ist _Standard Storage_. Sofern nicht manuell geändert, behalten alle inaktiven Daten die Standard Storage-Klasse bei. Zum Ändern der Speicherklasse inaktiver Daten siehe  https://docs.cloud.google.com/storage/docs/managing-lifecycles["Google Cloud Dokumentation: Verwaltung von Objektlebenszyklen"^].
 +
 --
-
-NOTE: Alle vorhandenen inaktiven Daten behalten die Standardspeicherklasse bei, wenn Sie die Speicherklasse ändern.  Um die Speicherklasse für vorhandene inaktive Daten zu ändern, müssen Sie die Kennzeichnung manuell vornehmen.
-
-Wenn Sie auf die Daten zugreifen, sind die Zugriffskosten höher. Berücksichtigen Sie dies, bevor Sie die Speicherklasse ändern.  Weitere Informationen finden Sie im https://cloud.google.com/storage/docs/storage-classes["Google Cloud-Dokumentation: Speicherklassen"^] .
-
-Sie können beim Erstellen des Systems eine Speicherebene auswählen und diese später jederzeit ändern.  Einzelheiten zum Ändern der Speicherklasse finden Sie unterlink:task-tiering.html["Verschieben Sie inaktive Daten in kostengünstige Objektspeicher"] .
-
 Die Speicherklasse für die Datenschichtung gilt systemweit, nicht pro Datenträger.
 
 --
