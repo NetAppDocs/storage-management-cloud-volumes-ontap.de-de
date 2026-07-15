@@ -18,6 +18,7 @@ Um das exportierte, von Google Cloud signierte Image zu überprüfen, müssen Si
 
 
 
+[[signed-image-verification-workflow-summary]]
 == Zusammenfassung des Workflows zur signierten Bildüberprüfung
 
 Nachfolgend finden Sie eine Übersicht über den Workflow-Prozess zur Überprüfung signierter Bilder in Google Cloud.

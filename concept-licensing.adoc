@@ -18,6 +18,7 @@ Für Cloud Volumes ONTAP sind mehrere Lizenzierungsoptionen verfügbar. Jede Opt
 
 
 
+[[licensing-overview]]
 == Lizenzübersicht
 
 Für Neukunden stehen folgende Lizenzierungsoptionen zur Verfügung.
@@ -33,6 +34,7 @@ NOTE: Für die Nutzung lizenzierter Funktionen ohne Lizenz wird kein Support ang
 
 
 
+[[capacity-based-licensing]]
 == Kapazitätsbasierte Lizenzierung
 
 Mit kapazitätsbasierten Lizenzpaketen können Sie für Cloud Volumes ONTAP pro TiB Kapazität bezahlen. Die Lizenz ist mit Ihrem NetApp -Konto verknüpft und ermöglicht Ihnen, mehrere Systeme über die Lizenz abzurechnen, sofern über die Lizenz genügend Kapazität verfügbar ist.
@@ -46,6 +48,7 @@ NOTE: Während die tatsächliche Nutzung und Messung der in der NetApp Console v
 
 
 
+[[packages]]
 === Pakete
 
 Für Cloud Volumes ONTAP sind die folgenden kapazitätsbasierten Pakete verfügbar.  Weitere Informationen zu kapazitätsbasierten Lizenzpaketen finden Sie unterlink:concept-licensing-charging.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen"] .
@@ -120,6 +123,7 @@ NOTE: Für Backup und Recovery ist ein Pay-as-you-go-Abonnement (PAYGO) erforder
 
 
 
+[[availability-of-capacity-based-licenses]]
 === Verfügbarkeit kapazitätsbasierter Lizenzen
 
 Die Verfügbarkeit der PAYGO- und BYOL-Lizenzen für Cloud Volumes ONTAP Systeme erfordert, dass der Konsolenagent betriebsbereit ist.
@@ -131,6 +135,7 @@ NOTE: NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizen
 
 
 
+[[how-to-get-started]]
 === Erste Schritte
 
 Erfahren Sie, wie Sie mit der kapazitätsbasierten Lizenzierung beginnen:
@@ -158,6 +163,7 @@ endif::gcp[]
 
 
 
+[[keystone-subscription]]
 == Keystone Abonnement
 
 Ein Abonnementdienst mit nutzungsabhängiger Bezahlung, der ein nahtloses Hybrid-Cloud-Erlebnis für diejenigen bietet, die OpEx-Verbrauchsmodelle gegenüber vorab zu zahlenden Investitionskosten oder Leasing bevorzugen.
@@ -170,12 +176,14 @@ link:https://docs.netapp.com/us-en/keystone-staas/index.html["Erfahren Sie mehr 
 
 
 
+[[supported-configurations]]
 === Unterstützte Konfigurationen
 
 Keystone Subscriptions werden mit HA-Paaren unterstützt. Diese Lizenzierungsoption wird derzeit nicht mit Single-Node-Systemen unterstützt.
 
 
 
+[[capacity-limit]]
 === Kapazitätsgrenze
 
 Im kapazitätsbasierten Lizenzmodell unterstützt jedes Cloud Volumes ONTAP System die Einstufung in Objektspeicher und die gesamte abgestufte Kapazität kann bis zum Bucket-Limit des Cloud-Anbieters skaliert werden. Obwohl die Lizenz keine Kapazitätsbeschränkungen vorsieht, befolgen Sie die https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Best Practices für FabricPool"^] um optimale Leistung, Zuverlässigkeit und Kosteneffizienz bei der Konfiguration und Verwaltung der Tiering-Ebene sicherzustellen.
@@ -189,6 +197,7 @@ Informationen zu den Kapazitätsgrenzen der einzelnen Cloud-Anbieter finden Sie 
 
 
 
+[[how-to-get-started]]
 === Erste Schritte
 
 Erfahren Sie, wie Sie mit einem Keystone -Abonnement beginnen:
@@ -216,6 +225,7 @@ endif::gcp[]
 
 
 
+[[node-based-licensing]]
 == Knotenbasierte Lizenzierung
 
 Die knotenbasierte Lizenzierung ist das Lizenzierungsmodell der vorherigen Generation, mit dem Sie Cloud Volumes ONTAP pro Knoten lizenzieren konnten.  Dieses Lizenzmodell ist für Neukunden nicht verfügbar.  Das Laden nach Knoten wurde durch die oben beschriebenen Lademethoden nach Kapazität ersetzt.
@@ -226,6 +236,7 @@ Weitere Informationen finden Sie unter https://mysupport.netapp.com/info/communi
 
 
 
+[[end-of-availability-of-node-based-licenses]]
 === Ende der Verfügbarkeit von knotenbasierten Lizenzen
 
 Ab dem 11. November 2024 wurde die begrenzte Verfügbarkeit von knotenbasierten Lizenzen beendet. Der Support für die knotenbasierte Lizenzierung endet am 31. Dezember 2024.
@@ -274,6 +285,7 @@ NOTE: Auch in diesen Szenarien sind neue knotenbasierte Lizenzen und Lizenzverl�
 
 
 
+[[license-conversion]]
 == Lizenzkonvertierung
 
 Die Konsole ermöglicht eine nahtlose Konvertierung von knotenbasierten Lizenzen in kapazitätsbasierte Lizenzen über das Lizenzkonvertierungstool.  Informationen zum EOA der knotenbasierten Lizenzierung finden Sie unterlink:concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"] .

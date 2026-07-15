@@ -20,6 +20,7 @@ Mit VPC Service Controls können Sie den Zugriff auf von Google verwaltete Diens
 
 
 
+[[how-netapp-services-communicate-with-vpc-service-controls]]
 == So kommunizieren NetApp -Dienste mit VPC Service Controls
 
 Die Konsole kommuniziert direkt mit den Google Cloud-APIs.  Dies wird entweder von einer externen IP-Adresse außerhalb von Google Cloud (z. B. von api.services.cloud.netapp.com) oder innerhalb von Google Cloud von einer internen Adresse ausgelöst, die dem Konsolenagenten zugewiesen ist.
@@ -28,6 +29,7 @@ Abhängig vom Bereitstellungsstil des Konsolenagenten müssen möglicherweise be
 
 
 
+[[images]]
 == Bilder
 
 Sowohl Cloud Volumes ONTAP als auch die Console verwenden Images aus einem Projekt innerhalb von Google Cloud, das von NetApp verwaltet wird. Dies kann die Bereitstellung des Console-Agenten und von Cloud Volumes ONTAP beeinträchtigen, wenn Ihre Organisation eine Richtlinie hat, die die Verwendung von Images blockiert, die nicht innerhalb der Organisation gehostet werden.
@@ -36,12 +38,14 @@ Sie können einen Konsolenagenten manuell mithilfe der manuellen Installationsme
 
 
 
+[[deploying-a-console-agent]]
 === Bereitstellen eines Konsolenagenten
 
 Der Benutzer, der einen Konsolenagenten bereitstellt, muss auf ein Image verweisen können, das in der Projekt-ID _netapp-cloudmanager_ und der Projektnummer _14190056516_ gehostet wird.
 
 
 
+[[deploying-cloud-volumes-ontap]]
 === Bereitstellen von Cloud Volumes ONTAP
 
 * Das Konsolendienstkonto muss auf ein Image verweisen, das in der Projekt-ID _netapp-cloudmanager_ und der Projektnummer _14190056516_ aus dem Dienstprojekt gehostet wird.
@@ -52,6 +56,7 @@ Beispiele für die Regeln, die zum Abrufen dieser Bilder mit VPC Service Control
 
 
 
+[[vpc-service-controls-perimeter-policies]]
 == VPC Service Controls-Perimeterrichtlinien
 
 Richtlinien ermöglichen Ausnahmen von den VPC-Dienststeuerungsregeln. Weitere Informationen zu Richtlinien finden Sie unter  https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules#policy-model["Google Cloud VPC Service Controls Policy Dokumentation"^].
@@ -60,6 +65,7 @@ Um die von der Konsole benötigten Richtlinien festzulegen, navigieren Sie zu Ih
 
 
 
+[[ingress-rules]]
 === Ingress-Regeln
 
 ....
@@ -107,6 +113,7 @@ To:
 ....
 
 
+[[egress-rules]]
 === Ausgangsregeln
 
 ....

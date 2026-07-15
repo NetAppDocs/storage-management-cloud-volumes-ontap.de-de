@@ -21,12 +21,14 @@ CAUTION: Sie müssen alle Datenträger und Aggregate direkt von der Konsole aus 
 
 
 
+[[storage-provisioning]]
 == Speicherbereitstellung
 
 Die Konsole vereinfacht die Speicherbereitstellung für Cloud Volumes ONTAP, indem sie Festplatten kauft und Aggregate für Sie verwaltet.  Sie müssen nur Volumes erstellen.  Sie können eine erweiterte Zuordnungsoption verwenden, um Aggregate selbst bereitzustellen, wenn Sie möchten.
 
 
 
+[[simplified-provisioning]]
 === Vereinfachte Bereitstellung
 
 Aggregate stellen Cloud-Speicher für Volumes bereit.  Die Konsole erstellt Aggregate für Sie, wenn Sie eine Instanz starten und zusätzliche Volumes bereitstellen.
@@ -80,12 +82,14 @@ endif::aws[]
 
 
 
+[[advanced-allocation]]
 === Erweiterte Zuordnung
 
 Sie können auch Aggregate verwalten. link:task-create-aggregates.html["Von der Seite *Erweiterte Zuordnung*"] können Sie neue Aggregate erstellen, die eine bestimmte Anzahl von Datenträgern enthalten, Datenträger zu einem vorhandenen Aggregat hinzufügen und Volumes in bestimmten Aggregaten erstellen.
 
 
 
+[[capacity-management]]
 == Kapazitätsmanagement
 
 Der Organisations- oder Kontoadministrator kann die Konsole so konfigurieren, dass Sie über Entscheidungen zur Speicherkapazität benachrichtigt werden oder ob die Kapazitätsanforderungen automatisch für Sie verwaltet werden sollen.
@@ -94,6 +98,7 @@ Dieses Verhalten wird durch den _Kapazitätsverwaltungsmodus_ auf einem Konsolen
 
 
 
+[[automatic-capacity-management]]
 === Automatisches Kapazitätsmanagement
 
 Der Kapazitätsverwaltungsmodus ist standardmäßig auf „Automatisch“ eingestellt.  In diesem Modus überprüft die Konsole alle 15 Minuten das Verhältnis des freien Speicherplatzes, um festzustellen, ob das Verhältnis des freien Speicherplatzes unter den angegebenen Schwellenwert fällt.  Wenn mehr Kapazität benötigt wird, leitet es den Kauf neuer Festplatten ein, löscht nicht verwendete Festplattensammlungen (Aggregate), verschiebt Volumes nach Bedarf zwischen Aggregaten und versucht, Festplattenausfälle zu verhindern.
@@ -127,12 +132,14 @@ Die automatische Kapazitätsverwaltung der Konsole gilt nicht für LUNs.  Beim E
 
 
 
+[[manual-capacity-management]]
 === Manuelles Kapazitätsmanagement
 
 Wenn der Organisations- oder Kontoadministrator den *Kapazitätsverwaltungsmodus* auf manuell einstellt, werden Sie von der Konsole aufgefordert, geeignete Maßnahmen für Kapazitätsentscheidungen zu ergreifen. Für den manuellen Modus gelten die gleichen Beispiele wie für den automatischen Modus, aber es liegt an Ihnen, die Aktionen zu akzeptieren.
 
 
 
+[[learn-more]]
 === Mehr erfahren
 
 link:task-manage-capacity-settings.html["Erfahren Sie, wie Sie den Kapazitätsverwaltungsmodus ändern"] .

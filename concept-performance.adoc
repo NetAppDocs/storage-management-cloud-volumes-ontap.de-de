@@ -18,6 +18,7 @@ Sie können die Leistungsergebnisse überprüfen, um zu entscheiden, welche Work
 
 
 
+[[performance-technical-reports]]
 == Leistungstechnische Berichte
 
 ifdef::aws[]
@@ -52,6 +53,7 @@ endif::gcp[]
 
 
 
+[[cpu-performance]]
 == CPU-Leistung
 
 Cloud Volumes ONTAP -Knoten werden in den Überwachungstools Ihres Cloud-Anbieters als stark ausgelastet (über 90 %) angezeigt.  Dies liegt daran, dass ONTAP alle der virtuellen Maschine bereitgestellten vCPUs reserviert, sodass sie bei Bedarf verfügbar sind.

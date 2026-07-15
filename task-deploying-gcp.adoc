@@ -18,6 +18,7 @@ Sie können Cloud Volumes ONTAP in einer Einzelknotenkonfiguration oder als HA-P
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Bevor Sie beginnen, benötigen Sie Folgendes.
@@ -27,7 +28,7 @@ Bevor Sie beginnen, benötigen Sie Folgendes.
 +
 ** Sie sollten über eine https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Konsolenagent, der mit Ihrem System verknüpft ist"^] .
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Sie sollten darauf vorbereitet sein, den Konsolenagenten immer laufen zu lassen"^] .
-** Das mit dem Console-Agenten verknüpfte Dienstkonto https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["sollte über die erforderlichen Berechtigungen verfügen"^]
+** Das mit dem Console Agent verknüpfte Dienstkonto https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["sollte über die erforderlichen Berechtigungen verfügen"^].
 
 
 * Ein Verständnis der Konfiguration, die Sie verwenden möchten.
@@ -51,6 +52,7 @@ link:task-set-up-licensing-google.html["Erfahren Sie, wie Sie die Lizenzierung e
 
 
 
+[[launch-a-single-node-system-in-google-cloud]]
 == Starten Sie ein Einzelknotensystem in Google Cloud
 
 Erstellen Sie in der NetApp Console ein System, um Cloud Volumes ONTAP in Google Cloud zu starten.
@@ -280,6 +282,7 @@ CAUTION: Nach Abschluss des Bereitstellungsprozesses dürfen die systemgeneriert
 
 
 
+[[launch-an-ha-pair-in-google-cloud]]
 == Starten Sie ein HA-Paar in Google Cloud
 
 Erstellen Sie in der Konsole ein System, um Cloud Volumes ONTAP in Google Cloud zu starten.
@@ -288,7 +291,7 @@ Erstellen Sie in der Konsole ein System, um Cloud Volumes ONTAP in Google Cloud 
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . Klicken Sie auf der Seite *Systeme* auf *Speicher > System* und folgen Sie den Anweisungen.
 . *Wählen Sie einen Standort*: Wählen Sie *Google Cloud* und * Cloud Volumes ONTAP HA*.
-. *Details und Anmeldeinformationen*: Wählen Sie ein Projekt aus, geben Sie einen Clusternamen an, wählen Sie optional ein Dienstkonto aus, fügen Sie optional Bezeichnungen hinzu und geben Sie dann die Anmeldeinformationen an.
+. *Systemdetails*: Es wird ein Projekt ausgewählt, ein Clustername angegeben, optional ein Service Account ausgewählt, optional Bezeichnungen hinzugefügt und anschließend Anmeldeinformationen angegeben.
 +
 In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
 
@@ -298,41 +301,40 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 | Feld | Beschreibung 
 
 
+| Google Cloud Projekt und Marketplace Abonnement  a| 
+Wählen Sie das Google-Projekt und das Abonnement aus, das Sie für dieses System verwenden möchten. Dies ist das Dienstkonto, das Sie für die NetApp Console eingerichtet haben. Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Konsoleneinrichtungsdokumente"^]. Die NetApp Console verwendet das Projekt zur Erstellung des Cloud Volumes ONTAP Systems und das Abonnement zur Bestimmung von Abrechnung und Nutzung. Wenn Sie in der Dropdown-Liste keine weiteren Projekte sehen, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Rufen Sie die Google Cloud Console auf, öffnen Sie den IAM-Service und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die NetApp Console verwenden, zu diesem Projekt hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
+
+Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.
+
+Um ein Cloud Volumes ONTAP System mit nutzungsbasierter Abrechnung zu erstellen, ist die Auswahl eines Google Cloud-Projekts erforderlich, das mit einem Abonnement für Cloud Volumes ONTAP aus dem Google Cloud Marketplace verknüpft ist. Siehe das Dokument zur Einrichtung der Console https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Verknüpfen eines Marktplatz-Abonnements mit Google Cloud-Anmeldeinformationen"^].
+
+
+
 | Systemname | Die Konsole verwendet den Systemnamen, um sowohl das Cloud Volumes ONTAP -System als auch die Google Cloud VM-Instanz zu benennen.  Wenn Sie diese Option auswählen, wird der Name auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet. 
 
 
 | Dienstkontoname | Wenn Sie dielink:concept-data-tiering.html["NetApp Cloud Tiering"] oder https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Sicherung und Wiederherstellung"^] Dienste müssen Sie den Schalter *Dienstkonto* aktivieren und dann das Dienstkonto auswählen, das über die vordefinierte Rolle „Speicheradministrator“ verfügt. 
 
 
-| Beschriftungen hinzufügen | Labels sind Metadaten für Ihre Google Cloud-Ressourcen.  Die Konsole fügt die Labels dem Cloud Volumes ONTAP -System und den mit dem System verknüpften Google Cloud-Ressourcen hinzu.  Sie können beim Erstellen eines Systems bis zu vier Beschriftungen über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Labels beschränkt.  Informationen zu Etiketten finden Sie unter https://cloud.google.com/compute/docs/labeling-resources["Google Cloud-Dokumentation: Kennzeichnungsressourcen"^] . 
+| Etiketten | Labels sind Metadaten für Ihre Google Cloud-Ressourcen.  Die Konsole fügt die Labels dem Cloud Volumes ONTAP -System und den mit dem System verknüpften Google Cloud-Ressourcen hinzu.  Sie können beim Erstellen eines Systems bis zu vier Beschriftungen über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Labels beschränkt.  Informationen zu Etiketten finden Sie unter https://cloud.google.com/compute/docs/labeling-resources["Google Cloud-Dokumentation: Kennzeichnungsressourcen"^] . 
 
 
-| Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
-
-
-| Projekt bearbeiten  a| 
-Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP residieren soll.
-
-Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Gehen Sie zur Google Cloud Console, öffnen Sie den IAM-Dienst und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die Console verwenden, zu diesem Projekt hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
-
-
-NOTE: Dies ist das Dienstkonto, das Sie für die Konsole eingerichtet haben.link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["wie auf dieser Seite beschrieben"^] .
-
-Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.
-
-Um ein Cloud Volumes ONTAP -System mit nutzungsbasierter Bezahlung zu erstellen, müssen Sie ein Google Cloud-Projekt auswählen, das mit einem Abonnement für Cloud Volumes ONTAP aus dem Google Cloud Marketplace verknüpft ist. Siehe https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Verknüpfen eines Marktplatz-Abonnements mit Google Cloud-Anmeldeinformationen"^] .
-
+| ONTAP Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
 |===
 . *Dienste*: Wählen Sie die Dienste aus, die Sie auf diesem System verwenden möchten.  Um „Backup und Wiederherstellung“ auszuwählen oder NetApp Cloud Tiering zu verwenden, müssen Sie in Schritt 3 das Dienstkonto angegeben haben.
 +
 
 TIP: Wenn Sie WORM und Daten-Tiering nutzen möchten, müssen Sie Backup und Recovery deaktivieren und ein Cloud Volumes ONTAP System mit Version 9.8 oder höher bereitstellen.
 
-. *HA-Bereitstellungsmodelle*: Wählen Sie mehrere Zonen (empfohlen) oder eine einzelne Zone für die HA-Konfiguration. Wählen Sie dann eine Region und eine Zone aus.
+. *Bereitstellungstopologie*: Es kann zwischen mehreren Verfügbarkeitszonen (AZ) (empfohlen) oder einer einzelnen AZ für die HA-Konfiguration gewählt werden.
 +
 link:concept-ha-google-cloud.html["Erfahren Sie mehr über HA-Bereitstellungsmodelle"^] .
 
-. *Konnektivität*: Wählen Sie vier verschiedene VPCs für die HA-Konfiguration, ein Subnetz in jedem VPC und dann eine Firewall-Richtlinie aus.
+. *Netzwerkkonfiguration und Konnektivität*: Die relevanten Regionen und Zonen werden ausgewählt. Vier verschiedene VPCs für die HA-Konfiguration, jeweils ein Subnetz in jeder VPC und anschließend eine Firewall-Richtlinie werden ausgewählt.
++
+
+NOTE: Cloud Volumes ONTAP 9.19.1 und höher unterstützen link:concept-ha-google-cloud.html["Gemeinsam genutzte Datenträger für Single AZ HA-Konfigurationen"], wodurch die Mediator-Instanz optional wird. In dieser Konfiguration ist es nicht erforderlich, eine Mediator-Zone, die entsprechende VPC und das Subnetz für Datenreplizierung anzugeben.
+
 +
 link:reference-networking-gcp.html["Erfahren Sie mehr über die Netzwerkanforderungen"^] .
 
@@ -364,7 +366,7 @@ Wenn Sie die Firewall-Richtlinie von der Konsole erstellen lassen, müssen Sie a
 
 . *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder klicken Sie auf *Meine eigene Konfiguration erstellen*.
 +
-Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volumen angeben und anschließend die Konfiguration prüfen und freigeben.
+Wenn Sie eines der Pakete auswählen, müssen Sie lediglich ein Volume angeben und anschließend die Konfiguration prüfen und genehmigen. Die vorkonfigurierten Pakete variieren je nach gewählter Cloud Volumes ONTAP Version und Konfigurationstypen. Wenn eine Bereitstellung in einer einzelnen AZ für Cloud Volumes ONTAP 9.19.1 oder höher ausgewählt wird, sind vorkonfigurierte Pakete mit C3-Series Maschinen und Hyperdisk Balanced Disks sichtbar. Für frühere Versionen und mehrere AZs können weiterhin n2-standard Maschinen und Persistent Disks ausgewählt werden. Die Konfigurationen, wie IOPS- und Durchsatzparameter, lassen sich entsprechend den Workload-Anforderungen anpassen.
 
 . *Lizenzierung*: Ändern Sie die Cloud Volumes ONTAP -Version nach Bedarf und wählen Sie einen Maschinentyp aus.
 +

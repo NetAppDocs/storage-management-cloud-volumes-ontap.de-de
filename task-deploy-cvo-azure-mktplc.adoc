@@ -96,6 +96,7 @@ Sobald Sie darauf zugreifen können, verwenden Sie ONTAP System Manager oder die
 
 
 
+[[troubleshoot-deployment-issues]]
 == Beheben von Bereitstellungsproblemen
 
 Cloud Volumes ONTAP -Systeme, die direkt über den Azure-Marktplatz bereitgestellt werden, umfassen keinen Support von NetApp.  Wenn während der Bereitstellung Probleme auftreten, können Sie diese selbstständig beheben.
@@ -114,6 +115,7 @@ Cloud Volumes ONTAP -Systeme, die direkt über den Azure-Marktplatz bereitgestel
 
 
 
+[[discover-the-deployed-systems-in-console]]
 == Entdecken Sie die bereitgestellten Systeme in der Konsole
 
 Sie können die Cloud Volumes ONTAP -Systeme, die Sie mithilfe der direkten Bereitstellung im Azure Marketplace bereitgestellt haben, ermitteln und auf der Seite *Systeme* in der Konsole verwalten.  Der Konsolenagent erkennt die Systeme, fügt sie hinzu, wendet die erforderlichen Lizenzen an und schaltet die vollständigen Funktionen der Konsole für diese Systeme frei.  Die ursprüngliche HA-Konfiguration in einer einzelnen AZ mit PSSD v2 Managed Disks bleibt erhalten und das System wird beim selben Azure-Abonnement und derselben Ressourcengruppe registriert wie die ursprüngliche Bereitstellung.

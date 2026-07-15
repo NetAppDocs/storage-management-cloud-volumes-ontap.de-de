@@ -18,6 +18,7 @@ Daten werden auf Cloud Volumes ONTAP in Azure mithilfe der Azure Storage Service
 
 
 
+[[data-encryption-overview]]
 == Übersicht über die Datenverschlüsselung
 
 Cloud Volumes ONTAP -Daten werden in Azure automatisch verschlüsselt mit https://learn.microsoft.com/en-us/azure/security/fundamentals/encryption-overview["Azure Storage Service-Verschlüsselung"^] .  Die Standardimplementierung verwendet einen von Microsoft verwalteten Schlüssel.  Es ist keine Einrichtung erforderlich.
@@ -30,6 +31,7 @@ Wenn Sie einen vom Kunden verwalteten Schlüssel mit Cloud Volumes ONTAP verwend
 
 
 
+[[how-data-is-encrypted]]
 === So werden Daten verschlüsselt
 
 Die Konsole verwendet einen Datenträgerverschlüsselungssatz, der die Verwaltung von Verschlüsselungsschlüsseln mit verwalteten Datenträgern und nicht mit Seitenblobs ermöglicht.  Alle neuen Datenträger verwenden ebenfalls denselben Datenträgerverschlüsselungssatz.  Niedrigere Versionen verwenden den von Microsoft verwalteten Schlüssel anstelle des vom Kunden verwalteten Schlüssels.
@@ -98,6 +100,7 @@ Alle Azure-Speicherkonten für Cloud Volumes ONTAP werden mit einem vom Kunden v
 
 
 
+[[key-rotation-in-cloud-volumes-ontap]]
 == Schlüsselrotation in Cloud Volumes ONTAP
 
 Wenn Sie Ihre Verschlüsselungsschlüssel konfigurieren, müssen Sie das Azure-Portal verwenden, um die automatische Schlüsselrotation einzurichten und zu aktivieren.  Durch das Erstellen und Aktivieren einer neuen Version von Verschlüsselungsschlüsseln wird sichergestellt, dass Cloud Volumes ONTAP die neueste Schlüsselversion automatisch erkennen und für die Verschlüsselung verwenden kann. So wird sichergestellt, dass Ihre Daten ohne manuelles Eingreifen sicher bleiben.
@@ -113,6 +116,7 @@ NOTE: Stellen Sie nach der Konfiguration der Schlüssel sicher, dass Sie https:/
 
 
 
+[[create-a-user-assigned-managed-identity]]
 == Erstellen einer benutzerseitig zugewiesenen verwalteten Identität
 
 Sie haben die Möglichkeit, eine Ressource namens „benutzerseitig zugewiesene verwaltete Identität“ zu erstellen.  Auf diese Weise können Sie Ihre Speicherkonten verschlüsseln, wenn Sie ein Cloud Volumes ONTAP -System erstellen.  Wir empfehlen, diese Ressource zu erstellen, bevor Sie einen Schlüsseltresor erstellen und einen Schlüssel generieren.
@@ -136,6 +140,7 @@ Die Ressource hat die folgende ID: `userassignedidentity` .
 
 
 
+[[create-a-key-vault-and-generate-a-key]]
 == Erstellen eines Schlüsseltresors und Generieren eines Schlüssels
 
 Der Schlüsseltresor muss sich im selben Azure-Abonnement und in derselben Region befinden, in der Sie das Cloud Volumes ONTAP -System erstellen möchten.
@@ -198,6 +203,7 @@ Beachten Sie folgende Anforderungen an den Schlüssel:
 
 
 
+[[create-a-system-that-uses-the-encryption-key]]
 == Erstellen Sie ein System, das den Verschlüsselungsschlüssel verwendet
 
 Nachdem Sie den Schlüsseltresor erstellt und einen Verschlüsselungsschlüssel generiert haben, können Sie ein neues Cloud Volumes ONTAP System erstellen, das für die Verwendung des Schlüssels konfiguriert ist.  Diese Schritte werden durch die Verwendung der API unterstützt.

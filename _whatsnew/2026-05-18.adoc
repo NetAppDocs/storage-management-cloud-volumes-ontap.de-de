@@ -4,6 +4,7 @@
 
 
 
+[[simplified-cloud-volumes-ontap-deployment-in-azure]]
 === Vereinfachte Cloud Volumes ONTAP-Bereitstellung in Azure
 
 Mit Quick create können Sie Cloud Volumes ONTAP in Azure sowohl für Einzelknoten- als auch für Hochverfügbarkeitskonfigurationen (HA) bereitstellen. Dieser optimierte Prozess reduziert die Anzahl der Schritte im Vergleich zur fortschrittlichen Methoden, legt automatisch Standardwerte auf einer einzigen Seite fest und minimiert die Navigation, wodurch die Bereitstellung schneller und einfacher wird.

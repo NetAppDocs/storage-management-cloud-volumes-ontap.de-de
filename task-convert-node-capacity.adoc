@@ -82,6 +82,7 @@ Zeigen Sie die neue Lizenzseriennummer an und überprüfen Sie die Änderungen i
 
 
 
+[[pricing-in-different-hyperscalars]]
 == Preisgestaltung in verschiedenen Hyperskalaren
 
 Einzelheiten zu den Preisen finden Sie auf der https://bluexp.netapp.com/pricing/["NetApp Console Website"^] .

@@ -20,6 +20,7 @@ Sie können Volumes in der Standardansicht der NetApp Console oder über den ONT
 
 
 
+[[manage-volumes]]
 == Verwalten von Volumes
 
 Mithilfe der Standardansicht der Konsole können Sie Volumes entsprechend Ihrem Speicherbedarf verwalten.  Sie können Volumes anzeigen, bearbeiten, klonen, wiederherstellen und löschen.
@@ -122,6 +123,7 @@ NOTE: Die Konsole verschiebt das Volume in ein vorhandenes Aggregat, das den aus
 
 
 
+[[resize-a-volume]]
 == Ändern der Größe eines Volumes
 
 Standardmäßig wächst ein Volume automatisch auf eine maximale Größe an, wenn der Speicherplatz erschöpft ist.  Der Standardwert ist 1.000, was bedeutet, dass das Volume auf das 11-fache seiner Größe anwachsen kann.  Dieser Wert kann in den Einstellungen des Konsolenagenten konfiguriert werden.
@@ -144,6 +146,7 @@ Berücksichtigen Sie beim Ändern der Volumegröße unbedingt die Kapazitätsgre
 
 
 
+[[modify-the-cifs-server]]
 == Ändern Sie den CIFS-Server
 
 Wenn Sie Ihre DNS-Server oder Active Directory-Domäne ändern, müssen Sie den CIFS-Server in Cloud Volumes ONTAP ändern, damit er den Clients weiterhin Speicher bereitstellen kann.
@@ -209,6 +212,7 @@ Cloud Volumes ONTAP aktualisiert den CIFS-Server mit den Änderungen.
 
 
 
+[[move-a-volume]]
 == Verschieben eines Volumes
 
 Verschieben Sie Volumes zur Kapazitätsauslastung, Leistungsverbesserung und zur Erfüllung von Service-Level-Agreements.
@@ -227,6 +231,7 @@ Anweisungen hierzu finden Sie imlink:http://docs.netapp.com/ontap-9/topic/com.ne
 
 
 
+[[move-a-volume-when-console-displays-an-action-required-message]]
 == Verschieben Sie ein Volume, wenn die Konsole die Meldung „Aktion erforderlich“ anzeigt.
 
 Die Konsole zeigt möglicherweise die Meldung „Aktion erforderlich“ an, die besagt, dass das Verschieben eines Volumes erforderlich ist, um Kapazitätsprobleme zu vermeiden, dass Sie das Problem jedoch selbst beheben müssen.  In diesem Fall müssen Sie ermitteln, wie das Problem behoben werden kann, und dann ein oder mehrere Volumes verschieben.
@@ -246,6 +251,7 @@ TIP: Die Konsole zeigt diese Meldungen „Aktion erforderlich“ an, wenn ein Ag
 
 
 
+[[identify-how-to-correct-capacity-issues]]
 === Ermitteln Sie, wie Kapazitätsprobleme behoben werden können
 
 Wenn die Konsole keine Empfehlungen zum Verschieben eines Volumes zur Vermeidung von Kapazitätsproblemen bereitstellen kann, müssen Sie die Volumes identifizieren, die Sie verschieben müssen, und feststellen, ob Sie sie in ein anderes Aggregat auf demselben System oder in ein anderes System verschieben sollten.
@@ -289,6 +295,7 @@ Weitere Informationen finden Sie unter<<move-volumes-aggregate-capacity,Verschie
 
 
 
+[[move-volumes-to-another-system-to-avoid-capacity-issues]]
 === Verschieben Sie Volumes auf ein anderes System, um Kapazitätsprobleme zu vermeiden
 
 Sie können ein oder mehrere Volumes auf ein anderes Cloud Volumes ONTAP System verschieben, um Kapazitätsprobleme zu vermeiden.  Dies ist möglicherweise erforderlich, wenn das System sein Festplattenlimit erreicht hat.
@@ -323,6 +330,8 @@ Weitere Informationen finden Sie unterlink:task-manage-volumes.html#manage-volum
 
 
 
+[[move-volumes-to-another-aggregate-to-avoid-capacity-issues]]
+[[move-volumes-aggregate-capacity]]
 === Verschieben Sie Volumes auf ein anderes Aggregat, um Kapazitätsprobleme zu vermeiden
 
 Sie können ein oder mehrere Volumes in ein anderes Aggregat verschieben, um Kapazitätsprobleme zu vermeiden.
@@ -364,6 +373,7 @@ Anweisungen hierzu finden Sie imlink:http://docs.netapp.com/ontap-9/topic/com.ne
 
 
 
+[[reasons-why-a-volume-move-might-perform-slowly]]
 == Gründe, warum eine Volumenbewegung langsam verlaufen kann
 
 Das Verschieben eines Volumes kann länger dauern als erwartet, wenn eine der folgenden Bedingungen für Cloud Volumes ONTAP zutrifft:
@@ -382,6 +392,7 @@ Ein älteres Benennungsschema wird verwendet, wenn die Datenschichtung für ein 
 
 
 
+[[view-flexgroup-volumes]]
 == FlexGroup -Volumes anzeigen
 
 Sie können FlexGroup Volumes, die über ONTAP System Manager oder die ONTAP CLI erstellt wurden, direkt über die Registerkarte „Volumes“ in der Konsole anzeigen.  Sie können detaillierte Informationen zu den FleGroup-Volumes über eine spezielle Kachel *Volumes* anzeigen, in der Sie jede FlexGroup Volume-Gruppe über den Hover-Text des Symbols identifizieren können.  Darüber hinaus können Sie FlexGroup Volumes in der Volume-Listenansicht über die Spalte „Volume-Stil“ identifizieren und sortieren.

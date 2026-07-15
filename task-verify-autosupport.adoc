@@ -20,6 +20,7 @@ Der einzige erforderliche Konfigurationsschritt besteht darin, sicherzustellen, 
 
 
 
+[[autosupport-requirements]]
 == AutoSupport Anforderungen
 
 Cloud Volumes ONTAP -Knoten erfordern ausgehenden Internetzugang für NetApp AutoSupport, das den Zustand Ihres Systems proaktiv überwacht und Nachrichten an den technischen Support von NetApp sendet.
@@ -41,6 +42,7 @@ Nachdem Sie überprüft haben, dass ausgehender Internetzugang verfügbar ist, k
 
 
 
+[[troubleshoot-your-autosupport-configuration]]
 == Fehlerbehebung bei Ihrer AutoSupport -Konfiguration
 
 Wenn keine ausgehende Verbindung verfügbar ist und die Konsole Ihr Cloud Volumes ONTAP -System nicht so konfigurieren kann, dass der Konsolenagent als Proxy-Server verwendet wird, erhalten Sie von der Konsole eine Benachrichtigung, dass Ihr System nicht in der Lage ist, AutoSupport Nachrichten zu senden. Befolgen Sie diese Schritte, um dieses Problem zu beheben.

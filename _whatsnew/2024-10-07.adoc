@@ -4,6 +4,7 @@
 
 
 
+[[enhanced-user-experience-in-version-selection-for-upgrade]]
 === Verbesserte Benutzererfahrung bei der Versionsauswahl für das Upgrade
 
 Wenn Sie ab dieser Version versuchen, Cloud Volumes ONTAP mithilfe der BlueXP -Benachrichtigung zu aktualisieren, erhalten Sie Hinweise zu den zu verwendenden Standard-, neuesten und kompatiblen Versionen.  Außerdem können Sie jetzt den neuesten Patch oder die neueste Hauptversion auswählen, die mit Ihrer Cloud Volumes ONTAP -Instanz kompatibel ist, oder manuell eine Version für das Upgrade eingeben.

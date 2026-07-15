@@ -20,6 +20,7 @@ Um zusätzliche datenbereitstellende Speicher-VMs zu erstellen, müssen Sie IP-A
 
 
 
+[[supported-number-of-storage-vms]]
 == Unterstützte Anzahl von Speicher-VMs
 
 Ab der Version 9.7 werden mehrere Speicher-VMs mit bestimmten Cloud Volumes ONTAP -Konfigurationen unterstützt.  Gehen Sie zum https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Versionshinweise zu Cloud Volumes ONTAP"^] um die unterstützte Anzahl von Speicher-VMs für Ihre Version von Cloud Volumes ONTAP zu überprüfen.
@@ -28,6 +29,7 @@ Alle anderen Cloud Volumes ONTAP -Konfigurationen unterstützen eine Datenspeich
 
 
 
+[[verify-limits-for-your-configuration]]
 == Überprüfen der Grenzwerte für Ihre Konfiguration
 
 Jede EC2-Instance unterstützt eine maximale Anzahl privater IPv4-Adressen pro Netzwerkschnittstelle.  Sie müssen das Limit überprüfen, bevor Sie in AWS IP-Adressen für die neue Speicher-VM zuweisen.
@@ -40,6 +42,7 @@ Jede EC2-Instance unterstützt eine maximale Anzahl privater IPv4-Adressen pro N
 
 
 
+[[allocate-ip-addresses-in-aws]]
 == IP-Adressen in AWS zuweisen
 
 Bevor Sie LIFs für die neue Speicher-VM erstellen, müssen dem Port e0a in AWS private IPv4-Adressen zugewiesen werden.
@@ -90,6 +93,7 @@ Eine optionale sekundäre private IP ist erforderlich, wenn Sie ein Verwaltungs-
 
 
 
+[[create-a-storage-vm-on-a-single-node-system]]
 == Erstellen Sie eine Storage-VM auf einem Einzelknotensystem
 
 Diese Schritte erstellen eine neue Storage-VM auf einem Einzelknotensystem. Eine private IP-Adresse ist erforderlich, um eine NAS-LIF zu erstellen, und eine weitere optionale private IP-Adresse wird benötigt, wenn Sie eine Management-LIF erstellen möchten.
@@ -137,6 +141,7 @@ Dieser Schritt ist erforderlich, da die neue Speicher-VM Zugriff auf mindestens 
 
 
 
+[[create-a-storage-vm-on-an-ha-pair-in-a-single-az]]
 == Erstellen Sie eine Speicher-VM auf einem HA-Paar in einer einzelnen AZ
 
 Mit diesen Schritten wird eine neue Speicher-VM auf einem HA-Paar in einer einzelnen AZ erstellt.  Zum Erstellen eines NAS-LIF ist eine private IP-Adresse erforderlich, und wenn Sie ein Verwaltungs-LIF erstellen möchten, ist eine weitere optionale private IP-Adresse erforderlich.
@@ -209,6 +214,7 @@ network interface service-policy add-service -vserver <svm-name> -policy default
 
 
 
+[[create-a-storage-vm-on-an-ha-pair-in-multiple-azs]]
 == Erstellen Sie eine Speicher-VM auf einem HA-Paar in mehreren AZs
 
 Mit diesen Schritten wird eine neue Speicher-VM auf einem HA-Paar in mehreren AZs erstellt.

@@ -36,6 +36,7 @@ Beachten Sie bei der Verwendung von AKV, dass standardmäßig ein Daten-SVM-LIF 
 
 
 
+[[configuration-process]]
 == Konfigurationsprozess
 
 Die beschriebenen Schritte beschreiben, wie Sie Ihre Cloud Volumes ONTAP -Konfiguration bei Azure registrieren und wie Sie einen Azure Key Vault und Schlüssel erstellen.  Wenn Sie diese Schritte bereits abgeschlossen haben, stellen Sie sicher, dass Sie die richtigen Konfigurationseinstellungen haben, insbesondere in<<create-akv>> und fahren Sie dann fort mit<<ontap>> .

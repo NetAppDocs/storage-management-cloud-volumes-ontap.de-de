@@ -18,12 +18,14 @@ Die NetApp Console erstellt AWS-Sicherheitsgruppen, die die eingehenden und ausg
 
 
 
+[[rules-for-cloud-volumes-ontap]]
 == Regeln für Cloud Volumes ONTAP
 
 Die Sicherheitsgruppe für Cloud Volumes ONTAP erfordert sowohl eingehende als auch ausgehende Regeln.
 
 
 
+[[inbound-rules]]
 === Eingehende Regeln
 
 Wenn Sie ein Cloud Volumes ONTAP -System hinzufügen und eine vordefinierte Sicherheitsgruppe auswählen, können Sie den Datenverkehr innerhalb einer der folgenden Gruppen zulassen:
@@ -110,6 +112,7 @@ Wenn Sie ein Cloud Volumes ONTAP -System hinzufügen und eine vordefinierte Sich
 |===
 
 
+[[outbound-rules]]
 === Ausgangsregeln
 
 Die vordefinierte Sicherheitsgruppe für Cloud Volumes ONTAP öffnet den gesamten ausgehenden Datenverkehr. Wenn das akzeptabel ist, befolgen Sie die grundlegenden Regeln für ausgehende Nachrichten. Wenn Sie strengere Regeln benötigen, verwenden Sie die erweiterten Ausgangsregeln.
@@ -262,12 +265,14 @@ NOTE: Die Quelle ist die Schnittstelle (IP-Adresse) auf dem Cloud Volumes ONTAP 
 |===
 
 
+[[rules-for-the-ha-mediator-external-security-group]]
 == Regeln für die externe Sicherheitsgruppe des HA-Mediators
 
 Die vordefinierte externe Sicherheitsgruppe für den Cloud Volumes ONTAP HA-Mediator umfasst die folgenden eingehenden und ausgehenden Regeln.
 
 
 
+[[inbound-rules]]
 === Eingehende Regeln
 
 Die vordefinierte Sicherheitsgruppe für den HA-Mediator enthält die folgende eingehende Regel.
@@ -281,6 +286,7 @@ Die vordefinierte Sicherheitsgruppe für den HA-Mediator enthält die folgende e
 |===
 
 
+[[outbound-rules]]
 === Ausgangsregeln
 
 Die vordefinierte Sicherheitsgruppe für den HA-Mediator öffnet den gesamten ausgehenden Datenverkehr. Wenn das akzeptabel ist, befolgen Sie die grundlegenden Regeln für ausgehende Nachrichten. Wenn Sie strengere Regeln benötigen, verwenden Sie die erweiterten Ausgangsregeln.
@@ -325,6 +331,7 @@ NOTE: Anstatt die Ports 443 und 53 zu öffnen, können Sie einen Schnittstellen-
 
 
 
+[[rules-for-the-ha-configuration-internal-security-group]]
 == Regeln für die interne Sicherheitsgruppe der HA-Konfiguration
 
 Die vordefinierte interne Sicherheitsgruppe für eine Cloud Volumes ONTAP HA-Konfiguration umfasst die folgenden Regeln.  Diese Sicherheitsgruppe ermöglicht die Kommunikation zwischen den HA-Knoten und zwischen dem Mediator und den Knoten.
@@ -333,6 +340,7 @@ Die Konsole erstellt immer diese Sicherheitsgruppe.  Sie haben nicht die Möglic
 
 
 
+[[inbound-rules]]
 === Eingehende Regeln
 
 Die vordefinierte Sicherheitsgruppe umfasst die folgenden eingehenden Regeln.
@@ -346,6 +354,7 @@ Die vordefinierte Sicherheitsgruppe umfasst die folgenden eingehenden Regeln.
 |===
 
 
+[[outbound-rules]]
 === Ausgangsregeln
 
 Die vordefinierte Sicherheitsgruppe umfasst die folgenden ausgehenden Regeln.
@@ -359,6 +368,7 @@ Die vordefinierte Sicherheitsgruppe umfasst die folgenden ausgehenden Regeln.
 |===
 
 
+[[rules-for-the-console-agent]]
 == Regeln für den Konsolenagenten
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["Sicherheitsgruppenregeln für den Konsolenagenten anzeigen"^]

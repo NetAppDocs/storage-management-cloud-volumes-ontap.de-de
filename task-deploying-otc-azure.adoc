@@ -49,6 +49,7 @@ Aufgrund des Risikos eines Datenverlusts wird die Bereitstellung von Cloud Volum
 ====
 
 
+[[launch-a-single-node-cloud-volumes-ontap-system-in-azure]]
 == Starten Sie ein Cloud Volumes ONTAP -System mit einem Knoten in Azure
 
 Wenn Sie ein Single-Node-Cloud Volumes ONTAP-System in Azure starten möchten, müssen Sie in der Console ein Single-Node-System erstellen.
@@ -273,6 +274,7 @@ Mithilfe von Kontingenten können Sie den Speicherplatz und die Anzahl der von e
 
 
 
+[[launch-a-cloud-volumes-ontap-ha-pair-in-azure]]
 == Starten Sie ein Cloud Volumes ONTAP HA-Paar in Azure
 
 Wenn Sie ein Cloud Volumes ONTAP HA-Paar in Azure starten möchten, müssen Sie in der Konsole ein HA-System erstellen.

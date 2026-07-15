@@ -29,6 +29,7 @@ Beachten Sie bei der Verwendung von Cloud KMS, dass standardmäßig das LIF eine
 
 
 
+[[configuration]]
 == Konfiguration
 
 .Google Cloud
@@ -74,6 +75,7 @@ NOTE: Wenn Sie Cloud Volumes ONTAP 9.13.0 oder höher verwenden, müssen Sie kei
 
 
 
+[[troubleshoot]]
 == Fehlerbehebung
 
 Wenn Sie Fehler beheben müssen, können Sie die Rohprotokolle der REST-API in den letzten beiden Schritten oben verfolgen:

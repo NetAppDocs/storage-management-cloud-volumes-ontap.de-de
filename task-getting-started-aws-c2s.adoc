@@ -39,6 +39,7 @@ Weitere Informationen zur Funktionsweise des privaten Modus finden Sie unterlink
 
 
 
+[[step-1-set-up-your-networking]]
 == Schritt 1: Richten Sie Ihr Netzwerk ein
 
 Richten Sie Ihr AWS-Netzwerk so ein, dass Cloud Volumes ONTAP ordnungsgemäß funktioniert.
@@ -54,6 +55,7 @@ Ein VPC-Endpunkt ist erforderlich, wenn Sie kalte Daten von Cloud Volumes ONTAP 
 
 
 
+[[step-2-set-up-permissions]]
 == Schritt 2: Berechtigungen einrichten
 
 Richten Sie IAM-Richtlinien und -Rollen ein, die dem Konsolenagenten und Cloud Volumes ONTAP die Berechtigungen erteilen, die sie zum Ausführen von Aktionen in der AWS Secret Cloud oder Top Secret Cloud benötigen.
@@ -415,6 +417,7 @@ Sie müssen die IAM-Rolle des Konsolenagenten auswählen, wenn Sie die Instanz d
 
 
 
+[[step-3-set-up-the-aws-kms]]
 == Schritt 3: Einrichten des AWS KMS
 
 Wenn Sie die Amazon-Verschlüsselung mit Cloud Volumes ONTAP verwenden möchten, stellen Sie sicher, dass die Anforderungen für den AWS Key Management Service (KMS) erfüllt sind.
@@ -436,6 +439,7 @@ Dadurch erhält die Konsole die Berechtigung, den CMK mit Cloud Volumes ONTAP zu
 
 
 
+[[step-4-install-the-console-agent-and-set-up-the-console]]
 == Schritt 4: Installieren Sie den Konsolenagenten und richten Sie die Konsole ein
 
 Bevor Sie die Konsole zum Bereitstellen von Cloud Volumes ONTAP in AWS verwenden können, müssen Sie den Konsolenagenten installieren und einrichten.  Es ermöglicht der Konsole, Ressourcen und Prozesse innerhalb Ihrer öffentlichen Cloud-Umgebung zu verwalten (dazu gehört Cloud Volumes ONTAP).
@@ -489,6 +493,7 @@ Dieses Benutzerkonto wird lokal auf dem System ausgeführt.  Über die Konsole i
 
 
 
+[[step-5-optional-install-a-private-mode-certificate]]
 == Schritt 5: (optional) Installieren Sie ein Zertifikat für den privaten Modus
 
 Dieser Schritt ist für AWS Secret Cloud- und Top Secret Cloud-Regionen optional und nur erforderlich, wenn Sie neben den im vorherigen Schritt installierten Stammzertifikaten über weitere Zertifikate verfügen.
@@ -578,6 +583,7 @@ docker restart <docker-id>
 --
 
 
+[[step-6-add-a-license-to-the-console]]
 == Schritt 6: Fügen Sie der Konsole eine Lizenz hinzu
 
 Wenn Sie eine Lizenz von NetApp erworben haben, müssen Sie sie der Konsole hinzufügen, damit Sie die Lizenz auswählen können, wenn Sie ein neues Cloud Volumes ONTAP -System erstellen.  Diese Lizenzen bleiben nicht zugewiesen, bis Sie sie einem neuen Cloud Volumes ONTAP -System zuordnen.
@@ -604,6 +610,7 @@ Die Konsole fügt die Lizenz als nicht zugewiesen hinzu, bis Sie sie einem neuen
 
 
 
+[[step-7-launch-cloud-volumes-ontap-from-the-console]]
 == Schritt 7: Starten Sie Cloud Volumes ONTAP von der Konsole aus
 
 Sie können Cloud Volumes ONTAP Instanzen in AWS Secret Cloud und Top Secret Cloud starten, indem Sie in der Konsole neue Systeme erstellen.
@@ -665,6 +672,7 @@ Die Cloud Volumes ONTAP Instanz wird gestartet.  Sie können den Fortschritt auf
 
 
 
+[[step-8-install-security-certificates-for-data-tiering]]
 == Schritt 8: Installieren von Sicherheitszertifikaten für das Datentiering
 
 Sie müssen Sicherheitszertifikate manuell installieren, um die Datenschichtung in den AWS Secret Cloud- und Top Secret Cloud-Regionen zu aktivieren.

@@ -18,6 +18,7 @@ Mit der NetApp Console können Sie für die meisten Cloud Volumes ONTAP Konfigur
 
 
 
+[[normal-write-speed]]
 == Normale Schreibgeschwindigkeit
 
 Wenn Sie die normale Schreibgeschwindigkeit wählen, werden die Daten direkt auf die Festplatte geschrieben.  Wenn Daten direkt auf die Festplatte geschrieben werden, verringert sich die Wahrscheinlichkeit eines Datenverlusts im Falle eines ungeplanten Systemausfalls oder eines kaskadierenden Fehlers mit einem ungeplanten Systemausfall (nur HA-Paare).
@@ -26,6 +27,7 @@ Die normale Schreibgeschwindigkeit ist die Standardoption.
 
 
 
+[[high-write-speed]]
 == Hohe Schreibgeschwindigkeit
 
 Wenn Sie eine hohe Schreibgeschwindigkeit wählen, werden die Daten im Speicher gepuffert, bevor sie auf die Festplatte geschrieben werden, was eine schnellere Schreibleistung ermöglicht.  Aufgrund dieses Cachings besteht die Möglichkeit eines Datenverlusts, wenn es zu einem ungeplanten Systemausfall kommt.
@@ -34,12 +36,14 @@ Die Datenmenge, die bei einem ungeplanten Systemausfall verloren gehen kann, ent
 
 
 
+[[when-to-use-high-write-speed]]
 === Wann sollte eine hohe Schreibgeschwindigkeit verwendet werden?
 
 Eine hohe Schreibgeschwindigkeit ist eine gute Wahl, wenn für Ihre Arbeitslast eine schnelle Schreibleistung erforderlich ist und Sie das Risiko eines Datenverlusts im Falle eines ungeplanten Systemausfalls oder eines kaskadierenden Fehlers mit einem ungeplanten Systemausfall (nur HA-Paare) verkraften können.
 
 
 
+[[recommendations-when-using-high-write-speed]]
 === Empfehlungen bei Verwendung hoher Schreibgeschwindigkeit
 
 Wenn Sie eine hohe Schreibgeschwindigkeit aktivieren, sollten Sie den Schreibschutz auf Anwendungsebene sicherstellen oder sicherstellen, dass die Anwendungen einen Datenverlust tolerieren können, falls dieser auftritt.
@@ -48,6 +52,7 @@ ifdef::aws[]
 
 
 
+[[high-write-speed-with-an-ha-pair-in-aws]]
 === Hohe Schreibgeschwindigkeit mit einem HA-Paar in AWS
 
 Wenn Sie eine hohe Schreibgeschwindigkeit auf einem HA-Paar in AWS aktivieren möchten, sollten Sie den Unterschied in den Schutzstufen zwischen einer Bereitstellung mit mehreren Availability Zones (AZ) und einer Bereitstellung mit einer einzelnen AZ verstehen.  Die Bereitstellung eines HA-Paares über mehrere AZs hinweg bietet mehr Ausfallsicherheit und kann dazu beitragen, das Risiko eines Datenverlusts zu verringern.
@@ -58,6 +63,7 @@ endif::aws[]
 
 
 
+[[configurations-that-support-high-write-speed]]
 === Konfigurationen, die eine hohe Schreibgeschwindigkeit unterstützen
 
 Nicht alle Cloud Volumes ONTAP -Konfigurationen unterstützen eine hohe Schreibgeschwindigkeit.  Diese Konfigurationen verwenden standardmäßig die normale Schreibgeschwindigkeit.
@@ -104,12 +110,14 @@ endif::gcp[]
 
 
 
+[[how-to-select-a-write-speed]]
 == So wählen Sie eine Schreibgeschwindigkeit aus
 
 Sie können eine Schreibgeschwindigkeit wählen, wenn Sie ein neues Cloud Volumes ONTAP System hinzufügen und Sie könnenlink:task-modify-write-speed.html["Ändern Sie die Schreibgeschwindigkeit für ein vorhandenes System"] .
 
 
 
+[[what-to-expect-if-data-loss-occurs]]
 == Was ist bei Datenverlust zu erwarten?
 
 Kommt es aufgrund hoher Schreibgeschwindigkeit zu Datenverlust, meldet das Event Management System (EMS) die folgenden zwei Ereignisse:
@@ -133,6 +141,7 @@ In diesem Fall sollte Cloud Volumes ONTAP in der Lage sein, hochzufahren und ohn
 
 
 
+[[how-to-stop-data-access-if-data-loss-occurs]]
 == So stoppen Sie den Datenzugriff bei Datenverlust
 
 Wenn Sie sich Sorgen über Datenverlust machen und möchten, dass die Anwendungen bei Datenverlust nicht mehr ausgeführt werden und der Datenzugriff nach der ordnungsgemäßen Behebung des Datenverlustproblems wieder aufgenommen wird, können Sie dieses Ziel mit der Option NVFAIL der CLI erreichen.

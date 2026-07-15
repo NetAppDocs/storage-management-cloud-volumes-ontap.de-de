@@ -25,6 +25,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-l
 
 
 
+[[byol-system-licenses]]
 == BYOL-Systemlizenzen
 
 Knotenbasierte Lizenzen können von NetApp bezogen werden. Die Anzahl der Lizenzen, die Sie für ein Einzelknotensystem oder ein HA-Paar erwerben können, ist unbegrenzt.
@@ -38,6 +39,7 @@ Beachten Sie, dass Festplattenlimits Sie daran hindern können, die Kapazitätsg
 
 
 
+[[license-management-for-a-new-system]]
 == Lizenzmanagement für ein neues System
 
 Wenn Sie ein knotenbasiertes BYOL-System erstellen, werden Sie von der Konsole aufgefordert, die Seriennummer Ihrer Lizenz und Ihr NetApp Support Site-Konto einzugeben.  Die Konsole verwendet das Konto, um die Lizenzdatei von NetApp herunterzuladen und auf dem Cloud Volumes ONTAP System zu installieren.
@@ -48,6 +50,7 @@ Wenn die Konsole über die sichere Internetverbindung nicht auf die Lizenzdatei 
 
 
 
+[[license-expiration]]
 == Lizenzablauf
 
 Die Konsole zeigt 30 Tage vor Ablauf einer knotenbasierten Lizenz eine Warnung an und erneut, wenn die Lizenz abläuft.  Das folgende Bild zeigt eine 30-tägige Ablaufwarnung, die in der Benutzeroberfläche angezeigt wird:
@@ -62,6 +65,7 @@ Wenn Sie die Lizenz nicht rechtzeitig erneuern, schaltet sich das Cloud Volumes 
 
 
 
+[[license-renewal]]
 == Lizenzerneuerung
 
 Wenn Sie ein knotenbasiertes BYOL-Abonnement verlängern, indem Sie sich an einen NetApp -Vertreter wenden, erhält die Konsole automatisch die neue Lizenz von NetApp und installiert sie auf dem Cloud Volumes ONTAP System.
@@ -70,6 +74,7 @@ Wenn die Konsole über die sichere Internetverbindung nicht auf die Lizenzdatei 
 
 
 
+[[license-transfer-to-a-new-system]]
 == Lizenzübertragung auf ein neues System
 
 Eine knotenbasierte BYOL-Lizenz ist zwischen Cloud Volumes ONTAP Systemen übertragbar, wenn Sie ein vorhandenes System löschen und dann mit derselben Lizenz ein neues erstellen.

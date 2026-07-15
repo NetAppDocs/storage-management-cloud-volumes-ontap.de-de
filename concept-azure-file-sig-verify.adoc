@@ -18,6 +18,7 @@ Der Azure-Imageüberprüfungsprozess generiert eine Digest-Datei aus der VHD-Dat
 
 
 
+[[file-signature-verification-workflow-summary]]
 == Zusammenfassung des Workflows zur Dateisignaturüberprüfung
 
 Nachfolgend finden Sie eine Übersicht über den Workflow-Prozess zur Dateisignaturüberprüfung.

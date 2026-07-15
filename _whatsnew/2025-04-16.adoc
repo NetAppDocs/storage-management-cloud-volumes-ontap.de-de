@@ -4,6 +4,7 @@
 
 
 
+[[new-regions-supported-in-azure]]
 === Neue Regionen, die in Azure unterstützt werden
 
 Sie können Cloud Volumes ONTAP 9.12.1 GA und höher jetzt in einzelnen und mehreren Verfügbarkeitszonen in Azure in den folgenden Regionen bereitstellen. Dies umfasst die Unterstützung sowohl für Einzelknoten- als auch für Hochverfügbarkeitsbereitstellungen (HA).

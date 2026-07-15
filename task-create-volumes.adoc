@@ -25,6 +25,7 @@ Sie haben mehrere Möglichkeiten, ein neues Volume zu erstellen:
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Einige Hinweise zur Volume-Bereitstellung:
@@ -43,6 +44,7 @@ endif::aws[]
 
 
 
+[[create-a-volume]]
 == Erstellen eines Volumes
 
 Die gängigste Methode zum Erstellen eines Volumes besteht darin, den benötigten Volumetyp anzugeben und dann die Konsole die Datenträgerzuweisung für Sie übernehmen zu lassen.  Sie haben aber auch die Möglichkeit, das spezifische Aggregat auszuwählen, auf dem Sie das Volume erstellen möchten.
@@ -219,6 +221,8 @@ Die Konsole erstellt das Volume auf dem Cloud Volumes ONTAP -System.
 
 
 
+[[create-a-volume-on-the-second-node-in-an-ha-configuration]]
+[[create-volume-second-node]]
 == Erstellen Sie ein Volume auf dem zweiten Knoten in einer HA-Konfiguration
 
 Standardmäßig erstellt die Konsole Volumes auf dem ersten Knoten in einer HA-Konfiguration.  Wenn Sie eine Aktiv-Aktiv-Konfiguration benötigen, in der beide Knoten Daten an Clients bereitstellen, müssen Sie Aggregate und Volumes auf dem zweiten Knoten erstellen.
@@ -247,6 +251,7 @@ endif::aws[]
 
 
 
+[[after-you-create-a-volume]]
 == Nachdem Sie ein Volume erstellt haben
 
 Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.

@@ -18,6 +18,7 @@ Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie mit Cloud Volumes 
 
 
 
+[[freemium]]
 == Freemium
 
 Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bereitgestellter Kapazität kostenlos zu nutzen. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages["Erfahren Sie mehr über das Freemium-Angebot"^] .
@@ -45,6 +46,7 @@ link:task-deploying-otc-azure.html["Sehen Sie sich die Schritt-für-Schritt-Anle
 
 
 
+[[capacity-based-license]]
 == Kapazitätsbasierte Lizenz
 
 Mit der kapazitätsbasierten Lizenzierung können Sie für Cloud Volumes ONTAP pro TiB Kapazität bezahlen. Die kapazitätsbasierte Lizenzierung ist in Form eines _Pakets_ verfügbar: das Essentials-Paket oder das Professional-Paket.
@@ -62,6 +64,7 @@ In den folgenden Abschnitten wird beschrieben, wie Sie mit jedem dieser Verbrauc
 
 
 
+[[byol]]
 === BYOL
 
 Zahlen Sie im Voraus, indem Sie eine Lizenz (BYOL) von NetApp erwerben, um Cloud Volumes ONTAP -Systeme bei jedem Cloud-Anbieter bereitzustellen.
@@ -99,6 +102,7 @@ link:task-deploying-otc-azure.html["Sehen Sie sich die Schritt-für-Schritt-Anle
 
 
 
+[[paygo-subscription]]
 === PAYGO-Abonnement
 
 Zahlen Sie stundenweise, indem Sie das Angebot auf dem Marktplatz Ihres Cloud-Anbieters abonnieren.
@@ -128,6 +132,7 @@ TIP: Sie können die mit Ihren Azure-Konten verknüpften Azure Marketplace-Abonn
 
 
 
+[[annual-contract]]
 === Jahresvertrag
 
 Bezahlen Sie Cloud Volumes ONTAP jährlich, indem Sie einen Jahresvertrag abschließen.
@@ -156,6 +161,7 @@ link:task-deploying-otc-azure.html["Sehen Sie sich die Schritt-für-Schritt-Anle
 
 
 
+[[keystone-subscription]]
 == Keystone Abonnement
 
 Bei einem Keystone -Abonnement handelt es sich um einen Abonnementdienst mit nutzungsabhängiger Bezahlung. link:concept-licensing.html#keystone-subscription["Erfahren Sie mehr über NetApp Keystone -Abonnements"] .
@@ -178,6 +184,7 @@ link:task-deploying-otc-azure.html["Sehen Sie sich die Schritt-für-Schritt-Anle
 
 
 
+[[node-based-license]]
 == Knotenbasierte Lizenz
 
 Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz kann von NetApp (BYOL) erworben werden und ist nur in bestimmten Fällen für Lizenzverlängerungen verfügbar. Weitere Informationen finden Sie unter:

@@ -18,12 +18,14 @@ Eine Storage-VM ist eine virtuelle Maschine, die innerhalb von ONTAP ausgeführt
 
 
 
+[[supported-number-of-storage-vms]]
 == Unterstützte Anzahl von Speicher-VMs
 
 Bei bestimmten Konfigurationen werden mehrere Speicher-VMs unterstützt.  Gehen Sie zum https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Versionshinweise zu Cloud Volumes ONTAP"^] um die unterstützte Anzahl von Speicher-VMs für Ihre Version von Cloud Volumes ONTAP zu überprüfen.
 
 
 
+[[work-with-multiple-storage-vms]]
 == Arbeiten mit mehreren Speicher-VMs
 
 Die NetApp Console unterstützt alle zusätzlichen Speicher-VMs, die Sie vom ONTAP System Manager oder der ONTAP CLI erstellen.
@@ -38,6 +40,7 @@ image:screenshot_replicate_volume_svm.gif["Ein Screenshot, der die Möglichkeit 
 
 
 
+[[modify-the-name-of-the-default-storage-vm]]
 == Ändern Sie den Namen der Standard-Speicher-VM
 
 Die Konsole benennt automatisch die einzelne Speicher-VM, die sie für Cloud Volumes ONTAP erstellt.  Über den ONTAP System Manager, die ONTAP CLI oder die API können Sie den Namen der Speicher-VM ändern, wenn Sie strenge Benennungsstandards haben.  Beispielsweise möchten Sie möglicherweise, dass der Name mit der Benennung der Speicher-VMs für Ihre ONTAP Cluster übereinstimmt.

@@ -18,6 +18,7 @@ Sie können Cloud Volumes ONTAP über die NetApp Console stoppen und starten, um
 
 
 
+[[scheduling-automatic-shutdowns-of-cloud-volumes-ontap]]
 == Planen automatischer Shutdowns von Cloud Volumes ONTAP
 
 Möglicherweise möchten Sie Cloud Volumes ONTAP während bestimmter Zeitintervalle herunterfahren, um Ihre Rechenkosten zu senken.  Anstatt dies manuell zu tun, können Sie die Konsole so konfigurieren, dass Systeme zu bestimmten Zeiten automatisch heruntergefahren und neu gestartet werden.
@@ -63,6 +64,7 @@ Der Zeitplan wird gespeichert.  Der entsprechende Eintrag „Geplante Ausfallzei
 
 
 
+[[stopping-cloud-volumes-ontap]]
 == Stoppen von Cloud Volumes ONTAP
 
 Durch das Stoppen von Cloud Volumes ONTAP sparen Sie sich anfallende Rechenkosten und erstellen Snapshots der Root- und Boot-Festplatten, die bei der Fehlerbehebung hilfreich sein können.

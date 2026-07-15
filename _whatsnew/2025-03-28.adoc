@@ -4,6 +4,7 @@
 
 
 
+[[private-mode-deployments-enabled-for-cloud-volumes-ontap-9-14-1]]
 === Bereitstellungen im privaten Modus für Cloud Volumes ONTAP 9.14.1 aktiviert
 
 Sie können Cloud Volumes ONTAP 9.14.1 jetzt im privaten Modus in AWS, Azure und Google Cloud bereitstellen.  Der private Modus ist sowohl für Einzelknoten- als auch für Hochverfügbarkeitsbereitstellungen (HA) von Cloud Volumes ONTAP 9.14.1 aktiviert.

@@ -4,6 +4,7 @@
 
 
 
+[[flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws]]
 === Flexible Abrechnung für Cloud Volumes ONTAP und Datendienste in AWS
 
 NetApp bietet erweiterte Abrechnungsoptionen für Ihre Cloud Volumes ONTAP-Abonnements in AWS, sodass Sie mehr Kontrolle darüber haben, wie Sie für Cloud Volumes ONTAP-Kapazität und NetApp-Datendienste wie NetApp Backup and Recovery bezahlen. Bisher wurden alle Cloud Volumes ONTAP- und Datendienste-Nutzungen gemeinsam über die NetApp Intelligent Services (NIS)-Auflistung im AWS Marketplace abgerechnet.

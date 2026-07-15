@@ -18,13 +18,14 @@ Eine Cloud Volumes ONTAP Hochverfügbarkeitskonfiguration (HA) bietet unterbrech
 
 
 
+[[ha-components]]
 == HA-Komponenten
 
 Cloud Volumes ONTAP HA-Konfigurationen in Google Cloud umfassen die folgenden Komponenten:
 
 * Zwei Cloud Volumes ONTAP Knoten, deren Daten synchron untereinander gespiegelt werden.
 * Eine Mediatorinstanz, die einen Kommunikationskanal zwischen den Knoten bereitstellt, um bei der Übernahme und Rückgabe von Speicher zu helfen.
-* Eine Zone oder drei Zonen (empfohlen).
+* Eine einzelne Verfügbarkeitszone (AZ) oder mehrere Verfügbarkeits-/drei Zonen (empfohlen).
 +
 Wenn Sie drei Zonen auswählen, befinden sich die beiden Knoten und der Mediator in separaten Google Cloud-Zonen.
 
@@ -43,7 +44,10 @@ image:diagram_gcp_ha.png["Ein konzeptionelles Bild eines Cloud Volumes ONTAP HA-
 
 
 
+[[mediator]]
 === Vermittler
+
+Traditionell verwenden Cloud Volumes ONTAP HA Konfigurationen in Google Cloud ein nicht-gemeinsam genutztes Modell, bei dem eine Mediator-Instanz zur Verwaltung von Failover-Vorgängen oder zur Überwachung des Knotenzustands eingesetzt wird. Dies erfordert das Erstellen einer zusätzlichen VM in Google Cloud und zwei Festplattensätze für jeden Knoten.
 
 Hier sind einige wichtige Details zur Mediator-Instanz in Google Cloud:
 
@@ -63,6 +67,14 @@ Drittanbieter-Agenten:: Agenten oder VM-Erweiterungen von Drittanbietern werden 
 
 
 
+[[shared-disks-for-single-az-ha-configurations]]
+=== Gemeinsam genutzte Datenträger für Single AZ HA-Konfigurationen
+
+Cloud Volumes ONTAP 9.19.1 und höher unterstützen die gemeinsame HA-Konfiguration für eine einzelne AZ. In der gemeinsamen HA-Architektur können beide Knoten eine Festplatte gemeinsam nutzen, wodurch sich die Methode zur Aggregaterstellung ändert. Anstatt zwei Festplatten für zwei VMs zu erstellen, wird eine einzelne Festplatte erstellt und den VMs zugeordnet. Die gemeinsame HA-Konfiguration benötigt kein Festplatten-Mirroring.
+
+
+
+[[storage-takeover-and-giveback]]
 == Speicherübernahme und -rückgabe
 
 Wenn ein Knoten ausfällt, kann der andere Knoten Daten für seinen Partner bereitstellen, um einen kontinuierlichen Datendienst bereitzustellen.  Clients können auf dieselben Daten des Partnerknotens zugreifen, da die Daten synchron zum Partner gespiegelt wurden.
@@ -73,6 +85,7 @@ Die Speicherübernahme, Neusynchronisierung und Rückgabe erfolgen standardmäß
 
 
 
+[[rpo-and-rto]]
 == RPO und RTO
 
 Eine HA-Konfiguration gewährleistet die Hochverfügbarkeit Ihrer Daten wie folgt:
@@ -89,39 +102,41 @@ Im Falle eines Ausfalls sollten die Daten in 120 Sekunden oder weniger verfügba
 
 
 
+[[ha-deployment-models]]
 == HA-Bereitstellungsmodelle
 
 Sie können die Hochverfügbarkeit Ihrer Daten sicherstellen, indem Sie eine HA-Konfiguration in mehreren Zonen oder in einer einzelnen Zone bereitstellen.
 
-Mehrere Zonen (empfohlen):: Durch die Bereitstellung einer HA-Konfiguration über drei Zonen hinweg wird eine kontinuierliche Datenverfügbarkeit gewährleistet, wenn innerhalb einer Zone ein Fehler auftritt.  Beachten Sie, dass die Schreibleistung im Vergleich zur Verwendung einer einzelnen Zone etwas geringer ist, aber minimal.
-Einzelzone:: Bei der Bereitstellung in einer einzelnen Zone verwendet eine Cloud Volumes ONTAP HA-Konfiguration eine Richtlinie für verteilte Platzierung.  Diese Richtlinie stellt sicher, dass eine HA-Konfiguration vor einem einzelnen Fehlerpunkt innerhalb der Zone geschützt ist, ohne dass separate Zonen zur Fehlerisolierung verwendet werden müssen.
+Mehrere Verfügbarkeitszonen (empfohlen):: Durch die Bereitstellung einer HA-Konfiguration über drei Zonen hinweg wird eine kontinuierliche Datenverfügbarkeit gewährleistet, wenn innerhalb einer Zone ein Fehler auftritt.  Beachten Sie, dass die Schreibleistung im Vergleich zur Verwendung einer einzelnen Zone etwas geringer ist, aber minimal.
+Einzelne Verfügbarkeitszone:: Bei der Bereitstellung in einer einzelnen Verfügbarkeitszone (AZ) verwendet eine Cloud Volumes ONTAP HA Konfiguration eine verteilte Platzierungsrichtlinie. Diese Richtlinie stellt sicher, dass eine HA Konfiguration vor einem Single Point of Failure innerhalb der Zone geschützt ist, ohne dass separate Zonen zur Fehlerisolierung erforderlich sind.
 +
 --
 Dieses Bereitstellungsmodell senkt Ihre Kosten, da zwischen den Zonen keine Gebühren für den Datenausgang anfallen.
 
+== Wie die Speicherung in einem HA Pair funktioniert
+
 --
 
-
-
-
-== Funktionsweise der Speicherung in einem HA-Paar
 
 Anders als bei einem ONTAP Cluster wird der Speicher in einem Cloud Volumes ONTAP HA-Paar in GCP nicht zwischen Knoten geteilt.  Stattdessen werden die Daten synchron zwischen den Knoten gespiegelt, sodass die Daten im Fehlerfall verfügbar sind.
 
 
 
+[[storage-allocation]]
 === Speicherzuweisung
 
 Wenn Sie ein neues Volume erstellen und zusätzliche Datenträger benötigt werden, weist die Konsole beiden Knoten die gleiche Anzahl an Datenträgern zu, erstellt ein gespiegeltes Aggregat und erstellt dann das neue Volume.  Wenn beispielsweise zwei Festplatten für das Volume erforderlich sind, weist die Konsole zwei Festplatten pro Knoten zu, sodass insgesamt vier Festplatten vorhanden sind.
 
 
 
+[[storage-configurations]]
 === Speicherkonfigurationen
 
 Sie können ein HA-Paar als Aktiv-Aktiv-Konfiguration verwenden, bei der beide Knoten Daten an Clients bereitstellen, oder als Aktiv-Passiv-Konfiguration, bei der der passive Knoten nur dann auf Datenanforderungen antwortet, wenn er den Speicher für den aktiven Knoten übernommen hat.
 
 
 
+[[performance-expectations-for-an-ha-configuration]]
 === Leistungserwartungen für eine HA-Konfiguration
 
 Eine Cloud Volumes ONTAP HA-Konfiguration repliziert Daten synchron zwischen Knoten, was Netzwerkbandbreite verbraucht.  Im Vergleich zu einer Cloud Volumes ONTAP -Konfiguration mit einem einzelnen Knoten können Sie daher die folgende Leistung erwarten:
@@ -134,6 +149,7 @@ Weitere Informationen zur Leistung von Cloud Volumes ONTAP finden Sie unterlink:
 
 
 
+[[client-access-to-storage]]
 === Clientzugriff auf Speicher
 
 Clients sollten auf NFS- und CIFS-Volumes zugreifen, indem sie die Daten-IP-Adresse des Knotens verwenden, auf dem sich das Volume befindet.  Wenn NAS-Clients über die IP-Adresse des Partnerknotens auf ein Volume zugreifen, wird der Datenverkehr zwischen beiden Knoten geleitet, was die Leistung verringert.
@@ -147,6 +163,7 @@ image::screenshot_mount_option.png[400]
 
 
 
+[[related-links]]
 === Weiterführende Links
 
 * link:reference-networking-gcp.html["Informieren Sie sich über die Netzwerkanforderungen"]

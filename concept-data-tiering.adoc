@@ -24,6 +24,7 @@ ifdef::aws[]
 
 
 
+[[data-tiering-in-aws]]
 == Daten-Tiering in AWS
 
 Wenn Sie Data Tiering in AWS aktivieren, verwendet Cloud Volumes ONTAP EBS als Performance-Tier für häufig genutzte Daten und Amazon Simple Storage Service (Amazon S3) als Kapazitäts-Tier für inaktive Daten.
@@ -70,6 +71,7 @@ ifdef::azure[]
 
 
 
+[[data-tiering-in-azure]]
 == Datentiering in Azure
 
 Wenn Sie das Daten-Tiering in Azure aktivieren, verwendet Cloud Volumes ONTAP Azure Managed Disks als Leistungsebene für Hot Data und Azure Blob Storage als Kapazitätsebene für inaktive Daten.
@@ -116,6 +118,7 @@ ifdef::gcp[]
 
 
 
+[[data-tiering-in-google-cloud]]
 == Daten-Tiering in Google Cloud
 
 Wenn Sie Data Tiering in Google Cloud aktivieren, verwendet Cloud Volumes ONTAP persistente Festplatten als Performance-Tier für häufig genutzte Daten und einen Google Cloud Storage Bucket als Kapazitäts-Tier für inaktive Daten. Eine Speicherebene kann beim Erstellen eines Systems ausgewählt und jederzeit danach geändert werden. Informationen zum Ändern der Speicherklasse finden sich unter link:task-tiering.html["Verschieben Sie inaktive Daten in kostengünstige Objektspeicher"].
@@ -149,12 +152,14 @@ endif::gcp[]
 
 
 
+[[data-tiering-and-capacity-limits]]
 == Daten-Tiering und Kapazitätsgrenzen
 
 Wenn Sie Data Tiering aktivieren, bleibt die Kapazitätsgrenze eines Systems gleich.  Das Limit ist auf die Leistungsstufe und die Kapazitätsstufe verteilt.
 
 
 
+[[volume-tiering-policies]]
 == Richtlinien für die Datenträgereinteilung
 
 Um Data Tiering zu aktivieren, müssen Sie beim Erstellen, Ändern oder Replizieren eines Volumes eine Volume-Tiering-Richtlinie auswählen.  Sie können für jedes Volume eine andere Richtlinie auswählen.
@@ -194,6 +199,7 @@ Wenn Sie ein Volume replizieren, können Sie wählen, ob die Daten in den Objekt
 
 
 
+[[turning-off-cloud-volumes-ontap-impacts-the-cooling-period]]
 === Das Ausschalten von Cloud Volumes ONTAP wirkt sich auf die Abkühlphase aus
 
 Datenblöcke werden durch Kühlscans gekühlt.  Bei diesem Vorgang wird die Blocktemperatur nicht verwendeter Blöcke auf den nächstniedrigeren Wert verschoben (abgekühlt).  Die standardmäßige Abkühlzeit hängt von der Volume-Tiering-Richtlinie ab:
@@ -209,6 +215,7 @@ TIP: Wenn Cloud Volumes ONTAP ausgeschaltet ist, bleibt die Temperatur jedes Blo
 
 
 
+[[setting-up-data-tiering]]
 == Einrichten von Daten-Tiering
 
 Anweisungen und eine Liste der unterstützten Konfigurationen finden Sie unterlink:task-tiering.html["Verschieben Sie inaktive Daten in kostengünstige Objektspeicher"] .

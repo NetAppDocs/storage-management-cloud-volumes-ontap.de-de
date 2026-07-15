@@ -18,6 +18,7 @@ Wenn Sie wissen, wie Cloud Volumes ONTAP standardmäßig konfiguriert ist, könn
 
 
 
+[[default-setup]]
 == Standard-Setup
 
 * Die NetApp Console erstellt bei der Bereitstellung von Cloud Volumes ONTAP eine datenbereitstellende Speicher-VM.  Einige Konfigurationen unterstützen zusätzliche Speicher-VMs. link:task-managing-svms.html["Erfahren Sie mehr über die Verwaltung von Speicher-VMs"] .
@@ -128,6 +129,7 @@ Informationen zu diesen Attributen finden Sie unterlink:https://docs.netapp.com/
 
 
 
+[[internal-disks-for-system-data]]
 == Interne Festplatten für Systemdaten
 
 Zusätzlich zum Speicher für Benutzerdaten erwirbt die Konsole auch Cloud-Speicher für Systemdaten.
@@ -136,6 +138,7 @@ ifdef::aws[]
 
 
 
+[[aws]]
 === AWS
 
 * Drei Festplatten pro Knoten für Boot-, Root- und Core-Daten:
@@ -172,6 +175,7 @@ ifdef::azure[]
 
 
 
+[[azure-single-node]]
 === Azure (einzelner Knoten)
 
 * Drei Premium-SSD-Festplatten:
@@ -194,6 +198,7 @@ Wenn die virtuelle Maschine, die Sie für Cloud Volumes ONTAP ausgewählt haben,
 
 
 
+[[azure-ha-pair]]
 === Azure (HA-Paar)
 
 .HA-Paare mit Seitenblob
@@ -244,6 +249,7 @@ ifdef::gcp[]
 
 
 
+[[google-cloud-single-node]]
 === Google Cloud (einzelner Knoten)
 
 * Eine persistente SSD-Festplatte mit 10 GiB für Startdaten
@@ -260,6 +266,7 @@ NOTE: Beim Neustart werden automatisch Snapshots erstellt.
 
 
 
+[[google-cloud-ha-pair]]
 === Google Cloud (HA-Paar)
 
 * Zwei persistente 10-GiB-SSD-Festplatten für Startdaten
@@ -280,6 +287,7 @@ endif::gcp[]
 
 
 
+[[where-the-disks-reside]]
 === Wo sich die Festplatten befinden
 
 Speicherlayout:

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-quick-deploy-azure.html 
-keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ, MAZ, single node, HA pair 
-summary: Sie können Cloud Volumes ONTAP Instanzen schnell in einer Einzelsystemkonfiguration oder als HA-Paar in AWS bereitstellen. 
+keywords: azure quick deploy, quick deploy, azure, single screen deployment Azure, SAZ, MAZ, single node, HA pair 
+summary: Cloud Volumes ONTAP Instanzen lassen sich in Azure entweder in einer Einzelsystemkonfiguration oder als HA-Paar schnell bereitstellen. 
 ---
 = Cloud Volumes ONTAP mit Schnellerstellung bereitstellen
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Sie können Cloud Volumes ONTAP Instanzen schnell in einer Einzelsystem
 
 
 [role="lead"]
-Sie können Cloud Volumes ONTAP in Amazon Web Services (AWS) und Microsoft Azure mit  `Quick create` für eine schnellere Bereitstellung sowohl in Einzelknoten- als auch in Hochverfügbarkeitskonfigurationen (HA) bereitstellen. Dieser vereinfachte Prozess reduziert die Bereitstellungsschritte im Vergleich zur fortschrittlichen Methode, indem Standardwerte automatisch auf einer einzigen Seite festgelegt und die Navigation minimiert wird.
+Cloud Volumes ONTAP kann in Amazon Web Services (AWS), Microsoft Azure und Google Cloud mit  `Quick create` für eine schnellere Bereitstellung sowohl in Einzelknoten- als auch in Hochverfügbarkeitskonfigurationen (HA) bereitgestellt werden. Dieser vereinfachte Prozess reduziert die Bereitstellungsschritte im Vergleich zur fortschrittlichen Methode, indem Standardwerte automatisch auf einer einzigen Seite festgelegt und die Navigation minimiert wird.
 
 .Bevor Sie beginnen
 Bevor Sie beginnen, stellen Sie sicher, dass Sie Folgendes haben:
@@ -39,6 +39,11 @@ link:task-planning-your-config.html["Planen Sie Ihre Konfiguration in AWS"]
 link:task-planning-your-config-azure.html["Planen Sie Ihre Konfiguration in Azure"]
 
 --
+.Google Cloud
+--
+link:task-planning-your-config-gcp.html["Planung Ihrer Konfiguration in Google Cloud"]
+
+--
 ====
 . Kenntnisse der Lizenzbestimmungen für Cloud Volumes ONTAP. Weitere Informationen finden Sie unter:
 +
@@ -52,6 +57,11 @@ link:task-set-up-licensing-aws.html["Lizenzierung in AWS einrichten"]
 .Azurblau
 --
 link:task-set-up-licensing-azure.html["Lizenzierung in Azure einrichten"]
+
+--
+.Google Cloud
+--
+link:task-planning-your-config-gcp.html["Planung Ihrer Konfiguration in Google Cloud"]
 
 --
 ====
@@ -69,13 +79,18 @@ link:reference-networking-aws.html["Netzwerkanforderungen in AWS"]
 link:reference-networking-azure.html["Netzwerkanforderungen in Azure"]
 
 --
+.Google Cloud
+--
+link:reference-networking-gcp.html["Netzwerkanforderungen in Google Cloud"]
+
+--
 ====
 
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . [[Abonnieren]]Klicken Sie auf der Canvas-Seite auf *System hinzufügen* und folgen Sie den Anweisungen.
-. Wählen Sie Ihren Cloud-Anbieter (*Amazon Web Services* oder *Microsoft Azure*) > *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* > *Neu hinzufügen*. Die Option *Schnell erstellen* ist standardmäßig ausgewählt.
+. Wählen Sie Ihren Cloud-Anbieter (*Amazon Web Services*, *Microsoft Azure* oder *Google Cloud*) > *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* > *Neu hinzufügen*. Die Option *Schnell erstellen* ist standardmäßig ausgewählt.
 +
 .Beispiel-Screenshots der Option „Schnell erstellen“
 [%collapsible]
@@ -92,15 +107,20 @@ image:screenshot-aws-quick-create.png["width=500,alt=\"AWS Quick Create\""]
 image:screenshot-azure-quick-create.png["width=500,alt=\"Azure Quick Create\""]
 
 --
+.Google Cloud
+--
+image:screenshot-quick-start-gcp.png["width=500,alt=\"Google Cloud Quick Create\""]
+
+--
 =====
 ====
 
 
 .Systemdetails
-. *Cloud-Anbieterkonto/Anmeldeinformationen*: Die Konto- und Abonnementdetails werden automatisch anhand Ihres Console-Agenten ausgefüllt. Wenn Sie mehrere Konten oder Abonnements haben, wählen Sie das gewünschte aus. Falls kein Console-Agent verfügbar ist, werden Sie dazu aufgefordert,  https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["Erstellen Sie einen Konsolenagenten"^].
+. *Cloud-Anbieterkonto/Anmeldeinformationen/Google Cloud-Projekt*: Die Konto- und Abonnementdetails werden automatisch anhand Ihres Console-Agenten ausgefüllt. Wenn Sie mehrere Konten oder Abonnements haben, kann das gewünschte ausgewählt werden. Falls kein Console-Agent verfügbar ist, erfolgt eine entsprechende Aufforderung https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["Erstellen Sie einen Konsolenagenten"^].
 . *Name*: Geben Sie einen Namen für Ihr Cloud Volumes ONTAP-System ein (auch Clustername genannt). Die Console verwendet den Systemnamen (Clusternamen) zur Benennung des Cloud Volumes ONTAP-Systems und der VM-Instanz. Der Name wird auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet, wenn Sie diese Option auswählen.
 . *ONTAP-Anmeldeinformationen*: Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP-Administratorkonto. Sie können diese Anmeldeinformationen verwenden, um eine Verbindung zu Cloud Volumes ONTAP über ONTAP System Manager oder die ONTAP CLI herzustellen. Sie können den Standardbenutzernamen _admin_ beibehalten oder ihn durch einen benutzerdefinierten Benutzernamen ersetzen.
-. *Tags*: Tags sind die Metadaten Ihrer AWS- oder Azure-Ressourcen. Die Konsole fügt die Tags der Cloud Volumes ONTAP Instanz und jeder zugehörigen Ressource hinzu. Sie können beim Erstellen eines Cloud Volumes ONTAP Systems bis zu 15 Tags über die Benutzeroberfläche hinzufügen und anschließend weitere hinzufügen. Weitere Informationen finden Sie unter:
+. *Tags/Labels*: Tags sind die Metadaten Ihrer AWS- oder Azure-Ressourcen. Die Console fügt die Tags der Cloud Volumes ONTAP Instanz und jeder mit der Instanz verbundenen Ressource hinzu. Beim Erstellen eines Cloud Volumes ONTAP Systems können bis zu 15 Tags über die Benutzeroberfläche hinzugefügt werden, danach sind weitere Ergänzungen möglich. Weitere Informationen sind unter folgendem Link verfügbar:
 +
 [role="tabbed-block"]
 ====
@@ -112,6 +132,11 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html["AWS-Dokumen
 .Azurblau
 --
 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json["Azure-Dokumentation: Ressourcen taggen"^].
+
+--
+.Google Cloud
+--
+https://docs.cloud.google.com/storage/docs/tags-and-labels["Google Cloud Dokumentation: Tags und Labels"^].
 
 --
 ====
@@ -129,7 +154,7 @@ https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-res
 ====
 .Für AWS
 --
-*VPC*: Geben Sie für AWS eine VPC für die Region mit einem Subnetz gemäß Ihrer Planung ein.
+*VPC*: Für AWS ist ein Amazon Virtual Private Cloud (VPC) Netzwerk für die Region mit einem Subnetz entsprechend der geplanten Bereitstellung anzugeben.
 
 .AWS-Hochverfügbarkeit
 Wenn Sie eine HA-Konfiguration ausgewählt haben, geben Sie die folgenden Informationen ein:
@@ -151,7 +176,18 @@ Wenn Sie eine HA-Konfiguration ausgewählt haben, geben Sie die folgenden Inform
 --
 .Für Azure
 --
-*VNET*: Wählen Sie für Azure das gewünschte VNET aus.
+*VNET*: Das erforderliche Azure Virtual Network (VNet) auswählen. Informationen zu den VNet-Anforderungen befinden sich unter link:reference-networking-azure.html#networking-for-azure-vnet-encryption["Netzwerk für Azure VNet-Verschlüsselung"].
+
+--
+.Für Google Cloud
+--
+*VPC und Subnetz*: Für Google Cloud ist ein Google Virtual Private Cloud (VPC) Netzwerk für die Region sowie ein Subnetz entsprechend der geplanten Bereitstellung anzugeben.
+
+.HA in einer einzelnen AZ oder mehreren AZs
+Wenn Sie eine HA-Konfiguration ausgewählt haben, sind die folgenden Informationen einzugeben: *Zone für Knoten 1 und 2 sowie den Mediator*: Die Zonen für die beiden Knoten und den Mediator sind hinzuzufügen. *Konnektivität* Es sind vier verschiedene VPCs für die HA-Konfiguration sowie jeweils ein Subnetz in jeder VPC auszuwählen. Weitere Informationen zu VPC-1, VPC-2 und VPC-3 finden sich unter link:reference-networking-gcp.html#requirements-specific-to-single-node-systems["Regeln für VPC-1, VPC-2 und VPC-3"].
+
+
+NOTE: Cloud Volumes ONTAP 9.19.1 und höher unterstützen link:concept-ha-google-cloud.html["Gemeinsam genutzte Datenträger für Single AZ HA-Konfigurationen"], wodurch die Mediator-Instanz optional oder redundant wird. In dieser Konfiguration sind keine Mediator-Zone, VPC und kein Subnetz für Datenreplizierung erforderlich.
 
 --
 ====

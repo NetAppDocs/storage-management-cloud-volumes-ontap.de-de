@@ -27,6 +27,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 
 
 
+[[how-licenses-are-added-to-netapp-console]]
 == So werden Lizenzen zur NetApp Console hinzugefügt
 
 Nachdem Sie eine Lizenz von Ihrem NetApp Vertriebsmitarbeiter erworben haben, sendet Ihnen NetApp eine E-Mail mit der Seriennummer und weiteren Lizenzdetails.
@@ -37,6 +38,7 @@ Wenn die Konsole die Lizenz nicht hinzufügen kann, müssen Sie sie manuell hinz
 
 
 
+[[view-the-consumed-capacity-in-your-account]]
 == Zeigen Sie die verbrauchte Kapazität in Ihrem Konto an
 
 Die Konsole zeigt Ihnen die insgesamt verbrauchte Kapazität in Ihrem Konto und die verbrauchte Kapazität nach Lizenzpaket an.  Auf diese Weise können Sie besser nachvollziehen, welche Kosten Ihnen in Rechnung gestellt werden und ob Sie zusätzliche Kapazität erwerben müssen.
@@ -71,6 +73,7 @@ Sie sehen nur die Abonnements, die mit der Organisation verknüpft sind, die Sie
 
 
 
+[[viewing-package-details]]
 == Paketdetails anzeigen
 
 Sie können Details zur pro Paket genutzten Kapazität anzeigen, indem Sie auf der Cloud Volumes ONTAP -Seite in den Legacy-Modus wechseln.
@@ -90,6 +93,7 @@ image:screenshot_licesning_standard_view.png["Ein Screenshot der Schaltfläche z
 
 
 
+[[change-charging-methods]]
 == Lademethoden ändern
 
 Die kapazitätsbasierte Lizenzierung ist in Form eines _Pakets_ verfügbar. Wenn Sie ein Cloud Volumes ONTAP -System erstellen, können Sie je nach Ihren Geschäftsanforderungen aus mehreren Lizenzpaketen wählen.  Sollten sich Ihre Anforderungen nach der Erstellung des Systems ändern, können Sie das Paket jederzeit ändern.  Beispielsweise könnten Sie vom Essentials-Paket zum Professional-Paket wechseln.
@@ -122,6 +126,7 @@ image:screenshot-digital-wallet-charging-method-button.png["Ein Screenshot der C
 
 
 
+[[download-usage-reports]]
 == Nutzungsberichte herunterladen
 
 Sie können vier Nutzungsberichte von der Konsole herunterladen.  Diese Nutzungsberichte liefern Kapazitätsdetails zu Ihren Abonnements und informieren Sie darüber, wie Ihnen die Ressourcen in Ihren Cloud Volumes ONTAP Abonnements in Rechnung gestellt werden.  Die herunterladbaren Berichte erfassen Daten zu einem bestimmten Zeitpunkt und können problemlos mit anderen geteilt werden.
@@ -130,52 +135,114 @@ image:screenshot-download-usage-report.png["Der Screenshot zeigt die kapazitäts
 
 Die folgenden Berichte stehen zum Download bereit.  Die angezeigten Kapazitätswerte sind in TiB angegeben.
 
-* *Nutzung auf hoher Ebene*: Dieser Bericht enthält die folgenden Informationen:
+* *Nutzungsübersicht*: Dieser Bericht fasst die gesamte in Ihrem Konto verbrauchte Kapazität zusammen und schlüsselt sie nach Abrechnungsmethode auf (vorab reservierte Lizenzen im Vergleich zu nutzungsbasierter Abrechnung). Es sind die folgenden Informationen enthalten:
 +
-** Gesamte verbrauchte Kapazität
-** Gesamte vorab festgelegte Kapazität
-** Gesamte BYOL-Kapazität
-** Gesamtkapazität der Marketplace-Verträge
-** Gesamte PAYGO-Kapazität
+[cols="1,2"]
+|===
+| Spalte | Beschreibung 
 
 
-* * Cloud Volumes ONTAP -Paketnutzung*: Dieser Bericht enthält die folgenden Informationen für jedes Paket:
+| Gesamte verbrauchte Kapazität | Die gesamte bereitgestellte Kapazität aller Cloud Volumes ONTAP Systeme in Ihrem Konto. 
+
+
+| Gesamte vorab festgelegte Kapazität | Die gesamte von Ihnen bei NetApp erworbene Lizenzkapazität, einschließlich sowohl BYOL-Lizenzen als auch Marketplace-Verträgen. Dieser Wert ist die Summe der gesamten BYOL-Kapazität und der gesamten Marketplace-Vertragskapazität. 
+
+
+| Gesamte BYOL-Kapazität | Der Anteil der vorab zugesagten Kapazität, der durch Bring Your Own License (BYOL)-Lizenzen abgedeckt ist, die direkt von NetApp erworben wurden. 
+
+
+| Gesamtkapazität der Marketplace-Verträge | Der Anteil der vorab zugesagten Kapazität, der durch jährliche Marktplatzverträge oder private Angebote abgedeckt ist, die über den Marktplatz Ihres Cloud-Anbieters erworben wurden. 
+
+
+| Gesamte PAYGO-Kapazität | Der Teil der verbrauchten Kapazität, der nicht durch eine vorab zugesagte Lizenz abgedeckt ist und zu Pay-as-you-go (PAYGO) Stundensätzen auf dem Marktplatz abgerechnet wird. 
+|===
+* *Cloud Volumes ONTAP Paketnutzung*: Dieser Bericht bietet die gleiche Kapazitätsaufschlüsselung wie der High-level usage report, jedoch nach Lizenzpaketen gegliedert. Es sind die folgenden Informationen enthalten:
 +
-** Gesamte verbrauchte Kapazität
-** Gesamte vorab festgelegte Kapazität
-** Gesamte BYOL-Kapazität
-** Gesamtkapazität der Marketplace-Verträge
-** Gesamte PAYGO-Kapazität
+[cols="1,2"]
+|===
+| Spalte | Beschreibung 
 
 
+| Gesamte verbrauchte Kapazität | Die gesamte für dieses Paket bereitgestellte Kapazität über alle Cloud Volumes ONTAP Systeme in Ihrem Konto. 
+
+
+| Gesamte vorab festgelegte Kapazität | Die gesamte lizenzierte Kapazität dieses von Ihnen bei NetApp erworbenen Pakets, einschließlich sowohl BYOL-Lizenzen als auch Marketplace-Verträgen. Dieser Wert ist die Summe der gesamten BYOL-Kapazität und der gesamten Kapazität der Marketplace-Verträge. 
+
+
+| Gesamte BYOL-Kapazität | Der Anteil der vorab zugesagten Kapazität für dieses Paket, der durch Bring Your Own License (BYOL)-Lizenzen abgedeckt ist, die Sie direkt von NetApp erworben haben. 
+
+
+| Gesamtkapazität der Marketplace-Verträge | Der Anteil der vorab zugesagten Kapazität für dieses Paket, der durch jährliche Marktplatzverträge oder private Angebote abgedeckt ist, die über den Marktplatz Ihres Cloud-Anbieters erworben wurden. 
+
+
+| Gesamte PAYGO-Kapazität | Der Anteil der verbrauchten Kapazität dieses Pakets, der nicht durch eine vorab zugesagte Lizenz abgedeckt ist und zu Pay-as-you-go (PAYGO) Stundensätzen auf dem Marktplatz abgerechnet wird. 
+|===
 * *Nutzung von Storage-VMs*: Dieser Bericht zeigt, wie die berechnete Kapazität auf Cloud Volumes ONTAP Systeme und Storage Virtual Machines (SVMs) aufgeteilt ist.  Diese Informationen sind nur im Bericht verfügbar.  Es enthält die folgenden Informationen:
 +
-** System-ID und Name (wird als UUID angezeigt)
-** Wolke
-** NetApp Konto-ID
-** Systemkonfiguration
-** SVM-Name
-** Bereitgestellte Kapazität
-** Übersicht der geladenen Kapazität
-** Abrechnungszeitraum für den Marktplatz
-** Cloud Volumes ONTAP Paket oder -Funktion
-** Name des SaaS Marketplace-Abonnements wird aufgeladen
-** Abrechnung der SaaS Marketplace-Abonnement-ID
-** Arbeitslasttyp
+[cols="1,2"]
+|===
+| Spalte | Beschreibung 
 
 
+| System-ID und Name | Die eindeutige Kennung (UUID) und der Anzeigename des Cloud Volumes ONTAP Systems. 
+
+
+| Wolke | Der Cloud-Anbieter, bei dem das System bereitgestellt wird (z. B. AWS, Azure oder Google Cloud). 
+
+
+| NetApp Konto-ID | Die Kennung für das mit dem System verknüpfte NetApp-Konto. 
+
+
+| Systemkonfiguration | Die Bereitstellungskonfiguration des Systems (z. B. Einzelknoten oder HA Pair). 
+
+
+| SVM-Name | Der Name der Storage Virtual Machine (SVM) innerhalb des Cloud Volumes ONTAP Systems. 
+
+
+| Bereitgestellte Kapazität | Die auf dem SVM bereitgestellte Gesamtkapazität. 
+
+
+| Übersicht der geladenen Kapazität | Die tatsächlich für die SVM abgerechnete Kapazität. Jede SVM verfügt über eine minimale abrechnungsfähige Kapazität (standardmäßig 4 TiB, wobei dieser Wert je nach Konto variieren kann). Liegt die bereitgestellte Kapazität der SVM auf oder unter diesem Minimum, wird dieser Wert auf das Minimum aufgerundet, andernfalls entspricht er der bereitgestellten Kapazität. 
+
+
+| Abrechnungszeitraum für den Marktplatz | Der Abrechnungszeitraum für das zugehörige Marketplace-Abonnement (zum Beispiel stündlich oder jährlich). 
+
+
+| Cloud Volumes ONTAP Paket oder -Funktion | Das mit der SVM verbundene Lizenzpaket oder Feature (zum Beispiel Essentials oder Professional). 
+
+
+| Name des SaaS Marketplace-Abonnements wird aufgeladen | Der Name des für die Abrechnung verwendeten Marktplatzabonnements. 
+
+
+| Abrechnung der SaaS Marketplace-Abonnement-ID | Die eindeutige Kennung des Marketplace-Abonnements, die für die Abrechnung verwendet wird. 
+
+
+| Arbeitslasttyp | Gibt an, ob die Volumes der SVM *Primär* (lesen/schreiben) sind und aktiv für Produktionsdaten verwendet werden oder *Sekundär* (DP), also Datensicherungs-Zielvolumes wie SnapMirror-Replikate, die für Backup und Replikation genutzt werden. 
+|===
 * *Volume-Nutzung*: Dieser Bericht zeigt, wie die berechnete Kapazität nach Volumes in einem Cloud Volumes ONTAP System aufgeschlüsselt ist.  Diese Informationen sind auf keinem Bildschirm der Konsole verfügbar.  Es enthält die folgenden Informationen:
 +
-** System-ID und Name (wird als UUID angezeigt)
-** SVN-Name
-** Datenträger-ID
-** Datenträgertyp
-** Vom Volumen bereitgestellte Kapazität
+[cols="1,2"]
+|===
+| Spalte | Beschreibung 
+
+
+| System-ID und Name | Die eindeutige Kennung (UUID) und der Anzeigename des Cloud Volumes ONTAP Systems, das das Volume enthält. 
+
+
+| SVM-Name | Der Name der Storage Virtual Machine (SVM), die das Volume enthält. 
+
+
+| Datenträger-ID | Die eindeutige Kennung des Volumes. 
+
+
+| Datenträgertyp | Der Volume-Typ (zum Beispiel lesen/schreiben oder Datenschutz). 
+
+
+| Vom Volumen bereitgestellte Kapazität | Die für das Volume bereitgestellte Gesamtkapazität. 
+|===
 +
 
 NOTE: FlexClone -Volumes sind in diesem Bericht nicht enthalten, da für diese Volume-Typen keine Gebühren anfallen.
-
-
 
 
 

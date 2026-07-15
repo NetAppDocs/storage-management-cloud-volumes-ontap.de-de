@@ -18,12 +18,14 @@ Die NetApp Console übernimmt die Einrichtung von Netzwerkkomponenten für Cloud
 
 
 
+[[requirements-for-cloud-volumes-ontap]]
 == Anforderungen für Cloud Volumes ONTAP
 
 Die folgenden Netzwerkanforderungen müssen in Azure erfüllt sein.
 
 
 
+[[outbound-internet-access]]
 === Ausgehender Internetzugang
 
 Cloud Volumes ONTAP -Systeme erfordern ausgehenden Internetzugang für den Zugriff auf externe Endpunkte für verschiedene Funktionen.  Cloud Volumes ONTAP kann nicht ordnungsgemäß funktionieren, wenn diese Endpunkte in Umgebungen mit strengen Sicherheitsanforderungen blockiert sind.
@@ -78,6 +80,7 @@ Die Benutzerauthentifizierung schlägt fehl und die folgenden Dienste sind weite
 |===
 
 
+[[network-proxy-configuration-of-netapp-console-agent]]
 === Netzwerkproxykonfiguration des NetApp Console Agenten
 
 Sie können die Proxyserverkonfiguration des NetApp Console Agenten verwenden, um ausgehenden Internetzugriff von Cloud Volumes ONTAP zu aktivieren.  Die Konsole unterstützt zwei Arten von Proxys:
@@ -90,6 +93,7 @@ Informationen zum Konfigurieren von Proxy-Servern finden Sie im https://docs.net
 
 
 
+[[ip-addresses]]
 === IP-Adressen
 
 Die Konsole weist Cloud Volumes ONTAP in Azure automatisch die erforderliche Anzahl privater IP-Adressen zu.  Sie müssen sicherstellen, dass in Ihrem Netzwerk genügend private IP-Adressen verfügbar sind.
@@ -166,6 +170,7 @@ Darüber hinaus sind 4 Frontend-IPs (FIPs) für die Migration bei Failover-Ereig
 
 
 
+[[secure-connections-to-azure-services]]
 === Sichere Verbindungen zu Azure-Diensten
 
 Standardmäßig aktiviert die Konsole einen Azure Private Link für Verbindungen zwischen Cloud Volumes ONTAP und Azure Page Blob Storage-Konten.
@@ -178,6 +183,7 @@ link:task-enabling-private-link.html["Erfahren Sie mehr über die Verwendung von
 
 
 
+[[networking-for-azure-vnet-encryption]]
 === Netzwerk für Azure VNet-Verschlüsselung
 
 Cloud Volumes ONTAP unterstützt https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-encryption-overview["Azure Virtual Network (VNet)-Verschlüsselung"^] die Verschlüsselung des VM-zu-VM-Datenverkehrs innerhalb eines VNet oder zwischen verbundenen VNets. Diese Funktion wird auf der Azure VNet-Ebene konfiguriert und ist unabhängig von der Cloud Volumes ONTAP-Topologie (Single Node oder HA).
@@ -188,6 +194,7 @@ https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-o
 
 
 
+[[connections-to-other-ontap-systems]]
 === Verbindungen zu anderen ONTAP -Systemen
 
 Um Daten zwischen einem Cloud Volumes ONTAP -System in Azure und ONTAP -Systemen in anderen Netzwerken zu replizieren, benötigen Sie eine VPN-Verbindung zwischen dem Azure VNet und dem anderen Netzwerk, beispielsweise Ihrem Unternehmensnetzwerk.
@@ -196,6 +203,7 @@ Anweisungen hierzu finden Sie im https://docs.microsoft.com/en-us/azure/vpn-gate
 
 
 
+[[port-for-the-ha-interconnect]]
 === Port für die HA-Verbindung
 
 Ein Cloud Volumes ONTAP HA-Paar umfasst eine HA-Verbindung, die es jedem Knoten ermöglicht, kontinuierlich zu prüfen, ob sein Partner funktioniert, und Protokolldaten für den nichtflüchtigen Speicher des anderen zu spiegeln.  Die HA-Verbindung verwendet den TCP-Port 10006 für die Kommunikation.
@@ -204,6 +212,7 @@ Standardmäßig ist die Kommunikation zwischen den HA-Interconnect-LIFs offen un
 
 
 
+[[only-one-ha-pair-in-an-azure-resource-group]]
 === Nur ein HA-Paar in einer Azure-Ressourcengruppe
 
 Sie müssen für jedes Cloud Volumes ONTAP HA-Paar, das Sie in Azure bereitstellen, eine _dedizierte_ Ressourcengruppe verwenden.  In einer Ressourcengruppe wird nur ein HA-Paar unterstützt.
@@ -212,6 +221,7 @@ Bei der Konsole treten Verbindungsprobleme auf, wenn Sie versuchen, ein zweites 
 
 
 
+[[security-group-rules]]
 === Sicherheitsgruppenregeln
 
 Die Konsole erstellt Azure-Sicherheitsgruppen, die die eingehenden und ausgehenden Regeln für den erfolgreichen Betrieb von Cloud Volumes ONTAP enthalten. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["Sicherheitsgruppenregeln für den Konsolenagenten anzeigen"^] .
@@ -490,6 +500,7 @@ NOTE: Die Quelle ist die Schnittstelle (IP-Adresse) auf dem Cloud Volumes ONTAP 
 |===
 
 
+[[requirements-for-the-console-agent]]
 == Anforderungen für den Konsolenagenten
 
 Wenn Sie noch keinen Konsolenagenten erstellt haben, sollten Sie auch die Netzwerkanforderungen für den Konsolenagenten überprüfen.

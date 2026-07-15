@@ -22,6 +22,7 @@ Informationen zum Ausführen von Cloud Volumes ONTAP API-Aufrufen finden Sie unt
 
 
 
+[[supported-number-of-storage-vms]]
 == Unterstützte Anzahl von Speicher-VMs
 
 Ab Cloud Volumes ONTAP 9.11.1 werden, basierend auf Ihrer Lizenz, mehrere Speicher-VMs mit bestimmten Konfigurationen unterstützt.  Weitere Informationen finden Sie im https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Versionshinweise zu Cloud Volumes ONTAP"^] um die unterstützte Anzahl von Speicher-VMs für Ihre Version von Cloud Volumes ONTAP zu überprüfen.
@@ -30,6 +31,7 @@ Alle Versionen von Cloud Volumes ONTAP vor 9.11.1 unterstützen eine Daten-Stora
 
 
 
+[[create-a-storage-vm]]
 == Erstellen einer Speicher-VM
 
 Basierend auf Ihrer Konfiguration und dem Lizenztyp können Sie mithilfe der APIs mehrere Storage-VMs auf einem Einzelknotensystem oder in einer Hochverfügbarkeitskonfiguration (HA) erstellen.
@@ -49,6 +51,7 @@ Der Konsolenagent benötigt bestimmte Berechtigungen zum Erstellen von Speicher-
 
 
 
+[[single-node-system]]
 === Einzelknotensystem
 
 Verwenden Sie den folgenden API-Aufruf, um eine Storage-VM auf einem Single-Node-System zu erstellen.
@@ -65,6 +68,7 @@ Fügen Sie die folgenden Parameter in den Anforderungstext ein:
 ----
 
 
+[[ha-pair]]
 === HA-Paar
 
 Verwenden Sie den folgenden API-Aufruf, um eine Speicher-VM auf einem HA-Paar zu erstellen:
@@ -81,6 +85,7 @@ Fügen Sie die folgenden Parameter in den Anforderungstext ein:
 ----
 
 
+[[manage-storage-vms]]
 == Verwalten von Speicher-VMs
 
 Mithilfe der APIs können Sie Speicher-VMs sowohl in Einzelknoten- als auch in HA-Konfigurationen umbenennen und löschen.
@@ -90,6 +95,7 @@ Der Konsolenagent benötigt bestimmte Berechtigungen zum Verwalten von Speicher-
 
 
 
+[[rename-a-storage-vm]]
 === Umbenennen einer Speicher-VM
 
 Um eine Speicher-VM umzubenennen, sollten Sie die Namen der vorhandenen Speicher-VM und der neuen Speicher-VM als Parameter angeben.
@@ -129,6 +135,7 @@ Fügen Sie die folgenden Parameter in den Anforderungstext ein:
 
 
 
+[[delete-a-storage-vm]]
 === Löschen einer Speicher-VM
 
 In einer Einzelknoten- oder HA-Konfiguration können Sie eine Speicher-VM entfernen, wenn sie keine aktiven Volumes hat.

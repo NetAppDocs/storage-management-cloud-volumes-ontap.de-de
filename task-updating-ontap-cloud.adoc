@@ -18,12 +18,14 @@ Aktualisieren Sie Cloud Volumes ONTAP über die NetApp Console, um Zugriff auf d
 
 
 
+[[upgrade-overview]]
 == Upgradeübersicht
 
 Bevor Sie mit dem Upgrade-Prozess für Cloud Volumes ONTAP beginnen, sollten Sie sich über Folgendes im Klaren sein.
 
 
 
+[[upgrade-from-console-only]]
 === Upgrade nur von der Konsole
 
 Sie sollten Cloud Volumes ONTAP nicht mithilfe des ONTAP System Manager oder der ONTAP CLI aktualisieren, sondern nur mithilfe der Konsole.  Andernfalls könnte die Systemstabilität beeinträchtigt werden.
@@ -36,6 +38,7 @@ Die Konsole bietet zwei Möglichkeiten zum Upgrade von Cloud Volumes ONTAP:
 
 
 
+[[supported-upgrade-paths]]
 === Unterstützte Upgradepfade
 
 Die Cloud Volumes ONTAP-Version, auf die Sie aktualisieren können, hängt von der Version ab, die Sie derzeit verwenden. Jede generische Version oder Patch-Version in einer Veröffentlichung in den folgenden Tabellen stellt die Basisversion dar, die für ein Upgrade verfügbar ist. Einzelheiten zu den verfügbaren Patches finden Sie in der  https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html["versionierte Versionshinweise"^] für jede Version.
@@ -200,6 +203,9 @@ ifdef::gcp[]
 | Aktuelle Version | Versionen, auf die Sie direkt upgraden können 
 
 
+| 9.18.1 | 9.19.1 RC 
+
+
 | 9.17.1 P1 | 9.18.1 
 
 
@@ -310,6 +316,7 @@ Wenn Sie beispielsweise Version 9.8 ausführen und auf 9.10.1 aktualisieren möc
 
 
 
+[[patch-releases]]
 === Patch-Veröffentlichungen
 
 Ab Januar 2024 sind Patch-Upgrades nur verfügbar, wenn ein Patch-Release für die drei neuesten Versionen von Cloud Volumes ONTAP vorliegt.  Gelegentlich sind Patchversionen zur Bereitstellung verfügbar, wenn die RC- oder GA-Version nicht zur Bereitstellung verfügbar ist.
@@ -328,12 +335,14 @@ Hier sind einige Beispiele:
 
 
 
+[[reverting-or-downgrading]]
 === Zurücksetzen oder Herabstufen
 
 Das Zurücksetzen oder Downgrade von Cloud Volumes ONTAP auf eine frühere Version wird nicht unterstützt.
 
 
 
+[[support-registration]]
 === Support-Registrierung
 
 Cloud Volumes ONTAP muss beim NetApp -Support registriert sein, um die Software mit einer der auf dieser Seite beschriebenen Methoden zu aktualisieren.  Dies gilt sowohl für Pay-as-you-go (PAYGO) als auch für Bring Your Own License (BYOL).  Sie müssenlink:task-registering.html["PAYGO-Systeme manuell registrieren"] , während BYOL-Systeme standardmäßig registriert sind.
@@ -343,12 +352,14 @@ TIP: Ein System, das nicht für den Support registriert ist, erhält dennoch die
 
 
 
+[[upgrades-of-the-ha-mediator]]
 === Upgrades des HA-Mediators
 
 Die Konsole aktualisiert die Mediatorinstanz auch nach Bedarf während des Cloud Volumes ONTAP Upgradeprozesses.
 
 
 
+[[upgrades-in-aws-with-c4-m4-and-r4-ec2-instance-types]]
 === Upgrades in AWS mit den EC2-Instanztypen c4, m4 und r4
 
 Cloud Volumes ONTAP unterstützt die EC2-Instanztypen c4, m4 und r4 nicht mehr.  Mit diesen Instanztypen können Sie vorhandene Bereitstellungen auf Cloud Volumes ONTAP Versionen 9.8–9.12.1 aktualisieren.  Bevor Sie ein Upgrade durchführen, empfehlen wir Ihnen,<<Ändern des Instanztyps,Ändern Sie den Instanztyp>> .  Wenn Sie den Instanztyp nicht ändern können, müssen Sie<<Erweiterte Vernetzung ermöglichen,ermöglichen eine verbesserte Vernetzung>> bevor Sie ein Upgrade durchführen.  Lesen Sie die folgenden Abschnitte, um mehr über das Ändern des Instanztyps und das Aktivieren von Enhanced Networking zu erfahren.
@@ -373,6 +384,7 @@ Um ein Upgrade auf Cloud Volumes ONTAP Version 9.8 und höher durchzuführen, m�
 
 
 
+[[prepare-to-upgrade]]
 == Vorbereiten des Upgrades
 
 Bevor Sie ein Upgrade durchführen, müssen Sie überprüfen, ob Ihre Systeme bereit sind, und alle erforderlichen Konfigurationsänderungen vornehmen.
@@ -386,6 +398,7 @@ Bevor Sie ein Upgrade durchführen, müssen Sie überprüfen, ob Ihre Systeme be
 
 
 
+[[plan-for-downtime]]
 === Planen Sie Ausfallzeiten ein
 
 Wenn Sie ein Einzelknotensystem aktualisieren, wird das System durch den Aktualisierungsvorgang für bis zu 25 Minuten offline geschaltet, wobei die E/A unterbrochen wird.
@@ -396,6 +409,7 @@ Sitzungsorientierte Protokolle können bei Upgrades in bestimmten Bereichen nega
 
 
 
+[[verify-that-automatic-giveback-is-still-enabled]]
 === Überprüfen Sie, ob die automatische Rückgabe noch aktiviert ist
 
 Die automatische Rückgabe muss für ein Cloud Volumes ONTAP HA-Paar aktiviert sein (dies ist die Standardeinstellung).  Wenn dies nicht der Fall ist, schlägt der Vorgang fehl.
@@ -404,6 +418,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D
 
 
 
+[[suspend-snapmirror-transfers]]
 === SnapMirror Übertragungen aussetzen
 
 Wenn ein Cloud Volumes ONTAP -System über aktive SnapMirror Beziehungen verfügt, sollten Sie die Übertragungen am besten aussetzen, bevor Sie die Cloud Volumes ONTAP -Software aktualisieren.  Durch das Aussetzen der Übertragungen werden SnapMirror Fehler verhindert.  Sie müssen die Übertragungen vom Zielsystem aussetzen.
@@ -429,6 +444,7 @@ NOTE: Der Computer, von dem aus Sie auf die Konsole zugreifen, muss über eine N
 
 
 
+[[verify-that-aggregates-are-online]]
 === Überprüfen, ob Aggregate online sind
 
 Aggregate für Cloud Volumes ONTAP müssen online sein, bevor Sie die Software aktualisieren.  Aggregate sollten in den meisten Konfigurationen online sein, aber wenn nicht, sollten Sie sie online bringen.
@@ -452,6 +468,7 @@ image:screenshots_aggregate_details_state.png["Screenshot: Zeigt das Feld „Sta
 
 
 
+[[verify-that-all-lifs-are-on-home-ports]]
 === Stellen Sie sicher, dass sich alle LIFs auf den Home-Ports befinden
 
 Vor dem Upgrade müssen sich alle LIFs auf den Home-Ports befinden.  Weitere Informationen finden Sie in der ONTAP -Dokumentation.link:https://docs.netapp.com/us-en/ontap/upgrade/task_enabling_and_reverting_lifs_to_home_ports_preparing_the_ontap_software_for_the_update.html["Stellen Sie sicher, dass sich alle LIFs in den Heimathäfen befinden."^] .
@@ -460,6 +477,7 @@ Wenn ein Upgrade-Fehler auftritt, lesen Sie den Knowledge Base (KB)-Artikellink:
 
 
 
+[[upgrade-cloud-volumes-ontap]]
 == Upgrade von Cloud Volumes ONTAP
 
 Die Konsole benachrichtigt Sie, wenn eine neue Version zum Upgrade verfügbar ist.  Von dieser Benachrichtigung aus können Sie den Upgrade-Prozess starten. Weitere Informationen finden Sie unter <<Upgrade von Konsolenbenachrichtigungen>> .
@@ -468,6 +486,7 @@ Eine weitere Möglichkeit, Software-Upgrades durchzuführen, besteht in der Verw
 
 
 
+[[upgrade-from-console-notifications]]
 === Upgrade von Konsolenbenachrichtigungen
 
 Die Konsole zeigt in Cloud Volumes ONTAP Arbeitsumgebungen eine Benachrichtigung an, wenn eine neue Version von Cloud Volumes ONTAP verfügbar ist:
@@ -516,6 +535,7 @@ Wenn Sie SnapMirror Übertragungen ausgesetzt haben, verwenden Sie System Manage
 
 
 
+[[upgrade-from-an-image-available-at-a-url]]
 === Upgrade von einem unter einer URL verfügbaren Bild
 
 Sie können das Cloud Volumes ONTAP -Software-Image auf dem Konsolen-Agenten oder auf einem HTTP-Server platzieren und dann das Software-Upgrade von der Konsole aus starten.  Sie können diese Option verwenden, wenn die Konsole nicht auf den S3-Bucket zugreifen kann, um die Software zu aktualisieren.
@@ -576,6 +596,7 @@ ifdef::gcp[]
 
 
 
+[[fix-download-failures-when-using-a-google-cloud-nat-gateway]]
 == Beheben von Downloadfehlern bei Verwendung eines Google Cloud NAT-Gateways
 
 Der Konsolenagent lädt automatisch Softwareupdates für Cloud Volumes ONTAP herunter. Der Download kann fehlschlagen, wenn Ihre Konfiguration ein Google Cloud NAT-Gateway verwendet. Sie können dieses Problem beheben, indem Sie die Anzahl der Teile begrenzen, in die das Software-Image unterteilt ist.  Sie müssen die APIs verwenden, um diesen Schritt abzuschließen.

@@ -72,6 +72,7 @@ Die Konsole erstellt beim Erstellen des Systems einen Objektspeicher für kalte 
 ====
 
 
+[[configurations-that-support-data-tiering]]
 == Konfigurationen, die Daten-Tiering unterstützen
 
 Sie können die Datenschichtung aktivieren, wenn Sie bestimmte Konfigurationen und Funktionen verwenden.
@@ -80,6 +81,7 @@ ifdef::aws[]
 
 
 
+[[support-in-aws]]
 === Unterstützung in AWS
 
 * Daten-Tiering wird in AWS ab Cloud Volumes ONTAP 9.2 unterstützt.
@@ -97,6 +99,7 @@ ifdef::azure[]
 
 
 
+[[support-in-azure]]
 === Unterstützung in Azure
 
 * Datentiering wird in Azure wie folgt unterstützt:
@@ -115,6 +118,7 @@ ifdef::gcp[]
 
 
 
+[[support-in-google-cloud]]
 === Unterstützung in Google Cloud
 
 * Daten-Tiering wird in Google Cloud ab Cloud Volumes ONTAP 9.6 unterstützt.
@@ -126,6 +130,7 @@ endif::gcp[]
 
 
 
+[[feature-interoperability]]
 === Interoperabilität von Funktionen
 
 * Die Datenschichtung wird durch Verschlüsselungstechnologien unterstützt.
@@ -134,6 +139,7 @@ endif::gcp[]
 
 
 
+[[requirements]]
 == Anforderungen
 
 Abhängig von Ihrem Cloud-Anbieter müssen bestimmte Verbindungen und Berechtigungen eingerichtet werden, damit Cloud Volumes ONTAP kalte Daten in den Objektspeicher verschieben kann.
@@ -142,6 +148,7 @@ ifdef::aws[]
 
 
 
+[[requirements-to-tier-cold-data-to-amazon-s3]]
 === Anforderungen für das Tiering von Kaltdaten zu Amazon S3
 
 Stellen Sie sicher, dass Cloud Volumes ONTAP eine Verbindung zu Amazon S3 hat. Der beste Weg, diese Verbindung bereitzustellen, ist das Erstellen eines VPC-Endpunkts für den S3-Dienst. Anweisungen finden Sie unter  https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint["AWS-Dokumentation: Erstellen eines Gateway-Endpunkts"^].
@@ -156,6 +163,7 @@ ifdef::azure[]
 
 
 
+[[requirements-to-tier-cold-data-to-azure-blob-storage]]
 === Anforderungen zum Tiering kalter Daten in Azure Blob Storage
 
 Sie müssen keine Verbindung zwischen der Leistungsebene und der Kapazitätsebene einrichten, solange die Konsole über die erforderlichen Berechtigungen verfügt.  Die Konsole aktiviert einen VNet-Dienstendpunkt für Sie, wenn die benutzerdefinierte Rolle für den Konsolenagenten über die folgenden Berechtigungen verfügt:
@@ -173,6 +181,7 @@ ifdef::gcp[]
 
 
 
+[[requirements-to-tier-cold-data-to-a-google-cloud-storage-bucket]]
 === Anforderungen zum Tiering kalter Daten in einen Google Cloud Storage-Bucket
 
 * Das Subnetz, in dem sich Cloud Volumes ONTAP befindet, muss für privaten Google-Zugriff konfiguriert werden.  Anweisungen hierzu finden Sie unter https://cloud.google.com/vpc/docs/configure-private-google-access["Google Cloud-Dokumentation: Konfigurieren des privaten Google-Zugriffs"^] .
@@ -196,6 +205,7 @@ endif::gcp[]
 
 
 
+[[enable-data-tiering-after-implementing-the-requirements]]
 === Aktivieren Sie Data Tiering, nachdem Sie die Anforderungen implementiert haben
 
 Die Konsole erstellt beim Erstellen des Systems einen Objektspeicher für kalte Daten, sofern keine Verbindungs- oder Berechtigungsprobleme vorliegen.  Wenn Sie die oben aufgeführten Anforderungen erst nach der Erstellung des Systems implementiert haben, müssen Sie das Tiering manuell über die API oder den ONTAP System Manager aktivieren, der den Objektspeicher erstellt.
@@ -205,6 +215,7 @@ NOTE: Die Möglichkeit, Tiering über die Konsole zu aktivieren, wird in einer z
 
 
 
+[[ensure-that-tiering-is-enabled-on-aggregates]]
 == Stellen Sie sicher, dass Tiering für Aggregate aktiviert ist.
 
 Um Data Tiering auf einem Volume zu aktivieren, muss Data Tiering auf einem Aggregat aktiviert sein.  Sie sollten sich über die Anforderungen für neue und vorhandene Volumes im Klaren sein.
@@ -239,6 +250,7 @@ Sie können jetzt das Daten-Tiering auf neuen und vorhandenen Volumes aktivieren
 
 
 
+[[tier-data-from-read-write-volumes]]
 == Tier-Daten von Lese-/Schreib-Volumes
 
 Cloud Volumes ONTAP kann inaktive Daten auf Lese-/Schreib-Volumes in kostengünstigen Objektspeicher verschieben und so die Leistungsebene für Hot Data freigeben.
@@ -273,6 +285,7 @@ Die Konsole erstellt ein neues Aggregat für das Volume, wenn noch kein Aggregat
 
 
 
+[[tier-data-from-data-protection-volumes]]
 == Tier-Daten aus Datenschutzvolumes
 
 Cloud Volumes ONTAP kann Daten von einem Datenschutz-Volume auf eine Kapazitätsebene verschieben.  Wenn Sie das Zielvolume aktivieren, werden die Daten beim Lesen schrittweise in die Leistungsstufe verschoben.
@@ -294,6 +307,7 @@ Hilfe zum Replizieren von Daten finden Sie unter https://docs.netapp.com/us-en/b
 
 
 
+[[change-the-storage-class-for-tiered-data]]
 == Ändern der Speicherklasse für mehrstufige Daten
 
 Nachdem Sie Cloud Volumes ONTAP bereitgestellt haben, können Sie Ihre Speicherkosten senken, indem Sie die Speicherklasse für inaktive Daten ändern, auf die 30 Tage lang nicht zugegriffen wurde.  Wenn Sie auf die Daten zugreifen, sind die Zugriffskosten höher. Dies müssen Sie berücksichtigen, bevor Sie die Speicherklasse ändern.
@@ -309,6 +323,7 @@ Informationen zu unterstützten Speicherklassen finden Sie unterlink:concept-dat
 
 
 
+[[change-the-free-space-ratio-for-data-tiering]]
 == Ändern des freien Speicherplatzverhältnisses für das Daten-Tiering
 
 Das Verhältnis des freien Speicherplatzes für die Datenschichtung definiert, wie viel freier Speicherplatz auf Cloud Volumes ONTAP SSDs/HDDs erforderlich ist, wenn Daten in den Objektspeicher eingeschichtet werden.  Die Standardeinstellung ist 10 % freier Speicherplatz, Sie können die Einstellung jedoch Ihren Anforderungen entsprechend anpassen.
@@ -336,6 +351,7 @@ image:screenshot-cvo-settings-page.png["Eine Übersicht über die Kapazitätsein
 
 
 
+[[change-the-cooling-period-for-the-auto-tiering-policy]]
 == Ändern der Abkühlphase für die Auto-Tiering-Richtlinie
 
 Wenn Sie das Daten-Tiering auf einem Cloud Volumes ONTAP Volume mithilfe der _auto_-Tiering-Richtlinie aktiviert haben, können Sie die Standard-Kühlperiode basierend auf Ihren Geschäftsanforderungen anpassen.  Diese Aktion wird nur mit ONTAP CLI und API unterstützt.
@@ -354,6 +370,7 @@ Die Standard-Abkühlungsperiode für die Auto-Tiering-Richtlinie beträgt 31 Tag
 
 
 
+[[remove-an-s3-bucket-on-decommissioning-a-system]]
 == Entfernen eines S3-Buckets bei der Außerbetriebnahme eines Systems
 
 Sie können einen S3-Bucket mit den aus einem Cloud Volumes ONTAP System abgestuften Daten löschen, wenn Sie die Umgebung außer Betrieb nehmen.

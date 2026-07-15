@@ -14,10 +14,11 @@ summary: Digital Advisor ist in die NetApp Console integriert, sodass Sie den Be
 
 
 [role="lead"]
-https://www.netapp.com/services/support/active-iq/["Active IQ Digital Advisor"](auch als Digital Advisor bekannt) ist in die NetApp Console integriert, sodass Sie den Betrieb, die Sicherheit und die Leistung Ihrer Cloud Volumes ONTAP -Systeme über eine einzige Oberfläche optimieren können.
+https://www.netapp.com/data-services/digital-advisor/["NetApp Active IQ Digital Advisor"^] (auch bekannt als Digital Advisor) ist in die NetApp Console integriert, sodass Betrieb, Sicherheit und Leistung der Cloud Volumes ONTAP Systeme in einer einzigen Benutzeroberfläche optimiert werden können.
 
 
 
+[[features]]
 == Features
 
 Mit Digital Advisor können Sie den Gesamtstatus Ihres Speichersystems, allgemeine Informationen zum Zustand des Systems, Inventar, Planung und wertvolle Erkenntnisse auf Beobachtungslistenebene anzeigen.
@@ -30,18 +31,21 @@ Mit Digital Advisor können Sie den Gesamtstatus Ihres Speichersystems, allgemei
 
 
 
+[[supported-ontap-systems]]
 == Unterstützte ONTAP -Systeme
 
 Digital Advisor bietet Informationen zu allen lokalen ONTAP -Systemen und Cloud Volumes ONTAP Systemen in Ihrem NSS-Konto.
 
 
 
+[[cost]]
 == Kosten
 
 Die Nutzung dieses Dienstes über die Konsole ist kostenlos.
 
 
 
+[[how-digital-advisor-works-with-netapp-console]]
 == So funktioniert Digital Advisor mit der NetApp Console
 
 Die Benutzeroberfläche von Digital Advisor ist vollständig in die Konsole integriert.
@@ -60,6 +64,7 @@ NOTE: Seit dem 3. Dezember 2021 ist NetApp auf eine neue Methode zur Registrieru
 
 
 
+[[whats-next]]
 == Was kommt als nächstes
 
 Weitere Informationen finden Sie im https://docs.netapp.com/us-en/active-iq/index.html["Digital Advisor -Dokumentation"] für Details.

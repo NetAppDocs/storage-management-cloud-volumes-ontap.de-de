@@ -24,6 +24,7 @@ https://www.netapp.com/services/keystone/["Erfahren Sie mehr über Keystone"^]
 
 
 
+[[authorize-your-account]]
 == Autorisieren Sie Ihr Konto
 
 Bevor Sie Keystone -Abonnements in der Konsole verwenden und verwalten können, müssen Sie sich an NetApp wenden, um Ihr Konsolenkonto mit Ihren Keystone -Abonnements zu autorisieren.
@@ -40,6 +41,7 @@ Ein NetApp -Mitarbeiter wird Ihre Anfrage bearbeiten, indem er Ihr Konto für de
 
 
 
+[[link-a-subscription]]
 == Verknüpfen eines Abonnements
 
 Nachdem NetApp Ihr ​​Konto autorisiert hat, können Sie Keystone Abonnements zur Verwendung mit Cloud Volumes ONTAP verknüpfen.  Mit dieser Aktion können Benutzer das Abonnement als Abrechnungsmethode für neue Cloud Volumes ONTAP Systeme auswählen.
@@ -55,6 +57,7 @@ Das Abonnement ist jetzt mit Ihrer Konsolenorganisation oder Ihrem Konsolenkonto
 
 
 
+[[request-more-or-less-committed-capacity]]
 == Fordern Sie mehr oder weniger zugesicherte Kapazität an
 
 Wenn Sie die zugesagte Kapazität für die Service-Levels Ihres Abonnements ändern möchten, können Sie direkt von der Konsole aus eine Anfrage an NetApp senden. Durch die Anforderung zusätzlicher Kapazität für ein Servicelevel wird mehr Speicherplatz für Cloud Volumes ONTAP Systeme bereitgestellt.
@@ -72,6 +75,7 @@ Ihre Anfrage erstellt zur Bearbeitung ein Ticket im NetApp-System.
 
 
 
+[[monitor-usage]]
 == Überwachen der Nutzung
 
 Mit dem Digital Advisor -Dashboard können Sie die Nutzung des Keystone Abonnements überwachen und Berichte erstellen.
@@ -80,6 +84,7 @@ https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.h
 
 
 
+[[unlink-a-subscription]]
 == Aufheben der Verknüpfung eines Abonnements
 
 Wenn Sie ein Keystone -Abonnement nicht mehr mit der Konsole verwenden möchten, können Sie die Verknüpfung des Abonnements aufheben. Beachten Sie, dass Sie die Verknüpfung eines Abonnements nur aufheben können, wenn es nicht mit einem vorhandenen Cloud Volumes ONTAP Abonnement verknüpft ist.

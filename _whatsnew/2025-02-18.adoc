@@ -4,6 +4,7 @@
 
 
 
+[[introducing-azure-marketplace-direct-deployment]]
 === Einführung der direkten Bereitstellung im Azure Marketplace
 
 Sie können jetzt die Vorteile der direkten Bereitstellung im Azure Marketplace nutzen, um Cloud Volumes ONTAP einfach und schnell direkt vom Azure Marketplace aus bereitzustellen.  Mit dieser optimierten Methode können Sie die Kernfunktionen und -fähigkeiten von Cloud Volumes ONTAP in Ihrer Umgebung erkunden, ohne den BlueXP Connector einrichten oder andere Onboarding-Kriterien erfüllen zu müssen, die für die Bereitstellung von Cloud Volumes ONTAP über BlueXP erforderlich sind.

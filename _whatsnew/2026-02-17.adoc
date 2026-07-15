@@ -4,9 +4,10 @@
 
 
 
+[[cloud-volumes-ontap-support-for-next-generation-google-cloud-vms]]
 === Cloud Volumes ONTAP Unterstützung für Google Cloud VMs der nächsten Generation
 
-Mit 9.18.1 wechselt NetApp bei neuen Cloud Volumes ONTAP-Bereitstellungen von N2-VMs auf die nächste Generation der Google Cloud C3-Serien-VMs für ein schnelleres und skalierbareres Erlebnis. Sie können jetzt die Vorteile der C3-Serien-VMs nutzen, wenn Sie Cloud Volumes ONTAP 9.18.1 und höher in Google Cloud bereitstellen. Die C3-Serien-Maschinen bieten verbesserte Leistung und höhere Kapazitätsgrenzen durch die Verwendung von Google Virtual NIC (gVNIC) und Hyperdisk Balanced Disks, die dynamische Leistung für intensive Workloads gewährleisten.
+Mit Version 9.18.1 wechselt NetApp bei neuen Cloud Volumes ONTAP Bereitstellungen von N2-VMs auf die Google Cloud C3-Serie der nächsten Generation, um eine schnellere und skalierbarere Erfahrung zu ermöglichen. Die C3-Serie kann nun bei der Bereitstellung von Cloud Volumes ONTAP 9.18.1 und höher in Google Cloud genutzt werden. Die Maschinen der C3-Serie bieten durch die Verwendung von Google Virtual NIC (gVNIC) und Hyperdisk Balanced Disks eine verbesserte Leistung und höhere Kapazitätsgrenzen, wodurch dynamische Performance für anspruchsvolle Workloads sichergestellt wird.
 
 
 NOTE: Aktuell unterstützt Cloud Volumes ONTAP die C3-Serie nur in Einzelknoten-Bereitstellungen.
@@ -21,6 +22,7 @@ https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["G
 
 
 
+[[vnet-security-for-cloud-volumes-ontap-in-azure]]
 === VNet-Sicherheit für Cloud Volumes ONTAP in Azure
 
 Cloud Volumes ONTAP 9.18.1 und spätere Deployments in Azure Single- und Multi-Availability Zones unterstützen Azure Virtual Network (VNet)-Verschlüsselung als Teil ihrer mehrschichtigen Sicherheitsstrategie zum Schutz von Daten während der Übertragung. Cloud Volumes ONTAP nutzt Azures natives Datagram Transport Layer Security (DTLS)-Protokoll, um die Kommunikation zwischen ONTAP-Knoten, Managementschnittstellen und anderen Azure-Diensten zu sichern und so das Abfangen und den unbefugten Zugriff zu verhindern. Diese netzwerkbasierte Verschlüsselung ergänzt ONTAPs integrierte Speicher- und Data-at-Rest-Schutzmechanismen, um eine End-to-End-Sicherheit Ihrer Daten zu gewährleisten.

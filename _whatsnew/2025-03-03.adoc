@@ -4,6 +4,7 @@
 
 
 
+[[support-for-new-zealand-north-region-in-azure]]
 === Unterstützung für die Region „Neuseeland Nord“ in Azure
 
 Die Region „Neuseeland Nord“ wird jetzt in Azure für Einzelknoten- und Hochverfügbarkeitskonfigurationen (HA) von Cloud Volumes ONTAP 9.12.1 GA und höher unterstützt.  Beachten Sie, dass der Instanztyp Lsv3 in dieser Region nicht unterstützt wird.

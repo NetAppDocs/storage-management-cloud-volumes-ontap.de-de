@@ -4,6 +4,7 @@
 
 
 
+[[user-authentication-enabled-for-accessing-system-manager-from-bluexp]]
 === Benutzerauthentifizierung für den Zugriff auf System Manager von BlueXP aktiviert
 
 Als BlueXP -Administrator können Sie jetzt die Authentifizierung für ONTAP -Benutzer aktivieren, die von BlueXP aus auf ONTAP System Manager zugreifen.  Sie können diese Option aktivieren, indem Sie die BlueXP Connector-Einstellungen bearbeiten.  Diese Option ist für den Standard- und den privaten Modus verfügbar.
@@ -12,6 +13,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-ad
 
 
 
+[[bluexp-advanced-view-renamed-to-system-manager]]
 === BlueXP Advanced View wurde in System Manager umbenannt
 
 Die Option zur erweiterten Verwaltung von Cloud Volumes ONTAP von BlueXP über ONTAP System Manager wurde von *Advanced View* in *System Manager* umbenannt.
@@ -20,6 +22,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-ad
 
 
 
+[[introducing-a-simpler-way-to-manage-licenses-with-the-bluexp-digital-wallet]]
 === Einführung einer einfacheren Möglichkeit zur Lizenzverwaltung mit der BlueXP digital wallet
 
 Jetzt können Sie die Verwaltung von Cloud Volumes ONTAP Lizenzen mithilfe verbesserter Navigationspunkte in der BlueXP digital wallet vereinfachen:

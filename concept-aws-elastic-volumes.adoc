@@ -18,6 +18,7 @@ Die Unterstützung der Amazon EBS Elastic Volumes-Funktion mit einem Cloud Volum
 
 
 
+[[benefits]]
 == Vorteile
 
 * Dynamisches Festplattenwachstum
@@ -41,12 +42,14 @@ https://aws.amazon.com/ebs/features/["AWS-Dokumentation: Erfahren Sie mehr über
 
 
 
+[[supported-configurations]]
 == Unterstützte Konfigurationen
 
 Die Funktion „Amazon EBS Elastic Volumes“ wird mit bestimmten Cloud Volumes ONTAP Versionen und bestimmten EBS-Festplattentypen unterstützt.
 
 
 
+[[cloud-volumes-ontap-version]]
 === Cloud Volumes ONTAP Version
 
 Die Elastic Volumes-Funktion wird mit _neuen_ Cloud Volumes ONTAP Systemen unterstützt, die ab Version 9.11.0 erstellt wurden.  Die Funktion wird von vorhandenen Cloud Volumes ONTAP Systemen, die vor 9.11.0 bereitgestellt wurden, _nicht_ unterstützt.
@@ -55,12 +58,14 @@ Beispielsweise wird die Funktion „Elastic Volumes“ nicht unterstützt, wenn 
 
 
 
+[[ebs-disk-types]]
 === EBS-Festplattentypen
 
 Die Funktion „Elastic Volumes“ wird automatisch auf aggregierter Ebene aktiviert, wenn General Purpose SSDs (gp3) oder Provisioned IOPS SSDs (io1) verwendet werden.  Die Funktion „Elastic Volumes“ wird bei Aggregaten, die einen anderen Datenträgertyp verwenden, nicht unterstützt.
 
 
 
+[[required-aws-permissions]]
 == Erforderliche AWS-Berechtigungen
 
 Ab der Version 3.9.19 benötigt der Konsolenagent die folgenden Berechtigungen, um die Elastic Volumes-Funktion auf einem Cloud Volumes ONTAP Aggregat zu aktivieren und zu verwalten:
@@ -73,6 +78,7 @@ Diese Berechtigungen sind enthalten in https://docs.netapp.com/us-en/bluexp-setu
 
 
 
+[[how-support-for-elastic-volumes-works]]
 == So funktioniert die Unterstützung für Elastic Volumes
 
 Ein Aggregat mit aktivierter Elastic Volumes-Funktion besteht aus einer oder zwei RAID-Gruppen.  Jede RAID-Gruppe verfügt über vier identische Festplatten mit der gleichen Kapazität.  Hier ist ein Beispiel für ein 10-TiB-Aggregat mit vier Festplatten mit jeweils 2,5 TiB:
@@ -93,6 +99,7 @@ image:diagram-aws-elastic-volumes-two-raid-groups.png["Ein Konzeptbild, das ein 
 
 
 
+[[what-happens-when-you-create-a-volume]]
 === Was passiert, wenn Sie ein Volume erstellen?
 
 Wenn Sie ein Volume erstellen, das gp3- oder io1-Datenträger verwendet, erstellt die Konsole das Volume auf einem Aggregat wie folgt:
@@ -118,6 +125,7 @@ Die Größe des Aggregats richtet sich nach der gewünschten Volumengröße zuz�
 
 
 
+[[capacity-management-mode]]
 === Kapazitätsverwaltungsmodus
 
 Der Kapazitätsverwaltungsmodus für einen Konsolenagenten funktioniert mit Elastic Volumes ähnlich wie mit anderen Aggregattypen:
@@ -130,12 +138,14 @@ link:concept-storage-management.html#capacity-management["Erfahren Sie mehr übe
 
 
 
+[[limitations]]
 == Einschränkungen
 
 Das Erhöhen der Größe eines Aggregats kann bis zu 6 Stunden dauern.  Während dieser Zeit kann die Konsole keine zusätzliche Kapazität für dieses Aggregat anfordern.
 
 
 
+[[how-to-work-with-elastic-volumes]]
 == So arbeiten Sie mit Elastic Volumes
 
 Mit Elastic Volumes können Sie folgende Aufgaben ausführen:

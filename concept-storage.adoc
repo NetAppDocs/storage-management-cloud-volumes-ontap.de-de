@@ -21,6 +21,7 @@ CAUTION: Sie müssen alle Festplatten und Aggregate in der NetApp Console erstel
 
 
 
+[[overview]]
 == Überblick
 
 Cloud Volumes ONTAP verwendet den Speicher des Cloud-Anbieters als Datenträger und gruppiert sie in ein oder mehrere Aggregate.  Aggregate stellen Speicher für ein oder mehrere Volumes bereit.
@@ -36,6 +37,7 @@ ifdef::aws[]
 
 
 
+[[aws-storage]]
 == AWS-Speicher
 
 In AWS verwendet Cloud Volumes ONTAP EBS-Speicher für Benutzerdaten und lokalen NVMe-Speicher als Flash-Cache auf einigen EC2-Instanztypen.
@@ -68,6 +70,7 @@ ifdef::azure[]
 
 
 
+[[azure-storage]]
 == Azure-Speicher
 
 In Azure kann ein Aggregat bis zu 12 Datenträger gleicher Größe enthalten. Der Datenträgertyp und die maximale Datenträgergröße hängen davon ab, ob Sie ein Einzelknotensystem oder ein HA-Paar verwenden:
@@ -113,11 +116,14 @@ ifdef::gcp[]
 
 
 
+[[google-cloud-storage]]
 == Google Cloud-Speicher
 
 In Google Cloud kann ein Aggregat bis zu 6 Festplatten enthalten, die alle dieselbe Größe haben.  Die maximale Festplattengröße beträgt 64 TiB.
 
 Der Datenträgertyp kann entweder _Zonal SSD Persistent Disks_, _Zonal Balanced Persistent Disks_ oder _Zonal Standard Persistent Disks_ sein.  Sie können persistente Festplatten mit einem Google Storage-Bucket koppeln, umlink:concept-data-tiering.html["kostengünstiger Objektspeicher"] .
+
+Cloud Volumes ONTAP unterstützt Hyperdisk Balanced Disks für Einzelknoten-Bereitstellungen ab Version 9.18.1 sowie für Hochverfügbarkeitskonfigurationen (HA) in einzelnen Verfügbarkeitszonen (AZs) ab Version 9.19.1 und späteren Versionen.
 
 *Weiterführende Links*
 
@@ -129,12 +135,14 @@ endif::gcp[]
 
 
 
+[[raid-type]]
 == RAID-Typ
 
 Der RAID-Typ für jedes Cloud Volumes ONTAP -Aggregat ist RAID0 (Striping).  Cloud Volumes ONTAP verlässt sich hinsichtlich der Festplattenverfügbarkeit und -haltbarkeit auf den Cloud-Anbieter.  Es werden keine anderen RAID-Typen unterstützt.
 
 
 
+[[hot-spares]]
 === Hotspares
 
 RAID0 unterstützt nicht die Verwendung von Hotspares zur Redundanz.

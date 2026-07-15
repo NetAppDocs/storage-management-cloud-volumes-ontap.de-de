@@ -18,6 +18,7 @@ Das Image, das zum Bereitstellen neuer Instanzen, Upgrades oder in vorhandenen I
 
 
 
+[[why-is-this-step-needed]]
 == Warum ist dieser Schritt notwendig?
 
 Die Bilder aus der Google Cloud können nicht direkt heruntergeladen werden.  Um das Bild anhand des signierten Digests und der Zertifikate zu überprüfen, benötigen Sie einen Mechanismus zum Vergleichen der beiden Dateien und zum Herunterladen des Bildes.  Dazu müssen Sie das Image in ein disk.raw-Format exportieren/konvertieren und die Ergebnisse in einem Speicher-Bucket in Google Cloud speichern.  Die Datei disk.raw wird dabei getarnt und gzippt.
@@ -35,6 +36,7 @@ Um das Image zu überprüfen, muss es in ein disk.raw-Format konvertiert und dan
 
 
 
+[[use-google-cloud-command-line-to-export-google-cloud-image]]
 == Verwenden Sie die Google Cloud-Befehlszeile, um das Google Cloud-Image zu exportieren
 
 Die bevorzugte Methode zum Exportieren eines Bildes in den Cloud-Speicher ist die Verwendung des https://cloud.google.com/sdk/gcloud/reference/compute/images/export["Befehl „gcloud compute images export“"^] .  Dieser Befehl nimmt das bereitgestellte Bild und konvertiert es in eine disk.raw-Datei, die getarnt und gzippt wird.  Die generierte Datei wird unter der Ziel-URL gespeichert und kann anschließend zur Überprüfung heruntergeladen werden.

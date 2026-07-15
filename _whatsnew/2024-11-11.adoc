@@ -4,6 +4,7 @@
 
 
 
+[[end-of-availability-for-node-based-licenses]]
 === Ende der Verfügbarkeit knotenbasierter Lizenzen
 
 NetApp hat das Ende der Verfügbarkeit (EOA) und des Supports (EOS) der knotenbasierten Lizenzierung von Cloud Volumes ONTAP geplant.  Ab dem 11. November 2024 wurde die begrenzte Verfügbarkeit von knotenbasierten Lizenzen beendet. Der Support für die knotenbasierte Lizenzierung endet am 31. Dezember 2024.  Nach dem EOA Ihrer knotenbasierten Lizenzen sollten Sie mithilfe des BlueXP Lizenzkonvertierungstools auf eine kapazitätsbasierte Lizenzierung umsteigen.
@@ -14,6 +15,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 
 
+[[removal-of-node-based-deployments-from-bluexp]]
 === Entfernung knotenbasierter Bereitstellungen aus BlueXP
 
 Die Option, Cloud Volumes ONTAP Systeme mithilfe knotenbasierter Lizenzen bereitzustellen, ist bei BlueXP veraltet.  Mit Ausnahme einiger Sonderfälle können Sie für Cloud Volumes ONTAP Bereitstellungen bei keinem Cloud-Anbieter knotenbasierte Lizenzen verwenden.
@@ -30,6 +32,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 
 
+[[addition-of-a-cold-tier-for-cloud-volumes-ontap-data-on-azure-blob-storage]]
 === Hinzufügen einer Cold Tier für Cloud Volumes ONTAP -Daten auf Azure Blob Storage
 
 Mit BlueXP können Sie jetzt eine kalte Ebene auswählen, um die inaktiven Kapazitätsebenendaten im Azure Blob-Speicher zu speichern.  Durch Hinzufügen der kalten Ebene zu den vorhandenen warmen und kalten Ebenen erhalten Sie eine günstigere Speicheroption und eine verbesserte Kosteneffizienz.
@@ -38,6 +41,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.ht
 
 
 
+[[option-to-restrict-public-access-to-storage-account-for-azure]]
 === Option zum Einschränken des öffentlichen Zugriffs auf das Speicherkonto für Azure
 
 Sie haben jetzt die Möglichkeit, den öffentlichen Zugriff auf Ihr Speicherkonto für Cloud Volumes ONTAP -Systeme in Azure einzuschränken.  Durch die Deaktivierung des Zugriffs können Sie Ihre private IP-Adresse vor Offenlegung schützen, selbst innerhalb desselben VNet, falls die Sicherheitsrichtlinien Ihres Unternehmens eingehalten werden müssen.  Diese Option deaktiviert auch die Datenschichtung für Ihre Cloud Volumes ONTAP Systeme und ist sowohl auf einzelne Knoten als auch auf Hochverfügbarkeitspaare anwendbar.
@@ -46,6 +50,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-az
 
 
 
+[[worm-enablement-after-deploying-cloud-volumes-ontap]]
 === WORM-Aktivierung nach der Bereitstellung von Cloud Volumes ONTAP
 
 Sie haben jetzt die Möglichkeit, mithilfe von BlueXP den WORM-Speicher (Write Once, Read Many) auf einem vorhandenen Cloud Volumes ONTAP System zu aktivieren.  Diese Funktion bietet Ihnen die Flexibilität, WORM in einer Arbeitsumgebung zu aktivieren, auch wenn WORM bei der Erstellung nicht aktiviert war.  Nach der Aktivierung können Sie WORM nicht mehr deaktivieren.

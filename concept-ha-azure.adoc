@@ -18,10 +18,12 @@ Ein Cloud Volumes ONTAP -Hochverfügbarkeitspaar (HA) bietet Unternehmenszuverl�
 
 
 
+[[ha-components]]
 == HA-Komponenten
 
 
 
+[[ha-single-availability-zone-configuration-with-page-blobs]]
 === HA-Konfiguration einer einzelnen Verfügbarkeitszone mit Seitenblobs
 
 Eine Cloud Volumes ONTAP HA-Seitenblobkonfiguration in Azure umfasst die folgenden Komponenten:
@@ -54,6 +56,7 @@ NOTE: Ab Cloud Volumes ONTAP 9.15.0P1 werden Azure-Seitenblobs für neue Bereits
 
 
 
+[[ha-single-availability-zone-configuration-with-shared-managed-disks]]
 === HA-Konfiguration einer einzelnen Verfügbarkeitszone mit gemeinsam genutzten verwalteten Datenträgern
 
 Eine Cloud Volumes ONTAP HA-Konfiguration mit einer einzelnen Verfügbarkeitszone, die auf einer gemeinsam genutzten verwalteten Festplatte ausgeführt wird, umfasst die folgenden Komponenten:
@@ -85,6 +88,7 @@ Speicherkonten:: Speicherkonten werden für Bereitstellungen auf Basis verwaltet
 
 
 
+[[ha-multiple-availability-zone-configuration]]
 === HA-Konfiguration für mehrere Verfügbarkeitszonen
 
 Eine Cloud Volumes ONTAP HA-Konfiguration mit mehreren Verfügbarkeitszonen in Azure umfasst die folgenden Komponenten:
@@ -101,6 +105,7 @@ Speicherkonten:: Speicherkonten werden für Bereitstellungen auf Basis verwaltet
 
 
 
+[[rpo-and-rto]]
 == RPO und RTO
 
 Eine HA-Konfiguration gewährleistet die Hochverfügbarkeit Ihrer Daten wie folgt:
@@ -111,6 +116,7 @@ Eine HA-Konfiguration gewährleistet die Hochverfügbarkeit Ihrer Daten wie folg
 
 
 
+[[storage-takeover-and-giveback]]
 == Speicherübernahme und -rückgabe
 
 Ähnlich wie bei einem physischen ONTAP Cluster wird der Speicher in einem Azure HA-Paar zwischen Knoten geteilt.  Durch Verbindungen zum Speicher des Partners kann jeder Knoten im Falle einer _Übernahme_ auf den Speicher des anderen zugreifen.  Failover-Mechanismen für Netzwerkpfade stellen sicher, dass Clients und Hosts weiterhin mit dem verbleibenden Knoten kommunizieren.  Der Partner gibt den Speicher zurück, wenn der Knoten wieder online ist.
@@ -126,6 +132,7 @@ Die Speicherübernahme, Neusynchronisierung und Rückgabe erfolgen standardmäß
 
 
 
+[[storage-configurations]]
 == Speicherkonfigurationen
 
 Sie können ein HA-Paar als Aktiv-Aktiv-Konfiguration verwenden, bei der beide Knoten Daten an Clients bereitstellen, oder als Aktiv-Passiv-Konfiguration, bei der der passive Knoten nur dann auf Datenanforderungen antwortet, wenn er den Speicher für den aktiven Knoten übernommen hat.
