@@ -14,98 +14,203 @@ summary: Wenn Sie die Amazon-Verschlüsselung mit Cloud Volumes ONTAP verwenden 
 
 
 [role="lead"]
-Wenn Sie die Amazon-Verschlüsselung mit Cloud Volumes ONTAP verwenden möchten, müssen Sie den AWS Key Management Service (KMS) einrichten.
+Wenn Sie die Amazon Web Services (AWS) Verschlüsselung mit Cloud Volumes ONTAP verwenden möchten, ist die Einrichtung des AWS Key Management Service (KMS) erforderlich.
+
+Ein Kundenhauptschlüssel (Customer Master Key, CMK) kann von AWS oder dem Kunden verwaltet werden. Er kann sich im selben AWS-Konto wie die NetApp Console und Cloud Volumes ONTAP oder in einem anderen AWS-Konto (gemeinsame Konten) befinden. AWS ermöglicht die Schlüsselverwaltung ausschließlich über die AWS Console. Weitere Informationen sind unter  https://docs.aws.amazon.com/kms/latest/developerguide/overview.html["AWS-Schlüsselverwaltungsdienst"^] zu finden.
+
+.Bevor Sie beginnen
+* Stellen Sie sicher, dass Ihnen Informationen zu den NetApp Console Agent Identity and Access Management (IAM)-Rollen für AWS vorliegen.
+* Es muss ein aktiver CMK vorhanden sein.
+
+
+
+
+[[set-up-customer-managed-kms-keys-for-a-single-account]]
+== Einrichten von kundenverwalteten KMS-Schlüsseln für ein einzelnes Konto
+
+Wenn sich der Console Agent und Cloud Volumes ONTAP im selben AWS-Konto befinden, sind die folgenden Schritte auszuführen:
 
 .Schritte
-. Stellen Sie sicher, dass ein aktiver Customer Master Key (CMK) vorhanden ist.
+. Der IAM-Rolle für den Console-Agenten die Berechtigung zur S3-Verschlüsselung gewähren. Die  `s3:PutEncryptionConfiguration` Aktion zur IAM-Rollenrichtlinie hinzufügen:
 +
-Der CMK kann ein von AWS verwalteter CMK oder ein vom Kunden verwalteter CMK sein.  Es kann sich im selben AWS-Konto wie die NetApp Console und Cloud Volumes ONTAP oder in einem anderen AWS-Konto befinden.
+[source, json]
+----
+{
+  "Sid": "cvoServicePolicy",
+  "Effect": "Allow",
+  "Action": [
+    "s3:PutEncryptionConfiguration"
+  ],
+  "Resource": "*"
+}
+----
+. Aktivieren Sie den Zugriff des Console-Agenten auf den vom Kunden verwalteten Verschlüsselungsschlüssel (CMEK). Eine der folgenden Methoden in der AWS Console kann verwendet werden:
 
-+
-https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys["AWS-Dokumentation: Kundenmasterschlüssel (CMKs)"^]
 
-. Ändern Sie die Schlüsselrichtlinie für jeden CMK, indem Sie die IAM-Rolle hinzufügen, die der Konsole als _Schlüsselbenutzer_ Berechtigungen erteilt.
-+
-Durch Hinzufügen der Identity and Access Management (IAM)-Rolle als Hauptbenutzer erhält die Konsole die Berechtigung, den CMK mit Cloud Volumes ONTAP zu verwenden.
+[role="tabbed-block"]
+====
+.Die Rolle als Schlüsselbenutzer hinzufügen (empfohlen)
+--
+. In der AWS-Konsole unter *KMS > Kundenseitig verwaltete Schlüssel* den CMEK-Schlüssel auswählen.
+. Im Abschnitt *Hauptbenutzer* *Hinzufügen* auswählen.
+. Wählen Sie Ihre Console Agent Instanzrolle aus, zum Beispiel  `occm-role`, und klicken Sie auf *Hinzufügen*.
+. Speichern Sie Ihre Änderungen.
 
-+
-https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html["AWS-Dokumentation: Bearbeiten von Schlüsseln"^]
 
-. Wenn sich der CMK in einem anderen AWS-Konto befindet, führen Sie die folgenden Schritte aus:
+--
+.Die KMS-Schlüsselrichtlinie aktualisieren
+--
+. In der AWS-Konsole zu *KMS* wechseln und nach dem eigenen Schlüssel suchen.
+. Wählen Sie die Registerkarte *Schlüsselrichtlinie* und wählen Sie *Bearbeiten* aus.
+. Suchen Sie nach der Anweisung, die den Zugriff auf den Schlüssel  `AllowUseOfTheKey` ermöglicht, und fügen Sie den Amazon Resource Name (ARN) der Console agent role an das  `Principal` Array an. Die Platzhalter im folgenden Beispiel sind durch Ihre Werte zu ersetzen:
 +
-.. Gehen Sie von dem Konto, in dem sich der CMK befindet, zur KMS-Konsole.
-.. Wählen Sie den Schlüssel aus.
-.. Kopieren Sie im Bereich *Allgemeine Konfiguration* die ARN des Schlüssels.
+** `YOUR-ACCOUNT-ID`: Ihre 12-stellige AWS-Konto-ID
+** `YOUR-AGENT-ROLE-NAME`: Der Name der IAM-Rolle des Console-Agenten
 +
-Sie müssen der Konsole die ARN bereitstellen, wenn Sie das Cloud Volumes ONTAP -System erstellen.
+[source, json]
+----
+{
+  "Sid": "AllowUseOfTheKey",
+  "Effect": "Allow",
+  "Principal": {
+    "AWS": [
+      "arn:aws:iam::`YOUR-ACCOUNT-ID`:role/`YOUR-AGENT-ROLE-NAME`"
+    ]
+  },
+  "Action": [
+    "kms:Encrypt",
+    "kms:Decrypt",
+    "kms:ReEncrypt*",
+    "kms:GenerateDataKey*",
+    "kms:CreateGrant",
+    "kms:DescribeKey",
+    "kms:ListKeys"
+  ],
+  "Resource": "*"
+}
+----
 
-.. Fügen Sie im Bereich *Andere AWS-Konten* das AWS-Konto hinzu, das der Konsole Berechtigungen erteilt.
-+
-Normalerweise ist dies das Konto, unter dem die Konsole bereitgestellt wird.  Wenn die Konsole nicht in AWS installiert ist, verwenden Sie das Konto, für das Sie AWS-Zugriffsschlüssel für die Konsole bereitgestellt haben.
 
+. Speichern Sie Ihre Änderungen.
+
+
+--
+====
+
+
+[[set-up-customer-managed-kms-keys-for-shared-accounts]]
+== Kundenverwaltete KMS-Schlüssel für gemeinsam genutzte Konten einrichten
+
+Wenn der Console Agent in einem AWS-Konto (Konto A) ausgeführt wird und Cloud Volumes ONTAP in einem anderen AWS-Konto (Konto B) bereitgestellt wird, werden zunächst alle Schritte für ein einzelnes Konto für Konto A abgeschlossen, danach folgen diese Schritte.
+
+.Schritte
+. Die  `s3:PutEncryptionConfiguration`-Aktion ist der angenommenen Rolle für Konto B hinzuzufügen. Dies ist erforderlich, da der FabricPool-Bucket-Verschlüsselungsaufruf unter der angenommenen Rolle für Konto B ausgeführt wird. Diese Berechtigung umfasst das Aktivieren der Standardverschlüsselung für den S3-Bucket, der für das Tiering verwendet wird.
++
+[source, json]
+----
+{
+  "Sid": "cvoServicePolicy",
+  "Effect": "Allow",
+  "Action": [
+    "s3:PutEncryptionConfiguration"
+  ],
+  "Resource": "*"
+}
+----
+. Wenn der CMEK-Schlüssel in Konto B gespeichert ist, benötigt die Agentenrolle für Konto A direkten Zugriff auf diesen Schlüssel. Die KMS-Schlüsselrichtlinie in Konto B gewährt diesen kontoübergreifenden Zugriff.
++
+.. In der AWS-Konsole für Konto B unter *KMS > Vom Kunden verwaltete Schlüssel* den CMEK-Schlüssel auswählen, der für die Cloud Volumes ONTAP Bereitstellung verwendet wird.
+.. Die Registerkarte *Schlüsselrichtlinie* öffnen und *Bearbeiten* auswählen.
+.. Fügen Sie eine Anweisung hinzu, die der IAM-Rolle für Account A Zugriff auf den Schlüssel gewährt:
++
+[source, json]
+----
+{
+  "Sid": "Allow use of the key from the agent account",
+  "Effect": "Allow",
+  "Principal": {
+    "AWS": "arn:aws:iam::ACCOUNT-A-ID:role/`YOUR-AGENT-ROLE-NAME`"
+  },
+  "Action": [
+    "kms:Encrypt",
+    "kms:Decrypt",
+    "kms:ReEncrypt*",
+    "kms:GenerateDataKey*",
+    "kms:CreateGrant",
+    "kms:DescribeKey",
+    "kms:ListKeys",
+    "kms:ListAliases"
+  ],
+  "Resource": "*"
+}
+----
++
+
+NOTE: Die Schlüsselrichtlinie für Konto B steuert, ob die Console-Agentenrolle für Konto A als vertrauenswürdig gilt, um den Schlüssel zu verwenden. Diese Richtlinienanweisung ist zusätzlich zur IAM-Richtlinie für Konto A erforderlich.
+
+
+
+. Die IAM-Richtlinie für den Console-Agenten von Konto A wird aktualisiert, um KMS-API-Aufrufe für Schlüssel von Konto B zuzulassen.
++
+.. In der AWS-Konsole für Konto A unter *IAM > Rollen* die Console agent-Rolle auswählen, zum Beispiel  `occm-role` oder  `NetAppCloudManagerRole`.
+.. KMS-Berechtigungen für die Schlüssel von Account B hinzufügen oder aktualisieren:
++
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "kms:List*",
+        "kms:Describe*",
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:CreateGrant"
+      ],
+      "Resource": [
+        "arn:aws:kms:*:ACCOUNT-B-ID:key/*",
+        "arn:aws:kms:*:ACCOUNT-B-ID:alias/*"
+      ]
+    }
+  ]
+}
+----
++
+
+NOTE: Die Schlüsselrichtlinie in Konto B steuert den Zugriff auf den Schlüssel. Die IAM-Richtlinie in Konto A ermöglicht der Console-Agentenrolle, KMS-API-Aufrufe durchzuführen. Fehlt in einem der beiden Konten die Konfiguration, schränkt AWS den Zugriff ein.
+
+
+
+. Konto A als zulässiges externes AWS-Konto auf dem CMEK in Konto B hinzufügen.
++
+.. In der AWS KMS-Konsole für Konto B den Ziel-KMS-Schlüssel öffnen und den Abschnitt *Other AWS accounts* suchen.
+.. *Weitere AWS-Konten hinzufügen* auswählen und die AWS-Konto-ID für Account A eingeben.
 +
 image:screenshot_cmk_add_accounts.gif["Dieser Screenshot zeigt die Schaltfläche „Andere AWS-Konten hinzufügen“ aus der AWS KMS-Konsole."]
 
 +
 image:screenshot_cmk_add_accounts_dialog.gif["Dieser Screenshot zeigt das Dialogfeld „Andere AWS-Konten“ der AWS KMS-Konsole."]
 
-.. Wechseln Sie nun zu dem AWS-Konto, das der Konsole Berechtigungen erteilt, und öffnen Sie die IAM-Konsole.
-.. Erstellen Sie eine IAM-Richtlinie, die die unten aufgeführten Berechtigungen enthält.
-.. Fügen Sie die Richtlinie der IAM-Rolle oder dem IAM-Benutzer hinzu, der Berechtigungen für die Konsole bereitstellt.
+
+
+
+
+.Verwandte Themen
+* Amazon Dokumentation:
 +
-Die folgende Richtlinie stellt die Berechtigungen bereit, die die Konsole benötigt, um den CMK vom externen AWS-Konto zu verwenden.  Denken Sie daran, die Region und die Konto-ID in den Abschnitten „Ressource“ zu ändern.
+** https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html["AWS KMS Schlüssel"^]
+** https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html["AWS-Dokumentation: Benutzern anderer Konten die Verwendung eines KMS-Schlüssels gestatten"^]
+** https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html["AWS-Dokumentation: Bearbeiten von Schlüsseln"^]
 
+
+* NetApp Console-Dokumentation:
 +
-[source, json]
-----
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowUseOfTheKey",
-            "Effect": "Allow",
-            "Action": [
-                "kms:Encrypt",
-                "kms:Decrypt",
-                "kms:ReEncrypt*",
-                "kms:GenerateDataKey*",
-                "kms:DescribeKey"
-            ],
-            "Resource": [
-                "arn:aws:kms:us-east-1:externalaccountid:key/externalkeyid"
-            ]
-        },
-        {
-            "Sid": "AllowAttachmentOfPersistentResources",
-            "Effect": "Allow",
-            "Action": [
-                "kms:CreateGrant",
-                "kms:ListGrants",
-                "kms:RevokeGrant"
-            ],
-            "Resource": [
-                "arn:aws:kms:us-east-1:externalaccountid:key/externalaccountid"
-            ],
-            "Condition": {
-                "Bool": {
-                    "kms:GrantIsForAWSResource": true
-                }
-            }
-        }
-    ]
-}
-----
-+
-Weitere Einzelheiten zu diesem Vorgang finden Sie im https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html["AWS-Dokumentation: Benutzern anderer Konten die Verwendung eines KMS-Schlüssels gestatten"^] .
+** https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Informationen zu AWS-Anmeldeinformationen und Berechtigungen in der NetApp Console"^]
+** https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["AWS-Anmeldeinformationen und Marketplace-Abonnements für NetApp Console verwalten"^]
 
 
 
-. Wenn Sie einen vom Kunden verwalteten CMK verwenden, ändern Sie die Schlüsselrichtlinie für den CMK, indem Sie die Cloud Volumes ONTAP IAM-Rolle als _Schlüsselbenutzer_ hinzufügen.
-+
-Dieser Schritt ist erforderlich, wenn Sie Data Tiering auf Cloud Volumes ONTAP aktiviert haben und die im Amazon Simple Storage Service (Amazon S3) Bucket gespeicherten Daten verschlüsseln möchten.
-
-
-
-Sie müssen diesen Schritt _nach_ der Bereitstellung von Cloud Volumes ONTAP ausführen, da die IAM-Rolle beim Erstellen eines Cloud Volumes ONTAP Systems erstellt wird.  (Natürlich haben Sie die Möglichkeit, eine vorhandene Cloud Volumes ONTAP IAM-Rolle zu verwenden, sodass Sie diesen Schritt vorher ausführen können.)
-
-https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html["AWS-Dokumentation: Bearbeiten von Schlüsseln"^]
