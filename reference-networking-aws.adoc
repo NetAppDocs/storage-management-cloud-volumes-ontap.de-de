@@ -344,7 +344,7 @@ Wenn Sie noch keinen Konsolenagenten erstellt haben, sollten Sie die Netzwerkanf
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["Sicherheitsgruppenregeln in AWS"^]
 
 
-.Verwandte Themen
+.Weiterführender Link
 * link:task-verify-autosupport.html["Überprüfen Sie das AutoSupport -Setup für Cloud Volumes ONTAP"]
 * https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html["Erfahren Sie mehr über die internen Ports von ONTAP"^] .
 

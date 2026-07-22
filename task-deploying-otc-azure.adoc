@@ -166,7 +166,7 @@ link:concept-write-speed.html["Erfahren Sie mehr über die Schreibgeschwindigkei
 
 .. Aktivieren Sie bei Bedarf den WORM-Speicher (Write Once, Read Many).
 +
-Diese Option ist nur für bestimmte VM-Typen verfügbar.  Informationen zu den unterstützten VM-Typen finden Sie unterlink:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Unterstützte Konfigurationen nach Lizenz für HA-Paare"^] .
+Diese Option ist nur für bestimmte VM-Typen verfügbar. Welche VM-Typen unterstützt werden, ist unter link:link:reference-configs-azure.html#ha-pairs["Unterstützte Konfigurationen nach Lizenz für HA-Paare"] zu finden.
 
 +
 WORM kann nicht aktiviert werden, wenn die Datenschichtung für Cloud Volumes ONTAP Version 9.7 und darunter aktiviert wurde.  Das Zurücksetzen oder Downgrade auf Cloud Volumes ONTAP 9.8 ist nach der Aktivierung von WORM und Tiering blockiert.
@@ -392,7 +392,7 @@ link:concept-data-tiering.html["Weitere Informationen zum Daten-Tiering"^] .
 
 ** Ab Cloud Volumes ONTAP 9.15.0P1 werden Azure-Seitenblobs für neue Bereitstellungen mit Hochverfügbarkeitspaaren nicht mehr unterstützt.  Wenn Sie derzeit Azure-Seitenblobs in vorhandenen Bereitstellungen mit Hochverfügbarkeitspaaren verwenden, können Sie in den VMs der Edsv4- und Edsv5-Serie zu neueren VM-Instanztypen migrieren.
 +
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Erfahren Sie mehr über unterstützte Konfigurationen in Azure"^] .
+link:link:reference-configs-azure.html#ha-pairs["Erfahren Sie mehr über unterstützte Konfigurationen in Azure"^].
 
 
 
@@ -404,7 +404,7 @@ link:concept-write-speed.html["Erfahren Sie mehr über die Schreibgeschwindigkei
 
 .. Aktivieren Sie bei Bedarf den WORM-Speicher (Write Once, Read Many).
 +
-Diese Option ist nur für bestimmte VM-Typen verfügbar.  Informationen zu den unterstützten VM-Typen finden Sie unterlink:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Unterstützte Konfigurationen nach Lizenz für HA-Paare"^] .
+Diese Option ist nur für bestimmte VM-Typen verfügbar. Welche VM-Typen unterstützt werden, ist unter link:link:reference-configs-azure.html#ha-pairs["Unterstützte Konfigurationen nach Lizenz für HA-Paare"^] zu finden.
 
 +
 WORM kann nicht aktiviert werden, wenn die Datenschichtung für Cloud Volumes ONTAP Version 9.7 und darunter aktiviert wurde.  Das Zurücksetzen oder Downgrade auf Cloud Volumes ONTAP 9.8 ist nach der Aktivierung von WORM und Tiering blockiert.

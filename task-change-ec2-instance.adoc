@@ -36,7 +36,7 @@ TIP: Die NetApp Console ändert jeweils einen Knoten, indem sie die Übernahme e
 
 
 .Referenz
-Eine Liste der unterstützten Instanztypen in AWS finden Sie unterlink:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html#supported-ec2-compute["Unterstützte EC2-Instanzen"^] .
+Eine Liste der in AWS unterstützten Instanztypen ist unter link:reference-configs-aws.html#supported-ec2-compute["Unterstützte EC2-Instanzen"] zu finden.
 
 Wenn Sie den Instanztyp von c4-, m4- oder r4-Instanzen nicht ändern können, lesen Sie den KB-Artikellink:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Converting_an_AWS_Xen_CVO_instance_to_Nitro_(KVM)["Konvertieren einer AWS Xen CVO-Instanz in Nitro (KVM)"^] .
 

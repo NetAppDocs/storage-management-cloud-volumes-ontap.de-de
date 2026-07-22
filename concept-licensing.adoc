@@ -57,14 +57,14 @@ Eine Liste der unterstützten VM-Typen mit den folgenden kapazitätsbasierten Pa
 
 ifdef::azure[]
 
-* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Unterstützte Konfigurationen in Azure"^]
+* link:link:reference-configs-azure.html["Unterstützte Konfigurationen in Azure"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Unterstützte Konfigurationen in Google Cloud"^]
+* link:link:reference-configs-gcp.html["Unterstützte Konfigurationen in Google Cloud"^]
 
 
 endif::gcp[]
@@ -296,3 +296,11 @@ Informationen zur Durchführung dieser Konvertierung finden Sie unterlink:task-c
 
 
 NOTE: Die Umstellung eines Systems von kapazitätsbasierter auf knotenbasierte Lizenzierung wird nicht unterstützt.
+
+.Weiterführende Links
+* link:concept-licensing-charging.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen"]
+* link:task-manage-capacity-licenses.html["Verwalten Sie die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP"]
+* link:task-manage-node-licenses.html["Knotenbasierte Lizenzierung verwalten"]
+* link:task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Lizenz in eine kapazitätsbasierte Lizenz"]
+* link:task-manage-keystone.html["Keystone -Abonnements verwalten"]
+

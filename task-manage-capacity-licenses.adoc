@@ -255,3 +255,11 @@ Der Nutzungsbericht wird heruntergeladen.
 
 . Öffnen Sie die heruntergeladene Datei, um auf die Berichte zuzugreifen.
 
+
+.Weiterführende Links
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Lizenzierung für Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Knotenbasierte Lizenzierung verwalten"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Lizenz in eine kapazitätsbasierte Lizenz"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-keystone.html["Keystone -Abonnements verwalten"^]
+

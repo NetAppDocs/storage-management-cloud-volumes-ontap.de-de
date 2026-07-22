@@ -37,48 +37,10 @@ Wenn Sie ein Volume erstellen, führt die Konsole eine von drei Aktionen aus:
 
 * Es platziert das Volume auf einem vorhandenen Aggregat, das über ausreichend freien Speicherplatz verfügt.
 * Es platziert das Volume auf einem vorhandenen Aggregat, indem es weitere Festplatten für dieses Aggregat kauft.
-
-
-ifdef::aws[]
-
-+ Im Fall eines Aggregats in AWS, das Elastic Volumes unterstützt, erhöht es auch die Größe der Festplatten in einer RAID-Gruppe. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"] .
-
-endif::aws[]
-
 * Es kauft Festplatten für ein neues Aggregat und platziert das Volume auf diesem Aggregat.
 
 
 Die Konsole ermittelt anhand mehrerer Faktoren, wo ein neues Volume platziert werden soll: der maximalen Größe eines Aggregats, der Aktivierung von Thin Provisioning und den Schwellenwerten für den freien Speicherplatz von Aggregaten.
-
-ifdef::aws[]
-
-
-
-==== Auswahl der Datenträgergröße für Aggregate in AWS
-
-Wenn die Konsole neue Aggregate für Cloud Volumes ONTAP in AWS erstellt, erhöht sie die Festplattengrößen schrittweise mit zunehmender Anzahl der Aggregate, um die Systemkapazität zu maximieren, bevor die AWS-Datenfestplattenlimits erreicht werden.
-
-Beispielsweise kann die Konsole die folgenden Datenträgergrößen auswählen:
-
-[cols="3*"]
-|===
-| Gesamtzahl | Festplattengröße | Maximale Gesamtkapazität 
-
-
-| 1 | 500 GiB | 3 TiB 
-
-
-| 4 | 1 TiB | 6 TiB 
-
-
-| 6 | 2 TiB | 12 TiB 
-|===
-
-NOTE: Dieses Verhalten gilt nicht für Aggregate, die die Funktion „Amazon EBS Elastic Volumes“ unterstützen.  Aggregate mit aktivierten Elastic Volumes bestehen aus einer oder zwei RAID-Gruppen.  Jede RAID-Gruppe verfügt über vier identische Festplatten mit der gleichen Kapazität. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"] .
-
-Sie können die Festplattengröße mithilfe der erweiterten Zuordnungsoption selbst auswählen.
-
-endif::aws[]
 
 
 
@@ -106,20 +68,12 @@ Der Kapazitätsverwaltungsmodus ist standardmäßig auf „Automatisch“ einges
 Die folgenden Beispiele veranschaulichen die Funktionsweise dieses Modus:
 
 * Wenn ein Aggregat die Kapazitätsschwelle erreicht und Platz für weitere Festplatten hat, kauft die Konsole automatisch neue Festplatten für dieses Aggregat, damit die Volumes weiter wachsen können.
+* Wenn ein Aggregat die Kapazitätsschwelle erreicht und keine weiteren Festplatten mehr aufnehmen kann, verschiebt die NetApp Console automatisch ein Volume von diesem Aggregat auf ein Aggregat mit verfügbarer Kapazität oder auf ein neues Aggregat.
 +
-ifdef::aws[]
+Wenn die Konsole ein neues Aggregat für das Volume erstellt, wählt sie eine Festplattengröße, die der Größe dieses Volumes entspricht.
 
-
-
-Im Fall eines Aggregats in AWS, das Elastic Volumes unterstützt, erhöht es auch die Größe der Festplatten in einer RAID-Gruppe. link:concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"] .
-
-endif::aws[]
-
-+ * Wenn ein Aggregat die Kapazitätsschwelle erreicht und keine zusätzlichen Festplatten unterstützen kann, verschiebt die Konsole automatisch ein Volume von diesem Aggregat zu einem Aggregat mit verfügbarer Kapazität oder zu einem neuen Aggregat.
-
-+ Wenn die Konsole ein neues Aggregat für das Volume erstellt, wählt sie eine Datenträgergröße, die der Größe dieses Volumes entspricht.
-
-+ Beachten Sie, dass jetzt auf dem ursprünglichen Aggregat freier Speicherplatz verfügbar ist.  Dieser Speicherplatz kann von vorhandenen oder neuen Volumes genutzt werden.  In diesem Szenario kann der Speicherplatz nicht an den Cloud-Anbieter zurückgegeben werden.
++
+Beachten Sie, dass auf dem ursprünglichen Aggregat nun freier Speicherplatz verfügbar ist. Bestehende Volumes oder neue Volumes können diesen Speicherplatz nutzen. Der Speicherplatz kann in diesem Szenario nicht an den Cloud-Provider zurückgegeben werden.
 
 * Wenn ein Aggregat länger als 12 Stunden keine Volumes enthält, wird es von der Konsole gelöscht.
 
@@ -137,9 +91,7 @@ Die automatische Kapazitätsverwaltung der Konsole gilt nicht für LUNs.  Beim E
 
 Wenn der Organisations- oder Kontoadministrator den *Kapazitätsverwaltungsmodus* auf manuell einstellt, werden Sie von der Konsole aufgefordert, geeignete Maßnahmen für Kapazitätsentscheidungen zu ergreifen. Für den manuellen Modus gelten die gleichen Beispiele wie für den automatischen Modus, aber es liegt an Ihnen, die Aktionen zu akzeptieren.
 
+.Weiterführende Links
+* link:task-manage-capacity-settings.html["Erfahren Sie, wie Sie den Kapazitätsverwaltungsmodus ändern"] .
+* Weitere Informationen zur Informationsbereitstellung in AWS sind unter link:reference-configs-aws.html["Festplattenbereitstellung für Aggregate in AWS"] zu finden.
 
-
-[[learn-more]]
-=== Mehr erfahren
-
-link:task-manage-capacity-settings.html["Erfahren Sie, wie Sie den Kapazitätsverwaltungsmodus ändern"] .

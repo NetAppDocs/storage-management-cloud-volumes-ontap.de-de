@@ -4,7 +4,7 @@ permalink: concept-license-management.html
 keywords: byol, bring your own license, expiration, warning, node-based byol, node license, capacity 
 summary: Auf jedem Cloud Volumes ONTAP -System mit knotenbasiertem BYOL muss eine Systemlizenz mit einem aktiven Abonnement installiert sein.  Die Konsole vereinfacht den Vorgang, indem sie die Lizenzen für Sie verwaltet und vor Ablauf eine Warnung anzeigt. 
 ---
-= Lizenzverwaltung für knotenbasiertes BYOL
+= Informationen zu Cloud Volumes ONTAP node-based BYOL
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -19,7 +19,7 @@ Auf jedem Cloud Volumes ONTAP System mit einer knotenbasierten Bring-Your-Own-Li
 
 NOTE: Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz kann von NetApp (BYOL) erworben werden und ist nur in bestimmten Fällen für Lizenzverlängerungen verfügbar.
 
-link:concept-licensing.html["Erfahren Sie mehr über die Lizenzierungsoptionen von Cloud Volumes ONTAP"] .
+link:concept-licensing.html["Erfahren Sie mehr über Cloud Volumes ONTAP -Lizenzen"].
 
 link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["Erfahren Sie mehr über die Verwaltung knotenbasierter Lizenzen"^] .
 
@@ -82,3 +82,12 @@ Eine knotenbasierte BYOL-Lizenz ist zwischen Cloud Volumes ONTAP Systemen übert
 Beispielsweise möchten Sie möglicherweise ein vorhandenes lizenziertes System löschen und die Lizenz dann mit einem neuen BYOL-System bei einem anderen VPC/VNet oder Cloud-Anbieter verwenden.  Beachten Sie, dass bei allen Cloud-Anbietern nur _Cloud-agnostische_ Seriennummern funktionieren.  Cloud-agnostische Seriennummern beginnen mit dem Präfix _908xxxx_.
 
 Es ist wichtig zu beachten, dass Ihre BYOL-Lizenz an Ihr Unternehmen und einen bestimmten Satz von Anmeldeinformationen für die NetApp -Support-Site gebunden ist.
+
+.Weiterführende Links
+* link:concept-licensing.html["Lizenzierung für Cloud Volumes ONTAP"^]
+* link:concept-licensing-charging.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen"^]
+* link:task-manage-capacity-licenses.html["Verwalten Sie die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP"^]
+* link:task-manage-node-licenses.html["Knotenbasierte Lizenzierung verwalten"^]
+* link:task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Lizenz in eine kapazitätsbasierte Lizenz"^]
+* link:task-manage-keystone.html["Keystone -Abonnements verwalten"^]
+

@@ -23,7 +23,7 @@ Wenn Sie wissen, wie Cloud Volumes ONTAP standardmäßig konfiguriert ist, könn
 
 * Die NetApp Console erstellt bei der Bereitstellung von Cloud Volumes ONTAP eine datenbereitstellende Speicher-VM.  Einige Konfigurationen unterstützen zusätzliche Speicher-VMs. link:task-managing-svms.html["Erfahren Sie mehr über die Verwaltung von Speicher-VMs"] .
 +
-Ab der Version 3.9.5 ist die logische Speicherplatzberichterstattung auf der ersten Speicher-VM aktiviert.  Wenn der Speicherplatz logisch gemeldet wird, meldet ONTAP den Volume-Speicherplatz so, dass der gesamte durch die Speichereffizienzfunktionen eingesparte physische Speicherplatz auch als verwendet gemeldet wird.  Informationen zu den Effizienzfunktionen für Inline-Speicher finden Sie im Knowledge Base-Artikel https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Welche Inline-Speichereffizienzfunktionen werden mit CVO unterstützt?"^]
+Die Meldung des logischen Speicherplatzes ist auf der initialen Storage-VM aktiviert. Wenn der Speicherplatz logisch gemeldet wird, berichtet ONTAP den Volume-Speicherplatz so, dass der gesamte durch die Speichereffizienzfunktionen eingesparte physische Speicherplatz ebenfalls als belegt gemeldet wird. Informationen zu den Inline-Speichereffizienzfunktionen enthält der Knowledge-Base-Artikel https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Welche Inline-Speichereffizienzfunktionen werden mit CVO unterstützt?"^]
 
 * Die Konsole installiert automatisch die folgenden ONTAP Funktionslizenzen auf Cloud Volumes ONTAP:
 +
@@ -129,164 +129,6 @@ Informationen zu diesen Attributen finden Sie unterlink:https://docs.netapp.com/
 
 
 
-[[internal-disks-for-system-data]]
-== Interne Festplatten für Systemdaten
-
-Zusätzlich zum Speicher für Benutzerdaten erwirbt die Konsole auch Cloud-Speicher für Systemdaten.
-
-ifdef::aws[]
-
-
-
-[[aws]]
-=== AWS
-
-* Drei Festplatten pro Knoten für Boot-, Root- und Core-Daten:
-+
-** 47 GiB io1-Festplatte für Bootdaten
-** 140 GiB GP3-Disk für Root-Daten
-** 540 GiB GP2-Festplatte für Kerndaten
-
-
-* Für HA-Paare:
-+
-** Zwei st1-EBS-Volumes für die Mediator-Instanz, eines mit ca. 8 GiB als Root-Disk und eines mit 4 GiB als Datendiskette
-** Eine 140 GiB große gp3-Festplatte in jedem Knoten, die eine Kopie der Stammdaten des anderen Knotens enthält
-+
-
-NOTE: In einigen Zonen kann der verfügbare EBS-Festplattentyp nur gp2 sein.
-
-
-
-* Ein EBS-Snapshot für jede Boot- und Root-Festplatte
-+
-
-NOTE: Beim Neustart werden automatisch Snapshots erstellt.
-
-* Wenn Sie die Datenverschlüsselung in AWS mithilfe des Key Management Service (KMS) aktivieren, werden auch die Boot- und Root-Datenträger für Cloud Volumes ONTAP verschlüsselt.  Dazu gehört die Bootdiskette für die Mediatorinstanz in einem HA-Paar.  Die Festplatten werden mit dem CMK verschlüsselt, den Sie beim Hinzufügen eines Cloud Volumes ONTAP Systems auswählen.
-
-
-
-TIP: In AWS befindet sich NVRAM auf der Startdiskette.
-
-endif::aws[]
-
-ifdef::azure[]
-
-
-
-[[azure-single-node]]
-=== Azure (einzelner Knoten)
-
-* Drei Premium-SSD-Festplatten:
-+
-** Eine 10-GiB-Festplatte für Startdaten
-** Eine 140-GiB-Festplatte für Root-Daten
-** Eine 512-GiB-Festplatte für NVRAM
-+
-Wenn die von Ihnen für Cloud Volumes ONTAP ausgewählte virtuelle Maschine Ultra-SSDs unterstützt, verwendet das System für NVRAM eine 32-GiB-Ultra-SSD anstelle einer Premium-SSD.
-
-
-
-* Eine 1024 GiB Standard-HDD-Festplatte zum Speichern von Kernen
-* Ein Azure-Snapshot für jede Startdiskette und jede Root-Diskette
-* Jeder Datenträger in Azure wird standardmäßig im Ruhezustand verschlüsselt.
-+
-Wenn die virtuelle Maschine, die Sie für Cloud Volumes ONTAP ausgewählt haben, Premium SSD v2 Managed Disk als Datenträger unterstützt, verwendet das System eine 32 GiB Premium SSD v2 Managed Disk für NVRAM und eine weitere als Root-Datenträger.
-
-
-
-
-
-[[azure-ha-pair]]
-=== Azure (HA-Paar)
-
-.HA-Paare mit Seitenblob
-* Zwei 10 GiB Premium SSD-Datenträger für das Startvolume (einer pro Knoten)
-* Zwei 140 GiB Premium Storage-Seitenblobs für das Stammvolume (einer pro Knoten)
-* Zwei 1024 GiB Standard-HDD-Festplatten zum Speichern von Kernen (eine pro Knoten)
-* Zwei 512 GiB Premium SSD-Festplatten für NVRAM (eine pro Knoten)
-* Ein Azure-Snapshot für jede Startdiskette und jede Root-Diskette
-+
-
-NOTE: Beim Neustart werden automatisch Snapshots erstellt.
-
-* Jeder Datenträger in Azure wird standardmäßig im Ruhezustand verschlüsselt.
-
-
-.HA-Paare mit gemeinsam genutzten verwalteten Datenträgern in mehreren Verfügbarkeitszonen
-* Zwei 10 GiB Premium SSD-Datenträger für das Startvolume (einer pro Knoten)
-* Zwei 512 GiB Premium SSD-Datenträger für das Stammvolume (einer pro Knoten)
-* Zwei 1024 GiB Standard-HDD-Festplatten zum Speichern von Kernen (eine pro Knoten)
-* Zwei 512 GiB Premium SSD-Festplatten für NVRAM (eine pro Knoten)
-* Ein Azure-Snapshot für jede Startdiskette und jede Root-Diskette
-+
-
-NOTE: Beim Neustart werden automatisch Snapshots erstellt.
-
-* Jeder Datenträger in Azure wird standardmäßig im Ruhezustand verschlüsselt.
-
-
-.HA-Paare mit gemeinsam genutzten verwalteten Datenträgern in einzelnen Verfügbarkeitszonen
-* Zwei 10 GiB Premium SSD-Datenträger für das Startvolume (einer pro Knoten)
-* Zwei 512 GiB Premium SSD Shared Managed Disks für das Stammvolume (einer pro Knoten)
-* Zwei 1024 GiB Standard-HDD-Festplatten zum Speichern von Kernen (eine pro Knoten)
-* Zwei 512 GiB Premium SSD Managed Disks für NVRAM (eine pro Knoten)
-
-
-Wenn Ihre virtuelle Maschine Premium SSD v2 Managed Disks als Datenträger unterstützt, verwendet sie 32 GiB Premium SSD v2 Managed Disks für NVRAM und 512 GiB Premium SSD v2 Shared Managed Disks für das Stammvolume.
-
-Sie können HA-Paare in einer einzigen Verfügbarkeitszone bereitstellen und verwaltete SSD Premium v2-Datenträger verwenden, wenn die folgenden Bedingungen erfüllt sind:
-
-* Die Version von Cloud Volumes ONTAP ist 9.15.1 oder höher.
-* Die ausgewählte Region und Zone unterstützen Premium SSD v2 Managed Disks.  Informationen zu den unterstützten Regionen finden Sie unter https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Microsoft Azure-Website: Verfügbare Produkte nach Region"^] .
-* Das Abonnement ist für Microsoft registriertlink:task-saz-feature.html["Microsoft.Compute/VMOrchestratorZonalMultiFD-Funktion"] .
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-
-
-[[google-cloud-single-node]]
-=== Google Cloud (einzelner Knoten)
-
-* Eine persistente SSD-Festplatte mit 10 GiB für Startdaten
-* Eine persistente 64-GiB-SSD-Festplatte für Root-Daten
-* Eine persistente SSD-Festplatte mit 500 GiB für NVRAM
-* Eine persistente Standardfestplatte mit 315 GiB zum Speichern von Kernen
-* Snapshots für Boot- und Root-Daten
-+
-
-NOTE: Beim Neustart werden automatisch Snapshots erstellt.
-
-* Boot- und Root-Disks sind standardmäßig verschlüsselt.
-
-
-
-
-[[google-cloud-ha-pair]]
-=== Google Cloud (HA-Paar)
-
-* Zwei persistente 10-GiB-SSD-Festplatten für Startdaten
-* Vier persistente 64-GiB-SSD-Festplatten für Root-Daten
-* Zwei persistente SSD-Festplatten mit 500 GiB für NVRAM
-* Zwei persistente Standard-Festplatten mit 315 GiB zum Speichern von Kernen
-* Eine persistente 10-GiB-Standardfestplatte für Mediatordaten
-* Eine persistente 10-GiB-Standardfestplatte für Mediator-Bootdaten
-* Snapshots für Boot- und Root-Daten
-+
-
-NOTE: Beim Neustart werden automatisch Snapshots erstellt.
-
-* Boot- und Root-Disks sind standardmäßig verschlüsselt.
-
-
-endif::gcp[]
-
-
-
 [[where-the-disks-reside]]
 === Wo sich die Festplatten befinden
 
@@ -299,4 +141,45 @@ Diese Festplatte, die das Boot-Image enthält, ist für Cloud Volumes ONTAP nich
 * Root-Daten, die die Systemkonfiguration und Protokolle enthalten, befinden sich in aggr0.
 * Das Stammvolume der Storage Virtual Machine (SVM) befindet sich in aggr1.
 * Datenvolumes befinden sich auch in aggr1.
+
+
+
+
+[[disks-and-aggregates-used-for-cloud-volumes-ontap-clusters]]
+== Für Cloud Volumes ONTAP -Cluster verwendete Festplatten und Aggregate
+
+Wenn Sie verstehen, wie Cloud Volumes ONTAP Cloud-Speicher verwendet, können Sie Ihre Speicherkosten besser einschätzen.
+
+
+CAUTION: Sie müssen alle Festplatten und Aggregate in der NetApp Console erstellen und löschen. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
+
+Cloud Volumes ONTAP verwendet den Speicher des Cloud-Anbieters als Datenträger und gruppiert sie in ein oder mehrere Aggregate.  Aggregate stellen Speicher für ein oder mehrere Volumes bereit.
+
+image:diagram_storage.png["Diese Abbildung zeigt ein Aggregat, das aus Festplatten und den Datenvolumes besteht, die Cloud Volumes ONTAP den Hosts zur Verfügung stellt."]
+
+Es werden mehrere Arten von Cloud-Festplatten unterstützt.  Sie wählen den Datenträgertyp beim Erstellen eines Volumes und die Standarddatenträgergröße beim Bereitstellen von Cloud Volumes ONTAP.
+
+
+TIP: Die Gesamtmenge des von einem Cloud-Anbieter erworbenen Speichers ist die _Rohkapazität_.  Die _nutzbare Kapazität_ ist geringer, da etwa 12 bis 14 Prozent Overhead sind, der für die Nutzung von Cloud Volumes ONTAP reserviert ist.  Wenn die Konsole beispielsweise ein 500-GiB-Aggregat erstellt, beträgt die nutzbare Kapazität 442,94 GiB.
+
+
+
+[[raid-type]]
+=== RAID-Typ
+
+Der RAID-Typ für jedes Cloud Volumes ONTAP -Aggregat ist RAID0 (Striping).  Cloud Volumes ONTAP verlässt sich hinsichtlich der Festplattenverfügbarkeit und -haltbarkeit auf den Cloud-Anbieter.  Es werden keine anderen RAID-Typen unterstützt.
+
+
+
+[[hot-spares]]
+=== Hotspares
+
+RAID0 unterstützt nicht die Verwendung von Hotspares zur Redundanz.
+
+Das Erstellen ungenutzter Festplatten (Hot Spares), die an eine Cloud Volumes ONTAP Instanz angeschlossen sind, ist ein unnötiger Aufwand und kann die Bereitstellung zusätzlichen Speicherplatzes bei Bedarf verhindern.  Daher wird es nicht empfohlen.
+
+.Weiterführende Links
+* link:reference-configs-aws.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in AWS"]
+* link:reference-configs-azure.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Azure"]
+* link:reference-configs-gcp.html["Unterstützte Konfigurationen für Cloud Volumes ONTAP in Google Cloud"]
 

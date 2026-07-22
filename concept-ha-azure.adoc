@@ -52,7 +52,7 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-target
 
 
 
-NOTE: Ab Cloud Volumes ONTAP 9.15.0P1 werden Azure-Seitenblobs für neue Bereitstellungen mit Hochverfügbarkeitspaaren nicht mehr unterstützt.  Wenn Sie derzeit Azure-Seitenblobs in vorhandenen Bereitstellungen mit Hochverfügbarkeitspaaren verwenden, können Sie in den VMs der Edsv4- und Edsv5-Serie zu neueren VM-Instanztypen migrieren. link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Erfahren Sie mehr über unterstützte Konfigurationen in Azure"^] .
+NOTE: Ab Cloud Volumes ONTAP 9.15.0P1 werden Azure Page Blobs für neue Hochverfügbarkeitspaar-Bereitstellungen nicht mehr unterstützt. Bei der Nutzung von Azure Page Blobs in bestehenden Hochverfügbarkeitspaar-Bereitstellungen besteht die Möglichkeit, auf neuere VM-Instanztypen der Edsv4-Serie und Edsv5-Serie zu migrieren. link:link:reference-configs-azure.html#ha-pairs["Erfahren Sie mehr über unterstützte Konfigurationen in Azure"].
 
 
 

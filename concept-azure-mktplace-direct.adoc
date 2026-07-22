@@ -32,7 +32,7 @@ Hier ist der Funktionsvergleich zwischen den beiden Optionen.  Beachten Sie, das
 
 | *Unterstützte Typen virtueller Maschinen (VM)*  a| 
 Eds_v5- und Ls_v3-Instance-Typen
-| Vollständige Palette an VM-Typen.https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Unterstützte Konfigurationen in Azure"^] 
+| Vollständiges Angebot an VM-Typen. link:reference-configs-azure.html["Unterstützte Konfigurationen in Azure"] 
 
 
 | *Lizenz* | Kostenlose Lizenz | Jede kapazitätsbasierte Lizenz.link:concept-licensing.html["Cloud Volumes ONTAP -Lizenzierung"] 
@@ -47,7 +47,7 @@ Eds_v5- und Ls_v3-Instance-Typen
 | *Bereitstellungsmodell* | Bereitstellung im Hochverfügbarkeitsmodus (HA) in einer einzelnen Verfügbarkeitszone (AZ) | Alle unterstützten Konfigurationen, einschließlich Einzelknoten- und HA-Modi, Einzel- und Mehrfach-AZ-Bereitstellungen 
 
 
-| *Unterstützter Datenträgertyp* | Verwaltete Premium-SSD-v2-Datenträger | Breitere Unterstützung.link:concept-storage.html#azure-storage["Standardkonfiguration für Cloud Volumes ONTAP"] 
+| *Unterstützter Datenträgertyp* | Verwaltete Premium-SSD-v2-Datenträger | Breitere Unterstützung. link:reference-configs-azure.html#azure-storage-for-user-data["Unterstützte Datenträgertypen in Azure"] 
 
 
 | *Schreibgeschwindigkeit (schneller Schreibmodus)* | Nicht unterstützt | Wird basierend auf Ihrer Konfiguration unterstützt. link:concept-write-speed.html["Erfahren Sie mehr über die Schreibgeschwindigkeiten in Cloud Volumes ONTAP"] . 

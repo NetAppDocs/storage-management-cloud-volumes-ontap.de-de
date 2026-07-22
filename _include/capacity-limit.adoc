@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+Mit kapazitätsbasierter Lizenzierung unterstützt jedes Cloud Volumes ONTAP-System Tiering für Objektspeicher. Die gesamte Tiering-Kapazität kann bis zum Bucket-Limit des Cloud-Anbieters skaliert werden. Obwohl die Lizenz keine Kapazitätsbeschränkungen vorsieht, sollten Sie die  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Best Practices für FabricPool"^] befolgen, um optimale Leistung, Zuverlässigkeit und Kosteneffizienz bei der Konfiguration und Verwaltung des Tierings zu gewährleisten.

@@ -4,7 +4,7 @@ permalink: task-modify-write-speed.html
 keywords: write speed, high write speed, normal write speed, change write speed 
 summary: Möglicherweise müssen Sie die Konfiguration der Cloud Volumes ONTAP Systeme ändern, wenn sich Ihr Speicherbedarf ändert.  Sie können beispielsweise zwischen Pay-as-you-go-Konfigurationen wechseln, den Instanz- oder VM-Typ ändern und vieles mehr. 
 ---
-= Ändern Sie die Schreibgeschwindigkeit des Systems
+= Systemschreibgeschwindigkeit in Cloud Volumes ONTAP ändern
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

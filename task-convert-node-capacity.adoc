@@ -93,3 +93,9 @@ Informationen zu privaten Angeboten in bestimmten Hyperskalaren erhalten Sie unt
 * Azure – azurepo@netapp.com
 * Google Cloud – gcppo@netapp.com
 
+
+.Weiterführende Links
+* link:concept-licensing.html["Lizenzierung für Cloud Volumes ONTAP"]
+* link:task-manage-capacity-licenses.html["Verwalten Sie die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP"]
+* link:task-manage-node-licenses.html["Knotenbasierte Lizenzierung verwalten"]
+

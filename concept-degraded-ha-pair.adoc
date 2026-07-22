@@ -1,19 +1,52 @@
 ---
 sidebar: sidebar 
 permalink: concept-degraded-ha-pair.html 
-keywords: storage takeover, storage giveback, degraded, degraded status, degraded state, ha pair, ha takeover, takeover, giveback 
-summary: Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, stellt der andere Knoten Daten für seinen Partner bereit, um einen kontinuierlichen Datendienst bereitzustellen.  Dies wird als Speicherübernahme bezeichnet.  Einige Aktionen sind erst nach Abschluss der Speicherrückgabe verfügbar. 
+keywords: 'high-availability (HA) configuration in Cloud Volumes ONTAP, CVO HA, storage takeover, storage giveback, degraded, degraded status, ha takeover, takeover, giveback, disaster recovery, svm disaster recovery, storage vm dr' 
+summary: 'Eine Hochverfügbarkeitskonfiguration (HA) in Cloud Volumes ONTAP gewährleistet Geschäftskontinuität und Fehlertoleranz für Ihren Unternehmensspeicher.' 
 ---
-= Vorgänge sind nicht verfügbar, wenn ein Knoten im Cloud Volumes ONTAP HA-Paar offline ist
-:hardbreaks:
+= Cloud Volumes ONTAP HA Konfiguration
 :allow-uri-read: 
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
+Eine Hochverfügbarkeitskonfiguration (HA) in Cloud Volumes ONTAP gewährleistet Geschäftskontinuität und Fehlertoleranz für Ihren Unternehmensspeicher. Durch den Einsatz zweier ONTAP Knoten in getrennten Fehlerdomänen bietet das System unterbrechungsfreien Betrieb (NDO) und nahtloses Failover bei Hardwareausfällen, Netzwerkstörungen oder routinemäßiger Wartung.
+
+Ein HA-Paar wird bereitgestellt, wenn Ihre Architektur Folgendes erfordert:
+
+* *Unternehmenskritische Arbeitslasten*: Datenbanken und Unternehmensanwendungen, die keine Ausfallzeiten tolerieren können.
+* *Unterbrechungsfreie Aktualisierungen*: Aktualisierungen auf ONTAP Versionen oder Änderungen an zugrunde liegenden Cloud-Compute-Instanzen, ohne dass der Speicher offline geschaltet wird.
+* *Mehrzonen-Resilienz*: Schutz vor isolierten Ausfällen von Verfügbarkeitszonen innerhalb einer Cloud-Region.
+
+
+
+
+[[how-ha-pairs-work]]
+== Funktionsweise von HA-Paaren
+
+Die HA-Konfiguration arbeitet aus Managementperspektive als Aktiv/Aktiv-Cluster, während einzelne Datenaggregate jeweils einem bestimmten Knoten zugeordnet sind.
+
+* *Synchrone Replikation*: Daten, die in den NVRAM des primären Knotens geschrieben werden, werden synchron in den NVRAM des Partnerknotens gespiegelt, bevor der Schreibvorgang dem Client bestätigt wird.
+* *Unterstützung für Mediatorinstanzen*: Eine Mediatorinstanz eines Drittanbieters überwacht den Zustand beider Knoten. Wenn der primäre Knoten nicht mehr reagiert, orchestriert der Mediator eine Speicherübernahme.
+* *Speicherübernahme*: Der verbleibende Knoten übernimmt die Speicheraggregate und Netzwerkschnittstellen des Partners und setzt die Datenbereitstellung innerhalb von Sekunden fort.
+
+
+
+
+[[ha-configuration-requirements-and-limitations]]
+== Anforderungen und Einschränkungen der HA-Konfiguration
+
+Bei der Bereitstellung eines HA-Paares in Cloud Volumes ONTAP gelten die folgenden Anforderungen und Einschränkungen:
+
+* *Rechenleistungsdimensionierung*: Beide Knoten eines HA-Paares müssen exakt denselben Cloud-Compute-Instanztyp oder dieselbe Maschinenform verwenden.
+* *Protokollunterstützung*: SMB/CIFS Continuous Availability (CA) wird für Hyper-V und SQL Server Workloads unterstützt, erfordert jedoch spezifische ONTAP Konfigurationsflags.
+* *Failover-Zeit*: Während die Speicherübernahme typischerweise in Sekunden gemessen wird, müssen Client-seitige Zeitüberschreitungs-Einstellungen (wie iSCSI-Initiator-Zeitüberschreitungen) korrekt konfiguriert sein, um Anwendungsunterbrechungen zu vermeiden.
+
+
+
+
+[[operations-unavailable-when-a-node-in-an-ha-pair-is-offline]]
+== Operationen sind nicht verfügbar, wenn ein Knoten in einem HA-Paar offline ist.
+
 Wenn ein Knoten in einem HA-Paar nicht verfügbar ist, stellt der andere Knoten Daten für seinen Partner bereit, um einen kontinuierlichen Datendienst bereitzustellen.  Dies wird als _Speicherübernahme_ bezeichnet.  Einige Aktionen sind erst nach Abschluss der Speicherrückgabe verfügbar.
 
 
@@ -32,3 +65,24 @@ Die folgenden Aktionen sind bei der Speicherübernahme nicht verfügbar:
 
 
 Diese Aktionen sind wieder verfügbar, nachdem die Speicherrückgabe abgeschlossen ist und der Zustand des Systems wieder in den Normalzustand zurückkehrt.
+
+
+
+[[storage-vm-disaster-recovery-for-cloud-volumes-ontap]]
+== Storage-VM-Desaster Recovery für Cloud Volumes ONTAP
+
+Die NetApp Console bietet keine Unterstützung für die Einrichtung oder Orchestrierung der Storage-VM (SVM) Notfallwiederherstellung (DR). Für die Einrichtung von DR für Cloud Volumes ONTAP sind der ONTAP System Manager oder die ONTAP CLI zur Konfiguration der SnapMirror SVM-Replikation zu verwenden.
+
+Wenn Sie die SnapMirror SVM-Replikation zwischen zwei Cloud Volumes ONTAP Systemen einrichten, muss die Replikation zwischen zwei HA-Paarsystemen oder zwei Einzelknotensystemen erfolgen. Sie können keine SnapMirror SVM-Replikation zwischen einem HA-Paar und einem Einzelknotensystem einrichten.
+
+Anweisungen zur ONTAP -CLI finden Sie in den folgenden Dokumenten.
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856["Expresshandbuch zur Vorbereitung der SVM-Notfallwiederherstellung"^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857["SVM Disaster Recovery Express-Handbuch"^]
+
+
+.Weiterführende Links
+* link:concept-ha.html["Erfahren Sie mehr über Cloud Volumes ONTAP HA-Paare in AWS"]
+* link:concept-ha-azure.html["Erfahren Sie mehr über Cloud Volumes ONTAP HA-Paare in Azure"]
+* link:concept-ha-google-cloud.html["Informationen zu Cloud Volumes ONTAP HA Paaren in GCP"]
+

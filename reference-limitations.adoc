@@ -4,7 +4,7 @@ permalink: reference-limitations.html
 keywords: limitations, flexgroup, ontap s3, s3 configuration, svm dr, svm disaster recovery, disaster recovery, storage vm dr, BlueXP, Console, cloud manager 
 summary: Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch. 
 ---
-= Bekannte Einschränkungen
+= Bekannte Einschränkungen in Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,12 +16,129 @@ summary: Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funkti
 [role="lead"]
 Bekannte Einschränkungen kennzeichnen Plattformen, Geräte oder Funktionen, die von dieser Produktversion nicht unterstützt werden oder nicht ordnungsgemäß mit ihr zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
 
-Diese Einschränkungen gelten speziell für die Verwaltung von Cloud Volumes ONTAP in der NetApp Console.  Um Einschränkungen der Cloud Volumes ONTAP -Software selbst anzuzeigen, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html["Gehen Sie zu den Versionshinweisen zu Cloud Volumes ONTAP"^] .
+
+
+[[cloud-volumes-ontap-limitations-with-respect-to-ontap]]
+== Cloud Volumes ONTAP Einschränkungen in Bezug auf ONTAP
+
+Die folgenden Einschränkungen gelten für Cloud Volumes ONTAP bei allen Cloud-Anbietern: AWS, Azure und Google Cloud.
+
+
+
+[[unsupported-ontap-features]]
+== Nicht unterstützte ONTAP-Funktionen
+
+Einige ONTAP-Funktionen werden von Cloud Volumes ONTAP nicht unterstützt, darunter unter anderem:
+
+* Inline-Deduplizierung auf Aggregatebene
+* Hintergrunddeduplizierung auf Aggregatebene
+* Festplattenwartungszentrum
+* Datenträgerbereinigung
+* FabricPool-Spiegelung
+* Fibre Channel (FC)
+* Flash Pools
+* Unendliche Volumes
+* Schnittstellengruppen
+* Intranode LIF-Failover
+* MetroCluster
+* Multi-Admin-Verifizierung
++
+Die Aktivierung der Multi-Admin-Verifizierung auf Cloud Volumes ONTAP führt zu einer nicht unterstützten Konfiguration.
+
+* RAID4, RAID-DP, RAID-TEC (RAID0 wird unterstützt)
+* Service Processor
+* SnapLock Compliance- und Enterprise-Modus (nur Cloud WORM wird unterstützt)
+* SnapMirror Synchronous
+* VLANs
+* Onboard Key Manager (OKM) für die Verschlüsselung
+* SMB Continuous Availability (CA)
++
+https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/What_are_SMB_Continuous_Availability_CA_Shares["Ständig verfügbare SMB-Shares"^] für unterbrechungsfreie Vorgänge werden nicht unterstützt.
+
+
+
+
+
+[[maximum-concurrent-replication-operations]]
+== Maximale Anzahl gleichzeitiger Replikationsvorgänge
+
+Die maximale Anzahl gleichzeitiger SnapMirror oder SnapVault Übertragungen für Cloud Volumes ONTAP beträgt 100 pro Knoten, unabhängig vom Instanztyp oder Maschinentyp.
+
+
+
+[[cloud-provider-snapshots-must-not-be-used-for-your-backup-and-recovery-plans]]
+=== Snapshots von Cloud-Anbietern dürfen nicht für Ihre Backup und Recovery-Pläne verwendet werden
+
+Sie sollten die Snapshots Ihres Cloud-Anbieters nicht als Teil Ihres Backup und Recovery-Plans für Cloud Volumes ONTAP-Daten verwenden. Sie sollten immer ONTAP Snapshot-Kopien oder Backup-Lösungen von Drittanbietern verwenden, um Daten, die auf Cloud Volumes ONTAP gehostet werden, zu sichern und wiederherzustellen.
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Erfahren Sie, wie Sie NetApp Backup und Recovery verwenden, um ONTAP Daten zu sichern und wiederherzustellen"^].
+
+
+NOTE: ONTAP-Konsistenzpunkte im WAFL-Dateisystem bestimmen die Datenkonsistenz. Nur ONTAP kann das WAFL-Dateisystem anhalten, um einen absturzkonsistenten Backup zu erstellen.
+
+
+
+[[cloud-volumes-ontap-supports-only-reserved-and-on-demand-vm-instances]]
+=== Cloud Volumes ONTAP unterstützt nur reservierte und bedarfsgesteuerte VM-Instanzen
+
+Cloud Volumes ONTAP kann entweder auf einer reservierten oder einer On-demand VM-Instanz von Ihrem Cloud-Anbieter ausgeführt werden. Andere Arten von VM-Instanzen werden nicht unterstützt.
+
+
+
+[[automatic-application-resource-management-solutions-shouldnt-be-used]]
+=== Automatische Lösungen für das Ressourcenmanagement von Anwendungen sollten nicht verwendet werden
+
+Automatische Lösungen für das Ressourcenmanagement von Anwendungen sollten Cloud Volumes ONTAP-Systeme nicht verwalten. Dies kann zu einer Änderung auf eine nicht unterstützte Konfiguration führen. Beispielsweise könnte die Lösung Cloud Volumes ONTAP auf einen nicht unterstützten VM-Instanztyp ändern.
+
+
+
+[[software-updates-must-be-completed-by-netapp-console]]
+=== Software-Updates müssen über die NetApp Console abgeschlossen werden
+
+Aktualisierungen von Cloud Volumes ONTAP müssen über die NetApp Console durchgeführt werden. Sie sollten Cloud Volumes ONTAP nicht mit dem System Manager oder der CLI aktualisieren. Dies kann die Systemstabilität beeinträchtigen.
+
+
+
+[[cloud-volumes-ontap-deployment-must-not-be-modified-from-your-cloud-providers-console]]
+=== Cloud Volumes ONTAP-Bereitstellung darf nicht über die Konsole Ihres Cloud-Anbieters geändert werden
+
+Änderungen an einer Cloud Volumes ONTAP-Konfiguration über die Konsole Ihres Cloud-Anbieters führen zu einer nicht unterstützten Konfiguration. Jegliche Änderungen an den von der Console erstellten und verwalteten Cloud Volumes ONTAP-Ressourcen können die Systemstabilität und die Fähigkeit der Console, das System zu verwalten, beeinträchtigen.
+
+
+NOTE: Nach der ersten Bereitstellung wird die Änderung des für Cloud Volumes ONTAP-Ressourcen verwendeten Azure-Abonnementnamens unterstützt.
+
+
+
+[[disks-and-aggregates-must-be-managed-from-the-console]]
+=== Datenträger und Aggregate müssen über die Console verwaltet werden
+
+Alle Datenträger und Aggregate müssen direkt von der Konsole aus erstellt und gelöscht werden. Sie sollten diese Aktionen nicht von einem anderen Verwaltungstool aus durchführen. Dies kann die Systemstabilität beeinträchtigen, die Möglichkeit, in Zukunft Festplatten hinzuzufügen, einschränken und möglicherweise zu überflüssigen Gebühren des Cloud-Anbieters führen.
+
+
+
+[[snapmanager-licensing-limitation]]
+=== SnapManager Lizenzierungsbeschränkung
+
+SnapManager-Lizenzen pro Server werden mit Cloud Volumes ONTAP unterstützt. Lizenzen pro Speichersystem (SnapManager-Suite) werden nicht unterstützt.
+
+
+
+[[limitations-with-third-party-agents-and-extensions]]
+=== Einschränkungen mit Drittanbieter-Agenten und Erweiterungen
+
+Agenten von Drittanbietern und VM-Erweiterungen werden auf Cloud Volumes ONTAP VM-Instanzen nicht unterstützt.
+
+
+
+[[cloud-volumes-ontap-limitations-in-netapp-console]]
+== Cloud Volumes ONTAP Einschränkungen in der NetApp Console
+
+Diese Einschränkungen gelten speziell für die Cloud Volumes ONTAP Verwaltung in der NetApp Console.
 
 
 
 [[console-doesnt-support-flexgroup-volumes-creation]]
-== Die Konsole unterstützt die Erstellung von FlexGroup -Volumes nicht
+=== Die Konsole unterstützt die Erstellung von FlexGroup -Volumes nicht
 
 Während Cloud Volumes ONTAP FlexGroup Volumes unterstützt, unterstützt die Konsole derzeit nicht die Erstellung von FlexGroup Volumes.  Wenn Sie ein FlexGroup -Volume vom ONTAP System Manager oder der ONTAP CLI erstellen, sollten Sie den Kapazitätsverwaltungsmodus in der Konsole auf `Manual` . `Automatic` Der Modus funktioniert möglicherweise nicht richtig mit FlexGroup -Volumes.
 
@@ -31,7 +148,7 @@ NOTE: Die Möglichkeit, FlexGroup -Volumes in der Konsole zu erstellen, ist für
 
 
 [[console-doesnt-support-s3-with-cloud-volumes-ontap]]
-== Die Konsole unterstützt S3 mit Cloud Volumes ONTAP nicht
+=== Die Konsole unterstützt S3 mit Cloud Volumes ONTAP nicht
 
 Während Cloud Volumes ONTAP S3 als Option für skalierbaren Speicher unterstützt, bietet die Console keine Verwaltungsfunktionen für diese Funktion. Die Verwendung der Befehlszeile ist die empfohlene Vorgehensweise, um den S3-Clientzugriff von Cloud Volumes ONTAP zu konfigurieren. Weitere Informationen finden Sie in der  http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["ONTAP S3 Konfigurationsleitfaden"^].
 
@@ -40,7 +157,7 @@ link:concept-client-protocols.html["Erfahren Sie mehr über die Unterstützung v
 
 
 [[console-doesnt-support-disaster-recovery-for-storage-vms]]
-== Die Konsole unterstützt keine Notfallwiederherstellung für Speicher-VMs
+=== Die Konsole unterstützt keine Notfallwiederherstellung für Speicher-VMs
 
 Die Konsole bietet keine Einrichtungs- oder Orchestrierungsunterstützung für die Notfallwiederherstellung von Storage VMs (SVM).  Sie müssen ONTAP System Manager oder die ONTAP CLI verwenden.
 

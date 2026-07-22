@@ -582,7 +582,7 @@ Während der transparenten Proxy-Konfiguration des Konsolen-Agenten fügt der Ad
 . Fügen Sie das für den Konsolenagenten verwendete Tag hinzu und speichern Sie die Konfiguration.
 
 
-.Verwandte Themen
+.Weiterführender Link
 * link:task-verify-autosupport.html["Überprüfen Sie das AutoSupport -Setup für Cloud Volumes ONTAP"]
 * https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html["Erfahren Sie mehr über die internen Ports von ONTAP"^] .
 

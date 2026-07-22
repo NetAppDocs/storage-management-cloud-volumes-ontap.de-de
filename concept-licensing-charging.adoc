@@ -221,3 +221,11 @@ Hier ist ein weiteres Beispiel.  Angenommen, Sie verfügen über die folgenden L
 Weitere 100 TiB werden auf einem HA-Paar mit primären Volumes bereitgestellt.  Die von Ihnen erworbene Lizenz verfügt nicht über die zugesagte Kapazität von _Essentials Primary HA_.  Die Lizenz „Essentials Primary HA“ ist teurer als die Lizenzen „Essentials Primary Single Node“ und „Essentials Secondary HA“.
 
 In diesem Beispiel berechnet die Konsole für die zusätzlichen 100 TiB Überschreitungen zum Marktpreis.  Die Überschreitungsgebühren werden auf Ihrer monatlichen Rechnung erscheinen.
+
+.Weiterführende Links
+* link:concept-licensing.html["Lizenzierung für Cloud Volumes ONTAP"]
+* link:task-manage-capacity-licenses.html["Verwalten Sie die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP"]
+* link:task-manage-node-licenses.html["Knotenbasierte Lizenzierung verwalten"]
+* link:task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Lizenz in eine kapazitätsbasierte Lizenz"]
+* link:task-manage-keystone.html["Keystone -Abonnements verwalten"]
+
