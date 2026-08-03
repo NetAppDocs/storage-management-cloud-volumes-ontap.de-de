@@ -5,7 +5,7 @@ settings:
     release_notes_repo: console-relnotes
   harmony_integration: maestro
   internal:
-    pdf_enabled: false
+    pdf_enabled: true
   prod:
     pdf_enabled: true
     harmony_enabled: false
@@ -331,6 +331,10 @@ sidebar:
       url: "/task-verify-autosupport.html"
     - title: Keystone -Abonnements verwalten
       url: "/task-manage-keystone.html"
+    - title: Cloud Volumes ONTAP und Microsoft OneLake
+      url: "/task-azure-onelake.html"
+    - title: Cloud Volumes ONTAP und Well-architected Dashboard
+      url: "/configuration-analysis-cvo.html"
   - title: Wissen und Unterstützung
     entries:
     - title: Für Support registrieren

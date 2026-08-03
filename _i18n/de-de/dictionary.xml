@@ -3294,90 +3294,7 @@
   <block id="f21c1bc5bcee9dae9d5eb025e4c6d884" category="paragraph">Beachten Sie, dass Sie die Kapazität des Aggregats um mindestens 256 GiB oder 10 % der Aggregatgröße erhöhen müssen.  Wenn Sie beispielsweise ein Aggregat von 1,77 TiB haben, sind 10 % 181 GiB.  Das ist weniger als 256 GiB, daher muss die Größe des Aggregats um das Minimum von 256 GiB erhöht werden.</block>
   <block id="2eb14dc3edd9fb392b8095df85f2f222" category="summary">Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Console, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt.</block>
   <block id="05fef605ad17853dff22052e9ab0016f" category="doc">Verwalten Sie die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP</block>
-  <block id="93ed65a89f306426be7980ddc22595e8" category="paragraph">_Kapazitätsbasierte Lizenzen_ ermöglichen Ihnen die Zahlung für Cloud Volumes ONTAP pro TiB Kapazität.</block>
-  <block id="96a603641f48a14047d20b26a1cfeefa" category="paragraph">Sie können kapazitätsbasierte Cloud Volumes ONTAP Lizenzen über die NetApp Console verwalten.</block>
-  <block id="d3c2fb9e07de60e097ad32d8e9ad56eb" category="admonition">Während die tatsächliche Nutzung und Messung der in der Konsole verwalteten Produkte und Dienste immer in GiB und TiB berechnet wird, werden die Begriffe GB/GiB und TB/TiB synonym verwendet.  Dies spiegelt sich in den Cloud Marketplace-Angeboten, Preisangeboten, Angebotsbeschreibungen und anderen unterstützenden Dokumenten wider</block>
-  <block id="8caaaa4afae93c31b741be21eed669cc" category="inline-link">Erfahren Sie mehr über Cloud Volumes ONTAP -Lizenzen</block>
-  <block id="25e7b507c919c21847b291c84a88ba36" category="paragraph"><block ref="73e1a6a2075a5d292111b694a644abf3" category="inline-link-rx"></block> .</block>
-  <block id="a5e948b3ddd458b93125330e6dde9f94" category="section-title">So werden Lizenzen zur NetApp Console hinzugefügt</block>
-  <block id="792eeb7f686f2ad37b664f6478d40bed" category="paragraph">Nachdem Sie eine Lizenz von Ihrem NetApp Vertriebsmitarbeiter erworben haben, sendet Ihnen NetApp eine E-Mail mit der Seriennummer und weiteren Lizenzdetails.</block>
-  <block id="8948f0f0bc878d55b118339a79ece349" category="paragraph">In der Zwischenzeit fragt die Konsole automatisch den Lizenzierungsdienst von NetApp ab, um Details zu den Lizenzen zu erhalten, die mit Ihrem NetApp Support Site-Konto verknüpft sind.  Wenn keine Fehler vorliegen, werden die Lizenzen hinzugefügt.</block>
-  <block id="ad0be4bc913a8026a3f5e42fc7656d23" category="inline-link">Erfahren Sie, wie Sie Ihrem Konto erworbene Lizenzen hinzufügen</block>
-  <block id="4db74114ac6514de873c5bc9b5b30cf1" category="paragraph">Wenn die Konsole die Lizenz nicht hinzufügen kann, müssen Sie sie manuell hinzufügen.  Wenn der Konsolenagent beispielsweise an einem Ort ohne Internetzugang installiert ist, müssen Sie die Lizenzen selbst hinzufügen.<block ref="21379db3c6d74c3a5d2d6d121cdcf537" category="inline-link-rx"></block> .</block>
-  <block id="03021ab228ad1d1c921bbf536e2913a4" category="section-title">Zeigen Sie die verbrauchte Kapazität in Ihrem Konto an</block>
-  <block id="61233c99902f0b66422b062168ba63a5" category="paragraph">Die Konsole zeigt Ihnen die insgesamt verbrauchte Kapazität in Ihrem Konto und die verbrauchte Kapazität nach Lizenzpaket an.  Auf diese Weise können Sie besser nachvollziehen, welche Kosten Ihnen in Rechnung gestellt werden und ob Sie zusätzliche Kapazität erwerben müssen.</block>
-  <block id="f6d5cd6d364915d1012d5e7d29aa3d78" category="list-text">Wählen Sie im linken Navigationsbereich *Verwaltung &gt; Licenses and subscriptions* aus.</block>
-  <block id="a495aa39c60dc5d48d7bb146e6f7265a" category="list-text">Auf der Registerkarte *Übersicht* wird auf der Kachel „Cloud Volumes ONTAP“ die aktuell für Ihr Konto bereitgestellte Kapazität angezeigt.</block>
-  <block id="85ac3ef33729a6408e85a09c9b5ebc4f" category="inline-image-macro">width=300 Ein Screenshot, der die Kapazitätsübersicht für Ihre Cloud Volumes ONTAP Lizenzen und -Abonnements anzeigt.</block>
-  <block id="ef94465b68195bb5523f36cf2d8ea3bd" category="paragraph"><block ref="ef94465b68195bb5523f36cf2d8ea3bd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b989e51822e011c35b6e3fc2f6e007cf" category="list-text">_Direktlizenz_ ist die gesamte bereitgestellte Kapazität aller Cloud Volumes ONTAP Systeme in Ihrem NetApp Konto.  Die Abrechnung erfolgt auf Grundlage der bereitgestellten Größe jedes Volumes, unabhängig vom lokalen, genutzten, gespeicherten oder effektiven Speicherplatz innerhalb des Volumes.</block>
-  <block id="80495a5c91b6e7cae60c8c5c750734bc" category="list-text">_Jahresvertrag_ ist die gesamte lizenzierte Kapazität (Bring Your Own License (BYOL) oder Marketplace-Vertrag), die Sie von NetApp erworben haben.</block>
-  <block id="18ef4a3a3844dea97bcae43ccdf60b1e" category="list-text">_PAYGO_ ist die gesamte bereitgestellte Kapazität mithilfe von Cloud-Marktplatz-Abonnements.  Die Abrechnung über PAYGO erfolgt nur, wenn die verbrauchte Kapazität höher ist als die lizenzierte Kapazität oder wenn in der Konsole keine BYOL-Lizenz verfügbar ist.</block>
-  <block id="d02d58b5b8770f720f9d912913a80f1a" category="list-text">Wählen Sie *Anzeigen*, um die verbrauchte Kapazität für jedes Ihrer Lizenzpakete anzuzeigen.</block>
-  <block id="a4f95858d82d890dcc9a5123e1f315e6" category="list-text">Wählen Sie die Registerkarte *Lizenzen* aus, um Details zu jeder von Ihnen erworbenen Paketlizenz anzuzeigen.</block>
-  <block id="d30bc4bd5cee7ac23a1df54311d1f4b3" category="inline-link">Informieren Sie sich über die Gebühren für das Essentials-Paket</block>
-  <block id="b2678f2b003e23f7f5f3a7cd8451a26b" category="paragraph">Um die angezeigten Kapazitäten für das Essentials-Paket besser zu verstehen, sollten Sie mit der Funktionsweise des Ladevorgangs vertraut sein.<block ref="8d04d0643798fbb69d5260f477ea213c" category="inline-link-rx"></block> .</block>
-  <block id="452cf2122664eef3e8c620ec413c8d43" category="list-text">Wählen Sie die Registerkarte *Abonnements* aus, um die verbrauchte Kapazität nach Lizenzverbrauchsmodell anzuzeigen.  Diese Registerkarte umfasst sowohl PAYGO- als auch Jahresvertragslizenzen.</block>
-  <block id="a6fd7fff8d44ac917f29be623cc64da2" category="paragraph">Sie sehen nur die Abonnements, die mit der Organisation verknüpft sind, die Sie gerade anzeigen.</block>
-  <block id="24456dcfa7781b6f3a972b5f11ed0d88" category="list-text">Während Sie die Informationen zu Ihren Abonnements anzeigen, können Sie mit den Details in der Tabelle interagieren.  Erweitern Sie eine Zeile, um weitere Details anzuzeigen.</block>
-  <block id="56594b7222b35921f9fe676eadf6bbdf" category="inline-image-macro">das Plus-Symbol am Ende der Tabellenüberschrift</block>
-  <block id="2eab7ff26639a8d2e45cece515ff781f" category="list-text">Wählen<block ref="98b11313fea6c4106e5a3c018f0ffbc9" category="inline-image-macro-rx" type="image"></block> um auszuwählen, welche Spalten in der Tabelle angezeigt werden.  Beachten Sie, dass die Spalten „Laufzeit“ und „Automatische Verlängerung“ nicht standardmäßig angezeigt werden.  In der Spalte „Automatische Verlängerung“ werden nur Verlängerungsinformationen für Azure-Verträge angezeigt.</block>
-  <block id="8ac1ecc7ceb7a49d071b4f1b71f0e176" category="section-title">Paketdetails anzeigen</block>
-  <block id="f88e8fee4b6b78cbc9779b73098653b5" category="paragraph">Sie können Details zur pro Paket genutzten Kapazität anzeigen, indem Sie auf der Cloud Volumes ONTAP -Seite in den Legacy-Modus wechseln.</block>
-  <block id="4a95292c803539c8cf72591c54db0644" category="list-text">Wählen Sie *Anzeigen*, um die bereitgestellte Kapazität für jedes Ihrer Lizenzpakete anzuzeigen.</block>
-  <block id="40d1f3228e91a00383279859612f7ba5" category="list-text">Wählen Sie *Zur erweiterten Ansicht wechseln*.</block>
-  <block id="3df898a44cd4e747f0651fff3683bca8" category="inline-image-macro">Ein Screenshot der Schaltfläche „Zur erweiterten Ansicht wechseln“</block>
-  <block id="4247aeb98dbe93036110943452fb15a7" category="paragraph"><block ref="4247aeb98dbe93036110943452fb15a7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="cf5e0e2d5e3b97433dcea18ed2c97b91" category="list-text">Zeigen Sie die Details des Pakets an, das Sie sehen möchten.</block>
-  <block id="f651647ac9ca970bf81f92917731dcbb" category="inline-image-macro">Ein Screenshot der Schaltfläche zum Wechseln zur Standardansicht</block>
-  <block id="322ba871ee257d334ca304536b56b324" category="paragraph"><block ref="322ba871ee257d334ca304536b56b324" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="662442d32a5fd91298fcf8b6391fdf17" category="section-title">Lademethoden ändern</block>
-  <block id="3a320310638e1b673183daababec1ba0" category="paragraph">Die kapazitätsbasierte Lizenzierung ist in Form eines _Pakets_ verfügbar. Wenn Sie ein Cloud Volumes ONTAP -System erstellen, können Sie je nach Ihren Geschäftsanforderungen aus mehreren Lizenzpaketen wählen.  Sollten sich Ihre Anforderungen nach der Erstellung des Systems ändern, können Sie das Paket jederzeit ändern.  Beispielsweise könnten Sie vom Essentials-Paket zum Professional-Paket wechseln.</block>
-  <block id="58dcfad3183b701a8f1b8781a5644d09" category="inline-link">Erfahren Sie mehr über kapazitätsbasierte Lizenzpakete</block>
-  <block id="6b5c2460f150173d3723de8a857a4d33" category="paragraph"><block ref="179c8a3ed717f2c4de3149f0e9edf685" category="inline-link-rx"></block> .</block>
-  <block id="31ccaa5879eee7a69ef3c48f1004c59c" category="list-text">Das Ändern der Abrechnungsmethode hat keinen Einfluss darauf, ob Ihnen die Kosten über eine von NetApp erworbene Lizenz (BYOL) oder über das Pay-as-you-go-Abonnement (PAYGO) Ihres Cloud-Anbieters berechnet werden.</block>
-  <block id="ac2e949b0b6c58b83082083327f0fd77" category="paragraph">Die Konsole versucht immer zuerst, eine Lizenz abzurechnen.  Wenn keine Lizenz verfügbar ist, wird dies über ein Marktplatz-Abonnement abgerechnet.  Sie müssen ein BYOL-Abonnement nicht in ein Marktplatz-Abonnement umwandeln oder umgekehrt.</block>
-  <block id="cfdb32f80009b1e5c5c0468dda9f013d" category="list-text">Wenn Sie über ein privates Angebot oder einen Vertrag vom Marktplatz Ihres Cloud-Anbieters verfügen, führt der Wechsel zu einer Abrechnungsmethode, die nicht in Ihrem Vertrag enthalten ist, dazu, dass Ihnen BYOL (wenn Sie eine Lizenz von NetApp erworben haben) oder PAYGO in Rechnung gestellt wird.</block>
-  <block id="2daabc6822724771970f17e8ae6a4cee" category="list-text">Wählen Sie die Registerkarte *Übersicht*.</block>
-  <block id="5b37c7034b369fcc6d9b931180eef46f" category="list-text">Wählen Sie auf der Kachel „Cloud Volumes ONTAP“ *Anzeigen* aus.</block>
-  <block id="13bb1907bdca20408e78b483332beab6" category="inline-image-macro">Ein Screenshot der Schaltfläche „Zur Legacy-Ansicht wechseln“</block>
-  <block id="07d6c0208f77e132c7e96286497713f8" category="paragraph"><block ref="07d6c0208f77e132c7e96286497713f8" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0e4bc6fa91df5edc0eafb52c324b38f3" category="list-text">Scrollen Sie nach unten zur Tabelle *Kapazitätsbasierte Lizenz* und wählen Sie *Abrechnungsmethode ändern*.</block>
-  <block id="7c32cfa3b543a8f69513e758629bc263" category="inline-image-macro">Ein Screenshot der Cloud Volumes ONTAP -Seite in der Konsole, auf der sich die Schaltfläche „Abrechnungsmethode ändern“ direkt über der Tabelle befindet.</block>
-  <block id="7c3ea09c5ec07ba244bc674f632d4c79" category="paragraph"><block ref="7c3ea09c5ec07ba244bc674f632d4c79" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e6e33712a923fd615674fad11214317f" category="list-text">Wählen Sie im Popup-Fenster *Abrechnungsmethode ändern* ein Cloud Volumes ONTAP System aus, wählen Sie die neue Abrechnungsmethode und bestätigen Sie dann, dass Sie verstanden haben, dass sich die Änderung des Pakettyps auf die Servicegebühren auswirkt.</block>
-  <block id="c2a404ae45ebabafb7f3598bcd8a1a18" category="list-text">Wählen Sie *Lademethode ändern*.</block>
   <block id="37532cd27e3c53471b1caed0ba1f90ed" category="section-title">Nutzungsberichte herunterladen</block>
-  <block id="85be1733025dd0b3e190d956ed6e380c" category="paragraph">Sie können vier Nutzungsberichte von der Konsole herunterladen.  Diese Nutzungsberichte liefern Kapazitätsdetails zu Ihren Abonnements und informieren Sie darüber, wie Ihnen die Ressourcen in Ihren Cloud Volumes ONTAP Abonnements in Rechnung gestellt werden.  Die herunterladbaren Berichte erfassen Daten zu einem bestimmten Zeitpunkt und können problemlos mit anderen geteilt werden.</block>
-  <block id="fe1db4ddb29c070770259869ba7aa5bb" category="inline-image-macro">Der Screenshot zeigt die kapazitätsbasierte Lizenzseite von Cloud Volumes ONTAP und hebt die Schaltfläche „Nutzungsbericht“ hervor.</block>
-  <block id="61b0c512c4663de969f8c21e23e50f0e" category="paragraph"><block ref="61b0c512c4663de969f8c21e23e50f0e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d11dcbec58d47bd13de1dcccfbd640ff" category="paragraph">Die folgenden Berichte stehen zum Download bereit.  Die angezeigten Kapazitätswerte sind in TiB angegeben.</block>
-  <block id="c596c9291f76a11af1aefc235c262de6" category="list-text">Gesamte verbrauchte Kapazität</block>
-  <block id="8dd7541d6c4e83402d88448119068a02" category="list-text">Gesamte vorab festgelegte Kapazität</block>
-  <block id="b01a146aed01aa8af61e034befc116ce" category="list-text">Gesamte BYOL-Kapazität</block>
-  <block id="109323142d354af9ccc7eb636b1dcbce" category="list-text">Gesamtkapazität der Marketplace-Verträge</block>
-  <block id="baf09c6c43fd26effd8f15e252649384" category="list-text">Gesamte PAYGO-Kapazität</block>
-  <block id="a65d4ec7ff2941ad2ea2bc688a6dbbb3" category="list-text">*Nutzung von Storage-VMs*: Dieser Bericht zeigt, wie die berechnete Kapazität auf Cloud Volumes ONTAP Systeme und Storage Virtual Machines (SVMs) aufgeteilt ist.  Diese Informationen sind nur im Bericht verfügbar.  Es enthält die folgenden Informationen:</block>
-  <block id="c8e2277ecfb1427838c488c217f99466" category="list-text">Wolke</block>
-  <block id="4736cd35bf5b3fe63e1b1785fb2aa664" category="list-text">NetApp Konto-ID</block>
-  <block id="3c4e32d95f12c00d16a76057a7af18f6" category="list-text">Systemkonfiguration</block>
-  <block id="203c4205822c007d08ecafe163b02ea2" category="list-text">SVM-Name</block>
-  <block id="b567847dd629376ac84ed4958fd61687" category="list-text">Bereitgestellte Kapazität</block>
-  <block id="a09b8df9fd0007770b0a8c10f9a17d81" category="list-text">Übersicht der geladenen Kapazität</block>
-  <block id="671095c17b0e9e0deda06cff2fa103e6" category="list-text">Abrechnungszeitraum für den Marktplatz</block>
-  <block id="d38764d5edf26bd9b744840cd2ea3c17" category="list-text">Cloud Volumes ONTAP Paket oder -Funktion</block>
-  <block id="a016fcdfd1d7159ffd537d78d4b68f74" category="list-text">Name des SaaS Marketplace-Abonnements wird aufgeladen</block>
-  <block id="fe6ac599d13d94a0ee0800482bec7e41" category="list-text">Abrechnung der SaaS Marketplace-Abonnement-ID</block>
-  <block id="427af860f9733f0c5427a1408195bb2b" category="list-text">Arbeitslasttyp</block>
-  <block id="2d0394437aca88cac134fb1bce72e08f" category="list-text">*Volume-Nutzung*: Dieser Bericht zeigt, wie die berechnete Kapazität nach Volumes in einem Cloud Volumes ONTAP System aufgeschlüsselt ist.  Diese Informationen sind auf keinem Bildschirm der Konsole verfügbar.  Es enthält die folgenden Informationen:</block>
-  <block id="cccc95b62282240886ee975a3f122adb" category="list-text">Datenträger-ID</block>
-  <block id="fc18634852d4299cd5f8c7ad55ddefbe" category="list-text">Datenträgertyp</block>
-  <block id="3756f66a273f440893f16ee968ce3450" category="list-text">Vom Volumen bereitgestellte Kapazität</block>
-  <block id="8b3da2ed858ee5c956acde26c9ef7dd0" category="admonition">FlexClone -Volumes sind in diesem Bericht nicht enthalten, da für diese Volume-Typen keine Gebühren anfallen.</block>
-  <block id="b2b74732b80350970fadfac4db3ba17e" category="list-text">Wählen Sie auf der Registerkarte *Übersicht* in der Kachel „Cloud Volumes ONTAP“ die Option *Anzeigen* aus.</block>
-  <block id="f4c2ce2a853a74c3742ccc54482c074e" category="list-text">Wählen Sie *Nutzungsbericht*.</block>
-  <block id="23e918e9f1c9f1bb5769dcc236489de2" category="paragraph">Der Nutzungsbericht wird heruntergeladen.</block>
-  <block id="05655bb3cbd3604d6c71a1db823ad94f" category="list-text">Öffnen Sie die heruntergeladene Datei, um auf die Berichte zuzugreifen.</block>
   <block id="2edd8edb29f9d701956a9cdf8a5325c4" category="doc">Verwalten Sie die Gesamtkapazität von Cloud Volumes ONTAP auf einem Konsolenagenten</block>
   <block id="bd20e2ea38068ff0b9b9efb708d88c42" category="paragraph">Jeder Konsolenagent verfügt über Einstellungen, die bestimmen, wie er die Gesamtkapazität für Cloud Volumes ONTAP verwaltet.</block>
   <block id="5b930e91ec691a7af5d8bc5eb7a33ee7" category="paragraph">Diese Einstellungen wirken sich auf alle Cloud Volumes ONTAP Systeme aus, die von einem Konsolenagenten verwaltet werden.  Wenn Sie einen anderen Konsolenagenten haben, kann dieser anders konfiguriert werden.</block>
@@ -3418,75 +3335,6 @@
   <block id="492847bcbc9ec0bd3075b612aa43e4a7" category="list-text">Wählen Sie * Keystone*.</block>
   <block id="6e1a9790b199742bec95dea2070e2f3f" category="summary">Verwalten Sie Ihre knotenbasierten Lizenzen in der NetApp Console, um sicherzustellen, dass jedes Cloud Volumes ONTAP -System über eine gültige Lizenz mit der erforderlichen Kapazität verfügt.</block>
   <block id="160221c1e99e53b72af8a65c2440852b" category="doc">Verwalten Sie die knotenbasierte Lizenzierung für Cloud Volumes ONTAP</block>
-  <block id="63e5ea33dc9b9a10458ac73abae91075" category="paragraph">Verwalten Sie knotenbasierte Lizenzen in der NetApp Console, um sicherzustellen, dass jedes Cloud Volumes ONTAP -System über eine gültige Lizenz mit der erforderlichen Kapazität verfügt.</block>
-  <block id="4627bd080634e9380c75a1cc04a09486" category="paragraph">_Knotenbasierte Lizenzen_ sind das Lizenzmodell der vorherigen Generation (und für Neukunden nicht verfügbar):</block>
-  <block id="0d4e36aae457a1001b3373de2fd510f1" category="list-text">Bring Your Own License (BYOL)-Lizenzen, die bei NetApp erworben wurden</block>
-  <block id="17ac9e85cf5b6f7b77acf61fb7721242" category="list-text">Stündliche Pay-as-you-go-Abonnements (PAYGO) vom Marktplatz Ihres Cloud-Anbieters</block>
-  <block id="3501754bb69f70ed8f72d23562bab97c" category="paragraph">Sie können knotenbasierte Cloud Volumes ONTAP -Lizenzen über die NetApp Console verwalten.</block>
-  <block id="9426b05d2fc423b761e34f9d75b4066d" category="section-title">Verwalten von PAYGO-Lizenzen</block>
-  <block id="fcd2026c30c1b902d032e35337e8888c" category="paragraph">Über das Menü „Licenses and subscriptions“ können Sie Details zu jedem Ihrer PAYGO Cloud Volumes ONTAP Systeme anzeigen, einschließlich der Seriennummer und des PAYGO-Lizenztyps.</block>
-  <block id="343c7ed77049523f4d99e8d4c436a330" category="list-text">Wählen Sie *Knotenbasierte Lizenzen* aus der Dropdown-Liste aus.</block>
-  <block id="87089bacab591352ad6ad6579e34d93e" category="list-text">Klicken Sie auf *PAYGO*.</block>
-  <block id="82be8e06ac169a3de0fce42cd01f5760" category="list-text">Sehen Sie sich in der Tabelle Details zu jeder Ihrer PAYGO-Lizenzen an.</block>
-  <block id="bbfa86a1d5f6c6f85f7a434a983b34e1" category="inline-image-macro">Ein Screenshot, der eine Tabelle auf der Seite „Licenses and subscriptions“ mit drei Paygo-Lizenzen zeigt.  Jede Zeile zeigt den Namen, den Systemtyp, die Seriennummer, das Paket und einen Link zur Verwaltung der Lizenz.</block>
-  <block id="cf03ba6c2dea0eb29457f99fdcd69b82" category="paragraph"><block ref="cf03ba6c2dea0eb29457f99fdcd69b82" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a45c9786e45613660f519d740b30671a" category="list-text">Klicken Sie bei Bedarf auf *PAYGO-Lizenz verwalten*, um die PAYGO-Lizenz zu ändern oder den Instanztyp zu ändern.</block>
-  <block id="00b61e8d20d055a6505bd5bc88e18aeb" category="section-title">BYOL-Lizenzen verwalten</block>
-  <block id="33375e3f722897194d509130054856dd" category="paragraph">Verwalten Sie Lizenzen, die Sie direkt von NetApp erworben haben, indem Sie Systemlizenzen und Lizenzen für zusätzliche Kapazität hinzufügen und entfernen.</block>
-  <block id="4742f5b0c38f7c105542ecb15a214212" category="section-title">Nicht zugewiesene Lizenzen hinzufügen</block>
-  <block id="d0052e7943aa77623453a3374803765d" category="paragraph">Fügen Sie der Konsole eine knotenbasierte Lizenz hinzu, damit Sie die Lizenz auswählen können, wenn Sie ein neues Cloud Volumes ONTAP -System erstellen.  Die Konsole identifiziert diese Lizenzen als _nicht zugewiesen_.</block>
-  <block id="bec033f0535da0f58c9f0a7ccd96e793" category="paragraph">Wenn Sie die Lizenzdatei noch nicht haben, lesen Sie den folgenden Abschnitt.</block>
-  <block id="684d5df2e069e529d4a4c518d654dc44" category="paragraph">Die Konsole fügt die Lizenz hinzu.  Die Lizenz wird als nicht zugewiesen gekennzeichnet, bis Sie sie einem neuen Cloud Volumes ONTAP -System zuordnen.  Danach wird die Lizenz auf die Registerkarte *BYOL* unter * Licenses and subscriptions* verschoben.</block>
-  <block id="df5b9d272738b4adaa43e7eb4949a0e5" category="section-title">Austausch nicht zugewiesener knotenbasierter Lizenzen</block>
-  <block id="76a67f9205ca80ce535686592126df9d" category="paragraph">Wenn Sie über eine nicht zugewiesene knotenbasierte Lizenz für Cloud Volumes ONTAP verfügen, die Sie nicht verwendet haben, können Sie die Lizenz austauschen, indem Sie sie in eine NetApp Backup and Recovery -Lizenz, eine NetApp Data Classification -Lizenz oder eine NetApp Cloud Tiering -Lizenz umwandeln.</block>
-  <block id="82330159ba1b86113008185841af38f9" category="paragraph">Durch den Austausch der Lizenz wird die Cloud Volumes ONTAP -Lizenz widerrufen und eine Lizenz im Gegenwert von einem Dollar für den Dienst erstellt:</block>
-  <block id="488b3f4a79a8819dabc209f2405c7ba7" category="list-text">Die Lizenzierung für ein Cloud Volumes ONTAP HA-Paar wird in eine 51 TiB Direktlizenz umgewandelt</block>
-  <block id="d8961eb56e3c50e0da29ec362dcb385a" category="list-text">Die Lizenzierung für einen Cloud Volumes ONTAP Einzelknoten wird in eine 32 TiB-Direktlizenz umgewandelt</block>
-  <block id="89f1c05b91f27a0ccc4736c51deee49f" category="paragraph">Die konvertierte Lizenz hat dasselbe Ablaufdatum wie die Cloud Volumes ONTAP -Lizenz.</block>
-  <block id="e0225acc5a75bb0346dd94ed24206c81" category="inline-link-macro">Sehen Sie sich die Anleitung zum Austausch knotenbasierter Lizenzen an.</block>
-  <block id="d82de0388f091aa9d43371708eb95310" category="paragraph"><block ref="b4c22b5293d3ee433dee9c4b3632dbee" category="inline-link-macro-rx"></block></block>
-  <block id="fff69e388498c7da2216c0a49587cbc8" category="list-text">Klicken Sie auf *Lizenz austauschen*.</block>
-  <block id="25abdaf706ab9bbfe1775de2626f958f" category="inline-image-macro">Ein Screenshot der Exchange-Lizenzoption, die auf der Seite „Nicht zugewiesene Lizenz“ angezeigt wird.</block>
-  <block id="59069c86e2c388bcb56b4ec04ba7c1b1" category="paragraph"><block ref="59069c86e2c388bcb56b4ec04ba7c1b1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b2bcb667f1a3e2cd665dce56fa38946c" category="list-text">Wählen Sie den Dienst aus, bei dem Sie die Lizenz eintauschen möchten.</block>
-  <block id="d54ac11d311c4a7a85e11a557ee305e3" category="list-text">Wählen Sie bei entsprechender Aufforderung eine zusätzliche Lizenz für das HA-Paar aus.</block>
-  <block id="1e4109afcb540c886b450b6944b83567" category="list-text">Lesen Sie die rechtlichen Einwilligungserklärungen und klicken Sie auf *Zustimmen*.</block>
-  <block id="f56693ead48da8f8372b53a387f22165" category="paragraph">Die Konsole konvertiert die nicht zugewiesene Lizenz in den von Ihnen ausgewählten Dienst.  Sie können die neue Lizenz auf der Registerkarte *Data Services-Lizenzen* anzeigen.</block>
-  <block id="bed8ee00b54ae810def15122c80a9dba" category="section-title">Erhalten Sie eine Systemlizenzdatei</block>
-  <block id="022919ed552faad7f4de98d1abe88fc1" category="paragraph">In den meisten Fällen kann die Konsole Ihre Lizenzdatei automatisch über Ihr NetApp Support Site-Konto abrufen.  Wenn dies jedoch nicht möglich ist, müssen Sie die Lizenzdatei manuell hochladen.  Wenn Sie die Lizenzdatei nicht haben, können Sie sie von netapp.com beziehen.</block>
-  <block id="3eff90cc077e6c35c01b4fa2ce08352e" category="list-text">Gehen Sie zum<block ref="d4604fbd185a778fcb9e2d4bce6d880d" category="inline-link-rx"></block> und melden Sie sich mit Ihren Anmeldeinformationen für die NetApp Support-Site an.</block>
-  <block id="7260bbc39295ef94e60be19b73affac6" category="inline-image-macro">Screenshot: Zeigt ein Beispiel der NetApp License Generator-Webseite mit den verfügbaren Produktlinien.</block>
-  <block id="c7db6ec8c72cc25c90f19ebafe2ddfbd" category="paragraph"><block ref="c7db6ec8c72cc25c90f19ebafe2ddfbd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="58f676020d30c00d4b3fb18fc835e7ca" category="section-title">Aktualisieren einer Systemlizenz</block>
-  <block id="b0f33031496e38b99d72e702000365e8" category="paragraph">Wenn Sie ein BYOL-Abonnement verlängern, indem Sie sich an einen NetApp -Vertreter wenden, erhält die Konsole automatisch die neue Lizenz von NetApp und installiert sie auf dem Cloud Volumes ONTAP System.  Wenn die Konsole über die sichere Internetverbindung nicht auf die Lizenzdatei zugreifen kann, können Sie die Datei selbst abrufen und dann manuell hochladen.</block>
-  <block id="eda4b0f5ee71694deda064c01799f329" category="list-text">Erweitern Sie auf der Registerkarte *BYOL* die Details für ein Cloud Volumes ONTAP System.</block>
-  <block id="d91a847294f18b5d31d438a059c2532d" category="list-text">Klicken Sie auf das Aktionsmenü neben der Systemlizenz und wählen Sie *Lizenz aktualisieren*.</block>
-  <block id="98022931ad96bfc8db710666a48e0416" category="list-text">Laden Sie die Lizenzdatei (oder Dateien, wenn Sie ein HA-Paar haben) hoch.</block>
-  <block id="1c523ff18e24f3b5d4d5fa45c4410b01" category="list-text">Klicken Sie auf *Lizenz aktualisieren*.</block>
-  <block id="825a0cb9a8312e85f3aa745487c0dbe9" category="paragraph">Die Konsole aktualisiert die Lizenz auf dem Cloud Volumes ONTAP -System.</block>
-  <block id="2c2e7695734e076306fc8ba50ca70c1b" category="section-title">Verwalten von Lizenzen für zusätzliche Kapazität</block>
-  <block id="d452bdec5cf94a61fe23690b513f4a71" category="paragraph">Sie können zusätzliche Kapazitätslizenzen für ein Cloud Volumes ONTAP BYOL-System erwerben, um mehr als die 368 TiB Kapazität zuzuweisen, die mit einer BYOL-Systemlizenz bereitgestellt werden.  Sie können beispielsweise eine zusätzliche Lizenzkapazität erwerben, um Cloud Volumes ONTAP bis zu 736 TiB Kapazität zuzuweisen.  Oder Sie erwerben drei zusätzliche Kapazitätslizenzen, um bis zu 1,4 PiB zu erhalten.</block>
-  <block id="6e869ff6c9fd5eb76baa394c52e2ef18" category="section-title">Kapazitätslizenzen hinzufügen</block>
-  <block id="41a0a4fe38c3f00a9fae3056955c9f80" category="paragraph">Erwerben Sie eine Lizenz für zusätzliche Kapazität, indem Sie uns über das Chat-Symbol unten rechts in der Konsole kontaktieren.  Nachdem Sie die Lizenz erworben haben, können Sie sie auf ein Cloud Volumes ONTAP System anwenden.</block>
-  <block id="423cdc57679399d47229e2f74dfc102b" category="list-text">Klicken Sie auf *Kapazitätslizenz hinzufügen*.</block>
-  <block id="b0bfc70f0e7f3f10c4334bd53c2c2a27" category="list-text">Geben Sie die Seriennummer ein oder laden Sie die Lizenzdatei (oder Dateien, wenn Sie ein HA-Paar haben) hoch.</block>
-  <block id="c4e9cc48e592b9354b10b9d54e14525c" category="section-title">Aktualisieren von Kapazitätslizenzen</block>
-  <block id="2526a0404b7268bca72e19dd834baa1e" category="paragraph">Wenn Sie die Laufzeit einer Lizenz für zusätzliche Kapazität verlängert haben, müssen Sie die Lizenz in der Konsole aktualisieren.</block>
-  <block id="555efdea73381bcd8582646f75b68253" category="list-text">Klicken Sie auf das Aktionsmenü neben der Kapazitätslizenz und wählen Sie *Lizenz aktualisieren*.</block>
-  <block id="df478b8a8dcb38cfbba69a02ff5cae20" category="section-title">Kapazitätslizenzen entfernen</block>
-  <block id="9906134ee224bc081497b19c4269cc34" category="paragraph">Wenn eine Lizenz für zusätzliche Kapazität abgelaufen ist und nicht mehr verwendet wird, können Sie sie jederzeit entfernen.</block>
-  <block id="c320af21170d1ca43751b7580a1125f4" category="list-text">Klicken Sie auf das Aktionsmenü neben der Kapazitätslizenz und wählen Sie *Lizenz entfernen*.</block>
-  <block id="03b194a23dcb353466fbfb7acff64363" category="list-text">Klicken Sie auf *Entfernen*.</block>
-  <block id="594cb44c6500d8855ad820b0653e02c7" category="section-title">Wechsel zwischen PAYGO und BYOL</block>
-  <block id="a704128156d562fe5860508e9584ee34" category="paragraph">Die Konvertierung eines Systems von der PAYGO-By-Node-Lizenzierung zur BYOL-By-Node-Lizenzierung (und umgekehrt) wird nicht unterstützt.  Wenn Sie zwischen einem Pay-as-you-go-Abonnement und einem BYOL-Abonnement wechseln möchten, müssen Sie ein neues System bereitstellen und Daten vom vorhandenen System auf das neue System replizieren.</block>
-  <block id="c019dbada10848ba4363bd4710a34f6b" category="list-text">Erstellen Sie ein neues Cloud Volumes ONTAP System.</block>
-  <block id="9bd20ffd5e91ec2bb61bc593be38bb13" category="list-text">Richten Sie für jedes Volume, das Sie replizieren müssen, eine einmalige Datenreplikation zwischen den Systemen ein.</block>
-  <block id="95b10ad2ca24b4c8bd5673b7383531a2" category="inline-link">Erfahren Sie, wie Sie Daten zwischen Systemen replizieren</block>
-  <block id="882d5f98206dd8157654127073c920f2" category="paragraph"><block ref="882d5f98206dd8157654127073c920f2" category="inline-link-rx"></block></block>
-  <block id="ebf88a96d90d43fcac8c0ab5a9fda0dd" category="list-text">Beenden Sie das Cloud Volumes ONTAP -System, das Sie nicht mehr benötigen, indem Sie das ursprüngliche System löschen.</block>
-  <block id="f979ec1d84a4416797fae20cc61f839b" category="inline-link">Erfahren Sie, wie Sie ein Cloud Volumes ONTAP -System löschen</block>
-  <block id="0d0947c9b1ebe3ee650df057f8192855" category="paragraph"><block ref="87175a08736eca79154ad91c69792fcd" category="inline-link-rx"></block> .</block>
-  <block id="342dcce6bda294bb4b60fc9333bcafbe" category="inline-link-macro">Konvertieren Sie knotenbasierte Lizenzen in kapazitätsbasierte</block>
   <block id="5b5068830882d3d6b54d331cdd743e62" category="paragraph">Anweisungen zur ONTAP -CLI finden Sie in den folgenden Dokumenten.</block>
   <block id="412af2a2404a4e920b18be59197204b0" category="inline-link">Expresshandbuch zur Vorbereitung der SVM-Notfallwiederherstellung</block>
   <block id="c15bb50c43eaf0ceb1bc0ce3d7503ebd" category="list-text"><block ref="c15bb50c43eaf0ceb1bc0ce3d7503ebd" category="inline-link-rx"></block></block>
@@ -5949,7 +5797,6 @@
   <block id="4bd0b8ab4e553e751aa93406b40d5560" category="paragraph">Bei Single-Node-Systemen wird die I/O unterbrochen.</block>
   <block id="62fac2021144c76cdcd096ecd3c82eb4" category="paragraph">Sie können ein Einzelknotensystem oder ein HA-Paar in Azure starten, indem Sie ein Cloud Volumes ONTAP-System in der NetApp Console erstellen.</block>
   <block id="3b8ca986ea730316924e61b984071d11" category="paragraph">Wenn Sie ein Single-Node-Cloud Volumes ONTAP-System in Azure starten möchten, müssen Sie in der Console ein Single-Node-System erstellen.</block>
-  <block id="691e9010d46bcb06693d90df5c955334" category="paragraph">Die Anzahl der Lizenzen, die Sie für ein Einzelknotensystem oder ein HA-Paar erwerben können, ist unbegrenzt.</block>
   <block id="cdd566a2953665ed7135ca03058a8014" category="paragraph">Wenn Sie die SnapMirror SVM-Replikation zwischen zwei Cloud Volumes ONTAP Systemen einrichten, muss die Replikation zwischen zwei HA-Paarsystemen oder zwei Einzelknotensystemen erfolgen. Sie können keine SnapMirror SVM-Replikation zwischen einem HA-Paar und einem Einzelknotensystem einrichten.</block>
   <block id="0af39724f1af28211a653a39e57d0598" category="paragraph">Beachten Sie, dass ein optionales Management-LIF für eine Storage-VM eine private IP-Adresse auf einem Einzelknotensystem und auf einem HA-Paar in einer einzelnen AZ benötigt. Dieses Management-LIF stellt eine Verbindung zu Management-Tools wie SnapCenter bereit.</block>
   <block id="2ec479bb11cd13a599380572acb1c0ce" category="list-text">Einzelknotensystem: Eine ungenutzte sekundäre private IP ist erforderlich.</block>
@@ -6139,7 +5986,6 @@
   <block id="665103db45058514d7e3b032c990783d" category="list-text">Wählen Sie für das Abonnement, dessen Kapazität Sie anpassen möchten, <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> und wählen Sie *Details anzeigen und bearbeiten*.</block>
   <block id="f638b98047aa1e2c9642d2de1bcdd0d0" category="list-text">Scrollen Sie nach unten, geben Sie gegebenenfalls weitere Details für die Anfrage ein und wählen Sie dann *Submit*.</block>
   <block id="dc96e19fba7ac18b79e69398a4792825" category="list-text">Wählen Sie für das Abonnement, das Sie entkoppeln möchten, <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> und wählen Sie *Entkoppeln* aus.</block>
-  <block id="5e5b6fbbd6a3b4edf3913541e4fecf17" category="list-text"><block ref="5e5b6fbbd6a3b4edf3913541e4fecf17" category="inline-link-rx"></block></block>
   <block id="66f0f207e553b92ff141bcd4fe27ad0f" category="doc">Flexible Abrechnung für Cloud Volumes ONTAP und Datendienste in AWS</block>
   <block id="c6527bb2f1b87269be16603057b53a2c" category="paragraph">Aufgrund von Änderungen im AWS Enterprise Discount Program (EDP) hat NetApp ein eigenständiges Cloud Volumes ONTAP-Abonnement im AWS Marketplace eingeführt, das es Ihnen ermöglicht, die Abrechnung der Cloud Volumes ONTAP-Kapazität von den Datendiensten zu trennen. Diese Trennung bietet Ihnen mehr Flexibilität bei der Verwaltung Ihrer EDP-Guthaben und -Kosten. NetApp empfiehlt die Nutzung des eigenständigen Abonnements für ein besseres Kostenmanagement Ihrer Cloud Volumes ONTAP Nutzung, während Sie das NIS-Abonnement weiterhin für die Abrechnung von Datendiensten nach dem 31. Juli 2026 verwenden sollten, wenn die EDP-Anforderungen in Kraft treten.</block>
   <block id="bc5abfb3f56ed8d61846aead3435d204" category="paragraph">Das eigenständige Cloud Volumes ONTAP-Abonnement in AWS unterstützt ausschließlich gültige kapazitätsbasierte Essentials- oder Freemium-Lizenzpakete. Das Professional-Paket wird nicht unterstützt. Sie können die für Ihre Bedürfnisse optimale Abrechnungsmethode auswählen:</block>
@@ -6372,37 +6218,6 @@
   <block id="a39062ee3ffebf8265972bbfd12218d1" category="list-text">*Netzwerkkonfiguration und Konnektivität*: Die relevanten Regionen und Zonen werden ausgewählt. Vier verschiedene VPCs für die HA-Konfiguration, jeweils ein Subnetz in jeder VPC und anschließend eine Firewall-Richtlinie werden ausgewählt.</block>
   <block id="308f6c85e4f05242ebe84d06edc1939e" category="admonition">Cloud Volumes ONTAP 9.19.1 und höher unterstützen <block ref="bf5f8235b3ee6f722f42e2d7828e4aab" category="inline-link-macro-rx"></block>, wodurch die Mediator-Instanz optional wird. In dieser Konfiguration ist es nicht erforderlich, eine Mediator-Zone, die entsprechende VPC und das Subnetz für Datenreplizierung anzugeben.</block>
   <block id="d0106c4491f5099769d6febfecd4ee36" category="paragraph">Wenn Sie eines der Pakete auswählen, müssen Sie lediglich ein Volume angeben und anschließend die Konfiguration prüfen und genehmigen. Die vorkonfigurierten Pakete variieren je nach gewählter Cloud Volumes ONTAP Version und Konfigurationstypen. Wenn eine Bereitstellung in einer einzelnen AZ für Cloud Volumes ONTAP 9.19.1 oder höher ausgewählt wird, sind vorkonfigurierte Pakete mit C3-Series Maschinen und Hyperdisk Balanced Disks sichtbar. Für frühere Versionen und mehrere AZs können weiterhin n2-standard Maschinen und Persistent Disks ausgewählt werden. Die Konfigurationen, wie IOPS- und Durchsatzparameter, lassen sich entsprechend den Workload-Anforderungen anpassen.</block>
-  <block id="821a4394ac44729da9f70ce04118fc86" category="list-text">*Nutzungsübersicht*: Dieser Bericht fasst die gesamte in Ihrem Konto verbrauchte Kapazität zusammen und schlüsselt sie nach Abrechnungsmethode auf (vorab reservierte Lizenzen im Vergleich zu nutzungsbasierter Abrechnung). Es sind die folgenden Informationen enthalten:</block>
-  <block id="1976d7f704de389d9fe064e08ea35b2d" category="cell">Spalte</block>
-  <block id="51163c1c09d1460ef27f5dd97ed9ea7f" category="cell">Die gesamte bereitgestellte Kapazität aller Cloud Volumes ONTAP Systeme in Ihrem Konto.</block>
-  <block id="f70b0a4d5f326e83950dad59aec6fa68" category="cell">Die gesamte von Ihnen bei NetApp erworbene Lizenzkapazität, einschließlich sowohl BYOL-Lizenzen als auch Marketplace-Verträgen. Dieser Wert ist die Summe der gesamten BYOL-Kapazität und der gesamten Marketplace-Vertragskapazität.</block>
-  <block id="461f8f7091d5494362a76c93edc9a423" category="cell">Der Anteil der vorab zugesagten Kapazität, der durch Bring Your Own License (BYOL)-Lizenzen abgedeckt ist, die direkt von NetApp erworben wurden.</block>
-  <block id="78848eca2f87ad4a3c7b9b07889aae3a" category="cell">Der Anteil der vorab zugesagten Kapazität, der durch jährliche Marktplatzverträge oder private Angebote abgedeckt ist, die über den Marktplatz Ihres Cloud-Anbieters erworben wurden.</block>
-  <block id="f343ac0562a9bcbf4a1f16afb4d9c944" category="cell">Der Teil der verbrauchten Kapazität, der nicht durch eine vorab zugesagte Lizenz abgedeckt ist und zu Pay-as-you-go (PAYGO) Stundensätzen auf dem Marktplatz abgerechnet wird.</block>
-  <block id="de061f005aa315f137edfbea4185d9cf" category="list-text">*Cloud Volumes ONTAP Paketnutzung*: Dieser Bericht bietet die gleiche Kapazitätsaufschlüsselung wie der High-level usage report, jedoch nach Lizenzpaketen gegliedert. Es sind die folgenden Informationen enthalten:</block>
-  <block id="0f8a95f201dfe022d77e0b59d46d4c77" category="cell">Die gesamte für dieses Paket bereitgestellte Kapazität über alle Cloud Volumes ONTAP Systeme in Ihrem Konto.</block>
-  <block id="ba7a4b5109f3d946e68653e9dca24924" category="cell">Die gesamte lizenzierte Kapazität dieses von Ihnen bei NetApp erworbenen Pakets, einschließlich sowohl BYOL-Lizenzen als auch Marketplace-Verträgen. Dieser Wert ist die Summe der gesamten BYOL-Kapazität und der gesamten Kapazität der Marketplace-Verträge.</block>
-  <block id="da684f1b634af2847a1baa8db1db2ac7" category="cell">Der Anteil der vorab zugesagten Kapazität für dieses Paket, der durch Bring Your Own License (BYOL)-Lizenzen abgedeckt ist, die Sie direkt von NetApp erworben haben.</block>
-  <block id="fa6bbae52be77ec691f2ed981782a8c3" category="cell">Der Anteil der vorab zugesagten Kapazität für dieses Paket, der durch jährliche Marktplatzverträge oder private Angebote abgedeckt ist, die über den Marktplatz Ihres Cloud-Anbieters erworben wurden.</block>
-  <block id="7978965a49086eecb3f75ef44abb3cbe" category="cell">Der Anteil der verbrauchten Kapazität dieses Pakets, der nicht durch eine vorab zugesagte Lizenz abgedeckt ist und zu Pay-as-you-go (PAYGO) Stundensätzen auf dem Marktplatz abgerechnet wird.</block>
-  <block id="40052c32370d83faceb0cb6dc62c2d53" category="cell">System-ID und Name</block>
-  <block id="d618d6f2db44ccd4eb860a4f494fc02b" category="cell">Die eindeutige Kennung (UUID) und der Anzeigename des Cloud Volumes ONTAP Systems.</block>
-  <block id="f36be790a1c0b2db000cad5e1f143392" category="cell">Der Cloud-Anbieter, bei dem das System bereitgestellt wird (z. B. AWS, Azure oder Google Cloud).</block>
-  <block id="63af7f48ddc938f8833d32b0716868d6" category="cell">Die Kennung für das mit dem System verknüpfte NetApp-Konto.</block>
-  <block id="ad5c67cce7e6fab8ce505f2ae3c2df11" category="cell">Die Bereitstellungskonfiguration des Systems (z. B. Einzelknoten oder HA Pair).</block>
-  <block id="3355bd383b4614928e6109a99305d004" category="cell">Der Name der Storage Virtual Machine (SVM) innerhalb des Cloud Volumes ONTAP Systems.</block>
-  <block id="c5f488f842043ae15f7cfa0e8b69385b" category="cell">Die auf dem SVM bereitgestellte Gesamtkapazität.</block>
-  <block id="f8ae5e430a4359a104373b4d18d6f868" category="cell">Die tatsächlich für die SVM abgerechnete Kapazität. Jede SVM verfügt über eine minimale abrechnungsfähige Kapazität (standardmäßig 4 TiB, wobei dieser Wert je nach Konto variieren kann). Liegt die bereitgestellte Kapazität der SVM auf oder unter diesem Minimum, wird dieser Wert auf das Minimum aufgerundet, andernfalls entspricht er der bereitgestellten Kapazität.</block>
-  <block id="4226ed0668452ac09bb7af302a7c9242" category="cell">Der Abrechnungszeitraum für das zugehörige Marketplace-Abonnement (zum Beispiel stündlich oder jährlich).</block>
-  <block id="ab31194e65fa04061f03e7c38298214e" category="cell">Das mit der SVM verbundene Lizenzpaket oder Feature (zum Beispiel Essentials oder Professional).</block>
-  <block id="aab205b2459de7a7ecd46aff12fc336e" category="cell">Der Name des für die Abrechnung verwendeten Marktplatzabonnements.</block>
-  <block id="2c13015a3d1386955dffbbcbd1c49ce2" category="cell">Die eindeutige Kennung des Marketplace-Abonnements, die für die Abrechnung verwendet wird.</block>
-  <block id="e16dc33bf75ec44279b2f544d4b7a250" category="cell">Gibt an, ob die Volumes der SVM *Primär* (lesen/schreiben) sind und aktiv für Produktionsdaten verwendet werden oder *Sekundär* (DP), also Datensicherungs-Zielvolumes wie SnapMirror-Replikate, die für Backup und Replikation genutzt werden.</block>
-  <block id="de39b41004ed04a88578e2985a04fc6c" category="cell">Die eindeutige Kennung (UUID) und der Anzeigename des Cloud Volumes ONTAP Systems, das das Volume enthält.</block>
-  <block id="0d8e21203d5a81d1fa5620283cbeb8d9" category="cell">Der Name der Storage Virtual Machine (SVM), die das Volume enthält.</block>
-  <block id="e7a38d895cb4f8d8f3a338217e14a339" category="cell">Die eindeutige Kennung des Volumes.</block>
-  <block id="7860112ba253041aab5726c5a5f6777c" category="cell">Der Volume-Typ (zum Beispiel lesen/schreiben oder Datenschutz).</block>
-  <block id="b41f9ba0b51c7f3d54a31c655a83017f" category="cell">Die für das Volume bereitgestellte Gesamtkapazität.</block>
   <block id="b22fac92397ccbd6b8eaeaf6f44f36fe" category="summary">Cloud Volumes ONTAP Instanzen lassen sich in Azure entweder in einer Einzelsystemkonfiguration oder als HA-Paar schnell bereitstellen.</block>
   <block id="f733cea5538d157d9ae59fb10ffe2360" category="summary">Cloud Volumes ONTAP Instanzen lassen sich in einer Einzelsystemkonfiguration oder als HA-Paar in Google Cloud schnell bereitstellen.</block>
   <block id="7c40283f4f533a5903d1033c57ef27f4" category="list-text"><block ref="7c40283f4f533a5903d1033c57ef27f4" category="inline-link-macro-rx"></block></block>
@@ -7443,10 +7258,6 @@
   <block id="19d8bd352f2c40ce75403d13170b311b" category="paragraph">Wenn alle Voraussetzungen erfüllt sind, lassen sich die Schritte im Assistenten ausführen, um Cloud Volumes ONTAP in Google Cloud bereitzustellen.</block>
   <block id="8db3889b9094da1779e8e10e063742d5" category="list-text"><block ref="8db3889b9094da1779e8e10e063742d5" category="inline-link-macro-rx"></block></block>
   <block id="7c9fa6cfa8bf4914f6804681fe5a5c2d" category="list-text"><block ref="7c9fa6cfa8bf4914f6804681fe5a5c2d" category="inline-link-macro-rx"></block></block>
-  <block id="a5ee806b0006dbb717d76ab0978076d5" category="list-text"><block ref="a5ee806b0006dbb717d76ab0978076d5" category="inline-link-rx"></block></block>
-  <block id="795be46eebc5026a1d8753abd5db6e4e" category="list-text"><block ref="795be46eebc5026a1d8753abd5db6e4e" category="inline-link-rx"></block></block>
-  <block id="17bd8adea048946d31406e0958df510f" category="list-text"><block ref="17bd8adea048946d31406e0958df510f" category="inline-link-rx"></block></block>
-  <block id="83cfd515beb90b979f55f0e4df5ae35f" category="list-text"><block ref="83cfd515beb90b979f55f0e4df5ae35f" category="inline-link-rx"></block></block>
   <block id="0375af31d39c4bfde1c980cd053ab2b9" category="doc">Cloud Volumes ONTAP Storage-VMs</block>
   <block id="54448f9a8312c7b08e3e97308160554c" category="paragraph">Eine Storage-VM (SVM) ist eine virtuelle Maschine, die innerhalb von ONTAP ausgeführt wird und Ihren Clients Speicher- sowie Datendienste bereitstellt. Dies ist möglicherweise als _SVM_ oder _vserver_ bekannt. Cloud Volumes ONTAP ist standardmäßig mit einer Storage-VM konfiguriert, aber einige Konfigurationen unterstützen zusätzliche Storage-VMs.</block>
   <block id="3298e455b39f3323fcb1a4a41454ef56" category="doc">Systemschreibgeschwindigkeit in Cloud Volumes ONTAP ändern</block>
@@ -7529,4 +7340,154 @@
   <block id="fce4191353d1af53ceb25c03f87affd6" category="list-text">Hochverfügbarkeit in einer einzelnen Verfügbarkeitszone mit lokal redundantem Speicher (LRS)</block>
   <block id="b13ad1c6dffe5af53f8b858c49f7a32c" category="list-text">Hochverfügbarkeit in mehreren Verfügbarkeitszonen mittels zonenredundantem Speicher (ZRS)</block>
   <block id="668ee036e2ed867c0005914c6da1d380" category="section-title">23. Juli 2026</block>
+  <block id="aafe22f0aac02cfc773f108471a387c4" category="doc">Cloud Volumes ONTAP Integration mit Microsoft OneLake</block>
+  <block id="41aa5ef466861e25c87ddbb36de43edd" category="inline-link">Microsoft OneLake</block>
+  <block id="293c823b8d8e2da1959829a580b33c90" category="inline-link">Microsoft Fabric</block>
+  <block id="4d664b02ce777c1e4699e94fd7d34ae7" category="inline-link">ONTAP S3 Multi-Protokoll</block>
+  <block id="401d011b2377a7c64751160aa39ff55c" category="paragraph">Cloud Volumes ONTAP unterstützt jetzt die Integration mit<block ref="7296f85da7d270a15e9565051e07602b" category="inline-link-rx"></block> in der öffentlichen Vorschau. Cloud Volumes ONTAP kann mit<block ref="df6d917e247d0878fc8f4ddd737f9ab2" category="inline-link-rx"></block> unter Verwendung von<block ref="7296f85da7d270a15e9565051e07602b" category="inline-link-rx"></block> integriert werden, sodass vorhandene Cloud Volumes ONTAP NAS-Daten für Microsoft Analyse- und KI-Dienste wie Power BI, Azure AI Search, OpenAI und Microsoft Copilot verfügbar sind. Für die Integration ist keine Datenverschiebung oder Duplizierung erforderlich. Die Integration verwendet<block ref="f8b4f97863c52739a61ab36e880c3d99" category="inline-link-rx"></block>-Zugriff, um Cloud Volumes ONTAP mit einem bestehenden Microsoft Fabric Lakehouse zu verbinden.</block>
+  <block id="26ce65cbc7dbbe0f87186b28ea7c57b8" category="list-title">Verwandte Artikel und Ressourcen:</block>
+  <block id="a66621d27a6944c58e46d1f565b22143" category="inline-link">NetApp Blog: KI und Analysen mit Microsoft OneLake und NetApp Cloud Volumes ONTAP optimieren</block>
+  <block id="2b4194522887509da7c9b51c70067cea" category="list-text"><block ref="ada46b265e2235c5ece497b9f3c94b84" category="inline-link-rx"></block></block>
+  <block id="ecbaa51ea44293a13a4eb6ca8d26d642" category="inline-link">Cloud Volumes ONTAP Systeme mit Microsoft OneLake für KI und Analysen integrieren</block>
+  <block id="3dad4d1eeaf9a01a63764a9bd6deee29" category="list-text"><block ref="3dad4d1eeaf9a01a63764a9bd6deee29" category="inline-link-rx"></block></block>
+  <block id="a4bbb449ad6bcfc9df369b041d7730ed" category="inline-link">Cloud Volumes ONTAP Integration mit Microsoft OneLake – Technischer Überblick</block>
+  <block id="4271db1842db28d08bc52fe3025bc7b1" category="list-text"><block ref="4271db1842db28d08bc52fe3025bc7b1" category="inline-link-rx"></block></block>
+  <block id="25a7621f5136df7ea1f50ee60bab4529" category="section-title">Konfigurationen für Cloud Volumes ONTAP in Microsoft Azure beheben, verwerfen und reaktivieren</block>
+  <block id="3f2d6026e86cfc3a3e872a2f3cd8f989" category="paragraph">Das übersichtliche Dashboard in NetApp Console bietet jetzt die Möglichkeit, Konfigurationsempfehlungen für Ihre Cloud Volumes ONTAP Systeme zu beheben.</block>
+  <block id="e4eac83bd4922d84fdd323f4afe1066b" category="paragraph">Sie können auch eine oder mehrere Konfigurationen von der Analyse der optimalen Architektur ausschließen. Dadurch ist es möglich, bestimmte Konfigurationen zu ignorieren, die für Ihre Umgebung nicht zutreffen.</block>
+  <block id="d45ddb9ce602eba8b90aee11b1ee25cf" category="paragraph">Wenn Sie eine verworfene Konfiguration später wieder einbinden möchten, können Sie sie im Well-Architected Dashboard reaktivieren. Dadurch wird die Konfiguration in die Analyse zurückgeholt und es werden Empfehlungen und Korrekturen dafür bereitgestellt.</block>
+  <block id="37c159a88b5bcfaeea126c1581ba5f53" category="list-text"><block ref="37c159a88b5bcfaeea126c1581ba5f53" category="inline-link-macro-rx"></block></block>
+  <block id="6cb16892d109192c0cd1c62fbd1330a2" category="summary">Das übersichtliche Dashboard in NetApp Console analysiert regelmäßig die Konfigurationen Ihrer Speichersysteme, um mögliche Konfigurationsprobleme Ihrer Cloud Volumes ONTAP Systeme zu erkennen. Wenn Probleme festgestellt werden, zeigt das Dashboard an, welche Probleme bestehen, und erläutert, welche Änderungen erforderlich sind, damit Ihre Speichersysteme Spitzenleistung, Kosteneffizienz und die Einhaltung bewährter Verfahren erreichen.</block>
+  <block id="d3884a08dbd1a0feb34aaf7e47b2fb8c" category="doc">Konfigurationsanalyse für Cloud Volumes ONTAP auf dem Well-architected Dashboard</block>
+  <block id="1c11d2e59190fe6a4e37f1e68abafcb4" category="paragraph">Zu den wichtigsten Fähigkeiten gehören:</block>
+  <block id="ebc3bf5de769bc75ad8e36a90a0ed695" category="list-text">Tägliche Konfigurationsanalyse</block>
+  <block id="d0367f15d2fd772d543d692442807fa1" category="list-text">Automatische Validierung bewährter Verfahren für NetApp ONTAP Speichersysteme und Partner-Speicheranbieter</block>
+  <block id="3583e4a3e4e2e122cff65b8ad9045348" category="list-text">Proaktive Beobachtbarkeit</block>
+  <block id="16fcd85dc9469370b62b4b46381f8e2a" category="list-text">Erkenntnisse in die Praxis umsetzen</block>
+  <block id="3cf81f2251f5d2b923d6011214221dc4" category="paragraph">Unaufgelöste Direktive in<block ref="c491f271fb4c6f62c68f73c7ad844350" category="inline-link-rx"></block> - include::well-architected-workloads.adoc[]</block>
+  <block id="3f6f8b4e204fd3aa39cac35661de164d" category="section-title">Analyseanforderungen</block>
+  <block id="021c4674734853c034b954078fa080f3" category="inline-link-macro">Einen NetApp Console-Agenten bereitstellen</block>
+  <block id="ed3de084ebd57dfb5d10d8d07d5ff7c2" category="paragraph">Für eine vollständige Cloud Volumes ONTAP Systemanalyse müssen <block ref="19a2c83f86e8c849ea6629f601093445" category="inline-link-macro-rx"></block> Sie die Konnektivität zwischen Ihren Systemen und der NetApp Console einrichten.</block>
+  <block id="f064aed6dd86a2b762ecf9bcf528b941" category="section-title">Bewährte Verfahren und Empfehlungen für Cloud Volumes ONTAP Systeme</block>
+  <block id="df022fa81268ad87abe9b34e29e60ea4" category="paragraph">Das Dashboard für eine optimierte Architektur bewertet Speicherkonfigurationen und bietet einen detaillierten Überblick über Best Practices für die ONTAP-Konfiguration und die Einhaltung des Azure Well-Architected Frameworks. Die Bewertung enthält außerdem Empfehlungen für Verbesserungen und Fehlerbehebungen.</block>
+  <block id="ffd9fc00ab43b8283346c6266e00d684" category="paragraph">Die gut strukturierte Analyse kategorisiert Konfigurationen in den folgenden Säulen des Rahmenwerks: _Zuverlässigkeit_, _Sicherheit_, _operative Exzellenz_, _Kostenoptimierung_ und _Leistungseffizienz_.</block>
+  <block id="820b8f74ad843d1574106ec4cadfc07e" category="section-title">Zuverlässigkeit</block>
+  <block id="f52eaa2b01823c61afb346f01ff37aec" category="paragraph">Zuverlässigkeit gewährleistet, dass Arbeitslasten ihre beabsichtigten Funktionen korrekt und konsistent ausführen, selbst bei Störungen.</block>
+  <block id="ca512a483bb26b1b253abc6b2cc463bd" category="list-text">*Snapshot Policy*</block>
+  <block id="ce36269ae95cd0ab7422d78bb843b720" category="paragraph">Lokale Snapshots für effiziente Datensicherung und schnelle Wiederherstellung einplanen. Snapshots sind sofortige, zeitpunktgenaue Abbilder Ihrer Volumes.</block>
+  <block id="e5cdf4f9c0dda596826a91093d4f69f4" category="list-text">*SSD-Kapazitätsreserve*</block>
+  <block id="e1571d44d672c7a35fe7952a28f414b7" category="paragraph">Die SSD-Speicherebene sollte eine Auslastung von maximal 80 % nicht überschreiten. Dies kann sich auf Lese- und Schreibvorgänge auf Ihrer Kapazitätspool-Speicherebene auswirken und die Durchsatzkapazität Ihres Systems beeinträchtigen. Wenn die Kapazität erschöpft ist, werden Datenvolumes schreibgeschützt. Dienste, die versuchen, neue Daten zu schreiben, schlagen ebenfalls fehl.</block>
+  <block id="7d7265a6929882bb433fc74e8bee871a" category="paragraph">Sicherheit betont den Schutz von Daten, Systemen und Vermögenswerten durch Risikobewertungen und Risikominderungsstrategien.</block>
+  <block id="d08117d717007eeb4d6273695d9a7725" category="list-text">*Autonomer Ransomware-Schutz mit KI (ARP/AI)*</block>
+  <block id="167fce45da752e074139dbfd85f1d96d" category="paragraph">NetApp Autonomous Ransomware Protection mit KI (ARP/AI) trägt zur Verbesserung der Cyber-Resilienz bei und schützt Ihre Volumes vor Ransomware-Bedrohungen. Es wird empfohlen, ARP/AI für alle Volumes zu aktivieren.</block>
+  <block id="17d2a91a4f3c01de4c2f05b2242e49d3" category="section-title">Operative Exzellenz</block>
+  <block id="84c2d06d655e822b38b222df9c0aa965" category="paragraph">Operative Exzellenz konzentriert sich auf die Bereitstellung der besten Architektur und des besten Geschäftswerts.</block>
+  <block id="bca05dfe73df2536775bb543bb367fb6" category="list-text">*Freier Volumenkapazitätsspielraum*</block>
+  <block id="70a83d0e2246f9bf751ee82d9d86782a" category="paragraph">Es wird empfohlen, dass die Volume-Kapazität eine Auslastung von 80 % nicht überschreitet. Dies kann Auswirkungen auf Lese- und Schreibvorgänge Ihrer Anwendung haben. Volume-Kapazitätserhöhungen können manuell oder automatisch mithilfe der Volume automatische Größenanpassung-Funktion erfolgen.</block>
+  <block id="cb24245fc7fbb951739f0e037e8ed58f" category="list-text">*FlexCache Schreibmodus*</block>
+  <block id="fce6ac16b523a1ae826c8b02fe97af9a" category="paragraph">Für optimale Leistung wird der FlexCache Schreibmodus empfohlen, der am besten zu Ihrer Arbeitslast passt. Der Write-Around-Modus bietet eine bessere Leistung für leseintensive Arbeitslasten mit kleinen Dateien, während der Write-Back-Modus eine bessere Leistung für schreibintensive Arbeitslasten mit großen Dateien bietet.</block>
+  <block id="199b5a17e840b5e8165065942a5aba7f" category="list-text">*FlexCache Replika-Größe*</block>
+  <block id="7cba8fc6d012368d0bb1868a9da3aebb" category="paragraph">Es wird empfohlen, die automatische Größenanpassung und das Scrubbing auf Cache-Volumes zu aktivieren, um eine optimale Größe beizubehalten und den Cache auf häufig genutzte (heiße) Daten für maximale Effizienz zu fokussieren.</block>
+  <block id="7f14df7d96b168d75780c47437a63021" category="list-text">*ONTAP Versionskonformität*</block>
+  <block id="3bbb5a399ebdfb8d2d4a8a5c7bafb3fb" category="paragraph">Ein Upgrade auf die neueste ONTAP Version gewährleistet volle Kompatibilität, Support und Zugriff auf neue Funktionen.</block>
+  <block id="a39ae09f8be4327fc176cfeb76a0e366" category="section-title">Kostenoptimierung</block>
+  <block id="394c926099d3d2cf7e0d7477f17faf38" category="paragraph">Kostenoptimierung hilft Ihnen, den größtmöglichen Nutzen für Ihr Unternehmen zu erzielen und gleichzeitig die Kosten niedrig zu halten.</block>
+  <block id="8611faa768b220ecb3795c6fda54fdaa" category="list-text">*Überdimensionierte SSD-Kapazität*</block>
+  <block id="aafa79fe1c7925cadee2f2931c5a90a6" category="paragraph">Eine überdimensionierte SSD-Kapazitätsebene verursacht unnötige Kosten. Es wird empfohlen, die SSD-Kapazität zu reduzieren und dabei einen freien Speicherplatzpuffer von 20 % beizubehalten. Eine Reduzierungsoperation kann mehrere Stunden bis mehrere Tage dauern, und andere Dateisystemoperationen werden in dieser Zeit nicht unterstützt.</block>
+  <block id="01fd10a8e7ac161e328da4eaf6292046" category="list-text">*Kalte Datenauslagerung*</block>
+  <block id="038dede88376955fc6f5dc23c8915a6f" category="paragraph">Die Tiering-Funktion für kalte Daten ermöglicht das Verschieben kalter Daten von der SSD-Speicherebene in kostengünstigeren Speicher. Es wird empfohlen, für jedes Volume eine Tiering-Richtlinie anzuwenden. Azure Blob Storage dient als Kapazitätsebene für inaktive Daten.</block>
+  <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">Was kommt als Nächstes</block>
+  <block id="8a4fd5d300e707a9269f6215138076a2" category="paragraph"><block ref="8a4fd5d300e707a9269f6215138076a2" category="inline-link-macro-rx"></block></block>
+  <block id="e99c9a581ad7f3ee001ba4518d21895d" category="list-text"><block ref="e99c9a581ad7f3ee001ba4518d21895d" category="inline-link-rx"></block></block>
+  <block id="1ec0779bb7e51cbc27ab486c62ef2d11" category="list-text">Der Instanztyp r5.12xlarge weist eine bekannte Einschränkung hinsichtlich der Supportfähigkeit auf. Wenn ein Knoten aufgrund eines Systemabsturzes unerwartet neu startet, werden möglicherweise keine Core-Dateien erfasst, die zur Fehlerbehebung und Ursachenanalyse benötigt werden. Der Kunde akzeptiert die damit verbundenen Risiken und die eingeschränkten Supportbedingungen und trägt die volle Verantwortung für den Support, falls dieser Fall eintritt. Diese Einschränkung betrifft neu bereitgestellte HA Paare sowie HA Paare, die von Version 9.8 aktualisiert wurden. Neu bereitgestellte Einzelknotensysteme sind von dieser Einschränkung nicht betroffen.</block>
+  <block id="6c826d16193263c31494836004943717" category="summary">Cloud Volumes ONTAP mit ONTAP S3 Multi-Protokollzugriff konfigurieren, sodass Azure AI-Dienste Daten lesen können, die in Ihren Cloud Volumes ONTAP Systemen über Microsoft OneLake gespeichert sind.</block>
+  <block id="e95a1d02467b7046c0090db76aa4420a" category="paragraph">Sie können Cloud Volumes ONTAP mit<block ref="df6d917e247d0878fc8f4ddd737f9ab2" category="inline-link-rx"></block> unter Verwendung von<block ref="7296f85da7d270a15e9565051e07602b" category="inline-link-rx"></block> integrieren, um vorhandene Cloud Volumes ONTAP NAS-Daten für Microsoft Analytics- und KI-Dienste wie Power BI, Azure AI Search, OpenAI und Microsoft Copilot verfügbar zu machen. Für die Integration ist keine Datenverschiebung oder Duplizierung erforderlich. Die Integration verwendet<block ref="f8b4f97863c52739a61ab36e880c3d99" category="inline-link-rx"></block>-Zugriff, um Cloud Volumes ONTAP mit einem bestehenden Microsoft Fabric lakehouse zu verbinden.</block>
+  <block id="14fa8bd582301929e8385f26fb4ec09f" category="section-title">Ein Stamm-CA-Zertifikat für den ONTAP S3 Server erstellen</block>
+  <block id="e691fa86faf7caa89b9c040d851cff9c" category="paragraph">Ein Zertifikat ist erforderlich, um HTTPS-Verbindungen zwischen Microsoft OneLake und dem ONTAP S3 Server abzusichern. In diesem Verfahren wird ein Root-CA-Zertifikat auf Cloud Volumes ONTAP erstellt und ein signiertes Zertifikat für den ONTAP S3 Server generiert.</block>
+  <block id="2f5c4a8b4f40d04dc60b798b4f87d61b" category="inline-link">Erstellen und Installieren eines CA-Zertifikats auf einer ONTAP S3-fähigen SVM</block>
+  <block id="62198aa1c9add9893371192b1f2f6e2f" category="paragraph">Weitere Informationen zum Erstellen und Installieren eines CA-Zertifikats sind unter <block ref="4bf7ae93337dbf9f9de9c16f2d492cf8" category="inline-link-rx"></block> zu finden.</block>
+  <block id="7274530d966eaaa657523240e14811f5" category="paragraph">Stellen Sie sicher, dass ein laufendes Cloud Volumes ONTAP System vorhanden ist, bevor der Integrationsprozess gestartet wird.</block>
+  <block id="ae31cff41732cc696d2678333829f065" category="list-text">Eine Verbindung zum Cloud Volumes ONTAP System kann über SSH von einer VM in Ihrem virtuellen Netzwerk (vNet) oder über Azure Bastion hergestellt werden.</block>
+  <block id="81403d48012b3b2861e271a61f7a2829" category="list-text">Ein Stammzertifikat einer Zertifizierungsstelle erstellen.</block>
+  <block id="cabbc139b7f74771c47e3eb24d94c92b" category="paragraph">Beispielsweise</block>
+  <block id="b0058fd04d6de71a4c58b1e445912da1" category="list-text">Eine Zertifikatsignierungsanforderung (CSR) und einen privaten Schlüssel generieren.</block>
+  <block id="6e804ca81415bed642c117104afeac86" category="admonition">Wählen Sie einen vollqualifizierte Domainnamen (FQDN) für den ONTAP S3-Endpunkt (S3-Servernamen), zum Beispiel<block ref="eceb512539b427304ff3412519742a01" prefix=" " category="inline-code"></block>, und geben Sie ihn als Wert sowohl für die<block ref="54a24d5e55eeb31ed1eb935137d8595c" prefix=" " category="inline-code"></block>- als auch die<block ref="754e76564b6efaebbac938540dd62673" prefix=" " category="inline-code"></block>-Parameter an. Dieser Wert wird später bei der Konfiguration des ONTAP S3-Servers benötigt.</block>
+  <block id="c645bc85add0f467cf08ebcd6f31ebd5" category="list-text">Der Befehl generiert eine CSR und einen privaten Schlüssel. Beide Werte sollten kopiert und gespeichert werden. Die CSR wird im nächsten Schritt benötigt und der private Schlüssel später bei der Konfiguration des ONTAP S3 Service. Die CSR und der private Schlüssel sind aus der Ausgabe zu kopieren.</block>
+  <block id="67d09aace1a958f33bfaba43d85f7fe8" category="list-text">Die Zertifikatsanforderung wird mit dem Stammzertifikat der Zertifizierungsstelle signiert. Bei entsprechender Aufforderung ist der im vorherigen Schritt generierte CSR einzufügen.</block>
+  <block id="f2fe9285b875b0313c11d840886f4700" category="list-text"><block ref="dca93174085e70cccb0a8f1c070c09a0" prefix="" category="inline-code"></block> - Name des Root-CA-Zertifikats</block>
+  <block id="f00b6bdf3ff69b5bfe100f570af8512e" category="list-text"><block ref="c16b945125c7d944777f2b1cceb74253" prefix="" category="inline-code"></block> - die CA-Seriennummer</block>
+  <block id="32a525d1da59ec756e385cdc706f5ec6" category="list-text">Der Befehl gibt ein signiertes Zertifikat zurück. Der Zertifikatsinhalt sollte kopiert und gespeichert werden. Dieses Zertifikat und der im vorherigen Schritt generierte private Schlüssel werden bei der Konfiguration des ONTAP S3 Servers verwendet.</block>
+  <block id="aa6a1bd436e65d602a070b35436dfd9d" category="section-title">Cloud Volumes ONTAP S3 konfigurieren</block>
+  <block id="064a2c328012b70c51cbf8f3bd2fe2d5" category="paragraph">Der ONTAP S3 Multi-Protokoll-Zugriff wird so konfiguriert, dass OneLake das Lesen von Daten ermöglicht, die in Ihren Cloud Volumes ONTAP Volumes gespeichert sind.</block>
+  <block id="b7b2d385336edfb847c70a604f0a9e78" category="list-text">ONTAP S3 für das Cloud Volumes ONTAP System konfigurieren.</block>
+  <block id="84e08e813880edfaf996a3619b39b002" category="list-text">In der NetApp Console im linken Navigationsmenü *Speicher &gt; Verwaltung* auswählen.</block>
+  <block id="d6beb0ccdf1bc3f6e242cc54c51be5b4" category="list-text">Einen Console-Agenten auswählen und dann auf das Cloud Volumes ONTAP System klicken, anschließend in den Menüoptionen auf der rechten Seite *System Manager* auswählen.</block>
+  <block id="f50e5bc31425433da453f5ee0ae8e51e" category="inline-link-macro">ONTAP Dokumentation: S3-Clientzugriff auf NAS-Daten ermöglichen</block>
+  <block id="6b40b000796d51a4e8a6dd7126ced660" category="list-text">S3-Protokollzugriff auf der SVM aktivieren. Weitere Informationen sind in der <block ref="dbeab464985e009bbabd1dd197ac5939" category="inline-link-macro-rx"></block> zu finden.</block>
+  <block id="5e008871c60258045027f49ef4835f65" category="admonition">Während der Konfiguration werden das im vorherigen Abschnitt erstellte signierte Zertifikat und der private Schlüssel verwendet.</block>
+  <block id="55bafea40aa0e49bf37c468d9e242f53" category="image-alt">Screenshot der ONTAP S3 SVM Konfiguration</block>
+  <block id="95f74072e94491e390b2ad94e50b9b19" category="list-text">*Die für das SMB/CIFS- oder NFS-Protokoll verwendete Datenschnittstelle wiederverwenden.* auswählen, um die vorhandene LIF wiederzuverwenden oder eine neue Daten-LIF zu konfigurieren.</block>
+  <block id="6dbcfd0a27aeb89ed693dcf158bc6e26" category="list-text">Kopieren und speichern Sie den Zugriffsschlüssel und den geheimen Zugriffsschlüssel. Diese Anmeldeinformationen werden beim Erstellen der OneLake Verknüpfung benötigt.</block>
+  <block id="4d752f7b53d4730eb25b7e4bab2d74bc" category="list-text">Eine schreibgeschützte Gruppe ermöglicht den Zugriff auf die S3-Buckets aus OneLake.</block>
+  <block id="e52bee75bef3c5a46ef4613b86e9830f" category="list-text">Nachdem der S3-Server aktiviert wurde, den S3-Server konfigurieren und eine neue Gruppe hinzufügen. *Gruppen* auswählen und *Hinzufügen* auswählen.</block>
+  <block id="ba64542a5520c4dc9669fc65a53a4066" category="list-text">Eine neue Gruppe mit dem S3-Benutzer, der im vorherigen Schritt automatisch erstellt wurde, hinzufügen und ihr die <block ref="cfa5c6b0fe5c9c78f025a2833355f6cf" prefix=" " category="inline-code"></block> Richtlinie zuweisen.</block>
+  <block id="447a706505ecbdc86aaf726d55fbe626" category="image-alt">Screenshot Onelake S3 GRP</block>
+  <block id="378210ad44a694f6ef45d4433d52e23c" category="section-title">Einen S3 NAS-Bucket erstellen</block>
+  <block id="e5d2716119163ccfee52c270b98e14c3" category="inline-link-macro">ONTAP Dokumentation: Erstellen eines S3 NAS-Buckets</block>
+  <block id="b382fb5c130ba2293afd6a8d55e56632" category="paragraph">Erstellen Sie einen S3 NAS-Bucket. Weitere Informationen finden sich in der <block ref="50308563aff554c7d4eb86ecb557c148" category="inline-link-macro-rx"></block>.</block>
+  <block id="e883cb6de789c38add1bc2e1fcd07ccd" category="admonition">Wählen Sie beim Erstellen des Buckets das NAS-Volume aus, das die Daten enthält, die Sie über OneLake verfügbar machen möchten.</block>
+  <block id="35c38964ebdc43e7241fadfbff972faf" category="section-title">Microsoft On-Premises Data Gateway installieren und konfigurieren</block>
+  <block id="4d68fcf2ed49734174a583f55b985474" category="paragraph">Ein Microsoft On-Premises-Datengateway wird auf einer virtuellen Maschine im selben virtuellen Netzwerk (vNet) wie das Cloud Volumes ONTAP System installiert und konfiguriert. Das Cloud Volumes ONTAP Root-CA-Zertifikat wird auf der virtuellen Maschine installiert, um Vertrauen für HTTPS-Verbindungen zum ONTAP S3 Server herzustellen.</block>
+  <block id="deca143cbb2ed3185eae88ad300c852f" category="list-text">Es muss eine Netzwerkverbindung zwischen der VM und dem ONTAP S3 Server bestehen, der im vorherigen Abschnitt erstellt wurde.</block>
+  <block id="7a1c98bf276eb5b82ffacb6ddedc47dc" category="list-text">Es wird sichergestellt, dass der zuvor konfigurierte ONTAP S3-Servername zur IP-Adresse der dem ONTAP S3-Server zugewiesenen Datenschnittstelle (LIF) aufgelöst wird und dass die VM diesen Namen erfolgreich auflösen kann.</block>
+  <block id="1a4eaa32a33ff44ee78c16ff34eb4910" category="list-text">Das CA-Zertifikat von Cloud Volumes ONTAP installieren.</block>
+  <block id="f32f838bea15935850e3df15b3f9c3c2" category="list-text">Öffnen Sie einen Browser auf der VM und navigieren Sie zu Ihrem S3-Server:<block ref="1cfe437221cfb69705aeb922769764fb" prefix=" " category="inline-code"></block></block>
+  <block id="42af570b9fa9f4a361b0e255be4ec545" category="list-text">Das Schlosssymbol in der Adressleiste auswählen und anschließend *Zertifikatdetails* wählen.</block>
+  <block id="1e83331d7566d6eec86c36a12d51ea89" category="list-text">Im Fenster *Zertifikatsanzeige* die Registerkarte *Details* auswählen und anschließend die erste Zeile der Stammzertifizierungsstelle in der Zertifikatsliste auswählen.</block>
+  <block id="2aba31027fa6ff9cf745197efbf9a10a" category="image-alt">Screenshot des OneLake Downloadzertifikats</block>
+  <block id="75c5753d8bfd764dd89cf6c91e610d0f" category="list-text">*Export...* auswählen und die Datei lokal im <block ref="e412c8a99ed51e5b86824e8b7d756a2b" prefix=" " category="inline-code"></block> Format speichern.</block>
+  <block id="f3f224d2d526cea1a346d7b5ced71edd" category="image-alt">Screenshot Onelake Speicherzertifikat</block>
+  <block id="5dfb75bae8a540cb907c10b85ca50436" category="list-text">Öffnen Sie die gespeicherte Zertifikatsdatei und wählen Sie *Zertifikat installieren...*.</block>
+  <block id="92aa554fddbca200279fa3cf42c83c99" category="image-alt">Screenshot Onelake Installationszertifikat</block>
+  <block id="926b80c1bb279afad9f542cac78ce77a" category="list-text">Im *Zertifikatimport-Assistenten* wird *Lokaler Computer* ausgewählt und das Zertifikat im Speicher *Vertrauenswürdige Stammzertifizierungsstellen* abgelegt.</block>
+  <block id="0e9a00255c68bc133b23dd018b839d18" category="image-alt">Screenshot Onelake Importzertifikat</block>
+  <block id="cec46f4bbf37b840e07991def5e1919c" category="list-text">Folgen Sie den Anweisungen, um die Zertifikatsinstallation abzuschließen.</block>
+  <block id="254be0043ca16660bb9a6cde6f3c70bd" category="list-text">Die Zertifikatsinstallation lässt sich überprüfen, indem ein neues Browserfenster geöffnet und zu <block ref="1cfe437221cfb69705aeb922769764fb" prefix=" " category="inline-code"></block> navigiert wird. Der ONTAP S3 Server sollte eine XML-Zugriffsverweigerungsantwort zurückgeben, was darauf hinweist, dass die HTTPS-Kommunikation ordnungsgemäß funktioniert.</block>
+  <block id="6bba9c35bd0e410071db2365d0b1cfb2" category="inline-link-macro">Microsoft-Dokumentation: Installation eines lokalen Datengateways</block>
+  <block id="62f82bc3e72da2ef18bd77f4d818fbba" category="list-text">Das Microsoft On-Premises-Datengateway wird im Standardmodus auf der VM heruntergeladen und installiert. Die Installationsschritte sind unter <block ref="648f317920c9c087f5967c6a4d208e54" category="inline-link-macro-rx"></block> zu finden.</block>
+  <block id="8bd69f72a99d18acb81561400d465b39" category="section-title">Verbindung mit OneLake herstellen</block>
+  <block id="71ad988e7d81584ac0905427a405414d" category="paragraph">Erstellen Sie eine Amazon S3-kompatible Verknüpfung in Ihrem Microsoft Fabric Lakehouse, um auf Daten zuzugreifen, die in Ihrem Cloud Volumes ONTAP S3 Bucket gespeichert sind.</block>
+  <block id="0cc8a8b1def64a9596a7806e33d89008" category="inline-link">Microsoft Fabric Lakehouse</block>
+  <block id="5c41707375217d5774ec4df49ce5ee2d" category="list-text">Ein bereits <block ref="16c464d9b04db81a799a840a122d3e49" category="inline-link-rx"></block> in Ihrem Arbeitsbereich vorhandener Eintrag.</block>
+  <block id="aa2e561bb80c9f0deb95519e48c8d526" category="list-text">In Ihrer Umgebung unter *Einstellungen &gt; Verbindungen und Gateways verwalten* prüfen, ob Ihr lokales Datengateway aufgeführt und verbunden ist.</block>
+  <block id="36760beb3d6982a0808f11e3ab45b1f8" category="list-text">Das Cloud Volumes ONTAP Root-CA-Zertifikat ist auf der Gateway-VM installiert.</block>
+  <block id="523915e3ac05d7eb77c44a3ad36a8da8" category="list-text">Aus den vorherigen Schritten stehen Ihnen folgende Werte zur Verfügung:</block>
+  <block id="b084129971df6058a444733035c94274" category="list-text">ONTAP S3 Servername (FQDN)</block>
+  <block id="47b84fd1609df93c987377c912e3baf1" category="list-text">Zugangsschlüssel</block>
+  <block id="864021d1cb190319b62722e58e59a8bf" category="list-text">Geheimer Zugriffsschlüssel</block>
+  <block id="9f2f3fb652a717ec609f008c506d7109" category="inline-link">Microsoft-Dokumentation: Erstellen einer Amazon S3-kompatiblen Verknüpfung</block>
+  <block id="e8a5f0d9837152fe195b7fa5ee95c607" category="list-text">Erstellen Sie in Ihrem Lakehouse eine Amazon S3-kompatible Verknüpfung zu Ihrem Cloud Volumes ONTAP S3-Bucket mithilfe der folgenden Angaben. Die Schritte zum Erstellen der Verknüpfung finden sich unter <block ref="f7e880ccf9455eef5a4471da8517bb63" category="inline-link-rx"></block>.</block>
+  <block id="734d0b6c4dc32b630667e753675428df" category="list-text">URL: Der ONTAP S3 Server im Format<block ref="a731622740a2cf06d4b2bf92e429dd07" prefix=" " category="inline-code"></block></block>
+  <block id="b8fe5746b187f5e7f6a82fbb26512ea3" category="list-text">Datengateway: Das lokale Datengateway, das zuvor konfiguriert wurde</block>
+  <block id="d407ce3c6418b602c5e62d17e75153e2" category="list-text">Zugriffsschlüssel-ID</block>
+  <block id="f03154f7f37caaaf71be53099307d2dd" category="image-alt">Screenshot Onelake Shortcut1</block>
+  <block id="a919cd6db92990e9b06efbf013b4fdcf" category="list-text">Nachdem die Verknüpfung erstellt wurde, wird angezeigt, ob sie unter *Explorer &gt; Dateien* im Lakehouse erscheint und ob die im Cloud Volumes ONTAP Volume gespeicherten Dateien über die Verknüpfung durchsuchbar sind.</block>
+  <block id="c4def819c84308172fa9bda9ea6e62a6" category="image-alt">Screenshot, der die bestätigte Cloud Volumes ONTAP S3-Verknüpfung unter „Dateien“ im OneLake lakehouse Explorer-Bereich anzeigt.</block>
+  <block id="876e2bd10a8ed908ec1b5d07f979b521" category="section-title">Nächste Schritte: Daten mit Azure AI Search indizieren</block>
+  <block id="30417398e9fe4a1bffd15ca2840d9bb0" category="paragraph">Nach dem Erstellen der OneLake-Verknüpfung kann Azure AI Search so konfiguriert werden, dass die in Ihren Cloud Volumes ONTAP Volumes gespeicherten Daten über OneLake indiziert werden. Die Azure AI Search Indizierung ermöglicht die Nutzung der Daten durch KI-Anwendungen wie Microsoft Copilot und Azure OpenAI.</block>
+  <block id="5edb5e6aaf1d17e92c8915d0f28994f7" category="inline-link-macro">Die Microsoft-Dokumentation: Indizierung von OneLake-Dateien</block>
+  <block id="d04ad284d76f9123254a30d0ddecc3dd" category="paragraph">Weitere Informationen finden sich unter <block ref="55c5b78106d0736636dce6f21b4ff462" category="inline-link-macro-rx"></block>.</block>
+  <block id="0bcc8ae219242a12ec94651af9fe6e6b" category="inline-link">NetApp Blog über Cloud Volumes ONTAP und OneLake</block>
+  <block id="458db05f958d70be08a09aebeef50565" category="list-text"><block ref="458db05f958d70be08a09aebeef50565" category="inline-link-rx"></block></block>
+  <block id="4d26941d9dd1a06ff5e94d3e55813b8d" category="inline-link">Microsoft OneLake Lakehouse</block>
+  <block id="ea970970524902af2a462dc7113321ed" category="list-text"><block ref="ea970970524902af2a462dc7113321ed" category="inline-link-rx"></block></block>
+  <block id="31645afcb22716068ebb80125c566fe7" category="inline-link">Microsoft-Dokumentation: Was ist Azure AI Search?</block>
+  <block id="053caf626e9d43c46f92fe521566f3b6" category="list-text"><block ref="053caf626e9d43c46f92fe521566f3b6" category="inline-link-rx"></block></block>
+  <block id="943927e98f08f5eceb9f92c4aa75b01e" category="inline-link">ONTAP Dokumentation: ONTAP S3 Multi-Protokollunterstützung</block>
+  <block id="0deac7ad5245fcfcbef0120b299cd7a5" category="list-text"><block ref="0deac7ad5245fcfcbef0120b299cd7a5" category="inline-link-rx"></block></block>
+  <block id="ec8ffaaa6739d3cbfaf04807424e73ec" category="paragraph">include::https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-capacity-licenses.adoc[lines=15..-1]</block>
+  <block id="986293de703cc99b95fc2636d61190e5" category="paragraph">include::https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-node-based-licenses.adoc[lines=15..-1]</block>
+  <block id="91d90ea5487ed9ed44e834f42f272ccb" category="section-title">03. August 2026</block>
+  <block id="1c1a960c3a731e7c8f48049e14d10120" category="sidebar">Cloud Volumes ONTAP und Microsoft OneLake</block>
+  <block id="cabae2c7e02c764400d120dec64c7495" category="sidebar">Cloud Volumes ONTAP und Well-architected Dashboard</block>
 </blocks>

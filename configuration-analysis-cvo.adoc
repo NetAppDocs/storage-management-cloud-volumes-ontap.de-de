@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: configuration-analysis-cvo.html 
+keywords: Cloud Volumes ONTAP, license, well-architected, WAD, CVO 
+summary: Das übersichtliche Dashboard in NetApp Console analysiert regelmäßig die Konfigurationen Ihrer Speichersysteme, um mögliche Konfigurationsprobleme Ihrer Cloud Volumes ONTAP Systeme zu erkennen. Wenn Probleme festgestellt werden, zeigt das Dashboard an, welche Probleme bestehen, und erläutert, welche Änderungen erforderlich sind, damit Ihre Speichersysteme Spitzenleistung, Kosteneffizienz und die Einhaltung bewährter Verfahren erreichen. 
+---
+= Konfigurationsanalyse für Cloud Volumes ONTAP auf dem Well-architected Dashboard
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: https://docs.netapp.com/us-en/console-well-architected/media/
+
+
+[role="lead"]
+Das übersichtliche Dashboard in NetApp Console analysiert regelmäßig die Konfigurationen Ihrer Speichersysteme, um mögliche Konfigurationsprobleme Ihrer Cloud Volumes ONTAP Systeme zu erkennen. Wenn Probleme festgestellt werden, zeigt das Dashboard an, welche Probleme bestehen, und erläutert, welche Änderungen erforderlich sind, damit Ihre Speichersysteme Spitzenleistung, Kosteneffizienz und die Einhaltung bewährter Verfahren erreichen.
+
+Zu den wichtigsten Fähigkeiten gehören:
+
+* Tägliche Konfigurationsanalyse
+* Automatische Validierung bewährter Verfahren für NetApp ONTAP Speichersysteme und Partner-Speicheranbieter
+* Proaktive Beobachtbarkeit
+* Erkenntnisse in die Praxis umsetzen
+
+
+Unaufgelöste Direktive in https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[] - include::well-architected-workloads.adoc[]
+
+
+
+[[analysis-requirements]]
+== Analyseanforderungen
+
+Für eine vollständige Cloud Volumes ONTAP Systemanalyse müssen link:https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html#agent-console-deploy["Einen NetApp Console-Agenten bereitstellen"^] Sie die Konnektivität zwischen Ihren Systemen und der NetApp Console einrichten.
+
+
+
+[[best-practices-and-recommendations-for-cloud-volumes-ontap-systems]]
+== Bewährte Verfahren und Empfehlungen für Cloud Volumes ONTAP Systeme
+
+Das Dashboard für eine optimierte Architektur bewertet Speicherkonfigurationen und bietet einen detaillierten Überblick über Best Practices für die ONTAP-Konfiguration und die Einhaltung des Azure Well-Architected Frameworks. Die Bewertung enthält außerdem Empfehlungen für Verbesserungen und Fehlerbehebungen.
+
+Die gut strukturierte Analyse kategorisiert Konfigurationen in den folgenden Säulen des Rahmenwerks: _Zuverlässigkeit_, _Sicherheit_, _operative Exzellenz_, _Kostenoptimierung_ und _Leistungseffizienz_.
+
+
+
+[[reliability]]
+=== Zuverlässigkeit
+
+Zuverlässigkeit gewährleistet, dass Arbeitslasten ihre beabsichtigten Funktionen korrekt und konsistent ausführen, selbst bei Störungen.
+
+* *Snapshot Policy*
++
+Lokale Snapshots für effiziente Datensicherung und schnelle Wiederherstellung einplanen. Snapshots sind sofortige, zeitpunktgenaue Abbilder Ihrer Volumes.
+
+* *SSD-Kapazitätsreserve*
++
+Die SSD-Speicherebene sollte eine Auslastung von maximal 80 % nicht überschreiten. Dies kann sich auf Lese- und Schreibvorgänge auf Ihrer Kapazitätspool-Speicherebene auswirken und die Durchsatzkapazität Ihres Systems beeinträchtigen. Wenn die Kapazität erschöpft ist, werden Datenvolumes schreibgeschützt. Dienste, die versuchen, neue Daten zu schreiben, schlagen ebenfalls fehl.
+
+
+
+
+
+[[security]]
+=== Sicherheit
+
+Sicherheit betont den Schutz von Daten, Systemen und Vermögenswerten durch Risikobewertungen und Risikominderungsstrategien.
+
+* *Autonomer Ransomware-Schutz mit KI (ARP/AI)*
++
+NetApp Autonomous Ransomware Protection mit KI (ARP/AI) trägt zur Verbesserung der Cyber-Resilienz bei und schützt Ihre Volumes vor Ransomware-Bedrohungen. Es wird empfohlen, ARP/AI für alle Volumes zu aktivieren.
+
+
+
+
+
+[[operational-excellence]]
+=== Operative Exzellenz
+
+Operative Exzellenz konzentriert sich auf die Bereitstellung der besten Architektur und des besten Geschäftswerts.
+
+* *Freier Volumenkapazitätsspielraum*
++
+Es wird empfohlen, dass die Volume-Kapazität eine Auslastung von 80 % nicht überschreitet. Dies kann Auswirkungen auf Lese- und Schreibvorgänge Ihrer Anwendung haben. Volume-Kapazitätserhöhungen können manuell oder automatisch mithilfe der Volume automatische Größenanpassung-Funktion erfolgen.
+
+* *FlexCache Schreibmodus*
++
+Für optimale Leistung wird der FlexCache Schreibmodus empfohlen, der am besten zu Ihrer Arbeitslast passt. Der Write-Around-Modus bietet eine bessere Leistung für leseintensive Arbeitslasten mit kleinen Dateien, während der Write-Back-Modus eine bessere Leistung für schreibintensive Arbeitslasten mit großen Dateien bietet.
+
+* *FlexCache Replika-Größe*
++
+Es wird empfohlen, die automatische Größenanpassung und das Scrubbing auf Cache-Volumes zu aktivieren, um eine optimale Größe beizubehalten und den Cache auf häufig genutzte (heiße) Daten für maximale Effizienz zu fokussieren.
+
+* *ONTAP Versionskonformität*
++
+Ein Upgrade auf die neueste ONTAP Version gewährleistet volle Kompatibilität, Support und Zugriff auf neue Funktionen.
+
+
+
+
+
+[[cost-optimization]]
+=== Kostenoptimierung
+
+Kostenoptimierung hilft Ihnen, den größtmöglichen Nutzen für Ihr Unternehmen zu erzielen und gleichzeitig die Kosten niedrig zu halten.
+
+* *Überdimensionierte SSD-Kapazität*
++
+Eine überdimensionierte SSD-Kapazitätsebene verursacht unnötige Kosten. Es wird empfohlen, die SSD-Kapazität zu reduzieren und dabei einen freien Speicherplatzpuffer von 20 % beizubehalten. Eine Reduzierungsoperation kann mehrere Stunden bis mehrere Tage dauern, und andere Dateisystemoperationen werden in dieser Zeit nicht unterstützt.
+
+* *Kalte Datenauslagerung*
++
+Die Tiering-Funktion für kalte Daten ermöglicht das Verschieben kalter Daten von der SSD-Speicherebene in kostengünstigeren Speicher. Es wird empfohlen, für jedes Volume eine Tiering-Richtlinie anzuwenden. Azure Blob Storage dient als Kapazitätsebene für inaktive Daten.
+
+
+
+.Was kommt als Nächstes
+link:https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html["Gut strukturierte Cloud Volumes ONTAP Systemkonfigurationen implementieren"]
+
+.Weiterführender Link
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#well-architected-configuration-analysis-for-cloud-volumes-ontap-in-azure["Gut strukturierte Konfigurationsanalyse für Cloud Volumes ONTAP in Azure"^]
+
