@@ -4,7 +4,7 @@ permalink: configuration-analysis-cvo.html
 keywords: Cloud Volumes ONTAP, license, well-architected, WAD, CVO 
 summary: Das übersichtliche Dashboard in NetApp Console analysiert regelmäßig die Konfigurationen Ihrer Speichersysteme, um mögliche Konfigurationsprobleme Ihrer Cloud Volumes ONTAP Systeme zu erkennen. Wenn Probleme festgestellt werden, zeigt das Dashboard an, welche Probleme bestehen, und erläutert, welche Änderungen erforderlich sind, damit Ihre Speichersysteme Spitzenleistung, Kosteneffizienz und die Einhaltung bewährter Verfahren erreichen. 
 ---
-= Konfigurationsanalyse für Cloud Volumes ONTAP auf dem Well-architected Dashboard
+= Konfigurationsanalyse für Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
