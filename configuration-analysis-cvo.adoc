@@ -24,7 +24,7 @@ Zu den wichtigsten Fähigkeiten gehören:
 * Erkenntnisse in die Praxis umsetzen
 
 
-Unaufgelöste Direktive in https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[] - include::well-architected-workloads.adoc[]
+Unaufgelöste Direktive in  https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[] - include::_include/well-architected-workloads.adoc[]
 
 
 
