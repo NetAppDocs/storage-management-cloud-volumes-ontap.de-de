@@ -7286,7 +7286,6 @@
   <block id="2e5d14f7919ff3c6138e7845aec4f915" category="sidebar">Unterstützte Versionen</block>
   <block id="c4d6a904ef528003bf03bc2e65cffd26" category="sidebar">Unterstützter Upgrade-Pfad</block>
   <block id="ed2ddb015b7b7b651921053fc149d928" category="sidebar">Informationen zur Verschlüsselung</block>
-  <block id="757c7a545c3639d3a6d5c6664431b930" category="sidebar">Leistungsüberwachung für Cloud Volumes ONTAP Workloads</block>
   <block id="a470b9079d65fd390c8d7493dec5f4e9" category="sidebar">Unterstützte Konfiguration</block>
   <block id="a7370487cf69c78f7ad768c8dae41fd6" category="sidebar">Netzwerk- und Sicherheitsanforderungen in AWS</block>
   <block id="36403c3548e2e3931df74ecbe98ac96a" category="sidebar">Schnelle Bereitstellung</block>
@@ -7672,5 +7671,14 @@
   <block id="4375417a8b8f335f3352e1f741532269" category="sidebar">Administration mit der ONTAP Befehlszeilenschnittstelle</block>
   <block id="932294ad5d34f659aa544ec559cad4ad" category="sidebar">Cloud Volumes ONTAP und Keystone</block>
   <block id="887238a149638ebe371e1475e7cf53de" category="sidebar">Cloud Volumes ONTAP und ein gut strukturiertes Dashboard</block>
-  <block id="973b36ffce6cb4dba1d81ef122b1f245" category="paragraph">Unaufgelöste Direktive in <block ref="c491f271fb4c6f62c68f73c7ad844350" category="inline-link-rx"></block> - include::_include/well-architected-workloads.adoc[]</block>
+  <block id="9ffdb95250e26c7a6b468126ac7c75b0" category="section-title">So funktioniert es</block>
+  <block id="874fbc8635967fd5300d05269c50cea0" category="paragraph">Workload Factory analysiert täglich Ihre Workloads, die auf unterstützten Cloud-Speichersystem-Bereitstellungen ausgeführt werden. Die Analyse liefert den Well-Architected-Status, Einblicke und Empfehlungen.</block>
+  <block id="27b3ab8a4b26cd2ee311ee2ac5911ba3" category="paragraph">Nach Abschluss der täglichen Analyse werden die Konfigurationen im Well-architected Dashboard für die Bereitstellung als „optimiert“ oder „nicht optimiert“ angezeigt. Konfigurationsprobleme sind nach Kategorie sowie in einer Liste von Konfigurationsproblemen und Empfehlungen zu finden. Die Empfehlungen zu den Konfigurationsproblemen können überprüft werden. Einige Probleme können automatisch von Workload Factory behoben werden, während andere manuelle Eingriffe erfordern. In diesem Fall stellt Workload Factory detaillierte Anweisungen bereit, um bei der Umsetzung der empfohlenen Änderungen zu unterstützen.</block>
+  <block id="8215457eb88ef1fb110b79579b908e3d" category="paragraph">Sie können die Analyse von Konfigurationen ausblenden, die für Ihre Umgebungen nicht relevant sind. Dadurch werden unnötige Warnmeldungen und ungenaue Optimierungsergebnisse vermieden.</block>
+  <block id="8817b0c6f0795c52cab62044416eee8a" category="inline-link-macro">Weitere Informationen zu benutzerdefinierten Regeln</block>
+  <block id="821af7226458ea25572e88e8ab2026e4" category="paragraph">Es besteht auch die Möglichkeit, benutzerdefinierte Regeln in einfacher Sprache zu erstellen, um Ihre Umgebungen anhand der Standards Ihres Unternehmens und der NetApp Best Practices zu validieren. Regeln können mit einem Probelauf getestet und anschließend für die Ausführung in Ihren Umgebungen terminiert werden. <block ref="ce039b478eb432b675a03c04866f31ab" category="inline-link-macro-rx"></block>.</block>
+  <block id="ee25e0b6cd574166f206b4c5b7f02df3" category="section-title">Warum es wichtig ist</block>
+  <block id="c2bf4ab5c816a6a7be03384125f4a5d6" category="paragraph">Workload Factory wendet Best Practices auf große Speicher-, Datenbank- und VMware-Umgebungen an, indem kontinuierliche Analysen mit Handlungsempfehlungen und Fehlerbehebungen kombiniert werden. Automatisierte Korrekturen in der NetApp Console reduzieren menschliche Fehler, gewährleisten einheitliches Management und erhalten Leistung und Zuverlässigkeit über Ihre Workload-Infrastrukturen hinweg.</block>
+  <block id="8f96dd86c3b476f91f5e8deb2f840342" category="sidebar">Cloud Volumes ONTAP und andere NetApp Produkte</block>
+  <block id="632cbf73d084e28580f4f6dfbd84efcc" category="sidebar">Cloud Volumes ONTAP und Flash Cache</block>
 </blocks>
