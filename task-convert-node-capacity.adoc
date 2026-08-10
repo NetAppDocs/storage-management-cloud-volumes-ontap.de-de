@@ -20,22 +20,37 @@ Bei jährlichen oder längerfristigen Verpflichtungen empfiehlt NetApp , dass Si
 
 Informationen zu EOA und EOS finden Sie unterlink:concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"] .
 
+NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^] .
+
+
+
+[[conversion-in-a-standard-mode-deployment]]
+== Konvertierung in einer Standardmodus-Bereitstellung
+
+Bei einer Bereitstellung im Standardmodus kann die knotenbasierte Lizenz mithilfe des Lizenzkonvertierungstools in der NetApp Console in eine kapazitätsbasierte Lizenz umgewandelt werden. Die Konvertierung wird für alle Cloud-Anbieter unterstützt: AWS, Azure und Google Cloud. Die knotenbasierte Lizenz kann in jede kapazitätsbasierte Lizenz umgewandelt werden, die über den Marketplace erworben wurde. Wenn beispielsweise eine PAYGO Standard knotenbasierte Lizenz vorliegt, kann diese in jede kapazitätsbasierte Lizenz umgewandelt werden, die über den Marketplace erworben wurde.
+
 .Informationen zu diesem Vorgang
 * Wenn Sie das Lizenzkonvertierungstool verwenden, erfolgt der Übergang vom knotenbasierten zum kapazitätsbasierten Lizenzierungsmodell vor Ort und online, sodass keine Datenmigration oder Bereitstellung zusätzlicher Cloud-Ressourcen erforderlich ist.
-* Es handelt sich um einen unterbrechungsfreien Vorgang, bei dem es weder zu Dienstunterbrechungen noch zu Anwendungsausfallzeiten kommt.
-* Die Konto- und Anwendungsdaten in Ihrem Cloud Volumes ONTAP System bleiben erhalten.
-* Die zugrunde liegenden Cloud-Ressourcen bleiben nach der Konvertierung unberührt.
+* Es handelt sich um einen unterbrechungsfreien Vorgang:
++
+** Es kommt zu keiner Serviceunterbrechung oder Ausfallzeit der Anwendung.
+** Die Konto- und Anwendungsdaten in Ihrem Cloud Volumes ONTAP System bleiben erhalten.
+** Die zugrunde liegenden Cloud-Ressourcen bleiben nach der Konvertierung unberührt.
+
+
 * Das Tool zur Lizenzkonvertierung unterstützt alle Bereitstellungstypen, z. B. Einzelknoten, Hochverfügbarkeit (HA) in einer einzelnen Verfügbarkeitszone (AZ), HA in mehreren AZ, Bring Your Own License (BYOL) und PAYGO.
-* Das Tool unterstützt alle knotenbasierten Lizenzen als Quelle und alle kapazitätsbasierten Lizenzen als Ziel. Wenn Sie beispielsweise eine knotenbasierte PAYGO Standard-Lizenz besitzen, können Sie diese in jede beliebige kapazitätsbasierte Lizenz umwandeln, die Sie über den Marktplatz erworben haben. NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^] .
-* Die Konvertierung wird für alle Cloud-Anbieter, AWS, Azure und Google Cloud unterstützt.
-* Nach der Konvertierung wird die Seriennummer der knotenbasierten Lizenz durch ein kapazitätsbasiertes Format ersetzt.  Dies geschieht als Teil der Konvertierung und wird auf Ihrem NetApp Support Site (NSS)-Konto angezeigt.
+* Im Standardmodus unterstützt das Tool alle knotenbasierten Lizenzen als Quelle und alle kapazitätsbasierten Lizenzen als Ziel. Wenn beispielsweise eine BYOL-knotenbasierte Lizenz vorliegt, kann diese in eine beliebige kapazitätsbasierte Lizenz umgewandelt werden, die von NetApp erworben wurde.
+* Nach der Umstellung wird die Seriennummer der knotenbasierten Lizenz durch ein kapazitätsbasiertes Format ersetzt. Dies geschieht im Rahmen der Umstellung und wird in Ihrem NetApp Support Site (NSS) Konto angezeigt.
 * Wenn Sie zum kapazitätsbasierten Modell wechseln, werden Ihre Daten weiterhin am selben Ort wie bei der knotenbasierten Lizenzierung aufbewahrt.  Dieser Ansatz garantiert, dass es während der gesamten Umstellung zu keiner Unterbrechung der Datenplatzierung kommt und die Grundsätze der Datensouveränität gewahrt bleiben.
 
 
 .Bevor Sie beginnen
 * Sie sollten über ein NSS-Konto mit Kundenzugriff oder Administratorzugriff verfügen.
-* Ihr NSS-Konto sollte mit den Benutzeranmeldeinformationen registriert sein, die Sie für den Zugriff auf die Konsole verwendet haben.
-* Das Cloud Volumes ONTAP -System sollte mit dem NSS-Konto mit Kundenzugriff oder Administratorzugriff verknüpft werden.
++
+** Ihr NSS-Konto sollte mit den Benutzeranmeldeinformationen registriert sein, die Sie für den Zugriff auf die Konsole verwendet haben.
+** Das Cloud Volumes ONTAP -System sollte mit dem NSS-Konto mit Kundenzugriff oder Administratorzugriff verknüpft werden.
+
+
 * Sie sollten über eine gültige kapazitätsbasierte Lizenz verfügen, entweder eine BYOL-Lizenz oder ein Marktplatzabonnement.
 * Eine kapazitätsbasierte Lizenz sollte in Ihrem Konto verfügbar sein.  Bei dieser Lizenz kann es sich um ein Marktplatzabonnement oder ein BYOL-/Privatangebotspaket handeln, das in der Konsole unter * Licenses and subscriptions* verfügbar ist.
 * Machen Sie sich mit den folgenden Kriterien vertraut, bevor Sie ein Zielpaket auswählen:
@@ -59,8 +74,9 @@ Informationen zu EOA und EOS finden Sie unterlink:concept-licensing.html#end-of-
 NOTE: Wenn eine dieser Voraussetzungen nicht erfüllt ist, findet die Lizenzumwandlung nicht statt.  In Einzelfällen kann die Lizenz zwar umgewandelt, aber nicht genutzt werden.  Klicken Sie auf das Informationssymbol, um die Probleme zu identifizieren und Korrekturmaßnahmen zu ergreifen.
 
 .Schritte
+. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, für das Sie den Lizenztyp ändern möchten.
-. Klicken Sie auf der Registerkarte „Übersicht“ auf den Bereich „Funktionen“.
+. Auf der Registerkarte *Übersicht* das Bedienfeld *Funktionen* auswählen.
 . Aktivieren Sie das Stiftsymbol neben *Lademethode*.  Wenn die Lademethode für Ihr System `Node Based` , können Sie es auf Kapazitätsladung umstellen.
 +
 
@@ -78,7 +94,58 @@ TIP: Das Symbol ist deaktiviert, wenn Ihr Cloud Volumes ONTAP System bereits nac
 
 
 .Nach Abschluss
-Zeigen Sie die neue Lizenzseriennummer an und überprüfen Sie die Änderungen im Menü * Licenses and subscriptions* der Konsole.
+Die neue Lizenzseriennummer und die Änderungen können im Menü *Administration > Licenses and subscriptions* der Console eingesehen werden.
+
+
+
+[[conversion-in-a-private-mode-deployment]]
+== Konvertierung in einer Private-Mode-Bereitstellung
+
+Bei einer Bereitstellung im privaten Modus kann die knotenbasierte Lizenz mithilfe des Lizenzkonvertierungstools in der NetApp Console in eine kapazitätsbasierte Lizenz umgewandelt werden. Die Konvertierung wird für alle Cloud-Anbieter unterstützt, AWS, Azure und Google Cloud.
+
+Da Marktplatz-Abonnements im privaten Modus nicht unterstützt werden, ist der Erwerb eines Essentials-Pakets (Bring Your Own License (BYOL)) von NetApp erforderlich. So bleiben die Vorteile der kapazitätsbasierten Lizenzierung im BYOL-Modell erhalten, ohne dass Marktplatz-Abonnements notwendig sind.
+
+
+NOTE: Die Umwandlung von knotenbasierten Lizenzen in jede andere kapazitätsbasierte Lizenz außer Essentials wird für den privaten Modus nicht unterstützt.
+
+.Informationen zu diesem Vorgang
+* Nach der Umstellung wird die gesamte Kapazität Ihrer knotenbasierten Lizenz unter dem Essentials Paket erfasst, und die Abrechnung erfolgt weiterhin über Ihren BYOL Vertrag.
+* Bei Verwendung des Lizenzkonvertierungstools erfolgt der Übergang vom knotenbasierten zum kapazitätsbasierten Lizenzmodell direkt vor Ort, sodass keine Datenmigration oder Bereitstellung zusätzlicher Cloud-Ressourcen erforderlich ist.
+* Es handelt sich um einen unterbrechungsfreien Vorgang:
++
+** Es kommt zu keiner Serviceunterbrechung oder Ausfallzeit der Anwendung.
+** Die Konto- und Anwendungsdaten in Ihrem Cloud Volumes ONTAP System bleiben erhalten.
+** Die zugrunde liegenden Cloud-Ressourcen bleiben nach der Konvertierung unberührt.
+** Ihre Daten werden weiterhin am selben Ort wie bei der node-basierten Lizenzierung aufbewahrt. Dieser Ansatz gewährleistet eine unterbrechungsfreie Datenplatzierung und wahrt die Prinzipien der Datenhoheit während des gesamten Übergangs.
+
+
+* Das Lizenzkonvertierungstool unterstützt alle Bereitstellungstypen, wie Einzelknoten- und Hochverfügbarkeitskonfiguration (HA) in einer einzelnen Verfügbarkeitszone (AZ) und in mehreren AZ.
+* Nach der Umstellung werden die Cloud Volumes ONTAP Systeme mit neuen Seriennummern aktualisiert.
+
+
+.Bevor Sie beginnen
+* Da Cloud Volumes ONTAP Bereitstellungen im privaten Modus keine Marketplace-Abonnements unterstützen, muss die kapazitätsbasierte Essentials-Lizenz von NetApp bezogen werden.
+* Die kapazitätsbasierte Lizenz sollte für die Konvertierung eine ähnliche Kapazität wie die node-basierte Lizenz aufweisen.
+* Das kapazitätsbasierte Essentials-Paket sollte Ihrem knotenbasierten BYOL-Lizenztyp entsprechen. Bei einer Bereitstellung im privaten Modus mit sekundärem Volume (HA) sollte die entsprechende Essentials Secondary HA-Lizenz oder eine möglichst passende Lizenz, wie Essentials Primary oder Essentials Primary HA, vorhanden sein.
+
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
+. Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, für das Sie den Lizenztyp ändern möchten.
+. Auf der Registerkarte *Übersicht* das Bedienfeld *Funktionen* auswählen.
+. Überprüfen Sie das Stiftsymbol neben *Abrechnungsmethode*. Wenn die Abrechnungsmethode für Ihr System  `Node Based` ist, kann sie in eine kapazitätsbasierte Lizenz umgewandelt werden.
++
+
+TIP: Das Symbol ist deaktiviert, wenn Ihr Cloud Volumes ONTAP System bereits nach Kapazität belastet ist oder wenn eine der Anforderungen nicht erfüllt ist.
+
+. Überprüfen Sie auf dem Bildschirm *Knotenbasierte Lizenzen in kapazitätsbasierte Lizenzen umwandeln* den Systemnamen und die Quelllizenzdetails.
+. Essentials als Zielpaket für die Konvertierung der bestehenden Lizenz auswählen:
+. Sie können das Kontrollkästchen aktivieren, um die knotenbasierte Lizenz nach Abschluss der Konvertierung aus der Console zu löschen. Wenn die Konvertierung noch läuft, wird die Lizenz durch Aktivieren dieses Kontrollkästchens nicht aus der Console entfernt.
+. Aktivieren Sie das Kontrollkästchen, um zu bestätigen, dass Sie die Auswirkungen der Änderung verstehen, und klicken Sie dann auf *Weiter*.
+
+
+.Nach Abschluss
+Die neue Lizenzseriennummer und die Änderungen können im Menü *Administration > Licenses and subscriptions* der Console eingesehen werden.
 
 
 

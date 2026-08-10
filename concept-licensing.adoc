@@ -14,14 +14,18 @@ summary: Für Cloud Volumes ONTAP sind mehrere Lizenzierungsoptionen verfügbar.
 
 
 [role="lead"]
-Für Cloud Volumes ONTAP sind mehrere Lizenzierungsoptionen verfügbar. Jede Option ermöglicht Ihnen die Auswahl eines Verbrauchsmodells, das Ihren Anforderungen entspricht.
+Für Cloud Volumes ONTAP sind mehrere Lizenzmodelle verfügbar. Jede Option ermöglicht die Auswahl eines Nutzungsmodells, das den jeweiligen Anforderungen entspricht.
+
+Es bestehen Optionen, Lizenzen und Abonnements entweder über Cloud-Marktplätze oder über NetApp (Bring Your Own License (BYOL)) zu erwerben oder zu verlängern. Der Marktplatz bietet Jahresabonnements und Pay-as-you-go (PAYGO)-Optionen. Informationen finden sich unter link:concept-license-management.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen für Cloud Volumes ONTAP"].
+
+BYOL-Lizenzen sind bei NetApp erhältlich und können für jeden Cloud-Anbieter verwendet werden. Weitere Informationen zur Verfügbarkeit von BYOL-Lizenzen finden sich unter  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^].
 
 
 
 [[licensing-overview]]
 == Lizenzübersicht
 
-Für Neukunden stehen folgende Lizenzierungsoptionen zur Verfügung.
+Neukunden können zwischen kapazitätsbasierten Jahresabonnements über den Marktplatz oder Keystone Abonnements wählen. Einige wenige Installationen, beispielsweise im privaten Modus, verfügen auch noch über die BYOL-Lizenzen der vorherigen Generation, die auf eigenen Geräten basieren.
 
 Kapazitätsbasierte Lizenzierung:: Bezahlen Sie für mehrere Cloud Volumes ONTAP -Systeme in Ihrem NetApp -Konto nach bereitgestellter Kapazität. Beinhaltet die Möglichkeit, zusätzliche Cloud-Datendienste zu erwerben. Weitere Informationen zu Verbrauchsmodellen oder Kaufoptionen bei kapazitätsbasierten Lizenzen finden Sie unter:link:concept-licensing-charging.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen"] Die
 Keystone Abonnement:: Ein Abonnementdienst mit nutzungsabhängiger Bezahlung, der ein nahtloses Hybrid-Cloud-Erlebnis für Hochverfügbarkeitspaare (HA) bietet.
@@ -243,6 +247,9 @@ Ab dem 11. November 2024 wurde die begrenzte Verfügbarkeit von knotenbasierten 
 
 Wenn Sie über einen gültigen knotenbasierten Vertrag verfügen, der über das EOA-Datum hinausgeht, können Sie die Lizenz bis zum Ablauf des Vertrags weiter verwenden.  Nach Ablauf des Vertrages ist eine Umstellung auf das kapazitätsbasierte Lizenzmodell erforderlich.  Wenn Sie keinen langfristigen Vertrag für einen Cloud Volumes ONTAP Knoten haben, ist es wichtig, Ihre Konvertierung vor dem EOS-Datum zu planen.
 
+
+NOTE: Private-Mode-Bereitstellungen von Cloud Volumes ONTAP in privaten Umgebungen.
+
 In dieser Tabelle erfahren Sie mehr über die einzelnen Lizenztypen und die Auswirkungen von EOA darauf:
 
 [cols="2*"]
@@ -270,13 +277,8 @@ Gültige knotenbasierte Lizenz mit PAYGO-Abonnement
 Sie erhalten nach dem EOS-Datum NetApp Support mehr, bis Sie zu einer kapazitätsbasierten Lizenz wechseln.
 
 |===
-.Ausschlüsse
-NetApp ist sich bewusst, dass bestimmte Situationen besondere Berücksichtigung erfordern. EOA und EOS der knotenbasierten Lizenzierung gelten in den folgenden Fällen nicht:
-
-* Kunden aus dem öffentlichen Sektor der USA
-* Bereitstellungen im privaten Modus
-* Bereitstellungen von Cloud Volumes ONTAP in AWS in der Region China
-
+.Ausnahmen
+NetApp erkennt an, dass bestimmte Situationen eine besondere Berücksichtigung erfordern, wie zum Beispiel Bereitstellungen von Cloud Volumes ONTAP in AWS in der Region China, und dass EOA und EOS der knotenbasierten Lizenzierung in den folgenden Fällen möglicherweise nicht gelten:
 
 Für diese speziellen Szenarien bietet NetApp Unterstützung bei der Erfüllung der einzigartigen Lizenzanforderungen im Einklang mit vertraglichen Verpflichtungen und betrieblichen Anforderungen.
 

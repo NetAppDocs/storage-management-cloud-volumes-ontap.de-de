@@ -1,0 +1,20 @@
+= Cloud Volumes ONTAP im privaten Modus bereitstellen
+:allow-uri-read: 
+
+
+
+
+[[deploy-cloud-volumes-ontap-in-private-mode]]
+== Cloud Volumes ONTAP im privaten Modus bereitstellen
+
+Cloud Volumes ONTAP kann im privaten Modus bereitgestellt werden, indem einem dokumentierten, schrittweisen Konvertierungsprozess direkt in Ihrer bestehenden Umgebung gefolgt wird. Bei der Bereitstellung im privaten Modus wird das Cloud Volumes ONTAP-System in Ihrer eigenen virtuellen privaten Cloud (VPC) oder Ihrem virtuellen Netzwerk (VNet) bereitgestellt und ist nicht mit dem öffentlichen Internet verbunden. Die Bereitstellung im privaten Modus kann genutzt werden, um die Sicherheits- und Compliance-Anforderungen Ihres Unternehmens zu erfüllen.
+
+Für Bereitstellungen im privaten Modus wurden bisher ausschließlich knotenbasierte Lizenzen verwendet, die Sie von NetApp beziehen konnten. Die knotenbasierte Lizenz ist die Vorgängergeneration der Lizenz für Cloud Volumes ONTAP. NetApp hatte den Kauf, die Erweiterung und die Erneuerung knotenbasierter Lizenzen mit Ausnahme bestimmter Fälle seit  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["25. Juni 2025"] eingeschränkt. Zum 31. Juli 2026 endet die Verfügbarkeit (EOA) der knotenbasierten Lizenzierung für diese Ausnahmefälle, wie beispielsweise den United States Public Sector (USPS) und andere Bereitstellungen im privaten Modus.
+
+Wenn Sie eine private Bereitstellung mit einer knotenbasierten Lizenz haben, gilt Folgendes:
+
+* Die knotenbasierte Lizenz kann nicht mehr erworben oder verlängert werden.
+* Neuere Funktionen und Verbesserungen können nicht genutzt werden.
+* Die erhöhte operative Starrheit aufgrund knotenbasierter Beschränkungen hält weiterhin an.
+* Nach Ablauf der knotenbasierten Lizenz ist ein Wechsel zur kapazitätsbasierten Lizenz im privaten Modus erforderlich. Anweisungen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["Knotenbasierte Lizenzen in kapazitätsbasierte Lizenzen umwandeln"^].
+

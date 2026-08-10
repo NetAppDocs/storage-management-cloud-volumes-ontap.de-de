@@ -1,0 +1,27 @@
+= Cloud Volumes ONTAP 9.19.1
+:allow-uri-read: 
+
+
+
+
+[[cloud-volumes-ontap-9-19-1]]
+=== Cloud Volumes ONTAP 9.19.1
+
+Die NetApp Console kann jetzt verwendet werden, um die General Availability (GA) Version von Cloud Volumes ONTAP 9.19.1 in Amazon Web Service (AWS) und Google Cloud bereitzustellen und zu verwalten. Diese Version ist für die Bereitstellung und das Upgrade in Microsoft Azure (Azure) nicht verfügbar.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Erfahren Sie mehr über diese Version von Cloud Volumes ONTAP"^].
+
+
+
+[[ability-to-convert-node-based-licenses-to-capacity-based-licensing-in-private-mode]]
+=== Möglichkeit zur Umwandlung knotenbasierter Lizenzen in kapazitätsbasiertes Lizenzmodell im privaten Modus
+
+NetApp kündigt die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP Bereitstellungen im privaten Modus an. Für Cloud Volumes ONTAP Bereitstellungen im privaten Modus besteht jetzt die Möglichkeit, die Kosten zu optimieren, indem die knotenbasierte Lizenz in die kapazitätsbasierte Lizenzierung umgewandelt wird. Für Bereitstellungen im privaten Modus kann ein Essentials-Paket (Bring Your Own License (BYOL)) direkt bei NetApp mit einer Kapazität erworben werden, die der bestehenden knotenbasierten Lizenz entspricht.
+
+Diese Umstellungsoption unterstützt den schrittweisen Plan von NetApp, von knotenbasierter auf kapazitätsbasierte Lizenzierung umzustellen. Im Gegensatz zur knotenbasierten Lizenzierung, die jedem System eine feste Kapazität zuweist, greift die kapazitätsbasierte Lizenzierung auf einen gemeinsamen Kapazitätspool Ihrer Cloud Volumes ONTAP Systeme zurück, was Ihnen mehr Flexibilität bei der Umverteilung von Workloads bietet, wenn sich Ihre Speicheranforderungen ändern.
+
+.Weiterführende Links
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment["Konvertierung in einer Private-Mode-Bereitstellung"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Knotenbasierte Lizenzen für Cloud Volumes ONTAP verwalten"^]
+

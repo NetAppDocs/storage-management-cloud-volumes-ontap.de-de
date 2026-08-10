@@ -4,7 +4,7 @@ permalink: task-manage-node-licenses.html
 keywords: license, licensing, install, updating license, system license, add system license, adding a system license,  update byol license, nlf, license generator, extra, by-node, NetApp Console, cloud backup, cloud data sense, cloud tiering 
 summary: Verwalten Sie Ihre knotenbasierten Lizenzen in der NetApp Console, um sicherzustellen, dass jedes Cloud Volumes ONTAP -System über eine gültige Lizenz mit der erforderlichen Kapazität verfügt. 
 ---
-= Verwalten Sie die knotenbasierte Lizenzierung für Cloud Volumes ONTAP
+= Knotenbasierte Lizenzen für Cloud Volumes ONTAP verwalten
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

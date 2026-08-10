@@ -4,7 +4,7 @@ permalink: task-deploy-cvo-azure-mktplc.html
 keywords: deploy cvo marketplace, marketplace direct cvo deployment, azure marketplace 
 summary:  
 ---
-= Stellen Sie Cloud Volumes ONTAP vom Azure Marketplace bereit
+= Cloud Volumes ONTAP aus dem Azure Marketplace bereitstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,15 @@ summary:
 
 
 [role="lead"]
-Sie können die direkte Bereitstellung über den Azure Marketplace verwenden, um Cloud Volumes ONTAP schnell und einfach bereitzustellen.  Über den Azure Marketplace können Sie Cloud Volumes ONTAP mit wenigen Klicks schnell bereitstellen und die wichtigsten Funktionen und Möglichkeiten in Ihrer Umgebung erkunden.
+Mit der direkten Bereitstellung über den Azure Marketplace lässt sich Cloud Volumes ONTAP schnell und einfach bereitstellen. Über den Azure Marketplace kann Cloud Volumes ONTAP mit wenigen Klicks bereitgestellt und die Kernfunktionen und -fähigkeiten in Ihrer Umgebung erkundet werden.
 
 Weitere Informationen zu diesem Angebot finden Sie unterlink:concept-azure-mktplace-direct.html["Informieren Sie sich über die Angebote von Cloud Volumes ONTAP in der NetApp Console und im Marketplace."] .
 
 .Informationen zu diesem Vorgang
-Das Cloud Volumes ONTAP -System, das mithilfe der direkten Bereitstellung im Azure Marketplace bereitgestellt wird, verfügt über diese Eigenschaften.  Beachten Sie, dass sich die Funktionen einer über den Azure Marketplace bereitgestellten eigenständigen Instanz ändern, wenn sie in der NetApp Console erkannt wird.
+Das über den Azure Marketplace direkt bereitgestellte Cloud Volumes ONTAP System weist diese Eigenschaften auf. Es ist zu beachten, dass sich die Funktionen einer eigenständigen Instanz, die über den Azure Marketplace bereitgestellt wurde, ändern, wenn sie in der NetApp Console erkannt wird.
 
 * Die neueste Cloud Volumes ONTAP -Version (9.16.1 oder höher).
-* Eine kostenlose Lizenz für Cloud Volumes ONTAP , die auf 500 GiB bereitgestellte Kapazität begrenzt ist.  Diese Lizenz beinhaltet keinen NetApp Support und hat kein Ablaufdatum.
+* Für Cloud Volumes ONTAP wird eine kostenlose Lizenz für bis zu 500 GiB bereitgestellte Kapazität ohne NetApp Support und ohne Ablaufdatum bereitgestellt. Kapazitäten über 500 GiB hinaus erfordern eine gültige Lizenzberechtigung und können kostenpflichtig sein. Der vollständige Funktionsumfang von Cloud Volumes ONTAP und erweiterte Verwaltungsfunktionen stehen zur Verfügung, wenn das Cloud Volumes ONTAP-System mit der NetApp Console verbunden ist. Erkennung und Verwaltung über die NetApp Console erfordern ein gültiges Azure Marketplace-Abonnement, das mit dem NetApp Console-Konto verknüpft ist.
 * Zwei Knoten, die im Hochverfügbarkeitsmodus (HA) in einer einzigen Verfügbarkeitszone (AZ) konfiguriert und mit Standardseriennummern bereitgestellt sind.  Die Storage-VMs (Storage-VMs) werden in einemlink:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["flexibler Orchestrierungsmodus"] .
 * Ein Aggregat für die standardmäßig erstellte Instanz.
 * Eine verwaltete Premium-SSD-v2-Festplatte mit 500 GiB bereitgestellter Kapazität sowie eine Root- und eine Datenfestplatte.
@@ -39,7 +39,7 @@ Das Cloud Volumes ONTAP -System, das mithilfe der direkten Bereitstellung im Azu
 
 
 .Bevor Sie beginnen
-* Stellen Sie sicher, dass Sie über ein gültiges Azure Marketplace-Abonnement verfügen.
+* Wenn geplant ist, das bereitgestellte System in der NetApp Console zu erkennen und zu verwalten, muss das NetApp Console-Konto mit einem gültigen Azure Marketplace-Abonnement verknüpft sein. Die Erkennung des Systems in der NetApp Console erfordert ein gültiges Abonnement.
 * Stellen Sie sicher, dass Sie die Netzwerkanforderungen für einlink:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["HA-Bereitstellung in einer einzigen AZ"] in Azure. Weitere Informationen finden Sie unter link:reference-networking-azure.html["Einrichten des Azure-Netzwerks für Cloud Volumes ONTAP"] .
 * Um Cloud Volumes ONTAP bereitzustellen, muss Ihnen eine dieser Azure-Rollen zugewiesen werden:
 +
@@ -60,7 +60,7 @@ NOTE: Wenn Sie den Ressourcenanbieter "Microsoft.storage" für Ihr Abonnement re
 
 
 .Schritte
-. Suchen Sie auf der Azure Marketplace-Site nach NetApp -Produkten.
+. Auf der Azure Marketplace-Website nach NetApp Produkten suchen.
 . Wählen Sie * NetApp Cloud Volumes ONTAP direct*.
 . Klicken Sie auf *Erstellen*, um den Bereitstellungsassistenten zu starten.
 . Wählen Sie einen Plan aus.  In der *Plan*-Liste werden normalerweise die neuesten Versionen von Cloud Volumes ONTAP angezeigt.
@@ -99,14 +99,14 @@ Sobald Sie darauf zugreifen können, verwenden Sie ONTAP System Manager oder die
 [[troubleshoot-deployment-issues]]
 == Beheben von Bereitstellungsproblemen
 
-Cloud Volumes ONTAP -Systeme, die direkt über den Azure-Marktplatz bereitgestellt werden, umfassen keinen Support von NetApp.  Wenn während der Bereitstellung Probleme auftreten, können Sie diese selbstständig beheben.
+Cloud Volumes ONTAP Systeme, die direkt über den Azure Marketplace bereitgestellt werden, beinhalten keinen Support von NetApp. Wenn während der Bereitstellung Probleme auftreten, können diese eigenständig identifiziert und behoben werden.
 
 .Schritte
-. Gehen Sie auf der Azure Marketplace-Site zu *Bootdiagnose > Serielles Protokoll*.
+. Auf der Azure Marketplace-Website zu *Boot diagnostics > Serial log* wechseln.
 . Laden Sie die Serienprotokolle herunter und untersuchen Sie sie.
 . Informationen zur Fehlerbehebung finden Sie in der Produktdokumentation und in den Knowledge Base-Artikeln (KB).
 +
-** https://learn.microsoft.com/en-us/partner-center/["Azure Marketplace-Dokumentation"]
+** https://learn.microsoft.com/en-us/partner-center/["Azure Marketplace Dokumentation"]
 ** https://www.netapp.com/support-and-training/documentation/["NetApp Dokumentation"]
 ** https://kb.netapp.com/["NetApp KB-Artikel"]
 
@@ -118,10 +118,10 @@ Cloud Volumes ONTAP -Systeme, die direkt über den Azure-Marktplatz bereitgestel
 [[discover-the-deployed-systems-in-console]]
 == Entdecken Sie die bereitgestellten Systeme in der Konsole
 
-Sie können die Cloud Volumes ONTAP -Systeme, die Sie mithilfe der direkten Bereitstellung im Azure Marketplace bereitgestellt haben, ermitteln und auf der Seite *Systeme* in der Konsole verwalten.  Der Konsolenagent erkennt die Systeme, fügt sie hinzu, wendet die erforderlichen Lizenzen an und schaltet die vollständigen Funktionen der Konsole für diese Systeme frei.  Die ursprüngliche HA-Konfiguration in einer einzelnen AZ mit PSSD v2 Managed Disks bleibt erhalten und das System wird beim selben Azure-Abonnement und derselben Ressourcengruppe registriert wie die ursprüngliche Bereitstellung.
+Sie können die Cloud Volumes ONTAP Systeme, die Sie über die direkte Bereitstellung im Azure Marketplace bereitgestellt haben, auf der Seite *Systeme* in der Console entdecken und verwalten. Der Console Agent erkennt die Systeme, fügt sie hinzu, wendet die erforderlichen Lizenzen an und schaltet den vollen Funktionsumfang der Console für diese Systeme frei. Die ursprüngliche HA Konfiguration in einer einzelnen AZ mit PSSD v2 Managed Disks bleibt erhalten, und das System wird für dasselbe Azure Abonnement und dieselbe Ressourcengruppe wie die ursprüngliche Bereitstellung registriert.
 
 .Informationen zu diesem Vorgang
-Beim Erkennen der Cloud Volumes ONTAP -Systeme, die mithilfe der direkten Bereitstellung im Azure Marketplace bereitgestellt wurden, führt der Konsolenagent die folgenden Aufgaben aus:
+Beim Erkennen der über Azure Marketplace Direct Deployment bereitgestellten Cloud Volumes ONTAP-Systeme führt der Console-Agent folgende Aufgaben aus:
 
 * Ersetzt die freien Lizenzen der ermittelten Systeme als reguläre kapazitätsbasiertelink:concept-licensing.html#packages["Freemium-Lizenzen"] .
 * Behält die vorhandenen Funktionen der bereitgestellten Systeme bei und fügt die zusätzlichen Funktionen der Konsole hinzu, z. B. Datenschutz, Datenverwaltung und Sicherheitsfunktionen.
@@ -135,13 +135,13 @@ Beim Erkennen der Cloud Volumes ONTAP -Systeme, die mithilfe der direkten Bereit
 
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass die Bereitstellung auf dem Azure-Marktplatz abgeschlossen ist.  Der Konsolenagent kann die Systeme nur erkennen, wenn die Bereitstellung abgeschlossen ist und sie zur Erkennung bereitstehen.
+Die Bereitstellung muss im Azure Marketplace abgeschlossen sein. Der Console-Agent kann die Systeme nur erkennen, wenn die Bereitstellung abgeschlossen ist und sie zur Erkennung verfügbar sind.
 
 .Schritte
 In der Konsole folgen Sie dem Standardverfahren zum Erkennen vorhandener Systeme. Weitere Informationen finden Sie unter link:task-adding-systems.html["Fügen Sie der Konsole ein vorhandenes Cloud Volumes ONTAP -System hinzu"] .
 
 
-CAUTION: Während der Erkennung werden möglicherweise Fehlermeldungen angezeigt, die Sie jedoch ignorieren können, bis der Erkennungsprozess abgeschlossen ist. Ändern Sie während der Erkennung nicht die systemgenerierten Cloud Volumes ONTAP -Konfigurationen im Azure Marketplace-Portal, insbesondere nicht die System-Tags. Alle an diesen Konfigurationen vorgenommenen Änderungen können zu unerwartetem Systemverhalten führen.
+CAUTION: Während der Erkennung können Fehlermeldungen angezeigt werden, diese können jedoch ignoriert werden, bis der Erkennungsprozess abgeschlossen ist. Die systemgenerierten Cloud Volumes ONTAP Konfigurationen im Azure Marketplace Portal sollten während der Erkennung, insbesondere die Systemtags, nicht geändert werden. Jegliche Änderungen an diesen Konfigurationen können zu unerwartetem Systemverhalten führen.
 
 .Nach Abschluss
 Nachdem die Erkennung abgeschlossen ist, können Sie die auf der Seite *Systeme* in der Konsole aufgelisteten Systeme anzeigen.  Sie können verschiedene Verwaltungsaufgaben ausführen, wie zum Beispiellink:task-manage-aggregates.html["Erweiterung des Aggregats"] ,link:task-create-volumes.html["Hinzufügen von Volumes"] ,link:task-managing-svms-azure.html["Bereitstellung zusätzlicher Speicher-VMs"] , Undlink:task-change-azure-vm.html["Ändern der Instanztypen"] .
@@ -149,6 +149,7 @@ Nachdem die Erkennung abgeschlossen ist, können Sie die auf der Seite *Systeme*
 .Weiterführende Links
 Weitere Informationen zum Erstellen von Speicher finden Sie in der ONTAP -Dokumentation:
 
+* https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Ein neues Marketplace-Abonnement hinzufügen"^]
 * https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html["Erstellen von Volumes für NFS"^]
 * https://docs.netapp.com/us-en/ontap-cli/lun-create.html["Erstellen von LUNs für iSCSI"^]
 * https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html["Freigaben für CIFS erstellen"^]
