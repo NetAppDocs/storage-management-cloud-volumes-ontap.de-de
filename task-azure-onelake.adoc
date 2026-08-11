@@ -195,8 +195,8 @@ image::screenshot-cvo-s3-onelake-confirm.png[Screenshot, der die bestätigte Clo
 
 
 
-[[next-steps-index-data-with-azure-ai-search]]
-== Nächste Schritte: Daten mit Azure AI Search indizieren
+[[enable-azure-ai-search]]
+== Azure AI Search aktivieren
 
 Nach dem Erstellen der OneLake-Verknüpfung kann Azure AI Search so konfiguriert werden, dass die in Ihren Cloud Volumes ONTAP Volumes gespeicherten Daten über OneLake indiziert werden. Die Azure AI Search Indizierung ermöglicht die Nutzung der Daten durch KI-Anwendungen wie Microsoft Copilot und Azure OpenAI.
 
