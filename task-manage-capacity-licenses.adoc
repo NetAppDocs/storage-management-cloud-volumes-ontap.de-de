@@ -106,6 +106,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 Die Konsole versucht immer zuerst, die Kosten über eine Lizenz abzurechnen. Ist keine Lizenz verfügbar, erfolgt die Abrechnung über ein Marketplace Abonnement. Es ist nicht erforderlich, ein BYOL Abonnement in ein Marketplace Abonnement oder umgekehrt umzuwandeln.
 
 * Wenn Sie ein privates Angebot oder einen Vertrag vom Marktplatz Ihres Cloud-Anbieters haben, führt der Wechsel zu einer Abrechnungsmethode, die nicht in Ihrem Vertrag enthalten ist, zu einer Abrechnung über BYOL (wenn Sie eine Lizenz von NetApp erworben haben) oder PAYGO.
+* Wenn die Cloud Volumes ONTAP Kapazität über das eigenständige Cloud Volumes ONTAP Abonnement im AWS Marketplace abgerechnet werden soll, muss das Cloud Volumes ONTAP System ein unterstütztes kapazitätsbasiertes Paket (Essentials oder Freemium) verwenden. Das Professional Paket wird für die eigenständige Auflistung nicht unterstützt und weiterhin über das NIS Abonnement abgerechnet. Nach Auswahl des gewünschten Pakets kann in den *Abrechnungseinstellungen* der NetApp Console das Marketplace Abonnement ausgewählt werden, das für die Abrechnung von Cloud Volumes ONTAP verwendet wird.
 
 
 .Schritte

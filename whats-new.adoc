@@ -20,6 +20,25 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf die
 
 
 
+[[25-august-2026]]
+== 25. August 2026
+
+
+
+[[support-for-austria-east-and-belgium-central-regions-in-azure]]
+=== Unterstützung für die Regionen Austria East und Belgium Central in Azure
+
+Cloud Volumes ONTAP 9.12.1 GA und höher kann jetzt in den Azure-Regionen Austria East (austriaeast) und Belgium Central (belgiumcentral) bereitgestellt werden. Die folgenden Bereitstellungstypen werden unterstützt:
+
+* Einzelknoten
+* Hochverfügbarkeit in einer einzelnen Verfügbarkeitszone mit lokal redundantem Speicher (LRS)
+* Hochverfügbarkeit in mehreren Verfügbarkeitszonen mittels zonenredundantem Speicher (ZRS)
+
+
+Eine Liste aller unterstützten Regionen finden Sie im https://bluexp.netapp.com/cloud-volumes-global-regions["Globale Regionenkarte unter Azure"^] .
+
+
+
 [[10-august-2026]]
 == 10. August 2026
 
@@ -122,6 +141,7 @@ Der neue Onboarding-Prozess vereinfacht Ihren Übergang von einem Marketplace-Ab
 
 
 .Weiterführende Links
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-onboard-cvo-aws-marketplace.html["Cloud Volumes ONTAP aus dem AWS Marketplace onboarden"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["Flexible Abrechnung für Cloud Volumes ONTAP und Datendienste in AWS"^]
 

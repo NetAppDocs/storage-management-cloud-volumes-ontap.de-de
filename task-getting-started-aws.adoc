@@ -16,6 +16,8 @@ summary: Es sollte überprüft werden, ob die Voraussetzungen für die Bereitste
 [role="lead"]
 Für die Bereitstellung von Cloud Volumes ONTAP benötigen Sie zunächst Informationen zu Ihrem AWS-Abonnement und zu Cloud Volumes ONTAP-Lizenzen. Es muss außerdem überprüft werden, ob ein NetApp Console-Agent für Ihr AWS-Konto erstellt wurde. Viele der in diesem Abschnitt beschriebenen Informationen sind im Rahmen der Console-Einrichtung zu berücksichtigen, bevor überhaupt mit der Bereitstellung von Cloud Volumes ONTAP begonnen wird.
 
+Cloud Volumes ONTAP kann in AWS entweder über den AWS Marketplace oder die NetApp Console eingebunden werden. Die folgende Tabelle bietet einen Überblick über die Aufgaben, die für die Bereitstellung von Cloud Volumes ONTAP in AWS erforderlich sind. Das Onboarding über den AWS Marketplace ist ein vereinfachter Prozess, der die Bereitstellung des Console-Agenten und die Zuordnung des Abonnements automatisiert. Informationen zum Onboarding über den AWS Marketplace sind unter link:task-onboard-cvo-aws-marketplace.html["Onboard Cloud Volumes ONTAP im AWS Marketplace"] zu finden.
+
 [cols="20,35,25,25"]
 |===
 | Aufgabe | Beschreibung | Referenz | Hinweise für Bereitstellungen im privaten Modus 

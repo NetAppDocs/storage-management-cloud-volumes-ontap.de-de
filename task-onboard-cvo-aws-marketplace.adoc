@@ -1,0 +1,269 @@
+---
+sidebar: sidebar 
+permalink: task-onboard-cvo-aws-marketplace.html 
+keywords: aws marketplace, cloud volumes ontap, onboarding, subscribe, deploy agent, setup guide, organization, subscription association 
+summary: Cloud Volumes ONTAP im AWS Marketplace abonnieren und die Einrichtung in der NetApp Console abschließen, einschließlich Organisationserstellung, Abonnementzuordnung, Agentenbereitstellung und Erstellung des ersten Systems. 
+---
+= Cloud Volumes ONTAP aus dem AWS Marketplace abonnieren und bereitstellen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP kann über den AWS Marketplace abonniert werden, wobei die NetApp Console durch das Onboarding führt. Mit einem einfachen Ablauf vom Abonnement bis zur Bereitstellung ist Cloud Volumes ONTAP schnell einsatzbereit. Die geführte Benutzererfahrung vereinfacht den Prozess vom AWS Marketplace-Abonnement bis zur Bereitstellung und unterstützt die Bereitstellung von Cloud Volumes ONTAP, ohne dass umfassende Cloud- oder ONTAP-Expertise erforderlich ist.
+
+Die Anmeldung und Bereitstellung von Cloud Volumes ONTAP über den AWS Marketplace umfasst folgende Schritte:
+
+* Abonnement für Cloud Volumes ONTAP im AWS Marketplace.
+* Anmeldung an der Konsole.
+* Erstellen der Organisation (falls erforderlich) und Verknüpfen des Marketplace Abonnements.
+* Bereitstellung eines Console-Agenten in AWS.
+* Hinzufügen Ihres ersten Cloud Volumes ONTAP Systems.
+
+
+Das vereinfachte Onboarding ermöglicht die automatisierte Agentenbereitstellung mit minimalem Aufwand für Abonnementzuordnung, IAM-Rollenkonfiguration, Agentenbereitstellung und Systeminitialisierung. Die Backend-Orchestrierung übernimmt automatisch die CloudFormation-Stack-Erstellung, die Validierung der VPC-Konnektivität und die Ressourcenabhängigkeiten. Dadurch werden manuelle Konfigurationsschritte und Bildschirmwechsel reduziert, sodass Cloud Volumes ONTAP schneller mit weniger Einrichtungsfehlern und Unterbrechungen bereitgestellt werden kann. Der Bereitstellungsfortschritt lässt sich im rechten Bereich verfolgen.
+
+.Bevor Sie beginnen
+Diese Voraussetzungen sollten vor Beginn des Onboarding-Workflows geprüft werden.
+
+* Sie benötigen ein AWS-Konto mit Berechtigungen zum Abonnieren im AWS Marketplace. Für die Nutzung der automatisierten IAM-Einrichtung ist es erforderlich, entweder AWS-Administrator zu sein oder über die unten aufgeführten Berechtigungen zu verfügen.
++
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudFormationStack",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:DeleteStack",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:GetTemplateSummary",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:GetRole",
+        "iam:PutRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:GetRolePolicy",
+        "iam:PassRole",
+        "lambda:CreateFunction",
+        "lambda:DeleteFunction",
+        "lambda:GetFunction",
+        "lambda:InvokeFunction"
+  ]
+}
+----
+* Sie können IAM-Rollen in AWS für die Agentenbereitstellung erstellen oder verwenden.
+* Sie können sich in der NetApp Console anmelden oder ein Konto erstellen.
+
+
+Die vollständigen Voraussetzungen für die Bereitstellung des AWS Agenten sind unter link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html["Einen NetApp Console Agenten aus dem AWS Marketplace bereitstellen"^] aufgeführt.
+
+
+
+[[subscribe-in-aws-marketplace]]
+== Im AWS Marketplace abonnieren
+
+Der Onboarding-Prozess beginnt, indem das Cloud Volumes ONTAP Angebot im AWS Marketplace gefunden wird.
+
+.Schritte
+. Wechseln Sie mit Ihrem AWS-Konto zum AWS Marketplace.
+. Das NetApp Cloud Volumes ONTAP Angebot finden. Im AWS Marketplace gibt es zwei Angebote für Cloud Volumes ONTAP:
++
+** Das eigenständige Angebot für Cloud Volumes ONTAP Jahresabonnements
+** Das kombinierte NetApp Intelligent Service (NIS) Angebot für NetApp Datenservices und Cloud Volumes ONTAP Abonnements. Für diesen Onboarding-Workflow ist das _standalone_ Angebot auszuwählen.
+
+
+. Angebotsdetails und Preisbedingungen werden angezeigt.
+. Abonnieren und den Bestellvorgang abschließen.
+. Nach dem Abonnieren leitet AWS Sie zur Registrierungs- oder Anmeldeseite der Konsole weiter.
+
+
+
+
+[[sign-up-or-sign-in-to-netapp-console]]
+== Registrieren oder anmelden bei der NetApp Console
+
+Nach Abschluss des Marketplace-Abonnements steht die Konsole für die weitere Einrichtung zur Verfügung.
+
+.Schritte
+. Auf der Konsolenseite eine der folgenden Optionen auswählen:
++
+** *Registrieren* bei erstmaliger Nutzung.
+** *Melden Sie sich bei NetApp Console an*, falls Sie bereits ein Konto besitzen.
+
+
+. Wenn *Registrieren* ausgewählt wurde, Folgendes ausfüllen:
++
+.. Die erforderlichen Felder eingeben:
++
+*** E-Mail
+*** Passwort
+*** Vollständiger Name
+*** Unternehmen
+*** Land
+
+
+.. *Weiter* auswählen.
+.. Optional: Geben Sie Kontaktdaten wie Adresse, Stadt, Bundesland, Postleitzahl und Telefonnummer ein.
+.. *Registrieren* auswählen.
+.. Die Lizenzbedingungen akzeptieren.
+.. Die E-Mail-Adresse wird mit der Nachricht von service@console.netapp.com verifiziert.
+
+
+. In der Konsole anmelden und die Authentifizierung abschließen.
+
+
+
+
+[[create-your-organization]]
+== Ihre Organisation erstellen
+
+Diesen Schritt nur ausführen, wenn Sie erstmals Benutzer sind oder noch keiner NetApp Console-Organisation angehören.
+
+Wenn Sie bereits Mitglied einer Organisation sind, diesen Abschnitt überspringen und mit <<Ihr Abonnement verknüpfen>> fortfahren.
+
+Eine Organisation kann zur Verwaltung von Benutzern, Rollen, Berechtigungen, Lizenzen und Systemen erstellt werden.
+
+.Schritte
+. Einen Organisationsnamen eingeben.
+. Optional: Ein NetApp Support Site (NSS)-Konto zuordnen.
+. *Erstellen* auswählen.
+
+
+
+
+[[associate-your-subscription]]
+== Ihr Abonnement verknüpfen
+
+Nachdem Sie Ihre Organisation erstellt haben, versucht die Konsole automatisch, Ihr Marketplace Abonnement mit der Organisation zu verknüpfen.
+
+Falls die automatische Zuordnung fehlschlägt, das Abonnement manuell zuordnen. link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Informationen zur Verwaltung von Abonnements"^].
+
+
+
+[[deploy-a-console-agent-in-aws]]
+== Einen Console Agent in AWS bereitstellen
+
+Nach der Verknüpfung des Abonnements öffnet die Konsole automatisch den Agentenbereitstellungsprozess zur Verwaltung Ihrer AWS-Ressourcen und Cloud Volumes ONTAP Systeme.
+
+Weitere Informationen zu den während der Agentenbereitstellung verwendeten Berechtigungen sind unter link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["AWS Berechtigungsreferenz"^] zu finden.
+
+.Schritte
+. Es können die auf der Einführungsseite genannten Schritte für die Mindestberechtigung zur Bereitstellung eines Agenten genutzt werden, oder die automatische Erstellung einer Rolle für die Agentenbereitstellung wird fortgesetzt.
+. Auf der Seite *AWS-Anmeldeinformationen* kann eine der folgenden Optionen ausgewählt werden, um Anmeldeinformationen für die Agentenbereitstellung bereitzustellen:
++
+[role="tabbed-block"]
+====
+.Rolle für mich erstellen (empfohlen)
+--
+Durch Auswahl dieser Option wird ein AWS CloudFormation Quick Create-Workflow geöffnet, um die Agentenbereitstellungsrolle zu erstellen. Wenn Sie über Administratorrechte verfügen, kann diese Option verwendet werden, um mithilfe eines CloudFormation Stacks automatisch die Richtlinie und die Rolle zu erstellen sowie den Benutzer für die Agentenerstellung zu authentifizieren.
+
+.. Die AWS-Konto-ID und optional die externe ID hinzufügen. Die Konsole legt einen Standardrollennamen fest.
+.. Die Nutzungsbedingungen werden bestätigt und *Stack erstellen* wird ausgewählt.
++
+image:screenshot-stack-creation.png["width=50% Screenshot der AWS CloudFormation Stack-Erstellungsseite, auf der die AWS-Konto-ID und optional die externe ID für die Agentenbereitstellungsrolle eingegeben werden."]
+
+.. Wenn die IAM-Rolle in AWS konfiguriert ist und der ARN generiert wurde, die Rolle bestätigen und speichern.
+
+
+--
+.Rolle übernehmen
+--
+Dies ist ein Teil des Workflows zur manuellen Rollenzuweisung. Geben Sie einen vorhandenen IAM-Rollen-ARN ein. Informationen zum Bearbeiten dieser Rolle finden sich unter  https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#associate-an-existing-subscription-with-your-organization["AWS-Anmeldeinformationen und Marketplace-Abonnements für NetApp Console verwalten"^].
+
+--
+.AWS Schlüssel
+--
+Dies ist ein Teil des manuellen Rollenzuweisungs-Workflows. Geben Sie einen AWS Access Key und Secret Key ein. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#add-the-credentials-to-an-existing-agent["AWS-Anmeldeinformationen und Marketplace-Abonnements für NetApp Console verwalten"^].
+
+--
+====
+. AWS Agent bereitstellen:
++
+.. Auf der Seite *AWS agent details* den Namen der Agentinstanz und die Agentenrolle festlegen oder bestätigen.
+.. Auf der Seite *Netzwerk* VPC, Subnetz, Schlüsselpaar, Verhalten der öffentlichen IP-Adresse und Proxy-Einstellungen auswählen.
+.. *Sicherheitsgruppe* konfigurieren. Eingehender HTTP- (80), HTTPS- (443) und SSH-Zugriff (22) für die Fehlerbehebung beim Zugriff auf die Agenten-VM ist zuzulassen.
+
+
+. Die Abschnittszusammenfassungen können überprüft werden, anschließend wird mit *Hinzufügen* die Bereitstellung gestartet.
++
+Vollständige Anforderungen an Netzwerk und Berechtigungen sind unter folgendem Link zu finden:
+
++
+** https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["Netzwerk für die AWS Marketplace-Bereitstellung einrichten"^]
+** https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-2-set-up-aws-permissions["AWS-Berechtigungen einrichten"^]
+** https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["AWS Berechtigungsreferenz"^]
+
+
+. Den Fortschrittsdialog der Bereitstellung bis zum Abschluss beobachten. Die Ereignisprotokolle lassen sich erweitern, um detaillierte Aktivitäten einzusehen.
+
+
+.Nach Abschluss
+Nach Abschluss der Bereitstellung kann das erste Cloud Volumes ONTAP System erstellt werden oder auf der Systemseite verbleiben, um später ein System hinzuzufügen.
+
+
+
+[[add-your-first-cloud-volumes-ontap-system]]
+== Ihr erstes Cloud Volumes ONTAP System hinzufügen
+
+Nachdem der Agent bereit ist, kann das erste Cloud Volumes ONTAP System in AWS erstellt werden.
+
+.Schritte
+. Im Dialogfeld nach der Bereitstellung die Option *System hinzufügen* auswählen.
+. Der Workflow zur Erstellung des Cloud Volumes ONTAP Systems wird gestartet.
+. Die Systemkonfiguration abschließen.
+
+
+Detaillierte Anweisungen zur Systembereitstellung sind unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"^] zu finden.
+
+
+
+[[troubleshooting-and-recovery]]
+== Fehlerbehebung und Wiederherstellung
+
+Verwenden Sie diesen Abschnitt, wenn Sie den Onboarding-Prozess vorzeitig abbrechen oder die Agentenbereitstellung fehlschlägt. Diese Schritte ermöglichen es, dort fortzufahren, wo Sie aufgehört haben, oder die Bereitstellung wiederherzustellen und erneut zu versuchen.
+
+
+
+[[resume-setup]]
+=== Setup fortsetzen
+
+Wenn Sie vor Abschluss der Einrichtung abbrechen, kann die Einrichtung beim zuletzt abgeschlossenen Schritt fortgesetzt werden.
+
+.Schritte
+. Zur NetApp Console-Startseite wechseln.
+. *Setup fortsetzen* auswählen, um mit dem Onboarding fortzufahren.
+
+
+
+
+[[recover-from-deployment-failure]]
+=== Wiederherstellung nach einem Bereitstellungsfehler
+
+Falls die Bereitstellung fehlschlägt:
+
+.Schritte
+. Der Bereitstellungsbericht kann heruntergeladen werden.
+. Die Konfiguration und Protokolle können überprüft werden.
+. *Neustart* auswählen, um die Bereitstellung erneut zu versuchen.
++
+link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html["Informationen zur Fehlerbehebung bei Agentenproblemen"^].
+
+
+
+.Weiterführende Links
+Diese Ressourcen stehen für zugehörige Einrichtungsaufgaben und Fehlerbehebung zur Verfügung.
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html["Einen NetApp Console Agenten aus dem AWS Marketplace bereitstellen"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#subscribe["Ein AWS-Abonnement konfigurieren"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html["Fehlerbehebung beim NetApp Console-Agenten"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/["Cloud Volumes ONTAP Dokumentation"^]
+

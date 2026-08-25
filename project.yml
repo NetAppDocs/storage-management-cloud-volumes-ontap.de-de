@@ -61,6 +61,8 @@ sidebar:
     - title: Bereitstellung in Amazon Web Services
       flavor: aws
       entries:
+      - title: Cloud Volumes ONTAP aus dem AWS Marketplace onboarden
+        url: "/task-onboard-cvo-aws-marketplace.html"
       - title: Bereitstellungsübersicht
         url: "/task-getting-started-aws.html"
       - title: Planen Sie Ihre Konfiguration

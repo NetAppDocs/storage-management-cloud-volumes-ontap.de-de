@@ -21,6 +21,7 @@ Der neue Onboarding-Prozess vereinfacht Ihren Übergang von einem Marketplace-Ab
 
 
 .Weiterführende Links
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-onboard-cvo-aws-marketplace.html["Cloud Volumes ONTAP aus dem AWS Marketplace onboarden"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["Flexible Abrechnung für Cloud Volumes ONTAP und Datendienste in AWS"^]
 
