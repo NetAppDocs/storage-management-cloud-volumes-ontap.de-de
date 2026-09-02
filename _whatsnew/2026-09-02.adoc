@@ -1,0 +1,17 @@
+= Cloud Volumes ONTAP Unterstützung in Azure Secret und Top Secret Regionen (private Vorschau)
+:allow-uri-read: 
+
+
+
+
+[[cloud-volumes-ontap-support-in-azure-secret-and-top-secret-regions-private-preview]]
+=== Cloud Volumes ONTAP Unterstützung in Azure Secret und Top Secret Regionen (private Vorschau)
+
+Cloud Volumes ONTAP unterstützt jetzt die Bereitstellung in Azure Government Secret und Top Secret Regionen in privater Vorschau. Diese Funktion erweitert Cloud Volumes ONTAP auf die klassifizierten Azure-Umgebungen von Microsoft, wodurch Regierungs- und Verteidigungskunden ONTAP für Datenmanagement, Datenschutz und Notfallwiederherstellung zur Unterstützung von Workloads für die nationale Sicherheit nutzen können. Für eine Teilnahme steht das NetApp Accounts-Team zur Verfügung.
+
+Weitere Informationen sind in der Azure-Dokumentation zu finden:
+
+* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/["Cloud für Missionen der US-Regierung^"]
+* https://azure.microsoft.com/en-us/explore/global-infrastructure/government/national-security["Azure Government Secret"^]
+* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions["Azure Government Top Secret"^]
+

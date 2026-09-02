@@ -81,6 +81,10 @@ Lokale Snapshots für effiziente Datensicherung und schnelle Wiederherstellung e
 +
 Die SSD-Speicherebene sollte eine Auslastung von maximal 80 % nicht überschreiten. Dies kann sich auf Lese- und Schreibvorgänge auf Ihrer Kapazitätspool-Speicherebene auswirken und die Durchsatzkapazität Ihres Systems beeinträchtigen. Wenn die Kapazität erschöpft ist, werden Datenvolumes schreibgeschützt. Dienste, die versuchen, neue Daten zu schreiben, schlagen ebenfalls fehl.
 
+* *Remote Datenreplizierung*
++
+Schützen Sie Ihre Cloud Volumes ONTAP Daten durch Remote-Datenreplizierung. Remote-Datenreplizierung bietet Funktionen für die Notfallwiederherstellung, indem synchronisierte Kopien Ihrer Daten an verschiedenen Standorten vorgehalten werden, was die Geschäftskontinuität bei Systemausfällen oder Katastrophen gewährleistet.
+
 
 
 
