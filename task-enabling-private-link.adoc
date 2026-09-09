@@ -38,7 +38,7 @@ Der Konsolenagent sollte in derselben Azure-Region wie die von ihm verwalteten C
 
 .Schritte
 . Gehen Sie im linken Navigationsbereich zu *Administration > Agenten*.
-. Klicken Sie auf dasimage:icon-action.png[""] Symbol für den Konsolenagenten, der Ihr Cloud Volumes ONTAP -System verwaltet.
+. Klicken Sie auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol für den Konsolenagenten, der Ihr Cloud Volumes ONTAP System verwaltet.
 . Wählen Sie * Cloud Volumes ONTAP -Einstellungen*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[Ein Screenshot der Cloud Volumes ONTAP -Einstellungsoption unter dem Einstellungssymbol.]

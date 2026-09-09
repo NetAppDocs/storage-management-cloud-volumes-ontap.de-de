@@ -457,7 +457,7 @@ Diese Schritte beschreiben die Verwendung von ONTAP System Manager für Version 
 
 .Schritte
 . Klicken Sie im Cloud Volumes ONTAP -System auf die Registerkarte *Aggregates*.
-. Klicken Sie auf der gewünschten Aggregatkachel auf dasimage:icon-action.png[""] Symbol und wählen Sie dann *Aggregierte Details anzeigen* aus.
+. Auf der erforderlichen Aggregatkachel das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auswählen und anschließend *Aggregatdetails anzeigen* wählen.
 +
 image:screenshots_aggregate_details_state.png["Screenshot: Zeigt das Feld „Status“, wenn Sie Informationen für ein Aggregat anzeigen."]
 
@@ -574,7 +574,7 @@ Es stehen zwei Wege zur Verfügung.  Der richtige Pfad hängt von der Version Ih
 ** `/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. Klicken Sie auf dem System auf dasimage:icon-action.png[""] Symbol und klicken Sie dann auf * Cloud Volumes ONTAP aktualisieren*.
+. Im System auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol klicken und anschließend auf *Update Cloud Volumes ONTAP*.
 . Geben Sie auf der Seite „Cloud Volumes ONTAP -Version aktualisieren“ die URL ein und klicken Sie dann auf *Image ändern*.
 +
 Wenn Sie das Software-Image in den Konsolen-Agenten im oben angezeigten Pfad kopiert haben, geben Sie die folgende URL ein:

@@ -29,11 +29,11 @@ Wenn in einem Aggregat der Speicherplatz ausgeht, können Sie Volumes mithilfe d
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . Doppelklicken Sie auf der Seite *Systeme* auf das Cloud Volumes ONTAP -System, auf dem Sie Aggregate verwalten möchten.
 . Klicken Sie in den Systemdetails auf die Registerkarte *Aggregate*.
-. Klicken Sie für das gewünschte Aggregat auf dasimage:icon-action.png[""] Symbol für die Verwaltungsaktionen.
+. Für das erforderliche Aggregat auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol für die Verwaltungsaktionen klicken.
 +
 image:screenshot_aggr_menu_options.png["Ein Screenshot der Menüoptionen „Aggregate“."]
 
-. Verwalten Sie Ihre Aggregate über die verfügbaren Optionen imimage:icon-action.png[""] Speisekarte.
+. Aggregate können über die verfügbaren Optionen im image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Menü verwaltet werden.
 
 
 
@@ -43,7 +43,7 @@ ifdef::aws[]
 
 Für AWS können Sie die Kapazität eines Aggregats erhöhen, das Amazon EBS Elastic Volumes unterstützt.
 
-. Unter demimage:icon-action.png[""] Klicken Sie im Menü auf *Kapazität erhöhen*.
+. Klicken Sie im image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Menü auf *Kapazität erhöhen*.
 . Geben Sie die zusätzliche Kapazität ein, die Sie hinzufügen möchten, und klicken Sie dann auf *Erhöhen*.
 
 

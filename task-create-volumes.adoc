@@ -65,7 +65,7 @@ Wählen Sie die Registerkarte „Volumes“ und klicken Sie auf „Volume hinzuf
 --
 .Spezifisches Aggregat
 --
-.. Gehen Sie auf der Registerkarte *Aggregate* zum gewünschten Aggregat und klicken Sie auf dasimage:icon-action.png[""] Symbol.
+.. Auf der Registerkarte *Aggregate* zum gewünschten Aggregat wechseln und auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol klicken.
 .. Wählen Sie *Volume hinzufügen*.image:screenshot_add_volume_button_agg.png["Ein Screenshot der Schaltfläche „Volume hinzufügen“ unter der Registerkarte „Aggregate“."]
 
 

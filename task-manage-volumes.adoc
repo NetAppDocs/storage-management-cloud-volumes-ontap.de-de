@@ -264,7 +264,7 @@ Die erweiterten Informationen sollten beispielsweise in etwa wie folgt lauten: �
 . Identifizieren Sie ein oder mehrere Volumes, die aus dem Aggregat verschoben werden sollen:
 +
 .. Klicken Sie im Cloud Volumes ONTAP -System auf die Registerkarte *Aggregate*.
-.. Klicken Sie auf der Aggregatkachel auf dasimage:icon-action.png[""] Symbol und klicken Sie dann auf *Gesamtdetails anzeigen*.
+.. Auf der Kachel „Aggregat“ das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auswählen und danach *Aggregatdetails anzeigen* wählen.
 .. Überprüfen Sie auf der Registerkarte *Übersicht* des Bildschirms *Aggregatdetails* die Größe jedes Volumes und wählen Sie ein oder mehrere Volumes aus, die aus dem Aggregat verschoben werden sollen.
 +
 Sie sollten Volumes auswählen, die groß genug sind, um Speicherplatz im Aggregat freizugeben, damit Sie in Zukunft zusätzliche Kapazitätsprobleme vermeiden.
@@ -348,7 +348,7 @@ Um Kapazitätsprobleme zu vermeiden, ist das Verschieben von zwei oder mehr Volu
 . Überprüfen Sie, ob ein vorhandenes Aggregat über freie Kapazität für die Volumes verfügt, die Sie verschieben müssen:
 +
 .. Klicken Sie im Cloud Volumes ONTAP -System auf die Registerkarte *Aggregate*.
-.. Klicken Sie auf der gewünschten Aggregatkachel auf dasimage:icon-action.png[""] Symbol und dann *Aggregierte Details anzeigen*, um die verfügbare Kapazität anzuzeigen (bereitgestellte Größe abzüglich verwendeter aggregierter Kapazität).
+.. Auf der erforderlichen Aggregatkachel das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auswählen und anschließend *Aggregatdetails anzeigen*, um die verfügbare Kapazität anzuzeigen (bereitgestellte Größe minus genutzte Aggregatkapazität).
 +
 image::screenshot_aggr_capacity.png[Screenshot Aggr-Kapazität]
 
@@ -356,7 +356,7 @@ image::screenshot_aggr_capacity.png[Screenshot Aggr-Kapazität]
 
 . Fügen Sie bei Bedarf Datenträger zu einem vorhandenen Aggregat hinzu:
 +
-.. Wählen Sie das Aggregat aus und klicken Sie dann auf dasimage:icon-action.png[""] Symbol > *Datenträger hinzufügen*.
+.. Wählen Sie das Aggregat aus, dann auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol > *Datenträger hinzufügen* klicken.
 .. Wählen Sie die Anzahl der hinzuzufügenden Datenträger aus und klicken Sie dann auf *Hinzufügen*.
 
 

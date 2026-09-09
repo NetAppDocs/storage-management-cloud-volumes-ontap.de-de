@@ -1988,7 +1988,6 @@
   <block id="5ad10cfb674234136c181d096cb59522" category="paragraph-title">Erforderliche Berechtigungen</block>
   <block id="99bdfb197101bf876ef3b087827beaa4" category="paragraph">Um die Konsolen-Agent-Einstellungen für die Cloud Volumes ONTAP Benutzerauthentifizierung ändern zu können, müssen Ihnen die Administratorrechte der Organisation oder des Kontos zugewiesen sein.</block>
   <block id="aa2199cb1bb818eb2b3b90d201502840" category="list-text">Gehen Sie im linken Navigationsbereich zu *Administration &gt; Agenten*.</block>
-  <block id="e9c35a16cf306867e850f1a072befe88" category="list-text">Klicken Sie auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol für den gewünschten Konsolenagenten und wählen Sie *Konsolenagenten bearbeiten*.</block>
   <block id="ef46255365b3e47560b36ea8589d2d00" category="list-text">Aktivieren Sie unter *Benutzeranmeldeinformationen erzwingen* das Kontrollkästchen *Aktivieren/Deaktivieren*.  Standardmäßig ist die Authentifizierung deaktiviert.</block>
   <block id="1c969f0ef9143d2554b1ddaa0d92382f" category="admonition">Wenn Sie diesen Wert auf *Aktivieren* setzen, wird die Authentifizierung zurückgesetzt und Sie müssen alle vorhandenen Workflows ändern, um diese Änderung zu berücksichtigen.</block>
   <block id="4cc186df234138a57b2e8c5d8e5f7f8d" category="list-text">Klicken Sie auf *Speichern*.</block>
@@ -2258,7 +2257,6 @@
   <block id="c33283e89e8cd329189a883e4e8f4053" category="list-text">Muss mindestens einen englischen Buchstaben und eine Ziffer enthalten</block>
   <block id="c2ffca846e9e6726f5fcc838afa7cba5" category="list-text">Sollte diese Sonderzeichen nicht enthalten:<block ref="4981b6e6dc1b6d6cbf5e189886588934" prefix=" " category="inline-code"></block></block>
   <block id="a42cd27291aedcf9964de9d89624ec1e" category="list-text">Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Cloud Volumes ONTAP -Systems.</block>
-  <block id="7cf6d09f6c35b61322fde4c0dd11570b" category="list-text">Klicken Sie oben rechts in der Konsole auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol und wählen Sie *Passwort festlegen*.</block>
   <block id="cde648cfec6a9f1a0f5bbf7f5083336a" category="inline-image-macro">Ein Screenshot, der das vom System verfügbare Menü zeigt, das die Aktion „Passwort festlegen“ enthält.</block>
   <block id="d1c167c796401c671e613bfcd1fbf5bb" category="paragraph"><block ref="d1c167c796401c671e613bfcd1fbf5bb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4760896a3351a42c072a61eb664108e5" category="summary">Sie können die AWS-Routentabellen ändern, die Routen zu den Floating-IP-Adressen für ein HA-Paar enthalten, das in mehreren AWS-Verfügbarkeitszonen bereitgestellt wird.  Sie können dies tun, wenn neue NFS- oder CIFS-Clients auf ein HA-Paar in AWS zugreifen müssen.</block>
@@ -2384,7 +2382,6 @@
   <block id="e6441a36027812e99b99675afebb1ad3" category="inline-image-macro">Ein Screenshot der Schaltfläche „Volume hinzufügen“ unter der Registerkarte „Übersicht“.</block>
   <block id="57558e515c4178f1c27c4fe21e349c6e" category="paragraph">Wählen Sie die Registerkarte „Volumes“ und klicken Sie auf „Volume hinzufügen“.<block ref="d66b0ca71189f0ddd53cd4b3e65bbf57" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8f16078272611a0f4398b213c95246b5" category="open-title">Spezifisches Aggregat</block>
-  <block id="885da3b95c056e70931f65a33ea17088" category="list-text">Gehen Sie auf der Registerkarte *Aggregate* zum gewünschten Aggregat und klicken Sie auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol.</block>
   <block id="d67d87305db3f29260c81473dd44e3f1" category="inline-image-macro">Ein Screenshot der Schaltfläche „Volume hinzufügen“ unter der Registerkarte „Aggregate“.</block>
   <block id="5ff758746d0b8603d8e7cc0736b6b8d3" category="list-text">Wählen Sie *Volume hinzufügen*.<block ref="90511a2a61b219fe659f6c6204d0e9f4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="108a74a6cbb575c986177039e07dc411" category="list-text">Befolgen Sie die Schritte im Assistenten, um das Volume zu erstellen.</block>
@@ -2498,7 +2495,6 @@
   <block id="488113528f5ee1e3b5937164669d88a3" category="paragraph"><block ref="f7cdf513db892a96f724bb06e033cc0c" category="inline-link-rx"></block> .</block>
   <block id="6c40837b72d70ae6b7038522183754a0" category="list-text">Löschen Sie das Cloud Volumes ONTAP -System.</block>
   <block id="3b90b5540ed00f0b6c6dc889f298934c" category="list-text">Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Cloud Volumes ONTAP Systems, das Sie löschen möchten.</block>
-  <block id="393fcf44f13dc33611e68af462aa0b09" category="list-text">Klicken Sie oben rechts in der Konsole auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol und wählen Sie *Löschen*.</block>
   <block id="efeb08d04d298bc5a7cab7297e3e33d3" category="list-text">Geben Sie den Namen des Systems ein, das Sie löschen möchten, und klicken Sie dann auf *Löschen*.  Das Löschen eines Systems kann bis zu fünf Minuten dauern.</block>
   <block id="3264c8e5645849e735efbc7fb5a89023" category="admonition">Backup und Recovery sind nur für Cloud Volumes ONTAP Professional-Lizenzen kostenlos. Dieser kostenlose Vorteil gilt nicht für gelöschte Umgebungen.  Wenn gesicherte Kopien der Cloud Volumes ONTAP -Umgebung in einer Backup- und Recovery-Instanz aufbewahrt werden, werden Ihnen die gesicherten Kopien in Rechnung gestellt, bis sie gelöscht werden.</block>
   <block id="956ed8c59362d82aacc7c1ccc24ee128" category="doc">Stellen Sie Cloud Volumes ONTAP HA-Paare in einem gemeinsam genutzten AWS-Subnetz bereit</block>
@@ -2922,7 +2918,6 @@
   <block id="c49bf5e025cb6e60256e27b50c1e1d7c" category="paragraph">Falls Ihr Unternehmen dies erfordert, können Sie eine Einstellung in der Konsole ändern, sodass Cloud Volumes ONTAP so konfiguriert wird, dass Service-Endpunkte anstelle eines Azure Private Link verwendet werden.  Das Ändern dieser Einstellung gilt für neue Cloud Volumes ONTAP -Systeme, die Sie erstellen.  Service-Endpunkte werden nur unterstützt in<block ref="143d2b52aa05d0c2b5e02a98661c9a57" category="inline-link-macro-rx"></block> zwischen dem Konsolenagenten und Cloud Volumes ONTAP VNets.</block>
   <block id="573514d5de621ecfe56c91e7c665d73d" category="inline-link">Azure-Regionenpaar</block>
   <block id="1f370e761acf121f11e5a9650fea6600" category="paragraph">Der Konsolenagent sollte in derselben Azure-Region wie die von ihm verwalteten Cloud Volumes ONTAP -Systeme oder in der<block ref="71e0e9a7366955554f0600c5ea8cfc7f" category="inline-link-rx"></block> für die Cloud Volumes ONTAP -Systeme.</block>
-  <block id="33059c41e16db33fd5a113bc9f3f1cde" category="list-text">Klicken Sie auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol für den Konsolenagenten, der Ihr Cloud Volumes ONTAP -System verwaltet.</block>
   <block id="945a3e63731f2e910aa6dad34b34ef5c" category="list-text">Wählen Sie * Cloud Volumes ONTAP -Einstellungen*.</block>
   <block id="13cdcbf94ff7381b25ca5784f874a9b6" category="image-alt">Ein Screenshot der Cloud Volumes ONTAP -Einstellungsoption unter dem Einstellungssymbol.</block>
   <block id="6c00fef2e24946332c58419df6198320" category="list-text">Klicken Sie unter *Azure* auf *Azure Private Link verwenden*.</block>
@@ -3260,13 +3255,10 @@
   <block id="a760d335f1fa2810727ed37789f5c213" category="paragraph">Wenn in einem Aggregat der Speicherplatz ausgeht, können Sie Volumes mithilfe des ONTAP System Manager auf ein anderes Aggregat verschieben.</block>
   <block id="b796592de2543966990a29ebd9095cc4" category="list-text">Doppelklicken Sie auf der Seite *Systeme* auf das Cloud Volumes ONTAP -System, auf dem Sie Aggregate verwalten möchten.</block>
   <block id="79636f7c0017220661389c2b9ab4bf56" category="list-text">Klicken Sie in den Systemdetails auf die Registerkarte *Aggregate*.</block>
-  <block id="8aea04863be513559539bc0ead95e239" category="list-text">Klicken Sie für das gewünschte Aggregat auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol für die Verwaltungsaktionen.</block>
   <block id="4940ff7a33940e4ec33b7d78f146648a" category="inline-image-macro">Ein Screenshot der Menüoptionen „Aggregate“.</block>
   <block id="65c989c474db774160c441e94f03ddfc" category="paragraph"><block ref="65c989c474db774160c441e94f03ddfc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ec57ef43a7af45349f5933a166eab707" category="list-text">Verwalten Sie Ihre Aggregate über die verfügbaren Optionen im<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Speisekarte.</block>
   <block id="e83630b8e6273107e391f5f81a2bb56e" category="admonition">Um einem Aggregat Festplatten hinzuzufügen, müssen alle Festplatten im Aggregat dieselbe Größe haben.</block>
   <block id="1fa9cab08589734f915412a3b0a337b1" category="paragraph">Für AWS können Sie die Kapazität eines Aggregats erhöhen, das Amazon EBS Elastic Volumes unterstützt.</block>
-  <block id="151a2b996e176a433417676f36db61d2" category="list-text">Unter dem<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Klicken Sie im Menü auf *Kapazität erhöhen*.</block>
   <block id="cacd62863a1aec474ea14c7ba39b9f28" category="list-text">Geben Sie die zusätzliche Kapazität ein, die Sie hinzufügen möchten, und klicken Sie dann auf *Erhöhen*.</block>
   <block id="f21c1bc5bcee9dae9d5eb025e4c6d884" category="paragraph">Beachten Sie, dass Sie die Kapazität des Aggregats um mindestens 256 GiB oder 10 % der Aggregatgröße erhöhen müssen.  Wenn Sie beispielsweise ein Aggregat von 1,77 TiB haben, sind 10 % 181 GiB.  Das ist weniger als 256 GiB, daher muss die Größe des Aggregats um das Minimum von 256 GiB erhöht werden.</block>
   <block id="2eb14dc3edd9fb392b8095df85f2f222" category="summary">Verwalten Sie Ihre kapazitätsbasierten Lizenzen über die NetApp Console, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt.</block>
@@ -3408,7 +3400,6 @@
   <block id="34b14acb1a2ab9863c3c5dad4fd43a16" category="paragraph">Die erweiterten Informationen sollten beispielsweise in etwa wie folgt lauten: „Aggregat aggr1 hat seine Kapazitätsgrenze erreicht.“</block>
   <block id="d741de259d45adde48602bde8af2fa1e" category="list-text">Identifizieren Sie ein oder mehrere Volumes, die aus dem Aggregat verschoben werden sollen:</block>
   <block id="917f77e19bd3db27edc6b2340ea3a7d9" category="list-text">Klicken Sie im Cloud Volumes ONTAP -System auf die Registerkarte *Aggregate*.</block>
-  <block id="a69fa2e48e8044b3b57c3421102c3175" category="list-text">Klicken Sie auf der Aggregatkachel auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol und klicken Sie dann auf *Gesamtdetails anzeigen*.</block>
   <block id="6d2e07ae8aec14e8c7f5862f9a6a5ade" category="list-text">Überprüfen Sie auf der Registerkarte *Übersicht* des Bildschirms *Aggregatdetails* die Größe jedes Volumes und wählen Sie ein oder mehrere Volumes aus, die aus dem Aggregat verschoben werden sollen.</block>
   <block id="1ac63b40afca7dec0b6be58237e990c5" category="paragraph">Sie sollten Volumes auswählen, die groß genug sind, um Speicherplatz im Aggregat freizugeben, damit Sie in Zukunft zusätzliche Kapazitätsprobleme vermeiden.</block>
   <block id="a996d75e91b5144977f6dd124cd75572" category="image-alt">Screenshot Gesamtvolumenübersicht</block>
@@ -3439,10 +3430,8 @@
   <block id="a0147f320461b84bd766277daa455d28" category="paragraph">Um Kapazitätsprobleme zu vermeiden, ist das Verschieben von zwei oder mehr Volumes erforderlich. Die Konsole kann diese Aktion jedoch nicht für Sie ausführen.</block>
   <block id="b9caee734c459ea1d440e0f169eb1723" category="list-text">Überprüfen Sie, ob ein vorhandenes Aggregat über freie Kapazität für die Volumes verfügt, die Sie verschieben müssen:</block>
   <block id="9b7369571b345d669d0e974c6d79076e" category="list-text">Klicken Sie im Cloud Volumes ONTAP -System auf die Registerkarte *Aggregate*.</block>
-  <block id="e43e4bac47c138747571cc56cc7c9284" category="list-text">Klicken Sie auf der gewünschten Aggregatkachel auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol und dann *Aggregierte Details anzeigen*, um die verfügbare Kapazität anzuzeigen (bereitgestellte Größe abzüglich verwendeter aggregierter Kapazität).</block>
   <block id="e40eb63a3506950ad93ba909dcf25c90" category="image-alt">Screenshot Aggr-Kapazität</block>
   <block id="b8bd018e0e8deb966bda4a09610591ac" category="list-text">Fügen Sie bei Bedarf Datenträger zu einem vorhandenen Aggregat hinzu:</block>
-  <block id="421d1b5c36149f9bc417af02cf7c2124" category="list-text">Wählen Sie das Aggregat aus und klicken Sie dann auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol &gt; *Datenträger hinzufügen*.</block>
   <block id="3425dbe0168b60aed62d54b2290baad1" category="list-text">Wählen Sie die Anzahl der hinzuzufügenden Datenträger aus und klicken Sie dann auf *Hinzufügen*.</block>
   <block id="e272fdd11a7aa99158a093a41c65fdd9" category="list-text">Wenn keine Aggregate über verfügbare Kapazität verfügen, erstellen Sie ein neues Aggregat.</block>
   <block id="0e725e4f9ac82ce0408528d6e38105f1" category="inline-link-macro">Erstellen von Aggregaten</block>
@@ -3878,7 +3867,6 @@
   <block id="7f28e24a7c8929b9ea02725ffac8ea67" category="doc">Entfernen eines Cloud Volumes ONTAP -Systems aus der NetApp Console</block>
   <block id="bf74416051ebd23aa12ffa560fdd35ad" category="paragraph">Durch das Entfernen eines Cloud Volumes ONTAP -Systems wird es aus der NetApp Console entfernt.  Das Cloud Volumes ONTAP -System wird dadurch nicht gelöscht.  Sie können das System später bei Bedarf erneut entdecken.</block>
   <block id="f6982d54fc10b8dff73549c0a04dda7c" category="list-text">Doppelklicken Sie auf der Seite *Systeme* auf das System, das Sie entfernen möchten.</block>
-  <block id="31745001313aa79cdad6c8f6ab911c90" category="list-text">Klicken Sie oben rechts in der Konsole auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol und wählen Sie *Aus Arbeitsbereich entfernen*.</block>
   <block id="ab8587ffcd52404950c043ccf36aaf8c" category="list-text">Klicken Sie im Fenster *Aus Arbeitsbereich entfernen* auf *Entfernen*.</block>
   <block id="1cdcde2746fca932e1f6783d36cde77e" category="paragraph">Die Konsole entfernt das System.  Benutzer können das gelöschte System jederzeit auf der Seite *Systeme* wiederfinden.</block>
   <block id="acdfc619ad459d4ab0532bb87b6d7fca" category="summary">Aktivieren Sie diese Microsoft Azure-Funktion, um HA in SAZ bereitzustellen.</block>
@@ -4484,7 +4472,6 @@
   <block id="58f03f4aa156a72c372951a943f6b4d3" category="section-title">Überprüfen, ob Aggregate online sind</block>
   <block id="8934d548c1104122f0b1a27daeb92ffa" category="paragraph">Aggregate für Cloud Volumes ONTAP müssen online sein, bevor Sie die Software aktualisieren.  Aggregate sollten in den meisten Konfigurationen online sein, aber wenn nicht, sollten Sie sie online bringen.</block>
   <block id="99d9b45657c4a8690b30f3b0f450d10a" category="list-text">Klicken Sie im Cloud Volumes ONTAP -System auf die Registerkarte *Aggregates*.</block>
-  <block id="ae94a52c4296ae374ee6be8e682957a0" category="list-text">Klicken Sie auf der gewünschten Aggregatkachel auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol und wählen Sie dann *Aggregierte Details anzeigen* aus.</block>
   <block id="8a58bd2f86c7acb1b532ae3d8d8ffea5" category="inline-image-macro">Screenshot: Zeigt das Feld „Status“, wenn Sie Informationen für ein Aggregat anzeigen.</block>
   <block id="46804cb5ec7cb836d1b3ea87af016b42" category="paragraph"><block ref="46804cb5ec7cb836d1b3ea87af016b42" category="inline-image-macro-rx" type="image"></block></block>
   <block id="af85ea64dfacf7faf161184211d438c9" category="list-text">Wenn das Aggregat offline ist, verwenden Sie ONTAP System Manager, um das Aggregat online zu bringen:</block>
@@ -4537,7 +4524,6 @@
   <block id="367ad91722e49365699290156d04506b" category="paragraph">Es stehen zwei Wege zur Verfügung.  Der richtige Pfad hängt von der Version Ihres Konsolenagenten ab.</block>
   <block id="1b19ae48e0693419e1e905991459c290" category="list-text"><block ref="b31c7138696aef9cf55dc226ffd11bfa" prefix="" category="inline-code"></block></block>
   <block id="93f9a2aa0331918bf3f1a44fb42f791e" category="list-text"><block ref="d42052aef7da6deaffc65522893f95f6" prefix="" category="inline-code"></block></block>
-  <block id="179ef4c35afe7df9fca82dc7c1fd5143" category="list-text">Klicken Sie auf dem System auf das<block ref="6b6d595755b48ff08cea04127d7784c8" category="inline-image-macro-rx" type="image"></block> Symbol und klicken Sie dann auf * Cloud Volumes ONTAP aktualisieren*.</block>
   <block id="31a578b8e294d03f4be50639f79e8160" category="list-text">Geben Sie auf der Seite „Cloud Volumes ONTAP -Version aktualisieren“ die URL ein und klicken Sie dann auf *Image ändern*.</block>
   <block id="3ad650f1a041bdd6c72340558a4aa4d0" category="paragraph">Wenn Sie das Software-Image in den Konsolen-Agenten im oben angezeigten Pfad kopiert haben, geben Sie die folgende URL ein:</block>
   <block id="1b7efa2b5fdb1436a1d0b4c37a1997e2" category="paragraph">\http://&lt;Private IP-Adresse des Konsolenagenten&gt;/ontap/images/&lt;Bilddateiname&gt;</block>
@@ -7856,4 +7842,19 @@
   <block id="b03b92c4dfcafd9226ecc9026f960e01" category="paragraph">Schützen Sie Ihre Cloud Volumes ONTAP Daten durch Remote-Datenreplizierung. Remote-Datenreplizierung bietet Funktionen für die Notfallwiederherstellung, indem synchronisierte Kopien Ihrer Daten an verschiedenen Standorten vorgehalten werden, was die Geschäftskontinuität bei Systemausfällen oder Katastrophen gewährleistet.</block>
   <block id="5e6b403f3ce4af919738fd94fe35d2d0" category="section-title">02. September 2026</block>
   <block id="ee3e9d951c79faa2be7ec2e79fdaf3dd" category="paragraph">Workload Factory analysiert regelmäßig die Konfigurationen Ihrer Speichersysteme, um mögliche Konfigurationsprobleme mit Ihren Cloud Volumes ONTAP Systemen zu erkennen. Wenn Probleme gefunden werden, zeigt das Well-Architected Dashboard an, worin die Probleme bestehen, und gibt Empfehlungen, welche Änderungen erforderlich sind, damit Ihre Speichersysteme Spitzenleistung, Kosteneffizienz und die Einhaltung bewährter Verfahren erreichen.</block>
+  <block id="e7f639747125ba0ea26f45843967eecd" category="inline-image-macro">Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen</block>
+  <block id="3f516fbf049ebb05c463c753eb67b9a4" category="list-text">Klicken Sie auf das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol des gewünschten Console Agenten und wählen Sie *Edit Console agent*.</block>
+  <block id="60ebb6e9c8e7bd00664ff0182834bbbc" category="list-text">Oben rechts in der Konsole das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol auswählen und *Passwort festlegen* wählen.</block>
+  <block id="9c1e8a93062f9e08c18b7ff18d4c581f" category="list-text">Auf der Registerkarte *Aggregate* zum gewünschten Aggregat wechseln und auf das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol klicken.</block>
+  <block id="0de3101fcf1da466c94cae4391b9e8a2" category="list-text">Oben rechts in der Konsole das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol auswählen und *Löschen* wählen.</block>
+  <block id="3e932f868737e21b9ed5bda835757c87" category="list-text">Klicken Sie auf das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol für den Konsolenagenten, der Ihr Cloud Volumes ONTAP System verwaltet.</block>
+  <block id="6a1e4ec541e571fac83e1c9ca6c9764f" category="list-text">Für das erforderliche Aggregat auf das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol für die Verwaltungsaktionen klicken.</block>
+  <block id="c6f3be6f5fd2a7a00e040c02adef2a44" category="list-text">Aggregate können über die verfügbaren Optionen im <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Menü verwaltet werden.</block>
+  <block id="8ce65cfa7ee0582b8e471eae7579ed00" category="list-text">Klicken Sie im <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Menü auf *Kapazität erhöhen*.</block>
+  <block id="72e8de0716c9783610815fe31a38c5cc" category="list-text">Auf der Kachel „Aggregat“ das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol auswählen und danach *Aggregatdetails anzeigen* wählen.</block>
+  <block id="a016ea4bcb3e06f27b724ec30052c7d0" category="list-text">Auf der erforderlichen Aggregatkachel das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol auswählen und anschließend *Aggregatdetails anzeigen*, um die verfügbare Kapazität anzuzeigen (bereitgestellte Größe minus genutzte Aggregatkapazität).</block>
+  <block id="47e9ea2515e7bd4f510f7771337ace7c" category="list-text">Wählen Sie das Aggregat aus, dann auf das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol &gt; *Datenträger hinzufügen* klicken.</block>
+  <block id="6cff1893b505d7554422f471b99af689" category="list-text">Oben rechts in der Konsole das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol auswählen und *Aus Arbeitsbereich entfernen* wählen.</block>
+  <block id="249693747a2015307738625ff22160d7" category="list-text">Auf der erforderlichen Aggregatkachel das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol auswählen und anschließend *Aggregatdetails anzeigen* wählen.</block>
+  <block id="1d9ce53bf771f416c253fb83a5e69679" category="list-text">Im System auf das <block ref="21d1ea15f76c8e0170375dc9a7026afb" category="inline-image-macro-rx" type="image"></block> Symbol klicken und anschließend auf *Update Cloud Volumes ONTAP*.</block>
 </blocks>
