@@ -14,7 +14,7 @@ summary: Das übersichtliche Dashboard in NetApp Console analysiert regelmäßig
 
 
 [role="lead"]
-Das übersichtliche Dashboard in NetApp Console analysiert regelmäßig die Konfigurationen Ihrer Speichersysteme, um mögliche Konfigurationsprobleme Ihrer Cloud Volumes ONTAP Systeme zu erkennen. Wenn Probleme festgestellt werden, zeigt das Dashboard an, welche Probleme bestehen, und erläutert, welche Änderungen erforderlich sind, damit Ihre Speichersysteme Spitzenleistung, Kosteneffizienz und die Einhaltung bewährter Verfahren erreichen.
+Workload Factory analysiert regelmäßig die Konfigurationen Ihrer Speichersysteme, um mögliche Konfigurationsprobleme mit Ihren Cloud Volumes ONTAP Systemen zu erkennen. Wenn Probleme gefunden werden, zeigt das Well-Architected Dashboard an, worin die Probleme bestehen, und gibt Empfehlungen, welche Änderungen erforderlich sind, damit Ihre Speichersysteme Spitzenleistung, Kosteneffizienz und die Einhaltung bewährter Verfahren erreichen.
 
 Zu den wichtigsten Fähigkeiten gehören:
 

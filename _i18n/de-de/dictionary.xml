@@ -7855,4 +7855,5 @@
   <block id="c465a7bd98f96ab6b7e15dbed5471998" category="list-text">*Remote Datenreplizierung*</block>
   <block id="b03b92c4dfcafd9226ecc9026f960e01" category="paragraph">Schützen Sie Ihre Cloud Volumes ONTAP Daten durch Remote-Datenreplizierung. Remote-Datenreplizierung bietet Funktionen für die Notfallwiederherstellung, indem synchronisierte Kopien Ihrer Daten an verschiedenen Standorten vorgehalten werden, was die Geschäftskontinuität bei Systemausfällen oder Katastrophen gewährleistet.</block>
   <block id="5e6b403f3ce4af919738fd94fe35d2d0" category="section-title">02. September 2026</block>
+  <block id="ee3e9d951c79faa2be7ec2e79fdaf3dd" category="paragraph">Workload Factory analysiert regelmäßig die Konfigurationen Ihrer Speichersysteme, um mögliche Konfigurationsprobleme mit Ihren Cloud Volumes ONTAP Systemen zu erkennen. Wenn Probleme gefunden werden, zeigt das Well-Architected Dashboard an, worin die Probleme bestehen, und gibt Empfehlungen, welche Änderungen erforderlich sind, damit Ihre Speichersysteme Spitzenleistung, Kosteneffizienz und die Einhaltung bewährter Verfahren erreichen.</block>
 </blocks>
