@@ -11,9 +11,9 @@ BlueXP unterstützt jetzt zusätzlich zu den vorhandenen expliziten Proxy-Verbin
 
 Weitere Informationen zur Verwendung von Proxyservern in Cloud Volumes ONTAP finden Sie unter:
 
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#network-configurations-to-support-connector-proxy-servers["Netzwerkkonfigurationen zur Unterstützung des Connector-Proxys in AWS"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/azure/reference-networking-azure.html#network-configurations-to-support-connector["Netzwerkkonfigurationen zur Unterstützung des Connector-Proxys in Azure"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#network-configurations-to-support-connector-proxy["Netzwerkkonfigurationen zur Unterstützung des Connector-Proxys in Google Cloud"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#network-configurations-to-support-connector-proxy-servers["Netzwerkkonfigurationen zur Unterstützung des Connector-Proxys in AWS"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/azure/reference-networking-azure.html#network-configurations-to-support-connector["Netzwerkkonfigurationen zur Unterstützung des Connector-Proxys in Azure"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#network-configurations-to-support-connector-proxy["Netzwerkkonfigurationen zur Unterstützung des Connector-Proxys in Google Cloud"^]
 
 
 

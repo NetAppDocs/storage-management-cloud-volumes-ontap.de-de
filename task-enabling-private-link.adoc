@@ -51,7 +51,7 @@ image::screenshot-settings-cloud-volumes-ontap.png[Ein Screenshot der Cloud Volu
 .Nach Abschluss
 Wenn Sie Azure Private Links deaktiviert haben und der Konsolen-Agent einen Proxyserver verwendet, müssen Sie den direkten API-Verkehr aktivieren.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector["Erfahren Sie, wie Sie den direkten API-Verkehr auf dem Konsolenagenten aktivieren"^]
+https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector["Erfahren Sie, wie Sie den direkten API-Verkehr auf dem Konsolenagenten aktivieren"^]
 
 
 

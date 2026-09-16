@@ -221,7 +221,7 @@ Wenn Sie einen vom Kunden verwalteten Schlüssel mit einem Cloud Volumes ONTAP S
 "Microsoft.KeyVault/vaults/accessPolicies/write",
 "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
 ----
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Aktuelle Liste der Berechtigungen anzeigen"^]
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["Aktuelle Liste der Berechtigungen anzeigen"^]
 
 .Schritte
 . Die Liste der Schlüsseltresore in Ihrem Azure-Abonnement erhalten Sie mithilfe der folgenden API-Aufrufe.
@@ -293,5 +293,5 @@ Sie verfügen über ein neues Cloud Volumes ONTAP -System, das für die Verwendu
 
 .Weiterführende Links
 * https://docs.netapp.com/us-en/console-automation/cm/wf_cvo_before.html["Bereiten Sie sich auf die Verwendung der Cloud Volumes ONTAP API-Workflows vor."^].
-* https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments["Erfahren Sie mehr über die ONTAP-Management-REST-APIs"^].
+* https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#azure-haworking-environments["Erfahren Sie mehr über die ONTAP-Management-REST-APIs"^].
 

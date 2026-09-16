@@ -25,7 +25,7 @@ Wenn Sie diese Einstellung aktivieren, wird Cloud Volumes ONTAP die Sperren bloc
 CAUTION: Dieser Vorgang kann für CIFS-Clients störend sein.  Daten, die nicht von CIFS-Clients festgeschrieben werden, können verloren gehen.
 
 .Bevor Sie beginnen
-Sie müssen einen Konsolenagenten erstellen, bevor Sie die Konsoleneinstellungen ändern können. https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector["Erfahren Sie mehr"^] .
+Sie müssen einen Konsolenagenten erstellen, bevor Sie die Konsoleneinstellungen ändern können  https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html#how-to-create-a-connector["Erfahren Sie mehr"^].
 
 .Schritte
 . Gehen Sie im linken Navigationsbereich zu *Administration > Agenten*.

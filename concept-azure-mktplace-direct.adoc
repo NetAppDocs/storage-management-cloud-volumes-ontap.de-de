@@ -67,5 +67,5 @@ Eds_v5- und Ls_v3-Instance-Typen
 .Weiterführende Links
 * Direkte Bereitstellung im Azure Marketplace:link:task-deploy-cvo-azure-mktplc.html["Stellen Sie Cloud Volumes ONTAP vom Azure Marketplace bereit"]
 * Bereitstellung über die Konsole:link:task-getting-started-azure.html["Schnellstart für Cloud Volumes ONTAP in Azure"]
-* https://docs.netapp.com/us-en/bluexp-family/index.html["Dokumentation zur NetApp Console"^]
+* link:https://docs.netapp.com/us-en/console-family/index.html["Dokumentation zur NetApp Console"^]
 

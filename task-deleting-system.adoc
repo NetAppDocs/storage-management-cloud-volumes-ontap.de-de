@@ -30,7 +30,7 @@ Backup und Recovery sind konzeptionell unabhängig von Cloud Volumes ONTAP .  Ba
 
 . Wenn Sie die Datenklassifizierung auf diesem System aktiviert haben und kein anderes System diesen Dienst verwendet, müssen Sie die Instanz für den Dienst löschen.
 +
-https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance["Weitere Informationen zur Datenklassifizierungsinstanz"^] .
+https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance["Weitere Informationen zur Datenklassifizierungsinstanz"^].
 
 . Löschen Sie das Cloud Volumes ONTAP -System.
 +

@@ -22,6 +22,6 @@ Diese Umstellungsoption unterstützt den schrittweisen Plan von NetApp, von knot
 
 .Weiterführende Links
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment["Konvertierung in einer Private-Mode-Bereitstellung"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment["Konvertierung in einer Private-Mode-Bereitstellung"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Knotenbasierte Lizenzen für Cloud Volumes ONTAP verwalten"^]
 

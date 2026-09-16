@@ -26,7 +26,7 @@ Kapazitätsbasierte Lizenzpakete sind mit folgenden Verbrauchsmodellen bzw. Kauf
 * *BYOL*: Bringen Sie Ihre eigene Lizenz mit (BYOL).  Eine von NetApp erworbene Lizenz, mit der Cloud Volumes ONTAP bei jedem Cloud-Anbieter bereitgestellt werden kann.
 +
 
-NOTE: NetApp hat den Kauf, die Erweiterung und die Erneuerung von BYOL-Lizenzen eingeschränkt und die Verfügbarkeit in bestimmten Szenarien, wie zum Beispiel bei Bereitstellungen im privaten Modus, begrenzt. Weitere Informationen sind unter  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^] zu finden.
+NOTE: NetApp hat den Kauf, die Erweiterung und die Erneuerung von BYOL-Lizenzen eingeschränkt und die Verfügbarkeit in bestimmten Szenarien, wie zum Beispiel bei Bereitstellungen im privaten Modus, begrenzt. Weitere Informationen sind unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^] zu finden.
 
 
 
@@ -71,7 +71,7 @@ Informationen zum Konvertieren von knotenbasierten Lizenzen in kapazitätsbasier
 
 Die Abrechnung in Cloud Volumes ONTAP basiert auf einer Reihe von Faktoren, wie z. B. Paketen und Volumentypen. Kapazitätsbasierte Lizenzpakete sind mit Cloud Volumes ONTAP 9.7 und höher verfügbar.
 
-Einzelheiten zu den Preisen finden Sie auf der https://bluexp.netapp.com/pricing/["NetApp Console Website"^] .
+Weitere Informationen zur Preisgestaltung finden Sie auf der link:https://www.netapp.com/pricing/["NetApp Pricing-Website"^].
 
 
 
@@ -200,7 +200,7 @@ Wenn Sie eine Essentials-Lizenz von NetApp (BYOL) erwerben und die lizenzierte K
 
 Wenn Sie hingegen einen jährlichen Marktplatzvertrag oder ein privates Angebot mit mehreren Essentials-Paketen haben und Ihre Nutzung die zugesicherte Kapazität für einen Bereitstellungs- und Volumentyp eines bestimmten Pakets überschreitet, berechnet die Console die Mehrkosten einem höherpreisigen Essentials-Paket auf Basis seiner verfügbaren Kapazität.  Sobald diese Kapazität erschöpft ist, wird der verbleibende Mehrverbrauch zu den stündlichen PAYGO-Tarifen (Pay-as-you-go) des Marktplatzes abgerechnet und Ihrer monatlichen Rechnung hinzugefügt.
 
-Informationen zu den Gebühren für Essentials-Lizenzen finden Sie unterlink:concept-licensing-charging.html#essentialscharging["Essentials-Pakete"] Die
+Informationen zu den Gebühren für Essentials-Lizenzen sind unter <<Essentials-Pakete>> zu finden.
 
 Hier ist ein Beispiel. Angenommen, Sie verfügen über die folgenden Lizenzen für das Essentials-Paket:
 

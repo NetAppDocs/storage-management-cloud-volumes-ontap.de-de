@@ -82,7 +82,7 @@ Beispiel:
 }
 ----
 +
-https://docs.netapp.com/us-en/bluexp-automation/cm/overview.html["Erfahren Sie mehr über die Cloud Volumes ONTAP API"^]
+https://docs.netapp.com/us-en/console-automation/cm/overview.html["Erfahren Sie mehr über die Cloud Volumes ONTAP API"^]
 
 
 

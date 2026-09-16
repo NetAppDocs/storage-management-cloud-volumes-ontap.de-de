@@ -24,7 +24,7 @@ TIP: Ein System, das nicht für den Support registriert ist, erhält dennoch die
 .Schritte
 . Wenn Sie Ihr NetApp Support Site-Konto noch nicht zur Konsole hinzugefügt haben, gehen Sie zu *Kontoeinstellungen* und fügen Sie es jetzt hinzu.
 +
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["Erfahren Sie, wie Sie NetApp Support Site-Konten hinzufügen"^] .
+https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["Erfahren Sie, wie Sie NetApp Support Site-Konten hinzufügen"^].
 
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, das Sie registrieren möchten.
 . Klicken Sie auf der Registerkarte „Übersicht“ auf den Bereich „Funktionen“ und dann auf das Stiftsymbol neben „Support-Registrierung“.

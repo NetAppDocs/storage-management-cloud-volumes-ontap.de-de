@@ -94,7 +94,7 @@ Wenn Sie kein Transit-Gateway einrichten können, stehen private IP-Adressen fü
 
 Sie sollten die Anforderungen für Floating-IP-Adressen und Routentabellen überprüfen, bevor Sie eine HA-Konfiguration über mehrere Verfügbarkeitszonen hinweg bereitstellen.  Sie müssen die Floating-IP-Adressen angeben, wenn Sie die Konfiguration bereitstellen.  Die privaten IP-Adressen werden automatisch erstellt.
 
-Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["AWS-Netzwerkanforderungen für Cloud Volumes ONTAP HA in mehreren AZs"^] .
+Weitere Informationen finden sich unter link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["AWS-Netzwerkanforderungen für Cloud Volumes ONTAP HA in mehreren AZs"^].
 
 
 

@@ -21,7 +21,7 @@ NOTE: Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für C
 
 link:concept-licensing.html["Erfahren Sie mehr über Cloud Volumes ONTAP -Lizenzen"].
 
-link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["Erfahren Sie mehr über die Verwaltung knotenbasierter Lizenzen"^] .
+link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Erfahren Sie mehr über die Verwaltung knotenbasierter Lizenzen"^].
 
 
 
@@ -31,7 +31,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-l
 Knotenbasierte Lizenzen können von NetApp bezogen werden. Die Anzahl der Lizenzen, die Sie für ein Einzelknotensystem oder ein HA-Paar erwerben können, ist unbegrenzt.
 
 
-NOTE: NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAPP"^] .
+NOTE: NetApp hat den Kauf, die Erweiterung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAPP"^].
 
 Eine knotenbasierte Lizenz bietet bis zu 368 TiB Kapazität für einen einzelnen Knoten oder ein HA-Paar. Möglicherweise haben Sie mehrere Lizenzen für ein Cloud Volumes ONTAP BYOL-System erworben, um mehr als 368 TiB Kapazität zuzuweisen. Beispielsweise könnten Sie zwei Lizenzen besitzen, um Cloud Volumes ONTAP bis zu 736 TiB Kapazität zuzuweisen. Oder Sie könnten vier Lizenzen besitzen, um bis zu 1,4 PiB zu erhalten.
 
@@ -44,7 +44,7 @@ Beachten Sie, dass Festplattenlimits Sie daran hindern können, die Kapazitätsg
 
 Wenn Sie ein knotenbasiertes BYOL-System erstellen, werden Sie von der Konsole aufgefordert, die Seriennummer Ihrer Lizenz und Ihr NetApp Support Site-Konto einzugeben.  Die Konsole verwendet das Konto, um die Lizenzdatei von NetApp herunterzuladen und auf dem Cloud Volumes ONTAP System zu installieren.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["Erfahren Sie, wie Sie NetApp Support Site-Konten zur Konsole hinzufügen"^] .
+https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["Erfahren Sie, wie Sie NetApp Support Site-Konten zur Konsole hinzufügen"^].
 
 Wenn die Konsole über die sichere Internetverbindung nicht auf die Lizenzdatei zugreifen kann, können Sielink:task-manage-node-licenses.html["Besorgen Sie sich die Datei selbst und laden Sie sie dann manuell in die Konsole hoch"] .
 

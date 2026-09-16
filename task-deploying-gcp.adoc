@@ -26,8 +26,8 @@ Bevor Sie beginnen, benötigen Sie Folgendes.
 [[licensing]]
 * Ein NetApp Console-Agent, der betriebsbereit ist.
 +
-** Sie sollten über eine https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Konsolenagent, der mit Ihrem System verknüpft ist"^] .
-** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Sie sollten darauf vorbereitet sein, den Konsolenagenten immer laufen zu lassen"^] .
+** Sie sollten einen  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Konsolenagent, der mit Ihrem System verknüpft ist"^] haben.
+** https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Sie sollten darauf vorbereitet sein, den Konsolenagenten immer laufen zu lassen"^].
 ** Das mit dem Console Agent verknüpfte Dienstkonto https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["sollte über die erforderlichen Berechtigungen verfügen"^].
 
 
@@ -61,7 +61,7 @@ Erstellen Sie in der NetApp Console ein System, um Cloud Volumes ONTAP in Google
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . [[Abonnieren]]Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Anweisungen.
 . *Wählen Sie einen Standort*: Wählen Sie *Google Cloud* und * Cloud Volumes ONTAP*.
-. Wenn Sie dazu aufgefordert werden, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Erstellen Sie einen Konsolenagenten"^] .
+. Wenn Sie dazu aufgefordert werden https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Erstellen Sie einen Konsolenagenten"^].
 . *Details und Anmeldeinformationen*: Wählen Sie ein Projekt aus, geben Sie einen Clusternamen an, wählen Sie optional ein Dienstkonto aus, fügen Sie optional Bezeichnungen hinzu und geben Sie dann die Anmeldeinformationen an.
 +
 In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherweise Anleitungen benötigen:
@@ -75,7 +75,7 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 | Systemname | Die Konsole verwendet den Systemnamen, um sowohl das Cloud Volumes ONTAP -System als auch die Google Cloud VM-Instanz zu benennen.  Wenn Sie diese Option auswählen, wird der Name auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet. 
 
 
-| Dienstkontoname | Wenn Sie planen,link:concept-data-tiering.html["Daten-Tiering"] oder https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery"^] mit Cloud Volumes ONTAP, dann müssen Sie *Servicekonto* aktivieren und ein Servicekonto auswählen, das über die vordefinierte Rolle „Storage Admin“ verfügt. link:task-creating-gcp-service-account.html["Erfahren Sie, wie Sie ein Dienstkonto erstellen"^] . 
+| Dienstkontoname | Wenn Sie link:concept-data-tiering.html["Daten-Tiering"] oder  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery"^] mit Cloud Volumes ONTAP verwenden möchten, muss *Dienstkonto* aktiviert und ein Dienstkonto ausgewählt werden, das über die vordefinierte Rolle „Storage Admin“ verfügt. link:task-creating-gcp-service-account.html["Erfahren Sie, wie Sie ein Dienstkonto erstellen"^]. 
 
 
 | Beschriftungen hinzufügen | Labels sind Metadaten für Ihre Google Cloud-Ressourcen.  Die Konsole fügt die Labels dem Cloud Volumes ONTAP -System und den mit dem System verknüpften Google Cloud-Ressourcen hinzu.  Sie können beim Erstellen eines Systems bis zu vier Beschriftungen über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Labels beschränkt.  Informationen zu Etiketten finden Sie im https://cloud.google.com/compute/docs/labeling-resources["Google Cloud-Dokumentation: Kennzeichnungsressourcen"^] . 
@@ -90,11 +90,11 @@ Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP gespeichert werden soll.
 Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Gehen Sie zur Google Cloud Console, öffnen Sie den IAM-Dienst und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die Console verwenden, zu diesem Projekt hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
 
 
-NOTE: Dies ist das Dienstkonto, das Sie für die Konsole eingerichtet haben.link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["wie auf dieser Seite beschrieben"^] .
+NOTE: Dies ist das Dienstkonto, das Sie für die NetApp Console eingerichtet haben link:https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["wie auf dieser Seite beschrieben"^].
 
 Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.
 
-Um ein Cloud Volumes ONTAP -System mit nutzungsbasierter Bezahlung zu erstellen, müssen Sie ein Google Cloud-Projekt auswählen, das mit einem Abonnement für Cloud Volumes ONTAP aus dem Google Cloud-Marktplatz verknüpft ist. Siehe https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Verknüpfen eines Marktplatz-Abonnements mit Google Cloud-Anmeldeinformationen"^] .
+Um ein Cloud Volumes ONTAP System mit nutzungsbasierter Abrechnung zu erstellen, ist die Auswahl eines Google Cloud Projekts erforderlich, das mit einem Abonnement für Cloud Volumes ONTAP aus dem Google Cloud Marketplace verknüpft ist. Siehe  https://docs.netapp.com/us-en/console-setup-admin/task-adding-gcp-accounts.html["Verknüpfen eines Marktplatz-Abonnements mit Google Cloud-Anmeldeinformationen"^].
 
 |===
 . *Dienste*: Wählen Sie die Dienste aus, die Sie auf diesem System verwenden möchten.  Um Backup und Recovery auszuwählen oder NetApp Cloud Tiering zu verwenden, müssen Sie in Schritt 3 das Servicekonto angegeben haben.
@@ -149,7 +149,7 @@ Der Datenträgertyp ist für das ursprüngliche Volume.  Sie können für nachfo
 Die Datenträgergröße gilt für alle Datenträger im anfänglichen Aggregat und für alle zusätzlichen Aggregate, die die Konsole erstellt, wenn Sie die einfache Bereitstellungsoption verwenden.  Mithilfe der erweiterten Zuordnungsoption können Sie Aggregate erstellen, die eine andere Festplattengröße verwenden.
 
 +
-Hilfe zur Auswahl von Datenträgertyp und -größe finden Sie unterlink:task-planning-your-config-gcp.html#size-your-system-in-gcp["Dimensionieren Sie Ihr System in Google Cloud"^] .
+Hilfe bei der Auswahl von Festplattentyp und -größe bietet link:task-planning-your-config-gcp.html#size-your-system-in-google-cloud["Dimensionieren Sie Ihr System in Google Cloud"^].
 
 . *Flash-Cache, Schreibgeschwindigkeit und WORM*:
 +
@@ -159,7 +159,7 @@ Weitere Informationen zu link:reference-configs-gcp.html#flash-cache-support["Fl
 
 +
 
-NOTE: Eine hohe Schreibgeschwindigkeit und eine höhere maximale Übertragungseinheit (MTU) von 8.896 Bytes sind über die Schreibgeschwindigkeitsoption *Hohe* verfügbar.  Darüber hinaus erfordert die höhere MTU von 8.896 die Auswahl von VPC-1, VPC-2 und VPC-3 für die Bereitstellung.  Weitere Informationen zu VPC-1, VPC-2 und VPC-3 finden Sie unter https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector["Regeln für VPC-1, VPC-2 und VPC-3"^] .
+NOTE: Eine hohe Schreibgeschwindigkeit und eine höhere maximale Übertragungseinheit (MTU) von 8.896 Byte sind über die Option *Hohe* Schreibgeschwindigkeit verfügbar. Zusätzlich erfordert die höhere MTU von 8.896 Byte die Auswahl von VPC-1, VPC-2 und VPC-3 für die Bereitstellung. Weitere Informationen zu VPC-1, VPC-2 und VPC-3 sind unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-console-agent["Regeln für VPC-1, VPC-2 und VPC-3"^] zu finden.
 
 .. Aktivieren Sie bei Bedarf den WORM-Speicher (Write Once, Read Many).
 +
@@ -177,7 +177,7 @@ Beachten Sie Folgendes:
 
 +
 ** Die Konsole richtet das Dienstkonto auf der Cloud Volumes ONTAP Instanz ein. Dieses Dienstkonto bietet Berechtigungen für die Datenschichtung in einem Google Cloud Storage-Bucket.  Stellen Sie sicher, dass Sie das Dienstkonto des Konsolenagenten als Benutzer des Tiering-Dienstkontos hinzufügen, da Sie es sonst nicht aus der Konsole auswählen können.
-** Hilfe zum Hinzufügen eines Google Cloud-Kontos finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Einrichten und Hinzufügen von Google Cloud-Konten für Daten-Tiering mit 9.6"^] .
+** Hilfe zum Hinzufügen eines Google Cloud-Kontos finden Sie unter  https://docs.netapp.com/us-en/console-setup-admin/task-adding-gcp-accounts.html["Einrichten und Hinzufügen von Google Cloud-Konten für Daten-Tiering mit 9.6"^].
 ** Sie können beim Erstellen oder Bearbeiten eines Volumes eine bestimmte Volume-Tiering-Richtlinie auswählen.
 ** Wenn Sie die Datenschichtung deaktivieren, können Sie sie bei nachfolgenden Aggregaten wieder aktivieren, aber Sie müssen das System ausschalten und ein Dienstkonto aus der Google Cloud Console hinzufügen.
 +
@@ -246,7 +246,7 @@ image:screenshot_cot_vol.gif["Screenshot: Zeigt die ausgefüllte Volume-Seite f�
 | DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
 
 
-| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden.  Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
+| NTP-Server | Wählen Sie *Active Directory Domain verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren. Falls ein NTP-Server mit einer anderen Adresse konfiguriert werden soll, ist die API zu verwenden. Weitere Informationen sind in der  https://docs.netapp.com/us-en/console-automation/index.html["Dokumentation zur NetApp Console"^] zu finden. Zu beachten ist, dass ein NTP-Server nur bei der Erstellung eines CIFS-Server konfiguriert werden kann. Nach der Erstellung des CIFS-Server ist dies nicht mehr möglich. 
 |===
 . *Nutzungsprofil, Datenträgertyp und Tiering-Richtlinie*: Wählen Sie aus, ob Sie Speichereffizienzfunktionen aktivieren möchten, und ändern Sie bei Bedarf die Volume-Tiering-Richtlinie.
 +
@@ -302,18 +302,18 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 
 
 | Google Cloud Projekt und Marketplace Abonnement  a| 
-Wählen Sie das Google-Projekt und das Abonnement aus, das Sie für dieses System verwenden möchten. Dies ist das Dienstkonto, das Sie für die NetApp Console eingerichtet haben. Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Konsoleneinrichtungsdokumente"^]. Die NetApp Console verwendet das Projekt zur Erstellung des Cloud Volumes ONTAP Systems und das Abonnement zur Bestimmung von Abrechnung und Nutzung. Wenn Sie in der Dropdown-Liste keine weiteren Projekte sehen, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Rufen Sie die Google Cloud Console auf, öffnen Sie den IAM-Service und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die NetApp Console verwenden, zu diesem Projekt hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
+Wählen Sie das Google-Projekt und das Abonnement aus, das Sie für dieses System verwenden möchten. Dies ist das Dienstkonto, das Sie für die NetApp Console eingerichtet haben. Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Konsoleneinrichtungsdokumente"^]. Die NetApp Console verwendet das Projekt zur Erstellung des Cloud Volumes ONTAP Systems und das Abonnement zur Bestimmung von Abrechnung und Nutzung. Wenn Sie in der Dropdown-Liste keine weiteren Projekte sehen, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Rufen Sie die Google Cloud Console auf, öffnen Sie den IAM-Service und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die NetApp Console verwenden, zu diesem Projekt hinzu. Dieser Schritt ist für jedes Projekt zu wiederholen.
 
 Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.
 
-Um ein Cloud Volumes ONTAP System mit nutzungsbasierter Abrechnung zu erstellen, ist die Auswahl eines Google Cloud-Projekts erforderlich, das mit einem Abonnement für Cloud Volumes ONTAP aus dem Google Cloud Marketplace verknüpft ist. Siehe das Dokument zur Einrichtung der Console https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Verknüpfen eines Marktplatz-Abonnements mit Google Cloud-Anmeldeinformationen"^].
+Um ein Cloud Volumes ONTAP System mit nutzungsbasierter Abrechnung zu erstellen, ist die Auswahl eines Google Cloud-Projekts erforderlich, das mit einem Abonnement für Cloud Volumes ONTAP aus dem Google Cloud Marketplace verknüpft ist. Siehe das Dokument zur Einrichtung der Console https://docs.netapp.com/us-en/console-setup-admin/task-adding-gcp-accounts.html["Verknüpfen eines Marktplatz-Abonnements mit Google Cloud-Anmeldeinformationen"^].
 
 
 
 | Systemname | Die Konsole verwendet den Systemnamen, um sowohl das Cloud Volumes ONTAP -System als auch die Google Cloud VM-Instanz zu benennen.  Wenn Sie diese Option auswählen, wird der Name auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet. 
 
 
-| Dienstkontoname | Wenn Sie dielink:concept-data-tiering.html["NetApp Cloud Tiering"] oder https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Sicherung und Wiederherstellung"^] Dienste müssen Sie den Schalter *Dienstkonto* aktivieren und dann das Dienstkonto auswählen, das über die vordefinierte Rolle „Speicheradministrator“ verfügt. 
+| Dienstkontoname | Wenn Sie die link:concept-data-tiering.html["NetApp Cloud Tiering"] oder  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Sicherung und Wiederherstellung"^] Dienste nutzen möchten, muss der Schalter *Dienstkonto* aktiviert werden und anschließend das Dienstkonto ausgewählt werden, das die vordefinierte Rolle „Speicheradministrator“ besitzt. 
 
 
 | Etiketten | Labels sind Metadaten für Ihre Google Cloud-Ressourcen.  Die Konsole fügt die Labels dem Cloud Volumes ONTAP -System und den mit dem System verknüpften Google Cloud-Ressourcen hinzu.  Sie können beim Erstellen eines Systems bis zu vier Beschriftungen über die Benutzeroberfläche hinzufügen und nach der Erstellung weitere hinzufügen.  Beachten Sie, dass die API Sie beim Erstellen eines Systems nicht auf vier Labels beschränkt.  Informationen zu Etiketten finden Sie unter https://cloud.google.com/compute/docs/labeling-resources["Google Cloud-Dokumentation: Kennzeichnungsressourcen"^] . 
@@ -381,7 +381,7 @@ Der Datenträgertyp ist für das ursprüngliche Volume.  Sie können für nachfo
 Die Datenträgergröße gilt für alle Datenträger im anfänglichen Aggregat und für alle zusätzlichen Aggregate, die die Konsole erstellt, wenn Sie die einfache Bereitstellungsoption verwenden.  Mithilfe der erweiterten Zuordnungsoption können Sie Aggregate erstellen, die eine andere Festplattengröße verwenden.
 
 +
-Hilfe zur Auswahl von Datenträgertyp und -größe finden Sie unterlink:task-planning-your-config-gcp.html#size-your-system-in-gcp["Dimensionieren Sie Ihr System in Google Cloud"^] .
+Hilfe bei der Auswahl von Festplattentyp und -größe bietet link:task-planning-your-config-gcp.html#size-your-system-in-google-cloud["Dimensionieren Sie Ihr System in Google Cloud"^].
 
 . *Flash-Cache, Schreibgeschwindigkeit und WORM*:
 +
@@ -391,7 +391,7 @@ Weitere Informationen zu link:reference-configs-gcp.html#flash-cache-support["Fl
 
 +
 
-NOTE: Eine hohe Schreibgeschwindigkeit und eine höhere maximale Übertragungseinheit (MTU) von 8.896 Bytes sind über die Schreibgeschwindigkeitsoption *Hohe* mit den Instance-Typen n2-standard-16, n2-standard-32, n2-standard-48 und n2-standard-64 verfügbar.  Darüber hinaus erfordert die höhere MTU von 8.896 die Auswahl von VPC-1, VPC-2 und VPC-3 für die Bereitstellung.  Eine hohe Schreibgeschwindigkeit und eine MTU von 8.896 sind funktionsabhängig und können innerhalb einer konfigurierten Instanz nicht einzeln deaktiviert werden.  Weitere Informationen zu VPC-1, VPC-2 und VPC-3 finden Sie unter https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector["Regeln für VPC-1, VPC-2 und VPC-3"^] .
+NOTE: Hohe Schreibgeschwindigkeit und eine höhere maximale Übertragungseinheit (MTU) von 8.896 Byte sind über die Option *Hohe* Schreibgeschwindigkeit bei den Instanztypen n2-standard-16, n2-standard-32, n2-standard-48 und n2-standard-64 verfügbar. Darüber hinaus erfordert die höhere MTU von 8.896 die Auswahl von VPC-1, VPC-2 und VPC-3 für die Bereitstellung. Hohe Schreibgeschwindigkeit und eine MTU von 8.896 sind funktionsabhängig und können innerhalb einer konfigurierten Instanz nicht einzeln deaktiviert werden. Weitere Informationen zu VPC-1, VPC-2 und VPC-3 finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#requirements-for-the-connector["Regeln für VPC-1, VPC-2 und VPC-3"^].
 
 .. Aktivieren Sie bei Bedarf den WORM-Speicher (Write Once, Read Many).
 +
@@ -477,7 +477,7 @@ image:screenshot_cot_vol.gif["Screenshot: Zeigt die ausgefüllte Volume-Seite f�
 | DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
 
 
-| NTP-Server | Wählen Sie *Active Directory-Domäne verwenden*, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren.  Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] für Details.  Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können.  Es ist nicht mehr konfigurierbar, nachdem Sie den CIFS-Server erstellt haben. 
+| NTP-Server | *Active Directory-Domäne verwenden* auswählen, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren. Falls ein NTP-Server mit einer anderen Adresse konfiguriert werden soll, ist die API zu verwenden. Einzelheiten sind der  https://docs.netapp.com/us-en/console-automation/index.html["Dokumentation zur NetApp Console"^] zu entnehmen. Zu beachten ist, dass ein NTP-Server nur bei der Erstellung eines CIFS-Server konfiguriert werden kann. Nach der Erstellung des CIFS-Server ist keine Konfiguration mehr möglich. 
 |===
 . *Nutzungsprofil, Datenträgertyp und Tiering-Richtlinie*: Wählen Sie aus, ob Sie Speichereffizienzfunktionen aktivieren möchten, und ändern Sie bei Bedarf die Volume-Tiering-Richtlinie.
 +

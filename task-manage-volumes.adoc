@@ -131,7 +131,7 @@ Standardmäßig wächst ein Volume automatisch auf eine maximale Größe an, wen
 Wenn Sie die Größe Ihres Volumes ändern müssen, können Sie dies über den ONTAP System Manager in der Konsole tun.
 
 .Schritte
-. Klicken Sie auf die System Manager-Ansicht, um die Größe eines Volumes über den ONTAP System Manager zu ändern. Weitere Informationen finden Sie unter link:task-administer-advanced-view.html#how-to-get-started["Erste Schritte"] .
+. Wählen Sie die System Manager-Ansicht, um die Größe eines Volumes über ONTAP System Manager zu ändern. Siehe link:task-administer-advanced-view.html#get-started-with-system-manager["Erste Schritte mit System Manager"].
 . Wählen Sie im linken Navigationsmenü *Speicher > Volumes* aus.
 . Identifizieren Sie in der Liste der Volumes das Volume, dessen Größe Sie ändern möchten.
 . Klicken Sie auf das Optionssymbolimage:screenshot_gallery_options.gif["Kebab-Symbol"] .
@@ -237,7 +237,7 @@ Anweisungen hierzu finden Sie imlink:http://docs.netapp.com/ontap-9/topic/com.ne
 Die Konsole zeigt möglicherweise die Meldung „Aktion erforderlich“ an, die besagt, dass das Verschieben eines Volumes erforderlich ist, um Kapazitätsprobleme zu vermeiden, dass Sie das Problem jedoch selbst beheben müssen.  In diesem Fall müssen Sie ermitteln, wie das Problem behoben werden kann, und dann ein oder mehrere Volumes verschieben.
 
 
-TIP: Die Konsole zeigt diese Meldungen „Aktion erforderlich“ an, wenn ein Aggregat 90 % seiner Kapazität erreicht hat.  Wenn die Datenschichtung aktiviert ist, werden die Meldungen angezeigt, wenn ein Aggregat 80 % der genutzten Kapazität erreicht hat.  Standardmäßig sind 10 % freier Speicherplatz für die Datenschichtung reserviert. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering["Erfahren Sie mehr über das Freispeicherverhältnis für Data Tiering"^] .
+TIP: Die Konsole zeigt diese Meldungen „Handlungsbedarf“ an, wenn ein Aggregat zu 90 % ausgelastet ist. Wenn Data Tiering aktiviert ist, erscheinen die Meldungen, sobald ein Aggregat zu 80 % ausgelastet ist. Standardmäßig sind 10 % freier Speicherplatz für Data Tiering reserviert. link:task-tiering.html#change-the-free-space-ratio-for-data-tiering["Erfahren Sie mehr über das Freispeicherverhältnis für Data Tiering"^].
 
 .Schritte
 . <<Ermitteln Sie, wie Kapazitätsprobleme behoben werden können>> .
@@ -312,11 +312,11 @@ Das Verschieben eines Volumes ist notwendig, um Kapazitätsprobleme zu vermeiden
 . Identifizieren Sie ein Cloud Volumes ONTAP -System mit verfügbarer Kapazität oder stellen Sie ein neues System bereit.
 . Ziehen Sie das Quellsystem per Drag & Drop auf das Zielsystem, um eine einmalige Datenreplikation des Volumes durchzuführen.
 +
-Weitere Informationen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Daten zwischen Systemen replizieren"^] .
+Informationen dazu finden sich unter link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Daten zwischen Systemen replizieren"^].
 
 . Gehen Sie zur Seite „Replikationsstatus“ und brechen Sie dann die SnapMirror -Beziehung ab, um das replizierte Volume von einem Datenschutzvolume in ein Lese-/Schreibvolume umzuwandeln.
 +
-Weitere Informationen finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships["Verwalten von Datenreplikationszeitplänen und -beziehungen"^] .
+Informationen dazu finden sich unter link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships["Verwalten von Datenreplikationszeitplänen und -beziehungen"^].
 
 . Konfigurieren Sie das Volume für den Datenzugriff.
 +

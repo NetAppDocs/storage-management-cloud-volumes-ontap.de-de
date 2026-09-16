@@ -19,7 +19,7 @@ Die Überprüfung der Signatur einer exportierten VHD-Datei unter Linux umfasst 
 .Schritte
 . Laden Sie die Azure-Imagedatei von der https://mysupport.netapp.com/site/["NetApp Support Site"^] und extrahieren Sie die Digest-Datei (.sig), die Public-Key-Zertifikatdatei (.pem) und die Kettenzertifikatdatei (.pem).
 +
-Siehe https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-download-digest-file.html["Herunterladen der Azure-Image-Digest-Datei"^] für weitere Informationen.
+Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-download-digest-file.html["Herunterladen der Azure-Image-Digest-Datei"^].
 
 . Überprüfen Sie die Vertrauenskette.
 +

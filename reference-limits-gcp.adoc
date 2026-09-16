@@ -25,7 +25,7 @@ Die maximale Systemkapazität eines Cloud Volumes ONTAP Systems wird durch die L
 
 NetApp unterstützt das Überschreiten der Systemkapazitätsgrenze nicht. Wenn Sie die lizenzierte Kapazitätsgrenze erreichen, zeigt die NetApp Console eine Meldung an, die zum Handeln auffordert, und Sie können keine weiteren Festplatten mehr hinzufügen.
 
-Bei manchen Konfigurationen verhindern Festplattenbeschränkungen, dass Sie das Kapazitätslimit allein durch die Verwendung von Festplatten erreichen. Sie können das Kapazitätslimit erreichen, indem Sie  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"^]. Weitere Einzelheiten zu den Festplattenbeschränkungen finden Sie unten.
+Bei manchen Konfigurationen verhindern Festplattenbeschränkungen, dass Sie das Kapazitätslimit allein durch die Verwendung von Festplatten erreichen. Sie können das Kapazitätslimit erreichen, indem Sie  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"^]. Weitere Einzelheiten zu den Festplattenbeschränkungen finden Sie unten.
 
 [[cap-license-gcp]]
 .Kapazitätsgrenze für kapazitätsbasierte Lizenzen
@@ -131,7 +131,7 @@ Einige Konfigurationen ermöglichen es Ihnen, zusätzliche Storage-VMs (SVMs) f�
 
 Dies sind die getesteten Grenzwerte. Die Konfiguration weiterer Storage-VMs wird nicht unterstützt.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html["Erfahren Sie, wie Sie zusätzliche Storage-VMs erstellen"^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-svms-gcp.html["Erfahren Sie, wie Sie zusätzliche Storage-VMs erstellen"^].
 
 [cols="2*"]
 |===
@@ -259,4 +259,4 @@ Storage-VMs, die Sie für die Notfallwiederherstellung (Disaster Recovery, DR) k
 
 Nach einem Neustart eines Knotens muss der Partner die Daten synchronisieren, bevor er den Speicher zurückgeben kann. Die Zeit, die für die erneute Synchronisierung der Daten benötigt wird, hängt von der Menge der von Clients geschriebenen Daten während des Ausfalls des Knotens und von der Schreibgeschwindigkeit während der Rückgabe ab.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha-google-cloud.html["Erfahren Sie, wie Speicher in einem Cloud Volumes ONTAP HA-Paar-System funktioniert, das in Google Cloud ausgeführt wird"^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-google-cloud.html["Erfahren Sie, wie Speicher in einem Cloud Volumes ONTAP HA-Paar-System funktioniert, das in Google Cloud ausgeführt wird"^].

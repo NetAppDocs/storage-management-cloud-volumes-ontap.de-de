@@ -28,9 +28,9 @@ Einen Console-Agenten erstellen
  a| 
 Falls noch kein Console-Agent vorhanden ist, sollte dieser vor der Bereitstellung von Cloud Volumes ONTAP erstellt werden. Bei der Bereitstellung in einem Subnetz ohne Internetzugang ist der Console-Agent manuell zu installieren und auf die auf diesem Agenten ausgeführte NetApp Console zuzugreifen.
  a| 
-Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Einen Console-Agenten in AWS erstellen"^]
+Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["Einen Console-Agenten in AWS erstellen"^]
  a| 
-Bei der Bereitstellung in einem Subnetz ohne Internetzugang ist der Console-Agent manuell zu installieren, und auf die NetApp Console-Benutzeroberfläche zuzugreifen, die auf diesem Console-Agent ausgeführt wird. Im Console-Setup-Leitfaden finden sich weitere Informationen: https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Manuelle Installation des Console Agenten ohne Internetzugang"^]
+Bei der Bereitstellung in einem Subnetz ohne Internetzugang ist der Console-Agent manuell zu installieren, und auf die NetApp Console-Benutzeroberfläche zuzugreifen, die auf diesem Console-Agent ausgeführt wird. Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Manuelle Installation des Console Agenten ohne Internetzugang"^]
 
 
 
@@ -89,8 +89,8 @@ Vor Beginn der Bereitstellung ist sicherzustellen, dass eine Cloud Volumes ONTAP
 
 |===
 .Weiterführende Links
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html["Erstellen Sie einen Konsolenagenten für AWS"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html["Erstellen Sie einen Konsolenagenten aus dem AWS Marketplace"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Installieren und Einrichten eines Konsolenagenten vor Ort"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["AWS-Berechtigungen für den Konsolenagenten"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html["Erstellen Sie einen Konsolenagenten für AWS"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-marketplace.html["Erstellen Sie einen Konsolenagenten aus dem AWS Marketplace"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Installieren und Einrichten eines Konsolenagenten vor Ort"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["AWS-Berechtigungen für den Konsolenagenten"^]
 

@@ -30,7 +30,7 @@ Stellen Sie sicher, dass Sie die folgenden Anforderungen in AWS erfüllt haben.
 
 Cloud Volumes ONTAP -Systeme erfordern ausgehenden Internetzugang für den Zugriff auf externe Endpunkte für verschiedene Funktionen.  Cloud Volumes ONTAP kann nicht ordnungsgemäß funktionieren, wenn diese Endpunkte in Umgebungen mit strengen Sicherheitsanforderungen blockiert sind.
 
-Der Konsolenagent kontaktiert für den täglichen Betrieb mehrere Endpunkte.  Informationen zu den verwendeten Endpunkten finden Sie unter https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Vom Konsolenagenten kontaktierte Endpunkte anzeigen"^] Und https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html["Vorbereiten des Netzwerks für die Verwendung der Konsole"^] .
+Der Console-Agent kontaktiert für den täglichen Betrieb mehrere Endpunkte. Informationen zu den verwendeten Endpunkten sind unter  https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Vom Konsolenagenten kontaktierte Endpunkte anzeigen"^] und  https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html["Vorbereiten des Netzwerks für die Verwendung der Konsole"^] zu finden.
 
 
 
@@ -108,7 +108,7 @@ Sie können die Proxyserverkonfiguration des NetApp Console Agenten verwenden, u
 * *Transparenter Proxy*: Das Netzwerk ist so konfiguriert, dass ausgehender Datenverkehr von Cloud Volumes ONTAP automatisch über den Proxy für den Konsolenagenten geleitet wird.  Beim Einrichten eines transparenten Proxys muss der Administrator für die Konnektivität von Cloud Volumes ONTAP nur ein Stamm-CA-Zertifikat bereitstellen, nicht die HTTP-Adresse des Proxyservers.  Stellen Sie sicher, dass Sie dasselbe Stamm-CA-Zertifikat erhalten und auf Ihr Cloud Volumes ONTAP System hochladen, indem Sie das https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: Sicherheitszertifikat installieren"^] Befehl.
 
 
-Informationen zum Konfigurieren von Proxy-Servern finden Sie im https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Konfigurieren des Konsolenagenten zur Verwendung eines Proxyservers"^] .
+Informationen zur Konfiguration von Proxy-Servern sind in der  https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html["Konfigurieren des Konsolenagenten zur Verwendung eines Proxyservers"^] enthalten.
 
 
 
@@ -228,7 +228,7 @@ TIP: Bei der Bereitstellung in mehreren Availability Zones sind mehrere LIFs ver
 Sie müssen keine Sicherheitsgruppen erstellen, da die Konsole dies für Sie erledigt.  Wenn Sie Ihre eigene verwenden müssen, lesen Sielink:reference-security-groups.html["Sicherheitsgruppenregeln"] .
 
 
-TIP: Suchen Sie nach Informationen zum Konsolenagenten? https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["Sicherheitsgruppenregeln für den Konsolenagenten anzeigen"^]
+TIP: Suchen Sie Informationen zum Console Agent? https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["Sicherheitsgruppenregeln für den Konsolenagenten anzeigen"^]
 
 
 
@@ -340,8 +340,8 @@ image:diagram_ha_networking.png["Konzeptbild, das Komponenten in einer Cloud Vol
 
 Wenn Sie noch keinen Konsolenagenten erstellt haben, sollten Sie die Netzwerkanforderungen überprüfen.
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-install-options-aws.html["Netzwerkanforderungen für den Konsolenagenten anzeigen"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["Sicherheitsgruppenregeln in AWS"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-install-options-aws.html["Netzwerkanforderungen für den Konsolenagenten anzeigen"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["Sicherheitsgruppenregeln in AWS"^]
 
 
 .Weiterführender Link

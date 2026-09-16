@@ -375,7 +375,7 @@ In Cloud Volumes ONTAP mit Version 9.13.0 und höher können Sie kein Upgrade mi
 
 Die EC2-Instance-Typen c4, m4 und r4 ermöglichen mehr Festplatten pro Knoten als die EC2-Instance-Typen c5, m5 und r5.  Wenn die Festplattenanzahl pro Knoten für die von Ihnen ausgeführte c4-, m4- oder r4-EC2-Instance unter der maximalen Festplattenzuteilung pro Knoten für c5-, m5- und r5-Instances liegt, können Sie den EC2-Instance-Typ in c5, m5 oder r5 ändern.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance["Überprüfen Sie die Festplatten- und Tiering-Grenzen nach EC2-Instanz"^] link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html["Ändern Sie den EC2-Instanztyp für Cloud Volumes ONTAP"^]
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance["Überprüfen Sie die Festplatten- und Tiering-Grenzen nach EC2-Instanz"^] link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-change-ec2-instance.html["Ändern Sie den EC2-Instanztyp für Cloud Volumes ONTAP"^]
 
 Wenn Sie den Instanztyp nicht ändern können, befolgen Sie die Schritte in<<Erweiterte Vernetzung ermöglichen>> .
 
@@ -618,6 +618,6 @@ Der Wert für _maxDownloadSessions_ kann 1 oder eine beliebige Ganzzahl größer
 
 Beachten Sie, dass 32 ein Beispielwert ist. Der Wert, den Sie verwenden sollten, hängt von Ihrer NAT-Konfiguration und der Anzahl der Sitzungen ab, die Sie gleichzeitig haben können.
 
-https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#occmconfig["Erfahren Sie mehr über den API-Aufruf /occm/config"^] .
+https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#occmconfig["Erfahren Sie mehr über den API-Aufruf /occm/config"^].
 
 endif::gcp[]

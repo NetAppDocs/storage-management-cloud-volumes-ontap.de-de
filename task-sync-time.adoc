@@ -18,7 +18,7 @@ Die Konfiguration von Network Time Protocol (NTP)-Servern für Ihre Cloud Volume
 
 Sie können einen NTP-Server wie folgt angeben:
 
-* https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html["Die NetApp Console API"^].
+* https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html["Die NetApp Console API"^].
 * Der ONTAP CLI-Befehl https://docs.netapp.com/us-en/ontap-cli//cluster-time-service-ntp-server-create.html["Cluster-Zeitdienst-NTP-Server erstellen"^]Die
 
 
@@ -27,8 +27,8 @@ NOTE: Wenn Sie keinen NTP-Server konfigurieren, kann es zu Serviceunterbrechunge
 
 .Weiterführende Links
 * Wissensdatenbankartikel (KB): https://kb.netapp.com/Cloud/ncds/nds/cvo/cvo_kbs/How_does_a_CVO_cluster_use_NTP["Wie nutzt ein CVO-Cluster NTP?"]
-* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html["Vorbereiten der Verwendung der API"^]
-* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Cloud Volumes ONTAP -Workflows"^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier["Abrufen der erforderlichen Kennungen"^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html["Verwenden Sie die REST-APIs für die NetApp Console"^]
+* https://docs.netapp.com/us-en/console-automation/cm/prepare.html["Vorbereiten der Verwendung der API"^]
+* https://docs.netapp.com/us-en/console-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Cloud Volumes ONTAP -Workflows"^]
+* https://docs.netapp.com/us-en/console-automation/platform/get_identifiers.html#get-the-connector-identifier["Abrufen der erforderlichen Kennungen"^]
+* https://docs.netapp.com/us-en/console-automation/platform/use_rest_apis.html["Verwenden Sie die REST-APIs für die NetApp Console"^]
 

@@ -21,7 +21,7 @@ Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie mit Cloud Volumes 
 [[freemium]]
 == Freemium
 
-Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bereitgestellter Kapazität kostenlos zu nutzen. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages["Erfahren Sie mehr über das Freemium-Angebot"^] .
+Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP kostenlos mit bis zu 500 GiB bereitgestellter Kapazität zu nutzen. link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#packages["Erfahren Sie mehr über das Freemium-Angebot"^].
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü der NetApp Console*Speicher > Verwaltung* aus.
@@ -29,7 +29,7 @@ Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bere
 +
 .. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
 +
-Ihnen werden keine Kosten über das Marktplatz-Abonnement berechnet, es sei denn, Sie überschreiten 500 GiB bereitgestellte Kapazität. Zu diesem Zeitpunkt wird das System automatisch auf daslink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Essentials-Paket"^] .
+Über das Marketplace-Abonnement fallen keine Gebühren an, es sei denn, Sie überschreiten 500 GiB der bereitgestellten Kapazität. In diesem Fall wird das System automatisch auf die link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Essentials-Paket"^] umgestellt.
 
 +
 image:screenshot-azure-paygo-subscription.png["Ein Screenshot der PAYGO-Abonnementoption beim Erstellen eines Cloud Volumes ONTAP Systems."]
@@ -70,11 +70,11 @@ In den folgenden Abschnitten wird beschrieben, wie Sie mit jedem dieser Verbrauc
 Zahlen Sie im Voraus, indem Sie eine Lizenz (BYOL) von NetApp erwerben, um Cloud Volumes ONTAP -Systeme bei jedem Cloud-Anbieter bereitzustellen.
 
 
-NOTE: NetApp hat den Erwerb, die Verlängerung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^] .
+NOTE: NetApp hat den Kauf, die Erweiterung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^].
 
 .Schritte
 . https://www.netapp.com/forms/sales-contact/["Kontaktieren Sie den NetApp -Vertrieb, um eine Lizenz zu erhalten"^]
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["Fügen Sie Ihr NetApp Support Site-Konto zur Konsole hinzu"^]
+. https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["Fügen Sie Ihr NetApp Support Site-Konto zur Konsole hinzu"^]
 +
 Die Konsole fragt automatisch den Lizenzierungsdienst von NetApp ab, um Details zu den Lizenzen abzurufen, die mit Ihrem NetApp Support Site-Konto verknüpft sind.  Wenn keine Fehler auftreten, fügt die Konsole die Lizenzen automatisch zur Konsole hinzu.
 
@@ -128,7 +128,7 @@ image:screenshot-professional.png["Ein Screenshot der Professional-Option beim E
 link:task-deploying-otc-azure.html["Sehen Sie sich die Schritt-für-Schritt-Anleitung zum Starten von Cloud Volumes ONTAP in Azure an"] .
 
 
-TIP: Sie können die mit Ihren Azure-Konten verknüpften Azure Marketplace-Abonnements auf der Seite „Einstellungen > Anmeldeinformationen“ verwalten. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["Erfahren Sie, wie Sie Ihre Azure-Konten und -Abonnements verwalten"^]
+TIP: Die mit Ihren Azure-Konten verknüpften Azure Marketplace Abonnements lassen sich auf der Seite Einstellungen > Anmeldeinformationen verwalten. https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html["Erfahren Sie, wie Sie Ihre Azure-Konten und -Abonnements verwalten"^]
 
 
 

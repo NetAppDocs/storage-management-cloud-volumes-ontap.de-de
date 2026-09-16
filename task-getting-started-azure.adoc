@@ -26,9 +26,9 @@ Einen Console-Agenten erstellen
  a| 
 Falls Sie noch keinen Console-Agenten besitzen, sollte einer erstellt werden, bevor Cloud Volumes ONTAP bereitgestellt wird.
  a| 
-Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Einen Console-Agent in Azure erstellen"^]
+Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Einen Console-Agent in Azure erstellen"^]
  a| 
-Bei der Bereitstellung in einem Subnetz ohne Internetzugang ist der Console-Agent manuell zu installieren, und auf die NetApp Console-Benutzeroberfläche zuzugreifen, die auf diesem Console-Agent ausgeführt wird. Im Console-Setup-Leitfaden finden sich weitere Informationen: https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Manuelle Installation des Console Agenten ohne Internetzugang"^]
+Bei der Bereitstellung in einem Subnetz ohne Internetzugang ist der Console-Agent manuell zu installieren, und auf die NetApp Console-Benutzeroberfläche zuzugreifen, die auf diesem Console-Agent ausgeführt wird. Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Manuelle Installation des Console Agenten ohne Internetzugang"^]
 
 
 
@@ -77,8 +77,8 @@ Vor Beginn der Bereitstellung ist sicherzustellen, dass eine Cloud Volumes ONTAP
 
 |===
 .Weiterführende Links
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Erstellen eines Konsolenagenten über die Konsole"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-marketplace.html["Erstellen eines Konsolen-Agenten aus dem Azure Marketplace"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Installieren der Konsolenagentensoftware auf einem Linux-Host"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Was die Konsole mit Berechtigungen macht"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Erstellen eines Konsolenagenten über die Konsole"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-azure-marketplace.html["Erstellen eines Konsolen-Agenten aus dem Azure Marketplace"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Installieren der Konsolenagentensoftware auf einem Linux-Host"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["Was die Konsole mit Berechtigungen macht"^]
 

@@ -173,7 +173,7 @@ Sie müssen keine Verbindung zwischen der Leistungsebene und der Kapazitätseben
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 ----
-Die benutzerdefinierte Rolle umfasst standardmäßig die Berechtigungen. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Azure-Berechtigung für den Konsolen-Agent anzeigen"^]
+Die benutzerdefinierte Rolle beinhaltet die Berechtigungen standardmäßig. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["Azure-Berechtigung für den Konsolen-Agent anzeigen"^]
 
 endif::azure[]
 
@@ -301,7 +301,7 @@ Cloud Volumes ONTAP kann Daten von einem Datenschutz-Volume auf eine Kapazitäts
 image:screenshot_replication_tiering.gif["Screenshot, der die S3-Tiering-Option beim Replizieren eines Volumes zeigt."]
 
 +
-Hilfe zum Replizieren von Daten finden Sie unter https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Daten in und aus der Cloud replizieren"^] .
+Hilfe zur Datenreplikation bietet  https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Daten in und aus der Cloud replizieren"^].
 
 
 

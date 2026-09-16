@@ -108,7 +108,7 @@ Die Grenzwerte schließen die Root-Disk, die Core-Disk und den VNVRAM nicht ein.
 [[limits-for-different-deployment-modes-of-capacity-based-licensing]]
 === Beschränkungen für verschiedene Bereitstellungsmodi der kapazitätsbasierten Lizenzierung
 
-Für Cloud Volumes ONTAP Systeme mit einem kapazitätsbasierten Lizenzpaket gelten die folgenden Festplattenbeschränkungen https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Erfahren Sie mehr über die Lizenzierungsoptionen von Cloud Volumes ONTAP"^].
+Für Cloud Volumes ONTAP Systeme mit einem kapazitätsbasierten Lizenzpaket gelten die folgenden Festplattenbeschränkungen https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Erfahren Sie mehr über die Lizenzierungsoptionen von Cloud Volumes ONTAP"^].
 
 
 NOTE: Informationen zu den maximalen Systemkapazitäten und Daten-Tiering-Kapazitätsgrenzen für einzelne Knoten, HA-Paare in einer einzelnen Verfügbarkeitszone mit Seitenblobs sowie HA-Paare in einer einzelnen und mehreren Verfügbarkeitszonen mit gemeinsam genutzten verwalteten Datenträgern finden Sie unter <<cap-license-azure>>.
@@ -341,7 +341,7 @@ NOTE: Informationen zu den maximalen Systemkapazitäten und Daten-Tiering-Kapazi
 
 Die folgenden Speicherbeschränkungen gelten für Cloud Volumes ONTAP Systeme mit knotenbasierter Lizenzierung. Die knotenbasierte Lizenzierung ist das Vorgängermodell, das es ermöglicht, Cloud Volumes ONTAP pro Knoten zu lizenzieren. Die knotenbasierte Lizenzierung ist für Bestandskunden weiterhin verfügbar.
 
-Sie können mehrere knotenbasierte Lizenzen für ein Cloud Volumes ONTAP BYOL Single Node oder HA-Paar-System erwerben, um mehr als 368 TiB Kapazität zuzuweisen, bis zur maximal getesteten und unterstützten Systemkapazitätsgrenze von 2 PiB. Beachten Sie, dass Festplattenbeschränkungen Sie daran hindern können, die Kapazitätsgrenze nur mit Festplatten zu erreichen. Sie können die Festplattenbeschränkung überschreiten, indem Sie https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"^]. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["Erfahren Sie, wie Sie zusätzliche Systemlizenzen zu Cloud Volumes ONTAP hinzufügen"^]. Cloud Volumes ONTAP unterstützt bis zur maximal getesteten und unterstützten Systemkapazität von 2 PiB, und das Überschreiten der 2-PiB-Grenze führt zu einer nicht unterstützten Systemkonfiguration.
+Sie können mehrere knotenbasierte Lizenzen für ein Cloud Volumes ONTAP BYOL Single Node oder HA-Paar-System erwerben, um mehr als 368 TiB Kapazität zuzuweisen, bis zur maximal getesteten und unterstützten Systemkapazitätsgrenze von 2 PiB. Beachten Sie, dass Festplattenbeschränkungen Sie daran hindern können, die Kapazitätsgrenze nur mit Festplatten zu erreichen. Sie können die Festplattenbeschränkung überschreiten, indem Sie https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"^]. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Erfahren Sie, wie Sie zusätzliche Systemlizenzen zu Cloud Volumes ONTAP hinzufügen"^]. Cloud Volumes ONTAP unterstützt bis zur maximal getesteten und unterstützten Systemkapazität von 2 PiB, und das Überschreiten der 2-PiB-Grenze führt zu einer nicht unterstützten Systemkonfiguration.
 
 
 
@@ -631,7 +631,7 @@ Einige Konfigurationen ermöglichen es Ihnen, zusätzliche Storage-VMs (SVMs) f�
 
 Dies sind die getesteten Grenzwerte. Das Einrichten weiterer Speicher-VMs wird nicht unterstützt.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-azure.html["Erfahren Sie, wie Sie zusätzliche Storage-VMs erstellen"^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-svms-azure.html["Erfahren Sie, wie Sie zusätzliche Storage-VMs erstellen"^].
 
 [cols="2*"]
 |===

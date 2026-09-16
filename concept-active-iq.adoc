@@ -55,7 +55,7 @@ Klicken Sie im linken Bereich auf *Gesundheit > Digital Advisor*.
 +
 image:screenshot_aiq_digital_advisor.png["Ein Screenshot der Digital Advisor Benutzeroberfläche in der Konsole."]
 
-* Wenn Sie in der Konsole noch kein NSS-Konto registriert haben, registrieren Sie jetzt ein NSS-Konto. Anschließend wird die Digital Advisor Benutzeroberfläche angezeigt.  Siehe https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["Verwalten Sie NSS-Anmeldeinformationen, die einer Organisation oder einem Konto zugeordnet sind"] für die Anweisungen.
+* Falls noch kein NSS-Konto in der Console registriert wurde, sollte jetzt ein NSS-Konto registriert werden, danach erscheint die Digital Advisor Benutzeroberfläche. Siehe  https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["Verwalten Sie NSS-Anmeldeinformationen, die einer Organisation oder einem Konto zugeordnet sind"] für die Anweisungen.
 
 
 

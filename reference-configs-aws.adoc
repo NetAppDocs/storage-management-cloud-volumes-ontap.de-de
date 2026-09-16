@@ -26,6 +26,7 @@ Zusätzlich zum Speicherplatz für Benutzerdaten erwirbt NetApp auch Cloud-Speic
 
 
 [[internal-disks-for-system-data]]
+[[aws]]
 === Interne Festplatten für Systemdaten
 
 Die folgenden internen Festplatten werden in AWS für Systemdaten verwendet:
@@ -84,7 +85,7 @@ Lokaler NVMe-Speicher:: Einige EC2-Instanztypen umfassen lokalen NVMe-Speicher, 
 [[supported-disk-sizes]]
 === Unterstützte Festplattengrößen
 
-In AWS kann ein Aggregat bis zu 6 gleich große Festplatten enthalten. Wenn Sie jedoch eine Konfiguration haben, die die Amazon EBS Elastic Volumes-Funktion unterstützt, kann ein Aggregat bis zu 8 Festplatten enthalten. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"^]
+In AWS kann ein Aggregat bis zu 6 gleich große Festplatten enthalten. Wenn Sie jedoch eine Konfiguration haben, die die Amazon EBS Elastic Volumes-Funktion unterstützt, kann ein Aggregat bis zu 8 Festplatten enthalten. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-aws-elastic-volumes.html["Erfahren Sie mehr über die Unterstützung für Elastic Volumes"^]
 
 [cols="3*"]
 |===
@@ -335,7 +336,7 @@ Unterstützt
 
 |===
 . Bei einem HA-Paar gilt die Kapazitätsgrenze für das gesamte HA-Paar. Sie gilt nicht pro Knoten. Wenn Sie beispielsweise die PAYGO Premium-Lizenz verwenden, können Sie bis zu 368 TiB Kapazität zwischen beiden Knoten haben.
-. Bei manchen Konfigurationen verhindern Festplattenbeschränkungen, dass Sie das Kapazitätslimit allein durch die Verwendung von Festplatten erreichen. In diesen Fällen können Sie die Kapazitätsgrenze durch  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"^] erreichen. Informationen zu Festplattenbeschränkungen finden Sie unter link:reference-limits-aws.html["Speichergrenzen"].
+. Bei manchen Konfigurationen verhindern Festplattenbeschränkungen, dass Sie das Kapazitätslimit allein durch die Verwendung von Festplatten erreichen. In diesen Fällen können Sie die Kapazitätsgrenze durch  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"^] erreichen. Informationen zu Festplattenbeschränkungen finden Sie unter link:reference-limits-aws.html["Speichergrenzen"].
 +
 Mit kapazitätsbasierter Lizenzierung unterstützt jedes Cloud Volumes ONTAP-System Tiering für Objektspeicher. Die gesamte Tiering-Kapazität kann bis zum Bucket-Limit des Cloud-Anbieters skaliert werden. Obwohl die Lizenz keine Kapazitätsbeschränkungen vorsieht, sollten Sie die  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Best Practices für FabricPool"^] befolgen, um optimale Leistung, Zuverlässigkeit und Kosteneffizienz bei der Konfiguration und Verwaltung des Tierings zu gewährleisten.
 
@@ -654,7 +655,7 @@ Hohe Schreibgeschwindigkeit wird bei diesen Instanztypen in AWS Local Zones nich
 | Kaltdaten-Tiering zu S3 | Nicht unterstützt 3+| Unterstützt 
 |===
 . Bei einem HA-Paar gilt die Kapazitätsgrenze für das gesamte HA-Paar. Sie gilt nicht pro Knoten. Wenn Sie beispielsweise die PAYGO Premium-Lizenz verwenden, können Sie bis zu 368 TiB Kapazität zwischen beiden Knoten haben.
-. Bei manchen Konfigurationen verhindern Festplattenbeschränkungen, dass Sie das Kapazitätslimit allein durch die Verwendung von Festplatten erreichen. In diesen Fällen können Sie die Kapazitätsgrenze durch  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"^] erreichen. Informationen zu Festplattenbeschränkungen finden Sie unter link:reference-limits-aws.html["Speichergrenzen"].
+. Bei manchen Konfigurationen verhindern Festplattenbeschränkungen, dass Sie das Kapazitätslimit allein durch die Verwendung von Festplatten erreichen. In diesen Fällen können Sie die Kapazitätsgrenze durch  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"^] erreichen. Informationen zu Festplattenbeschränkungen finden Sie unter link:reference-limits-aws.html["Speichergrenzen"].
 +
 Mit kapazitätsbasierter Lizenzierung unterstützt jedes Cloud Volumes ONTAP-System Tiering für Objektspeicher. Die gesamte Tiering-Kapazität kann bis zum Bucket-Limit des Cloud-Anbieters skaliert werden. Obwohl die Lizenz keine Kapazitätsbeschränkungen vorsieht, sollten Sie die  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Best Practices für FabricPool"^] befolgen, um optimale Leistung, Zuverlässigkeit und Kosteneffizienz bei der Konfiguration und Verwaltung des Tierings zu gewährleisten.
 
@@ -681,7 +682,7 @@ Cloud Volumes ONTAP unterstützt die EC2-Instanztypen c4, m4 und r4 in AWS nicht
 
 Wenn Ihr System auf einer c4-, m4- oder r4-Instanz läuft, ändern Sie es vor dem Upgrade auf diese Version in eine c5-, m5- oder r5-Instanz.
 
-link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html["Erfahren Sie, wie Sie den EC2-Instanztyp für Cloud Volumes ONTAP ändern"^].
+link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-change-ec2-instance.html["Erfahren Sie, wie Sie den EC2-Instanztyp für Cloud Volumes ONTAP ändern"^].
 
 Weitere Informationen finden Sie in den folgenden Quellen:
 
@@ -816,8 +817,8 @@ pass:[*] Flash Cache wird auf m6id.xlarge, m6id.2xlarge, m6idn.xlarge und m6idn.
 
 Die folgenden Hinweise geben allgemeine Hinweise zum unterstützten Instanzverhalten und zu den Bereitstellungsoptionen.
 
-* Einige Instanztypen beinhalten lokalen NVMe-Speicher, den Cloud Volumes ONTAP als Flash Cache nutzt. Flash Cache beschleunigt den Datenzugriff durch Echtzeit intelligentes Caching kürzlich gelesener Benutzerdaten und NetApp-Metadaten. Er ist effektiv für leseintensive Workloads mit zufälligen Zugriffen, einschließlich Datenbanken, E-Mail und Dateidiensten. Die Komprimierung muss auf allen Volumes deaktiviert sein, um die Leistungsverbesserungen von Flash Cache nutzen zu können. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["Erfahren Sie mehr über Flash Cache"^].
-* Cloud Volumes ONTAP unterstützt hohe Schreibgeschwindigkeit mit allen unterstützten Instanztypen bei Verwendung eines Einzelknotensystems. Bei Verwendung eines HA-Paares wird hohe Schreibgeschwindigkeit nur mit unterstützten Instanztypen unterstützt https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["Erfahren Sie mehr über die Auswahl einer Schreibgeschwindigkeit"^].
+* Einige Instanztypen beinhalten lokalen NVMe-Speicher, den Cloud Volumes ONTAP als Flash Cache nutzt. Flash Cache beschleunigt den Datenzugriff durch Echtzeit intelligentes Caching kürzlich gelesener Benutzerdaten und NetApp-Metadaten. Er ist effektiv für leseintensive Workloads mit zufälligen Zugriffen, einschließlich Datenbanken, E-Mail und Dateidiensten. Die Komprimierung muss auf allen Volumes deaktiviert sein, um die Leistungsverbesserungen von Flash Cache nutzen zu können. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-flash-cache.html["Erfahren Sie mehr über Flash Cache"^].
+* Cloud Volumes ONTAP unterstützt hohe Schreibgeschwindigkeit mit allen unterstützten Instanztypen bei Verwendung eines Einzelknotensystems. Bei Verwendung eines HA-Paares wird hohe Schreibgeschwindigkeit nur mit unterstützten Instanztypen unterstützt https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-write-speed.html["Erfahren Sie mehr über die Auswahl einer Schreibgeschwindigkeit"^].
 * Wenn Sie einen EC2-Instanztyp auswählen, können Sie angeben, ob es sich um eine Shared Instance oder eine Dedicated Instance handelt.
 
 

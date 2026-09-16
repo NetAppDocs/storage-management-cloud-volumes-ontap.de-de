@@ -28,7 +28,7 @@ Falls noch kein Console-Agent vorhanden ist, sollte dieser vor der Bereitstellun
  a| 
 Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html["Einen Console Agent in Google Cloud erstellen"^]
  a| 
-Bei der Bereitstellung in einem Subnetz ohne Internetzugang ist der Console-Agent manuell zu installieren, und auf die NetApp Console-Benutzeroberfläche zuzugreifen, die auf diesem Console-Agent ausgeführt wird. Im Console-Setup-Leitfaden finden sich weitere Informationen: https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Manuelle Installation des Console Agenten ohne Internetzugang"^]
+Bei der Bereitstellung in einem Subnetz ohne Internetzugang ist der Console-Agent manuell zu installieren, und auf die NetApp Console-Benutzeroberfläche zuzugreifen, die auf diesem Console-Agent ausgeführt wird. Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Manuelle Installation des Console Agenten ohne Internetzugang"^]
 
 
 
@@ -70,7 +70,7 @@ Cloud Volumes ONTAP benötigt ein Google Cloud-Dienstkonto, um Data Tiering zu a
  a| 
 * link:task-creating-gcp-service-account.html["Ein Servicekonto einrichten"]
 * link:concept-data-tiering.html["Informationen zum Data Tiering"]
-* Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery-Dokumente"^]
+* Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery-Dokumente"^]
 
  a| 
 Für Bereitstellungen im privaten Modus sind keine weiteren Überlegungen erforderlich.
@@ -109,7 +109,7 @@ Vor Beginn der Bereitstellung ist sicherzustellen, dass eine Cloud Volumes ONTAP
 
 |===
 .Weiterführende Links
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Erstellen eines Konsolenagenten"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Installieren der Konsolenagentensoftware auf einem Linux-Host"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Erstellen eines Konsolenagenten"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Installieren der Konsolenagentensoftware auf einem Linux-Host"^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["Google Cloud-Berechtigungen für den Konsolenagenten"^]
 

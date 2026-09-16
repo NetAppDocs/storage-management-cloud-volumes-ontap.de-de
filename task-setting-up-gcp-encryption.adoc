@@ -62,4 +62,4 @@ Weitere Informationen finden Sie unter https://cloud.google.com/storage/docs/enc
 ----
 
 
-Weitere Informationen finden Sie im https://docs.netapp.com/us-en/bluexp-automation/index.html["Dokumentation zur NetApp Console"^] Weitere Informationen zur Verwendung des Parameters „GcpEncryption“.
+Weitere Einzelheiten zur Verwendung des Parameters „GcpEncryption“ finden sich in der  https://docs.netapp.com/us-en/console-automation/index.html["Dokumentation zur NetApp Console"^].

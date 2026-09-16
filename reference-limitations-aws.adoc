@@ -58,4 +58,4 @@ Cloud Volumes ONTAP gibt im Leerlauf keine CPUs frei, sodass  https://aws.amazon
 
 Nach einem Neustart eines Knotens muss der Partner die Daten synchronisieren, bevor er den Speicher zurückgeben kann. Die Zeit, die für die erneute Synchronisierung der Daten benötigt wird, hängt von der Menge der von Clients geschriebenen Daten während des Ausfalls des Knotens und von der Schreibgeschwindigkeit während der Rückgabe ab.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html["Erfahren Sie, wie Storage in einem Cloud Volumes ONTAP HA-Paar funktioniert, das in AWS ausgeführt wird"^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha.html["Erfahren Sie, wie Storage in einem Cloud Volumes ONTAP HA-Paar funktioniert, das in AWS ausgeführt wird"^].

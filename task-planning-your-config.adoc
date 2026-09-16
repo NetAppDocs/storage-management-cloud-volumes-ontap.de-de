@@ -137,10 +137,10 @@ Wie oben erwähnt, wird die Auswahl einer Datenträgergröße bei Cloud Volumes 
 
 Zusätzlich zum Speicher für Benutzerdaten erwirbt die Konsole auch Cloud-Speicher für Cloud Volumes ONTAP -Systemdaten (Boot-Daten, Root-Daten, Core-Daten und NVRAM).  Zu Planungszwecken kann es hilfreich sein, diese Details zu überprüfen, bevor Sie Cloud Volumes ONTAP bereitstellen.
 
-link:reference-default-configs.html#aws["Standardfestplatten für Cloud Volumes ONTAP Systemdaten in AWS anzeigen"] .
+link:reference-configs-aws.html#aws["Standardfestplatten für Cloud Volumes ONTAP Systemdaten in AWS anzeigen"].
 
 
-TIP: Der Konsolenagent benötigt außerdem eine Systemfestplatte. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-default-config.html["Details zur Standardkonfiguration des Konsolenagenten anzeigen"^] .
+TIP: Der Console Agent benötigt außerdem eine Systemdiskette https://docs.netapp.com/us-en/console-setup-admin/reference-connector-default-config.html["Details zur Standardkonfiguration des Konsolenagenten anzeigen"^].
 
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-getting-started-aws-c2s.html 
 keywords: commercial cloud services, c2s, secret cloud, top secret cloud, aws secret region, the Console 
-summary: Ähnlich wie in einer Standard-AWS-Region können Sie Cloud Volumes ONTAP in AWS Secret Cloud- und Top Secret Cloud-Umgebungen bereitstellen, die Funktionen der Enterprise-Klasse für Ihren Cloud-Speicher bieten.  Die AWS Secret Cloud- und Top Secret Cloud-Regionen sind geschlossene Regionen, die speziell für die US-Geheimdienste bestimmt sind. Die Anweisungen auf dieser Seite gelten nur für Benutzer der AWS Secret Cloud- und Top Secret Cloud-Regionen. 
+summary: Cloud Volumes ONTAP kann in AWS Secret Cloud und Top Secret Cloud Umgebungen bereitgestellt werden. AWS Secret Cloud und Top Secret Cloud Regionen sind geschlossene Regionen, die speziell für die U.S. Intelligence Community vorgesehen sind. Die Anweisungen auf dieser Seite gelten nur für Benutzer von AWS Secret Cloud und Top Secret Cloud Regionen. 
 ---
 = Stellen Sie Cloud Volumes ONTAP in AWS Secret Cloud oder AWS Top Secret Cloud bereit
 :hardbreaks:
@@ -33,7 +33,7 @@ Der Konsolenagent ist zum Bereitstellen und Verwalten von Cloud Volumes ONTAP in
 In AWS Secret Cloud und Top Secret Cloud arbeitet die Konsole im _privaten Modus_.  Im privaten Modus besteht von der Konsole aus keine Verbindung zur SaaS-Schicht.  Sie können über eine lokale webbasierte Anwendung auf die Konsole zugreifen, die auf den Konsolenagenten zugreifen kann.
 
 +
-Weitere Informationen zur Funktionsweise des privaten Modus finden Sie unterlink:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode["den privaten Bereitstellungsmodus in der Konsole"^] .
+Weitere Informationen darüber, wie der private Modus funktioniert, finden sich unter link:https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#private-mode["den privaten Bereitstellungsmodus in der Konsole"^].
 
 
 
