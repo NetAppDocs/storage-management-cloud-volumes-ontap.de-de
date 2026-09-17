@@ -38,7 +38,7 @@ Wenn Sie bereits Kunde sind und NIS-Abonnements mit Ihrem AWS-Konto verknüpft h
 . Wählen Sie auf der Registerkarte AWS das eigenständige Abonnement aus und klicken Sie auf das Optionssymbol image:screenshot_gallery_options.gif["Kebab-Symbol"].
 . Im Fenster „Konfiguration bearbeiten“ wählen Sie die Abonnementnummer des eigenständigen Eintrags im Feld *AWS account credentials* aus.
 . Klicken Sie auf *Konfigurieren*. Anschließend wird Ihnen das Abonnement als bevorzugte Option für Ihre Cloud Volumes ONTAP Abrechnung in AWS angezeigt.
-. Bei der Bereitstellung eines neuen Cloud Volumes ONTAP Systems wählen Sie das Essentials-Paket, um über das Einzelabonnement abzurechnen. Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"^].
+. Bei der Bereitstellung eines neuen Cloud Volumes ONTAP Systems wählen Sie das Essentials-Paket, um über das Einzelabonnement abzurechnen. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Quick create in AWS bereitstellen"^].
 
 
 Wiederholen Sie die gleichen Schritte für das NIS-Abonnement auf der Registerkarte *Datendienste*, um das NIS-Abonnement für Ihre Datendienste zu nutzen. Wählen Sie bei der Bereitstellung eines neuen Cloud Volumes ONTAP-Systems das Professional-Paket aus, um die Abrechnung über das NIS-Abonnement vorzunehmen.

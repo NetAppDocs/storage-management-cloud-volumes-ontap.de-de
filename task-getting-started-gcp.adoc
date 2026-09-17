@@ -95,7 +95,7 @@ Wenn alle Voraussetzungen erfüllt sind, lassen sich die Schritte im Assistenten
  a| 
 Siehe:
 
-* link:task-quick-deploy-gcp.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"]
+* link:task-quick-deploy-gcp.html["Cloud Volumes ONTAP mit Quick create in Google Cloud bereitstellen"]
 * link:task-deploying-gcp.html["Cloud Volumes ONTAP mit erweiterten Optionen bereitstellen"]
 
  a| 
@@ -103,7 +103,6 @@ Vor Beginn der Bereitstellung ist sicherzustellen, dass eine Cloud Volumes ONTAP
 
 * link:concept-license-management.html["Lizenzverwaltung für knotenbasiertes BYOL"]
 * link:task-manage-node-licenses.html["Knotenbasierte BYOL-Lizenzen verwalten"]
-* link:task-quick-deploy-gcp.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"]
 * link:task-deploying-gcp.html["Cloud Volumes ONTAP mit erweiterten Optionen bereitstellen"]
 
 

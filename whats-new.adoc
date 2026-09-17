@@ -161,7 +161,7 @@ Der neue Onboarding-Prozess vereinfacht Ihren Übergang von einem Marketplace-Ab
 
 .Weiterführende Links
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-onboard-cvo-aws-marketplace.html["Cloud Volumes ONTAP aus dem AWS Marketplace onboarden"^]
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Quick create in AWS bereitstellen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["Flexible Abrechnung für Cloud Volumes ONTAP und Datendienste in AWS"^]
 
 
@@ -243,7 +243,7 @@ https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["G
 Mit dem *Quick create*-Assistenten kann Cloud Volumes ONTAP in Google Cloud sowohl für Single-Node- als auch für High-Availability-(HA)-Konfigurationen bereitgestellt werden. Dieser optimierte Prozess reduziert die Schritte, legt Standardwerte automatisch auf einer einzigen Seite fest und minimiert die Navigation für eine schnellere und einfachere Bereitstellung.
 
 .Weiterführende Links
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-gcp.html["Cloud Volumes ONTAP in Google Cloud mit Quick create bereitstellen"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-gcp.html["Cloud Volumes ONTAP mit Quick create in Google Cloud bereitstellen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Cloud Volumes ONTAP mit fortschrittlichen Optionen in Google Cloud bereitstellen"^]
 
 
@@ -320,7 +320,7 @@ Weitere Informationen finden Sie unter  https://docs.netapp.com/us-en/cloud-volu
 Mit Quick create können Sie Cloud Volumes ONTAP in Azure sowohl für Einzelknoten- als auch für Hochverfügbarkeitskonfigurationen (HA) bereitstellen. Dieser optimierte Prozess reduziert die Anzahl der Schritte im Vergleich zur fortschrittlichen Methoden, legt automatisch Standardwerte auf einer einzigen Seite fest und minimiert die Navigation, wodurch die Bereitstellung schneller und einfacher wird.
 
 .Weiterführende Links
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html["Cloud Volumes ONTAP in Azure mit Schnellerstellung bereitstellen"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html["Cloud Volumes ONTAP mit Schnellerstellung in Azure bereitstellen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Cloud Volumes ONTAP mit fortschrittlichen Methoden in Azure bereitstellen"^]
 
 

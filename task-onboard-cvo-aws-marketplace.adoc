@@ -222,7 +222,7 @@ Nachdem der Agent bereit ist, kann das erste Cloud Volumes ONTAP System in AWS e
 . Die Systemkonfiguration abschließen.
 
 
-Detaillierte Anweisungen zur Systembereitstellung sind unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"^] zu finden.
+Detaillierte Anweisungen zur Systembereitstellung sind unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Quick create in AWS bereitstellen"^] zu finden.
 
 
 

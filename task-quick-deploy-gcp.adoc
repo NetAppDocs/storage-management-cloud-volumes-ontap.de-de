@@ -4,7 +4,7 @@ permalink: task-quick-deploy-gcp.html
 keywords: google cloud quick deploy, quick deploy, GCP, single screen deployment Google Cloud, SAZ, MAZ, single node, HA pair 
 summary: Cloud Volumes ONTAP Instanzen lassen sich in einer Einzelsystemkonfiguration oder als HA-Paar in Google Cloud schnell bereitstellen. 
 ---
-= Cloud Volumes ONTAP mit Schnellerstellung bereitstellen
+= Cloud Volumes ONTAP mit Quick create in Google Cloud bereitstellen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

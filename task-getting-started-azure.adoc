@@ -63,7 +63,7 @@ Nachdem alle Voraussetzungen erfüllt wurden, lassen sich die Schritte im Assist
  a| 
 Siehe:
 
-* link:task-quick-deploy-azure.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"]
+* link:task-quick-deploy-azure.html["Cloud Volumes ONTAP mit Schnellerstellung in Azure bereitstellen"]
 * link:task-deploying-otc-azure.html["Cloud Volumes ONTAP mit erweiterten Optionen bereitstellen"]
 
  a| 
@@ -71,7 +71,6 @@ Vor Beginn der Bereitstellung ist sicherzustellen, dass eine Cloud Volumes ONTAP
 
 * link:concept-license-management.html["Lizenzverwaltung für knotenbasiertes BYOL"]
 * link:task-manage-node-licenses.html["Knotenbasierte BYOL-Lizenzen verwalten"]
-* link:task-quick-deploy-azure.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"]
 * link:task-deploying-otc-azure.html["Cloud Volumes ONTAP mit erweiterten Optionen bereitstellen"]
 
 

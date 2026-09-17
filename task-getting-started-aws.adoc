@@ -75,7 +75,7 @@ Cloud Volumes ONTAP über die Konsole bereitstellen
  a| 
 Sobald Sie alle Voraussetzungen erfüllt haben, können die Schritte im Assistenten abgeschlossen werden, um Cloud Volumes ONTAP in AWS bereitzustellen.
  a| 
-* link:task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"]
+* link:task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Quick create in AWS bereitstellen"]
 * link:task-deploying-otc-aws.html["Cloud Volumes ONTAP mit erweiterten Optionen bereitstellen"]
 
  a| 
@@ -83,7 +83,6 @@ Vor Beginn der Bereitstellung ist sicherzustellen, dass eine Cloud Volumes ONTAP
 
 * link:concept-license-management.html["Lizenzverwaltung für knotenbasiertes BYOL"]
 * link:task-manage-node-licenses.html["Knotenbasierte BYOL-Lizenzen verwalten"]
-* link:task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"]
 * link:task-deploying-otc-aws.html["Cloud Volumes ONTAP mit erweiterten Optionen bereitstellen"]
 
 
