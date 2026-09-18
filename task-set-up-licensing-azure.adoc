@@ -79,7 +79,7 @@ NOTE: NetApp hat den Kauf, die Erweiterung und die Erneuerung von BYOL-Lizenzen 
 Die Konsole fragt automatisch den Lizenzierungsdienst von NetApp ab, um Details zu den Lizenzen abzurufen, die mit Ihrem NetApp Support Site-Konto verknüpft sind.  Wenn keine Fehler auftreten, fügt die Konsole die Lizenzen automatisch zur Konsole hinzu.
 
 +
-Ihre Lizenz muss in der Konsole verfügbar sein, bevor Sie sie mit Cloud Volumes ONTAP verwenden können.  Bei Bedarf können Sielink:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account["Fügen Sie die Lizenz manuell zur Konsole hinzu"] .
+Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes ONTAP verwenden können. Falls erforderlich, kann link:task-manage-capacity-licenses.html#how-licenses-are-added-to-netapp-console["Fügen Sie die Lizenz manuell zur Konsole hinzu"].
 
 . Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
 +

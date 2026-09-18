@@ -49,9 +49,7 @@ Workload Factory wendet Best Practices auf große Speicher-, Datenbank- und VMwa
 [[analysis-requirements]]
 == Analyseanforderungen
 
-Für eine vollständige Cloud Volumes ONTAP Systemanalyse müssen link:https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html#agent-console-deploy["Einen NetApp Console-Agenten bereitstellen"^] Sie die Konnektivität zwischen Ihren Systemen und der NetApp Console einrichten.
-
-Es muss außerdem ausgehende Konnektivität zu den folgenden Endpunkten bestehen:
+Es ist sicherzustellen, dass der mit Cloud Volumes ONTAP verbundene Console Agent Zugriff auf die folgenden Endpunkte hat:
 
 * \https://api.workloads.netapp.com
 * \https://ws.workloads.bluexp.netapp.com

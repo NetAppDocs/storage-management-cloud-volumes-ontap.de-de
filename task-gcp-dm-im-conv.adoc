@@ -44,7 +44,7 @@ Cloud Volumes ONTAP-Systeme, die Infrastructure Manager verwenden, speichern Dat
 ====
 ** Stellen Sie sicher, dass Sie die neueste Version des Console-Agenten verwenden. Laden Sie das Produktinstallationsprogramm von der NetApp Support Site herunter und installieren Sie den Agenten anschließend manuell auf Ihrem Host, damit der Agent die Infrastructure Manager APIs nutzen kann.
 ** Wenn Sie das Tool im privaten Modus ausführen, stellen Sie sicher, dass Sie neben den anderen APIs auch die Cloud Build API aktiviert haben. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud APIs aktivieren"^].
-** Stellen Sie sicher, dass Sie die Netzwerkkonfigurationen abgeschlossen und den Worker-Pool für private Bereitstellungen erstellt haben. Siehe link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Infrastructure Manager-Konfiguration für private Modus-Bereitstellungen"].
+** Stellen Sie sicher, dass Sie die Netzwerkkonfigurationen abgeschlossen und den Worker-Pool für private Bereitstellungen erstellt haben. Siehe link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Infrastructure Manager-Konfiguration für private Modus-Bereitstellungen"].
 
 
 ====
@@ -293,7 +293,7 @@ dmconvert \
 .Führen Sie das Tool im privaten Modus für Bereitstellungen aus
 [%collapsible]
 ====
-Geben Sie den  `--worker-pool` Parameter an, um das Tool in privaten Bereitstellungsmodi auszuführen. Weitere Informationen zur Konfiguration des Worker-Pools finden Sie unter link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Infrastructure Manager-Konfiguration für private Modus-Bereitstellungen"].
+Geben Sie den  `--worker-pool` Parameter an, um das Tool in privaten Bereitstellungsmodi auszuführen. Weitere Informationen zur Konfiguration des Worker-Pools finden Sie unter link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Infrastructure Manager-Konfiguration für private Modus-Bereitstellungen"].
 
 [source, cli]
 ----
