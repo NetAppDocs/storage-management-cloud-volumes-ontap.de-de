@@ -105,7 +105,7 @@ Anmerkungen:
 
 Die Kapazitätsgrenzen sind unterschiedlich, abhängig von der verwendeten EC2-Instanztypfamilie und davon, ob Sie ein Einzelknotensystem oder ein HA-Paar verwenden.
 
-Die folgenden Anmerkungen enthalten Details zu den Zahlen, die Sie in den nachstehenden Tabellen sehen werden:
+Die folgenden Anmerkungen enthalten Details zu den Zahlen in den nachstehenden Tabellen:
 
 * Die Festplattenbeschränkungen gelten ausschließlich für Festplatten, die Benutzerdaten enthalten.
 +

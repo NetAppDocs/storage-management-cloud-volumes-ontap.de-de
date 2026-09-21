@@ -32,7 +32,7 @@ Die Meldung des logischen Speicherplatzes ist auf der initialen Storage-VM aktiv
 ** FlexClone
 ** iSCSI
 ** Multi-Tenant Encryption Key Management (MTEKM), beginnend mit Cloud Volumes ONTAP 9.12.1 GA
-** NetApp Volume Encryption (nur für Bring Your Own License (BYOL) oder registrierte Pay-as-you-go (PAYGO)-Systeme)
+** NetApp Volume Encryption (nur für Bring-Your-Own License (BYOL) oder registrierte Pay-as-you-go (PAYGO) Systeme)
 ** NFS ifdef::aws[] endif::aws[] ifdef::azure[] endif::azure[]
 ** SnapMirror
 ** SnapRestore

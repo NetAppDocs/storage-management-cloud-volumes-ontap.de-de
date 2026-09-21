@@ -16,7 +16,7 @@ summary: 'Sie können den WORM-Speicher (Write Once, Read Many) auf einem Cloud 
 [role="lead"]
 Sie können den WORM-Speicher (Write Once, Read Many) auf einem Cloud Volumes ONTAP System aktivieren, um Dateien für einen angegebenen Aufbewahrungszeitraum unverändert aufzubewahren.  Der Cloud-WORM-Speicher basiert auf der SnapLock -Technologie, was bedeutet, dass WORM-Dateien auf Dateiebene geschützt sind.
 
-Die WORM-Funktion steht für die Verwendung mit BYOL-Lizenzen (Bring Your Own License) und Marktplatzabonnements für Ihre Lizenzen ohne zusätzliche Kosten zur Verfügung.  Wenden Sie sich an Ihren NetApp -Vertriebsmitarbeiter, um WORM zu Ihrer aktuellen Lizenz hinzuzufügen.
+Die WORM-Funktion ist für Ihre Marketplace-Abonnements und Ihre Bring-Your-Own License (BYOL) ohne zusätzliche Kosten verfügbar. Ihr NetApp Vertriebsmitarbeiter kann WORM zu Ihrer aktuellen Lizenz hinzufügen.
 
 
 

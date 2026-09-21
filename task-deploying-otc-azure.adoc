@@ -521,5 +521,21 @@ Mithilfe von Kontingenten können Sie den Speicherplatz und die Anzahl der von e
 
 CAUTION: Ändern Sie nach Abschluss des Bereitstellungsprozesses nicht die systemgenerierten Cloud Volumes ONTAP Konfigurationen im Azure-Portal, insbesondere nicht die System-Tags. Alle an diesen Konfigurationen vorgenommenen Änderungen können zu unerwartetem Verhalten oder Datenverlust führen.
 
+
+
+[[deploy-cloud-volumes-ontap-in-private-mode]]
+== Cloud Volumes ONTAP im privaten Modus bereitstellen
+
+Bereitstellungsoptionen im privaten Modus unterstützen die Erfüllung der Sicherheits- und Compliance-Anforderungen Ihrer Organisation. Eine Bereitstellung im privaten Modus folgt demselben Verfahren wie eine Bereitstellung im Standardmodus. Der Betrieb erfolgt in Ihrer eigenen Virtual Private Cloud (VPC) oder Ihrem virtuellen Netzwerk (VNet) ohne öffentliche Internetverbindung.
+
+Im privaten Modus ist der Erwerb einer kapazitätsbasierten Bring-Your-Own License (BYOL) oder eines link:concept-license-management.html["BYOL"] _Essentials_-Pakets von NetApp erforderlich, das während der Bereitstellung dem System zugewiesen wird. Die ersten 500 GiB der genutzten Kapazität werden nicht auf die Lizenzgebühren angerechnet. Zusätzliche Essentials-Pakete können erworben werden, wenn die Workload-Anforderungen steigen. Nach der Bereitstellung ist die Lizenzseriennummer in der Console einsehbar.
+
+Informationen zum Hochladen einer Lizenzdatei in Ihre Private-Mode-Bereitstellung finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Knotenbasierte Lizenzen für Cloud Volumes ONTAP verwalten"].
+
+.Beschränkungen für knotenbasierte Lizenzierung
+Für bisherige Bereitstellungen im privaten Modus wurden ausschließlich knotenbasierte Lizenzen verwendet. NetApp hat den Kauf, die Erweiterung und die Erneuerung dieser Lizenzen der vorherigen Generation seit  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["25. Juni 2025"] mit Ausnahme weniger Fälle eingeschränkt. Bei bestehenden Bereitstellungen im privaten Modus mit knotenbasierten Lizenzen ist eine Umstellung auf kapazitätsbasierte Lizenzen erforderlich. Anleitungen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["Knotenbasierte Lizenzen in kapazitätsbasierte Lizenzen umwandeln"^].
+
 .Weiterführende Links
-*link:task-planning-your-config-azure.html["Planen Ihrer Cloud Volumes ONTAP -Konfiguration in Azure"^] *link:task-deploy-cvo-azure-mktplc.html["Stellen Sie Cloud Volumes ONTAP in Azure über den Azure Marketplace bereit"^]
+* link:task-planning-your-config-azure.html["Planen Ihrer Cloud Volumes ONTAP -Konfiguration in Azure"^]
+* link:task-deploy-cvo-azure-mktplc.html["Stellen Sie Cloud Volumes ONTAP in Azure über den Azure Marketplace bereit"^]
+

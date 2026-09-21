@@ -291,7 +291,7 @@ sidebar:
         url: "/concept-licensing-charging.html"
       - title: Kapazitätsbasierte Lizenzen verwalten
         url: "/task-manage-capacity-licenses.html"
-      - title: Informationen zu knotenbasiertem BYOL
+      - title: Erfahren Sie mehr über BYOL-Lizenzierung
         url: "/concept-license-management.html"
       - title: Knotenbasierte Lizenzen verwalten
         url: "/task-manage-node-licenses.html"

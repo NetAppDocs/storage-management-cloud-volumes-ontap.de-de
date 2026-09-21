@@ -52,7 +52,7 @@ Mit der kapazitätsbasierten Lizenzierung können Sie für Cloud Volumes ONTAP p
 
 Die Pakete Essentials und Professional sind mit folgenden Verbrauchsmodellen bzw. Kaufoptionen erhältlich:
 
-* Eine von NetApp erworbene Lizenz (Bring Your Own License (BYOL))
+* Eine Lizenz, die von NetApp (Bring-Your-Own License oder BYOL) erworben wurde
 * Ein stündliches Pay-as-you-go-Abonnement (PAYGO) vom AWS Marketplace
 * Ein Jahresvertrag vom AWS Marketplace
 

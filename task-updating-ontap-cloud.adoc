@@ -348,7 +348,7 @@ Das Zurücksetzen oder Downgrade von Cloud Volumes ONTAP auf eine frühere Versi
 [[support-registration]]
 === Support-Registrierung
 
-Cloud Volumes ONTAP muss beim NetApp -Support registriert sein, um die Software mit einer der auf dieser Seite beschriebenen Methoden zu aktualisieren.  Dies gilt sowohl für Pay-as-you-go (PAYGO) als auch für Bring Your Own License (BYOL).  Sie müssenlink:task-registering.html["PAYGO-Systeme manuell registrieren"] , während BYOL-Systeme standardmäßig registriert sind.
+Cloud Volumes ONTAP muss beim NetApp Support registriert sein, damit die Software mit einer der auf dieser Seite beschriebenen Methoden aktualisiert werden kann. Dies gilt sowohl für Pay-as-you-go (PAYGO) als auch für Bring-Your-Own License (BYOL). Sie müssen link:task-registering.html["PAYGO-Systeme manuell registrieren"] , während BYOL-Systeme standardmäßig registriert sind.
 
 
 TIP: Ein System, das nicht für den Support registriert ist, erhält dennoch die Software-Update-Benachrichtigungen, die in der Konsole angezeigt werden, wenn eine neue Version verfügbar ist.  Sie müssen das System jedoch registrieren, bevor Sie die Software aktualisieren können.

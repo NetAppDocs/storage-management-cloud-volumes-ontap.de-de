@@ -1298,7 +1298,7 @@ HA pairs verwenden Azure Managed Disks. Die folgenden Datenträgertypen und -gr�
 [[supported-regions]]
 === Unterstützte Regionen
 
-Informationen zur Unterstützung von Azure-Regionen finden Sie unter https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Globale Regionen"^].
+Informationen zur Unterstützung von Azure-Regionen finden sich unter  https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Globale Regionen"^].
 
 .Weiterführende Links
 * link:task-planning-your-config-azure.html["Erfahren Sie, wie Sie Datenträgertypen und Datenträgergrößen für Ihre Systeme in Azure auswählen"]

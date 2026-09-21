@@ -25,7 +25,7 @@ NetApp erkennt die folgenden besonderen Lizenzierungsanforderungen in Übereinst
 * Kunden aus dem öffentlichen Sektor der USA
 * Bereitstellungen im privaten Modus
 * Bereitstellungen von Cloud Volumes ONTAP in AWS in der Region China
-* Wenn Sie über eine gültige, nicht abgelaufene By-Node-Lizenz verfügen, bringen Sie Ihre eigene Lizenz mit (BYOL-Lizenz)
+* Wenn Sie über ein gültiges, nicht abgelaufenes Bring-Your-Own License (BYOL) Paket verfügen
 
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]

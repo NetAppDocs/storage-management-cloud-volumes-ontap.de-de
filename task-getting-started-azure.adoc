@@ -22,6 +22,17 @@ Für die Bereitstellung von Cloud Volumes ONTAP benötigen Sie zunächst Informa
 
 
  a| 
+Konsolenrollen von NetApp überprüfen
+ a| 
+Bevor Sie einen Konsolenagenten erstellen und andere Bereitstellungsaufgaben für Cloud Volumes ONTAP durchführen können, muss sichergestellt sein, dass die erforderlichen IAM-Rollen und Berechtigungen vorhanden sind.
+ a| 
+Siehe die Anleitung zur Konsoleneinrichtung: https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["Cloud Volumes ONTAP Zugriffsrollen in der NetApp Console"^] https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html["Rollenbasierter Zugriff für Cloud Volumes ONTAP einrichten"^]
+ a| 
+Es wird überprüft, ob die Rollen korrekt konfiguriert sind.
+
+
+
+ a| 
 Einen Console-Agenten erstellen
  a| 
 Falls Sie noch keinen Console-Agenten besitzen, sollte einer erstellt werden, bevor Cloud Volumes ONTAP bereitgestellt wird.
@@ -39,7 +50,7 @@ Die Konsole bietet vorkonfigurierte Pakete, die Ihren Workload-Anforderungen ent
  a| 
 link:task-planning-your-config-azure.html["Planen Sie Ihre Cloud Volumes ONTAP -Konfiguration in Azure"]
  a| 
-Für Bereitstellungen im privaten Modus sind ähnliche Planungsüberlegungen erforderlich.
+Auch für Bereitstellungen im privaten Modus sind ähnliche Planungsüberlegungen erforderlich.
 
 
 
@@ -67,10 +78,10 @@ Siehe:
 * link:task-deploying-otc-azure.html["Cloud Volumes ONTAP mit erweiterten Optionen bereitstellen"]
 
  a| 
-Vor Beginn der Bereitstellung ist sicherzustellen, dass eine Cloud Volumes ONTAP Lizenz von NetApp erworben wurde. Für Bereitstellungen im privaten Modus ist eine node-basierte BYOL Lizenz erforderlich. Marketplace-Abonnements werden für die Abrechnung der Cloud Volumes ONTAP Nutzung nicht unterstützt. Die Lizenzdatei ist von NetApp zu beziehen und während der Bereitstellung hochzuladen. Es wird verwiesen auf:
+Der private Modus unterstützt nur erweiterte Bereitstellungen. Vor Beginn der Bereitstellung sollte sichergestellt sein, dass eine Cloud Volumes ONTAP Lizenz von NetApp erworben wurde. Bereitstellungen im privaten Modus basieren auf BYOL-Lizenzen. Marketplace-Abonnements werden für die Abrechnung der Cloud Volumes ONTAP Nutzung nicht unterstützt. Die Lizenzdatei ist von NetApp zu beziehen und während der Bereitstellung hochzuladen. Weitere Informationen finden Sie unter:
 
-* link:concept-license-management.html["Lizenzverwaltung für knotenbasiertes BYOL"]
-* link:task-manage-node-licenses.html["Knotenbasierte BYOL-Lizenzen verwalten"]
+* link:concept-license-management.html["Lizenzverwaltung"]
+* link:task-manage-node-licenses.html["BYOL Lizenzen verwalten"]
 * link:task-deploying-otc-azure.html["Cloud Volumes ONTAP mit erweiterten Optionen bereitstellen"]
 
 

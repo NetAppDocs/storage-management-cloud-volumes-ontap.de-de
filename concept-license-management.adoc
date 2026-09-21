@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-license-management.html 
 keywords: byol, bring your own license, expiration, warning, node-based byol, node license, capacity 
-summary: Auf jedem Cloud Volumes ONTAP -System mit knotenbasiertem BYOL muss eine Systemlizenz mit einem aktiven Abonnement installiert sein.  Die Konsole vereinfacht den Vorgang, indem sie die Lizenzen für Sie verwaltet und vor Ablauf eine Warnung anzeigt. 
+summary: Es wird erläutert, wie kapazitätsbasierte und knotenbasierte BYOL-Lizenzen in Cloud Volumes ONTAP Bereitstellungen im Standardmodus und Privatmodus funktionieren, einschließlich des Verhaltens bei Verlängerung und Ablauf. 
 ---
-= Informationen zu Cloud Volumes ONTAP node-based BYOL
+= Informationen zur BYOL-Lizenzierung in Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,80 +14,113 @@ summary: Auf jedem Cloud Volumes ONTAP -System mit knotenbasiertem BYOL muss ein
 
 
 [role="lead"]
-Auf jedem Cloud Volumes ONTAP System mit einer knotenbasierten Bring-Your-Own-Lizenz (BYOL) muss eine Systemlizenz mit einem aktiven Abonnement installiert sein.  Die NetApp Console vereinfacht den Vorgang, indem sie die Lizenzen für Sie verwaltet und vor Ablauf eine Warnung anzeigt.
+Bring-Your-Own License (BYOL) ist ein Cloud Volumes ONTAP Abrechnungsmodell, bei dem eine Lizenz direkt von NetApp erworben wird, anstatt ein Abonnement über einen Cloud-Marktplatz zu nutzen.
 
+BYOL ist für Standard-Mode- und Private-Mode-Bereitstellungen verfügbar, vorbehaltlich Verfügbarkeitsbeschränkungen. Die Verwaltung von BYOL-Lizenzen erfolgt im Abschnitt *Lizenzierung und Abonnements* der NetApp Console unter *Direktlizenzen*. Jede Lizenz ist Ihrem Unternehmen und bestimmten NetApp Support Site-Anmeldeinformationen zugeordnet.
 
-NOTE: Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz kann von NetApp (BYOL) erworben werden und ist nur in bestimmten Fällen für Lizenzverlängerungen verfügbar.
-
-link:concept-licensing.html["Erfahren Sie mehr über Cloud Volumes ONTAP -Lizenzen"].
-
-link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Erfahren Sie mehr über die Verwaltung knotenbasierter Lizenzen"^].
-
-
-
-[[byol-system-licenses]]
-== BYOL-Systemlizenzen
-
-Knotenbasierte Lizenzen können von NetApp bezogen werden. Die Anzahl der Lizenzen, die Sie für ein Einzelknotensystem oder ein HA-Paar erwerben können, ist unbegrenzt.
-
-
-NOTE: NetApp hat den Kauf, die Erweiterung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAPP"^].
-
-Eine knotenbasierte Lizenz bietet bis zu 368 TiB Kapazität für einen einzelnen Knoten oder ein HA-Paar. Möglicherweise haben Sie mehrere Lizenzen für ein Cloud Volumes ONTAP BYOL-System erworben, um mehr als 368 TiB Kapazität zuzuweisen. Beispielsweise könnten Sie zwei Lizenzen besitzen, um Cloud Volumes ONTAP bis zu 736 TiB Kapazität zuzuweisen. Oder Sie könnten vier Lizenzen besitzen, um bis zu 1,4 PiB zu erhalten.
-
-Beachten Sie, dass Festplattenlimits Sie daran hindern können, die Kapazitätsgrenze zu erreichen, wenn Sie nur Festplatten verwenden. Sie können das Festplattenlimit überschreiten, indem Sielink:concept-data-tiering.html["Tiering inaktiver Daten in den Objektspeicher"] .  Informationen zu Festplattenlimits finden Sie unter https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Speicherlimits in den Cloud Volumes ONTAP Versionshinweisen"^] .
+* NetApp hat den Kauf, die Erweiterung und die Erneuerung von BYOL-Lizenzen für Standard-Mode-Bereitstellungen mit gültigen Marketplace-Abonnements eingeschränkt. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^].
+* NetApp stellt die knotenbasierte Lizenzierung zugunsten einer kapazitätsbasierten Lizenzierung schrittweise ein. Knotenbasierte Lizenzen sind weiterhin für eine begrenzte Anzahl bestehender Deployments verfügbar, einschließlich einiger USPS-Kunden-Deployments und Deployments in China. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^].
 
 
 
-[[license-management-for-a-new-system]]
-== Lizenzmanagement für ein neues System
 
-Wenn Sie ein knotenbasiertes BYOL-System erstellen, werden Sie von der Konsole aufgefordert, die Seriennummer Ihrer Lizenz und Ihr NetApp Support Site-Konto einzugeben.  Die Konsole verwendet das Konto, um die Lizenzdatei von NetApp herunterzuladen und auf dem Cloud Volumes ONTAP System zu installieren.
+[[byol-deployment-modes]]
+== BYOL-Bereitstellungsmodi
 
-https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["Erfahren Sie, wie Sie NetApp Support Site-Konten zur Konsole hinzufügen"^].
+[role="tabbed-block"]
+====
+.Bereitstellungen im Standardmodus
+--
+* Statt BYOL bevorzugt NetApp jährliche oder Pay-as-you-go (PAYGO) Marktplatzabonnements zur Abrechnung Ihres Verbrauchs.
+* Standard-Mode-Bereitstellungen verwenden im Allgemeinen kapazitätsbasierte Lizenzen anstelle von node-basierten Lizenzen. Nur eine begrenzte Anzahl bestehender Standard-Mode-Bereitstellungen verwendet node-basierte Lizenzen.
 
-Wenn die Konsole über die sichere Internetverbindung nicht auf die Lizenzdatei zugreifen kann, können Sielink:task-manage-node-licenses.html["Besorgen Sie sich die Datei selbst und laden Sie sie dann manuell in die Konsole hoch"] .
+
+--
+.Bereitstellungen im privaten Modus
+--
+* Bereitstellungen im privaten Modus basieren vollständig auf BYOL-Lizenzen, da Marketplace-Abonnements im privaten Modus nicht verfügbar sind.
+* Für neue Implementierungen werden kapazitätsbasierte Essentials Pakete anstelle von knotenbasierten Lizenzen verwendet. Knotenbasierte Lizenzierung wird von einigen älteren Private-Mode-Implementierungen verwendet.
+
+
+--
+====
+
+
+[[compare-byol-license-types-in-private-mode]]
+=== BYOL-Lizenztypen im privaten Modus im Vergleich
+
+Die folgende Tabelle fasst die Unterschiede zwischen kapazitätsbasierten und knotenbasierten Lizenzen im privaten Modus zusammen.
+
+[cols="25,37,38"]
+|===
+| Funktion | Kapazitätsbasierte Lizenzen | Knotenbasierte Lizenzen 
+
+
+| Bereitstellungsunterstützung  a| 
+Neue Bereitstellungen im privaten Modus unterstützen ausschließlich kapazitätsbasierte Lizenzen, insbesondere das Essentials Paket.
+ a| 
+Neue Bereitstellungen im privaten Modus unterstützen keine knotenbasierten Lizenzen. Nur eine begrenzte Anzahl bestehender knotenbasierter Bereitstellungen kann diese weiterhin nutzen.
 
 
 
-[[license-expiration]]
-== Lizenzablauf
+| Kauf  a| 
+Ein kapazitätsbasiertes BYOL Essentials Paket von NetApp kann erworben und während der Bereitstellung dem System zugewiesen werden.
+ a| 
+Wenn bereits eine private Bereitstellung mit einer knotenbasierten Lizenz vorhanden ist, kann diese durch den Kauf eines Essentials Pakets von NetApp auf kapazitätsbasierte Lizenzierung umgestellt werden.
 
-Die Konsole zeigt 30 Tage vor Ablauf einer knotenbasierten Lizenz eine Warnung an und erneut, wenn die Lizenz abläuft.  Das folgende Bild zeigt eine 30-tägige Ablaufwarnung, die in der Benutzeroberfläche angezeigt wird:
+
+
+| Kapazität  a| 
+Die ersten 500 GiB verbrauchter Kapazität werden nicht auf Ihre Lizenzgebühren angerechnet. Zusätzliche Pakete können erworben werden, wenn der Bedarf an Arbeitslasten steigt.
+ a| 
+Eine knotenbasierte Lizenz bietet bis zu 368 TiB Kapazität für einen einzelnen Knoten oder ein HA-Paar. Um mehr als 368 TiB einem Cloud Volumes ONTAP System zuzuweisen, ist der Erwerb mehrerer Lizenzen erforderlich. Zum Beispiel ermöglichen zwei Lizenzen bis zu 736 TiB und vier Lizenzen bis zu 1,4 PiB.
+
+
+
+| Umfang  a| 
+Die kapazitätsbasierte Lizenzierung greift auf einen gemeinsamen Kapazitätspool Ihrer Cloud Volumes ONTAP Systeme zurück. Die verfügbare Kapazität kann entsprechend dem sich ändernden Speicherbedarf neu verteilt werden.
+ a| 
+Jede knotenbasierte Lizenz gilt für ein Cloud Volumes ONTAP System und stellt diesem System eine feste Kapazität zur Verfügung.
+
+
+
+| Übertragbarkeit  a| 
+Jede kapazitätsbasierte Lizenz ist einem Console-Konto zugeordnet. Systeme, die unter diesem Konto erstellt werden, können die Lizenzkapazität und die Seriennummer gemeinsam nutzen. Beispielsweise kann eine 5-TiB-Lizenz zwei Systeme mit jeweils 2,5 TiB oder ein System mit 5 TiB unterstützen. Die Lizenzseriennummer ist in der Console sichtbar, und dieselbe Lizenz kann mehreren Systemen unter demselben Konto zugewiesen werden.
+ a| 
+Sie können eine node-basierte BYOL-Lizenz übertragen, indem Sie das vorhandene System löschen und die Lizenz zur Erstellung eines neuen Systems verwenden. Nur _cloud-agnostische_ Seriennummern funktionieren über verschiedene Cloud-Anbieter hinweg. Diese Seriennummern beginnen mit dem Präfix _908xxxx_.
+
+|===
+
+
+[[manage-and-renew-byol-licenses]]
+== BYOL-Lizenzen verwalten und erneuern
+
+
+
+[[renew-a-byol-license]]
+=== Eine BYOL-Lizenz verlängern
+
+Wenden Sie sich an einen NetApp Vertreter, um Ihre BYOL-Lizenz zu verlängern. Die Konsole ruft die verlängerte Lizenz automatisch ab und installiert sie auf dem Cloud Volumes ONTAP System.
+
+Falls die Konsole nicht über eine sichere Internetverbindung auf die Lizenzdatei zugreifen kann, die Lizenzdatei herunterladen und link:task-manage-node-licenses.html["manuell in die Konsole hochladen"].
+
+Informationen zur Verwaltung der mit der NetApp Support Site verknüpften Anmeldeinformationen in der Console finden sich unter  https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["NSS-Anmeldeinformationen verwalten, die mit der NetApp Console verknüpft sind"^].
+
+
+
+[[respond-to-an-expiration-warning]]
+=== Auf eine Ablaufwarnung reagieren
+
+Die Konsole zeigt 30 Tage vor Ablauf einer knotenbasierten Lizenz und erneut zum Zeitpunkt des Ablaufs eine Warnung an. Das Cloud Volumes ONTAP System kann ausgewählt werden, um die Warnung einzusehen und die Lizenz zu erneuern.
 
 image:screenshot_warning.gif["Screenshot: Zeigt ein Cloud Volumes ONTAP -System mit einem Warnsymbol.  Das Symbol zeigt an, dass eine Aktion erforderlich ist."]
 
-Sie können das System auswählen, um die Nachricht zu überprüfen.
+Wenn Sie Organisationsadministrator oder Kontoadministrator sind und die Option aktiviert haben, enthält die Konsole eine Warnung zum Ablauf der Lizenz im Cloud Volumes ONTAP Bericht und sendet Ihnen diese per E-Mail zu.
 
-Die Konsole enthält eine Warnung zum Ablauf der Lizenz im Cloud Volumes ONTAP -Bericht, der Ihnen per E-Mail zugesandt wird, wenn Sie ein Organisations- oder Kontoadministrator sind und die Option aktiviert haben.  Der per E-Mail versendete Bericht enthält alle zwei Wochen eine Warnung zum Ablauf der Lizenz.
-
-Wenn Sie die Lizenz nicht rechtzeitig erneuern, schaltet sich das Cloud Volumes ONTAP System selbst ab.  Wenn Sie es neu starten, fährt es sich wieder herunter.
-
-
-
-[[license-renewal]]
-== Lizenzerneuerung
-
-Wenn Sie ein knotenbasiertes BYOL-Abonnement verlängern, indem Sie sich an einen NetApp -Vertreter wenden, erhält die Konsole automatisch die neue Lizenz von NetApp und installiert sie auf dem Cloud Volumes ONTAP System.
-
-Wenn die Konsole über die sichere Internetverbindung nicht auf die Lizenzdatei zugreifen kann, können Sielink:task-manage-node-licenses.html["Besorgen Sie sich die Datei selbst und laden Sie sie dann manuell in die Konsole hoch"] .
-
-
-
-[[license-transfer-to-a-new-system]]
-== Lizenzübertragung auf ein neues System
-
-Eine knotenbasierte BYOL-Lizenz ist zwischen Cloud Volumes ONTAP Systemen übertragbar, wenn Sie ein vorhandenes System löschen und dann mit derselben Lizenz ein neues erstellen.
-
-Beispielsweise möchten Sie möglicherweise ein vorhandenes lizenziertes System löschen und die Lizenz dann mit einem neuen BYOL-System bei einem anderen VPC/VNet oder Cloud-Anbieter verwenden.  Beachten Sie, dass bei allen Cloud-Anbietern nur _Cloud-agnostische_ Seriennummern funktionieren.  Cloud-agnostische Seriennummern beginnen mit dem Präfix _908xxxx_.
-
-Es ist wichtig zu beachten, dass Ihre BYOL-Lizenz an Ihr Unternehmen und einen bestimmten Satz von Anmeldeinformationen für die NetApp -Support-Site gebunden ist.
+Wenn die Lizenz nicht vor ihrem Ablauf verlängert wird, fährt das Cloud Volumes ONTAP-System herunter. Ein Neustart des Systems ohne Verlängerung der Lizenz führt dazu, dass es erneut heruntergefahren wird.
 
 .Weiterführende Links
-* link:concept-licensing.html["Lizenzierung für Cloud Volumes ONTAP"^]
-* link:concept-licensing-charging.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen"^]
-* link:task-manage-capacity-licenses.html["Verwalten Sie die kapazitätsbasierte Lizenzierung für Cloud Volumes ONTAP"^]
-* link:task-manage-node-licenses.html["Knotenbasierte Lizenzierung verwalten"^]
-* link:task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Lizenz in eine kapazitätsbasierte Lizenz"^]
-* link:task-manage-keystone.html["Keystone -Abonnements verwalten"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Lizenzierung für Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Verwaltung knotenbasierter Lizenzen, einschließlich privater BYOL-Uploads im privaten Modus"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["Knotenbasierte Lizenzen in kapazitätsbasierte Lizenzen konvertieren"^]
 

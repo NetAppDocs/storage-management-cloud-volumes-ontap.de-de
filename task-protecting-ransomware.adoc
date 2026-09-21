@@ -65,7 +65,7 @@ Cloud Volumes ONTAP unterstützt die Funktion Autonomous Ransomware Protection (
 
 Unabhängig vom Schutz der Dateierweiterungen durch  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-protecting-ransomware.html#protection-from-common-ransomware-file-extensions["Ransomware-Schutzeinstellungen"], nutzt die ARP-Funktion eine Arbeitslastanalyse, um den Benutzer bei erkannten „abnormalen Aktivitäten“ auf potenzielle Angriffe hinzuweisen. Sowohl die Ransomware-Schutzeinstellung als auch die ARP-Funktion können gemeinsam für einen umfassenden Ransomware-Schutz eingesetzt werden.
 
-Die ARP-Funktion steht für die Verwendung mit Bring Your Own License (BYOL) und Marktplatzabonnements für Ihre Lizenzen ohne zusätzliche Kosten zur Verfügung.
+Die ARP-Funktion steht mit Bring-Your-Own License (BYOL) und Marketplace-Abonnements für Ihre Lizenzen ohne zusätzliche Kosten zur Verfügung.
 
 ARP-fähige Volumes haben den festgelegten Status „Lernmodus“ oder „Aktiv“.
 

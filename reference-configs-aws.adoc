@@ -827,7 +827,7 @@ Die folgenden Hinweise geben allgemeine Hinweise zum unterstützten Instanzverha
 [[supported-regions]]
 === Unterstützte Regionen
 
-Informationen zur Unterstützung von AWS-Regionen finden Sie unter https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Globale Regionen"^].
+Informationen zur Unterstützung von AWS-Regionen sind unter  https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Globale Regionen"^] zu finden.
 
 .Ähnliche Informationen
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html["Amazon EC2-Instanztypen"^]

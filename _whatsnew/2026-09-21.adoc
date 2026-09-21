@@ -1,0 +1,21 @@
+= Unterstützung für kapazitätsbasierte Lizenzen in Private-Mode-Bereitstellungen
+:allow-uri-read: 
+
+
+
+
+[[support-for-capacity-based-licenses-in-private-mode-deployments]]
+=== Unterstützung für kapazitätsbasierte Lizenzen in Private-Mode-Bereitstellungen
+
+Cloud Volumes ONTAP Systeme können jetzt im privaten Modus mit kapazitätsbasierten Lizenzen in AWS, Azure und Google Cloud bereitgestellt werden.
+
+NetApp unterstützt nur das Essentials Paket für kapazitätsbasierte Lizenzierung im privaten Modus. Ein kapazitätsbasiertes Bring-Your-Own License (BYOL) Essentials Paket kann von NetApp erworben und während der Bereitstellung dem System zugewiesen werden. Die ersten 500 GiB der verbrauchten Kapazität werden nicht auf die Lizenzgebühren angerechnet. Zusätzliche Pakete können erworben werden, wenn die Workload-Anforderungen steigen.
+
+NetApp empfiehlt die kapazitätsbasierte Lizenzierung für alle Cloud Volumes ONTAP Bereitstellungen im privaten Modus. Wenn bereits Bereitstellungen im privaten Modus mit knotenbasierten Lizenzen vorhanden sind, ist eine Umstellung auf kapazitätsbasierte Lizenzierung durch den Erwerb eines Essentials-Pakets von NetApp möglich. Diese neue Bereitstellungsfunktion, kombiniert mit der Umstellungsoption, unterstützt den Plan von NetApp, schrittweise von knotenbasierter auf kapazitätsbasierte Lizenzierung überzugehen.
+
+.Weiterführende Links
+* https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/concept-licensing.html["Cloud Volumes ONTAP -Lizenzierung"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html["Informationen zu Cloud Volumes ONTAP BYOL"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Knotenbasierte Lizenzen für Cloud Volumes ONTAP verwalten"^]
+

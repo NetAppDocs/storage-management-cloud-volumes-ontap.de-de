@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-licensing.html 
-keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, end of support, eos, end of availability, eoa, node-based 
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, license conversion for node based, end of support, eos, end of availability, eoa, node-based 
 summary: Für Cloud Volumes ONTAP sind mehrere Lizenzierungsoptionen verfügbar. Mit jeder Option können Sie eine Konfiguration auswählen, die Ihren Anforderungen entspricht. 
 ---
 = Lizenzierung für Cloud Volumes ONTAP
@@ -16,7 +16,7 @@ summary: Für Cloud Volumes ONTAP sind mehrere Lizenzierungsoptionen verfügbar.
 [role="lead"]
 Für Cloud Volumes ONTAP sind mehrere Lizenzmodelle verfügbar. Jede Option ermöglicht die Auswahl eines Nutzungsmodells, das den jeweiligen Anforderungen entspricht.
 
-Es bestehen Optionen, Lizenzen und Abonnements entweder über Cloud-Marktplätze oder über NetApp (Bring Your Own License (BYOL)) zu erwerben oder zu verlängern. Der Marktplatz bietet Jahresabonnements und Pay-as-you-go (PAYGO)-Optionen. Informationen finden sich unter link:concept-license-management.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen für Cloud Volumes ONTAP"].
+Es bestehen Optionen, Lizenzen und Abonnements über Cloud-Marktplätze oder über NetApp (Bring-Your-Own License oder BYOL) zu erwerben oder zu verlängern. Der Marktplatz bietet Jahresabonnements und Pay-as-you-go (PAYGO) Optionen. Informationen finden sich unter link:concept-license-management.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzen für Cloud Volumes ONTAP"].
 
 BYOL-Lizenzen sind bei NetApp erhältlich und können für jeden Cloud-Anbieter verwendet werden. Weitere Informationen zur Verfügbarkeit von BYOL-Lizenzen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^].
 
@@ -258,21 +258,21 @@ In dieser Tabelle erfahren Sie mehr über die einzelnen Lizenztypen und die Ausw
 
 
  a| 
-Gültige knotenbasierte Lizenz, erworben über Bring Your Own License (BYOL)
+Gültige knotenbasierte Lizenz, erworben von NetApp oder BYOL.
  a| 
 Die Lizenz bleibt bis zum Ablauf gültig.  Vorhandene, ungenutzte knotenbasierte Lizenzen können für die Bereitstellung neuer Cloud Volumes ONTAP -Systeme verwendet werden.
 
 
 
  a| 
-Abgelaufene knotenbasierte Lizenz, die über BYOL erworben wurde
+Abgelaufene BYOL node-basierte Lizenz.
  a| 
 Sie sind nicht berechtigt, mit dieser Lizenz neue Cloud Volumes ONTAP -Systeme bereitzustellen.  Die vorhandenen Systeme funktionieren möglicherweise weiterhin, Sie erhalten jedoch nach dem EOS-Datum keinen Support oder keine Updates für Ihre Systeme.
 
 
 
  a| 
-Gültige knotenbasierte Lizenz mit PAYGO-Abonnement
+Gültige knotenbasierte Lizenz mit PAYGO Abonnement.
  a| 
 Sie erhalten nach dem EOS-Datum NetApp Support mehr, bis Sie zu einer kapazitätsbasierten Lizenz wechseln.
 
@@ -288,11 +288,13 @@ NOTE: Auch in diesen Szenarien sind neue knotenbasierte Lizenzen und Lizenzverl�
 
 
 [[license-conversion]]
-== Lizenzkonvertierung
+=== Lizenzkonvertierung
 
-Die Konsole ermöglicht eine nahtlose Konvertierung von knotenbasierten Lizenzen in kapazitätsbasierte Lizenzen über das Lizenzkonvertierungstool.  Informationen zum EOA der knotenbasierten Lizenzierung finden Sie unterlink:concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"] .
+Die Konsole ermöglicht eine nahtlose Umwandlung von knotenbasierten Lizenzen in kapazitätsbasierte Lizenzen mithilfe des Lizenzkonvertierungstools. Informationen zum EOA der knotenbasierten Lizenzierung finden sich unter link:concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"].
 
 Vor der Umstellung ist es gut, sich mit den Unterschieden zwischen den beiden Lizenzmodellen vertraut zu machen.  Die knotenbasierte Lizenzierung umfasst eine feste Kapazität für jede ONTAP Instanz, was die Flexibilität einschränken kann.  Die kapazitätsbasierte Lizenzierung hingegen ermöglicht einen gemeinsamen Speicherpool über mehrere Instanzen hinweg, bietet dadurch mehr Flexibilität, optimiert die Ressourcennutzung und reduziert das Risiko finanzieller Nachteile bei der Neuverteilung von Workloads.  Die kapazitätsbasierte Abrechnung passt sich nahtlos an veränderte Speicheranforderungen an.
+
+##Wenn Sie Marketplace-Abonnements oder private Bereitstellungen mit knotenbasierten Lizenzen haben, ist eine link:task-convert-node-capacity.html["Ihre knotenbasierten Lizenzen in kapazitätsbasierte Lizenzen umwandeln"] mithilfe des Lizenzkonvertierungstools in der Konsole möglich.##
 
 Informationen zur Durchführung dieser Konvertierung finden Sie unterlink:task-convert-node-capacity.html["Konvertieren Sie eine knotenbasierte Cloud Volumes ONTAP Lizenz in eine kapazitätsbasierte Lizenz"] .
 

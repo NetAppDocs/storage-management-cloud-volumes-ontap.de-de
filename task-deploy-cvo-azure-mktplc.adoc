@@ -149,6 +149,7 @@ Nachdem die Erkennung abgeschlossen ist, können Sie die auf der Seite *Systeme*
 .Weiterführende Links
 Weitere Informationen zum Erstellen von Speicher finden Sie in der ONTAP -Dokumentation:
 
+* link:task-onboard-cvo-aws-marketplace.html["Cloud Volumes ONTAP aus dem AWS Marketplace abonnieren und bereitstellen"]
 * https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Ein neues Marketplace-Abonnement hinzufügen"^]
 * https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html["Erstellen von Volumes für NFS"^]
 * https://docs.netapp.com/us-en/ontap-cli/lun-create.html["Erstellen von LUNs für iSCSI"^]

@@ -38,7 +38,7 @@ Bei einer Bereitstellung im Standardmodus kann die knotenbasierte Lizenz mithilf
 ** Die zugrunde liegenden Cloud-Ressourcen bleiben nach der Konvertierung unberührt.
 
 
-* Das Tool zur Lizenzkonvertierung unterstützt alle Bereitstellungstypen, z. B. Einzelknoten, Hochverfügbarkeit (HA) in einer einzelnen Verfügbarkeitszone (AZ), HA in mehreren AZ, Bring Your Own License (BYOL) und PAYGO.
+* Das Lizenzkonvertierungstool unterstützt alle Bereitstellungstypen, wie Einzelknoten, Hochverfügbarkeit (HA) in einer einzelnen Verfügbarkeitszone (AZ), HA in mehreren AZ, Bring-Your-Own License (BYOL) und PAYGO.
 * Im Standardmodus unterstützt das Tool alle knotenbasierten Lizenzen als Quelle und alle kapazitätsbasierten Lizenzen als Ziel. Wenn beispielsweise eine BYOL-knotenbasierte Lizenz vorliegt, kann diese in eine beliebige kapazitätsbasierte Lizenz umgewandelt werden, die von NetApp erworben wurde.
 * Nach der Umstellung wird die Seriennummer der knotenbasierten Lizenz durch ein kapazitätsbasiertes Format ersetzt. Dies geschieht im Rahmen der Umstellung und wird in Ihrem NetApp Support Site (NSS) Konto angezeigt.
 * Wenn Sie zum kapazitätsbasierten Modell wechseln, werden Ihre Daten weiterhin am selben Ort wie bei der knotenbasierten Lizenzierung aufbewahrt.  Dieser Ansatz garantiert, dass es während der gesamten Umstellung zu keiner Unterbrechung der Datenplatzierung kommt und die Grundsätze der Datensouveränität gewahrt bleiben.
@@ -103,7 +103,7 @@ Die neue Lizenzseriennummer und die Änderungen können im Menü *Administration
 
 Bei einer Bereitstellung im privaten Modus kann die knotenbasierte Lizenz mithilfe des Lizenzkonvertierungstools in der NetApp Console in eine kapazitätsbasierte Lizenz umgewandelt werden. Die Konvertierung wird für alle Cloud-Anbieter unterstützt, AWS, Azure und Google Cloud.
 
-Da Marktplatz-Abonnements im privaten Modus nicht unterstützt werden, ist der Erwerb eines Essentials-Pakets (Bring Your Own License (BYOL)) von NetApp erforderlich. So bleiben die Vorteile der kapazitätsbasierten Lizenzierung im BYOL-Modell erhalten, ohne dass Marktplatz-Abonnements notwendig sind.
+Da Marktplatz-Abonnements im privaten Modus nicht unterstützt werden, muss ein Essentials Bring-Your-Own License oder BYOL-Paket von NetApp erworben werden. So bleiben die Vorteile der kapazitätsbasierten Lizenzierung im BYOL-Modell erhalten, ohne dass Marktplatz-Abonnements erforderlich sind.
 
 
 NOTE: Die Umwandlung von knotenbasierten Lizenzen in jede andere kapazitätsbasierte Lizenz außer Essentials wird für den privaten Modus nicht unterstützt.

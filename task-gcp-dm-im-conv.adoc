@@ -39,12 +39,12 @@ Cloud Volumes ONTAP-Systeme, die Infrastructure Manager verwenden, speichern Dat
 * Stellen Sie sicher, dass die Google Cloud APIs aktiviert sind. Siehe  https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud APIs aktivieren"^]. Stellen Sie sicher, dass Sie neben den anderen APIs auch die Google Cloud Quotas API aktivieren.
 * Stellen Sie sicher, dass das Dienstkonto des NetApp Console-Agenten über alle erforderlichen Berechtigungen verfügt. Siehe  https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["Google Cloud-Berechtigungen für den Konsolenagenten"^].
 +
-.Für Bereitstellungen im privaten Modus stellen Sie sicher, dass diese zusätzlichen Voraussetzungen erfüllt sind:
+.Für Bereitstellungen im privaten Modus gelten diese zusätzlichen Voraussetzungen:
 [%collapsible]
 ====
 ** Stellen Sie sicher, dass Sie die neueste Version des Console-Agenten verwenden. Laden Sie das Produktinstallationsprogramm von der NetApp Support Site herunter und installieren Sie den Agenten anschließend manuell auf Ihrem Host, damit der Agent die Infrastructure Manager APIs nutzen kann.
 ** Wenn Sie das Tool im privaten Modus ausführen, stellen Sie sicher, dass Sie neben den anderen APIs auch die Cloud Build API aktiviert haben. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud APIs aktivieren"^].
-** Stellen Sie sicher, dass Sie die Netzwerkkonfigurationen abgeschlossen und den Worker-Pool für private Bereitstellungen erstellt haben. Siehe link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Infrastructure Manager-Konfiguration für private Modus-Bereitstellungen"].
+** Stellen Sie sicher, dass die Netzwerkkonfigurationen abgeschlossen und der Worker-Pool für Bereitstellungen im privaten Modus erstellt wurden. Weitere Informationen finden Sie unter link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Infrastructure Manager Konfiguration für private-mode Bereitstellungen"].
 
 
 ====
@@ -162,7 +162,7 @@ includedPermissions:
 - storage.objects.list
 ----
 +
-.Zusätzliche Berechtigung für Bereitstellungen im privaten Modus einschließen
+.Zusätzliche Berechtigungen für Bereitstellungen im privaten Modus einschließen
 [%collapsible]
 ====
 Wenn Sie das Tool im privaten Modus ausführen, fügen Sie die  `cloudbuild.workerpools.get` Berechtigung auch zur YAML-Datei hinzu.
@@ -290,10 +290,10 @@ dmconvert \
 --service-account=<the service account attached to the Console agent>
 ----
 +
-.Führen Sie das Tool im privaten Modus für Bereitstellungen aus
+.Das Tool in privaten Bereitstellungsmodi ausführen
 [%collapsible]
 ====
-Geben Sie den  `--worker-pool` Parameter an, um das Tool in privaten Bereitstellungsmodi auszuführen. Weitere Informationen zur Konfiguration des Worker-Pools finden Sie unter link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Infrastructure Manager-Konfiguration für private Modus-Bereitstellungen"].
+Der  `--worker-pool` Parameter ermöglicht den Betrieb des Tools in Private-Mode-Bereitstellungen. Für die Konfiguration des Worker-Pools siehe link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Infrastructure Manager Konfiguration für private-mode Bereitstellungen"].
 
 [source, cli]
 ----
