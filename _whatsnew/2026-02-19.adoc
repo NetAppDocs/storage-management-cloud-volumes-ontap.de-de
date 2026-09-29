@@ -13,4 +13,4 @@ Sie können Cloud Volumes ONTAP 9.12.1 GA und höher jetzt in einzelnen und mehr
 * Indonesien Central (indonesiacentral)
 
 
-Eine Liste aller Regionen finden Sie im https://bluexp.netapp.com/cloud-volumes-global-regions["Globale Regionenkarte unter Azure"^] .
+Eine Liste aller Regionen finden Sie unter https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Globale Regionenkarte unter Azure"^].

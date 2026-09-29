@@ -13,4 +13,4 @@ Die folgenden Regionen unterstützen jetzt HA-Bereitstellungen in mehreren Verf�
 * US Gov Virginia (US-Regierungsregion – Virginia)
 
 
-Eine Liste aller Regionen finden Sie im https://bluexp.netapp.com/cloud-volumes-global-regions["Globale Regionenkarte unter Azure"^] .
+Eine Liste aller Regionen finden Sie unter https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Globale Regionenkarte unter Azure"^].

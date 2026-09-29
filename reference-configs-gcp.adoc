@@ -477,7 +477,7 @@ In dieser Tabelle können Sie die VM-Variante und die Anzahl der von ihnen unter
 [[supported-regions]]
 == Unterstützte Regionen
 
-Informationen zur Unterstützung von Google Cloud-Regionen finden Sie unter https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Globale Regionen"^].
+Informationen zur Unterstützung von Google Cloud-Regionen finden Sie unter https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Cloud Volumes Globale Regionen"^].
 
 .Weiterführende Links
 * https://cloud.google.com/compute/docs/disks/["Google Cloud-Dokumentation: Speicheroptionen"^]

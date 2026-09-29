@@ -72,4 +72,4 @@ Cloud Volumes ONTAP nutzt den lokalen NVMe-Speicher bei einigen VM-Typen als _Fl
 
 HA pairs werden in einigen Regionen nicht unterstützt.
 
-https://bluexp.netapp.com/cloud-volumes-global-regions["Liste der unterstützten Azure-Regionen anzeigen"^].
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Liste der unterstützten Azure-Regionen anzeigen"^].

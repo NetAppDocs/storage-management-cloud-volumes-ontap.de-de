@@ -14,4 +14,4 @@ Cloud Volumes ONTAP 9.12.1 GA und höher kann jetzt in den Azure-Regionen Austri
 * Hochverfügbarkeit in mehreren Verfügbarkeitszonen mittels zonenredundantem Speicher (ZRS)
 
 
-Eine Liste aller unterstützten Regionen finden Sie im https://bluexp.netapp.com/cloud-volumes-global-regions["Globale Regionenkarte unter Azure"^] .
+Eine Liste aller unterstützten Regionen ist unter  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Globale Regionenkarte unter Azure"^] zu finden.
