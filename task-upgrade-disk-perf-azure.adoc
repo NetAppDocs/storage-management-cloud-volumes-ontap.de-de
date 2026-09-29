@@ -41,7 +41,7 @@ Dieses Szenario geht von zwei Knoten aus. `node01` Und `node02` in der Cloud Vol
 `storage failover takeover -ofnode <Node02>`
 
 . Sign in .
-. Sobald die Übernahme abgeschlossen ist, wechseln Sie zur VM-Instanz für `node02`Klicken Sie auf die Schaltfläche *Stopp*, um es auszuschalten.
+. Wenn die Übernahme abgeschlossen ist, wechseln Sie zur VM-Instanz für  `node02` und wählen die Schaltfläche *Stop* aus, um sie auszuschalten.
 . Navigieren Sie zur Ressourcengruppe für `node02` Wählen Sie in der Liste der Datenträger den NVRAM Datenträger aus, dessen Ebene Sie ändern möchten.
 . Wählen Sie *Größe + Leistung*.
 . Wählen Sie im Dropdown-Menü *Leistungsstufe* die Option aus `P30 - 5000 IOPS, 200MB/s`Die

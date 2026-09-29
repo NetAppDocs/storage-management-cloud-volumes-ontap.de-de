@@ -32,15 +32,13 @@ Einige Hinweise zur Volume-Bereitstellung:
 
 * Wenn Sie ein iSCSI-Volume erstellen, erstellt die Console automatisch eine LUN für Sie. Es wurde vereinfacht, indem nur eine LUN pro Volume erstellt wird, sodass keine Verwaltung erforderlich ist. Nachdem Sie das Volume erstellt haben, link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-connect-lun.html["Verwenden Sie den IQN, um von Ihren Hosts aus eine Verbindung zum LUN herzustellen"^].
 * Sie können zusätzliche LUNs vom ONTAP System Manager oder der ONTAP CLI erstellen.
+* In AWS:
++
+** Wenn Sie CIFS in AWS verwenden möchten, müssen DNS und Active Directory eingerichtet sein. Weitere Informationen finden sich unter link:reference-networking-aws.html["Netzwerkanforderungen für Cloud Volumes ONTAP für AWS"].
+** Wenn Ihre Cloud Volumes ONTAP Konfiguration die Funktion Amazon EBS Elastic Volumes unterstützt, möchten Sie möglicherweiselink:concept-aws-elastic-volumes.html["Erfahren Sie mehr darüber, was passiert, wenn Sie ein Volume erstellen"] .
 
 
-ifdef::aws[]
 
-* Wenn Sie CIFS in AWS verwenden möchten, müssen DNS und Active Directory eingerichtet sein. Weitere Informationen finden sich unter link:reference-networking-aws.html["Netzwerkanforderungen für Cloud Volumes ONTAP in AWS"].
-* Wenn Ihre Cloud Volumes ONTAP Konfiguration die Funktion Amazon EBS Elastic Volumes unterstützt, möchten Sie möglicherweiselink:concept-aws-elastic-volumes.html["Erfahren Sie mehr darüber, was passiert, wenn Sie ein Volume erstellen"] .
-
-
-endif::aws[]
 
 
 
@@ -60,12 +58,12 @@ Sie können ein Volume erstellen, indem Sie die Datenträgerzuweisung von der Ko
 ====
 .Jedes Aggregat
 --
-Wählen Sie die Registerkarte „Volumes“ und klicken Sie auf „Volume hinzufügen“.image:screenshot_add_volume_button.png["Ein Screenshot der Schaltfläche „Volume hinzufügen“ unter der Registerkarte „Übersicht“."]
+Die Registerkarte „Volumes“ ist auszuwählen, anschließend *Add Volume*. image:screenshot_add_volume_button.png["Ein Screenshot der Schaltfläche „Volume hinzufügen“ unter der Registerkarte „Übersicht“."]
 
 --
 .Spezifisches Aggregat
 --
-.. Auf der Registerkarte *Aggregate* zum gewünschten Aggregat wechseln und auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol klicken.
+.. Auf der Registerkarte *Aggregate* gehen Sie zum gewünschten Aggregat und wählen das entsprechende image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol aus.
 .. Wählen Sie *Volume hinzufügen*.image:screenshot_add_volume_button_agg.png["Ein Screenshot der Schaltfläche „Volume hinzufügen“ unter der Registerkarte „Aggregate“."]
 
 
@@ -96,7 +94,7 @@ Einige der Felder auf dieser Seite sind selbsterklärend. In der folgenden Liste
 |===
 .. *Protokoll*: Wählen Sie ein Protokoll für das Volume (NFS, CIFS oder iSCSI) und geben Sie dann die erforderlichen Informationen ein.
 +
-Wenn Sie CIFS auswählen und kein Server eingerichtet ist, werden Sie von der Konsole aufgefordert, die CIFS-Konnektivität einzurichten, nachdem Sie auf *Weiter* geklickt haben.
+Wenn Sie CIFS auswählen und kein Server eingerichtet ist, fordert die Konsole Sie nach der Auswahl von *Weiter* dazu auf, die CIFS-Konnektivität einzurichten.
 
 +
 link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"] .
@@ -120,42 +118,21 @@ Berechtigungen und Benutzer/Gruppen:: Ermöglicht Ihnen, die Zugriffsebene auf e
 DNS Primäre und sekundäre IP-Adresse:: Die IP-Adressen der DNS-Server, die die Namensauflösung für den CIFS-Server bereitstellen.  Die aufgelisteten DNS-Server müssen die Service Location Records (SRV) enthalten, die zum Auffinden der Active Directory-LDAP-Server und Domänencontroller für die Domäne erforderlich sind, der der CIFS-Server beitreten wird.
 +
 --
-ifdef::gcp[]
-
---
-
-
 Wenn Sie Google Managed Active Directory konfigurieren, kann auf AD standardmäßig mit der IP-Adresse 169.254.169.254 zugegriffen werden.
 
-endif::gcp[]
-
+--
 Beitretende Active Directory-Domäne:: Der FQDN der Active Directory (AD)-Domäne, der der CIFS-Server beitreten soll.
 Anmeldeinformationen, die zum Beitritt zur Domäne berechtigt sind:: Der Name und das Kennwort eines Windows-Kontos mit ausreichenden Berechtigungen zum Hinzufügen von Computern zur angegebenen Organisationseinheit (OU) innerhalb der AD-Domäne.
 NetBIOS-Name des CIFS-Servers:: Ein CIFS-Servername, der in der AD-Domäne eindeutig ist.
 Organisationseinheit:: Die Organisationseinheit innerhalb der AD-Domäne, die mit dem CIFS-Server verknüpft werden soll.  Der Standardwert ist CN=Computers.
-
-
-ifdef::aws[]
-
++
+--
 *** Um AWS Managed Microsoft AD als AD-Server für Cloud Volumes ONTAP zu konfigurieren, geben Sie in dieses Feld *OU=Computers,OU=corp* ein.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 *** Um Azure AD Domain Services als AD-Server für Cloud Volumes ONTAP zu konfigurieren, geben Sie in dieses Feld *OU=AADDC Computers* oder *OU=AADDC Users* ein.https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure-Dokumentation: Erstellen einer Organisationseinheit (OU) in einer von Azure AD Domain Services verwalteten Domäne"^]
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 *** Um Google Managed Microsoft AD als AD-Server für Cloud Volumes ONTAP zu konfigurieren, geben Sie in dieses Feld *OU=Computers,OU=Cloud* ein.https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Google Cloud-Dokumentation: Organisationseinheiten in Google Managed Microsoft AD"^]
 
 
-endif::gcp[]
-
+--
 DNS-Domäne:: Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne.
 NTP-Server:: *Active Directory-Domäne verwenden* auswählen, um einen NTP-Server mithilfe des Active Directory-DNS zu konfigurieren. Falls ein NTP-Server mit einer anderen Adresse konfiguriert werden soll, empfiehlt sich die Nutzung der API. Weitere Informationen sind unter  https://docs.netapp.com/us-en/console-automation/index.html["NetApp Console-Automatisierungsdokumentation"^] zu finden.
 +
@@ -177,33 +154,12 @@ Host-Initiator (IQN):: iSCSI-Ziele stellen über Standard-Ethernet-Netzwerkadapt
 ====
 .. *Datenträgertyp*: Wählen Sie basierend auf Ihren Leistungsanforderungen und Kostenanforderungen einen zugrunde liegenden Datenträgertyp für das Volume aus.
 +
-ifdef::aws[]
-
-+
 *** link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws["Dimensionierung Ihres Systems in AWS"^]
+*** link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionierung Ihres Systems in Azure"^]
+*** link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp["Dimensionierung Ihres Systems in Google Cloud"^]
 
 
-
-
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionierung Ihres Systems in Azure"^]
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp["Dimensionierung Ihres Systems in Google Cloud"^]
-
-
-endif::gcp[]
-
-. *Nutzungsprofil & Tiering-Richtlinie*: Wählen Sie, ob Sie Speichereffizienzfunktionen auf dem Volume aktivieren oder deaktivieren möchten, und wählen Sie dann einelink:concept-data-tiering.html["Volume-Tiering-Richtlinie"] .
+.. *Nutzungsprofil & Tiering-Richtlinie*: Wählen Sie, ob Sie Speichereffizienzfunktionen auf dem Volume aktivieren oder deaktivieren möchten, und wählen Sie dann einelink:concept-data-tiering.html["Volume-Tiering-Richtlinie"] .
 +
 ONTAP umfasst mehrere Speichereffizienzfunktionen, die die von Ihnen benötigte Gesamtspeichermenge reduzieren können.  Die Storage-Effizienzfunktionen von NetApp bieten folgende Vorteile:
 
@@ -213,7 +169,9 @@ Deduplizierung:: Verbessert die Effizienz, indem identische Datenblöcke lokalis
 Komprimierung:: Reduziert die zum Speichern von Daten erforderliche physische Kapazität durch Komprimieren von Daten innerhalb eines Volumes auf Primär-, Sekundär- und Archivspeicher.
 
 
-. *Überprüfen*: Überprüfen Sie die Details zum Datenträger und klicken Sie dann auf *Hinzufügen*.
+.. *Überprüfung*: Details zum Volume prüfen und anschließend *Hinzufügen* auswählen.
+
+
 
 
 .Ergebnis
@@ -230,24 +188,20 @@ Standardmäßig erstellt die Konsole Volumes auf dem ersten Knoten in einer HA-K
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Cloud Volumes ONTAP -Systems, auf dem Sie Aggregate verwalten möchten.
-. Klicken Sie auf der Registerkarte „Aggregate“ auf *Aggregat hinzufügen* und erstellen Sie das Aggregat.
+. Auf der Registerkarte „Aggregate“ wird *Add Aggregate* ausgewählt und das Aggregat erstellt.
 +
 image:screenshot_add_aggregate_cvo.png["Ein Screenshot, der den Fortschritt beim Hinzufügen eines Aggregats zeigt."]
 
 . Wählen Sie für Home Node den zweiten Knoten im HA-Paar.
-. Nachdem die Konsole das Aggregat erstellt hat, wählen Sie es aus und klicken Sie dann auf *Volume erstellen*.
-. Geben Sie Details für das neue Volume ein und klicken Sie dann auf *Erstellen*.
+. Nachdem die Konsole das Aggregat erstellt hat, wird es ausgewählt, und anschließend wird *Create volume* ausgewählt.
+. Geben Sie die Details für das neue Volume ein und wählen Sie dann *Create* aus.
 
 
 .Ergebnis
 Die Konsole erstellt das Volume auf dem zweiten Knoten im HA-Paar.
 
-ifdef::aws[]
-
 
 TIP: Für HA-Paare, die in mehreren AWS-Verfügbarkeitszonen bereitgestellt werden, müssen Sie das Volume mithilfe der Floating-IP-Adresse des Knotens, auf dem sich das Volume befindet, auf Clients mounten.
-
-endif::aws[]
 
 
 

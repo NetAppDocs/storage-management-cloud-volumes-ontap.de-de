@@ -37,11 +37,11 @@ TIP: Die NetApp Console ändert jeweils einen Knoten, indem sie die Übernahme e
 
 .Schritte
 . Wählen Sie auf der Seite *Systeme* das System aus.
-. Klicken Sie auf der Registerkarte „Übersicht“ auf den Bereich „Funktionen“ und dann auf das Stiftsymbol neben „VM-Typ“.
+. Auf der Registerkarte „Übersicht“ ist der Bereich „Funktionen“ und anschließend das Stiftsymbol neben *VM type* auszuwählen.
 +
 Wenn Sie eine knotenbasierte Pay-as-you-go-Lizenz (PAYGO) verwenden, können Sie optional eine andere Lizenz und einen anderen VM-Typ auswählen, indem Sie auf das Stiftsymbol neben *Lizenztyp* klicken.
 
-. Wählen Sie einen VM-Typ aus, aktivieren Sie das Kontrollkästchen, um zu bestätigen, dass Sie die Auswirkungen der Änderung verstehen, und klicken Sie dann auf *Ändern*.
+. Ein VM-Typ ist auszuwählen, das Kästchen zur Bestätigung des Verständnisses der Auswirkungen der Änderung zu aktivieren und anschließend *Change* auszuwählen.
 
 
 .Ergebnis

@@ -49,7 +49,7 @@ Die Nutzung dieses Dienstes über die Konsole ist kostenlos.
 
 Die Benutzeroberfläche von Digital Advisor ist vollständig in die Konsole integriert.
 
-Klicken Sie im linken Bereich auf *Gesundheit > Digital Advisor*.
+Im linken Bereich ist *Health > Digital Advisor* auszuwählen.
 
 * Wenn Sie bereits ein bestehendes NSS-Konto in der Konsole registriert haben, wird die Digital Advisor Benutzeroberfläche genauso angezeigt, wie Sie sie in einer eigenständigen Implementierung unter https://activeiq.netapp.com/[] .
 +

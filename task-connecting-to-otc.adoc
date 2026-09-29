@@ -19,12 +19,8 @@ Mit der Cloud Volumes ONTAP CLI können Sie alle Verwaltungsbefehle ausführen u
 .Bevor Sie beginnen
 Der Host, von dem aus Sie per SSH eine Verbindung zu Cloud Volumes ONTAP herstellen, muss über eine Netzwerkverbindung zu Cloud Volumes ONTAP verfügen.  Beispielsweise müssen Sie möglicherweise eine SSH-Verbindung von einem Jump-Host herstellen, der sich im Netzwerk Ihres Cloud-Anbieters befindet.
 
-ifdef::aws[]
 
-
-NOTE: Bei der Bereitstellung in mehreren AZs verwenden Cloud Volumes ONTAP HA-Konfigurationen eine Floating-IP-Adresse für die Clusterverwaltungsschnittstelle, was bedeutet, dass kein externes Routing verfügbar ist.  Sie müssen die Verbindung von einem Host aus herstellen, der Teil derselben Routingdomäne ist.
-
-endif::aws[]
+NOTE: In AWS wird bei der Bereitstellung von Cloud Volumes ONTAP mit HA Konfigurationen in mehreren AZs eine Floating-IP-Adresse für die Cluster-Managementoberfläche verwendet, was bedeutet, dass externes Routing nicht verfügbar ist. Die Verbindung muss von einem Host hergestellt werden, der Teil derselben Routing-Domäne ist.
 
 .Schritte
 . Identifizieren Sie in der NetApp Console die IP-Adresse der Cluster-Verwaltungsschnittstelle:

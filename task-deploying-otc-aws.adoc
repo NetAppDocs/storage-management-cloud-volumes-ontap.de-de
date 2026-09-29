@@ -56,9 +56,9 @@ Unmittelbar nach der Erstellung des Systems startet die Konsole eine Testinstanz
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. [[Abonnieren]]Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Anweisungen.
+. [[subscribe]]Auf der Seite *Systeme* ist *System hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen.
 . Wählen Sie *Amazon Web Services* und * Cloud Volumes ONTAP Single Node*.
-. Wählen Sie *Erweiterte Erstellung*.  Da standardmäßig der Modus „Schnell erstellen“ ausgewählt ist, wird möglicherweise eine Meldung mit Standardwerten angezeigt. Klicken Sie auf *Weiter*.
+. *Advanced create* ist auszuwählen. Da der Modus *Quick create* standardmäßig ausgewählt ist, wird möglicherweise eine Meldung zu Standardwerten angezeigt. *Continue* ist auszuwählen.
 . Wenn Sie dazu aufgefordert werden, https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["Erstellen Sie einen Konsolenagenten"^].
 . *Details und Anmeldeinformationen*: Ändern Sie optional die AWS-Anmeldeinformationen und das Abonnement, geben Sie einen Systemnamen ein, fügen Sie bei Bedarf Tags hinzu und geben Sie dann ein Kennwort ein.
 +
@@ -79,11 +79,11 @@ Einige der Felder auf dieser Seite sind selbsterklärend.  In der folgenden Tabe
 | Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
 
 
-| Anmeldeinformationen bearbeiten | Wählen Sie die AWS-Anmeldeinformationen aus, die mit dem Konto verknüpft sind, in dem Sie dieses System bereitstellen möchten. Es kann auch das AWS Marketplace-Abonnement mit diesem Cloud Volumes ONTAP System verknüpft werden. Mit *Abonnement hinzufügen* werden die ausgewählten Anmeldeinformationen einem neuen AWS Marketplace-Abonnement zugeordnet. Das Abonnement kann als Jahresvertrag oder zur stündlichen Abrechnung von Cloud Volumes ONTAP abgeschlossen werden. https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["Erfahren Sie, wie Sie der NetApp Console zusätzliche AWS-Anmeldeinformationen hinzufügen"^]. 
+| Anmeldeinformationen bearbeiten | Wählen Sie die AWS-Anmeldeinformationen aus, die mit dem Konto verknüpft sind, in dem Sie dieses System bereitstellen möchten. Sie können auch das AWS Marketplace-Abonnement verknüpfen, das Sie mit diesem Cloud Volumes ONTAP System verwenden möchten. Wählen Sie *Add Subscription*, um die ausgewählten Anmeldeinformationen mit einem neuen AWS Marketplace-Abonnement zu verknüpfen. Das Abonnement kann für einen Jahresvertrag gelten oder für die stündliche Abrechnung von Cloud Volumes ONTAP. https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["Erfahren Sie, wie Sie der NetApp Console zusätzliche AWS-Anmeldeinformationen hinzufügen"^]. 
 |===
 +
 
-TIP: Wenn mehrere IAM-Benutzer im selben AWS-Konto arbeiten, muss jeder Benutzer ein Abonnement abschließen.  Nachdem der erste Benutzer sich angemeldet hat, informiert der AWS-Marktplatz nachfolgende Benutzer darüber, dass sie bereits angemeldet sind, wie im Bild unten gezeigt.  Solange für das AWS-Konto ein Abonnement besteht, muss sich jeder IAM-Benutzer mit diesem Abonnement verknüpfen.  Wenn die unten angezeigte Meldung angezeigt wird, klicken Sie auf den Link *hier klicken*, um zur Konsolen-Website zu gelangen und den Vorgang abzuschließen.image:screenshot_aws_marketplace.gif["Ein Screenshot, der die Abonnementseite für die Konsole für Cloud Volumes ONTAP zeigt, wenn das AWS-Konto bereits über ein Abonnement verfügt, ein bestimmter IAM-Benutzer jedoch möglicherweise nicht."]
+TIP: Wenn mehrere IAM-Benutzer im selben AWS-Konto arbeiten, muss jeder Benutzer ein Abonnement abschließen. Nachdem der erste Benutzer das Abonnement abgeschlossen hat, informiert der AWS Marketplace nachfolgende Benutzer darüber, dass sie bereits abonniert sind, wie in der Abbildung unten gezeigt. Während für das AWS-Konto ein Abonnement besteht, muss sich jeder IAM-Benutzer diesem Abonnement zuordnen. Falls die unten gezeigte Meldung angezeigt wird, ist der Link *click here* auszuwählen, um zur Console Website zu wechseln und den Vorgang abzuschließen. image:screenshot_aws_marketplace.gif["Ein Screenshot, der die Abonnementseite für die Konsole für Cloud Volumes ONTAP zeigt, wenn das AWS-Konto bereits über ein Abonnement verfügt, ein bestimmter IAM-Benutzer jedoch möglicherweise nicht."]
 
 . *Dienste*: Lassen Sie die Dienste aktiviert oder deaktivieren Sie die einzelnen Dienste, die Sie nicht mit Cloud Volumes ONTAP verwenden möchten.
 +
@@ -139,11 +139,11 @@ link:concept-security.html#encryption-of-data-at-rest["Erfahren Sie mehr über u
 ** link:task-set-up-licensing-aws.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
 
 
-. * Cloud Volumes ONTAP -Konfiguration* (nur jährlicher AWS-Marktplatzvertrag): Überprüfen Sie die Standardkonfiguration und klicken Sie auf *Weiter* oder klicken Sie auf *Konfiguration ändern*, um Ihre eigene Konfiguration auszuwählen.
+. *Cloud Volumes ONTAP Konfiguration* (nur für jährliche AWS Marketplace-Verträge): Die Standardkonfiguration wird überprüft, und es wird *Weiter* oder *Konfiguration ändern* ausgewählt, um eine eigene Konfiguration auszuwählen.
 +
 Wenn Sie die Standardkonfiguration beibehalten, müssen Sie nur ein Volume angeben und dann die Konfiguration überprüfen und genehmigen.
 
-. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um Cloud Volumes ONTAP schnell zu starten, oder klicken Sie auf *Konfiguration ändern*, um Ihre eigene Konfiguration auszuwählen.
+. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um Cloud Volumes ONTAP schnell zu starten, oder wählen Sie *Konfiguration ändern*, um Ihre eigene Konfiguration auszuwählen.
 +
 Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volumen angeben und anschließend die Konfiguration prüfen und freigeben.
 
@@ -187,7 +187,7 @@ link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher"^] .
 .. Wenn Sie den WORM-Speicher aktivieren, wählen Sie die Aufbewahrungsdauer aus.
 
 
-. *Volume erstellen*: Geben Sie Details für das neue Volume ein oder klicken Sie auf *Überspringen*.
+. *Volume erstellen*: Geben Sie Details für das neue Volume ein, oder wählen Sie *Überspringen* aus.
 +
 link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"^] .
 
@@ -257,9 +257,9 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/storag
 . *Überprüfen und genehmigen*: Überprüfen und bestätigen Sie Ihre Auswahl.
 +
 .. Überprüfen Sie die Details zur Konfiguration.
-.. Klicken Sie auf *Weitere Informationen*, um Details zum Support und den AWS-Ressourcen anzuzeigen, die über die Konsole erworben werden.
+.. Über *Weitere Informationen* können Details zum Support und zu den AWS-Ressourcen eingesehen werden, die die Console erwerben wird.
 .. Aktivieren Sie die Kontrollkästchen *Ich verstehe...*.
-.. Klicken Sie auf *Los*.
+.. *Go* wird ausgewählt.
 
 
 
@@ -267,7 +267,7 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/storag
 .Ergebnis
 Die Konsole startet die Cloud Volumes ONTAP Instanz.  Sie können den Fortschritt auf der Seite *Audit* verfolgen.
 
-Wenn beim Starten der Cloud Volumes ONTAP Instanz Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
+Falls beim Starten der Cloud Volumes ONTAP Instanz Probleme auftreten, ist die Fehlermeldung zu prüfen. Alternativ kann das System ausgewählt und die Option „Umgebung neu erstellen“ gewählt werden.
 
 Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
 
@@ -297,7 +297,7 @@ Unmittelbar nachdem Sie das Cloud Volumes ONTAP -System erstellt haben, startet 
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Anweisungen.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Anweisungen.
 . Wählen Sie *Amazon Web Services* und * Cloud Volumes ONTAP HA*.
 +
 Einige lokale AWS-Zonen sind verfügbar.
@@ -327,11 +327,11 @@ Einige der Felder auf dieser Seite sind selbsterklärend.  In der folgenden Tabe
 | Benutzername und Passwort | Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Clusteradministratorkonto.  Sie können diese Anmeldeinformationen verwenden, um über ONTAP System Manager oder die ONTAP CLI eine Verbindung zu Cloud Volumes ONTAP herzustellen.  Behalten Sie den Standardbenutzernamen _admin_ bei oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen. 
 
 
-| Anmeldeinformationen bearbeiten | Die AWS-Anmeldeinformationen und das Marketplace-Abonnement, die mit diesem Cloud Volumes ONTAP System verwendet werden sollen, auswählen. *Abonnement hinzufügen* anklicken, um die ausgewählten Anmeldeinformationen mit einem neuen AWS Marketplace-Abonnement zu verknüpfen. Das Abonnement kann entweder für einen Jahresvertrag oder für die stundenbasierte Abrechnung von Cloud Volumes ONTAP abgeschlossen werden. Wurde eine Lizenz direkt von NetApp (Bring-Your-Own License oder BYOL) erworben, ist kein AWS-Abonnement erforderlich. NetApp hat den Kauf, die Erweiterung und die Verlängerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen sind unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^] zu finden. https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["Erfahren Sie, wie Sie der Konsole zusätzliche AWS-Anmeldeinformationen hinzufügen"^]. 
+| Anmeldeinformationen bearbeiten | Wählen Sie die AWS-Anmeldeinformationen und das Marketplace-Abonnement aus, die mit diesem Cloud Volumes ONTAP System verwendet werden sollen. Wählen Sie *Add Subscription* aus, um die ausgewählten Anmeldeinformationen mit einem neuen AWS Marketplace-Abonnement zu verknüpfen. Das Abonnement kann für einen Jahresvertrag oder für die stündliche Bezahlung von Cloud Volumes ONTAP verwendet werden. Wenn Sie eine Lizenz direkt von NetApp erworben haben (Bring-Your-Own License oder BYOL), ist kein AWS-Abonnement erforderlich. NetApp hat den Kauf, die Verlängerung und die Erneuerung von BYOL-Lizenzen eingeschränkt. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Eingeschränkte Verfügbarkeit der BYOL-Lizenzierung für Cloud Volumes ONTAP"^]. https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["Erfahren Sie, wie Sie der Konsole zusätzliche AWS-Anmeldeinformationen hinzufügen"^]. 
 |===
 +
 
-TIP: Wenn mehrere IAM-Benutzer im selben AWS-Konto arbeiten, muss jeder Benutzer ein Abonnement abschließen.  Nachdem der erste Benutzer sich angemeldet hat, informiert der AWS-Marktplatz nachfolgende Benutzer darüber, dass sie bereits angemeldet sind, wie im Bild unten gezeigt.  Solange für das AWS-Konto ein Abonnement besteht, muss sich jeder IAM-Benutzer mit diesem Abonnement verknüpfen.  Wenn die unten angezeigte Meldung angezeigt wird, klicken Sie auf den Link *hier klicken*, um zur Konsolen-Website zu gelangen und den Vorgang abzuschließen.image:screenshot_aws_marketplace.gif["Ein Screenshot, der die Abonnementseite für die Konsole für Cloud Volumes ONTAP zeigt, wenn das AWS-Konto bereits über ein Abonnement verfügt, ein bestimmter IAM-Benutzer jedoch möglicherweise nicht."]
+TIP: Wenn mehrere IAM-Benutzer im selben AWS-Konto arbeiten, muss jeder Benutzer ein Abonnement abschließen. Nachdem der erste Benutzer das Abonnement abgeschlossen hat, informiert der AWS Marketplace die nachfolgenden Benutzer darüber, dass sie bereits abonniert sind, wie in der Abbildung unten gezeigt. Während ein Abonnement für das AWS-Konto besteht, muss sich jeder IAM-Benutzer diesem Abonnement zuordnen. Wenn die unten gezeigte Meldung angezeigt wird, ist der Link „click here“ auszuwählen, um zur Console Website zu wechseln und den Vorgang abzuschließen. image:screenshot_aws_marketplace.gif["Ein Screenshot, der die Abonnementseite für die Konsole für Cloud Volumes ONTAP zeigt, wenn das AWS-Konto bereits über ein Abonnement verfügt, ein bestimmter IAM-Benutzer jedoch möglicherweise nicht."]
 
 . *Dienste*: Lassen Sie die Dienste aktiviert oder deaktivieren Sie die einzelnen Dienste, die Sie mit diesem Cloud Volumes ONTAP System nicht verwenden möchten.
 +
@@ -397,11 +397,11 @@ link:concept-security.html#encryption-of-data-at-rest["Erfahren Sie mehr über u
 ** link:task-set-up-licensing-aws.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
 
 
-. * Cloud Volumes ONTAP -Konfiguration* (nur jährlicher AWS Marketplace-Vertrag): Überprüfen Sie die Standardkonfiguration und klicken Sie auf *Weiter* oder klicken Sie auf *Konfiguration ändern*, um Ihre eigene Konfiguration auszuwählen.
+. *Cloud Volumes ONTAP Konfiguration* (nur für jährliche AWS Marketplace-Verträge): Die Standardkonfiguration wird überprüft, und es wird *Weiter* oder *Konfiguration ändern* ausgewählt, um eine eigene Konfiguration auszuwählen.
 +
 Wenn Sie die Standardkonfiguration beibehalten, müssen Sie nur ein Volume angeben und dann die Konfiguration überprüfen und genehmigen.
 
-. *Vorkonfigurierte Pakete* (nur stündlich oder BYOL): Wählen Sie eines der Pakete aus, um Cloud Volumes ONTAP schnell zu starten, oder klicken Sie auf *Konfiguration ändern*, um Ihre eigene Konfiguration auszuwählen.
+. *Vorkonfigurierte Pakete* (nur stündlich oder BYOL): Wählen Sie eines der Pakete aus, um Cloud Volumes ONTAP schnell zu starten, oder wählen Sie *Konfiguration ändern*, um Ihre eigene Konfiguration auszuwählen.
 +
 Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volumen angeben und anschließend die Konfiguration prüfen und freigeben.
 
@@ -445,7 +445,7 @@ link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher"^] .
 .. Wenn Sie den WORM-Speicher aktivieren, wählen Sie die Aufbewahrungsdauer aus.
 
 
-. *Volume erstellen*: Geben Sie Details für das neue Volume ein oder klicken Sie auf *Überspringen*.
+. *Volume erstellen*: Geben Sie Details für das neue Volume ein, oder wählen Sie *Überspringen* aus.
 +
 link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"^] .
 
@@ -515,9 +515,9 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/storag
 . *Überprüfen und genehmigen*: Überprüfen und bestätigen Sie Ihre Auswahl.
 +
 .. Überprüfen Sie die Details zur Konfiguration.
-.. Klicken Sie auf *Weitere Informationen*, um Details zum Support und den AWS-Ressourcen anzuzeigen, die über die Konsole erworben werden.
+.. Über *Weitere Informationen* können Details zum Support und zu den AWS-Ressourcen eingesehen werden, die die Console erwerben wird.
 .. Aktivieren Sie die Kontrollkästchen *Ich verstehe...*.
-.. Klicken Sie auf *Los*.
+.. *Go* wird ausgewählt.
 
 
 
@@ -525,7 +525,7 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/storag
 .Ergebnis
 Die Konsole startet das Cloud Volumes ONTAP HA-Paar.  Sie können den Fortschritt auf der Seite *Audit* verfolgen.
 
-Wenn beim Starten des HA-Paares Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf „Umgebung neu erstellen“ klicken.
+Sollten beim Starten des HA-Paares Probleme auftreten, überprüfen Sie die Fehlermeldung. Sie können auch das System auswählen und „Umgebung neu erstellen“ auswählen.
 
 .Nach Abschluss
 * Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.

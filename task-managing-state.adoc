@@ -37,7 +37,7 @@ Snapshots werden nur dann automatisch erstellt, wenn ein manuelles Herunterfahre
 
 .Schritte
 . Doppelklicken Sie auf der Seite *Systeme* auf das Cloud Volumes ONTAP -System.
-. Klicken Sie auf der Registerkarte „Übersicht“ auf das Bedienfeld „Funktionen“ und dann auf das Stiftsymbol neben „Geplante Ausfallzeit“*.
+. Auf der Registerkarte „Übersicht“ sind der Bereich „Funktionen“ und anschließend das Stiftsymbol neben *Scheduled Downtime* auszuwählen.
 +
 image::screenshot_schedule_downtime.png[400]
 
@@ -56,7 +56,7 @@ image:screenshot_schedule_downtime_window.png["Screenshot: Zeigt den Bildschirm 
 
 
 
-. Klicken Sie auf *Speichern*.
+. *Speichern* auswählen.
 
 
 .Ergebnis
@@ -76,12 +76,12 @@ NOTE: Um Kosten zu sparen, löscht die Konsole regelmäßig ältere Snapshots vo
 Wenn Sie ein HA-Paar stoppen, fährt die Konsole beide Knoten herunter.
 
 .Schritte
-. Klicken Sie im System auf das Symbol *Ausschalten*.
+. Im System ist das Symbol *Ausschalten* auszuwählen.
 +
 image:screenshot_turn_off_redesign.png["Screenshot: Zeigt das Symbol zum Ausschalten eines Cloud Volumes ONTAP Systems."]
 
 . Lassen Sie die Option zum Erstellen von Snapshots aktiviert, da die Snapshots eine Systemwiederherstellung ermöglichen können.
-. Klicken Sie auf *Ausschalten*.
+. *Ausschalten* ist auszuwählen.
 +
 Das Anhalten des Systems kann einige Minuten dauern.  Sie können Systeme zu einem späteren Zeitpunkt von der Seite *Systeme* aus neu starten.
 

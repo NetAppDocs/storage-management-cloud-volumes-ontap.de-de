@@ -62,7 +62,7 @@ NOTE: Wenn Sie den Ressourcenanbieter "Microsoft.storage" für Ihr Abonnement re
 .Schritte
 . Auf der Azure Marketplace-Website nach NetApp Produkten suchen.
 . Wählen Sie * NetApp Cloud Volumes ONTAP direct*.
-. Klicken Sie auf *Erstellen*, um den Bereitstellungsassistenten zu starten.
+. *Erstellen* startet den Bereitstellungsassistenten.
 . Wählen Sie einen Plan aus.  In der *Plan*-Liste werden normalerweise die neuesten Versionen von Cloud Volumes ONTAP angezeigt.
 . Geben Sie auf der Registerkarte *Grundlagen* die folgenden Details an:
 +

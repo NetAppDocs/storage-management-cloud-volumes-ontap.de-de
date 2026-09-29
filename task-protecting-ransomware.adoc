@@ -25,17 +25,17 @@ Mit der in der Konsole verfügbaren Einstellung „Ransomware-Schutz“ können 
 
 .Schritte
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Cloud Volumes ONTAP -Systems, das Sie für den Ransomware-Schutz konfigurieren.
-. Klicken Sie auf der Registerkarte „Übersicht“ auf den Bereich „Funktionen“ und dann auf das Stiftsymbol neben „Ransomware-Schutz“.
+. Auf der Registerkarte „Übersicht“ ist der Bereich „Funktionen“ und anschließend das Stiftsymbol neben *Ransomware Protection* auszuwählen.
 +
 image::screenshot_features_support_registration_2.png[Ein Screenshot, der die Einstellung „Ransomware-Schutz“ im Bereich „Funktionen“ zeigt, der beim Anzeigen eines Systems oben rechts auf der Übersichtsseite verfügbar ist.]
 
 . Implementieren Sie die NetApp -Lösung für Ransomware:
 +
-.. Klicken Sie auf *Snapshot-Richtlinie aktivieren*, wenn Sie Volumes haben, für die keine Snapshot-Richtlinie aktiviert ist.
+.. Wählen Sie *Snapshot-Richtlinie aktivieren* aus, wenn Sie Volumes haben, für die keine Snapshot-Richtlinie aktiviert ist.
 +
 Die NetApp Snapshot-Technologie bietet die branchenweit beste Lösung zur Beseitigung von Ransomware.  Der Schlüssel zu einer erfolgreichen Wiederherstellung ist die Wiederherstellung aus nicht infizierten Backups.  Snapshot-Kopien sind schreibgeschützt, wodurch eine Beschädigung durch Ransomware verhindert wird.  Sie können auch die Granularität bereitstellen, um Bilder einer einzelnen Dateikopie oder einer vollständigen Disaster-Recovery-Lösung zu erstellen.
 
-.. Klicken Sie auf *FPolicy aktivieren*, um die FPolicy-Lösung von ONTAP zu aktivieren, die Dateivorgänge basierend auf der Dateierweiterung blockieren kann.
+.. Wird *FPolicy aktivieren* ausgewählt, lässt sich die FPolicy-Lösung von ONTAP aktivieren, mit der Dateivorgänge anhand der Dateierweiterung blockiert werden können.
 +
 Diese präventive Lösung verbessert den Schutz vor Ransomware-Angriffen, indem sie gängige Ransomware-Dateitypen blockiert.
 

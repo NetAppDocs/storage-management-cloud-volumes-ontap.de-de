@@ -56,7 +56,7 @@ Wenn Sie ein Single-Node-Cloud Volumes ONTAP-System in Azure starten möchten, m
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. [[Abonnieren]]Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Anweisungen.
+. [[subscribe]]Auf der Seite *Systeme* ist *System hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen.
 . *Wählen Sie einen Standort*: Wählen Sie *Microsoft Azure* und * Cloud Volumes ONTAP Single Node*.
 . Wenn Sie dazu aufgefordert werden https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Erstellen Sie einen Konsolenagenten"^].
 . *Details und Anmeldeinformationen*: Ändern Sie optional die Azure-Anmeldeinformationen und das Abonnement, geben Sie einen Clusternamen an, fügen Sie bei Bedarf Tags hinzu und geben Sie dann die Anmeldeinformationen an.
@@ -130,7 +130,7 @@ Wenn Sie die Sicherheitsgruppe von der Konsole erstellen lassen, müssen Sie aus
 ** link:task-set-up-licensing-azure.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
 
 
-. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder klicken Sie auf *Meine eigene Konfiguration erstellen*.
+. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder wählen Sie *Meine eigene Konfiguration erstellen*.
 +
 Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volumen angeben und anschließend die Konfiguration prüfen und freigeben.
 
@@ -177,7 +177,7 @@ link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher"^] .
 .. Wenn Sie den WORM-Speicher aktivieren, wählen Sie die Aufbewahrungsdauer aus.
 
 
-. *Volume erstellen*: Geben Sie Details für das neue Volume ein oder klicken Sie auf *Überspringen*.
+. *Volume erstellen*: Geben Sie Details für das neue Volume ein, oder wählen Sie *Überspringen* aus.
 +
 link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"^] .
 
@@ -247,9 +247,9 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/storag
 . *Überprüfen und genehmigen*: Überprüfen und bestätigen Sie Ihre Auswahl.
 +
 .. Überprüfen Sie die Details zur Konfiguration.
-.. Klicken Sie auf *Weitere Informationen*, um Details zum Support und den Azure-Ressourcen anzuzeigen, die die Konsole erwerben wird.
+.. Unter *Weitere Informationen* finden Sie Details zum Support und zu den Azure-Ressourcen, die die Console erwerben wird.
 .. Aktivieren Sie die Kontrollkästchen *Ich verstehe...*.
-.. Klicken Sie auf *Los*.
+.. *Go* wird ausgewählt.
 
 
 
@@ -257,7 +257,7 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/storag
 .Ergebnis
 Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fortschritt auf der Audit-Seite verfolgen.
 
-Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
+Wenn beim Bereitstellen des Cloud Volumes ONTAP Systems Probleme auftreten, sollten Sie die Fehlermeldung prüfen. Alternativ kann das System ausgewählt und *Re-create environment* ausgewählt werden.
 
 Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
 
@@ -281,7 +281,7 @@ Wenn Sie ein Cloud Volumes ONTAP HA-Paar in Azure starten möchten, müssen Sie 
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. [[Abonnieren]]Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Anweisungen.
+. [[subscribe]]Auf der Seite *Systeme* ist *System hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen.
 . Wenn Sie dazu aufgefordert werden https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Erstellen Sie einen Konsolenagenten"^].
 . *Details und Anmeldeinformationen*: Ändern Sie optional die Azure-Anmeldeinformationen und das Abonnement, geben Sie einen Clusternamen an, fügen Sie bei Bedarf Tags hinzu und geben Sie dann die Anmeldeinformationen an.
 +
@@ -365,7 +365,7 @@ Wenn Sie die Sicherheitsgruppe von der Konsole erstellen lassen, müssen Sie aus
 ** link:task-set-up-licensing-azure.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
 
 
-. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder klicken Sie auf *Konfiguration ändern*.
+. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder wählen Sie *Konfiguration ändern*.
 +
 Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volumen angeben und anschließend die Konfiguration prüfen und freigeben.
 
@@ -428,7 +428,7 @@ WORM kann nicht aktiviert werden, wenn die Datenschichtung aktiviert wurde.
 +
 link:concept-worm.html["Erfahren Sie mehr über WORM-Speicher"^] .
 
-. *Volume erstellen*: Geben Sie Details für das neue Volume ein oder klicken Sie auf *Überspringen*.
+. *Volume erstellen*: Geben Sie Details für das neue Volume ein, oder wählen Sie *Überspringen* aus.
 +
 link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"^] .
 
@@ -498,9 +498,9 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/storag
 . *Überprüfen und genehmigen*: Überprüfen und bestätigen Sie Ihre Auswahl.
 +
 .. Überprüfen Sie die Details zur Konfiguration.
-.. Klicken Sie auf *Weitere Informationen*, um Details zum Support und den Azure-Ressourcen anzuzeigen, die die Konsole erwerben wird.
+.. Unter *Weitere Informationen* finden Sie Details zum Support und zu den Azure-Ressourcen, die die Console erwerben wird.
 .. Aktivieren Sie die Kontrollkästchen *Ich verstehe...*.
-.. Klicken Sie auf *Los*.
+.. *Go* wird ausgewählt.
 
 
 
@@ -508,7 +508,7 @@ Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/storag
 .Ergebnis
 Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fortschritt auf der Audit-Seite verfolgen.
 
-Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
+Wenn beim Bereitstellen des Cloud Volumes ONTAP Systems Probleme auftreten, sollten Sie die Fehlermeldung prüfen. Alternativ kann das System ausgewählt und *Re-create environment* ausgewählt werden.
 
 .Nach Abschluss
 * Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.

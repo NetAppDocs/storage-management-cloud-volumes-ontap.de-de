@@ -20,16 +20,17 @@ Cloud Volumes ONTAP-Versionen, die hier nicht aufgeführt sind, sind für neue B
 
 Informationen zum Upgrade finden Sie unter link:task-updating-ontap-cloud.html#supported-upgrade-paths["Unterstützte Upgradepfade"].
 
-ifdef::aws[]
-
 
 
 [[aws]]
 == AWS
 
-Einzelner Knoten::
-+
---
+[cols="1,1"]
+|===
+| Einzelner Knoten | HA-Paar 
+
+
+ a| 
 * 9.19.1
 * 9.18.1
 * 9.17.1 P1
@@ -37,10 +38,27 @@ Einzelner Knoten::
 * 9.15.1
 * 9.15.0 P1
 * 9.14.1
-* 9.14.1
 * 9.14.0
 * 9.13.1
 * 9.12.1
+* 9.12.0 P1
+* 9.11.1 P3
+* 9.10.1
+* 9.9.1 P6
+* 9,8
+* 9.7 P5
+* 9.5 P6
+
+ a| 
+* 9.19.1
+* 9.18.1
+* 9.17.1 P1
+* 9.16.1
+* 9.15.1
+* 9.15.0 P1
+* 9.14.1
+* 9.14.0
+* 9.13.1
 * 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
@@ -51,46 +69,27 @@ Einzelner Knoten::
 * 9.5 P6
 
 
---
-HA-Paar::
-+
---
-* 9.19.1
-* 9.18.1
-* 9.17.1 P1
-* 9.16.1
-* 9.15.1
-* 9.15.0 P1
-* 9.14.1
-* 9.14.1
-* 9.14.0
-* 9.13.1
-* 9.12.1
-* 9.12.1
-* 9.12.0 P1
-* 9.11.1 P3
-* 9.10.1
-* 9.9.1 P6
-* 9,8
-* 9.7 P5
-* 9.5 P6
-
-
---
-
-
-endif::aws[]
-
-ifdef::azure[]
-
+|===
 
 
 [[azure]]
 == Azurblau
 
-Einzelner Knoten::
-+
---
+[cols="1,1"]
+|===
+| Einzelner Knoten | HA-Paar 
+
+
+ a| 
+* 9.18.1
+* 9.17.1 P1
+* 9.16.1 P3
+* 9.15.1 P10
+* 9.14.1 P13
+* 9.13.1 P16
+* 9.12.1 P18
+
+ a| 
 * 9.18.1
 * 9.17.1 P1
 * 9.16.1 P3
@@ -100,34 +99,18 @@ Einzelner Knoten::
 * 9.12.1 P18
 
 
---
-HA-Paar::
-+
---
-* 9.18.1
-* 9.17.1 P1
-* 9.16.1 P3
-* 9.15.1 P10
-* 9.14.1 P13
-* 9.13.1 P16
-* 9.12.1 P18
-
-
---
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
+|===
 
 
 [[google-cloud]]
 == Google Cloud
 
-Einzelner Knoten::
-+
---
+[cols="1,1"]
+|===
+| Einzelner Knoten | HA-Paar 
+
+
+ a| 
 * 9.19.1
 * 9.18.1
 * 9.17.1 P1
@@ -135,10 +118,8 @@ Einzelner Knoten::
 * 9.15.1
 * 9.15.0 P1
 * 9.14.1
-* 9.14.1
 * 9.14.0
 * 9.13.1
-* 9.12.1
 * 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
@@ -147,11 +128,7 @@ Einzelner Knoten::
 * 9,8
 * 9.7 P5
 
-
---
-HA-Paar::
-+
---
+ a| 
 * 9.19.1
 * 9.18.1
 * 9.17.1 P1
@@ -159,10 +136,8 @@ HA-Paar::
 * 9.15.1
 * 9.15.0 P1
 * 9.14.1
-* 9.14.1
 * 9.14.0
 * 9.13.1
-* 9.12.1
 * 9.12.1
 * 9.12.0 P1
 * 9.11.1 P3
@@ -171,7 +146,4 @@ HA-Paar::
 * 9,8
 
 
---
-
-
-endif::gcp[]
+|===

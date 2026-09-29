@@ -71,13 +71,13 @@ Um die Konsolen-Agent-Einstellungen für die Cloud Volumes ONTAP Benutzerauthent
 
 .Schritte
 . Gehen Sie im linken Navigationsbereich zu *Administration > Agenten*.
-. Klicken Sie auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol des gewünschten Console Agenten und wählen Sie *Edit Console agent*.
+. Das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol für den erforderlichen Console agent wird ausgewählt, und *Edit Console agent* wird ausgewählt.
 . Aktivieren Sie unter *Benutzeranmeldeinformationen erzwingen* das Kontrollkästchen *Aktivieren/Deaktivieren*.  Standardmäßig ist die Authentifizierung deaktiviert.
 +
 
 NOTE: Wenn Sie diesen Wert auf *Aktivieren* setzen, wird die Authentifizierung zurückgesetzt und Sie müssen alle vorhandenen Workflows ändern, um diese Änderung zu berücksichtigen.
 
-. Klicken Sie auf *Speichern*.
+. *Speichern* auswählen.
 
 
 

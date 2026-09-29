@@ -20,8 +20,6 @@ image:diagram_data_tiering.png["Dies ist ein konzeptionelles Bild, das zeigt, wi
 
 Die Datenschichtung wird durch die FabricPool -Technologie ermöglicht.  Cloud Volumes ONTAP bietet Daten-Tiering für alle Cloud Volumes ONTAP Cluster ohne zusätzliche Lizenz.  Wenn Sie die Datenschichtung aktivieren, fallen für die in den Objektspeicher verschobenen Daten Gebühren an.  Einzelheiten zu den Kosten für die Objektspeicherung finden Sie in der Dokumentation Ihres Cloud-Anbieters.
 
-ifdef::aws[]
-
 
 
 [[data-tiering-in-aws]]
@@ -64,10 +62,6 @@ Die Speicherklasse für die Datenschichtung gilt systemweit, nicht pro Datenträ
 
 --
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 
 
@@ -112,10 +106,6 @@ Die Speicherzugriffsebene für die Datenschichtung gilt systemweit und nicht pro
 --
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 
 
 [[data-tiering-in-google-cloud]]
@@ -147,8 +137,6 @@ Die Speicherklasse für die Datenschichtung gilt systemweit, nicht pro Datenträ
 
 --
 
-
-endif::gcp[]
 
 
 

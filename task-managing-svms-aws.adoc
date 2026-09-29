@@ -51,15 +51,15 @@ Beachten Sie, dass ein optionales Management-LIF für eine Storage-VM eine priva
 
 .Schritte
 . Melden Sie sich bei AWS an und öffnen Sie den EC2-Dienst.
-. Wählen Sie die Cloud Volumes ONTAP -Instanz aus und klicken Sie auf *Netzwerk*.
+. Die Cloud Volumes ONTAP Instanz wird ausgewählt, und *Networking* wird ausgewählt.
 +
 Wenn Sie eine Speicher-VM auf einem HA-Paar erstellen, wählen Sie Knoten 1 aus.
 
-. Scrollen Sie nach unten zu *Netzwerkschnittstellen* und klicken Sie auf die *Schnittstellen-ID* für Port e0a.
+. Nach unten zu *Netzwerkschnittstellen* scrollen und die *Schnittstellen-ID* für Port e0a auswählen.
 +
 image:screenshot_aws_e0a.gif["Ein Screenshot der AWS-Konsole, der Port e0a auf einer Netzwerkschnittstelle zeigt."]
 
-. Wählen Sie die Netzwerkschnittstelle aus und klicken Sie auf *Aktionen > IP-Adressen verwalten*.
+. Die Netzwerkschnittstelle ist auszuwählen und *Aktionen > IP-Adressen verwalten* zu wählen.
 . Erweitern Sie die Liste der IP-Adressen für e0a.
 . Überprüfen Sie die IP-Adressen:
 +
@@ -73,7 +73,7 @@ Wenn eine IP-Adresse nicht verwendet wird, können Sie sie mit der neuen Speiche
 
 
 
-. Klicken Sie in der AWS-Konsole auf *Neue IP-Adresse zuweisen*, um zusätzliche IP-Adressen basierend auf der Anzahl zuzuweisen, die Sie für die neue Speicher-VM benötigen.
+. Zurück in der AWS Console ist *Assign new IP address* auszuwählen, um der neuen Speicher-VM entsprechend dem benötigten Umfang zusätzliche IP-Adressen zuzuweisen.
 +
 ** Einzelknotensystem: Eine ungenutzte sekundäre private IP ist erforderlich.
 +
@@ -87,7 +87,7 @@ Eine optionale sekundäre private IP ist erforderlich, wenn Sie ein Verwaltungs-
 
 
 . Wenn Sie die IP-Adresse auf einem HA-Paar in einer einzelnen AZ zuweisen, aktivieren Sie *Neuzuweisung sekundärer privater IPv4-Adressen zulassen*.
-. Klicken Sie auf *Speichern*.
+. *Speichern* auswählen.
 . Wenn Sie ein HA-Paar in mehreren AZs haben, müssen Sie diese Schritte für Knoten 2 wiederholen.
 
 

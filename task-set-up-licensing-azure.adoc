@@ -25,9 +25,9 @@ Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP kostenlos mit bis zu 50
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü der NetApp Console*Speicher > Verwaltung* aus.
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
+.. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
 +
 Über das Marketplace-Abonnement fallen keine Gebühren an, es sei denn, Sie überschreiten 500 GiB der bereitgestellten Kapazität. In diesem Fall wird das System automatisch auf die link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Essentials-Paket"^] umgestellt.
 
@@ -81,9 +81,9 @@ Die Konsole fragt automatisch den Lizenzierungsdienst von NetApp ab, um Details 
 +
 Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes ONTAP verwenden können. Falls erforderlich, kann link:task-manage-capacity-licenses.html#how-licenses-are-added-to-netapp-console["Fügen Sie die Lizenz manuell zur Konsole hinzu"].
 
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
+.. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
 +
 Die von Ihnen bei NetApp erworbene Lizenz wird immer zuerst in Rechnung gestellt. Wenn Sie jedoch Ihre lizenzierte Kapazität überschreiten oder die Laufzeit Ihrer Lizenz abläuft, wird Ihnen der Stundensatz auf dem Marktplatz in Rechnung gestellt.
 
@@ -111,9 +111,9 @@ Wenn Sie ein Cloud Volumes ONTAP -System erstellen, werden Sie von der Konsole a
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
+.. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
 +
 image:screenshot-azure-paygo-subscription.png["Ein Screenshot der PAYGO-Abonnementoption beim Erstellen eines Cloud Volumes ONTAP Systems."]
 
@@ -145,10 +145,10 @@ Der Vertrag ist als _privates_ Angebot im Azure Marketplace verfügbar.
 +
 Nachdem NetApp Ihnen das private Angebot mitgeteilt hat, können Sie bei der Systemerstellung den Jahresplan auswählen, wenn Sie sich im Azure Marketplace anmelden.
 
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen > Fortfahren*.
-.. Wählen Sie im Azure-Portal den Jahresplan aus, der mit Ihrem Azure-Konto geteilt wurde, und klicken Sie dann auf *Abonnieren*.
+.. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen > Weiter* auszuwählen.
+.. Im Azure-Portal ist der Jahresplan auszuwählen, der für Ihr Azure-Konto freigegeben wurde, und anschließend *Subscribe*.
 .. Nachdem Sie zur Konsole zurückgekehrt sind, wählen Sie auf der Seite mit den Abrechnungsmethoden ein kapazitätsbasiertes Paket aus.
 +
 image:screenshot-professional.png["Ein Screenshot der Professional-Option beim Erstellen eines Cloud Volumes ONTAP -Systems."]
@@ -170,7 +170,7 @@ Bei einem Keystone -Abonnement handelt es sich um einen Abonnementdienst mit nut
 . Wenn Sie noch kein Abonnement haben, https://www.netapp.com/forms/keystone-sales-contact/["NetApp kontaktieren"^]
 . mailto:ng-keystone-success@netapp.com [Kontaktieren Sie NetApp], um Ihr Benutzerkonto in der Konsole mit einem oder mehreren Keystone Abonnements zu autorisieren.
 . Nachdem NetApp Ihr ​​Konto autorisiert hat,link:task-manage-keystone.html#link-a-subscription["Verknüpfen Sie Ihre Abonnements zur Verwendung mit Cloud Volumes ONTAP"] .
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
 .. Wählen Sie die Abrechnungsmethode „Keystone -Abonnement“ aus, wenn Sie zur Auswahl einer Abrechnungsmethode aufgefordert werden.
 +

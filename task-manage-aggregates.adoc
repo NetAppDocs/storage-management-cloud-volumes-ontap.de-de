@@ -28,8 +28,8 @@ Wenn in einem Aggregat der Speicherplatz ausgeht, können Sie Volumes mithilfe d
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . Doppelklicken Sie auf der Seite *Systeme* auf das Cloud Volumes ONTAP -System, auf dem Sie Aggregate verwalten möchten.
-. Klicken Sie in den Systemdetails auf die Registerkarte *Aggregate*.
-. Für das erforderliche Aggregat auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol für die Verwaltungsaktionen klicken.
+. Wählen Sie in den Systemdetails die Registerkarte *Aggregates* aus.
+. Für das erforderliche Aggregat ist das Symbol image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] für die Verwaltungsaktionen auszuwählen.
 +
 image:screenshot_aggr_menu_options.png["Ein Screenshot der Menüoptionen „Aggregate“."]
 
@@ -39,14 +39,10 @@ image:screenshot_aggr_menu_options.png["Ein Screenshot der Menüoptionen „Aggr
 
 NOTE: Um einem Aggregat Festplatten hinzuzufügen, müssen alle Festplatten im Aggregat dieselbe Größe haben.
 
-ifdef::aws[]
-
 Für AWS können Sie die Kapazität eines Aggregats erhöhen, das Amazon EBS Elastic Volumes unterstützt.
 
-. Klicken Sie im image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Menü auf *Kapazität erhöhen*.
-. Geben Sie die zusätzliche Kapazität ein, die Sie hinzufügen möchten, und klicken Sie dann auf *Erhöhen*.
+. Wählen Sie im Menü image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] *Kapazität erhöhen* aus.
+. Die zusätzliche Kapazität, die hinzugefügt werden soll, ist einzugeben, und anschließend ist *Erhöhen* auszuwählen.
 
 
 Beachten Sie, dass Sie die Kapazität des Aggregats um mindestens 256 GiB oder 10 % der Aggregatgröße erhöhen müssen.  Wenn Sie beispielsweise ein Aggregat von 1,77 TiB haben, sind 10 % 181 GiB.  Das ist weniger als 256 GiB, daher muss die Größe des Aggregats um das Minimum von 256 GiB erhöht werden.
-
-endif::aws[]

@@ -21,8 +21,8 @@ Durch das Entfernen eines Cloud Volumes ONTAP -Systems wird es aus der NetApp Co
 
 .Schritte
 . Doppelklicken Sie auf der Seite *Systeme* auf das System, das Sie entfernen möchten.
-. Oben rechts in der Konsole das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auswählen und *Aus Arbeitsbereich entfernen* wählen.
-. Klicken Sie im Fenster *Aus Arbeitsbereich entfernen* auf *Entfernen*.
+. Oben rechts in der Konsole ist das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auszuwählen, anschließend *Aus Arbeitsbereich entfernen*.
+. Im Fenster *Aus Arbeitsbereich entfernen* ist *Entfernen* auszuwählen.
 
 
 .Ergebnis

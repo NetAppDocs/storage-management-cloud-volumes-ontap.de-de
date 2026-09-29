@@ -24,28 +24,10 @@ Cloud Volumes ONTAP unterstützt die Datenverschlüsselung und bietet Schutz vor
 Cloud Volumes ONTAP unterstützt die folgenden Verschlüsselungstechnologien:
 
 * NetApp -Verschlüsselungslösungen (NVE und NAE)
-
-
-ifdef::aws[]
-
 * AWS-Schlüsselverwaltungsdienst
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Azure Storage Service-Verschlüsselung
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Standardverschlüsselung der Google Cloud Platform
 
-
-endif::gcp[]
 
 Sie können NetApp Verschlüsselungslösungen mit nativer Verschlüsselung Ihres Cloud-Anbieters verwenden, die Daten auf Hypervisor-Ebene verschlüsselt.  Dadurch würde eine doppelte Verschlüsselung erreicht, die bei sehr sensiblen Daten wünschenswert sein könnte.  Beim Zugriff auf die verschlüsselten Daten werden diese zweimal entschlüsselt: einmal auf Hypervisor-Ebene (mit Schlüsseln des Cloud-Anbieters) und dann erneut mithilfe von NetApp Verschlüsselungslösungen (mit Schlüsseln eines externen Schlüsselmanagers).
 
@@ -66,32 +48,14 @@ Cloud Volumes ONTAP verwendet die standardmäßigen KMIP-Dienste (Key Management
 
 Wenn Sie NVE verwenden, haben Sie die Möglichkeit, den Schlüsseltresor Ihres Cloud-Anbieters zum Schutz der ONTAP Verschlüsselungsschlüssel zu verwenden:
 
-ifdef::aws[]
-
 * AWS-Schlüsselverwaltungsdienst (KMS)
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Azure-Schlüsseltresor (AKV)
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Google Cloud-Schlüsselverwaltungsdienst
 
-
-endif::gcp[]
 
 Bei neuen Aggregaten ist die NetApp Aggregate Encryption (NAE) standardmäßig aktiviert, nachdem Sie einen externen Schlüsselmanager eingerichtet haben.  Bei neuen Volumes, die nicht Teil eines NAE-Aggregats sind, ist NVE standardmäßig aktiviert (z. B. wenn Sie über vorhandene Aggregate verfügen, die vor der Einrichtung eines externen Schlüsselmanagers erstellt wurden).
 
 Das Einrichten eines unterstützten Schlüsselmanagers ist der einzige erforderliche Schritt.  Anweisungen zur Einrichtung finden Sie unterlink:task-encrypting-volumes.html["Verschlüsseln Sie Volumes mit NetApp -Verschlüsselungslösungen"] .
-
-ifdef::aws[]
 
 
 
@@ -105,10 +69,6 @@ TIP: Sie können die AWS-Datenverschlüsselungsmethode nicht mehr ändern, nachd
 
 Wenn Sie diese Verschlüsselungsoption verwenden möchten, müssen Sie sicherstellen, dass das AWS KMS entsprechend eingerichtet ist.  Weitere Informationen finden Sie unterlink:task-setting-up-kms.html["Einrichten des AWS KMS"] .
 
-endif::aws[]
-
-ifdef::azure[]
-
 
 
 [[azure-storage-service-encryption]]
@@ -118,10 +78,6 @@ Die Daten werden automatisch auf Cloud Volumes ONTAP in Azure verschlüsselt mit
 
 Sie können, wenn Sie möchten, Ihre eigenen Verschlüsselungsschlüssel verwenden. link:task-set-up-azure-encryption.html["Erfahren Sie, wie Sie Cloud Volumes ONTAP für die Verwendung eines vom Kunden verwalteten Schlüssels in Azure einrichten."] .
 
-endif::azure[]
-
-ifdef::gcp[]
-
 
 
 [[google-cloud-platform-default-encryption]]
@@ -130,8 +86,6 @@ ifdef::gcp[]
 https://cloud.google.com/security/encryption-at-rest/["Verschlüsselung ruhender Daten auf der Google Cloud Platform"^]ist standardmäßig für Cloud Volumes ONTAP aktiviert.  Es ist keine Einrichtung erforderlich.
 
 Während Google Cloud Storage Ihre Daten immer verschlüsselt, bevor sie auf die Festplatte geschrieben werden, können Sie mithilfe der Konsolen-APIs ein Cloud Volumes ONTAP -System erstellen, das _vom Kunden verwaltete Verschlüsselungsschlüssel_ verwendet.  Dies sind Schlüssel, die Sie mithilfe des Cloud Key Management Service in GCP generieren und verwalten. link:task-setting-up-gcp-encryption.html["Mehr erfahren"] .
-
-endif::gcp[]
 
 
 

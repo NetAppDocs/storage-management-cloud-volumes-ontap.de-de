@@ -68,7 +68,7 @@ Sie benötigen für Folgendes jeweils eine IAM-Richtlinie und eine IAM-Rolle:
 
 
 .Schritte
-. Gehen Sie zur AWS IAM-Konsole und klicken Sie auf *Richtlinien*.
+. Wechseln Sie zur AWS IAM Console und wählen Sie *Policies* aus.
 . Erstellen Sie eine Richtlinie für die Instanz des Konsolenagenten.
 +
 
@@ -592,17 +592,17 @@ Wenn Sie eine Lizenz von NetApp erworben haben, müssen Sie sie der Konsole hinz
 . Wählen Sie im linken Navigationsmenü * Licenses and subscriptions* aus.
 . Wählen Sie im Bereich * Cloud Volumes ONTAP* die Option *Anzeigen* aus.
 . Wählen Sie auf der Registerkarte * Cloud Volumes ONTAP* die Option *Lizenzen > Knotenbasierte Lizenzen* aus.
-. Klicken Sie auf *Nicht zugewiesen*.
-. Klicken Sie auf *Nicht zugewiesene Lizenzen hinzufügen*.
+. *Nicht zugewiesen* ist auszuwählen.
+. *Nicht zugewiesene Lizenzen hinzufügen* wird ausgewählt.
 . Geben Sie die Seriennummer der Lizenz ein oder laden Sie die Lizenzdatei hoch.
 . Wenn Sie die Lizenzdatei noch nicht haben, müssen Sie die Lizenzdatei manuell von netapp.com hochladen.
 +
 .. Gehen Sie zumlink:https://register.netapp.com/site/vsnr/register/getlicensefile["NetApp Lizenzdateigenerator"^] und melden Sie sich mit Ihren Anmeldeinformationen für die NetApp Support-Site an.
-.. Geben Sie Ihr Passwort ein, wählen Sie Ihr Produkt aus, geben Sie die Seriennummer ein, bestätigen Sie, dass Sie die Datenschutzrichtlinie gelesen und akzeptiert haben, und klicken Sie dann auf *Senden*.
+.. Geben Sie Ihr Passwort ein, wählen Sie Ihr Produkt aus, geben Sie die Seriennummer ein, bestätigen Sie, dass Sie die Datenschutzrichtlinie gelesen und akzeptiert haben, und wählen Sie dann *Submit* aus.
 .. Wählen Sie, ob Sie die JSON-Datei „serialnumber.NLF“ per E-Mail oder durch direkten Download erhalten möchten.
 
 
-. Klicken Sie auf *Lizenz hinzufügen*.
+. *Lizenz hinzufügen* auswählen.
 
 
 .Ergebnis
@@ -619,7 +619,7 @@ Sie können Cloud Volumes ONTAP Instanzen in AWS Secret Cloud und Top Secret Clo
 Für HA-Paare ist ein Schlüsselpaar erforderlich, um die schlüsselbasierte SSH-Authentifizierung beim HA-Mediator zu aktivieren.
 
 .Schritte
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen*.
+. Auf der Seite *Systeme* ist *System hinzufügen* auszuwählen.
 . Wählen Sie unter *Erstellen* Cloud Volumes ONTAP aus.
 +
 Für HA: Wählen Sie unter *Erstellen* Cloud Volumes ONTAP oder Cloud Volumes ONTAP HA aus.

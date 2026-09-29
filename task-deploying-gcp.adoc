@@ -59,7 +59,7 @@ Erstellen Sie in der NetApp Console ein System, um Cloud Volumes ONTAP in Google
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. [[Abonnieren]]Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Anweisungen.
+. [[subscribe]]Auf der Seite *Systeme* ist *System hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen.
 . *Wählen Sie einen Standort*: Wählen Sie *Google Cloud* und * Cloud Volumes ONTAP*.
 . Wenn Sie dazu aufgefordert werden https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Erstellen Sie einen Konsolenagenten"^].
 . *Details und Anmeldeinformationen*: Wählen Sie ein Projekt aus, geben Sie einen Clusternamen an, wählen Sie optional ein Dienstkonto aus, fügen Sie optional Bezeichnungen hinzu und geben Sie dann die Anmeldeinformationen an.
@@ -92,7 +92,7 @@ Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie d
 
 NOTE: Dies ist das Dienstkonto, das Sie für die NetApp Console eingerichtet haben link:https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["wie auf dieser Seite beschrieben"^].
 
-Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.
+*Abonnement hinzufügen* dient dazu, die ausgewählten Anmeldeinformationen mit einem Abonnement zu verknüpfen.
 
 Um ein Cloud Volumes ONTAP System mit nutzungsbasierter Abrechnung zu erstellen, ist die Auswahl eines Google Cloud Projekts erforderlich, das mit einem Abonnement für Cloud Volumes ONTAP aus dem Google Cloud Marketplace verknüpft ist. Siehe  https://docs.netapp.com/us-en/console-setup-admin/task-adding-gcp-accounts.html["Verknüpfen eines Marktplatz-Abonnements mit Google Cloud-Anmeldeinformationen"^].
 
@@ -132,7 +132,7 @@ Wenn Sie die Firewall-Richtlinie von der Konsole erstellen lassen, müssen Sie a
 ** link:task-set-up-licensing-google.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^]
 
 
-. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP-System bereitzustellen, oder klicken Sie auf *Eigene Konfiguration erstellen*. Die vorkonfigurierten Pakete variieren je nach gewählter Cloud Volumes ONTAP Version. Zum Beispiel zeigt die Console für Cloud Volumes ONTAP 9.18.1 und höher Pakete mit C3-VMs, einschließlich Hyperdisk Balanced-Festplatten, an. Sie können die Konfigurationen, wie IOPS- und Durchsatzparameter, basierend auf Ihren Workload-Anforderungen anpassen.
+. *Vorkonfigurierte Pakete*: Es kann eines der Pakete ausgewählt werden, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder *Eigene Konfiguration erstellen*. Die vorkonfigurierten Pakete variieren je nach ausgewählter Cloud Volumes ONTAP Version. Beispielsweise zeigt die Console für Cloud Volumes ONTAP 9.18.1 und höher Pakete mit C3 VMs an, einschließlich Hyperdisk Balanced Datenträgern. Die Konfigurationen, wie z. B. IOPS- und Durchsatzparameter, können basierend auf den Workload-Anforderungen angepasst werden.
 +
 Wenn Sie sich für eines der Pakete entscheiden, müssen Sie lediglich ein Volumen angeben und anschließend die Konfiguration prüfen und freigeben.
 
@@ -185,7 +185,7 @@ link:concept-data-tiering.html["Weitere Informationen zum Daten-Tiering"^] .
 
 
 
-. *Volume erstellen*: Geben Sie Details für das neue Volume ein oder klicken Sie auf *Überspringen*.
+. *Volume erstellen*: Geben Sie Details für das neue Volume ein, oder wählen Sie *Überspringen* aus.
 +
 link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"^] .
 
@@ -255,9 +255,9 @@ Weitere Informationen finden Sie unterlink:task-planning-your-config-gcp.html#ch
 . *Überprüfen und genehmigen*: Überprüfen und bestätigen Sie Ihre Auswahl.
 +
 .. Überprüfen Sie die Details zur Konfiguration.
-.. Klicken Sie auf *Weitere Informationen*, um Details zum Support und den Google Cloud-Ressourcen anzuzeigen, die über die Konsole erworben werden.
+.. Zur Prüfung von Details zum Support und zu den Google Cloud-Ressourcen, die die Console erwerben wird, ist *Weitere Informationen* auszuwählen.
 .. Aktivieren Sie die Kontrollkästchen *Ich verstehe...*.
-.. Klicken Sie auf *Los*.
+.. *Go* wird ausgewählt.
 
 
 
@@ -265,7 +265,7 @@ Weitere Informationen finden Sie unterlink:task-planning-your-config-gcp.html#ch
 .Ergebnis
 Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fortschritt auf der Seite *Audit* verfolgen.
 
-Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
+Wenn beim Bereitstellen des Cloud Volumes ONTAP Systems Probleme auftreten, sollten Sie die Fehlermeldung prüfen. Alternativ kann das System ausgewählt und *Re-create environment* ausgewählt werden.
 
 Weitere Hilfe finden Sie unter https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP Unterstützung"^] .
 
@@ -289,7 +289,7 @@ Erstellen Sie in der Konsole ein System, um Cloud Volumes ONTAP in Google Cloud 
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. Klicken Sie auf der Seite *Systeme* auf *Speicher > System* und folgen Sie den Anweisungen.
+. Auf der Seite *Systeme* ist *Speicher > System* auszuwählen; anschließend sind die Anweisungen zu befolgen.
 . *Wählen Sie einen Standort*: Wählen Sie *Google Cloud* und * Cloud Volumes ONTAP HA*.
 . *Systemdetails*: Es wird ein Projekt ausgewählt, ein Clustername angegeben, optional ein Service Account ausgewählt, optional Bezeichnungen hinzugefügt und anschließend Anmeldeinformationen angegeben.
 +
@@ -304,7 +304,7 @@ In der folgenden Tabelle werden die Felder beschrieben, für die Sie möglicherw
 | Google Cloud Projekt und Marketplace Abonnement  a| 
 Wählen Sie das Google-Projekt und das Abonnement aus, das Sie für dieses System verwenden möchten. Dies ist das Dienstkonto, das Sie für die NetApp Console eingerichtet haben. Weitere Informationen finden Sie unter link:https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Konsoleneinrichtungsdokumente"^]. Die NetApp Console verwendet das Projekt zur Erstellung des Cloud Volumes ONTAP Systems und das Abonnement zur Bestimmung von Abrechnung und Nutzung. Wenn Sie in der Dropdown-Liste keine weiteren Projekte sehen, haben Sie das Dienstkonto noch nicht mit anderen Projekten verknüpft. Rufen Sie die Google Cloud Console auf, öffnen Sie den IAM-Service und wählen Sie das Projekt aus. Fügen Sie das Dienstkonto mit der Rolle, die Sie für die NetApp Console verwenden, zu diesem Projekt hinzu. Dieser Schritt ist für jedes Projekt zu wiederholen.
 
-Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.
+*Abonnement hinzufügen* dient dazu, die ausgewählten Anmeldeinformationen mit einem Abonnement zu verknüpfen.
 
 Um ein Cloud Volumes ONTAP System mit nutzungsbasierter Abrechnung zu erstellen, ist die Auswahl eines Google Cloud-Projekts erforderlich, das mit einem Abonnement für Cloud Volumes ONTAP aus dem Google Cloud Marketplace verknüpft ist. Siehe das Dokument zur Einrichtung der Console https://docs.netapp.com/us-en/console-setup-admin/task-adding-gcp-accounts.html["Verknüpfen eines Marktplatz-Abonnements mit Google Cloud-Anmeldeinformationen"^].
 
@@ -364,7 +364,7 @@ Wenn Sie die Firewall-Richtlinie von der Konsole erstellen lassen, müssen Sie a
 ** link:task-set-up-licensing-google.html["Erfahren Sie, wie Sie die Lizenzierung einrichten"^] .
 
 
-. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder klicken Sie auf *Meine eigene Konfiguration erstellen*.
+. *Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um schnell ein Cloud Volumes ONTAP System bereitzustellen, oder wählen Sie *Meine eigene Konfiguration erstellen*.
 +
 Wenn Sie eines der Pakete auswählen, müssen Sie lediglich ein Volume angeben und anschließend die Konfiguration prüfen und genehmigen. Die vorkonfigurierten Pakete variieren je nach gewählter Cloud Volumes ONTAP Version und Konfigurationstypen. Wenn eine Bereitstellung in einer einzelnen AZ für Cloud Volumes ONTAP 9.19.1 oder höher ausgewählt wird, sind vorkonfigurierte Pakete mit C3-Series Maschinen und Hyperdisk Balanced Disks sichtbar. Für frühere Versionen und mehrere AZs können weiterhin n2-standard Maschinen und Persistent Disks ausgewählt werden. Die Konfigurationen, wie IOPS- und Durchsatzparameter, lassen sich entsprechend den Workload-Anforderungen anpassen.
 
@@ -416,7 +416,7 @@ link:concept-data-tiering.html["Weitere Informationen zum Daten-Tiering"^] .
 
 
 
-. *Volume erstellen*: Geben Sie Details für das neue Volume ein oder klicken Sie auf *Überspringen*.
+. *Volume erstellen*: Geben Sie Details für das neue Volume ein, oder wählen Sie *Überspringen* aus.
 +
 link:concept-client-protocols.html["Erfahren Sie mehr über unterstützte Clientprotokolle und -versionen"^] .
 
@@ -486,9 +486,9 @@ Weitere Informationen finden Sie unterlink:task-planning-your-config-gcp.html#ch
 . *Überprüfen und genehmigen*: Überprüfen und bestätigen Sie Ihre Auswahl.
 +
 .. Überprüfen Sie die Details zur Konfiguration.
-.. Klicken Sie auf *Weitere Informationen*, um Details zum Support und den Google Cloud-Ressourcen anzuzeigen, die über die Konsole erworben werden.
+.. Zur Prüfung von Details zum Support und zu den Google Cloud-Ressourcen, die die Console erwerben wird, ist *Weitere Informationen* auszuwählen.
 .. Aktivieren Sie die Kontrollkästchen *Ich verstehe...*.
-.. Klicken Sie auf *Los*.
+.. *Go* wird ausgewählt.
 
 
 
@@ -496,7 +496,7 @@ Weitere Informationen finden Sie unterlink:task-planning-your-config-gcp.html#ch
 .Ergebnis
 Die Konsole stellt das Cloud Volumes ONTAP -System bereit.  Sie können den Fortschritt auf der Seite *Audit* verfolgen.
 
-Wenn bei der Bereitstellung des Cloud Volumes ONTAP Systems Probleme auftreten, überprüfen Sie die Fehlermeldung.  Sie können auch das System auswählen und auf *Umgebung neu erstellen* klicken.
+Wenn beim Bereitstellen des Cloud Volumes ONTAP Systems Probleme auftreten, sollten Sie die Fehlermeldung prüfen. Alternativ kann das System ausgewählt und *Re-create environment* ausgewählt werden.
 
 .Nach Abschluss
 * Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner und stellen Sie sicher, dass diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.

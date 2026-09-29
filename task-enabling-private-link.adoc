@@ -38,14 +38,14 @@ Der Konsolenagent sollte in derselben Azure-Region wie die von ihm verwalteten C
 
 .Schritte
 . Gehen Sie im linken Navigationsbereich zu *Administration > Agenten*.
-. Klicken Sie auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol für den Konsolenagenten, der Ihr Cloud Volumes ONTAP System verwaltet.
+. Das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol für den Konsolenagenten auswählen, der Ihr Cloud Volumes ONTAP System verwaltet.
 . Wählen Sie * Cloud Volumes ONTAP -Einstellungen*.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[Ein Screenshot der Cloud Volumes ONTAP -Einstellungsoption unter dem Einstellungssymbol.]
 
-. Klicken Sie unter *Azure* auf *Azure Private Link verwenden*.
+. Unter *Azure* ist die Option *Use Azure Private Link* auszuwählen.
 . Deaktivieren Sie *Private Link-Verbindung zwischen Cloud Volumes ONTAP und Speicherkonten*.
-. Klicken Sie auf *Speichern*.
+. *Speichern* auswählen.
 
 
 .Nach Abschluss

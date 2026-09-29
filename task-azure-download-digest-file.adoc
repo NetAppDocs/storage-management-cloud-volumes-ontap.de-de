@@ -20,7 +20,7 @@ Die Datei _tar.gz_ enthält die für die Bildsignaturüberprüfung erforderliche
 
 .Schritte
 . Gehen Sie zum https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["Cloud Volumes ONTAP Produktseite auf der NetApp Support-Site"^] und laden Sie die erforderliche Softwareversion aus dem Bereich *Downloads* herunter.
-. Klicken Sie auf der Downloadseite von Cloud Volumes ONTAP auf die herunterladbare Datei für das Azure-Image und laden Sie die Datei _tar.gz_ herunter.
+. Auf der Downloadseite für Cloud Volumes ONTAP wählen Sie die herunterladbare Datei für das Azure Image aus und laden die _tar.gz_ Datei herunter.
 +
 image::screenshot_cloud_volumes_ontap_tar.gz.png[Screenshot Cloud-Volumes ontap tar.gz]
 

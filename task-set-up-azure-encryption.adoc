@@ -125,7 +125,7 @@ Die Ressource hat die folgende ID: `userassignedidentity` .
 
 .Schritte
 . Gehen Sie in Azure zu Azure-Diensten und wählen Sie *Verwaltete Identitäten* aus.
-. Klicken Sie auf *Erstellen*.
+. *Erstellen* auswählen.
 . Geben Sie die folgenden Details an:
 +
 ** *Abonnement*: Wählen Sie ein Abonnement.  Wir empfehlen, dasselbe Abonnement wie das Abonnement des Konsolenagenten zu wählen.
@@ -135,7 +135,7 @@ Die Ressource hat die folgende ID: `userassignedidentity` .
 
 
 . Fügen Sie optional Tags hinzu.
-. Klicken Sie auf *Erstellen*.
+. *Erstellen* auswählen.
 
 
 
@@ -172,7 +172,7 @@ NOTE: Die Verwendung von vom Azure-Kunden verwalteten Verschlüsselungsschlüsse
 
 
 
-. Wenn Sie „Tresorzugriffsrichtlinie“ ausgewählt haben, klicken Sie auf „Erstellen“, um eine Zugriffsrichtlinie für den Schlüsseltresor zu erstellen.  Wenn nicht, fahren Sie mit Schritt 3 fort.
+. Wenn die Zugriffsrichtlinie für den Schlüsseltresor ausgewählt wurde, ist „Erstellen“ zu wählen, um eine Zugriffsrichtlinie für den Schlüsseltresor zu erstellen. Andernfalls weiter mit Schritt 3.
 +
 .. Wählen Sie die folgenden Berechtigungen aus:
 +

@@ -71,12 +71,12 @@ Bei einer Bereitstellung im Standardmodus kann die knotenbasierte Lizenz mithilf
 
 
 
-NOTE: Wenn eine dieser Voraussetzungen nicht erfüllt ist, findet die Lizenzumwandlung nicht statt.  In Einzelfällen kann die Lizenz zwar umgewandelt, aber nicht genutzt werden.  Klicken Sie auf das Informationssymbol, um die Probleme zu identifizieren und Korrekturmaßnahmen zu ergreifen.
+NOTE: Wird eine dieser Voraussetzungen nicht erfüllt, findet keine Lizenzumwandlung statt. In bestimmten Fällen kann die Lizenz zwar umgewandelt werden, ist aber dennoch nicht nutzbar. Über das Informationssymbol lassen sich die Probleme identifizieren und Korrekturmaßnahmen ergreifen.
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, für das Sie den Lizenztyp ändern möchten.
-. Auf der Registerkarte *Übersicht* das Bedienfeld *Funktionen* auswählen.
+. Auf der Registerkarte *Übersicht* ist der Bereich *Funktionen* auszuwählen.
 . Aktivieren Sie das Stiftsymbol neben *Lademethode*.  Wenn die Lademethode für Ihr System `Node Based` , können Sie es auf Kapazitätsladung umstellen.
 +
 
@@ -90,7 +90,7 @@ TIP: Das Symbol ist deaktiviert, wenn Ihr Cloud Volumes ONTAP System bereits nac
 
 
 . Wenn Sie über eine BYOL-Lizenz verfügen, können Sie das Kontrollkästchen aktivieren, um die knotenbasierte Lizenz nach Abschluss der Konvertierung aus der Konsole zu löschen.  Wenn die Konvertierung noch läuft, wird durch Aktivieren dieses Kontrollkästchens die Lizenz nicht aus der Konsole entfernt.  Diese Option ist für Marktplatzabonnements nicht verfügbar.
-. Aktivieren Sie das Kontrollkästchen, um zu bestätigen, dass Sie die Auswirkungen der Änderung verstehen, und klicken Sie dann auf *Weiter*.
+. Wählen Sie das Kästchen aus, um zu bestätigen, dass Sie die Auswirkungen der Änderung verstehen, und wählen Sie dann *Proceed*.
 
 
 .Nach Abschluss
@@ -132,7 +132,7 @@ NOTE: Die Umwandlung von knotenbasierten Lizenzen in jede andere kapazitätsbasi
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, für das Sie den Lizenztyp ändern möchten.
-. Auf der Registerkarte *Übersicht* das Bedienfeld *Funktionen* auswählen.
+. Auf der Registerkarte *Übersicht* ist der Bereich *Funktionen* auszuwählen.
 . Überprüfen Sie das Stiftsymbol neben *Abrechnungsmethode*. Wenn die Abrechnungsmethode für Ihr System  `Node Based` ist, kann sie in eine kapazitätsbasierte Lizenz umgewandelt werden.
 +
 
@@ -141,7 +141,7 @@ TIP: Das Symbol ist deaktiviert, wenn Ihr Cloud Volumes ONTAP System bereits nac
 . Überprüfen Sie auf dem Bildschirm *Knotenbasierte Lizenzen in kapazitätsbasierte Lizenzen umwandeln* den Systemnamen und die Quelllizenzdetails.
 . Essentials als Zielpaket für die Konvertierung der bestehenden Lizenz auswählen:
 . Sie können das Kontrollkästchen aktivieren, um die knotenbasierte Lizenz nach Abschluss der Konvertierung aus der Console zu löschen. Wenn die Konvertierung noch läuft, wird die Lizenz durch Aktivieren dieses Kontrollkästchens nicht aus der Console entfernt.
-. Aktivieren Sie das Kontrollkästchen, um zu bestätigen, dass Sie die Auswirkungen der Änderung verstehen, und klicken Sie dann auf *Weiter*.
+. Wählen Sie das Kästchen aus, um zu bestätigen, dass Sie die Auswirkungen der Änderung verstehen, und wählen Sie dann *Proceed*.
 
 
 .Nach Abschluss

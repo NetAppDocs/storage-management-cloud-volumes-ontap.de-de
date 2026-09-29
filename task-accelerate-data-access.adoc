@@ -36,25 +36,11 @@ Beim Konfigurieren von FlexCache auf einem Cloud Volumes ONTAP System, bei dem d
 
 .Bevor Sie beginnen
 . *Verschlüsselungseinrichtung*: Stellen Sie sicher, dass das Quellvolume vollständig verschlüsselt und betriebsbereit ist.  Bei Cloud Volumes ONTAP -Systemen umfasst dies die Integration mit Cloud-spezifischen Schlüsselverwaltungsdiensten.
++
+** *Für AWS* bedeutet dies typischerweise die Verwendung von AWS Key Management Service (KMS). Informationen hierzu sind unter link:task-aws-key-management.html["Schlüssel mit AWS Key Management Service verwalten"] zu finden.
+** *Für Azure* muss Azure Key Vault für NetApp Volume Encryption (NVE) eingerichtet werden. Informationen dazu sind unter link:task-azure-key-vault.html["Verwalten von Schlüsseln mit Azure Key Vault"] verfügbar.
+** *Für Google Cloud* wird Google Cloud Key Management Service verwendet. Informationen sind unter link:task-google-key-manager.html["Schlüssel mit dem Cloud Key Management Service von Google verwalten"] zu finden.
 
-
-ifdef::aws[]
-
-Bei AWS bedeutet dies normalerweise die Verwendung des AWS Key Management Service (KMS).  Weitere Informationen finden Sie unterlink:task-aws-key-management.html["Schlüssel mit AWS Key Management Service verwalten"] .
-
-endif::aws[]
-
-ifdef::azure[]
-
-Für Azure müssen Sie Azure Key Vault für NetApp Volume Encryption (NVE) einrichten.  Weitere Informationen finden Sie unterlink:task-azure-key-vault.html["Verwalten von Schlüsseln mit Azure Key Vault"] .
-
-endif::azure[]
-
-ifdef::gcp[]
-
-Bei Google Cloud ist es der Google Cloud Key Management Service.  Weitere Informationen finden Sie unterlink:task-google-key-manager.html["Schlüssel mit dem Cloud Key Management Service von Google verwalten"] .
-
-endif::gcp[]
 
 . *Schlüsselverwaltungsdienste*: Überprüfen Sie vor dem Erstellen eines FlexCache -Volumes, ob die Schlüsselverwaltungsdienste auf dem Cloud Volumes ONTAP System richtig konfiguriert sind.  Diese Konfiguration ist für das FlexCache -Volume unerlässlich, um die Daten vom Ursprungsvolume zu entschlüsseln.
 . *Lizenzierung*: Bestätigen Sie, dass eine gültige FlexCache -Lizenz verfügbar und auf dem Cloud Volumes ONTAP System aktiviert ist.

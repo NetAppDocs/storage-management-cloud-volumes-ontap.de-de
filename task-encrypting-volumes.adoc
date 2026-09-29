@@ -18,4 +18,39 @@ Cloud Volumes ONTAP unterstützt NetApp Volume Encryption (NVE) und NetApp Aggre
 
 Sowohl NVE als auch NAE werden mit einem externen Schlüsselmanager unterstützt.
 
-ifdef::aws[] endif::aws[] ifdef::azure[] endif::azure[] ifdef::gcp[] endif::gcp[] ifdef::aws[] endif::aws[] ifdef::azure[] endif::azure[] ifdef::gcp[] endif::gcp[]
+Wenn Sie NVE verwenden, haben Sie die Möglichkeit, den Schlüsseltresor Ihres Cloud-Anbieters zum Schutz der ONTAP Verschlüsselungsschlüssel zu verwenden:
+
+* AWS Key Management Service (ab 9.12.0)
+* Azure-Schlüsseltresor (AKV)
+* Google Cloud-Schlüsselverwaltungsdienst
+
+
+Neue Aggregate verfügen nach der Einrichtung eines externen Schlüsselmanagers standardmäßig über aktiviertes NAE. Neue Volumes, die nicht Teil eines NAE-Aggregats sind, verfügen standardmäßig über aktiviertes NVE (z. B. wenn bereits Aggregate vorhanden sind, die vor der Einrichtung eines externen Schlüsselmanagers erstellt wurden).
+
+Cloud Volumes ONTAP unterstützt keine integrierte Schlüsselverwaltung.
+
+.Bevor Sie beginnen
+Ihr Cloud Volumes ONTAP System sollte beim NetApp Support registriert sein. Eine Lizenz für NetApp Volume Encryption wird automatisch auf jedem Cloud Volumes ONTAP System installiert, das beim NetApp Support registriert ist.
+
+* https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["Hinzufügen von NetApp Support Site Konten zur Konsole"^]
+* link:task-registering.html["Registrieren Sie Pay-as-you-go-Systeme"]
+
+
+
+NOTE: Die NetApp Console installiert die NVE-Lizenz nicht auf Systemen, die sich in der Region China befinden.
+
+.Schritte
+. Die Liste der unterstützten Schlüsselmanager finden Sie in der  http://mysupport.netapp.com/matrix["NetApp Interoperabilitätsmatrix-Tool"^].
++
+
+TIP: Nach der Lösung *Key Managers* kann gesucht werden.
+
+. link:task-connecting-to-otc.html["Herstellen einer Verbindung zur Cloud Volumes ONTAP CLI"^].
+. Externe Schlüsselverwaltung konfigurieren.
++
+** AWS: link:task-aws-key-management.html["AWS-Schlüsselverwaltungsdienst"]
+** Azure: link:task-azure-key-vault.html["Azure-Schlüsseltresor (AKV)"]
+** Google Cloud: link:task-google-key-manager.html["Google Cloud-Schlüsselverwaltungsdienst"]
+
+
+

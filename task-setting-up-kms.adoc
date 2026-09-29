@@ -53,7 +53,7 @@ Wenn sich der Console Agent und Cloud Volumes ONTAP im selben AWS-Konto befinden
 --
 . In der AWS-Konsole unter *KMS > Kundenseitig verwaltete Schlüssel* den CMEK-Schlüssel auswählen.
 . Im Abschnitt *Hauptbenutzer* *Hinzufügen* auswählen.
-. Wählen Sie Ihre Console Agent Instanzrolle aus, zum Beispiel  `occm-role`, und klicken Sie auf *Hinzufügen*.
+. Wählen Sie die Rolle Ihrer Console Agent-Instanz aus, zum Beispiel `occm-role`, und wählen Sie *Add*.
 . Speichern Sie Ihre Änderungen.
 
 

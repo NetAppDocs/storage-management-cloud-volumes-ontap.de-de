@@ -32,37 +32,37 @@ Mithilfe der Standardansicht der Konsole können Sie Volumes entsprechend Ihrem 
 +
 image:screenshot_manage_vol_button.png["Ein Screenshot der Schaltfläche „Volume verwalten“ unter der Registerkarte „Volumes“."]
 
-. Klicken Sie auf der Kachel des gewünschten Volumes auf *Volume verwalten*.
+. Auf der erforderlichen Volume Kachel ist die Option *Manage volume* auszuwählen.
 +
 [cols="30,70"]
 |===
 | Aufgabe | Aktion 
 
 
-| Informationen zu einem Volume anzeigen | Klicken Sie unter „Volume-Aktionen“ im Bereich „Volumes verwalten“ auf „Volume-Details anzeigen“. 
+| Informationen zu einem Volume anzeigen | Wählen Sie im Bereich „Volumes verwalten“ unter „Volume-Aktionen“ die Option „Volume-Details anzeigen“ aus. 
 
 
 | Holen Sie sich den NFS-Mount-Befehl  a| 
-.. Klicken Sie unter „Volume-Aktionen“ im Bereich „Volumes verwalten“ auf *Mount-Befehl*.
-.. Klicken Sie auf *Kopieren*.
+.. Im Bedienfeld „Volumes verwalten“ ist unter „Volume-Aktionen“ die Option „Mount Command“ auszuwählen.
+.. *Kopieren* wird ausgewählt.
 
 
 
 
 | Klonen eines Volumes  a| 
-.. Klicken Sie im Bereich „Volumes verwalten“ unter „Volume-Aktionen“ auf „Volume klonen“.
-.. Ändern Sie den Klonnamen nach Bedarf und klicken Sie dann auf *Klonen*.
+.. Im Bereich „Volumes verwalten“ ist unter „Volume Actions“ die Option *Clone the volume* auszuwählen.
+.. Der Klonname kann bei Bedarf geändert werden, anschließend ist *Clone* auszuwählen.
 
 
 Dieser Vorgang erstellt ein FlexClone -Volume.  Ein FlexClone -Volume ist eine beschreibbare, zeitpunktbezogene Kopie, die platzsparend ist, da sie nur wenig Speicherplatz für Metadaten verwendet und dann nur zusätzlichen Speicherplatz verbraucht, wenn Daten geändert oder hinzugefügt werden.
 
-Weitere Informationen zu FlexClone -Volumes finden Sie im http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["ONTAP 9 Handbuch zur logischen Speicherverwaltung"^] .
+Weitere Informationen zu FlexClone Volumes finden Sie in der link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["ONTAP 9 Handbuch zur logischen Speicherverwaltung"^].
 
 
 
 | Bearbeiten eines Volumes (nur Volumes mit Lese-/Schreibzugriff)  a| 
-.. Klicken Sie unter „Volume-Aktionen“ im Bereich „Volumes verwalten“ auf „Volume-Einstellungen bearbeiten“
-.. Ändern Sie die Snapshot-Richtlinie, die NFS-Protokollversion, die NFS-Zugriffskontrollliste (Exportrichtlinie) oder die Freigabeberechtigungen des Volumes und klicken Sie dann auf *Übernehmen*.
+.. Im Bereich „Volumes verwalten“ unter „Volume Actions“ wird *Edit volume settings* ausgewählt.
+.. Die Snapshot-Richtlinie des Volumes, die NFS-Protokollversion, die NFS-Zugriffssteuerungsliste (Exportrichtlinie) oder die Freigabeberechtigungen werden geändert, anschließend wird *Apply* ausgewählt.
 
 
 
@@ -71,30 +71,30 @@ NOTE: Wenn Sie benutzerdefinierte Snapshot-Richtlinien benötigen, können Sie d
 
 
 | Löschen eines Volumes  a| 
-.. Klicken Sie im Bereich „Volumes verwalten“ unter „Volume-Aktionen“ auf „Volume löschen“.
+.. Im Bereich „Volumes verwalten“ wird unter „Volume-Aktionen“ die Option „Volume löschen“ ausgewählt.
 .. Geben Sie im Fenster „Volume löschen“ den Namen des Volumes ein, das Sie löschen möchten.
-.. Klicken Sie zur Bestätigung erneut auf *Löschen*.
+.. Zum Bestätigen erneut *Delete* auswählen.
 
 
 
 
 | Erstellen Sie bei Bedarf eine Snapshot-Kopie  a| 
-.. Klicken Sie unter „Schutzaktionen“ im Bereich „Volumes verwalten“ auf „Snapshot-Kopie erstellen“*.
-.. Ändern Sie bei Bedarf den Namen und klicken Sie dann auf *Erstellen*.
+.. Im Bereich „Schutzaktionen“ im Bedienfeld „Volumes verwalten“ ist die Option „Snapshot-Kopie erstellen“ auszuwählen.
+.. Ändern Sie gegebenenfalls den Namen und wählen Sie dann *Erstellen* aus.
 
 
 
 
 | Wiederherstellen von Daten aus einer Snapshot-Kopie auf einem neuen Volume  a| 
-.. Klicken Sie unter „Schutzaktionen“ im Bereich „Volumes verwalten“ auf „Aus Snapshot-Kopie wiederherstellen“*.
-.. Wählen Sie eine Snapshot-Kopie aus, geben Sie einen Namen für das neue Volume ein und klicken Sie dann auf *Wiederherstellen*.
+.. Im Bedienfeld „Volumes verwalten“ ist unter „Schutzaktionen“ die Option „Aus Snapshot-Kopie wiederherstellen“ auszuwählen.
+.. Eine Snapshot-Kopie, einen Namen für das neue Volume und anschließend *Restore* auswählen.
 
 
 
 
 | Ändern des zugrunde liegenden Datenträgertyps  a| 
-.. Klicken Sie unter „Erweiterte Aktionen“ im Bereich „Volumes verwalten“ auf „Datenträgertyp ändern“.
-.. Wählen Sie den Datenträgertyp aus und klicken Sie dann auf *Ändern*.
+.. Im Bedienfeld „Volumes verwalten“ befindet sich unter „Erweiterte Aktionen“ die Option „Datenträgertyp ändern“.
+.. Der Datenträgertyp ist auszuwählen, und anschließend ist *Ändern* zu wählen.
 
 
 
@@ -103,8 +103,8 @@ NOTE: Die Konsole verschiebt das Volume in ein vorhandenes Aggregat, das den aus
 
 
 | Ändern der Tiering-Richtlinie  a| 
-.. Klicken Sie unter „Erweiterte Aktionen“ im Bereich „Volumes verwalten“ auf *Tiering-Richtlinie ändern*.
-.. Wählen Sie eine andere Richtlinie aus und klicken Sie auf *Ändern*.
+.. Im Bedienfeld „Volumes verwalten“ wird unter „Erweiterte Aktionen“ die Option „Tiering-Richtlinie ändern“ ausgewählt.
+.. Eine andere Richtlinie auswählen und *Ändern* wählen.
 
 
 
@@ -113,9 +113,9 @@ NOTE: Die Konsole verschiebt das Volume in ein vorhandenes Aggregat, das den aus
 
 
 | Löschen eines Volumes  a| 
-.. Wählen Sie ein Volume aus und klicken Sie dann auf *Löschen*.
+.. Ein Volume auswählen und dann *Löschen* auswählen.
 .. Geben Sie den Namen des Volumes in das Dialogfeld ein.
-.. Klicken Sie zur Bestätigung erneut auf *Löschen*.
+.. Zum Bestätigen erneut *Delete* auswählen.
 
 
 |===
@@ -134,10 +134,10 @@ Wenn Sie die Größe Ihres Volumes ändern müssen, können Sie dies über den O
 . Wählen Sie die System Manager-Ansicht, um die Größe eines Volumes über ONTAP System Manager zu ändern. Siehe link:task-administer-advanced-view.html#get-started-with-system-manager["Erste Schritte mit System Manager"].
 . Wählen Sie im linken Navigationsmenü *Speicher > Volumes* aus.
 . Identifizieren Sie in der Liste der Volumes das Volume, dessen Größe Sie ändern möchten.
-. Klicken Sie auf das Optionssymbolimage:screenshot_gallery_options.gif["Kebab-Symbol"] .
+. Das Optionssymbol image:screenshot_gallery_options.gif["Kebab-Symbol"] ist auszuwählen.
 . Wählen Sie *Größe ändern*.
 . Bearbeiten Sie auf dem Bildschirm *Volumegröße ändern* die Kapazität und den Prozentsatz der Snapshot-Reserve nach Bedarf.  Sie können den vorhandenen, verfügbaren Platz mit der geänderten Kapazität vergleichen.
-. Klicken Sie auf *Speichern*.
+. *Speichern* auswählen.
 
 
 image:screenshot-resize-volume.png["Auf dem Bildschirm wird die geänderte Kapazität nach der Größenänderung des Volumes angezeigt"]
@@ -152,8 +152,8 @@ Berücksichtigen Sie beim Ändern der Volumegröße unbedingt die Kapazitätsgre
 Wenn Sie Ihre DNS-Server oder Active Directory-Domäne ändern, müssen Sie den CIFS-Server in Cloud Volumes ONTAP ändern, damit er den Clients weiterhin Speicher bereitstellen kann.
 
 .Schritte
-. Klicken Sie auf der Registerkarte *Übersicht* des Cloud Volumes ONTAP Systems im rechten Bereich auf die Registerkarte *Funktion*.
-. Klicken Sie unter dem Feld „CIFS-Setup“ auf das *Bleistiftsymbol*, um das Fenster „CIFS-Setup“ anzuzeigen.
+. Wählen Sie im Cloud Volumes ONTAP System auf der Registerkarte *Übersicht* im rechten Bereich die Registerkarte *Funktion* aus.
+. Unter dem Feld CIFS-Setup wird durch Auswahl des *Stiftsymbols* das Fenster CIFS-Setup angezeigt.
 . Geben Sie die Einstellungen für den CIFS-Server an:
 +
 [cols="30,70"]
@@ -170,7 +170,7 @@ Wenn Sie Ihre DNS-Server oder Active Directory-Domäne ändern, müssen Sie den 
 | Anmeldeinformationen, die zum Beitritt zur Domäne berechtigt sind | Der Name und das Kennwort eines Windows-Kontos mit ausreichenden Berechtigungen zum Hinzufügen von Computern zur angegebenen Organisationseinheit (OU) innerhalb der AD-Domäne. 
 
 
-| DNS Primäre und sekundäre IP-Adresse | Die IP-Adressen der DNS-Server, die die Namensauflösung für den CIFS-Server bereitstellen.  Die aufgelisteten DNS-Server müssen die Service Location Records (SRV) enthalten, die zum Auffinden der Active Directory-LDAP-Server und Domänencontroller für die Domäne erforderlich sind, der der CIFS-Server beitritt. ifdef::gcp[] Wenn Sie Google Managed Active Directory konfigurieren, kann auf AD standardmäßig mit der IP-Adresse 169.254.169.254 zugegriffen werden. endif::gcp[] 
+| DNS Primäre und sekundäre IP-Adresse | Die IP-Adressen der DNS-Server, die die Namensauflösung für den CIFS-Server bereitstellen. Die aufgeführten DNS-Server müssen die Service Location Records (SRV) enthalten, die zum Auffinden der Active Directory LDAP-Server und Domänencontroller für die Domäne erforderlich sind, der der CIFS-Server beitreten wird. Bei der Konfiguration von Google-managed Active Directory kann standardmäßig über die IP-Adresse 169.254.169.254 auf AD zugegriffen werden. 
 
 
 | DNS-Domäne | Die DNS-Domäne für die Cloud Volumes ONTAP Storage Virtual Machine (SVM).  In den meisten Fällen ist die Domäne dieselbe wie die AD-Domäne. 
@@ -182,29 +182,13 @@ Wenn Sie Ihre DNS-Server oder Active Directory-Domäne ändern, müssen Sie den 
 | Organisationseinheit  a| 
 Die Organisationseinheit innerhalb der AD-Domäne, die mit dem CIFS-Server verknüpft werden soll.  Der Standardwert ist CN=Computers.
 
-ifdef::aws[]
+** AWS: Zum Konfigurieren von AWS Managed Microsoft AD als AD-Server für Cloud Volumes ONTAP ist in diesem Feld *OU=Computers,OU=corp* einzugeben.
+** Azure: Um Azure AD-Domänendienste als AD-Server für Cloud Volumes ONTAP zu konfigurieren, geben Sie in diesem Feld *OU=AADDC Computers* oder *OU=AADDC Users* ein. Azure-Dokumentation: link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Erstellung einer Abteilung (OU) in einer von Azure AD Domain Services verwalteten Domäne"^]
+** Google Cloud: Um Google Managed Microsoft AD als AD-Server für Cloud Volumes ONTAP zu konfigurieren, geben Sie in diesem Feld *OU=Computers,OU=Cloud* ein. Google Cloud-Dokumentation: link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Abteilungen in Google Managed Microsoft AD"^]
 
-** Um AWS Managed Microsoft AD als AD-Server für Cloud Volumes ONTAP zu konfigurieren, geben Sie in dieses Feld *OU=Computers,OU=corp* ein.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-** Um Azure AD Domain Services als AD-Server für Cloud Volumes ONTAP zu konfigurieren, geben Sie in dieses Feld *OU=AADDC Computers* oder *OU=AADDC Users* ein.link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure-Dokumentation: Erstellen einer Organisationseinheit (OU) in einer von Azure AD Domain Services verwalteten Domäne"^]
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-** Um Google Managed Microsoft AD als AD-Server für Cloud Volumes ONTAP zu konfigurieren, geben Sie in dieses Feld *OU=Computers,OU=Cloud* ein.link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Google Cloud-Dokumentation: Organisationseinheiten in Google Managed Microsoft AD"^]
-
-
-endif::gcp[]
 
 |===
-. Klicken Sie auf *Festlegen*.
+. *Set* wird ausgewählt.
 
 
 .Ergebnis
@@ -263,8 +247,8 @@ Die erweiterten Informationen sollten beispielsweise in etwa wie folgt lauten: �
 
 . Identifizieren Sie ein oder mehrere Volumes, die aus dem Aggregat verschoben werden sollen:
 +
-.. Klicken Sie im Cloud Volumes ONTAP -System auf die Registerkarte *Aggregate*.
-.. Auf der Kachel „Aggregat“ das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auswählen und danach *Aggregatdetails anzeigen* wählen.
+.. Im Cloud Volumes ONTAP System ist die Registerkarte *Aggregate* auszuwählen.
+.. Auf der Aggregatkachel ist das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auszuwählen, anschließend *Aggregatdetails anzeigen*.
 .. Überprüfen Sie auf der Registerkarte *Übersicht* des Bildschirms *Aggregatdetails* die Größe jedes Volumes und wählen Sie ein oder mehrere Volumes aus, die aus dem Aggregat verschoben werden sollen.
 +
 Sie sollten Volumes auswählen, die groß genug sind, um Speicherplatz im Aggregat freizugeben, damit Sie in Zukunft zusätzliche Kapazitätsprobleme vermeiden.
@@ -303,11 +287,9 @@ Sie können ein oder mehrere Volumes auf ein anderes Cloud Volumes ONTAP System 
 .Informationen zu diesem Vorgang
 Sie können die Schritte in dieser Aufgabe befolgen, um die folgende Meldung „Aktion erforderlich“ zu korrigieren:
 
-[]
-====
-Das Verschieben eines Volumes ist notwendig, um Kapazitätsprobleme zu vermeiden. Die Konsole kann diese Aktion jedoch nicht für Sie ausführen, da das System das Festplattenlimit erreicht hat.
 
-====
+NOTE: Das Verschieben eines Volumes ist notwendig, um Kapazitätsprobleme zu vermeiden. Die Console kann diese Aktion jedoch nicht für Sie durchführen, wenn das System die Festplattengrenze erreicht.
+
 .Schritte
 . Identifizieren Sie ein Cloud Volumes ONTAP -System mit verfügbarer Kapazität oder stellen Sie ein neues System bereit.
 . Ziehen Sie das Quellsystem per Drag & Drop auf das Zielsystem, um eine einmalige Datenreplikation des Volumes durchzuführen.
@@ -339,16 +321,14 @@ Sie können ein oder mehrere Volumes in ein anderes Aggregat verschieben, um Kap
 .Informationen zu diesem Vorgang
 Sie können die Schritte in dieser Aufgabe befolgen, um die folgende Meldung „Aktion erforderlich“ zu korrigieren:
 
-[]
-====
-Um Kapazitätsprobleme zu vermeiden, ist das Verschieben von zwei oder mehr Volumes erforderlich. Die Konsole kann diese Aktion jedoch nicht für Sie ausführen.
 
-====
+NOTE: Um Kapazitätsprobleme zu vermeiden, ist das Verschieben von zwei oder mehr Volumes erforderlich. Die Konsole kann diese Aktion jedoch nicht für Sie ausführen.
+
 .Schritte
 . Überprüfen Sie, ob ein vorhandenes Aggregat über freie Kapazität für die Volumes verfügt, die Sie verschieben müssen:
 +
-.. Klicken Sie im Cloud Volumes ONTAP -System auf die Registerkarte *Aggregate*.
-.. Auf der erforderlichen Aggregatkachel das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auswählen und anschließend *Aggregatdetails anzeigen*, um die verfügbare Kapazität anzuzeigen (bereitgestellte Größe minus genutzte Aggregatkapazität).
+.. Wählen Sie im Cloud Volumes ONTAP System die Registerkarte *Aggregate* aus.
+.. Auf der erforderlichen Aggregatkachel ist das Symbol image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] und anschließend *Aggregatdetails anzeigen* auszuwählen, um die verfügbare Kapazität anzuzeigen (bereitgestellte Größe minus genutzte Aggregatkapazität).
 +
 image::screenshot_aggr_capacity.png[Screenshot Aggr-Kapazität]
 
@@ -356,8 +336,8 @@ image::screenshot_aggr_capacity.png[Screenshot Aggr-Kapazität]
 
 . Fügen Sie bei Bedarf Datenträger zu einem vorhandenen Aggregat hinzu:
 +
-.. Wählen Sie das Aggregat aus, dann auf das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol > *Datenträger hinzufügen* klicken.
-.. Wählen Sie die Anzahl der hinzuzufügenden Datenträger aus und klicken Sie dann auf *Hinzufügen*.
+.. Wählen Sie das Aggregat aus und dann das Symbol image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] > *Datenträger hinzufügen*.
+.. Wählen Sie die Anzahl der hinzuzufügenden Datenträger aus, und wählen Sie dann *Hinzufügen* aus.
 
 
 . Wenn keine Aggregate über verfügbare Kapazität verfügen, erstellen Sie ein neues Aggregat.

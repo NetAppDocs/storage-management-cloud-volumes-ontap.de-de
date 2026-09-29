@@ -27,8 +27,8 @@ Beachten Sie Folgendes:
 . Doppelklicken Sie auf der Seite *Systeme* auf das Cloud Volumes ONTAP -System, auf dem Sie Volumes verwalten möchten.
 . Wählen Sie im System die Registerkarte *Volumes*.
 . Gehen Sie zur Kachel des gewünschten Volumes und wählen Sie dann *Volume verwalten* aus, um auf das Bedienfeld „Volumes verwalten“ auf der rechten Seite zuzugreifen.
-. Klicken Sie auf *Ziel-iQN*.
-. Klicken Sie auf *Kopieren*, um den iQN-Namen zu kopieren.
+. *Ziel iQN* wird ausgewählt.
+. *Kopieren* dient zum Kopieren des iQN-Namens.
 . Richten Sie eine iSCSI-Verbindung vom Host zur LUN ein.
 +
 ** http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-rhel-cg/GUID-15E8C226-BED5-46D0-BAED-379EA4311340.html["ONTAP 9 iSCSI Express-Konfiguration für Red Hat Enterprise Linux: Starten der iSCSI-Sitzungen mit dem Ziel"^]

@@ -35,10 +35,10 @@ Wenn Sie bereits Kunde sind und NIS-Abonnements mit Ihrem AWS-Konto verknüpft h
 
 .Schritte
 . Wählen Sie im linken Bereich der NetApp Console *Administration > Licenses and subscriptions > Billing preferences > Cloud Volumes ONTAP*.
-. Wählen Sie auf der Registerkarte AWS das eigenständige Abonnement aus und klicken Sie auf das Optionssymbol image:screenshot_gallery_options.gif["Kebab-Symbol"].
+. Auf der Registerkarte AWS wird das eigenständige Abonnement ausgewählt und das Optionssymbol image:screenshot_gallery_options.gif["Kebab-Symbol"] gewählt.
 . Im Fenster „Konfiguration bearbeiten“ wählen Sie die Abonnementnummer des eigenständigen Eintrags im Feld *AWS account credentials* aus.
-. Klicken Sie auf *Konfigurieren*. Anschließend wird Ihnen das Abonnement als bevorzugte Option für Ihre Cloud Volumes ONTAP Abrechnung in AWS angezeigt.
-. Bei der Bereitstellung eines neuen Cloud Volumes ONTAP Systems wählen Sie das Essentials-Paket, um über das Einzelabonnement abzurechnen. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Quick create in AWS bereitstellen"^].
+. *Konfigurieren* auswählen. Anschließend wird Ihnen das Abonnement als bevorzugte Option für Ihre Cloud Volumes ONTAP Abrechnung in AWS angezeigt.
+. Bei der Bereitstellung eines neuen Cloud Volumes ONTAP Systems wählen Sie das Essentials-Paket, um über das Einzelabonnement abzurechnen. Weitere Informationen finden sich unter  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Cloud Volumes ONTAP mit Schnellerstellung bereitstellen"^].
 
 
 Wiederholen Sie die gleichen Schritte für das NIS-Abonnement auf der Registerkarte *Datendienste*, um das NIS-Abonnement für Ihre Datendienste zu nutzen. Wählen Sie bei der Bereitstellung eines neuen Cloud Volumes ONTAP-Systems das Professional-Paket aus, um die Abrechnung über das NIS-Abonnement vorzunehmen.
@@ -79,9 +79,9 @@ Die Konsole fragt automatisch den Lizenzierungsdienst von NetApp ab, um Details 
 +
 Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes ONTAP verwenden können. Falls erforderlich, kann link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#add-a-license["Fügen Sie die Lizenz manuell zur Konsole hinzu"^].
 
-. Klicken Sie auf der Seite *Systeme* der Konsole auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* der Konsole ist *System hinzufügen* auszuwählen und den Schritten zu folgen.
 +
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
+.. Auf der Seite *Details und Anmeldeinformationen* wählen Sie *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* aus und folgen dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
 +
 Die von Ihnen bei NetApp erworbene Lizenz wird immer zuerst in Rechnung gestellt. Wenn Sie jedoch Ihre lizenzierte Kapazität überschreiten oder die Laufzeit Ihrer Lizenz abläuft, wird Ihnen der Stundensatz auf dem Marktplatz in Rechnung gestellt.
 
@@ -109,9 +109,9 @@ Wenn Sie ein Cloud Volumes ONTAP -System erstellen, werden Sie von der Konsole a
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü *Speicher > Verwaltung*.
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
+.. Auf der Seite *Details und Anmeldeinformationen* wird *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* ausgewählt; anschließend sind den Anweisungen zu folgen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
 +
 image:screenshot-aws-paygo-subscription.png["Ein Screenshot der PAYGO-Abonnementoption beim Erstellen eines Cloud Volumes ONTAP Systems."]
 
@@ -138,9 +138,9 @@ Zahlen Sie jährlich, indem Sie einen Jahresvertrag auf dem Marktplatz Ihres Clo
 Ähnlich wie bei einem Stundenabonnement werden Sie von der Konsole aufgefordert, den Jahresvertrag zu abonnieren, der im AWS Marketplace verfügbar ist.
 
 .Schritte
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um den Jahresvertrag im AWS Marketplace zu abonnieren.
+.. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen, um den Jahresvertrag im AWS Marketplace zu abonnieren.
 +
 image:screenshot-aws-annual-subscription.png["Ein Screenshot des Jahresvertragsangebots beim Erstellen eines Cloud Volumes ONTAP Systems."]
 
@@ -163,9 +163,9 @@ Das Freemium-Angebot ermöglicht die kostenlose Nutzung von Cloud Volumes ONTAP 
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü der NetApp Console*Speicher > Verwaltung* aus.
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
-.. Klicken Sie auf der Seite *Details und Anmeldeinformationen* auf *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* und folgen Sie dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
+.. Auf der Seite *Details und Anmeldeinformationen* wählen Sie *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* aus und folgen dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
 +
 Über das Marketplace-Abonnement fallen keine Gebühren an, es sei denn, Sie überschreiten 500 GiB der bereitgestellten Kapazität, zu welchem Zeitpunkt das System automatisch auf die link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#packages["Essentials-Paket"^] umgestellt wird.
 
@@ -193,7 +193,7 @@ Bei einem Keystone -Abonnement handelt es sich um einen Abonnementdienst mit nut
 . Wenn Sie noch kein Abonnement haben, https://www.netapp.com/forms/keystone-sales-contact/["NetApp kontaktieren"^]
 . mailto:ng-keystone-success@netapp.com [Kontaktieren Sie NetApp], um Ihr Benutzerkonto mit einem oder mehreren Keystone Abonnements zu autorisieren.
 . Nachdem NetApp Ihr ​​Konto autorisiert hat,link:task-manage-keystone.html#link-a-subscription["Verknüpfen Sie Ihre Abonnements zur Verwendung mit Cloud Volumes ONTAP"] .
-. Klicken Sie auf der Seite *Systeme* auf *System hinzufügen* und folgen Sie den Schritten.
+. Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
 .. Wählen Sie die Abrechnungsmethode „Keystone -Abonnement“ aus, wenn Sie zur Auswahl einer Abrechnungsmethode aufgefordert werden.
 +

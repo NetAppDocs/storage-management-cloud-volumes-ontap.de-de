@@ -77,7 +77,7 @@ Sie können den WORM-Speicher aktivieren, wenn Sie ein Cloud Volumes ONTAP -Syst
 
 .Schritte
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, auf dem Sie WORM aktivieren möchten.
-. Klicken Sie auf der Registerkarte „Übersicht“ auf den Bereich „Funktionen“ und dann auf das Stiftsymbol neben *WORM*.
+. Auf der Registerkarte „Übersicht“ ist der Bereich „Funktionen“ und anschließend das Stiftsymbol neben *WORM* auszuwählen.
 +
 Wenn WORM auf dem System bereits aktiviert ist, ist das Bleistiftsymbol deaktiviert.
 
@@ -85,7 +85,7 @@ Wenn WORM auf dem System bereits aktiviert ist, ist das Bleistiftsymbol deaktivi
 +
 Weitere Informationen finden Sie im https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["ONTAP -Dokumentation: Initialisieren der Compliance Clock"^] .
 
-. Klicken Sie auf *Festlegen*.
+. *Set* wird ausgewählt.
 
 
 .Nach Abschluss

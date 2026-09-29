@@ -61,14 +61,14 @@ Die beschriebenen Schritte beschreiben, wie Sie Ihre Cloud Volumes ONTAP -Konfig
 .Erstellen des geheimen Azure-Clientschlüssels
 . Wählen Sie im Azure-Portal für Ihre Azure Key Vault-App-Registrierung den Bereich **Zertifikate und Geheimnisse** aus.
 . Wählen Sie **Neues Client-Geheimnis**.  Geben Sie einen aussagekräftigen Namen für Ihr Client-Geheimnis ein.  NetApp empfiehlt eine Ablauffrist von 24 Monaten. Ihre spezifischen Cloud-Governance-Richtlinien erfordern jedoch möglicherweise eine andere Einstellung.
-. Klicken Sie auf **Hinzufügen**, um das Clientgeheimnis zu erstellen.  Kopieren Sie die in der Spalte **Wert** aufgeführte geheime Zeichenfolge und speichern Sie sie an einem sicheren Ort zur späteren Verwendung in<<ontap>> .  Der geheime Wert wird nicht erneut angezeigt, nachdem Sie die Seite verlassen.
+. Zum Erstellen des Clientgeheimnisses ist **Add** auszuwählen. Die in der Spalte **Value** aufgeführte geheime Zeichenfolge ist zu kopieren und zur späteren Verwendung in <<ontap>> an einem sicheren Ort zu speichern. Der geheime Wert wird nicht erneut angezeigt, nachdem die Seite verlassen wurde.
 
 
 [[create-akv]]
 .Erstellen eines Azure Key Vault
 . Wenn Sie über einen vorhandenen Azure Key Vault verfügen, können Sie diesen mit Ihrer Cloud Volumes ONTAP Konfiguration verbinden; Sie müssen dabei allerdings die Zugriffsrichtlinien an die Einstellungen anpassen.
 . Navigieren Sie im Azure-Portal zum Abschnitt **Schlüsseltresore**.
-. Klicken Sie auf **+Erstellen** und geben Sie die erforderlichen Informationen ein, einschließlich Ressourcengruppe, Region und Preisstufe.  Geben Sie außerdem die Anzahl der Tage ein, die gelöschte Tresore aufbewahrt werden sollen, und wählen Sie **Löschschutz aktivieren** für den Schlüsseltresor aus.
+. **Erstellen** wird ausgewählt, und die erforderlichen Informationen einschließlich Ressourcengruppe, Region und Preisstufe werden eingegeben. Außerdem wird die Anzahl der Tage eingegeben, für die gelöschte Tresore aufbewahrt werden, und für den Schlüsseltresor wird **Enable purge protection** ausgewählt.
 . Wählen Sie **Weiter** aus, um eine Zugriffsrichtlinie auszuwählen.
 . Wählen Sie die folgenden Optionen aus:
 +
@@ -76,8 +76,8 @@ Die beschriebenen Schritte beschreiben, wie Sie Ihre Cloud Volumes ONTAP -Konfig
 .. Wählen Sie unter **Ressourcenzugriff** **Azure Disk Encryption für die Volumeverschlüsselung** aus.
 
 
-. Wählen Sie **+Erstellen** aus, um eine Zugriffsrichtlinie hinzuzufügen.
-. Klicken Sie unter **Aus einer Vorlage konfigurieren** auf das Dropdown-Menü und wählen Sie dann die Vorlage **Schlüssel-, Geheimnis- und Zertifikatsverwaltung** aus.
+. Zum Hinzufügen einer Zugriffsrichtlinie **Erstellen** auswählen.
+. Unter **Konfigurieren aus einer Vorlage** wählen Sie das Dropdown-Menü und anschließend die Vorlage **Schlüssel-, Secret- und Zertifikatsmanagement** aus.
 . Wählen Sie jedes der Dropdown-Berechtigungsmenüs (Schlüssel, Geheimnis, Zertifikat) und dann **Alle auswählen** oben in der Menüliste, um alle verfügbaren Berechtigungen auszuwählen.  Sie sollten haben:
 +
 ** **Schlüsselberechtigungen**: 20 ausgewählt
@@ -88,7 +88,7 @@ image:screenshot-azure-key-secret-cert-all-list.png["Screenshot von „Zugriffsr
 
 
 
-. Klicken Sie auf **Weiter**, um die **Principal**-Azure-registrierte Anwendung auszuwählen, die Sie in<<azure-app>> . Wählen Sie **Weiter**.
+. Wählen Sie **Weiter**, um die **Principal** Azure-registrierte Anwendung auszuwählen, die Sie in <<azure-app>> erstellt haben. Wählen Sie **Weiter**.
 +
 
 NOTE: Pro Richtlinie kann nur ein Auftraggeber zugewiesen werden.
@@ -96,7 +96,7 @@ NOTE: Pro Richtlinie kann nur ein Auftraggeber zugewiesen werden.
 +
 image:screenshot-azure-key-secret-cert-principal.png["Screenshot der Registerkarte „Principal für Zugriffsrichtlinie erstellen“"]
 
-. Klicken Sie zweimal auf **Weiter**, bis Sie bei **Überprüfen und erstellen** ankommen.  Klicken Sie dann auf **Erstellen**.
+. Wählen Sie zweimal **Weiter** aus, bis **Überprüfen und erstellen** angezeigt wird. Wählen Sie dann **Erstellen** aus.
 . Wählen Sie **Weiter**, um zu den **Netzwerkoptionen** zu gelangen.
 . Wählen Sie die entsprechende Netzwerkzugriffsmethode oder wählen Sie **Alle Netzwerke** und **Überprüfen + Erstellen**, um den Schlüsseltresor zu erstellen.  (Die Netzwerkzugriffsmethode kann durch eine Governance-Richtlinie oder Ihr Cloud-Sicherheitsteam im Unternehmen vorgeschrieben sein.)
 . Notieren Sie die Key Vault-URI: Navigieren Sie im von Ihnen erstellten Key Vault zum Menü „Übersicht“ und kopieren Sie die **Vault-URI** aus der rechten Spalte.  Sie benötigen dies für einen späteren Schritt.

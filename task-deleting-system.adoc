@@ -35,8 +35,8 @@ https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-co
 . Löschen Sie das Cloud Volumes ONTAP -System.
 +
 .. Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Cloud Volumes ONTAP Systems, das Sie löschen möchten.
-.. Oben rechts in der Konsole das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol auswählen und *Löschen* wählen.
-.. Geben Sie den Namen des Systems ein, das Sie löschen möchten, und klicken Sie dann auf *Löschen*.  Das Löschen eines Systems kann bis zu fünf Minuten dauern.
+.. Wählen Sie oben rechts in der Konsole das image:icon-action.png["Ein Symbol mit drei horizontalen Punkten für zusätzliche Aktionen"] Symbol aus und anschließend *Löschen*.
+.. Geben Sie den Namen des Systems ein, das Sie löschen möchten, und wählen Sie dann *Delete*. Das Löschen eines Systems kann bis zu fünf Minuten dauern.
 
 
 

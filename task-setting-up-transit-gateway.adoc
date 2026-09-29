@@ -32,10 +32,10 @@ Die folgenden Schritte veranschaulichen, wie eine ähnliche Konfiguration einger
 . https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html["Erstellen Sie ein Transit-Gateway und hängen Sie die VPCs an das Gateway an"^] .
 . Ordnen Sie die VPCs der Transit-Gateway-Routentabelle zu.
 +
-.. Klicken Sie im *VPC*-Dienst auf *Transit Gateway Route Tables*.
+.. Im *VPC*-Dienst ist *Transit Gateway Route Tables* auszuwählen.
 .. Wählen Sie die Routentabelle aus.
-.. Klicken Sie auf *Verknüpfungen* und wählen Sie dann *Verknüpfung erstellen*.
-.. Wählen Sie die zu verknüpfenden Anhänge (die VPCs) aus und klicken Sie dann auf *Verknüpfung erstellen*.
+.. *Associations* und anschließend *Create association* auswählen.
+.. Wählen Sie die zu verknüpfenden Anhänge (die VPCs) aus und wählen Sie dann *Create association* aus.
 
 
 . Erstellen Sie Routen in der Routentabelle des Transit-Gateways, indem Sie die Floating-IP-Adressen des HA-Paares angeben.
@@ -75,13 +75,13 @@ image:screenshot_transit_gateway3.png["Ein Screenshot der AWS-Konsole, der die R
 
 . Aktualisieren Sie die Einstellungen der Sicherheitsgruppen auf „Gesamter Datenverkehr für die VPC“.
 +
-.. Klicken Sie unter „Virtual Private Cloud“ auf *Subnetze*.
-.. Klicken Sie auf die Registerkarte *Routentabelle* und wählen Sie die gewünschte Umgebung für eine der Floating-IP-Adressen für ein HA-Paar aus.
-.. Klicken Sie auf *Sicherheitsgruppen*.
+.. Unter Virtual Private Cloud ist *Subnetze* auszuwählen.
+.. Die Registerkarte *Route table* und die gewünschte Umgebung für eine der Floating-IP-Adressen für ein HA-Paar werden ausgewählt.
+.. *Sicherheitsgruppen* auswählen.
 .. Wählen Sie *Eingehende Regeln bearbeiten*.
-.. Klicken Sie auf *Regel hinzufügen*.
+.. *Regel hinzufügen* auswählen.
 .. Wählen Sie unter „Typ“ die Option „Gesamter Datenverkehr“ und dann die VPC-IP-Adresse aus.
-.. Klicken Sie auf *Regeln speichern*, um die Änderungen anzuwenden.
+.. *Regeln speichern* wendet die Änderungen an.
 
 
 . Hängen Sie Volumes mithilfe der Floating-IP-Adresse an Clients an.

@@ -27,7 +27,7 @@ Bevor Sie die Schreibgeschwindigkeit ändern, sollten Sielink:concept-write-spee
 
 .Schritte
 . Doppelklicken Sie auf der Seite *Systeme* auf den Namen des Systems, für das Sie die Schreibgeschwindigkeit konfigurieren.
-. Klicken Sie auf der Registerkarte „Übersicht“ auf das Bedienfeld „Funktionen“ und dann auf das Stiftsymbol neben „Schreibgeschwindigkeit“.
+. Auf der Registerkarte „Übersicht“ ist der Bereich „Funktionen“ auszuwählen, anschließend das Stiftsymbol neben *Write Speed*.
 . Wählen Sie *Normal* oder *Hoch*.
 +
 Wenn Sie „Hoch“ wählen, müssen Sie die Aussage „Ich verstehe …“ lesen und durch Ankreuzen des Kästchens bestätigen.
@@ -36,5 +36,5 @@ Wenn Sie „Hoch“ wählen, müssen Sie die Aussage „Ich verstehe …“ lese
 
 NOTE: Die Schreibgeschwindigkeitsoption *Hohe* wird mit Cloud Volumes ONTAP HA-Paaren in Google Cloud ab Version 9.13.0 unterstützt.
 
-. Klicken Sie auf *Speichern*, überprüfen Sie die Bestätigungsnachricht und klicken Sie dann auf *Genehmigen*.
+. *Speichern* ist auszuwählen, die Bestätigungsmeldung ist zu prüfen und anschließend *Genehmigen* auszuwählen.
 
