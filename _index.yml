@@ -108,8 +108,8 @@ indexpage:
       url: "/concept-active-iq.html"
     - title: Cloud Volumes ONTAP und Microsoft OneLake
       url: "/task-azure-onelake.html"
-    - title: Cloud Volumes ONTAP und ein gut strukturiertes Dashboard
-      url: "/configuration-analysis-cvo.html"
+    - title: Cloud Volumes ONTAP in Azure und Workload Factory
+      url: "/concept-configuration-analysis-cvo.html"
     - title: Cloud Volumes ONTAP und Keystone
       url: "/task-manage-keystone.html"
   - title: Weitere Ressourcen

@@ -1,0 +1,144 @@
+---
+sidebar: sidebar 
+permalink: task-improve-configurations-cvo.html 
+keywords: improve configurations, optimize configurations, implement best practices, well-architected file system, Cloud Volumes ONTAP, Microsoft Azure 
+summary: Das übersichtliche Dashboard scannt Cloud Volumes ONTAP Konfigurationen und liefert Erkenntnisse und Empfehlungen, die zur Erreichung operativer Exzellenz beitragen. 
+---
+= Cloud Volumes ONTAP Konfigurationen in Azure mit Workload Factory optimieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit NetApp Workload Factory lassen sich Best Practices für Ihre Cloud Volumes ONTAP Systeme in Azure über NetApp Console implementieren. Der Well-Architected-Status kann einfach überprüft werden, und Probleme mit Ihren Konfigurationen können erkannt und behoben werden, um die Architektur aller Systeme zu verbessern, die nicht für Zuverlässigkeit, Sicherheit, Effizienz, Performance und Kosten optimiert sind.
+
+link:concept-configuration-analysis-cvo.html["Informationen zur Konfigurationsanalyse und zum Well-Architected-Status."]
+
+
+
+[[about-this-task]]
+== Informationen zu diesem Vorgang
+
+Workload Factory analysiert täglich die Systemkonfigurationen von Cloud Volumes ONTAP auf Microsoft Azure.
+
+Da die Anforderungen an Speicherkonfigurationen variieren, kann die Analyse bestimmter Konfigurationen, die für Ihre Speicherumgebung nicht relevant sind, ausgeschlossen werden.
+
+
+
+[[before-you-begin]]
+== Bevor Sie beginnen
+
+* Sie benötigen link:concept-azure-mktplace-direct.html["bereitgestellt"] ein Cloud Volumes ONTAP System in Azure, um den Well-Architected-Status und Empfehlungen für Konfigurationsprobleme anzuzeigen.
+* Es muss sichergestellt sein, dass der mit Cloud Volumes ONTAP verknüpfte Agent Zugriff auf die folgenden Endpunkte hat:
++
+** \https://api.workloads.netapp.com
+** \https://ws.workloads.bluexp.netapp.com
+
+
+
+
+
+
+[[fix-a-configuration-issue]]
+== Ein Konfigurationsproblem beheben
+
+Behebung von Konfigurationsproblemen für ein Cloud Volumes ONTAP System oder für ausgewählte Volumes. Für die Behebung lassen sich eine oder mehrere Konfigurationen auswählen.
+
+Korrekturmaßnahmen können zu Ausfallzeiten von Instanzen oder Serviceunterbrechungen führen. Jede Empfehlung sollte sorgfältig geprüft werden, bevor ein Konfigurationsproblem behoben wird.
+
+.Schritte
+. Melden Sie sich bei der link:https://console.netapp.com/home["NetApp Console"^] an.
+. Die Auswahl erfolgt im Menü der NetApp Console über *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. Im Well-Architected-Dashboard steht für jede Konfiguration die Option *View and fix* zur Auswahl. Eine sorgfältige Prüfung der Empfehlung ist wichtig.
++
+Die Empfehlung erläutert bewährte Vorgehensweisen und potenzielle Fallstricke nicht optimierter Konfigurationen.
+
+. Ressourcen auswählen und dann *Fix*.
++
+Manche Korrekturen sind nur für bestimmte Konfigurationen verfügbar und können nicht immer auf mehrere Ressourcen angewendet werden. Beispielsweise können Sie die Konfiguration möglicherweise nur für ein einzelnes Volume korrigieren, nicht aber für mehrere Volumes.
+
+. Die Maßnahmen geben Aufschluss über die Folgen dieser Korrektur, wie etwa Instanz-Ausfallzeiten oder Serviceunterbrechungen.
+. *Fix* auswählen, wenn Workload Factory die empfohlenen Änderungen anwenden soll.
+
+
+.Ergebnis
+Workload Factory startet den Prozess zur Behebung des Problems.
+
+
+
+[[dismiss-a-configuration-analysis]]
+== Konfigurationsanalyse verwerfen
+
+Eine Konfigurationsanalyse für ein Cloud Volumes ONTAP System oder für ausgewählte Volumes kann gestoppt werden. Die Analyse kann bei Bedarf erneut gestartet werden.
+
+[role="tabbed-block"]
+====
+.Eine Konfigurationsanalyse für ein System ablehnen
+--
+.Schritte
+. Melden Sie sich bei der link:https://console.netapp.com/home["NetApp Console"^] an.
+. Die Auswahl erfolgt im Menü der NetApp Console über *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. Suchen Sie unter Configurations die Konfiguration, die nicht auf Ihre Umgebung zutrifft, und wählen Sie dann *Dismiss*.
+. Im Dialogfeld „Konfiguration verwerfen“ *Verwerfen* auswählen, um die Konfigurationsanalyse zu beenden.
+
+
+--
+.Eine Konfigurationsanalyse für ein Volume abbrechen
+--
+.Schritte
+. Melden Sie sich bei der link:https://console.netapp.com/home["NetApp Console"^] an.
+. Die Auswahl erfolgt im Menü der NetApp Console über *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. Unter „Konfigurationen“ können Sie die Konfiguration ermitteln, die für Ihre Ressourcen verworfen werden soll, und anschließend *View and fix* auswählen.
+. Auf der Konfigurationsseite die Ressource(n) auswählen, die aus der Konfigurationsanalyse entfernt werden sollen.
++
+** Für eine Ressource steht im Menü „Aktionen“ anschließend *Dismiss volume* zur Auswahl.
+** Für mehrere Ressourcen: Die Ressourcen auswählen und dann neben Bulk action auf *Dismiss* klicken.
+
+
+. *Verwerfen* auswählen, um die Analyse für die Konfiguration zu beenden.
+. Im Dialogfeld „Volumes verwerfen“ *Verwerfen* auswählen, um zu bestätigen.
+
+
+--
+====
+.Ergebnis
+Workload Factory stoppt die Konfigurationsanalyse für ausgewählte Konfigurationen.
+
+
+
+[[reactivate-a-dismissed-configuration-analysis]]
+== Eine verworfene Konfigurationsanalyse reaktivieren
+
+Eine verworfene Konfigurationsanalyse für ein Cloud Volumes ONTAP System kann jederzeit reaktiviert werden. Eine oder mehrere Konfigurationen können zur Reaktivierung ausgewählt werden.
+
+[role="tabbed-block"]
+====
+.Erneute Aktivierung einer Konfigurationsanalyse für Ihre Systeme
+--
+.Schritte
+. Melden Sie sich bei der link:https://console.netapp.com/home["NetApp Console"^] an.
+. Die Auswahl erfolgt im Menü der NetApp Console über *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. Wählen Sie *Verworfene Konfigurationen* aus.
+. Identifizieren Sie die Konfiguration(en), die Sie reaktivieren möchten, und wählen Sie *Reaktivieren* aus.
+
+
+--
+.Eine Konfigurationsanalyse für Ihre Ressourcen erneut aktivieren
+--
+.Schritte
+. Melden Sie sich bei der link:https://console.netapp.com/home["NetApp Console"^] an.
+. Die Auswahl erfolgt im Menü der NetApp Console über *Workloads* > *Well-architected* > *Cloud Volumes ONTAP for Azure*.
+. Wählen Sie *Verworfene Konfigurationen* aus.
+. Auf der Konfigurationsseite erfolgt die Auswahl der zu reaktivierenden Ressourcen.
++
+** Für eine Ressource erfolgt die Auswahl im Menü „Aktionen“ und anschließend über *Reaktivieren*.
+** Für mehrere Ressourcen: Die Ressourcen auswählen und dann neben Bulk action auf *Reaktivieren* klicken.
+
+
+
+
+--
+====
+.Ergebnis
+Workload Factory reaktiviert die Konfigurationsanalyse und führt jeden Tag eine neue Analyse durch.

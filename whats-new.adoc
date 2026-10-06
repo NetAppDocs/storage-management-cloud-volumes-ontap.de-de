@@ -137,7 +137,7 @@ Sie können auch eine oder mehrere Konfigurationen von der Analyse der optimalen
 
 Wenn Sie eine verworfene Konfiguration später wieder einbinden möchten, können Sie sie im Well-Architected Dashboard reaktivieren. Dadurch wird die Konfiguration in die Analyse zurückgeholt und es werden Empfehlungen und Korrekturen dafür bereitgestellt.
 
-* link:https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html["Konfigurationen für Cloud Volumes ONTAP in Microsoft Azure beheben, verwerfen und reaktivieren"^]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-improve-configurations-cvo.html["Konfigurationen für Cloud Volumes ONTAP in Microsoft Azure beheben, verwerfen und reaktivieren"^]
 
 
 
@@ -204,8 +204,8 @@ Das übersichtliche Dashboard zeigt die Gesamtzahl der analysierten Systeme an u
 
 
 .Weiterführende Links
-* https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html["Konfigurationsanalyse für Cloud Volumes ONTAP"^]
-* https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html["Gut strukturierte Cloud Volumes ONTAP Systemkonfigurationen implementieren"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-configuration-analysis-cvo.html["Konfigurationsanalyse für Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-improve-configurations-cvo.html["Cloud Volumes ONTAP Konfigurationen in Azure mit Workload Factory optimieren"^]
 
 
 
@@ -275,7 +275,9 @@ Mit dem *Quick create*-Assistenten kann Cloud Volumes ONTAP in Google Cloud sowo
 [[introducing-access-roles-for-cloud-volumes-ontap]]
 === Einführung von Zugriffsrollen für Cloud Volumes ONTAP
 
-NetApp führt Identity and Access Management (IAM)-Rollen für Cloud Volumes ONTAP ein, wodurch rollenbasierte Zugriffssteuerung (RBAC) für mehr Sicherheit und einfachere Compliance ermöglicht wird. Benutzer können sich weiterhin mit ihren bestehenden Anmeldeinformationen für Cloud Volumes ONTAP-Operationen an der NetApp Console anmelden. Die Authentifizierung wird nun jedoch über die Identitätsföderation geleitet, sodass der Konsolenadministrator eine detailliertere Kontrolle über diese Funktionen erhält. Jeder Benutzer muss eine der folgenden Rollen besitzen, um eine beliebige Operation in Cloud Volumes ONTAP auszuführen. Ohne eine Rolle können Benutzer keine Cloud Volumes ONTAP Instanzen anzeigen oder darauf zugreifen.
+NetApp führt IAM-Rollen für Cloud Volumes ONTAP ein und ermöglicht damit rollenbasierte Zugriffssteuerung (RBAC) für mehr Sicherheit und einfachere Compliance. Benutzer können sich weiterhin mit ihren bestehenden Anmeldeinformationen für Cloud Volumes ONTAP Vorgänge bei der NetApp Console anmelden. Die Authentifizierung wird nun jedoch über die Identitätsföderation geleitet, wodurch der Administrator der Console eine detailliertere Kontrolle über diese Funktionen erhält. Der Console Agent muss Version 4.9.0 oder höher ausführen, bevor Cloud Volumes ONTAP Rollen aktiviert werden.
+
+Jeder Benutzer muss eine der folgenden Rollen besitzen, um eine beliebige Operation in Cloud Volumes ONTAP auszuführen. Ohne eine Rolle können Benutzer keine Cloud Volumes ONTAP Instanzen anzeigen oder darauf zugreifen.
 
 * *Cloud Volumes ONTAP viewer*: Gewährt schreibgeschützten Zugriff auf die Bildschirme und Registerkarten von Cloud Volumes ONTAP. Bestimmte Bildschirme und Aktionsschaltflächen sind in dieser Rolle deaktiviert.
 * *Cloud Volumes ONTAP Operator*: Ermöglicht alltägliche Verwaltungsaufgaben, wie das Hinzufügen von Volumes, die Verwaltung von Speicher und die Konfiguration der Replikation.
@@ -287,13 +289,13 @@ Der Konsolenadministrator weist Cloud Volumes ONTAP Benutzern unter *Administrat
 Cloud Volumes ONTAP setzt rollenbasierte Zugriffssteuerung (RBAC) mithilfe eines lokalen Caches der Berechtigungen jedes Benutzers durch, der automatisch einmal pro Stunde aktualisiert wird. Wenn einem Benutzer eine neue Rolle zugewiesen wird oder seine bestehende Rolle geändert wird, kann es bis zu einer Stunde dauern, bis diese Änderung wirksam wird. Danach sind alle durch die Rollen erlaubten Workflows aktiviert.
 
 
-NOTE: Bei der erstmaligen Bereitstellung eines Console Agenten oder beim Upgrade eines bestehenden Console Agenten auf Console 4.9.0 oder höher werden in einem einmaligen Initialisierungsprozess automatisch Cloud Volumes ONTAP Rollen allen vorhandenen Benutzern in der Organisation zugewiesen. Dieser Vorgang kann bis zu 30 Minuten dauern. Nach Abschluss weist die Console den vorhandenen Benutzern die entsprechenden Rollen zu.
+NOTE: Bei der erstmaligen Bereitstellung eines Console Agenten oder dem Upgrade eines bestehenden Console Agenten auf Console 4.9.0 oder höher weist ein einmaliger Seeding-Prozess automatisch allen vorhandenen Benutzern im Unternehmen Cloud Volumes ONTAP Rollen zu. Dieser Vorgang kann bis zu 30 Minuten dauern. Nach Abschluss weist die Console den vorhandenen Benutzern die entsprechenden Rollen zu. Der Seeding-Prozess findet nur statt, wenn ein Agent ausgeführt wird.
 
-Cloud Volumes ONTAP Rollen gelten für Amazon Web Service (AWS), Microsoft Azure (Azure) und Google Cloud Umgebungen.
+Cloud Volumes ONTAP Rollen gelten für Amazon Web Service (AWS), Microsoft Azure (Azure) und Google Cloud-Umgebungen. Die Rollen gelten nicht für private und eingeschränkte Deployment-Modi.
 
 .Weiterführende Links
-* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console-Zugriffsrollen"^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["Cloud Volumes ONTAP Zugriffsrollen in der NetApp Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html["Rollenbasierter Zugriff für Cloud Volumes ONTAP in der NetApp Console einrichten"^]
 
 
 

@@ -21,7 +21,7 @@ NetApp empfiehlt die kapazitätsbasierte Lizenzierung für alle neuen Implementi
 
 NOTE: PAYGO-Abonnements (Pay-as-you-go) vom Marktplatz Ihres Cloud-Anbieters sind für Private-Mode-Bereitstellungen nicht verfügbar. Im Private Mode stellt NetApp BYOL-Lizenzen direkt bereit. Knotenbasierte Lizenzen sind nur für bestehende Private-Mode-Bereitstellungen verfügbar und können nicht neu bereitgestellt werden. NetApp hat den Kauf, die Verlängerung und die Erneuerung knotenbasierter Lizenzen im Private Mode seit dem 25. Juni 2025 eingeschränkt. Bei einer bestehenden knotenbasierten Lizenz ist eine Umstellung auf kapazitätsbasierte Lizenzierung erforderlich.
 
-Für neue Bereitstellungen im privaten Modus sollte stattdessen die kapazitätsbasierte Lizenzierung verwendet werden. Siehe  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/task-deploying-otc-aws.html#deploy-cloud-volumes-ontap-in-private-mode["Cloud Volumes ONTAP im privaten Modus bereitstellen"^].
+Für neue Bereitstellungen im privaten Modus sollte stattdessen die kapazitätsbasierte Lizenzierung verwendet werden. Siehe https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-aws.html#deploy-cloud-volumes-ontap-in-private-mode["Cloud Volumes ONTAP im privaten Modus bereitstellen"^].
 
 
 
