@@ -2,7 +2,6 @@
 :allow-uri-read: 
 
 
-[role="lead"]
 Cloud Volumes ONTAP kann in Amazon Web Services (AWS), Microsoft Azure und Google Cloud mit  `Quick create` für eine schnellere Bereitstellung sowohl in Einzelknoten- als auch in Hochverfügbarkeitskonfigurationen (HA) bereitgestellt werden. Dieser vereinfachte Prozess reduziert die Bereitstellungsschritte im Vergleich zur fortschrittlichen Methode, indem Standardwerte automatisch auf einer einzigen Seite festgelegt und die Navigation minimiert wird.
 
 .Bevor Sie beginnen
