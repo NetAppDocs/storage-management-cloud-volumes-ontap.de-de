@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: task-azure-prevent-freeze.html 
+keywords: Azure, maintenance event, HA, takeover, giveback, freeze, disruption 
+summary: Zur Vermeidung von Unterbrechungen während der Azure-Wartung kann das automatische Takeover und Giveback für ein Cloud Volumes ONTAP HA-Paar unterdrückt werden. 
+---
+= Vermeidung von Unterbrechungen während der Azure-Wartung für Cloud Volumes ONTAP HA-Paare
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP HA-Paare können so konfiguriert werden, dass automatisches Takeover und Giveback während geplanter Azure-Wartungsarbeiten unterdrückt werden. Diese optionale Funktion ist mit Cloud Volumes ONTAP 9.19.1 und höher verfügbar und standardmäßig deaktiviert.
+
+
+NOTE: Diese Funktion ist als öffentliche Vorschau mit Cloud Volumes ONTAP 9.19.1 verfügbar.
+
+Microsoft Azure kann eine VM während geplanter Wartungsarbeiten kurzzeitig anhalten. In einer Cloud Volumes ONTAP HA Konfiguration könnte ONTAP die Unterbrechung als Knotenausfall interpretieren und Storage-Vorgänge auf den Partnerknoten verlagern, gefolgt von der automatischen Rückgabe nach Wiederaufnahme der angehaltenen VM (Übernahme und Rückgabe). Dies kann aktive Clientverbindungen unterbrechen. Bei Aktivierung dieser Funktion arbeitet das HA-Paar auch bei einer durch geplante Azure-Wartung verursachten Unterbrechung weiter, ohne automatisch eine Übernahme und Rückgabe einzuleiten.
+
+.Informationen zu diesem Vorgang
+* Die Client-E/A kann während eines Freeze einer Azure VM ins Stocken geraten. ONTAP leitet kein automatisches Takeover ein, sodass die Client-E/A auf dem betroffenen Knoten verbleibt, anstatt zum HA-Partner zu wechseln. Die E/A kann ins Stocken geraten, bis der Knoten den Betrieb wieder aufnimmt.
+* Die Dauer einer Unterbrechung hängt vom Einfrieren der Azure VM ab. Ein längeres Einfrieren kann zu einer längeren E/A-Unterbrechung führen.
+* Der normale HA-Schutz bleibt bei anderen Fehlerbedingungen aktiv. Die Funktion unterdrückt takeover und giveback nur bei einem Azure Scheduled Maintenance Freeze. Andere Bedingungen, die normalerweise takeover auslösen, wie z. B. ein Knotenausfall oder ein Panic, lösen dies weiterhin aus.
+* Diese Funktion gilt für beide Knoten eines HA-Paares. Das Verhalten bei Wartungsereignissen wird auf beiden Knoten konfiguriert und kann nicht nur auf einem Knoten aktiviert werden.
+* Diese Funktion bleibt auch nach Neustarts erhalten und ist so lange aktiv, bis Sie sie deaktivieren. Durch die Deaktivierung wird das standardmäßige Verhalten für Takeover und Giveback bei geplanten Wartungsarbeiten wiederhergestellt.
+
+
+.Bevor Sie beginnen
+* Ihr Cloud Volumes ONTAP System muss mit 9.19.1 oder höher laufen.
+* Sie müssen über Administratorzugriff für Cloud Volumes ONTAP verfügen, um dieses Verfahren abzuschließen.
+* Zu prüfen ist, ob Ihre Workloads vorübergehende E/A-Blockierungen während eines geplanten Azure-Wartungsstillstands tolerieren können und ob die Fortsetzung während des Stillstands gegenüber der standardmäßigen Reaktion mit Takeover und Giveback vorzuziehen ist.
+
+
+
+
+[[prevent-automatic-takeover-and-giveback-during-azure-scheduled-maintenance]]
+== Verhindern von automatischem Takeover und Giveback während geplanter Azure Wartungsarbeiten
+
+.Schritte
+. Die System-ID für das Azure HA-Paar kann identifiziert werden. Informationen zum Identifizieren von Ressourcen und zum Durchführen von API-Aufrufen finden Sie unter https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie["Ihr erster API-Aufruf"^].
+. Eine `PUT` Anfrage an den folgenden Endpunkt, wobei `{id}` durch die System-ID ersetzt wird:
++
+`PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`
+
++
+Im Anfragetext wird  `enabled` auf  `true` gesetzt:
+
++
+[source, json]
+----
+{
+  "enabled": true
+}
+----
+
+
+.Ergebnis
+Eine erfolgreiche Anfrage gibt HTTP 202 mit einem leeren Textkörper zurück.
+
+
+IMPORTANT: Die API aktualisiert die Knoten des HA-Paars nacheinander. Falls eine Anfrage vor Abschluss des Vorgangs fehlschlägt, ist vor einer erneuten Anfrage zu prüfen, ob die Einstellungen auf beiden Knoten identisch sind, da die Knoten möglicherweise unterschiedliche Einstellungen aufweisen.
+
+
+
+[[disable-the-feature-to-restore-default-behavior]]
+== Die Deaktivierung der Funktion stellt das Standardverhalten wieder her
+
+Das Standardverhalten für Takeover und Giveback während geplanter Azure-Wartungen lässt sich durch Deaktivieren der Funktion wiederherstellen.
+
+.Schritte
+. Eine  `PUT`Anfrage an denselben Endpunkt senden und  `{id}`durch die System-ID ersetzen:
++
+`PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`
+
++
+Im Anfragetext erfolgt die Festlegung von  `enabled` auf  `false`:
+
++
+[source, json]
+----
+{
+  "enabled": false
+}
+----
+

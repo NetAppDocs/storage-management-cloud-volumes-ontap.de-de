@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task-enable-cluster-encryption.html 
+keywords: Backend cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS, backend encryption 
+summary: Das Aktivieren der Backend Cluster-Netzwerkverschlüsselung schützt den Cloud Volumes ONTAP Cluster-Datenverkehr, der nicht bereits durch ONTAP IPsec geschützt ist. 
+---
+= Backend-Clusternetzwerkverschlüsselung für Cloud Volumes ONTAP in Azure und Google Cloud aktivieren
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Für Cloud Volumes ONTAP 9.19.1 und höher sorgt die Aktivierung der Backend-Cluster-Netzwerkverschlüsselung für den Schutz des internen Ost-West-Datenverkehrs in Hochverfügbarkeitskonfigurationen (HA) in Azure und Google Cloud. Diese Einstellung schützt den Datenverkehr während der Übertragung; Volumendaten im Ruhezustand werden dadurch nicht verschlüsselt.
+
+ONTAP nutzt Cluster Session Management (CSM) über Kernel TLS (kTLS) und Software-IPsec, um den Datenverkehr in Backend-Netzwerken für HA-Konfigurationen zu sichern. Cloud Volumes ONTAP 9.19.1 und spätere Versionen erweitern diesen Schutz auf den Backend-Cluster-Datenverkehr.
+
+
+NOTE: Die Aktivierung der Clusternetzwerkverschlüsselung kann sich auf die Performance Ihres Clusters auswirken. Vor der Aktivierung dieser Funktion ist Vorsicht geboten, und es sollte überprüft werden, ob Ihre Umgebung den zusätzlichen Aufwand bewältigen kann.
+
+.Bevor Sie beginnen
+* Sie müssen Cloud Volumes ONTAP 9.19.1 oder höher verwenden.
+* Sie benötigen Cluster-Administratorrechte.
+* Sie müssen sicherstellen, dass Ihr Cloud Volumes ONTAP Deployment eine unterstützte Konfiguration verwendet.
+
+
+.Schritte
+. Die Verbindung zum Cloud Volumes ONTAP Cluster erfolgt über die ONTAP CLI.
+. Es ist zu überprüfen, ob die Konfiguration für die Cluster-Netzwerkverschlüsselung korrekt ist:
++
+[source, cli]
+----
+security cluster-network show
+    Enabled: false
+    Mode: tls
+    Status: READY
+----
+. Aktivieren der Cluster-Netzwerkverschlüsselung im TLS- und IPsec-Modus:
++
+[source, cli]
+----
+security cluster-network modify -enabled true -mode tls_ipsec
+----
+. Es ist zu prüfen, ob die Netzwerkverschlüsselung des Clusters aktiviert ist:
++
+[source, cli]
+----
+security cluster-network show
+    Enabled: true
+    Mode: tls_ipsec
+    Status: READY
+----
++
+
+NOTE: Wenn Sie den `tls_ipsec` Modus aktivieren, verwendet der CSM-Datenverkehr TLS, während der übrige Cluster-Netzwerkverkehr IPsec nutzt. ONTAP generiert und verwaltet die erforderlichen Zertifikate und Backend-IPsec-Richtlinien.
+
+
+
+.Ähnliche Informationen
+* https://docs.netapp.com/us-en/ontap/networking/configure-backend-encryption.html["ONTAP Backend Cluster-Netzwerkverschlüsselung konfigurieren"^]
+* https://docs.netapp.com/us-en/ontap-cli/security-cluster-network-show.html["security cluster-network show"^]
+* https://docs.netapp.com/us-en/ontap-cli/security-cluster-network-modify.html["security cluster-network modify"^]
+

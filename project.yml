@@ -201,6 +201,8 @@ sidebar:
         url: "/task-protecting-ransomware.html"
       - title: Erstellen Sie manipulationssichere Snapshot-Kopien für den WORM-Speicher
         url: "/reference-worm-snaplock.html"
+      - title: Aktivierung der Backend-Cluster-Netzwerkverschlüsselung
+        url: "/task-enable-cluster-encryption.html"
   - title: Cloud-Infrastruktur-Management
     entries:
     - title: AWS -Verwaltung
@@ -227,6 +229,9 @@ sidebar:
         url: "/reference-limits-azure.html"
       - title: Informationen zu HA Paaren in Azure
         url: "/concept-ha-azure.html"
+      - title: Vermeidung von Unterbrechungen während der Azure Wartung von Cloud
+          Volumes ONTAP HA
+        url: "/task-azure-prevent-freeze.html"
       - title: Verwalten von Schlüsseln mit Azure Key Vault
         url: "/task-azure-key-vault.html"
       - title: Ändern des Azure-VM-Typs
@@ -249,10 +254,6 @@ sidebar:
           url: "/concept-configuration-analysis-cvo.html"
         - title: Verbesserung von Cloud Volumes ONTAP Konfigurationen in Azure
           url: "/task-improve-configurations-cvo.html"
-      - title: Konfigurationsanalyse für Cloud Volumes ONTAP in Azure
-        url: "/concept-configuration-analysis-cvo.html"
-      - title: Verbesserung von Cloud Volumes ONTAP Konfigurationen in Azure
-        url: "/task-improve-configurations-cvo.html"
     - title: Google Cloud-Verwaltung
       entries:
       - title: Unterstützte Konfigurationen in Google Cloud

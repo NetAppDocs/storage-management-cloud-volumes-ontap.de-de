@@ -160,7 +160,7 @@ Bei einem Keystone -Abonnement handelt es sich um einen Abonnementdienst mit nut
 .Schritte
 . Wenn Sie noch kein Abonnement haben, https://www.netapp.com/forms/keystone-sales-contact/["NetApp kontaktieren"^]
 . mailto:ng-keystone-success@netapp.com [Kontaktieren Sie NetApp], um Ihr Konsolenbenutzerkonto mit einem oder mehreren Keystone Abonnements zu autorisieren.
-. Nachdem NetApp Ihr ​​Konto autorisiert hat,link:task-manage-keystone.html#link-a-subscription["Verknüpfen Sie Ihre Abonnements zur Verwendung mit Cloud Volumes ONTAP"] .
+. Nachdem NetApp Ihr Konto autorisiert hat, link:task-manage-keystone.html["Verknüpfen Sie Ihre Abonnements zur Verwendung mit Cloud Volumes ONTAP"].
 . Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
 .. Wählen Sie die Abrechnungsmethode „Keystone -Abonnement“ aus, wenn Sie zur Auswahl einer Abrechnungsmethode aufgefordert werden.

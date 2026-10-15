@@ -79,7 +79,7 @@ NOTE: NetApp hat den Kauf, die Erweiterung und die Erneuerung von BYOL-Lizenzen 
 Die Konsole fragt automatisch den Lizenzierungsdienst von NetApp ab, um Details zu den Lizenzen abzurufen, die mit Ihrem NetApp Support Site-Konto verknüpft sind.  Wenn keine Fehler auftreten, fügt die Konsole die Lizenzen automatisch zur Konsole hinzu.
 
 +
-Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes ONTAP verwenden können. Falls erforderlich, kann link:task-manage-capacity-licenses.html#how-licenses-are-added-to-netapp-console["Fügen Sie die Lizenz manuell zur Konsole hinzu"].
+Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes ONTAP verwenden können. Falls erforderlich, kann link:task-manage-capacity-licenses.html["Fügen Sie die Lizenz manuell zur Konsole hinzu"].
 
 . Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
@@ -169,7 +169,7 @@ Bei einem Keystone -Abonnement handelt es sich um einen Abonnementdienst mit nut
 .Schritte
 . Wenn Sie noch kein Abonnement haben, https://www.netapp.com/forms/keystone-sales-contact/["NetApp kontaktieren"^]
 . mailto:ng-keystone-success@netapp.com [Kontaktieren Sie NetApp], um Ihr Benutzerkonto in der Konsole mit einem oder mehreren Keystone Abonnements zu autorisieren.
-. Nachdem NetApp Ihr ​​Konto autorisiert hat,link:task-manage-keystone.html#link-a-subscription["Verknüpfen Sie Ihre Abonnements zur Verwendung mit Cloud Volumes ONTAP"] .
+. Nachdem NetApp Ihr Konto autorisiert hat, link:task-manage-keystone.html["Verknüpfen Sie Ihre Abonnements zur Verwendung mit Cloud Volumes ONTAP"].
 . Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
 .. Wählen Sie die Abrechnungsmethode „Keystone -Abonnement“ aus, wenn Sie zur Auswahl einer Abrechnungsmethode aufgefordert werden.
