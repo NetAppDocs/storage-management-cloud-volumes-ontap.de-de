@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-saz-feature.html 
 keywords: Microsoft Azure feature, HA in SAZ, single availability zone, Azure feature, Virtual Machine Scale Sets in Flexible mode, VMOrchestratorZonalMultiFD, VM Orchestrator, Zonal, MultiFD, VMOrchestratorZonalMultiFD feature 
-summary: Aktivieren Sie diese Microsoft Azure-Funktion, um HA in SAZ bereitzustellen. 
+summary: Für das Deployment von Cloud Volumes ONTAP HA Knoten in separaten Fehlerdomänen einer einzelnen Verfügbarkeitszone muss in Azure die Funktion VMOrchestratorZonalMultiFD aktiviert sein. 
 ---
 = Aktivieren Sie VMOrchestratorZonalMultiFD für Cloud Volumes ONTAP in Azure
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Aktivieren Sie diese Microsoft Azure-Funktion, um HA in SAZ bereitzuste
 
 
 [role="lead"]
-Für die Bereitstellung von VM-Instanzen in lokal redundanten Speicher-Einzelverfügbarkeitszonen (Local-Redundant Storage, LRS) sollten Sie die Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` Funktion für Ihre Abonnements.  Im Hochverfügbarkeitsmodus (HA) erleichtert diese Funktion die Bereitstellung von Knoten in separaten Fehlerdomänen in derselben Verfügbarkeitszone.
+Für das Einsetzen von Cloud Volumes ONTAP VM-Instanzen in Azure mit lokal redundantem Storage (LRS) in einzelnen Verfügbarkeitszonen (AZ) ist die Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD`Funktion für Ihre Abonnements zu aktivieren. Im Hochverfügbarkeitsmodus (HA) ermöglicht diese Funktion das Einsetzen von Knoten in separaten Fehlerdomänen innerhalb derselben Verfügbarkeitszone.
 
 Wenn Sie diese Funktion nicht aktivieren, erfolgt keine zonale Bereitstellung und die vorherige nicht zonale LRS-Bereitstellung wird wirksam.
 
-Informationen zur VM-Bereitstellung in einer einzelnen Verfügbarkeitszone finden Sie unterlink:concept-ha-azure.html["Hochverfügbarkeitspaare in Azure"] .
+Informationen zum VM Deployment in einer einzelnen Verfügbarkeitszone finden Sie unter link:concept-ha-azure.html["Hochverfügbarkeitspaare in Azure"].
 
 Führen Sie diese Schritte als Benutzer mit „Eigentümer“-Berechtigungen aus:
 
@@ -31,7 +31,7 @@ Führen Sie diese Schritte als Benutzer mit „Eigentümer“-Berechtigungen aus
 az account set -s _<Azure_subscription_name_or_ID>_ az feature register --name VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
 
 ====
-. Überprüfen Sie den Registrierungsstatus und das Ausgabebeispiel:
+. Der Registrierungsstatus kann mit diesem Befehl überprüft werden; die Ausgabe entspricht in etwa dem folgenden Beispiel:
 +
 []
 ====

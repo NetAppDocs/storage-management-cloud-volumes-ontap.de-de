@@ -20,7 +20,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html["C
 
 Ab Cloud Volumes ONTAP 9.19.1 GA ist die Azure-Verschlüsselung auf Hostebene standardmäßig für neue Azure-Einzelknoten- und Hochverfügbarkeits-Deployments (HA) aktiviert, die die Voraussetzungen erfüllen. Diese Funktion verschlüsselt Daten auf dem physischen Server, auf dem die VM ausgeführt wird, einschließlich des ephemeren Datenträgers und der zugehörigen Caches auf Hostebene, während die Daten auf den Host geschrieben und von ihm gelesen werden.
 
-Vor dem Einsatz von Cloud Volumes ONTAP in Azure müssen die folgenden Voraussetzungen erfüllt sein:
+Vor dem Deployment von Cloud Volumes ONTAP in Azure muss Ihre Umgebung die folgenden Voraussetzungen erfüllen:
 
 * Die `EncryptionAtHost`Funktion ist für Ihr Azure-Abonnement registriert. Informationen hierzu finden Sie unter https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli["Microsoft-Dokumentation: Aktivierung der Verschlüsselung auf dem Host"^].
 * Der von Ihnen ausgewählte VM-Instanz Typ unterstützt die Verschlüsselung auf dem Host in Ihrer Azure-Region. Weitere Informationen finden Sie unter https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes["Microsoft Dokumentation: Unterstützte VM-Größen ermitteln"^].

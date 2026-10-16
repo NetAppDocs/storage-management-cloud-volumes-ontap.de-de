@@ -82,7 +82,7 @@ Die Konsole erstellt das Speicherkonto mit den folgenden Einstellungen:
 * Leistung: Standard
 * Redundanz: Entsprechend der Cloud Volume ONTAP -Bereitstellung
 +
-** Einzelne Verfügbarkeitszone: Lokal redundanter Speicher (LRS)
+** Einzelne Verfügbarkeitszone: lokal redundanter Storage (LRS)
 ** Mehrere Verfügbarkeitszonen: Zonenredundanter Speicher (ZRS)
 
 

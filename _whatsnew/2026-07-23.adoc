@@ -10,7 +10,7 @@
 Sie können Cloud Volumes ONTAP 9.12.1 GA und höher jetzt in der Region Chile Central (chilecentral) in Azure bereitstellen. Die folgenden Bereitstellungstypen werden unterstützt:
 
 * Einzelknoten
-* Hochverfügbarkeit in einer einzelnen Verfügbarkeitszone mit lokal redundantem Speicher (LRS)
+* Hochverfügbarkeit in einer einzigen Verfügbarkeitszone unter Verwendung von lokal redundantem Storage (LRS)
 * Hochverfügbarkeit in mehreren Verfügbarkeitszonen mittels zonenredundantem Speicher (ZRS)
 
 

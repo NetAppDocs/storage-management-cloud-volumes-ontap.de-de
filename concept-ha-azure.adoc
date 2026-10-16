@@ -82,7 +82,7 @@ Die zonale Bereitstellung verwendet Premium SSD v2 Managed Disks, wenn die folge
 
 NOTE: Wenn Sie Premium SSD Managed Disks für eine Umgebung auswählen, die die oben genannten Kriterien erfüllt, stellt die Konsole automatisch Premium SSD v2 Managed Disks bereit. Ein Wechsel zu Premium SSD v1 Managed Disks ist nicht möglich.
 
-Festplatten:: Kundendaten werden auf lokal redundanten Speichermedien (LRS) gespeichert. Jeder Knoten hat Zugriff auf den Speicher des anderen Knotens. Zusätzlicher Speicherplatz ist außerdem erforderlich für link:reference-configs-azure.html#azure-ha-pair["Boot-, Root-, Partner-Root-, Core- und NVRAM -Daten"].
+Festplatten:: Kundendaten befinden sich auf verwalteten Datenträgern mit lokal redundantem Storage (LRS). Jeder Knoten hat Zugriff auf den Storage des anderen Knotens. Zusätzlicher Storage wird außerdem für link:reference-configs-azure.html#azure-ha-pair["Boot-, Root-, Partner-Root-, Core- und NVRAM -Daten"] benötigt.
 Speicherkonten:: Speicherkonten werden für Bereitstellungen auf Basis verwalteter Datenträger verwendet, um Diagnoseprotokolle und die Einstufung in Blob-Speicher zu verarbeiten.
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-set-up-licensing-google.html 
 keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, digital wallet 
-summary: Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie für Cloud Volumes ONTAP verwenden möchten, sind einige Schritte erforderlich, bevor Sie diese Lizenzierungsoption bei der Bereitstellung eines neuen Systems auswählen können. 
+summary: Vor der Erstellung eines Systems ist in Google Cloud die Freemium-, kapazitätsbasierte oder Keystone Subscription Lizenzierung für Cloud Volumes ONTAP einzurichten. 
 ---
 = Einrichten der Lizenzierung für Cloud Volumes ONTAP in Google Cloud
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie für Clou
 
 
 [role="lead"]
-Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie mit Cloud Volumes ONTAP verwenden möchten, sind einige Schritte erforderlich, bevor Sie diese Lizenzierungsoption beim Erstellen eines neuen Systems auswählen können.
+Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie mit Cloud Volumes ONTAP in Google Cloud verwenden, sind vor der Auswahl dieser Option beim Erstellen eines Systems noch einige Einrichtungsschritte erforderlich.
 
 
 
@@ -29,7 +29,7 @@ Wählen Sie das Freemium-Angebot, um Cloud Volumes ONTAP mit bis zu 500 GiB bere
 +
 .. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* auszuwählen; anschließend sind den Anweisungen zu folgen, um das Pay-as-you-go-Angebot im Google Cloud Marketplace zu abonnieren.
 +
-Ihnen werden keine Kosten über das Marktplatz-Abonnement berechnet, es sei denn, Sie überschreiten 500 GiB bereitgestellte Kapazität. Zu diesem Zeitpunkt wird das System automatisch auf daslink:concept-licensing.html#packages["Essentials-Paket"] .
+Über das Marketplace-Abonnement fallen keine Gebühren an, solange Sie nicht mehr als 500 GiB an bereitgestellter Kapazität nutzen. In diesem Fall erfolgt automatisch die Umstellung des Systems auf die link:concept-licensing.html#packages["Essentials-Paket"].
 
 .. Nachdem Sie zur Konsole zurückgekehrt sind, wählen Sie *Freemium* aus, wenn Sie die Seite mit den Abrechnungsmethoden erreichen.
 +
@@ -46,7 +46,7 @@ link:task-deploying-gcp.html["Sehen Sie sich die Schritt-für-Schritt-Anleitung 
 [[capacity-based-license]]
 == Kapazitätsbasierte Lizenz
 
-Mit der kapazitätsbasierten Lizenzierung können Sie für Cloud Volumes ONTAP pro TiB Kapazität bezahlen. Die kapazitätsbasierte Lizenzierung ist in Form eines _Pakets_ verfügbar: dem Essentials- oder Professional-Paket.
+Mit kapazitätsbasierter Lizenzierung zahlen Sie für Cloud Volumes ONTAP pro TiB Kapazität. Die kapazitätsbasierte Lizenzierung ist als Paket erhältlich: Essentials oder Professional.
 
 Die Pakete Essentials und Professional sind mit folgenden Verbrauchsmodellen bzw. Kaufoptionen erhältlich:
 
@@ -57,7 +57,7 @@ Die Pakete Essentials und Professional sind mit folgenden Verbrauchsmodellen bzw
 
 link:concept-licensing.html#capacity-based-licensing["Erfahren Sie mehr über kapazitätsbasierte Lizenzierung"] .
 
-In den folgenden Abschnitten wird beschrieben, wie Sie mit jedem dieser Verbrauchsmodelle beginnen.
+Für den Einstieg in die einzelnen Konsummodelle sind die Schritte in den folgenden Abschnitten beschrieben.
 
 
 
@@ -82,7 +82,7 @@ Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes
 +
 .. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* auszuwählen; anschließend sind den Anweisungen zu folgen, um das Pay-as-you-go-Angebot im Google Cloud Marketplace zu abonnieren.
 +
-Die von Ihnen bei NetApp erworbene Lizenz wird immer zuerst in Rechnung gestellt. Wenn Sie jedoch Ihre lizenzierte Kapazität überschreiten oder die Laufzeit Ihrer Lizenz abläuft, wird Ihnen der Stundensatz auf dem Marktplatz in Rechnung gestellt.
+Die Lizenz, die Sie von NetApp erworben haben, wird immer zuerst berechnet, aber Ihnen wird der stündliche Marktplatzpreis berechnet, wenn Sie Ihre lizenzierte Kapazität überschreiten oder Ihre Lizenzlaufzeit abläuft.
 
 .. Nachdem Sie zur Konsole zurückgekehrt sind, wählen Sie auf der Seite mit den Abrechnungsmethoden ein kapazitätsbasiertes Paket aus.
 +
@@ -159,7 +159,7 @@ Bei einem Keystone -Abonnement handelt es sich um einen Abonnementdienst mit nut
 
 .Schritte
 . Wenn Sie noch kein Abonnement haben, https://www.netapp.com/forms/keystone-sales-contact/["NetApp kontaktieren"^]
-. mailto:ng-keystone-success@netapp.com [Kontaktieren Sie NetApp], um Ihr Konsolenbenutzerkonto mit einem oder mehreren Keystone Abonnements zu autorisieren.
+. mailto:ng-keystone-success@netapp.com[Kontakt mit NetApp] zur Autorisierung Ihres Console Benutzerkontos mit einem oder mehreren Keystone Abonnements.
 . Nachdem NetApp Ihr Konto autorisiert hat, link:task-manage-keystone.html["Verknüpfen Sie Ihre Abonnements zur Verwendung mit Cloud Volumes ONTAP"].
 . Auf der Seite *Systeme* wählen Sie *System hinzufügen* aus und folgen den Schritten.
 +
@@ -179,7 +179,7 @@ link:task-deploying-gcp.html["Sehen Sie sich die Schritt-für-Schritt-Anleitung 
 [[node-based-license]]
 == Knotenbasierte Lizenz
 
-Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz kann von NetApp (BYOL) erworben werden und ist nur in bestimmten Fällen für Lizenzverlängerungen verfügbar. Weitere Informationen finden Sie unter:
+Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz konnte von NetApp (BYOL) erworben werden. Knotenbasierte Lizenzen sind jetzt nur noch in bestimmten Fällen zur Verlängerung verfügbar. Informationen hierzu:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["Ende der Verfügbarkeit knotenbasierter Lizenzen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]

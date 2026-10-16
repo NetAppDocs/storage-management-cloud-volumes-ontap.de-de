@@ -19,13 +19,13 @@ Cloud Volumes ONTAP HA-Paare können so konfiguriert werden, dass automatisches 
 
 NOTE: Diese Funktion ist als öffentliche Vorschau mit Cloud Volumes ONTAP 9.19.1 verfügbar.
 
-Microsoft Azure kann eine VM während geplanter Wartungsarbeiten kurzzeitig anhalten. In einer Cloud Volumes ONTAP HA Konfiguration könnte ONTAP die Unterbrechung als Knotenausfall interpretieren und Storage-Vorgänge auf den Partnerknoten verlagern, gefolgt von der automatischen Rückgabe nach Wiederaufnahme der angehaltenen VM (Übernahme und Rückgabe). Dies kann aktive Clientverbindungen unterbrechen. Bei Aktivierung dieser Funktion arbeitet das HA-Paar auch bei einer durch geplante Azure-Wartung verursachten Unterbrechung weiter, ohne automatisch eine Übernahme und Rückgabe einzuleiten.
+Microsoft Azure kann eine VM während geplanter Wartungsarbeiten kurzzeitig anhalten. In einer Cloud Volumes ONTAP HA Konfiguration kann ONTAP diese Unterbrechung möglicherweise als Knotenausfall behandeln und Storage-Vorgänge auf den Partnerknoten verlagern (takeover). ONTAP gibt die Vorgänge dann automatisch zurück, wenn die angehaltene VM den Betrieb wieder aufnimmt (giveback). Dieses Verhalten kann aktive Clientverbindungen unterbrechen. Wenn Sie diese Funktion aktivieren, arbeitet das HA-Paar auch bei einem durch geplante Azure-Wartung verursachten Stillstand weiter, ohne takeover und giveback automatisch zu initiieren.
 
 .Informationen zu diesem Vorgang
 * Die Client-E/A kann während eines Freeze einer Azure VM ins Stocken geraten. ONTAP leitet kein automatisches Takeover ein, sodass die Client-E/A auf dem betroffenen Knoten verbleibt, anstatt zum HA-Partner zu wechseln. Die E/A kann ins Stocken geraten, bis der Knoten den Betrieb wieder aufnimmt.
 * Die Dauer einer Unterbrechung hängt vom Einfrieren der Azure VM ab. Ein längeres Einfrieren kann zu einer längeren E/A-Unterbrechung führen.
-* Der normale HA-Schutz bleibt bei anderen Fehlerbedingungen aktiv. Die Funktion unterdrückt takeover und giveback nur bei einem Azure Scheduled Maintenance Freeze. Andere Bedingungen, die normalerweise takeover auslösen, wie z. B. ein Knotenausfall oder ein Panic, lösen dies weiterhin aus.
-* Diese Funktion gilt für beide Knoten eines HA-Paares. Das Verhalten bei Wartungsereignissen wird auf beiden Knoten konfiguriert und kann nicht nur auf einem Knoten aktiviert werden.
+* Der normale HA-Schutz bleibt auch bei anderen Fehlerzuständen aktiv. Die Funktion unterdrückt Übernahme und Rückgabe nur während geplanter Azure-Wartungssperren. Andere Zustände, die normalerweise eine Übernahme auslösen, wie z. B. ein Knotenausfall oder ein Systemabsturz, tun dies weiterhin.
+* Diese Funktion gilt für beide Knoten eines HA-Paares. Das Verhalten bei Wartungsereignissen wird auf beiden Knoten konfiguriert und kann nicht nur für einen Knoten aktiviert werden.
 * Diese Funktion bleibt auch nach Neustarts erhalten und ist so lange aktiv, bis Sie sie deaktivieren. Durch die Deaktivierung wird das standardmäßige Verhalten für Takeover und Giveback bei geplanten Wartungsarbeiten wiederhergestellt.
 
 
