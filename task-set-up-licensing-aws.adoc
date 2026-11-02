@@ -14,7 +14,7 @@ summary: Vor dem Deployment eines Systems in AWS ist das Einrichten kapazitätsb
 
 
 [role="lead"]
-Voraussetzung für die Auswahl beim Erstellen eines neuen Systems ist die abgeschlossene Einrichtung Ihrer gewählten Cloud Volumes ONTAP Lizenzierungsoption in AWS, z. B. eines kapazitätsbasierten Pakets, von Freemium oder von Keystone Subscription.
+Nachdem Sie sich für eine Lizenzierungsoption für Cloud Volumes ONTAP in AWS entschieden haben, sind einige Einrichtungsschritte erforderlich, damit Sie diese Option beim Erstellen eines neuen Systems auswählen können.
 
 
 
@@ -59,7 +59,7 @@ Die Pakete Essentials und Professional sind mit folgenden Verbrauchsmodellen bzw
 
 link:concept-licensing.html["Erfahren Sie mehr über kapazitätsbasierte Lizenzierung"] .
 
-Zum Einstieg sind die Schritte für das von Ihnen gewählte Verbrauchsmodell zu befolgen.
+Der Einstieg erfolgt anhand der Schritte für das Verbrauchsmodell, das Sie verwenden möchten.
 
 
 
@@ -83,7 +83,7 @@ Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes
 +
 .. Auf der Seite *Details und Anmeldeinformationen* wählen Sie *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* aus und folgen dann den Anweisungen, um das Pay-as-you-go-Angebot im AWS Marketplace zu abonnieren.
 +
-Die Lizenz, die Sie von NetApp erworben haben, wird immer zuerst berechnet, aber Ihnen wird der Stundensatz im Marketplace in Rechnung gestellt, wenn Sie Ihre lizenzierte Kapazität überschreiten oder die Laufzeit Ihrer Lizenz abläuft.
+Die Lizenz, die Sie von NetApp erworben haben, wird immer zuerst berechnet, aber falls Sie Ihre lizenzierte Kapazität überschreiten oder Ihre Lizenzlaufzeit abläuft, wird der stündliche Marketplace-Satz berechnet.
 
 +
 image:screenshot-aws-paygo-subscription.png["Ein Screenshot der PAYGO-Abonnementoption beim Erstellen eines Cloud Volumes ONTAP Systems."]
@@ -211,7 +211,7 @@ link:task-deploying-otc-aws.html["Sehen Sie sich die Schritt-für-Schritt-Anleit
 [[node-based-license]]
 == Knotenbasierte Lizenz
 
-Eine knotenbasierte Lizenz ist die vorherige Lizenzgeneration für Cloud Volumes ONTAP. Sie konnten eine knotenbasierte Lizenz von NetApp (BYOL) erwerben und sie nur in bestimmten Fällen verlängern. Informationen hierzu:
+Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz konnte von NetApp (BYOL) erworben werden. Knotenbasierte Lizenzen können nur in bestimmten Fällen verlängert werden. Informationen hierzu:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["Ende der Verfügbarkeit knotenbasierter Lizenzen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]

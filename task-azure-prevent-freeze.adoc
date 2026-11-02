@@ -41,7 +41,7 @@ Microsoft Azure kann eine VM während geplanter Wartungsarbeiten kurzzeitig anha
 == Verhindern von automatischem Takeover und Giveback während geplanter Azure Wartungsarbeiten
 
 .Schritte
-. Die System-ID für das Azure HA-Paar kann identifiziert werden. Informationen zum Identifizieren von Ressourcen und zum Durchführen von API-Aufrufen finden Sie unter https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie["Ihr erster API-Aufruf"^].
+. Die System-ID für das Azure HA-Paar lässt sich ermitteln. Informationen zum Identifizieren von Ressourcen und zum Durchführen von API-Aufrufen finden sich in https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifier["Einen ONTAP Management REST API Aufruf ausführen"^].
 . Eine `PUT` Anfrage an den folgenden Endpunkt, wobei `{id}` durch die System-ID ersetzt wird:
 +
 `PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`

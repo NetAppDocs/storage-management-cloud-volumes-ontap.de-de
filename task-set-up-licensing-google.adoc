@@ -14,7 +14,7 @@ summary: Vor der Erstellung eines Systems ist in Google Cloud die Freemium-, kap
 
 
 [role="lead"]
-Nachdem Sie entschieden haben, welche Lizenzierungsoption Sie mit Cloud Volumes ONTAP in Google Cloud verwenden, sind vor der Auswahl dieser Option beim Erstellen eines Systems noch einige Einrichtungsschritte erforderlich.
+Nach der Entscheidung für eine Lizenzierungsoption für Cloud Volumes ONTAP in Google Cloud sind noch einige Einrichtungsschritte nötig, damit diese Option beim Erstellen eines neuen Systems zur Auswahl steht.
 
 
 
@@ -57,7 +57,7 @@ Die Pakete Essentials und Professional sind mit folgenden Verbrauchsmodellen bzw
 
 link:concept-licensing.html#capacity-based-licensing["Erfahren Sie mehr über kapazitätsbasierte Lizenzierung"] .
 
-Für den Einstieg in die einzelnen Konsummodelle sind die Schritte in den folgenden Abschnitten beschrieben.
+Der Einstieg erfolgt anhand der Schritte für das Verbrauchsmodell, das Sie verwenden möchten.
 
 
 
@@ -82,7 +82,7 @@ Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes
 +
 .. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* auszuwählen; anschließend sind den Anweisungen zu folgen, um das Pay-as-you-go-Angebot im Google Cloud Marketplace zu abonnieren.
 +
-Die Lizenz, die Sie von NetApp erworben haben, wird immer zuerst berechnet, aber Ihnen wird der stündliche Marktplatzpreis berechnet, wenn Sie Ihre lizenzierte Kapazität überschreiten oder Ihre Lizenzlaufzeit abläuft.
+Die Lizenz, die Sie von NetApp erworben haben, wird immer zuerst berechnet, aber falls Sie Ihre lizenzierte Kapazität überschreiten oder Ihre Lizenzlaufzeit abläuft, wird der stündliche Marketplace-Satz berechnet.
 
 .. Nachdem Sie zur Konsole zurückgekehrt sind, wählen Sie auf der Seite mit den Abrechnungsmethoden ein kapazitätsbasiertes Paket aus.
 +
@@ -179,7 +179,7 @@ link:task-deploying-gcp.html["Sehen Sie sich die Schritt-für-Schritt-Anleitung 
 [[node-based-license]]
 == Knotenbasierte Lizenz
 
-Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz konnte von NetApp (BYOL) erworben werden. Knotenbasierte Lizenzen sind jetzt nur noch in bestimmten Fällen zur Verlängerung verfügbar. Informationen hierzu:
+Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz konnte von NetApp (BYOL) erworben werden. Knotenbasierte Lizenzen können nur in bestimmten Fällen verlängert werden. Informationen hierzu:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["Ende der Verfügbarkeit knotenbasierter Lizenzen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]

@@ -14,7 +14,7 @@ summary: 'Vor dem Einsatz eines neuen Systems ist für Cloud Volumes ONTAP in Az
 
 
 [role="lead"]
-Nachdem Sie sich für eine Lizenzierungsoption für Cloud Volumes ONTAP in Azure entschieden haben, müssen Sie einige Schritte durchführen, bevor Sie diese Lizenzierungsoption bei der Erstellung eines neuen Systems auswählen können.
+Nachdem Sie sich für eine Lizenzierungsoption für Cloud Volumes ONTAP in Azure entschieden haben, sind einige Einrichtungsschritte erforderlich, damit Sie diese Option bei der Erstellung eines neuen Systems auswählen können.
 
 
 
@@ -85,7 +85,7 @@ Ihre Lizenz muss in der Console verfügbar sein, bevor Sie sie mit Cloud Volumes
 +
 .. Auf der Seite *Details und Anmeldeinformationen* ist *Anmeldeinformationen bearbeiten > Abonnement hinzufügen* auszuwählen; anschließend sind die Anweisungen zu befolgen, um das Pay-as-you-go-Angebot im Azure Marketplace zu abonnieren.
 +
-Die Lizenz, die Sie von NetApp erworben haben, wird immer zuerst berechnet, aber wenn Sie Ihre lizenzierte Kapazität überschreiten oder die Laufzeit Ihrer Lizenz abläuft, wird Ihnen der Stundensatz im Marketplace berechnet.
+Die Lizenz, die Sie von NetApp erworben haben, wird immer zuerst berechnet, aber falls Sie Ihre lizenzierte Kapazität überschreiten oder Ihre Lizenzlaufzeit abläuft, wird der stündliche Marketplace-Satz berechnet.
 
 +
 image:screenshot-azure-paygo-subscription.png["Ein Screenshot der PAYGO-Abonnementoption beim Erstellen eines Cloud Volumes ONTAP Systems."]
@@ -187,7 +187,7 @@ link:task-deploying-otc-azure.html["Sehen Sie sich die Schritt-für-Schritt-Anle
 [[node-based-license]]
 == Knotenbasierte Lizenz
 
-Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz konnte von NetApp (BYOL) erworben werden. Knotenbasierte Lizenzen können nur in bestimmten Fällen verlängert werden. Informationen dazu unter:
+Eine knotenbasierte Lizenz ist die Lizenz der vorherigen Generation für Cloud Volumes ONTAP. Eine knotenbasierte Lizenz konnte von NetApp (BYOL) erworben werden. Knotenbasierte Lizenzen können nur in bestimmten Fällen verlängert werden. Informationen hierzu:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["Ende der Verfügbarkeit knotenbasierter Lizenzen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]

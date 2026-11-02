@@ -229,8 +229,8 @@ sidebar:
         url: "/reference-limits-azure.html"
       - title: Informationen zu HA Paaren in Azure
         url: "/concept-ha-azure.html"
-      - title: Vermeidung von Unterbrechungen während der Azure Wartung von Cloud
-          Volumes ONTAP HA
+      - title: Vermeidung von Unterbrechungen während der Azure-Wartung für Cloud
+          Volumes ONTAP HA-Paare
         url: "/task-azure-prevent-freeze.html"
       - title: Verwalten von Schlüsseln mit Azure Key Vault
         url: "/task-azure-key-vault.html"

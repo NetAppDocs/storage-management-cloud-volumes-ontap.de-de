@@ -14,7 +14,7 @@ NetApp unterstützt nur das Essentials Paket für kapazitätsbasierte Lizenzieru
 NetApp empfiehlt die kapazitätsbasierte Lizenzierung für alle Cloud Volumes ONTAP Bereitstellungen im privaten Modus. Wenn bereits Bereitstellungen im privaten Modus mit knotenbasierten Lizenzen vorhanden sind, ist eine Umstellung auf kapazitätsbasierte Lizenzierung durch den Erwerb eines Essentials-Pakets von NetApp möglich. Diese neue Bereitstellungsfunktion, kombiniert mit der Umstellungsoption, unterstützt den Plan von NetApp, schrittweise von knotenbasierter auf kapazitätsbasierte Lizenzierung überzugehen.
 
 .Weiterführende Links
-* https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/concept-licensing.html["Cloud Volumes ONTAP -Lizenzierung"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP -Lizenzierung"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html["Informationen zu Cloud Volumes ONTAP BYOL"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Ende der Verfügbarkeit von knotenbasierten Lizenzen"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Knotenbasierte Lizenzen für Cloud Volumes ONTAP verwalten"^]

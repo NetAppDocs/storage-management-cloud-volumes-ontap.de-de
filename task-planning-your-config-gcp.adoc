@@ -59,14 +59,10 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.
 
 Durch die Dimensionierung Ihres Cloud Volumes ONTAP -Systems können Sie die Anforderungen an Leistung und Kapazität erfüllen.  Bei der Auswahl eines Maschinentyps, Datenträgertyps und einer Datenträgergröße sollten Sie einige wichtige Punkte beachten:
 
-Maschinentyp:: Die unterstützten Maschinentypen in der link:reference-configs-gcp.html["Versionshinweise zu Cloud Volumes ONTAP"^] können betrachtet werden, anschließend stehen bei Google Details zu jedem unterstützten Maschinentyp zur Verfügung. Die Workload-Anforderungen lassen sich mit der Anzahl der vCPUs und dem Arbeitsspeicher des Maschinentyps abgleichen. Zu beachten ist, dass jeder CPU-Kern die Netzwerkleistung erhöht.
+Maschinentyp:: Die link:reference-configs-gcp.html["unterstützte Maschinentypen"] sowie die Details von Google zu jedem unterstützten Maschinentyp sollten überprüft werden. Ihre Workload-Anforderungen sollten mit der Anzahl der vCPUs und dem Arbeitsspeicher des Maschinentyps abgeglichen werden. Dabei erhöht jeder CPU-Kern die Netzwerk-Performance.
 +
 --
-Weitere Einzelheiten finden Sie im Folgenden:
-
-* https://cloud.google.com/compute/docs/machine-types#n1_machine_types["Google Cloud-Dokumentation: N1-Standardmaschinentypen"^]
-* https://cloud.google.com/docs/compare/data-centers/networking#performance["Google Cloud-Dokumentation: Leistung"^]
-
+Weitere Details finden Sie unter  https://cloud.google.com/compute/docs/machine-types["Google-Dokumentation: Ressourcen- und Vergleichsleitfaden für Maschinenfamilien"^]
 
 --
 Datenträgertypen:: Wenn Sie Volumes für Cloud Volumes ONTAP erstellen, müssen Sie den zugrunde liegenden Cloud-Speicher auswählen, den Cloud Volumes ONTAP für eine Festplatte verwendet.  Der Datenträgertyp kann einer der folgenden sein:
