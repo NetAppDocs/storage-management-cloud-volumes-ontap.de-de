@@ -20,3 +20,5 @@ ONTAP hat die folgenden Hotfixes veröffentlicht, die mit Cloud Volumes ONTAP Ve
 Weitere Informationen finden Sie unter  https://security.netapp.com/advisory/ntap-20261021-0021["NTAP Sicherheitshinweis 20261021-0021"^].
 
 Für Ihre Cloud Volumes ONTAP Systeme werden Sie möglicherweise in der NetApp Console aufgefordert, ein Upgrade auf diese Hotfixes durchzuführen. Diese Hotfixes werden jedoch nur unterstützt, wenn die Version des Console Agenten 4.12.0 oder höher ist. Wenn die Version des Console Agenten älter als 4.12.0 ist, ignorieren Sie die Aufforderung.
+
+https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-12-0["Console Agent 4.12.0"^]
