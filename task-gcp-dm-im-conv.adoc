@@ -17,18 +17,19 @@ summary: Nach der Aktualisierung bestehender Cloud Volumes ONTAP Systeme in Goog
 Ab dem 9. Februar 2026 können neue Cloud Volumes ONTAP Deployments in Google Cloud den Google Cloud Infrastructure Manager verwenden. Google stellt den Google Cloud Deployment Manager zugunsten von Infrastructure Manager ein. Die Konvertierung Ihrer bestehenden Cloud Volumes ONTAP Deployments von Deployment Manager zu Infrastructure Manager erfolgt durch manuelles Ausführen des Konvertierungstools. Dieser einmalige Vorgang stellt Ihre Systeme automatisch auf Infrastructure Manager um.
 
 .Informationen zu diesem Vorgang
-Das Konvertierungstool ist auf der NetApp Support-Website verfügbar und erzeugt die folgenden Artefakte:
+Das Konvertierungstool ist auf der NetApp Support Site verfügbar und erstellt die folgenden Artefakte:
 
 * Terraform-Artefakte, gespeichert in `conversion_output/deployment_name`.
-* Zusammenfassung der Konvertierung, gespeichert in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json.`
+* Zusammenfassung der Konvertierung, gespeichert in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`.
 * Debug-Protokolle, gespeichert im  `<gcp project number>-<region>-blueprint-config/<cvo name>` Verzeichnis. Sie benötigen diese Protokolle zur Fehlerbehebung. Der  `<gcp project number>-<region>-blueprint-config` Bucket speichert die Terraform-Protokolle.
+* Das Cloud Volumes ONTAP Projekt ist das Google Cloud Projekt, in dem Sie Cloud Volumes ONTAP Ressourcen erstellen. Der Console agent und das Cloud Volumes ONTAP System können sich im selben oder in verschiedenen Google Cloud Projekten befinden (projektübergreifende Konfiguration). Bei einer projektübergreifenden Konfiguration können Sie den Console agent in einem Projekt, z. B. Projekt A, einsetzen und Cloud Volumes ONTAP Systeme in einem anderen Projekt, z. B. Projekt B, einsetzen, wenn das service account für den Console agent über die erforderlichen Berechtigungen verfügt.
 
 
 [CAUTION]
 ====
 Cloud Volumes ONTAP-Systeme, die Infrastructure Manager verwenden, speichern Daten und Datensätze in Google Cloud Storage-Buckets. Für diese Buckets können zusätzliche Kosten anfallen, aber bearbeiten oder löschen Sie die Buckets oder deren Inhalt nicht:
 
-* `gs://netapp-cvo-infrastructure-manager-<project id>`: für ONTAP Versionen und SVM Terraform Templates, die für neue Cloud Volumes ONTAP Deployments verwendet werden. Innerhalb davon enthält der  `dm-to-im-convert` bucket die Cloud Volumes ONTAP Terraform Dateien.
+* `gs://netapp-cvo-infrastructure-manager-<project id>`: für ONTAP Versionen und SVM Terraform Vorlagen, die für neue Cloud Volumes ONTAP Deployments verwendet werden. In diesem Bucket enthält der  `dm-to-im-convert` Bucket die Cloud Volumes ONTAP Terraform-Dateien.
 * `<gcp project number>-<region>-blueprint-config`: zum Speichern von Google Cloud Terraform-Artefakten.
 
 
@@ -38,14 +39,15 @@ Cloud Volumes ONTAP-Systeme, die Infrastructure Manager verwenden, speichern Dat
 * Es ist sicherzustellen, dass keine der Cloud Volumes ONTAP Ressourcen oder deren Eigenschaften manuell über die Google Cloud Console bearbeitet wurden.
 * Es ist sicherzustellen, dass die Google Cloud APIs einschließlich der Google Cloud Quotas API aktiviert sind. Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud APIs aktivieren"^].
 * Voraussetzung ist, dass das Servicekonto für den NetApp Console Agent über alle erforderlichen Berechtigungen verfügt. Weitere Informationen enthält https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["Google Cloud-Berechtigungen für den Konsolenagenten"^].
+* Wenn sich der Console agent und Cloud Volumes ONTAP in unterschiedlichen Projekten befinden, muss überprüft werden, ob das Dienstkonto für den Console agent im Cloud Volumes ONTAP Projekt über alle erforderlichen Berechtigungen verfügt. Informationen zum Erteilen von Berechtigungen für das Dienstkonto des Console agent für den Zugriff auf andere Projekte in https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-console-gcloud.html#console-permissions-google["Für die Verwendung mit dem Agenten ist ein Google Cloud-Dienstkonto zu erstellen."^].
 * Bevor Sie mit der Konvertierung beginnen, empfehlen wir Ihnen, einen Snapshot der Root- und Boot-Disks des Cloud Volumes ONTAP Systems zu erstellen.
 +
-.Für Bereitstellungen im privaten Modus gelten diese zusätzlichen Voraussetzungen:
+.Für Deployments im privaten oder geschützten Modus müssen folgende zusätzlichen Voraussetzungen erfüllt sein:
 [%collapsible]
 ====
 ** Stellen Sie sicher, dass Sie die neueste Version des Console-Agenten verwenden. Laden Sie das Produktinstallationsprogramm von der NetApp Support Site herunter und installieren Sie den Agenten anschließend manuell auf Ihrem Host, damit der Agent die Infrastructure Manager APIs nutzen kann.
 ** Wenn Sie das Tool im privaten Modus ausführen, stellen Sie sicher, dass Sie zusätzlich zu den anderen APIs auch die Cloud Build API aktiviert haben. Informationen dazu finden Sie in https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud APIs aktivieren"^].
-** Stellen Sie sicher, dass die Netzwerkkonfigurationen abgeschlossen und der Worker-Pool für Bereitstellungen im privaten Modus erstellt wurden. Weitere Informationen unter link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Infrastructure Manager Konfiguration im privaten Modus oder in geschützten Umgebungen"].
+** Voraussetzung ist, dass Sie die Netzwerkkonfigurationen abgeschlossen und den Worker Pool für Deployments im privaten Modus oder in geschützten Umgebungen erstellt haben. Weitere Informationen enthält link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Infrastructure Manager Konfiguration im privaten Modus oder in geschützten Umgebungen"].
 
 
 ====
@@ -127,7 +129,7 @@ Führen Sie diese Schritte aus, bevor Sie das Tool ausführen.
 .Schritte
 . Erstellen Sie eine Rolle und hängen Sie sie an ein Dienstkonto an:
 +
-.. Erstellen Sie eine YAML-Datei mit den folgenden Berechtigungen:
+.. Eine YAML-Datei mit den folgenden Berechtigungen ist zu erstellen.
 +
 [source, cli]
 ----
@@ -163,15 +165,40 @@ includedPermissions:
 - storage.objects.list
 ----
 +
-.Zusätzliche Berechtigungen für Bereitstellungen im privaten Modus einschließen
+.Zusätzliche Berechtigungen für Deployments im privaten Modus oder geschützte Deployments einschließen
 [%collapsible]
 ====
-Wenn Sie das Tool im privaten Modus ausführen, müssen Sie auch die `cloudbuild.workerpools.get` Berechtigung zur YAML-Datei hinzufügen.
+Wenn Sie das Tool im privaten Modus oder in einer geschützten Umgebung ausführen, sollte die `cloudbuild.workerpools.get` Berechtigung ebenfalls zur YAML-Datei hinzugefügt werden.
 
 ====
-.. Erstellen Sie eine benutzerdefinierte Rolle in Google Cloud mit den in der YAML-Datei definierten Berechtigungen.
++
+.Zusätzliche Berechtigungen für projektübergreifende Deployments (Console Agent in einem Projekt, Cloud Volumes ONTAP in einem anderen)
+[%collapsible]
+====
+Bei einem projektübergreifenden Deployment erstellen Sie die zuvor genannte YAML-Datei für das Projekt des Console Agent. Sie müssen eine zweite YAML-Datei mit den folgenden Berechtigungen für das Projekt erstellen, in dem sich die Cloud Volumes ONTAP Ressourcen befinden:
+
+[source, cli]
+----
+title: NetApp Dm TO IM Convert Solution for Cross Project
+description: Permissions for the service account associated with the VM where the tool will run for the project where CVO resources resides.
+stage: GA
+includedPermissions:
+- compute.addresses.get
+- compute.disks.get
+- compute.forwardingRules.get
+- compute.healthChecks.get
+- compute.instanceGroups.get
+- compute.instances.get
+- compute.regionBackendServices.get
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- resourcemanager.projects.get
+----
+====
+.. In Google Cloud wird im Projekt des Console agent eine benutzerdefinierte Rolle mit den in der YAML-Datei definierten Berechtigungen erstellt. In einer projektübergreifenden Einrichtung wird diese Rolle auch in dem Projekt erstellt, in dem sich die Cloud Volumes ONTAP Ressourcen befinden.
 `gcloud iam roles create dmtoim_convert_tool_role --project=PROJECT_ID \
-    --file=YAML_FILE_PATH` Weitere Informationen finden Sie unter https://cloud.google.com/iam/docs/creating-custom-roles["Erstellen und Verwalten benutzerdefinierter Rollen"^].
+    --file=YAML_FILE_PATH` Weitere Informationen enthält https://cloud.google.com/iam/docs/creating-custom-roles["Erstellen und Verwalten benutzerdefinierter Rollen"^].
 .. Weisen Sie die benutzerdefinierte Rolle dem Dienstkonto zu, das Sie zum Erstellen der VM verwenden.
 .. Fügen Sie die `roles/iam.serviceAccountUser` Rolle zu diesem Dienstkonto hinzu. Siehe https://docs.cloud.google.com/iam/docs/service-account-overview["Übersicht der Servicekonten"^].
 .. Die IAM Service Account Credentials API muss im Projekt aktiviert sein:
@@ -219,7 +246,7 @@ project=PROJECT_ID
 
 
 . Stellen Sie über SSH eine Verbindung zur neu erstellten VM her: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
-. Laden Sie das Konvertierungstool von der https://mysupport.netapp.com/site/tools/tool-eula/gcp-cvo-dm-to-im-convert-tool/download["NetApp Support-Website"^] mit Ihren NSS-Zugangsdaten herunter: `wget <download link from NetApp Support site>`
+. Laden Sie das Konvertierungstool von der https://mysupport.netapp.com/site/tools/tool-eula/gcp-cvo-dm-to-im-convert-tool/download["NetApp Support Site"^] mit Ihren NSS-Zugangsdaten herunter: `wget <download link from NetApp Support site>`
 . Extrahieren der heruntergeladenen Datei: `unzip <downloaded file name>`
 
 
@@ -302,20 +329,35 @@ Dadurch wird das Tool in einer isolierten Umgebung installiert, `dmconvert-venv`
 [source, cli]
 ----
 dmconvert \
---project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent>
 ----
 +
-.Das Tool in privaten Bereitstellungsmodi ausführen
+.Ausführen des Tools in projektübergreifenden Deployments (Console Agent in einem Projekt, Cloud Volumes ONTAP in einem anderen)
 [%collapsible]
 ====
-Der  `--worker-pool` Parameter ermöglicht den Betrieb des Tools in Private-Mode-Bereitstellungen. Für die Konfiguration des Worker-Pools siehe link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Infrastructure Manager Konfiguration im privaten Modus oder in geschützten Umgebungen"].
+Der `--console-agent-project-id` Parameter gilt, wenn sich Ihr Cloud Volumes ONTAP System in einem anderen Projekt befindet als dem Projekt, in dem sich der Console agent befindet.
 
 [source, cli]
 ----
 dmconvert \
---project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--console-agent-project-id=<the Google Cloud project ID for the Console agent> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent> \
+----
+====
++
+.Ausführung des Tools in privaten oder geschützten Deployments
+[%collapsible]
+====
+Geben Sie den `--worker-pool` Parameter an, um das Tool in Deployments im privaten oder geschützten Modus auszuführen. Weitere Informationen zur Konfiguration des Worker-Pools finden Sie unter link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Infrastructure Manager Konfiguration im privaten Modus oder in geschützten Umgebungen"].
+
+[source, cli]
+----
+dmconvert \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent> \
 --worker-pool=<worker pool name>
@@ -344,7 +386,20 @@ Wenn Sie die Konvertierung nicht fortsetzen möchten, können Sie zum Deployment
 [source, cli]
 ----
 dmconvert \
---project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent> \
+--rollback
+----
++
+Bei einem projektübergreifenden Deployment ist der  `--console-agent-project-id`Parameter anzugeben:
+
++
+[source, cli]
+----
+dmconvert \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--console-agent-project-id=<the Google Cloud project ID for the Console agent> \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent> \
 --rollback

@@ -14,7 +14,7 @@ summary: Das Aktivieren der Backend Cluster-Netzwerkverschlüsselung schützt de
 
 
 [role="lead"]
-Für Cloud Volumes ONTAP 9.19.1 und höher sorgt die Aktivierung der Backend-Cluster-Netzwerkverschlüsselung für den Schutz des internen Ost-West-Datenverkehrs in Hochverfügbarkeitskonfigurationen (HA) in Azure und Google Cloud. Diese Einstellung schützt den Datenverkehr während der Übertragung; Volumendaten im Ruhezustand werden dadurch nicht verschlüsselt.
+Ab Cloud Volumes ONTAP 9.19.1 können Sie die Netzwerkverschlüsselung des Backend-Clusters aktivieren, um den internen Datenverkehr von Cloud Volumes ONTAP Knoten in Hochverfügbarkeitskonfigurationen (HA) in Azure und Google Cloud zu schützen. Diese Einstellung schützt den Datenverkehr während der Übertragung, verschlüsselt jedoch keine Volume-Daten im Ruhezustand.
 
 ONTAP nutzt Cluster Session Management (CSM) über Kernel TLS (kTLS) und Software-IPsec, um den Datenverkehr in Backend-Netzwerken für HA-Konfigurationen zu sichern. Cloud Volumes ONTAP 9.19.1 und spätere Versionen erweitern diesen Schutz auf den Backend-Cluster-Datenverkehr.
 
