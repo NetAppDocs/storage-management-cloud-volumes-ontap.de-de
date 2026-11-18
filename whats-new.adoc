@@ -20,6 +20,64 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich speziell auf das
 
 
 
+[[17-november-2026]]
+== 17. November 2026
+
+
+
+[[new-cloud-volumes-ontap-contributor-role]]
+=== Neue Mitwirkendenrolle für Cloud Volumes ONTAP
+
+NetApp ergänzt die Rolle *Cloud Volumes ONTAP contributor*, die mehr Berechtigungen als die Operator-Rolle, aber weniger als die Admin-Rolle hat. Ein Benutzer mit der Operator-Rolle kann mehrere tägliche Workflows ausführen, darunter Replikationsaufgaben mit SnapMirror. Die Admin-Rolle umfasst diese Workflows, erlaubt Admin-Benutzern jedoch auch das Löschen von Cloud Volumes ONTAP Systemen, was viele Unternehmen für operative Benutzer nicht wünschen. Diese Rolle ist wichtig, weil die Console derzeit keine Multi-Admin Verification (MAV) unterstützt und ein Admin-Benutzer ohne diese bei sensiblen Vorgängen, etwa beim Löschen von Systemen, keine zweite Genehmigung benötigt. Die contributor-Rolle ermöglicht Benutzern die Ausführung der meisten kritischen Vorgänge, etwa das Erstellen von Systemen sowie das Managen von Replikation und Storage, verhindert jedoch das Löschen von Systemen.
+
+Die Rolle des Mitwirkenden umfasst alle Bedienerberechtigungen sowie zusätzliche Möglichkeiten, Folgendes zu tun:
+
+* Cloud Volumes ONTAP Systeme erstellen
+* Aktualisierung der Systemeinstellungen, z. B. durch Ändern des Instanztyps oder Aktualisieren der ONTAP Version
+* Replikation managen, einschließlich Unterbrechen, Resynchronisieren, umgekehrtem Resynchronisieren sowie Bearbeiten von Replikationszeitplänen und Übertragungsraten
+* Storage managen, z. B. durch Hinzufügen von Aggregaten und Erhöhen der Kapazität
+
+
+Ein Benutzer mit der Rolle „Mitwirkender“ kann folgende Aufgaben nicht ausführen:
+
+* Systeme, Volumes, Aggregate oder Replikationsbeziehungen löschen
+* Systeme ein- oder ausschalten
+* Legen Sie ein Passwort fest
+* Auf ONTAP System Manager zugreifen
+
+
+Die Rolle „Mitwirkender“ wird über *Administration > Identität* zugewiesen, genau wie die anderen Cloud Volumes ONTAP Rollen den Benutzern zugewiesen werden.
+
+.Weiterführende Links
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["Cloud Volumes ONTAP Zugriffsrollen in der NetApp Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html["Rollenbasierter Zugriff für Cloud Volumes ONTAP in der NetApp Console einrichten"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html#data-service-roles["NetApp Console-Zugriffsrollen"^]
+
+
+
+
+[[microsoft-entra-id-hybrid-user-authentication-for-smb-public-preview]]
+=== Microsoft Entra ID Hybrid-Benutzerauthentifizierung für SMB (öffentliche Vorschau)
+
+Cloud Volumes ONTAP 9.19.1 und höher unterstützen die hybride Benutzerauthentifizierung mit https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id["Microsoft Entra ID"^] für den Zugriff auf SMB-Freigaben.
+
+Bisher unterstützte Cloud Volumes ONTAP die SMB Authentifizierung nur für Domänenbenutzer, wofür eine lokale Active Directory Einrichtung (AD) erforderlich war. Mit der hybriden Benutzerauthentifizierung können Sie die SMB Authentifizierung über Microsoft Entra ID auf die Cloud ausweiten und gleichzeitig Ihre bestehende lokale AD Infrastruktur weiter nutzen.
+
+Bei der hybriden Benutzerauthentifizierung werden Benutzer im lokalen AD erstellt und mithilfe von https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect["Microsoft Entra Connect"^] mit Microsoft Entra ID synchronisiert. ONTAP authentifiziert Benutzer, die auf SMB-Freigaben zugreifen, und kommuniziert dazu sowohl mit dem lokalen AD als auch mit Microsoft Entra ID.
+
+Diese Funktion ist als öffentliche Vorschau verfügbar. Die Konfiguration wird nur über die ONTAP CLI unterstützt. Die Integration in die NetApp Console ist noch nicht verfügbar.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-entra-id-smb-auth.html["Konfigurieren der Microsoft Entra ID-Authentifizierung für SMB"^]
+
+
+
+[[16-november-2026]]
+== 16. November 2026
+
+Nicht aufgelöste Direktive in <stdin> - include::_whatsnew/2026-11-16.adoc[]
+
+
+
 [[02-november-2026]]
 == 02. November 2026
 
