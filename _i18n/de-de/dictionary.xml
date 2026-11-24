@@ -8317,8 +8317,6 @@
   <block id="4bec940f8e5547f4d7ea2a53ec902c6a" category="paragraph">Wenn die Console den Console agent erstellt, wird entweder eine IAM-Rolle und ein Profil für den Agenten erstellt oder eine von Ihnen bereitgestellte Rolle verwendet. Diese Rolle enthält Berechtigungen, die es dem Agenten ermöglichen, AWS-Ressourcen zu managen. Die Rolle sollte mit allen neuen Berechtigungen aktuell gehalten werden, die der Agent benötigt. <block ref="7f447941d99d36030500c16d428fc2ff" category="inline-link-macro-rx"></block>.</block>
   <block id="4eedc010909cbd7fa3cbf5efdb1be4b6" category="paragraph">Falls Sie noch nicht bereit sind, Ihr Cloud Volumes ONTAP System zu erstellen, können Sie jederzeit zur Seite „Systems“ zurückkehren, um es zu erstellen.</block>
   <block id="3cc38715797be469f39edd81c803bf02" category="section-title">17. November 2026</block>
-  <block id="444d7501b3cc1feab5560e903adad61c" category="section-title">16. November 2026</block>
-  <block id="f2a895f791fcea8f719f85e864d53ea6" category="paragraph">Nicht aufgelöste Direktive in &lt;stdin&gt; - include::_whatsnew/2026-11-16.adoc[]</block>
   <block id="4e1d849ec7cd4b242a9a758a2e86fe1c" category="sidebar">Bereitstellung von Cloud Volumes ONTAP mithilfe eines eigenständigen Eintrags auf AWS Marketplace</block>
   <block id="d2091e7366ce9b63a9a82bdd7bb6c641" category="sidebar">Vermeidung von Unterbrechungen während der Azure-Wartung für HA-Paare</block>
   <block id="464804aa8527c7a5675dd4c8d2b5f2b5" category="paragraph"><block ref="70563190697b86d4b7fef9663334a2c7" category="inline-link-rx"></block> <block ref="2d3a44ea7e8ca99b971ec5f419723d79" category="inline-link-rx"></block></block>
@@ -8330,4 +8328,8 @@
   <block id="db78a7e96024e9eef010b9cf7fb53251" category="paragraph">Wenn Sie andere Datenservices wie NetApp Backup and Recovery nutzen möchten, müssen Sie zusätzlich zum eigenständigen Angebot auch das NIS-Angebot abonnieren.</block>
   <block id="19345556c6e896fcd174b552b92e5c53" category="list-text">Für das Angebot NetApp Intelligent Service (NIS) ist die Jahres- oder PAYGO-Option auszuwählen.</block>
   <block id="bc2dc85706f0ec1cefd21d3f849eb1e9" category="section-title">18. November 2026</block>
+  <block id="5a910ff91567ebb4e0ae85635837c5a8" category="doc">Unterstützung für die Regionen Denmark East und India South Central in Azure</block>
+  <block id="b9433802e6e744b5cc84b87da127cf0e" category="paragraph">Cloud Volumes ONTAP 9.12.1 GA und höher kann jetzt in den Azure-Regionen Denmark East (denmarkeast) und India South Central (indiasouthcentral) eingesetzt werden. Die folgenden Deployment-Typen werden unterstützt:</block>
+  <block id="893f7f9c4326ccc9db9efcafead22429" category="list-text">HA in mehreren Verfügbarkeitszonen mit zonenredundantem Storage (ZRS), nur für India South Central</block>
+  <block id="1d13d5e4cee76a1ac900dd9c56640ddb" category="section-title">24. November 2026</block>
 </blocks>
