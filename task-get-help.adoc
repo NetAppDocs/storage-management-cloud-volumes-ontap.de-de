@@ -7,7 +7,7 @@ summary: 'NetApp bietet Support auf vielfältige Weise. Umfangreiche kostenlose 
 = Hilfe zu Cloud Volumes ONTAP
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: https://docs.netapp.com/us-en/console-family/media/
 
 
 [role="lead"]
@@ -87,7 +87,7 @@ Anhänge sind auf 25 MB pro Datei begrenzt. Die folgenden Dateierweiterungen wer
 
 
 +
-image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/screenshot-create-case.png["Ein Screenshot des Formulars „Fall erstellen“, mit dem Sie einen Fall beim NetApp Support erstellen können."]
+image:screenshot-create-case.png["Ein Screenshot des Formulars „Fall erstellen“, mit dem Sie einen Fall beim NetApp Support erstellen können."]
 
 
 
@@ -141,10 +141,10 @@ Auf der Seite *Fallverwaltung* werden offene Fälle angezeigt, die sich auf das 
 ** Wählen Sie unter *Fälle der Organisation* die Option *Anzeigen* aus, um alle mit Ihrem Unternehmen verknüpften Fälle anzuzeigen.
 ** Ändern Sie den Datumsbereich, indem Sie einen genauen Datumsbereich oder einen anderen Zeitrahmen auswählen.
 ** Filtern Sie den Inhalt der Spalten.
-** Ändern Sie die in der Tabelle angezeigten Spalten, indem Sieimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-table-columns.png["Das Plus-Symbol, das in der Tabelle angezeigt wird"] und wählen Sie dann die Spalten aus, die Sie anzeigen möchten.
+** Ändern Sie die in der Tabelle angezeigten Spalten, indem Sie image:icon-table-columns.png["Das Plus-Symbol, das in der Tabelle angezeigt wird"] auswählen und dann die Spalten wählen, die Sie anzeigen möchten.
 
 
-. Verwalten Sie einen vorhandenen Fall, indem Sieimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-table-action.png["Ein Symbol mit drei Punkten, das in der letzten Spalte der Tabelle erscheint"] und wählen Sie eine der verfügbaren Optionen aus:
+. Verwalten Sie einen bestehenden Fall, indem Sie image:icon-table-action.png["Ein Symbol mit drei Punkten, das in der letzten Spalte der Tabelle erscheint"]eine der verfügbaren Optionen auswählen:
 +
 ** *Fall anzeigen*: Alle Details zu einem bestimmten Fall anzeigen.
 ** *Fallnotizen aktualisieren*: Geben Sie zusätzliche Details zu Ihrem Problem an oder wählen Sie *Dateien hochladen*, um bis zu fünf Dateien anzuhängen.
