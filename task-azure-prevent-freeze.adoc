@@ -4,7 +4,7 @@ permalink: task-azure-prevent-freeze.html
 keywords: Azure, maintenance event, HA, takeover, giveback, freeze, disruption 
 summary: Zur Vermeidung von Unterbrechungen während der Azure-Wartung kann das automatische Takeover und Giveback für ein Cloud Volumes ONTAP HA-Paar unterdrückt werden. 
 ---
-= Vermeidung von Unterbrechungen während der Azure-Wartung für Cloud Volumes ONTAP HA-Paare
+= Vermeidung von Azure-Wartungsunterbrechungen für Cloud Volumes ONTAP HA Paare
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

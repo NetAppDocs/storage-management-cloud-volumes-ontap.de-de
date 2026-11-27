@@ -4,7 +4,7 @@ permalink: task-gcp-dm-im-conv.html
 keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im conversion 
 summary: Nach der Aktualisierung bestehender Cloud Volumes ONTAP Systeme in Google Cloud auf 9.16.1 oder höher kann das Konvertierungstool für die Umstellung von Deployment Manager auf Infrastructure Manager ausgeführt werden. 
 ---
-= Konvertieren Sie bestehende Cloud Volumes ONTAP-Bereitstellungen in Infrastructure Manager
+= Cloud Volumes ONTAP Deployments in Infrastructure Manager konvertieren
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

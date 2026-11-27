@@ -288,6 +288,8 @@ sidebar:
         url: "/task-manage-node-licenses.html"
       - title: Konvertieren von knotenbasierten Lizenzen
         url: "/task-convert-node-capacity.html"
+      - title: Konvertierung von NIS Abonnements in eigenständige Abonnements in AWS
+        url: "/task-convert-nis-nsl.html"
     - title: Registrieren Sie Pay-as-you-go-Systeme
       url: "/task-registering.html"
     - title: Stoppen und Starten eines Systems

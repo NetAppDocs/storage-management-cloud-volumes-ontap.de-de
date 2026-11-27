@@ -4,7 +4,7 @@ permalink: task-change-route-tables.html
 keywords: route tables, update route tables, modify route tables, change route table 
 summary: Sie können die AWS-Routentabellen ändern, die Routen zu den Floating-IP-Adressen für ein HA-Paar enthalten, das in mehreren AWS-Verfügbarkeitszonen bereitgestellt wird.  Sie können dies tun, wenn neue NFS- oder CIFS-Clients auf ein HA-Paar in AWS zugreifen müssen. 
 ---
-= Routentabellen für Cloud Volumes ONTAP HA-Paare in mehreren AWS AZs ändern
+= AWS-Routingtabellen für Cloud Volumes ONTAP HA-Paare anpassen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

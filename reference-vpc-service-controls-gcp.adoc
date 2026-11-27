@@ -4,7 +4,7 @@ permalink: reference-vpc-service-controls-gcp.html
 keywords: vpc, service controls, vpc-sc, google, psc, private service connect 
 summary: Wenn Sie Ihre Google-Umgebung mit VPC Service Controls sperren möchten, sollten Sie verstehen, wie NetApp Console und Cloud Volumes ONTAP mit den Google-APIs interagieren und wie Sie Ihre Serviceparameter für die Bereitstellung von Cloud Volumes ONTAP konfigurieren. 
 ---
-= Richten Sie VPC Service Controls ein, um Cloud Volumes ONTAP in Google Cloud bereitzustellen
+= Einrichten der VPC-Dienststeuerung für Cloud Volumes ONTAP in Google Cloud
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

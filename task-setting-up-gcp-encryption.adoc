@@ -4,7 +4,7 @@ permalink: task-setting-up-gcp-encryption.html
 keywords: encryption, gcp, encryption key, permissions, customer-managed, gcpencryption 
 summary: Während Google Cloud Storage Ihre Daten immer verschlüsselt, bevor sie auf die Festplatte geschrieben werden, können Sie mithilfe der Konsolen-APIs ein Cloud Volumes ONTAP -System erstellen, das vom Kunden verwaltete Verschlüsselungsschlüssel verwendet.  Dies sind Schlüssel, die Sie mithilfe des Cloud Key Management Service in GCP generieren und verwalten. 
 ---
-= Verwenden von kundenverwalteten Verschlüsselungsschlüsseln mit Cloud Volumes ONTAP
+= Verwendung kundenverwalteter Verschlüsselungsschlüssel mit Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

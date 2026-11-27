@@ -4,7 +4,7 @@ permalink: task-enable-cluster-encryption.html
 keywords: Backend cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS, backend encryption 
 summary: Das Aktivieren der Backend Cluster-Netzwerkverschlüsselung schützt den Cloud Volumes ONTAP Cluster-Datenverkehr, der nicht bereits durch ONTAP IPsec geschützt ist. 
 ---
-= Backend-Clusternetzwerkverschlüsselung für Cloud Volumes ONTAP in Azure und Google Cloud aktivieren
+= Aktivierung der Backend-Cluster-Netzwerkverschlüsselung für Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept-degraded-ha-pair.html
 keywords: high-availability configuration in Cloud Volumes ONTAP, CVO HA, storage takeover, storage giveback, degraded, degraded status, ha takeover, takeover, giveback, disaster recovery, svm disaster recovery, storage vm dr 
 summary: Eine Hochverfügbarkeitskonfiguration in Cloud Volumes ONTAP gewährleistet Geschäftskontinuität und Fehlertoleranz für Ihren Unternehmensspeicher. 
 ---
-= Cloud Volumes ONTAP HA Konfiguration
+= Hochverfügbarkeitskonfigurationen für Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

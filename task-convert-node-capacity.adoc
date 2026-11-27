@@ -4,7 +4,7 @@ permalink: task-convert-node-capacity.html
 keywords: license conversion, convert node-based to capacity based, by-node to by-capacity, license conversion for node based, BlueXP, Console 
 summary: 'Nach dem Ende der Verfügbarkeit (EOA) Ihrer knotenbasierten Lizenzen sollten Sie mithilfe des Lizenzkonvertierungstools auf eine kapazitätsbasierte Lizenzierung umsteigen.' 
 ---
-= Konvertieren Sie eine knotenbasierte Cloud Volumes ONTAP -Lizenz in eine kapazitätsbasierte Lizenz
+= Cloud Volumes ONTAP Knotenlizenzen in kapazitätsbasierte Lizenzen umwandeln
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
